@@ -1,0 +1,183 @@
+1. Objective
+Enable the Talent Acquisition (TA) team to identify and prioritize potential candidates more effectively by:
+
+Leveraging internal historical hiring data from ATS or internal DB.
+
+Enriching profiles with external professional data (e.g., LinkedIn via Apify Scraper or similar API).
+
+Scoring and ranking candidates based on relevance, engagement, and intent-to-switch signals.
+
+Allowing configurable filters so the system is reusable for other profile searches.
+
+2. High-Level Architecture
+Agents & Components
+
+Data Ingestion Agent – Connects to ATS / internal DB, extracts candidate data.
+
+Profile Enrichment Agent – Queries LinkedIn (via Apify API) to fetch additional details.
+
+Categorization Agent – Assigns High/Medium/Low (or custom) priority categories.
+
+Scoring Agent – Calculates composite scores based on weighted factors.
+
+Output Formatting Agent – Generates ranked shortlists in CSV, Excel, or dashboard view.
+
+Config & Rules Agent – Lets TA team define weights, rules, filters.
+
+API & Integration Layer – Exposes functionality to ATS, CRM, or recruitment dashboard.
+
+3. Proposed Workflow
+Step 1 – Data Source
+Input from ATS / Internal DB:
+
+Name
+
+Contact details
+
+Selection status (Offered, Selected)
+
+Selection date
+
+Joining outcome (Declined, Dropped, No Communication)
+
+Step 2 – External Profile Enrichment (LinkedIn via API)
+Match profile by Name + Current Employer (or fuzzy matching on name + location).
+
+Fetch:
+
+“Open to work” signal (from profile banner or updates)
+
+Current role and employer
+
+Activity history (posts, likes, shares)
+
+Employment history (job changes, frequency)
+
+Skills list
+
+Step 3 – Category Assignment
+Default rule set:
+Selected but didn’t join:
+
+High Priority → Selected ≤ 6 months ago
+
+Medium Priority → 6–18 months ago
+
+Low Priority → > 18 months ago
+
+Generic use cases (any profile search):
+
+Category rules configurable by:
+
+Last engagement date
+
+Skill match score
+
+“Open to work” flag
+
+Step 4 – Candidate Scoring
+Factor	Weight	Notes
+“Open to work” signal	40%	Extracted from LinkedIn
+Skill match with role	30%	JD-to-profile keyword match
+Job stability	15%	Penalize frequent switches
+Engagement in relevant topics	15%	Likes/posts/articles in domain
+
+Formula:
+
+ini
+Copy
+Edit
+Score = (OpenToWork * 0.4) + (SkillMatch * 0.3) + (JobStability * 0.15) + (Engagement * 0.15)
+Step 5 – Output for TA Team
+Candidate Name
+
+Category (High/Medium/Low or custom)
+
+LinkedIn Profile URL
+
+Current Employer
+
+“Open to work” status
+
+Last active date on LinkedIn
+
+Notes from recent posts/comments
+
+Overall score
+
+4. Making the System Generic
+To ensure future usability:
+
+Treat “Selected but didn’t join” as just one filter.
+
+Let TA define:
+
+Date range filters (last contacted, last applied, last shortlisted)
+
+Custom category labels (e.g., "Hot Lead", "Passive Candidate")
+
+Upload any profile list for enrichment
+
+5. Technical Requirements
+Integrations
+ATS/CRM DB API (e.g., Greenhouse, Lever, Zoho Recruit)
+
+LinkedIn scraping/enrichment (Apify API or LinkedIn Recruiter API)
+
+Internal API Gateway for orchestration
+
+Data Processing
+Fuzzy matching algorithm for Name + Employer
+
+NLP-based skill extraction & JD matching
+
+Engagement sentiment analysis (optional future enhancement)
+
+Storage
+Relational DB (PostgreSQL) for candidate history
+
+Vector DB (e.g., Pinecone, Weaviate) for semantic search on skills
+
+Deployment
+LangGraph / LangChain orchestration for multi-agent workflow
+
+Containerized (Docker + Kubernetes) for scalability
+
+API-first design for dashboard integration
+
+6. Security & Compliance
+OAuth2 / JWT authentication
+
+Role-based access control (RBAC) for TA users
+
+GDPR/CCPA compliance (consent-based data processing)
+
+Secure API calls with TLS 1.2+
+
+Audit logging for all data enrichment activity
+
+7. Example User Flow
+TA selects ATS data source or uploads CSV of candidates.
+
+TA configures scoring weights and category rules in UI.
+
+System enriches profiles from LinkedIn via API.
+
+Scoring & categorization run automatically.
+
+Ranked shortlist is available in:
+
+ATS (via API push)
+
+Downloadable CSV
+
+Interactive dashboard
+
+8. Future Enhancements
+Auto-outreach to high-priority candidates via email/LinkedIn.
+
+Predictive joining probability based on historical patterns.
+
+Multi-source enrichment (GitHub for developers, ResearchGate for researchers, etc.).
+
+Real-time alerts when a candidate changes job or status.

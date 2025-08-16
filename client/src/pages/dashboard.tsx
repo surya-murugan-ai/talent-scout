@@ -56,7 +56,8 @@ export default function Dashboard() {
       case "dashboard":
         return (
           <>
-            <div className="flex items-center justify-between mb-6">
+            {/* Header Section */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-4">
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
                 <p className="text-gray-600">Overview of your talent acquisition pipeline</p>
@@ -75,15 +76,45 @@ export default function Dashboard() {
                 </Button>
               </div>
             </div>
+
+            {/* Stats Cards */}
             <StatsCards />
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
-              <div className="lg:col-span-2 space-y-8">
+
+            {/* AI Processing Pipeline - Full Width */}
+            <div className="mt-8">
+              <div className="bg-white rounded-lg border border-gray-200 p-6">
+                <h2 className="text-lg font-semibold text-gray-900 mb-4">AI Processing Pipeline</h2>
                 <ProcessingPipeline />
+              </div>
+            </div>
+
+            {/* Candidate Rankings - Full Width */}
+            <div className="mt-6">
+              <div className="bg-white rounded-lg border border-gray-200 p-6">
+                <h2 className="text-lg font-semibold text-gray-900 mb-4">Candidate Rankings</h2>
                 <CandidateTable />
               </div>
-              <div className="space-y-8">
+            </div>
+
+            {/* Status Row - AI Integration Status (Left) and PostgreSQL Database (Right) */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+              {/* AI Integration Status - Left */}
+              <div className="bg-white rounded-lg border border-gray-200 p-6">
+                <h3 className="text-md font-semibold text-gray-900 mb-4">AI Integration Status</h3>
                 <AIStatus />
+              </div>
+
+              {/* PostgreSQL Database - Right */}
+              <div className="bg-white rounded-lg border border-gray-200 p-6">
+                <h3 className="text-md font-semibold text-gray-900 mb-4">PostgreSQL Database</h3>
                 <DatabaseStatus />
+              </div>
+            </div>
+
+            {/* Recent Activity - Full Width */}
+            <div className="mt-6">
+              <div className="bg-white rounded-lg border border-gray-200 p-6">
+                <h3 className="text-md font-semibold text-gray-900 mb-4">Recent Activity</h3>
                 <ActivityFeed />
               </div>
             </div>
@@ -148,21 +179,48 @@ export default function Dashboard() {
 
       case "history":
         return (
-          <div className="max-w-6xl">
+          <div className="max-w-7xl">
             <div className="mb-8">
               <h1 className="text-2xl font-bold text-gray-900 mb-2">Processing History</h1>
               <p className="text-gray-600">View the complete history of file uploads, processing jobs, and system activities.</p>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              <div className="lg:col-span-2">
+            
+            {/* AI Processing Pipeline - Full Width */}
+            <div className="mt-8">
+              <div className="bg-white rounded-lg border border-gray-200 p-6">
+                <h2 className="text-lg font-semibold text-gray-900 mb-4">AI Processing Pipeline</h2>
                 <ProcessingPipeline />
-                <div className="mt-8">
-                  <CandidateTable />
-                </div>
               </div>
-              <div className="space-y-6">
-                <ActivityFeed />
+            </div>
+
+            {/* Candidate Rankings - Full Width */}
+            <div className="mt-6">
+              <div className="bg-white rounded-lg border border-gray-200 p-6">
+                <h2 className="text-lg font-semibold text-gray-900 mb-4">Candidate Rankings</h2>
+                <CandidateTable />
+              </div>
+            </div>
+
+            {/* Status Row - AI Integration Status (Left) and PostgreSQL Database (Right) */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+              {/* AI Integration Status - Left */}
+              <div className="bg-white rounded-lg border border-gray-200 p-6">
+                <h3 className="text-md font-semibold text-gray-900 mb-4">AI Integration Status</h3>
                 <AIStatus />
+              </div>
+
+              {/* PostgreSQL Database - Right */}
+              <div className="bg-white rounded-lg border border-gray-200 p-6">
+                <h3 className="text-md font-semibold text-gray-900 mb-4">PostgreSQL Database</h3>
+                <DatabaseStatus />
+              </div>
+            </div>
+
+            {/* Recent Activity - Full Width */}
+            <div className="mt-6">
+              <div className="bg-white rounded-lg border border-gray-200 p-6">
+                <h3 className="text-md font-semibold text-gray-900 mb-4">Recent Activity</h3>
+                <ActivityFeed />
               </div>
             </div>
           </div>
@@ -185,8 +243,8 @@ export default function Dashboard() {
       <div className="flex-1 flex flex-col overflow-hidden">
         <Header />
         
-        <main className="flex-1 overflow-y-auto p-8">
-          <div className="min-h-full">
+        <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8">
+          <div className="min-h-full max-w-7xl mx-auto">
             {renderTabContent()}
           </div>
         </main>

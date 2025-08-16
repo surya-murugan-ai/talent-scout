@@ -221,18 +221,36 @@ export async function registerRoutes(app: Express): Promise<Server> {
         'Open to Work', 'Last Active', 'Skills', 'LinkedIn URL'
       ];
 
-      const csvRows = candidates.map(candidate => [
-        candidate.name || '',
-        candidate.email || '',
-        candidate.title || '',
-        candidate.company || '',
-        candidate.score || 0,
-        candidate.priority || 'Low',
-        candidate.openToWork ? 'Yes' : 'No',
-        candidate.lastActive || '',
-        Array.isArray(candidate.skills) ? candidate.skills.join('; ') : '',
-        candidate.linkedinUrl || ''
-      ]);
+      const csvRows = candidates.map(candidate => {
+        // Handle skills properly - they can be array of strings or objects
+        let skillsString = '';
+        if (Array.isArray(candidate.skills)) {
+          skillsString = candidate.skills.map(skill => {
+            if (typeof skill === 'string') {
+              return skill;
+            } else if (typeof skill === 'object' && skill !== null) {
+              // If skill is an object, try to extract the name or value
+              return skill.name || skill.value || skill.skill || JSON.stringify(skill);
+            }
+            return String(skill);
+          }).join('; ');
+        } else if (typeof candidate.skills === 'string') {
+          skillsString = candidate.skills;
+        }
+
+        return [
+          candidate.name || '',
+          candidate.email || '',
+          candidate.title || '',
+          candidate.company || '',
+          candidate.score || 0,
+          candidate.priority || 'Low',
+          candidate.openToWork ? 'Yes' : 'No',
+          candidate.lastActive || '',
+          skillsString,
+          candidate.linkedinUrl || ''
+        ];
+      });
 
       const csvContent = [
         csvHeaders.join(','),
@@ -328,15 +346,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Test LinkedIn API integration
   app.post('/api/test-linkedin', async (req, res) => {
     try {
-      const { linkedinUrl, name, company } = req.body;
+      const { linkedinUrl, name, company, title, location } = req.body;
       
       if (!linkedinUrl && !name) {
         return res.status(400).json({ error: 'Either LinkedIn URL or name is required' });
       }
 
-      console.log(`Testing LinkedIn enrichment for: ${name || linkedinUrl} ${company ? `at ${company}` : ''}`);
+      console.log(`Testing LinkedIn enrichment for: ${name || linkedinUrl} ${title ? `(${title})` : ''} ${company ? `at ${company}` : ''} ${location ? `in ${location}` : ''}`);
       
-      const enrichedProfile = await enrichLinkedInProfile(linkedinUrl, name || 'Test User', company);
+      const enrichedProfile = await enrichLinkedInProfile(linkedinUrl, name || 'Test User', company, title, location);
       
       res.json({
         success: true,
@@ -348,6 +366,35 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.error('LinkedIn test failed:', error);
       res.status(500).json({
         error: 'LinkedIn enrichment failed',
+        details: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
+  // Test LinkedIn search with scoring
+  app.post('/api/test-linkedin-search', async (req, res) => {
+    try {
+      const { name, title, company, location, maxResults = 10 } = req.body;
+      
+      if (!name) {
+        return res.status(400).json({ error: 'Name is required for search' });
+      }
+
+      console.log(`Testing LinkedIn search for: ${name} ${title ? `(${title})` : ''} ${company ? `at ${company}` : ''} ${location ? `in ${location}` : ''}`);
+      
+      const linkedInService = (await import('./services/linkedin')).linkedInService;
+      const searchResult = await linkedInService.searchProfilesWithScoring(name, title, company, location, maxResults);
+      
+      res.json({
+        success: true,
+        selectedUrl: searchResult,
+        message: 'LinkedIn search completed successfully'
+      });
+
+    } catch (error) {
+      console.error('LinkedIn search test failed:', error);
+      res.status(500).json({
+        error: 'LinkedIn search failed',
         details: error instanceof Error ? error.message : 'Unknown error'
       });
     }
@@ -657,12 +704,20 @@ async function processFileAsync(jobId: string, buffer: Buffer, filename: string)
     let processed = 0;
     for (const candidateData of candidates) {
       try {
-        // Enrich with LinkedIn data by searching by name and company
+        // Debug logging to see what LinkedIn URLs are found
+        console.log(`Processing candidate: ${candidateData.name}`);
+        console.log(`  Original LinkedIn URL: ${candidateData.linkedinUrl || 'None'}`);
+
+        // Enrich with LinkedIn data by searching by name, title, company, and location
         const linkedInProfile = await enrichLinkedInProfile(
           candidateData.linkedinUrl,
           candidateData.name,
-          candidateData.company
+          candidateData.company,
+          candidateData.title,
+          candidateData.location
         );
+
+        console.log(`  Found LinkedIn URL: ${linkedInProfile.profileUrl || 'None'}`);
 
         // Analyze with OpenAI
         const analysis = await analyzeCandidate({
@@ -670,13 +725,13 @@ async function processFileAsync(jobId: string, buffer: Buffer, filename: string)
           linkedinProfile: linkedInProfile
         }, "", weights as { openToWork: number; skillMatch: number; jobStability: number; engagement: number });
 
-        // Create candidate record
+        // Create candidate record with enhanced data
         await storage.createCandidate({
           name: candidateData.name,
           email: candidateData.email,
           title: linkedInProfile.title || candidateData.title,
           company: linkedInProfile.company || candidateData.company,
-          linkedinUrl: candidateData.linkedinUrl,
+          linkedinUrl: linkedInProfile.profileUrl || candidateData.linkedinUrl, // Use found URL or fallback to CSV URL
           skills: linkedInProfile.skills.length > 0 ? linkedInProfile.skills : candidateData.skills,
           score: analysis.overallScore,
           priority: analysis.priority,
@@ -684,8 +739,16 @@ async function processFileAsync(jobId: string, buffer: Buffer, filename: string)
           lastActive: linkedInProfile.lastActive,
           notes: analysis.insights.join('; '),
           originalData: candidateData.originalData,
-          enrichedData: linkedInProfile
+          enrichedData: linkedInProfile,
+          // Additional fields from CSV
+          atsId: candidateData.atsId,
+          selectionStatus: candidateData.selectionStatus,
+          selectionDate: candidateData.selectionDate ? new Date(candidateData.selectionDate) : null,
+          joiningOutcome: candidateData.joiningOutcome,
+          atsNotes: candidateData.atsNotes
         });
+
+        console.log(`  Final LinkedIn URL saved: ${linkedInProfile.profileUrl || candidateData.linkedinUrl}`);
 
         processed++;
         const progress = 25 + Math.round((processed / candidates.length) * 70);
@@ -700,7 +763,15 @@ async function processFileAsync(jobId: string, buffer: Buffer, filename: string)
 
       } catch (error) {
         console.error(`Error processing candidate ${candidateData.name}:`, error);
-        // Continue with next candidate
+        
+        // Log the error but continue with next candidate
+        await storage.createActivity({
+          type: "error",
+          message: `Failed to process candidate: ${candidateData.name}`,
+          details: error instanceof Error ? error.message : 'Unknown error'
+        });
+        
+        // Continue with next candidate instead of stopping the entire process
       }
     }
 

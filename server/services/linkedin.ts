@@ -48,6 +48,30 @@ interface LinkedInProfile {
   }>;
 }
 
+interface LinkedInSearchResult {
+  url: string;
+  title: string;
+  snippet: string;
+  score: number;
+  name?: string;
+  company?: string;
+  location?: string;
+}
+
+interface LinkedInSearchResponse {
+  query: {
+    name: string;
+    title?: string;
+    company?: string;
+    location?: string;
+    max_results: number;
+  };
+  results: LinkedInSearchResult[];
+  total_results: number;
+  search_time: number;
+  timestamp: string;
+}
+
 export class LinkedInService {
   private apifyClient: ApifyClient;
 
@@ -86,17 +110,25 @@ export class LinkedInService {
 
   /**
    * Search LinkedIn profiles by name and company
-   * Note: Since the people search scraper is not working, we'll use a fallback approach
-   * that generates a likely LinkedIn URL based on the name
+   * Enhanced version that uses the search API with scoring
    */
-  async searchProfiles(name: string, company?: string): Promise<string | null> {
+  async searchProfiles(name: string, company?: string, title?: string, location?: string): Promise<string | null> {
     try {
+      // Try the enhanced search with scoring first
+      const enhancedResult = await this.searchProfilesWithScoring(name, title, company, location);
+      
+      if (enhancedResult) {
+        return enhancedResult;
+      }
+
+      // Fallback to the old method if enhanced search fails
+      console.log('Enhanced search failed, falling back to basic URL generation');
+      
       if (!process.env.APIFY_API_TOKEN) {
         console.log('Using mock LinkedIn search for development');
         return `https://www.linkedin.com/in/${name.toLowerCase().replace(/\s+/g, '-')}/`;
       }
 
-      // Since the people search scraper is not working, we'll use a fallback approach
       // Generate a likely LinkedIn URL based on the name
       console.log(`Generating LinkedIn URL for: ${name} ${company ? `at ${company}` : ''}`);
       
@@ -111,10 +143,6 @@ export class LinkedInService {
       
       console.log(`Generated LinkedIn URL: ${generatedUrl}`);
       
-      // Note: This is a fallback approach. In a production environment,
-      // you would want to implement a proper LinkedIn search API or
-      // use a different search service that's working reliably.
-      
       return generatedUrl;
       
     } catch (error) {
@@ -123,34 +151,365 @@ export class LinkedInService {
     }
   }
 
+  /**
+   * Search LinkedIn profiles with scoring and return multiple results
+   * This method will call the search endpoint and select the best match
+   */
+  async searchProfilesWithScoring(
+    name: string, 
+    title?: string, 
+    company?: string, 
+    location?: string,
+    maxResults: number = 10
+  ): Promise<string | null> {
+    try {
+      console.log(`Searching LinkedIn profiles for: ${name} ${title ? `(${title})` : ''} ${company ? `at ${company}` : ''}`);
+      
+      // Call the search endpoint
+      const searchResponse = await this.callLinkedInSearchAPI(name, title, company, location, maxResults);
+      
+      if (!searchResponse || !searchResponse.results || searchResponse.results.length === 0) {
+        console.log('No LinkedIn search results found');
+        return null;
+      }
 
+      console.log(`Found ${searchResponse.results.length} LinkedIn profiles for ${name}`);
+      
+      // Select the best match based on scoring
+      const bestMatch = this.selectBestMatch(searchResponse.results, name, title, company, location);
+      
+      if (bestMatch) {
+        console.log(`Selected best match: ${bestMatch.url} (score: ${bestMatch.score})`);
+        return bestMatch.url;
+      }
+
+      console.log('No suitable match found among search results');
+      return null;
+
+    } catch (error) {
+      console.error('LinkedIn profile search with scoring failed:', error);
+      return null;
+    }
+  }
+
+  /**
+   * Call the LinkedIn search API endpoint
+   */
+  private async callLinkedInSearchAPI(
+    name: string,
+    title?: string,
+    company?: string,
+    location?: string,
+    maxResults: number = 10
+  ): Promise<LinkedInSearchResponse | null> {
+    try {
+      const searchUrl = 'http://localhost:8000/search';
+      
+      const searchPayload = {
+        name: name,
+        title: title,
+        company: company,
+        location: location,
+        max_results: maxResults
+      };
+
+      console.log(`Calling LinkedIn search API: ${searchUrl}`);
+      console.log('Search payload:', JSON.stringify(searchPayload, null, 2));
+
+      const response = await fetch(searchUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(searchPayload),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Search API responded with status: ${response.status}`);
+      }
+
+      const searchResponse: LinkedInSearchResponse = await response.json();
+      console.log(`Search API response: ${searchResponse.total_results} results in ${searchResponse.search_time}ms`);
+      
+      return searchResponse;
+
+    } catch (error) {
+      console.error('LinkedIn search API call failed:', error);
+      return null;
+    }
+  }
+
+  /**
+   * Select the best match from search results based on maximum score
+   */
+  private selectBestMatch(
+    results: LinkedInSearchResult[],
+    targetName: string,
+    targetTitle?: string,
+    targetCompany?: string,
+    targetLocation?: string
+  ): LinkedInSearchResult | null {
+    if (results.length === 0) return null;
+
+    // If only one result, return it if score is reasonable
+    if (results.length === 1) {
+      return results[0].score >= 5.0 ? results[0] : null;
+    }
+
+    // Sort by base API score (descending) - use maximum score result
+    const sortedResults = [...results].sort((a, b) => b.score - a.score);
+    
+    console.log('Base API scoring results:');
+    sortedResults.forEach((result, index) => {
+      console.log(`${index + 1}. ${result.url} - Score: ${result.score.toFixed(2)}`);
+    });
+
+    const maxScore = sortedResults[0].score;
+    
+    // Find all results with the maximum score
+    const maxScoreResults = sortedResults.filter(result => result.score === maxScore);
+    
+    console.log(`Found ${maxScoreResults.length} results with maximum score: ${maxScore.toFixed(2)}`);
+    
+    // If only one result has the maximum score, return it
+    if (maxScoreResults.length === 1) {
+      console.log(`Selected result with maximum score: ${maxScore.toFixed(2)}`);
+      return maxScoreResults[0];
+    }
+    
+    // If multiple results have the same maximum score, apply field matching
+    console.log('Multiple results with same score, applying field matching...');
+    
+    const fieldMatchedResults = maxScoreResults.map(result => {
+      let matchScore = 0;
+      let matchFactors: string[] = [];
+
+      // Name matching
+      const nameMatchScore = this.calculateNameMatchScore(result, targetName);
+      matchScore += nameMatchScore;
+      if (nameMatchScore > 0.8) matchFactors.push('exact_name');
+
+      // Title matching
+      if (targetTitle && result.title) {
+        const titleMatchScore = this.calculateTitleMatchScore(result.title, targetTitle);
+        matchScore += titleMatchScore;
+        if (titleMatchScore > 0.7) matchFactors.push('title_match');
+      }
+
+      // Company matching
+      if (targetCompany && result.company) {
+        const companyMatchScore = this.calculateCompanyMatchScore(result.company, targetCompany);
+        matchScore += companyMatchScore;
+        if (companyMatchScore > 0.8) matchFactors.push('company_match');
+      }
+
+      // Location matching
+      if (targetLocation && result.location) {
+        const locationMatchScore = this.calculateLocationMatchScore(result.location, targetLocation);
+        matchScore += locationMatchScore;
+        if (locationMatchScore > 0.8) matchFactors.push('location_match');
+      }
+
+      // Snippet relevance
+      const snippetScore = this.calculateSnippetRelevance(result.snippet, targetName, targetTitle, targetCompany);
+      matchScore += snippetScore;
+
+      return {
+        ...result,
+        fieldMatchScore: matchScore,
+        matchFactors
+      };
+    });
+
+    // Sort by field match score (descending)
+    fieldMatchedResults.sort((a, b) => b.fieldMatchScore - a.fieldMatchScore);
+
+    console.log('Field matching results for same-score candidates:');
+    fieldMatchedResults.forEach((result, index) => {
+      console.log(`${index + 1}. ${result.url} - Field Score: ${result.fieldMatchScore.toFixed(2)} (${result.matchFactors.join(', ')})`);
+    });
+
+    // Return the best match based on field matching
+    const bestMatch = fieldMatchedResults[0];
+    console.log(`Selected best match with field score: ${bestMatch.fieldMatchScore.toFixed(2)}`);
+    return bestMatch;
+  }
+
+  /**
+   * Calculate name matching score
+   */
+  private calculateNameMatchScore(result: LinkedInSearchResult, targetName: string): number {
+    const resultName = result.name || this.extractNameFromTitle(result.title);
+    if (!resultName) return 0;
+
+    const targetNormalized = targetName.toLowerCase().replace(/[^a-z\s]/g, '');
+    const resultNormalized = resultName.toLowerCase().replace(/[^a-z\s]/g, '');
+
+    // Exact match
+    if (targetNormalized === resultNormalized) return 1.0;
+
+    // Check if all words from target name are present in result name
+    const targetWords = targetNormalized.split(/\s+/).filter(word => word.length > 1);
+    const resultWords = resultNormalized.split(/\s+/).filter(word => word.length > 1);
+
+    if (targetWords.length === 0) return 0;
+
+    const matchingWords = targetWords.filter(word => 
+      resultWords.some(resultWord => 
+        resultWord.includes(word) || word.includes(resultWord)
+      )
+    );
+
+    return matchingWords.length / targetWords.length;
+  }
+
+  /**
+   * Calculate title matching score
+   */
+  private calculateTitleMatchScore(resultTitle: string, targetTitle: string): number {
+    const resultNormalized = resultTitle.toLowerCase().replace(/[^a-z\s]/g, '');
+    const targetNormalized = targetTitle.toLowerCase().replace(/[^a-z\s]/g, '');
+
+    // Exact match
+    if (resultNormalized === targetNormalized) return 1.0;
+
+    // Check for key terms
+    const targetWords = targetNormalized.split(/\s+/).filter(word => word.length > 2);
+    const resultWords = resultNormalized.split(/\s+/).filter(word => word.length > 2);
+
+    if (targetWords.length === 0) return 0;
+
+    const matchingWords = targetWords.filter(word => 
+      resultWords.some(resultWord => 
+        resultWord.includes(word) || word.includes(resultWord)
+      )
+    );
+
+    return matchingWords.length / targetWords.length;
+  }
+
+  /**
+   * Calculate company matching score
+   */
+  private calculateCompanyMatchScore(resultCompany: string, targetCompany: string): number {
+    const resultNormalized = resultCompany.toLowerCase().replace(/[^a-z\s]/g, '');
+    const targetNormalized = targetCompany.toLowerCase().replace(/[^a-z\s]/g, '');
+
+    // Exact match
+    if (resultNormalized === targetNormalized) return 1.0;
+
+    // Check for key terms
+    const targetWords = targetNormalized.split(/\s+/).filter(word => word.length > 2);
+    const resultWords = resultNormalized.split(/\s+/).filter(word => word.length > 2);
+
+    if (targetWords.length === 0) return 0;
+
+    const matchingWords = targetWords.filter(word => 
+      resultWords.some(resultWord => 
+        resultWord.includes(word) || word.includes(resultWord)
+      )
+    );
+
+    return matchingWords.length / targetWords.length;
+  }
+
+  /**
+   * Calculate location matching score
+   */
+  private calculateLocationMatchScore(resultLocation: string, targetLocation: string): number {
+    const resultNormalized = resultLocation.toLowerCase().replace(/[^a-z\s]/g, '');
+    const targetNormalized = targetLocation.toLowerCase().replace(/[^a-z\s]/g, '');
+
+    // Exact match
+    if (resultNormalized === targetNormalized) return 1.0;
+
+    // Check for key terms
+    const targetWords = targetNormalized.split(/\s+/).filter(word => word.length > 2);
+    const resultWords = resultNormalized.split(/\s+/).filter(word => word.length > 2);
+
+    if (targetWords.length === 0) return 0;
+
+    const matchingWords = targetWords.filter(word => 
+      resultWords.some(resultWord => 
+        resultWord.includes(word) || word.includes(resultWord)
+      )
+    );
+
+    return matchingWords.length / targetWords.length;
+  }
+
+  /**
+   * Calculate snippet relevance score
+   */
+  private calculateSnippetRelevance(
+    snippet: string, 
+    targetName: string, 
+    targetTitle?: string, 
+    targetCompany?: string
+  ): number {
+    const snippetLower = snippet.toLowerCase();
+    let relevanceScore = 0;
+
+    // Name in snippet
+    if (snippetLower.includes(targetName.toLowerCase())) {
+      relevanceScore += 0.5;
+    }
+
+    // Title in snippet
+    if (targetTitle && snippetLower.includes(targetTitle.toLowerCase())) {
+      relevanceScore += 0.3;
+    }
+
+    // Company in snippet
+    if (targetCompany && snippetLower.includes(targetCompany.toLowerCase())) {
+      relevanceScore += 0.2;
+    }
+
+    return relevanceScore;
+  }
+
+  /**
+   * Extract name from title if available
+   */
+  private extractNameFromTitle(title: string): string | null {
+    // Simple extraction - look for patterns like "John Smith - Software Engineer"
+    const nameMatch = title.match(/^([^-|–]+)/);
+    return nameMatch ? nameMatch[1].trim() : null;
+  }
 
   /**
    * Enrich candidate profile using LinkedIn search and scraping
    */
-  async enrichProfile(linkedinUrl?: string, name?: string, company?: string): Promise<LinkedInProfile | null> {
+  async enrichProfile(linkedinUrl?: string, name?: string, company?: string, title?: string, location?: string): Promise<LinkedInProfile | null> {
     let normalizedUrl: string | null = null;
+    let foundLinkedInUrl: string | null = null;
     
     try {
       let profileUrl = linkedinUrl;
 
       // If no LinkedIn URL provided or URL doesn't exist, search for it
       if (!profileUrl && name) {
-        profileUrl = await this.searchProfiles(name, company) || undefined;
+        profileUrl = await this.searchProfiles(name, company, title, location) || undefined;
+        if (profileUrl) {
+          foundLinkedInUrl = profileUrl; // Store the found URL
+          console.log(`Found LinkedIn URL through search: ${foundLinkedInUrl}`);
+        }
+      } else if (profileUrl) {
+        foundLinkedInUrl = profileUrl; // Use the provided URL
       }
 
       if (!profileUrl) {
-        throw new Error('No LinkedIn profile found');
+        throw new Error(`No LinkedIn profile found for ${name}`);
       }
 
       normalizedUrl = this.normalizeLinkedInUrl(profileUrl);
       if (!normalizedUrl) {
-        throw new Error('Invalid LinkedIn URL format');
+        throw new Error(`Invalid LinkedIn URL format: ${profileUrl}`);
       }
 
+      // Check if APIFY_API_TOKEN is configured
       if (!process.env.APIFY_API_TOKEN) {
-        console.log('Using mock LinkedIn data for development');
-        return this.getMockProfile(normalizedUrl);
+        throw new Error('APIFY_API_TOKEN not configured. LinkedIn enrichment requires valid API credentials.');
       }
 
       // Use dev_fusion's LinkedIn Profile Scraper (no cookies required)
@@ -172,34 +531,35 @@ export class LinkedInService {
         const { items } = await this.apifyClient.dataset(run.defaultDatasetId).listItems();
         
         if (!items || items.length === 0) {
-          throw new Error('No profile data found');
+          throw new Error(`No profile data found for URL: ${normalizedUrl}`);
         }
 
         const profileData = items[0];
+        const enrichedProfile = this.transformApifyData(profileData);
         
-        return this.transformApifyData(profileData);
-      } catch (apifyError: any) {
-        // Check if it's a permissions error
-        if (apifyError.statusCode === 403 && apifyError.type === 'insufficient-permissions') {
-          console.log('Apify actor requires paid subscription. Falling back to mock data.');
-          return this.getMockProfile(normalizedUrl);
+        // Ensure the found LinkedIn URL is set in the enriched profile
+        if (foundLinkedInUrl) {
+          enrichedProfile.profileUrl = foundLinkedInUrl;
+          console.log(`Set LinkedIn URL in enriched profile: ${foundLinkedInUrl}`);
         }
         
-        // For other Apify errors, throw the original error
-        throw apifyError;
+        return enrichedProfile;
+      } catch (apifyError: any) {
+        // Handle specific Apify errors
+        if (apifyError.statusCode === 403 && apifyError.type === 'insufficient-permissions') {
+          throw new Error('Apify API access denied. Please check your subscription and API credentials.');
+        } else if (apifyError.statusCode === 429) {
+          throw new Error('Apify API rate limit exceeded. Please try again later.');
+        } else if (apifyError.statusCode === 500) {
+          throw new Error('Apify service temporarily unavailable. Please try again later.');
+        } else {
+          throw new Error(`Apify API error: ${apifyError.message || 'Unknown error occurred'}`);
+        }
       }
       
     } catch (error) {
       console.error('LinkedIn profile enrichment failed:', error);
-      
-      // If we have a URL but Apify failed, try to return mock data
-      if (linkedinUrl || name) {
-        console.log('Falling back to mock LinkedIn data due to API failure');
-        const fallbackUrl = normalizedUrl || `https://www.linkedin.com/in/${name?.toLowerCase().replace(/\s+/g, '-')}/`;
-        return this.getMockProfile(fallbackUrl);
-      }
-      
-      return null;
+      throw error; // Re-throw the error instead of falling back to mock data
     }
   }
 
@@ -280,140 +640,6 @@ export class LinkedInService {
     const fullText = `${profile} ${posts}`;
 
     return openSignals.some(signal => fullText.includes(signal));
-  }
-
-  /**
-   * Generate mock profile data for development/testing
-   */
-  private getMockProfile(url: string): LinkedInProfile {
-    const profiles = [
-      {
-        // Required fields
-        name: "Alex Thompson",
-        title: "Senior Full Stack Developer",
-        company: "TechCorp Inc",
-        skills: ["JavaScript", "React", "Node.js", "Python", "AWS", "Docker"],
-        openToWork: false,
-        lastActive: "1 week ago",
-        profileUrl: url,
-        jobHistory: [
-          {
-            role: "Senior Software Engineer",
-            company: "TechCorp Inc",
-            duration: "2 years 3 months"
-          },
-          {
-            role: "Software Engineer", 
-            company: "StartupXYZ",
-            duration: "2 years"
-          }
-        ],
-        recentActivity: [
-          "Shared an article about React best practices",
-          "Posted about new API performance improvements"
-        ],
-        
-        // Additional fields
-        headline: "Senior Full Stack Developer | React & Node.js Expert",
-        location: "San Francisco, CA",
-        summary: "Passionate software developer with 5+ years of experience building scalable web applications. Specialized in React, Node.js, and cloud technologies.",
-        experience: [
-          {
-            title: "Senior Software Engineer",
-            company: "TechCorp Inc",
-            duration: "2022 - Present",
-            description: "Leading development of customer-facing applications using React and Node.js"
-          },
-          {
-            title: "Software Engineer",
-            company: "StartupXYZ",
-            duration: "2020 - 2022",
-            description: "Built full-stack applications and improved system performance by 40%"
-          }
-        ],
-        education: [
-          {
-            school: "Stanford University",
-            degree: "Bachelor's Degree",
-            field: "Computer Science",
-            years: "2016 - 2020"
-          }
-        ],
-        connections: 847,
-        currentCompany: "TechCorp Inc",
-        currentPosition: "Senior Software Engineer",
-        industry: "Information Technology",
-        languages: ["English", "Spanish"],
-        certifications: [
-          {
-            name: "AWS Certified Solutions Architect",
-            issuer: "Amazon Web Services",
-            date: "2023"
-          }
-        ],
-        posts: [
-          {
-            text: "Just shipped a new feature that improves our API response time by 50%! 🚀",
-            date: "2024-01-15",
-            engagement: 45
-          }
-        ]
-      },
-      {
-        // Required fields
-        name: "Maria Garcia",
-        title: "Senior Product Manager",
-        company: "Google",
-        skills: ["Product Management", "Machine Learning", "Data Analysis", "Strategy"],
-        openToWork: false,
-        lastActive: "5 days ago",
-        profileUrl: url,
-        jobHistory: [
-          {
-            role: "Senior Product Manager",
-            company: "Google",
-            duration: "3 years 2 months"
-          },
-          {
-            role: "Product Manager",
-            company: "Microsoft",
-            duration: "2 years 8 months"
-          }
-        ],
-        recentActivity: [
-          "Posted about AI product strategy",
-          "Shared insights on machine learning applications"
-        ],
-        
-        // Additional fields
-        headline: "Product Manager | AI & Machine Learning",
-        location: "New York, NY",
-        summary: "Strategic product manager with expertise in AI/ML products. Previously at Google and Microsoft.",
-        experience: [
-          {
-            title: "Senior Product Manager",
-            company: "Google",
-            duration: "2021 - Present",
-            description: "Leading AI product initiatives for Google Cloud"
-          }
-        ],
-        education: [
-          {
-            school: "MIT",
-            degree: "Master's Degree",
-            field: "Computer Science",
-            years: "2018 - 2020"
-          }
-        ],
-        connections: 1205,
-        currentCompany: "Google",
-        currentPosition: "Senior Product Manager",
-        industry: "Technology",
-        languages: ["English", "Spanish", "Portuguese"]
-      }
-    ];
-    
-    return profiles[Math.floor(Math.random() * profiles.length)];
   }
 
   /**

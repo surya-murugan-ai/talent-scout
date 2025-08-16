@@ -28,6 +28,7 @@ export interface LinkedInProfile {
     duration: string;
   }>;
   recentActivity: string[];
+  profileUrl?: string; // Added profileUrl to the interface
 }
 
 export async function analyzeCandidate(
@@ -103,24 +104,28 @@ Respond with JSON in this exact format:
 // Real LinkedIn API integration using Apify
 import { linkedInService } from './linkedin';
 
-export async function enrichLinkedInProfile(linkedinUrl: string | undefined, name: string, company?: string): Promise<LinkedInProfile> {
-  console.log(`Enriching LinkedIn profile for: ${name} ${company ? `at ${company}` : ''}`);
+export async function enrichLinkedInProfile(linkedinUrl: string | undefined, name: string, company?: string, title?: string, location?: string): Promise<LinkedInProfile> {
+  console.log(`Enriching LinkedIn profile for: ${name} ${title ? `(${title})` : ''} ${company ? `at ${company}` : ''} ${location ? `in ${location}` : ''}`);
   
   try {
-    // Use the updated enrichProfile method that can search by name
-    const profile = await linkedInService.enrichProfile(linkedinUrl, name, company);
+    // Use the updated enrichProfile method that can search by name with enhanced scoring
+    const profile = await linkedInService.enrichProfile(linkedinUrl, name, company, title, location);
     
     if (!profile) {
-      throw new Error('Failed to fetch LinkedIn profile');
+      throw new Error('Failed to fetch LinkedIn profile - no data returned');
     }
+
+    // Enhanced "Open to Work" detection
+    const openToWork = detectOpenToWorkStatus(profile, title);
 
     return {
       name: profile.name || name,
-      title: profile.headline || profile.currentPosition || "Professional",
+      title: profile.headline || profile.currentPosition || title || "Professional",
       company: profile.currentCompany || company || "Unknown Company",
       skills: profile.skills || [],
-      openToWork: profile.headline?.toLowerCase().includes('open to') || false,
+      openToWork: openToWork,
       lastActive: "Recently active",
+      profileUrl: profile.profileUrl, // Return the LinkedIn URL!
       jobHistory: profile.experience?.map(exp => ({
         company: exp.company,
         role: exp.title,
@@ -130,20 +135,73 @@ export async function enrichLinkedInProfile(linkedinUrl: string | undefined, nam
     };
 
   } catch (error) {
-    console.error('LinkedIn enrichment failed, falling back to AI generation:', error);
+    console.error('LinkedIn enrichment failed:', error);
     
-    // Fallback to AI-generated profile if real LinkedIn API fails
-    return await generateLinkedInProfile(name, company);
+    // Instead of falling back to AI generation, throw a clear error
+    throw new Error(`LinkedIn enrichment failed for ${name}: ${error instanceof Error ? error.message : 'Unknown error'}`);
   }
 }
 
-// Fallback AI-generated LinkedIn profile
-async function generateLinkedInProfile(name: string, company?: string): Promise<LinkedInProfile> {
+/**
+ * Enhanced function to detect if a candidate is open to work
+ */
+function detectOpenToWorkStatus(profile: any, candidateTitle?: string): boolean {
+  const openSignals = [
+    'open to work',
+    'open for opportunity',
+    'open for opportunities',
+    'seeking',
+    'looking for',
+    'available',
+    'opportunity',
+    'opportunities',
+    'job search',
+    'actively looking',
+    'actively seeking',
+    'open to new opportunities',
+    'open to new roles',
+    'open to new positions',
+    'available for opportunities',
+    'seeking new opportunities',
+    'looking for new opportunities',
+    'open to work',
+    'open for work',
+    'available for work'
+  ];
+
+  // Check multiple fields for open to work signals
+  const fieldsToCheck = [
+    profile.headline || '',
+    profile.title || '',
+    profile.currentPosition || '',
+    profile.summary || '',
+    profile.about || '',
+    candidateTitle || '', // Check the original candidate title from CSV
+    ...(profile.posts || []).map((post: any) => post.text || ''),
+    ...(profile.recentActivity || [])
+  ];
+
+  const fullText = fieldsToCheck.join(' ').toLowerCase();
+  
+  // Check if any open signal is present
+  const hasOpenSignal = openSignals.some(signal => fullText.includes(signal));
+  
+  // Log the detection for debugging
+  if (hasOpenSignal) {
+    console.log(`Open to Work detected for ${profile.name || 'candidate'}: Found signals in text`);
+  }
+  
+  return hasOpenSignal;
+}
+
+// Update the fallback function to also use the enhanced detection
+async function generateLinkedInProfile(name: string, company?: string, title?: string): Promise<LinkedInProfile> {
   try {
     const prompt = `
 Generate a realistic LinkedIn profile enrichment for a candidate with the following information:
 Name: ${name}
 ${company ? `Current Company: ${company}` : ''}
+${title ? `Current Title: ${title}` : ''}
 
 Create a realistic professional profile that includes:
 - Current job title
@@ -151,6 +209,8 @@ Create a realistic professional profile that includes:
 - Job history with realistic companies and durations
 - Recent professional activity indicators
 - Open to work status based on typical patterns
+
+IMPORTANT: If the title contains phrases like "Open for Opportunity", "Seeking", "Looking for", "Available", etc., set openToWork to true.
 
 Respond with JSON in this exact format:
 {
@@ -189,12 +249,15 @@ Respond with JSON in this exact format:
 
     const profile = JSON.parse(response.choices[0].message.content || "{}");
     
+    // Use enhanced detection for fallback profiles too
+    const openToWork = detectOpenToWorkStatus(profile, title);
+    
     return {
       name: profile.name || name,
-      title: profile.title || "Professional",
+      title: profile.title || title || "Professional",
       company: profile.company || company || "Unknown Company",
       skills: Array.isArray(profile.skills) ? profile.skills : [],
-      openToWork: Boolean(profile.openToWork),
+      openToWork: openToWork,
       lastActive: profile.lastActive || "1 week ago",
       jobHistory: Array.isArray(profile.jobHistory) ? profile.jobHistory : [],
       recentActivity: Array.isArray(profile.recentActivity) ? profile.recentActivity : []
@@ -202,17 +265,22 @@ Respond with JSON in this exact format:
 
   } catch (error) {
     console.error('LinkedIn enrichment error:', error);
-    // Return basic profile on error
-    return {
+    // Return basic profile on error with enhanced detection
+    const basicProfile = {
       name,
-      title: "Professional",
+      title: title || "Professional",
       company: company || "Unknown Company",
       skills: [],
       openToWork: false,
-      lastActive: "Unknown",
+      lastActive: "1 week ago",
       jobHistory: [],
       recentActivity: []
     };
+    
+    // Apply enhanced detection even to basic profiles
+    basicProfile.openToWork = detectOpenToWorkStatus(basicProfile, title);
+    
+    return basicProfile;
   }
 }
 

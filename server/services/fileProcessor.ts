@@ -9,6 +9,14 @@ export interface ProcessedCandidate {
   company?: string;
   skills?: string[];
   linkedinUrl?: string;
+  location?: string;
+  phone?: string;
+  experience?: string;
+  atsId?: string;
+  selectionStatus?: string;
+  selectionDate?: string;
+  joiningOutcome?: string;
+  atsNotes?: string;
   [key: string]: any;
 }
 
@@ -58,7 +66,15 @@ export class FileProcessor {
       title: ['title', 'job_title', 'position', 'role', 'Title', 'Job Title', 'Position'],
       company: ['company', 'employer', 'current_company', 'Company', 'Employer', 'Current Company'],
       skills: ['skills', 'skill_set', 'technologies', 'Skills', 'Technologies'],
-      linkedinUrl: ['linkedin', 'linkedin_url', 'linkedinUrl', 'LinkedIn', 'LinkedIn URL']
+      linkedinUrl: ['linkedin', 'linkedin_url', 'linkedinUrl', 'LinkedIn', 'LinkedIn URL'],
+      location: ['location', 'city', 'Location', 'City'],
+      phone: ['phone', 'phone_number', 'Phone', 'Phone Number'],
+      experience: ['experience', 'years_experience', 'Experience', 'Years Experience'],
+      atsId: ['atsId', 'ats_id', 'ATS ID', 'Candidate ID'],
+      selectionStatus: ['selectionStatus', 'selection_status', 'Status', 'Selection Status'],
+      selectionDate: ['selectionDate', 'selection_date', 'Date', 'Selection Date'],
+      joiningOutcome: ['joiningOutcome', 'joining_outcome', 'Outcome', 'Joining Outcome'],
+      atsNotes: ['atsNotes', 'ats_notes', 'Notes', 'ATS Notes']
     };
 
     const candidate: ProcessedCandidate = { name: '' };

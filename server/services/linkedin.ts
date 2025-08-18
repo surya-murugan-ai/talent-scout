@@ -1,4 +1,6 @@
 import { ApifyClient } from 'apify-client';
+import * as fs from 'fs';
+import * as path from 'path';
 
 interface LinkedInProfile {
   name: string;
@@ -72,6 +74,42 @@ interface LinkedInSearchResponse {
   timestamp: string;
 }
 
+interface ApifyLinkedInSearchInput {
+  currentCompanies?: string[];
+  currentJobTitles?: string[];
+  firstNames?: string[];
+  lastNames?: string[];
+  locations?: string[];
+  maxItems?: number;
+  pastCompanies?: string[];
+  pastJobTitles?: string[];
+  profileScraperMode?: string;
+  schools?: string[];
+}
+
+interface ApifyLinkedInSearchResult {
+  profileUrl: string;
+  name: string;
+  headline?: string;
+  location?: string;
+  currentCompany?: string;
+  currentPosition?: string;
+  summary?: string;
+  experience?: Array<{
+    title: string;
+    company: string;
+    duration: string;
+  }>;
+  education?: Array<{
+    school: string;
+    degree: string;
+    field: string;
+  }>;
+  skills?: string[];
+  connections?: number;
+  profilePicture?: string;
+}
+
 export class LinkedInService {
   private apifyClient: ApifyClient;
 
@@ -83,6 +121,98 @@ export class LinkedInService {
     this.apifyClient = new ApifyClient({
       token: apifyToken,
     });
+  }
+
+  /**
+   * Save raw harvestapi results to a JSON file
+   */
+  private saveHarvestApiResults(data: any, searchQuery: string, timestamp: string = new Date().toISOString()): void {
+    try {
+      // Create results directory if it doesn't exist
+      const resultsDir = path.join(process.cwd(), 'harvestapi-results');
+      if (!fs.existsSync(resultsDir)) {
+        fs.mkdirSync(resultsDir, { recursive: true });
+      }
+
+      // Create filename with timestamp and search query
+      const sanitizedQuery = searchQuery.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '_');
+      const filename = `harvestapi_${sanitizedQuery}_${timestamp.replace(/[:.]/g, '-')}.json`;
+      const filepath = path.join(resultsDir, filename);
+
+      // Save the raw data
+      const resultData = {
+        timestamp: timestamp,
+        searchQuery: searchQuery,
+        rawData: data,
+        metadata: {
+          totalResults: Array.isArray(data) ? data.length : 1,
+          source: 'harvestapi/linkedin-profile-search',
+          savedAt: new Date().toISOString()
+        }
+      };
+
+      fs.writeFileSync(filepath, JSON.stringify(resultData, null, 2));
+      console.log(`✅ HarvestAPI results saved to: ${filepath}`);
+      
+      // Also save a summary file
+      this.saveResultsSummary(resultData, filepath);
+      
+    } catch (error) {
+      console.error('❌ Failed to save HarvestAPI results:', error);
+    }
+  }
+
+  /**
+   * Save a summary of the results
+   */
+  private saveResultsSummary(resultData: any, originalFilepath: string): void {
+    try {
+      const summaryDir = path.join(process.cwd(), 'harvestapi-results', 'summaries');
+      if (!fs.existsSync(summaryDir)) {
+        fs.mkdirSync(summaryDir, { recursive: true });
+      }
+
+      const filename = path.basename(originalFilepath, '.json') + '_summary.json';
+      const summaryPath = path.join(summaryDir, filename);
+
+      // Create a summary with key information
+      const summary = {
+        timestamp: resultData.timestamp,
+        searchQuery: resultData.searchQuery,
+        totalResults: resultData.metadata.totalResults,
+        profiles: Array.isArray(resultData.rawData) ? resultData.rawData.map((profile: any, index: number) => ({
+          index: index + 1,
+          name: `${profile.firstName || ''} ${profile.lastName || ''}`.trim(),
+          headline: profile.headline || 'N/A',
+          location: profile['location/linkedinText'] || profile.location?.linkedinText || 'N/A',
+          currentCompany: profile['currentPosition/0/companyName'] || profile.currentPosition?.[0]?.companyName || 'N/A',
+          currentPosition: profile['currentPosition/0/position'] || profile.currentPosition?.[0]?.position || 'N/A',
+          linkedinUrl: profile.linkedinUrl || 'N/A',
+          connectionsCount: profile.connectionsCount || 'N/A',
+          skillsCount: profile.skills ? (Array.isArray(profile.skills) ? profile.skills.length : 0) : 0,
+          experienceCount: profile.experience ? (Array.isArray(profile.experience) ? profile.experience.length : 0) : 0,
+          educationCount: profile.education ? (Array.isArray(profile.education) ? profile.education.length : 0) : 0
+        })) : [{
+          name: `${resultData.rawData.firstName || ''} ${resultData.rawData.lastName || ''}`.trim(),
+          headline: resultData.rawData.headline || 'N/A',
+          location: resultData.rawData['location/linkedinText'] || resultData.rawData.location?.linkedinText || 'N/A',
+          currentCompany: resultData.rawData['currentPosition/0/companyName'] || resultData.rawData.currentPosition?.[0]?.companyName || 'N/A',
+          currentPosition: resultData.rawData['currentPosition/0/position'] || resultData.rawData.currentPosition?.[0]?.position || 'N/A',
+          linkedinUrl: resultData.rawData.linkedinUrl || 'N/A',
+          connectionsCount: resultData.rawData.connectionsCount || 'N/A',
+          skillsCount: resultData.rawData.skills ? (Array.isArray(resultData.rawData.skills) ? resultData.rawData.skills.length : 0) : 0,
+          experienceCount: resultData.rawData.experience ? (Array.isArray(resultData.rawData.experience) ? resultData.rawData.experience.length : 0) : 0,
+          educationCount: resultData.rawData.education ? (Array.isArray(resultData.rawData.education) ? resultData.rawData.education.length : 0) : 0
+        }],
+        originalFile: path.basename(originalFilepath)
+      };
+
+      fs.writeFileSync(summaryPath, JSON.stringify(summary, null, 2));
+      console.log(`📋 Results summary saved to: ${summaryPath}`);
+      
+    } catch (error) {
+      console.error('❌ Failed to save results summary:', error);
+    }
   }
 
   /**
@@ -109,41 +239,139 @@ export class LinkedInService {
   }
 
   /**
-   * Search LinkedIn profiles by name and company
-   * Enhanced version that uses the search API with scoring
+   * Extract company LinkedIn URLs from uploaded candidate data
    */
-  async searchProfiles(name: string, company?: string, title?: string, location?: string): Promise<string | null> {
-    try {
-      // Try the enhanced search with scoring first
-      const enhancedResult = await this.searchProfilesWithScoring(name, title, company, location);
-      
-      if (enhancedResult) {
-        return enhancedResult;
+  private extractCompanyLinkedInUrls(candidates: any[]): string[] {
+    const companyUrls: string[] = [];
+    
+    candidates.forEach(candidate => {
+      if (candidate.company) {
+        // Try to find LinkedIn URL in the company field
+        const linkedInMatch = candidate.company.match(/linkedin\.com\/company\/([^\/\s]+)/i);
+        if (linkedInMatch) {
+          companyUrls.push(`https://www.linkedin.com/company/${linkedInMatch[1]}/`);
+        }
       }
+      
+      // Check if there's a separate LinkedIn URL field
+      if (candidate.linkedinUrl && candidate.linkedinUrl.includes('linkedin.com/company/')) {
+        companyUrls.push(candidate.linkedinUrl);
+      }
+    });
+    
+    // Remove duplicates
+    return Array.from(new Set(companyUrls));
+  }
 
-      // Fallback to the old method if enhanced search fails
-      console.log('Enhanced search failed, falling back to basic URL generation');
+  /**
+   * Search LinkedIn profiles using Apify harvestapi/linkedin-profile-search
+   */
+  async searchProfilesWithApify(
+    name: string,
+    title?: string,
+    company?: string,
+    location?: string,
+    maxResults: number = 20,
+    candidates?: any[]
+  ): Promise<string | null> {
+    try {
+      console.log(`Searching LinkedIn profiles with Apify for: ${name} ${title ? `(${title})` : ''} ${company ? `at ${company}` : ''}`);
       
       if (!process.env.APIFY_API_TOKEN) {
-        console.log('Using mock LinkedIn search for development');
-        return `https://www.linkedin.com/in/${name.toLowerCase().replace(/\s+/g, '-')}/`;
+        console.warn('APIFY_API_TOKEN not configured. Cannot use Apify search.');
+        return null;
       }
 
-      // Generate a likely LinkedIn URL based on the name
-      console.log(`Generating LinkedIn URL for: ${name} ${company ? `at ${company}` : ''}`);
+      // Prepare search input
+      const searchInput: ApifyLinkedInSearchInput = {
+        profileScraperMode: "Full",
+        maxItems: maxResults,
+        locations: location ? [location] : [],
+        currentJobTitles: title ? [title] : [],
+      };
+
+      // Extract company LinkedIn URLs from uploaded data
+      if (candidates && candidates.length > 0) {
+        const companyUrls = this.extractCompanyLinkedInUrls(candidates);
+        if (companyUrls.length > 0) {
+          searchInput.currentCompanies = companyUrls;
+          searchInput.pastCompanies = companyUrls;
+          console.log(`Using ${companyUrls.length} company LinkedIn URLs from uploaded data`);
+        }
+      }
+
+      // Add company if provided
+      if (company) {
+        if (!searchInput.currentCompanies) searchInput.currentCompanies = [];
+        searchInput.currentCompanies.push(company);
+      }
+
+      // Split name into first and last name if possible
+      const nameParts = name.trim().split(/\s+/);
+      if (nameParts.length >= 2) {
+        searchInput.firstNames = [nameParts[0]];
+        searchInput.lastNames = [nameParts[nameParts.length - 1]];
+      } else if (nameParts.length === 1) {
+        searchInput.firstNames = [nameParts[0]];
+      }
+
+      console.log('Apify search input:', JSON.stringify(searchInput, null, 2));
+
+      // Run the Apify actor
+      const run = await this.apifyClient.actor("harvestapi/linkedin-profile-search").call(searchInput);
       
-      // Create a URL-friendly version of the name
-      const urlFriendlyName = name.toLowerCase()
-        .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
-        .replace(/\s+/g, '-') // Replace spaces with hyphens
-        .replace(/-+/g, '-') // Replace multiple hyphens with single
-        .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
+      // Fetch results
+      const { items } = await this.apifyClient.dataset(run.defaultDatasetId).listItems();
       
-      const generatedUrl = `https://www.linkedin.com/in/${urlFriendlyName}/`;
+      // Save the raw harvestapi results
+      const searchQuery = `${name} ${title || ''} ${company || ''} ${location || ''}`.trim();
+      this.saveHarvestApiResults(items, searchQuery);
       
-      console.log(`Generated LinkedIn URL: ${generatedUrl}`);
+      if (!items || items.length === 0) {
+        console.log('No LinkedIn profiles found with Apify search');
+        return null;
+      }
+
+      console.log(`Found ${items.length} LinkedIn profiles with Apify search`);
       
-      return generatedUrl;
+      // If we have results, use the first one (no scoring needed)
+      if (items.length > 0) {
+        const firstResult = items[0];
+        console.log('Using first result from Apify search:', {
+          name: firstResult.firstName + ' ' + firstResult.lastName,
+          currentPosition: firstResult['currentPosition/0/companyName'],
+          location: firstResult['location/linkedinText'],
+          linkedinUrl: firstResult.linkedinUrl
+        });
+        
+        return typeof firstResult.linkedinUrl === 'string' ? firstResult.linkedinUrl : null;
+      }
+
+      console.log('No LinkedIn profiles found with Apify search');
+      return null;
+
+    } catch (error) {
+      console.error('Apify LinkedIn search failed:', error);
+      return null;
+    }
+  }
+
+  /**
+   * Search LinkedIn profiles by name and company
+   * Enhanced version that uses Apify search
+   */
+  async searchProfiles(name: string, company?: string, title?: string, location?: string, candidates?: any[]): Promise<string | null> {
+    try {
+      // Use Apify search only - no URL generation fallback
+      const apifyResult = await this.searchProfilesWithApify(name, title, company, location, 20, candidates);
+      
+      if (apifyResult) {
+        return apifyResult;
+      }
+
+      // If no results found, return null instead of generating fake URLs
+      console.log('No LinkedIn profiles found with Apify search');
+      return null;
       
     } catch (error) {
       console.error('LinkedIn profile search failed:', error);
@@ -153,37 +381,27 @@ export class LinkedInService {
 
   /**
    * Search LinkedIn profiles with scoring and return multiple results
-   * This method will call the search endpoint and select the best match
+   * This method now uses Apify search
    */
   async searchProfilesWithScoring(
     name: string, 
     title?: string, 
     company?: string, 
     location?: string,
-    maxResults: number = 10
+    maxResults: number = 10,
+    candidates?: any[]
   ): Promise<string | null> {
     try {
       console.log(`Searching LinkedIn profiles for: ${name} ${title ? `(${title})` : ''} ${company ? `at ${company}` : ''}`);
       
-      // Call the search endpoint
-      const searchResponse = await this.callLinkedInSearchAPI(name, title, company, location, maxResults);
+      // Use Apify search
+      const apifyResult = await this.searchProfilesWithApify(name, title, company, location, maxResults, candidates);
       
-      if (!searchResponse || !searchResponse.results || searchResponse.results.length === 0) {
-        console.log('No LinkedIn search results found');
-        return null;
+      if (apifyResult) {
+        return apifyResult;
       }
 
-      console.log(`Found ${searchResponse.results.length} LinkedIn profiles for ${name}`);
-      
-      // Select the best match based on scoring
-      const bestMatch = this.selectBestMatch(searchResponse.results, name, title, company, location);
-      
-      if (bestMatch) {
-        console.log(`Selected best match: ${bestMatch.url} (score: ${bestMatch.score})`);
-        return bestMatch.url;
-      }
-
-      console.log('No suitable match found among search results');
+      console.log('No LinkedIn search results found');
       return null;
 
     } catch (error) {
@@ -192,154 +410,15 @@ export class LinkedInService {
     }
   }
 
-  /**
-   * Call the LinkedIn search API endpoint
-   */
-  private async callLinkedInSearchAPI(
-    name: string,
-    title?: string,
-    company?: string,
-    location?: string,
-    maxResults: number = 10
-  ): Promise<LinkedInSearchResponse | null> {
-    try {
-      const searchUrl = 'http://localhost:8000/search';
-      
-      const searchPayload = {
-        name: name,
-        title: title,
-        company: company,
-        location: location,
-        max_results: maxResults
-      };
+  // Removed findBestApifyMatch method - no longer needed since we use first result
 
-      console.log(`Calling LinkedIn search API: ${searchUrl}`);
-      console.log('Search payload:', JSON.stringify(searchPayload, null, 2));
-
-      const response = await fetch(searchUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(searchPayload),
-      });
-
-      if (!response.ok) {
-        throw new Error(`Search API responded with status: ${response.status}`);
-      }
-
-      const searchResponse: LinkedInSearchResponse = await response.json();
-      console.log(`Search API response: ${searchResponse.total_results} results in ${searchResponse.search_time}ms`);
-      
-      return searchResponse;
-
-    } catch (error) {
-      console.error('LinkedIn search API call failed:', error);
-      return null;
-    }
-  }
+  // Removed calculateSimpleNameMatch method - no longer needed
 
   /**
-   * Select the best match from search results based on maximum score
+   * Calculate name matching score for Apify results
    */
-  private selectBestMatch(
-    results: LinkedInSearchResult[],
-    targetName: string,
-    targetTitle?: string,
-    targetCompany?: string,
-    targetLocation?: string
-  ): LinkedInSearchResult | null {
-    if (results.length === 0) return null;
-
-    // If only one result, return it if score is reasonable
-    if (results.length === 1) {
-      return results[0].score >= 5.0 ? results[0] : null;
-    }
-
-    // Sort by base API score (descending) - use maximum score result
-    const sortedResults = [...results].sort((a, b) => b.score - a.score);
-    
-    console.log('Base API scoring results:');
-    sortedResults.forEach((result, index) => {
-      console.log(`${index + 1}. ${result.url} - Score: ${result.score.toFixed(2)}`);
-    });
-
-    const maxScore = sortedResults[0].score;
-    
-    // Find all results with the maximum score
-    const maxScoreResults = sortedResults.filter(result => result.score === maxScore);
-    
-    console.log(`Found ${maxScoreResults.length} results with maximum score: ${maxScore.toFixed(2)}`);
-    
-    // If only one result has the maximum score, return it
-    if (maxScoreResults.length === 1) {
-      console.log(`Selected result with maximum score: ${maxScore.toFixed(2)}`);
-      return maxScoreResults[0];
-    }
-    
-    // If multiple results have the same maximum score, apply field matching
-    console.log('Multiple results with same score, applying field matching...');
-    
-    const fieldMatchedResults = maxScoreResults.map(result => {
-      let matchScore = 0;
-      let matchFactors: string[] = [];
-
-      // Name matching
-      const nameMatchScore = this.calculateNameMatchScore(result, targetName);
-      matchScore += nameMatchScore;
-      if (nameMatchScore > 0.8) matchFactors.push('exact_name');
-
-      // Title matching
-      if (targetTitle && result.title) {
-        const titleMatchScore = this.calculateTitleMatchScore(result.title, targetTitle);
-        matchScore += titleMatchScore;
-        if (titleMatchScore > 0.7) matchFactors.push('title_match');
-      }
-
-      // Company matching
-      if (targetCompany && result.company) {
-        const companyMatchScore = this.calculateCompanyMatchScore(result.company, targetCompany);
-        matchScore += companyMatchScore;
-        if (companyMatchScore > 0.8) matchFactors.push('company_match');
-      }
-
-      // Location matching
-      if (targetLocation && result.location) {
-        const locationMatchScore = this.calculateLocationMatchScore(result.location, targetLocation);
-        matchScore += locationMatchScore;
-        if (locationMatchScore > 0.8) matchFactors.push('location_match');
-      }
-
-      // Snippet relevance
-      const snippetScore = this.calculateSnippetRelevance(result.snippet, targetName, targetTitle, targetCompany);
-      matchScore += snippetScore;
-
-      return {
-        ...result,
-        fieldMatchScore: matchScore,
-        matchFactors
-      };
-    });
-
-    // Sort by field match score (descending)
-    fieldMatchedResults.sort((a, b) => b.fieldMatchScore - a.fieldMatchScore);
-
-    console.log('Field matching results for same-score candidates:');
-    fieldMatchedResults.forEach((result, index) => {
-      console.log(`${index + 1}. ${result.url} - Field Score: ${result.fieldMatchScore.toFixed(2)} (${result.matchFactors.join(', ')})`);
-    });
-
-    // Return the best match based on field matching
-    const bestMatch = fieldMatchedResults[0];
-    console.log(`Selected best match with field score: ${bestMatch.fieldMatchScore.toFixed(2)}`);
-    return bestMatch;
-  }
-
-  /**
-   * Calculate name matching score
-   */
-  private calculateNameMatchScore(result: LinkedInSearchResult, targetName: string): number {
-    const resultName = result.name || this.extractNameFromTitle(result.title);
+  private calculateNameMatchScoreForApify(result: ApifyLinkedInSearchResult, targetName: string): number {
+    const resultName = result.name;
     if (!resultName) return 0;
 
     const targetNormalized = targetName.toLowerCase().replace(/[^a-z\s]/g, '');
@@ -439,7 +518,7 @@ export class LinkedInService {
   }
 
   /**
-   * Calculate snippet relevance score
+   * Calculate snippet relevance score (DEPRECATED)
    */
   private calculateSnippetRelevance(
     snippet: string, 
@@ -447,6 +526,7 @@ export class LinkedInService {
     targetTitle?: string, 
     targetCompany?: string
   ): number {
+    console.warn('calculateSnippetRelevance is deprecated.');
     const snippetLower = snippet.toLowerCase();
     let relevanceScore = 0;
 
@@ -480,8 +560,7 @@ export class LinkedInService {
   /**
    * Enrich candidate profile using LinkedIn search and scraping
    */
-  async enrichProfile(linkedinUrl?: string, name?: string, company?: string, title?: string, location?: string): Promise<LinkedInProfile | null> {
-    let normalizedUrl: string | null = null;
+  async enrichProfile(linkedinUrl?: string, name?: string, company?: string, title?: string, location?: string, candidates?: any[]): Promise<LinkedInProfile | null> {
     let foundLinkedInUrl: string | null = null;
     
     try {
@@ -489,7 +568,7 @@ export class LinkedInService {
 
       // If no LinkedIn URL provided or URL doesn't exist, search for it
       if (!profileUrl && name) {
-        profileUrl = await this.searchProfiles(name, company, title, location) || undefined;
+        profileUrl = await this.searchProfiles(name, company, title, location, candidates) || undefined;
         if (profileUrl) {
           foundLinkedInUrl = profileUrl; // Store the found URL
           console.log(`Found LinkedIn URL through search: ${foundLinkedInUrl}`);
@@ -498,13 +577,10 @@ export class LinkedInService {
         foundLinkedInUrl = profileUrl; // Use the provided URL
       }
 
+      // If no LinkedIn URL found, create a basic profile
       if (!profileUrl) {
-        throw new Error(`No LinkedIn profile found for ${name}`);
-      }
-
-      normalizedUrl = this.normalizeLinkedInUrl(profileUrl);
-      if (!normalizedUrl) {
-        throw new Error(`Invalid LinkedIn URL format: ${profileUrl}`);
+        console.log(`No LinkedIn profile found for ${name}, creating basic profile`);
+        return this.createBasicProfile(name, company, title, location);
       }
 
       // Check if APIFY_API_TOKEN is configured
@@ -512,30 +588,75 @@ export class LinkedInService {
         throw new Error('APIFY_API_TOKEN not configured. LinkedIn enrichment requires valid API credentials.');
       }
 
-      // Use dev_fusion's LinkedIn Profile Scraper (no cookies required)
-      const input = {
-        profileUrls: [normalizedUrl],
-        proxyConfiguration: {
-          useApifyProxy: true,
-          apifyProxyGroups: ['RESIDENTIAL'],
-        },
-        maxProfilesToScrape: 1,
-        includeContactInfo: true,
-      };
-
-      console.log(`Enriching LinkedIn profile: ${normalizedUrl}`);
+      // Instead of trying to enrich by URL (which doesn't work well), 
+      // let's search again with the same parameters to get the full profile data
+      console.log(`Enriching LinkedIn profile for: ${name} (${profileUrl})`);
       
       try {
-        // Using the accessible LinkedIn actor
-        const run = await this.apifyClient.actor('dev_fusion/Linkedin-Profile-Scraper').call(input);
-        const { items } = await this.apifyClient.dataset(run.defaultDatasetId).listItems();
-        
-        if (!items || items.length === 0) {
-          throw new Error(`No profile data found for URL: ${normalizedUrl}`);
+        // Search again with the same parameters to get full profile data
+        const searchInput: ApifyLinkedInSearchInput = {
+          profileScraperMode: "Full",
+          maxItems: 20,
+          locations: location ? [location] : [],
+          currentJobTitles: title ? [title] : [],
+          firstNames: name ? [name.split(' ')[0]] : [],
+          lastNames: name ? [name.split(' ').slice(-1)[0]] : [],
+        };
+
+        // Extract company LinkedIn URLs from uploaded data
+        if (candidates && candidates.length > 0) {
+          const companyUrls = this.extractCompanyLinkedInUrls(candidates);
+          if (companyUrls.length > 0) {
+            searchInput.currentCompanies = companyUrls;
+            searchInput.pastCompanies = companyUrls;
+          }
         }
 
-        const profileData = items[0];
-        const enrichedProfile = this.transformApifyData(profileData);
+        // Add company if provided
+        if (company) {
+          if (!searchInput.currentCompanies) searchInput.currentCompanies = [];
+          searchInput.currentCompanies.push(company);
+        }
+
+        console.log('Enrichment search input:', JSON.stringify(searchInput, null, 2));
+
+        // Using the harvestapi LinkedIn Profile Search actor
+        const run = await this.apifyClient.actor("harvestapi/linkedin-profile-search").call(searchInput);
+        const { items } = await this.apifyClient.dataset(run.defaultDatasetId).listItems();
+        
+        // Save the raw harvestapi results
+        const searchQuery = `Profile enrichment for: ${name || 'Unknown'} - ${profileUrl}`;
+        this.saveHarvestApiResults(items, searchQuery);
+        
+        if (!items || items.length === 0) {
+          // If no profile found, create a basic profile with available data
+          console.log(`No profile data found for enrichment, creating basic profile`);
+          const basicProfile = this.createBasicProfile(name, company, title, location, profileUrl);
+          return basicProfile;
+        }
+
+        // Find the profile that matches our LinkedIn URL
+        let profileData = null;
+        for (const item of items) {
+          if (item.linkedinUrl === profileUrl || item.linkedinUrl === foundLinkedInUrl) {
+            profileData = item;
+            break;
+          }
+        }
+
+        // If no exact match, use the first result
+        if (!profileData && items.length > 0) {
+          profileData = items[0];
+          console.log(`No exact URL match found, using first result: ${profileData.linkedinUrl}`);
+        }
+
+        if (!profileData) {
+          console.log(`No suitable profile data found, creating basic profile`);
+          const basicProfile = this.createBasicProfile(name, company, title, location, profileUrl);
+          return basicProfile;
+        }
+
+        const enrichedProfile = this.transformHarvestApiData(profileData);
         
         // Ensure the found LinkedIn URL is set in the enriched profile
         if (foundLinkedInUrl) {
@@ -564,7 +685,144 @@ export class LinkedInService {
   }
 
   /**
-   * Transform Apify response data to our LinkedIn profile format
+   * Transform harvestapi LinkedIn search response data to our LinkedIn profile format
+   */
+  private transformHarvestApiData(data: any): LinkedInProfile {
+    console.log('Transforming harvestapi data:', JSON.stringify(data, null, 2));
+    
+    // Extract experience data from the harvestapi format
+    const experiences: Array<{
+      title: string;
+      company: string;
+      duration: string;
+      description: string;
+    }> = [];
+    if (data.experience && Array.isArray(data.experience)) {
+      data.experience.forEach((exp: any) => {
+        experiences.push({
+          title: exp.position || 'Unknown Role',
+          company: exp.companyName || 'Unknown Company',
+          duration: exp.duration || 'Unknown Duration',
+          description: exp.description || '',
+        });
+      });
+    }
+
+    // Extract education data
+    const education: Array<{
+      school: string;
+      degree: string;
+      field: string;
+      years: string;
+    }> = [];
+    if (data.education && Array.isArray(data.education)) {
+      data.education.forEach((edu: any) => {
+        education.push({
+          school: edu.schoolName || 'Unknown School',
+          degree: edu.degree || 'Unknown Degree',
+          field: edu.fieldOfStudy || 'Unknown Field',
+          years: edu.period || 'Unknown Period',
+        });
+      });
+    }
+
+    // Extract skills
+    const skills: string[] = [];
+    if (data.skills && Array.isArray(data.skills)) {
+      data.skills.forEach((skill: any) => {
+        if (skill.name) {
+          skills.push(skill.name);
+        }
+      });
+    }
+
+    // Extract certifications
+    const certifications: Array<{
+      name: string;
+      issuer: string;
+      date: string;
+    }> = [];
+    if (data.certifications && Array.isArray(data.certifications)) {
+      data.certifications.forEach((cert: any) => {
+        certifications.push({
+          name: cert.title || 'Unknown Certification',
+          issuer: cert.issuedBy || 'Unknown Issuer',
+          date: cert.issuedAt || 'Unknown Date',
+        });
+      });
+    }
+
+    // Get current position info from currentPosition array
+    let currentPosition = 'Unknown Company';
+    let currentRole = 'Unknown Title';
+    
+    if (data.currentPosition && Array.isArray(data.currentPosition) && data.currentPosition.length > 0) {
+      currentPosition = data.currentPosition[0].companyName || 'Unknown Company';
+      currentRole = data.currentPosition[0].position || 'Unknown Title';
+    } else if (experiences.length > 0) {
+      // Fallback to first experience if currentPosition is not available
+      currentPosition = experiences[0].company;
+      currentRole = experiences[0].title;
+    }
+
+    // Get location from the location object
+    let location = 'Unknown Location';
+    if (data.location) {
+      if (typeof data.location === 'string') {
+        location = data.location;
+      } else if (data.location.linkedinText) {
+        location = data.location.linkedinText;
+      } else if (data.location.parsed && data.location.parsed.text) {
+        location = data.location.parsed.text;
+      }
+    }
+
+    // Parse connections count
+    let connections = undefined;
+    if (data.connectionsCount) {
+      const connectionsStr = data.connectionsCount.toString();
+      if (connectionsStr.includes('+')) {
+        connections = parseInt(connectionsStr.replace('+', ''));
+      } else {
+        connections = parseInt(connectionsStr);
+      }
+    }
+
+    return {
+      // Required fields for our interface
+      name: `${data.firstName || ''} ${data.lastName || ''}`.trim() || 'Unknown',
+      title: data.headline || currentRole,
+      company: currentPosition,
+      skills: skills,
+      openToWork: data.openToWork === true || data.openToWork === 'true',
+      lastActive: "Recently active",
+      profileUrl: data.linkedinUrl,
+      jobHistory: experiences.slice(0, 3).map(exp => ({
+        role: exp.title,
+        company: exp.company,
+        duration: exp.duration,
+      })),
+      recentActivity: [], // Not available in search results
+      
+      // Additional detailed fields
+      headline: data.headline,
+      location: location,
+      summary: data.about,
+      experience: experiences,
+      education: education,
+      connections: connections,
+      profilePicture: data.photo,
+      currentCompany: currentPosition,
+      currentPosition: currentRole,
+      industry: undefined, // Not directly available
+      languages: undefined, // Not directly available
+      certifications: certifications,
+      posts: [], // Not available in search results
+    };
+  }
+
+  /**
+   * Transform Apify response data to our LinkedIn profile format (DEPRECATED)
    */
   private transformApifyData(data: any): LinkedInProfile {
     const positions = data.positions || [];
@@ -576,7 +834,7 @@ export class LinkedInService {
       title: data.headline || positions[0]?.title || 'Unknown Title',
       company: positions[0]?.companyName || 'Unknown Company',
       skills: Array.isArray(skills) ? skills : [],
-      openToWork: data.openToWork || this.analyzeOpenToWork(data),
+      openToWork: data.openToWork === true || data.openToWork === 'true',
       lastActive: data.lastActivityTime || 'Recently active',
       profileUrl: data.profileUrl || data.url,
       jobHistory: positions.slice(0, 3).map((pos: any) => ({
@@ -622,6 +880,38 @@ export class LinkedInService {
   }
 
   /**
+   * Create a basic LinkedIn profile when no data is found
+   */
+  private createBasicProfile(name?: string, company?: string, title?: string, location?: string, linkedinUrl?: string): LinkedInProfile {
+    return {
+      name: name || 'Unknown',
+      title: title || 'Professional',
+      company: company || 'Unknown Company',
+      skills: [],
+      openToWork: false,
+      lastActive: "Recently active",
+      profileUrl: linkedinUrl,
+      jobHistory: [],
+      recentActivity: [],
+      
+      // Additional detailed fields
+      headline: title,
+      location: location,
+      summary: undefined,
+      experience: [],
+      education: [],
+      connections: undefined,
+      profilePicture: undefined,
+      currentCompany: company,
+      currentPosition: title,
+      industry: undefined,
+      languages: undefined,
+      certifications: [],
+      posts: [],
+    };
+  }
+
+  /**
    * Analyze if candidate appears to be open to work based on profile signals
    */
   private analyzeOpenToWork(data: any): boolean {
@@ -635,9 +925,20 @@ export class LinkedInService {
       'actively looking'
     ];
 
-    const profile = `${data.headline || ''} ${data.summary || ''} ${data.about || ''}`.toLowerCase();
-    const posts = (data.posts || []).map((post: any) => post.text || '').join(' ').toLowerCase();
-    const fullText = `${profile} ${posts}`;
+    // For harvestapi data, check headline, about, and experience descriptions
+    const profile = `${data.headline || ''} ${data.about || ''}`.toLowerCase();
+    
+    // Check experience descriptions for open to work signals
+    let experienceText = '';
+    if (data.experience && Array.isArray(data.experience)) {
+      data.experience.forEach((exp: any) => {
+        if (exp.description) {
+          experienceText += ' ' + exp.description.toLowerCase();
+        }
+      });
+    }
+    
+    const fullText = `${profile} ${experienceText}`.toLowerCase();
 
     return openSignals.some(signal => fullText.includes(signal));
   }

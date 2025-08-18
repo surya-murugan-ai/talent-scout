@@ -86,19 +86,7 @@ export default function CandidateTable() {
     return colors[index];
   };
 
-  const formatSkills = (skills: any[] | null): string => {
-    if (!skills || !Array.isArray(skills)) return "No skills listed";
-    
-    return skills.map(skill => {
-      if (typeof skill === 'string') {
-        return skill;
-      } else if (typeof skill === 'object' && skill !== null) {
-        // Handle skill objects
-        return skill.name || skill.value || skill.skill || JSON.stringify(skill);
-      }
-      return String(skill);
-    }).join(', ');
-  };
+
 
   const handleExport = () => {
     exportMutation.mutate(filterPriority || undefined);
@@ -183,9 +171,6 @@ export default function CandidateTable() {
                 <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider min-w-[200px]">
                   Current Employer
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider min-w-[150px]">
-                  Skills
-                </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider min-w-[100px]">
                   Score
                 </th>
@@ -209,7 +194,7 @@ export default function CandidateTable() {
             <tbody className="bg-white divide-y divide-slate-200">
               {candidates.length === 0 ? (
                 <tr>
-                  <td colSpan={9} className="px-6 py-12 text-center">
+                  <td colSpan={8} className="px-6 py-12 text-center">
                     <div className="text-slate-500">
                       <p className="text-lg font-medium">No candidates found</p>
                       <p className="text-sm mt-1">Upload a CSV or Excel file to get started with candidate processing</p>
@@ -266,16 +251,6 @@ export default function CandidateTable() {
                               <ExternalLink className="w-3 h-3" />
                             </button>
                           )}
-                        </div>
-                      </div>
-                    </td>
-
-                    {/* Skills */}
-                    <td className="px-6 py-4 whitespace-nowrap min-w-[150px]">
-                      <div className="text-sm">
-                        <div className="text-slate-900 font-medium mb-1">Skills</div>
-                        <div className="text-xs text-slate-600 max-w-[140px] truncate" title={formatSkills(candidate.skills)}>
-                          {formatSkills(candidate.skills)}
                         </div>
                       </div>
                     </td>

@@ -354,7 +354,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       console.log(`Testing LinkedIn enrichment for: ${name || linkedinUrl} ${title ? `(${title})` : ''} ${company ? `at ${company}` : ''} ${location ? `in ${location}` : ''}`);
       
-      const enrichedProfile = await enrichLinkedInProfile(linkedinUrl, name || 'Test User', company, title, location);
+      const enrichedProfile = await enrichLinkedInProfile(linkedinUrl, name || 'Test User', company, title, location, []);
       
       res.json({
         success: true,
@@ -418,7 +418,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.log(`Enriching candidate ${candidate.name} with LinkedIn data`);
 
       // Enrich with real LinkedIn data
-      const enrichedProfile = await enrichLinkedInProfile(linkedinUrl, candidate.name, candidate.company || undefined);
+      const enrichedProfile = await enrichLinkedInProfile(linkedinUrl, candidate.name, candidate.company || undefined, undefined, undefined, []);
 
       // Re-analyze with new data
       const project = await storage.getProject("default-project");
@@ -714,7 +714,8 @@ async function processFileAsync(jobId: string, buffer: Buffer, filename: string)
           candidateData.name,
           candidateData.company,
           candidateData.title,
-          candidateData.location
+          candidateData.location,
+          candidates // Pass all candidates for company URL extraction
         );
 
         console.log(`  Found LinkedIn URL: ${linkedInProfile.profileUrl || 'None'}`);

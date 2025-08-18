@@ -104,12 +104,12 @@ Respond with JSON in this exact format:
 // Real LinkedIn API integration using Apify
 import { linkedInService } from './linkedin';
 
-export async function enrichLinkedInProfile(linkedinUrl: string | undefined, name: string, company?: string, title?: string, location?: string): Promise<LinkedInProfile> {
+export async function enrichLinkedInProfile(linkedinUrl: string | undefined, name: string, company?: string, title?: string, location?: string, candidates?: any[]): Promise<LinkedInProfile> {
   console.log(`Enriching LinkedIn profile for: ${name} ${title ? `(${title})` : ''} ${company ? `at ${company}` : ''} ${location ? `in ${location}` : ''}`);
   
   try {
     // Use the updated enrichProfile method that can search by name with enhanced scoring
-    const profile = await linkedInService.enrichProfile(linkedinUrl, name, company, title, location);
+    const profile = await linkedInService.enrichProfile(linkedinUrl, name, company, title, location, candidates);
     
     if (!profile) {
       throw new Error('Failed to fetch LinkedIn profile - no data returned');
@@ -137,8 +137,20 @@ export async function enrichLinkedInProfile(linkedinUrl: string | undefined, nam
   } catch (error) {
     console.error('LinkedIn enrichment failed:', error);
     
-    // Instead of falling back to AI generation, throw a clear error
-    throw new Error(`LinkedIn enrichment failed for ${name}: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    // Create a basic profile instead of throwing an error
+    console.log(`Creating basic profile for ${name} due to enrichment failure`);
+    
+    return {
+      name: name,
+      title: title || "Professional",
+      company: company || "Unknown Company",
+      skills: [],
+      openToWork: false,
+      lastActive: "Recently active",
+      profileUrl: linkedinUrl,
+      jobHistory: [],
+      recentActivity: []
+    };
   }
 }
 

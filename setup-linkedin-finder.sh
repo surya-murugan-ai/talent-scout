@@ -256,3 +256,6 @@ print_warning "- Update your .env file with proper API keys if needed"
 print_warning "- Test the integration before using in production"
 echo ""
 print_success "Setup completed successfully!"
+
+
+

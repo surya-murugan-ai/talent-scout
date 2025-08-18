@@ -330,3 +330,6 @@ print_warning "  3. Update your .env file with proper API keys"
 print_warning "  4. Configure your LinkedIn Profile Finder URL"
 echo ""
 print_success "Deployment script completed!"
+
+
+

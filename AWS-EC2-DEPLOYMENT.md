@@ -531,3 +531,6 @@ Your TalentScout application is now deployed on AWS EC2 with:
 - ✅ Monitoring and logging
 
 The application should be accessible at `http://your-domain.com` (or your EC2 public IP if no domain is configured).
+
+
+

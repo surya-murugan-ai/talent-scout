@@ -1,0 +1,375 @@
+{
+  "timestamp": "2025-08-18T13:58:03.774Z",
+  "searchQuery": "Profile enrichment for: Anurag Rajbhar - https://www.linkedin.com/in/anurag-rajbhar-23b8571b9",
+  "rawData": [
+    {
+      "id": "ACoAADLZdY8BiuA-y2Fw3u1_bVndZfNxSlsEqik",
+      "publicIdentifier": "anurag-rajbhar-23b8571b9",
+      "linkedinUrl": "https://www.linkedin.com/in/anurag-rajbhar-23b8571b9",
+      "firstName": "Anurag",
+      "lastName": "Rajbhar",
+      "headline": "Software Engineer at Tech Mahindra(SBI Life)",
+      "about": null,
+      "openToWork": false,
+      "hiring": false,
+      "photo": "https://media.licdn.com/dms/image/v2/D4D03AQGXg-FaK6YMMA/profile-displayphoto-shrink_800_800/B4DZX2jZu_HIAg-/0/1743598232411?e=1758153600&v=beta&t=KIEBPFgkb15ZoNYLkuwjA0HvYBThMtBG2Bg8d3rRiVw",
+      "premium": false,
+      "influencer": false,
+      "location": {
+        "linkedinText": "Mumbai, Maharashtra, India",
+        "countryCode": "IN",
+        "parsed": {
+          "text": "Mumbai, India",
+          "countryCode": "IN",
+          "regionCode": null,
+          "country": "India",
+          "countryFull": "India",
+          "state": "Maharashtra",
+          "city": "Mumbai"
+        }
+      },
+      "verified": true,
+      "registeredAt": "2020-10-14T07:04:40.658Z",
+      "topSkills": null,
+      "connectionsCount": 1026,
+      "followerCount": 1024,
+      "currentPosition": [
+        {
+          "companyName": "Tech Mahindra"
+        }
+      ],
+      "experience": [
+        {
+          "position": "Software Engineer",
+          "location": "Mumbai, Maharashtra, India",
+          "employmentType": "Full-time",
+          "workplaceType": "On-site",
+          "companyName": "Tech Mahindra",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/tech-mahindra/",
+          "companyId": "3067",
+          "companyUniversalName": "tech-mahindra",
+          "duration": "1 yr",
+          "description": "Working as a PL/SQL Developer for SBI Life Insurance at Tech Mahindra, focusing on database optimization, performance enhancement, and troubleshooting critical issues in the Cashiering Management Interface Application. This application comprises three key modules: Database Portal, Indigo, and Ingenium, which manage various cashiering operations.\n\nKey Responsibilities:\n-Developing and optimizing PL/SQL procedures to improve system efficiency and scalability.\n-Managing database operations and resolving critical cashiering-related issues across Database Portal, Indigo, and Ingenium.\n-Collaborating with cross-functional teams to design and implement scalable database solutions.\n-Enhancing data integrity and uptime for high-volume financial applications.\n- Addressing and troubleshooting Portal, Indigo, and Ingenium issues to maintain seamless system performance.",
+          "skills": [
+            "Oracle Database"
+          ],
+          "startDate": {
+            "month": "Sep",
+            "year": 2024,
+            "text": "Sep 2024"
+          },
+          "endDate": {
+            "text": "Present"
+          }
+        },
+        {
+          "position": "Project Engineer",
+          "location": "Mumbai, Maharashtra, India",
+          "employmentType": "Full-time",
+          "workplaceType": "On-site",
+          "companyName": "Wipro",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/1318/",
+          "companyId": "1318",
+          "duration": "2 yrs 5 mos",
+          "description": "Client ICICI Bank - PLSQL developer,Application Owner\n1-VCF (Visa Commercial Format) (ICICI Bank) Jan 2023 – Present\nVCF application to fetch data from the prime database, generate files in Visa commercial format, and share them with Visa.\nStreamlined the application by developing  PL/SQL procedures, function and trigger.\nImproved application performance under challenging conditions.\nEnhanced project efficiency and overall system operation by performance tuning.\nProvided technical support and troubleshooting assistance.\nCollaborated with business analysts and end-users to gather requirements, analyze workflows, and design scalable solutions.\nStayed updated on cutting-edge technologies, contributing to innovative initiatives in PL/SQL development.\n\n2-Transaction Information Processing System & Card Production Management System (ICICI Bank) Jan 2023 – Present\n\nTIPS validates transactions (checks, cash, NEFT, RTGS, etc.) and generates files, posting them to Prime DB.\nCPMS tracks the entire credit card (Amex, Master, Visa) production process from order placement and material issuance to embossing and card dispatch.\nEnhanced application performance through PL/SQL integration for monitoring, scaling, and deployment using Agile methodology.\nDeveloped and executed migration scripts and procedures to transfer data, schemas, and configurations to the new database version.\nDocumented the migration process, including procedures, configurations, and troubleshooting steps.\nResolved complex issues within PL/SQL by performance tuning.\n\n3-I-Optimus (ICICI Bank) Aug 2022 – Jan 2023\nManaged I-optimus, a Management Information System (MIS) application for ICICI credit card transactions. Monitored all jobs related to the application to ensure smooth operation.\nProactively addressed and resolved customer escalations.\nDemonstrated expertise in problem resolution and customer satisfaction within the MIS environment.",
+          "skills": [
+            "Oracle Database",
+            "Oracle SQL Developer",
+            "SQL",
+            "PL/SQL",
+            "Java",
+            "Oracle Database Administration",
+            "js",
+            "jsp",
+            "Python (Programming Language)",
+            "apache",
+            "Tomcat",
+            "Linux",
+            "Unix"
+          ],
+          "startDate": {
+            "month": "May",
+            "year": 2022,
+            "text": "May 2022"
+          },
+          "endDate": {
+            "month": "Sep",
+            "year": 2024,
+            "text": "Sep 2024"
+          }
+        }
+      ],
+      "education": [
+        {
+          "schoolName": "Saraswati Education Societys Saraswati College of Engineering Kharghar Navi Mumbai",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/15117850/",
+          "degree": "Bachelor of Engineering - BE",
+          "fieldOfStudy": "Computer Science",
+          "skills": [],
+          "startDate": {
+            "year": 2018,
+            "text": "2018"
+          },
+          "endDate": {
+            "year": 2022,
+            "text": "2022"
+          },
+          "period": "2018 - 2022"
+        }
+      ],
+      "certifications": [
+        {
+          "title": "perfect e learning",
+          "issuedAt": "Issued Apr 2021",
+          "issuedBy": "Perfect eLearning",
+          "issuedByLink": "https://www.linkedin.com/company/14631558/"
+        },
+        {
+          "title": "University of Helsinki ",
+          "issuedAt": "Issued Aug 2020",
+          "issuedBy": "Reaktor",
+          "issuedByLink": "https://www.linkedin.com/company/13622/"
+        }
+      ],
+      "projects": [],
+      "volunteering": [],
+      "receivedRecommendations": [],
+      "skills": [
+        {
+          "name": "Oracle Developer Suite"
+        },
+        {
+          "name": "SQL PL"
+        },
+        {
+          "name": "Software Infrastructure"
+        },
+        {
+          "name": "HTML"
+        },
+        {
+          "name": "Databases"
+        },
+        {
+          "name": "jsp ",
+          "positions": [
+            "Project Engineer at Wipro"
+          ]
+        },
+        {
+          "name": "js ",
+          "positions": [
+            "Project Engineer at Wipro"
+          ]
+        },
+        {
+          "name": "apache ",
+          "positions": [
+            "Project Engineer at Wipro"
+          ]
+        },
+        {
+          "name": "Tomcat",
+          "positions": [
+            "Project Engineer at Wipro"
+          ]
+        },
+        {
+          "name": "Apache"
+        },
+        {
+          "name": "Linux",
+          "positions": [
+            "Project Engineer at Wipro"
+          ]
+        },
+        {
+          "name": "Unix",
+          "positions": [
+            "Project Engineer at Wipro"
+          ]
+        },
+        {
+          "name": "Java",
+          "positions": [
+            "Project Engineer at Wipro"
+          ]
+        },
+        {
+          "name": "Oracle Database Administration",
+          "positions": [
+            "Project Engineer at Wipro"
+          ]
+        },
+        {
+          "name": "js",
+          "positions": [
+            "Project Engineer at Wipro"
+          ]
+        },
+        {
+          "name": "jsp",
+          "positions": [
+            "Project Engineer at Wipro"
+          ]
+        },
+        {
+          "name": "Oracle Database",
+          "positions": [
+            "2 experiences across Tech Mahindra and 1 other company"
+          ]
+        },
+        {
+          "name": "Oracle SQL Developer",
+          "positions": [
+            "Project Engineer at Wipro"
+          ]
+        },
+        {
+          "name": "SQL",
+          "positions": [
+            "Project Engineer at Wipro"
+          ]
+        },
+        {
+          "name": "PL/SQL",
+          "positions": [
+            "Project Engineer at Wipro"
+          ]
+        },
+        {
+          "name": "Python (Programming Language)",
+          "positions": [
+            "Project Engineer at Wipro"
+          ]
+        },
+        {
+          "name": "C++"
+        },
+        {
+          "name": "Machine Learning"
+        },
+        {
+          "name": "photo editor"
+        },
+        {
+          "name": "Leadership"
+        },
+        {
+          "name": "Programming"
+        },
+        {
+          "name": "C (Programming Language)"
+        },
+        {
+          "name": "MySQL"
+        }
+      ],
+      "publications": [],
+      "courses": [],
+      "patents": [],
+      "honorsAndAwards": [],
+      "languages": [],
+      "featured": null,
+      "moreProfiles": [
+        {
+          "id": "ACoAAAVQFHkBhtym_srH8P4er4SFH4tbf3rc6WI",
+          "firstName": "Darlene",
+          "lastName": "Hollstein",
+          "position": "Dynamic Leader, Board Member, Strategist, Mentor, Entrepreneurial Spirit and General Manager - Bay Centre at JLL Real Estate Services",
+          "publicIdentifier": "darlene-hollstein-361a2625",
+          "linkedinUrl": "https://www.linkedin.com/in/darlene-hollstein-361a2625"
+        },
+        {
+          "id": "ACoAADnE6f8BI1cR6y3-xcpNsEEiVWcnmEVAEuw",
+          "firstName": "Rasika",
+          "lastName": "Chalke",
+          "publicIdentifier": "rasika-chalke-313703230",
+          "linkedinUrl": "https://www.linkedin.com/in/rasika-chalke-313703230"
+        },
+        {
+          "id": "ACoAAAGT-lcBR87bHrz0sBtGmIl8TG2rqwlQg9I",
+          "firstName": "Cali",
+          "lastName": "Girkins (Bird), RPA",
+          "position": "Senior General Manager at JLL",
+          "publicIdentifier": "cali-girkins-bird-rpa-29ba498",
+          "linkedinUrl": "https://www.linkedin.com/in/cali-girkins-bird-rpa-29ba498"
+        },
+        {
+          "id": "ACoAAENmA5kB0jIhwyzNg-lRs4k3AtMyInTjYtk",
+          "firstName": "Dhanraj",
+          "lastName": "Kakade",
+          "publicIdentifier": "dhanrajkakade",
+          "linkedinUrl": "https://www.linkedin.com/in/dhanrajkakade"
+        },
+        {
+          "id": "ACoAAC9ynr4B_VmtJl_VFdKDVtyahhAMGREywtY",
+          "firstName": "Jatin",
+          "lastName": "Naik",
+          "publicIdentifier": "jatin-naik-9927131a2",
+          "linkedinUrl": "https://www.linkedin.com/in/jatin-naik-9927131a2"
+        },
+        {
+          "id": "ACoAAAMfYnIBdbntVLK9pMVB8H71Ev281AMIHS4",
+          "firstName": "Jessica",
+          "lastName": "Mogilka",
+          "position": "Tenant Rep Leader | Real Estate Strategist | Life Science Co-Lead",
+          "publicIdentifier": "jessicakmogilka",
+          "linkedinUrl": "https://www.linkedin.com/in/jessicakmogilka"
+        },
+        {
+          "id": "ACoAABE8hj4BLrFYem3oWVOaxjWBQ241gAWGdbM",
+          "firstName": "Justyna",
+          "lastName": "Zarek",
+          "position": "Real Estate | Sustainability | ESG | Project Management",
+          "publicIdentifier": "justyna-zarek-0a6a1980",
+          "linkedinUrl": "https://www.linkedin.com/in/justyna-zarek-0a6a1980"
+        },
+        {
+          "id": "ACoAAChA7fMBoxlggPYZdeQXDJoyNYURLTumzwQ",
+          "firstName": "Inthiyaz Ahmad",
+          "lastName": "Khan",
+          "publicIdentifier": "inthiyaz-ahmad-khan-bab20716a",
+          "linkedinUrl": "https://www.linkedin.com/in/inthiyaz-ahmad-khan-bab20716a"
+        },
+        {
+          "id": "ACoAAD1yRtMBZvu5u8OT3X75RhwW03PzUt_gN0g",
+          "firstName": "Muharrem",
+          "lastName": "Abazi",
+          "position": "Commissioning Project Engineer @ JLL | Managing Complex Engineering Projects",
+          "publicIdentifier": "muharrem-abazi-3832b5249",
+          "linkedinUrl": "https://www.linkedin.com/in/muharrem-abazi-3832b5249"
+        },
+        {
+          "id": "ACoAADDQ-1QBr2Zsqx63Po8-MVEUC4Qk5MDfeRc",
+          "firstName": "Onkar",
+          "lastName": "Shete",
+          "publicIdentifier": "onkar-shete-7303471aa",
+          "linkedinUrl": "https://www.linkedin.com/in/onkar-shete-7303471aa"
+        },
+        {
+          "id": "ACoAAFuICkABJZdFXjDn1EwY2kUUjJToHCl3bNw",
+          "firstName": "Suzan",
+          "lastName": "Dial",
+          "position": "--",
+          "publicIdentifier": "suzan-dial-99434936a",
+          "linkedinUrl": "https://www.linkedin.com/in/suzan-dial-99434936a"
+        }
+      ],
+      "_meta": {
+        "pagination": {
+          "totalElements": 1,
+          "totalPages": 1,
+          "pageNumber": 1,
+          "previousElements": 0,
+          "pageSize": 25
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "totalResults": 1,
+    "source": "harvestapi/linkedin-profile-search",
+    "savedAt": "2025-08-18T13:58:03.774Z"
+  }
+}

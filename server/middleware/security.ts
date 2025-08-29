@@ -12,20 +12,24 @@ export function setupSecurityMiddleware(app: Express) {
   app.use(helmet({
     contentSecurityPolicy: {
       directives: {
-        defaultSrc: ["'self'"],
-        scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://va.vercel-scripts.com"],
-        styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
-        fontSrc: ["'self'", "https://fonts.gstatic.com"],
-        imgSrc: ["'self'", "data:", "https:"],
-        connectSrc: ["'self'", "https://api.openai.com", "wss:", "ws:"],
+        defaultSrc: ["'self'", "http:", "https:"],
+        scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://va.vercel-scripts.com", "http:", "https:"],
+        styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "http:", "https:"],
+        fontSrc: ["'self'", "https://fonts.gstatic.com", "http:", "https:"],
+        imgSrc: ["'self'", "data:", "https:", "http:"],
+        connectSrc: ["'self'", "https://api.openai.com", "http://54.197.65.143:5000", "http://54.197.65.143:8000", "wss:", "ws:", "http:", "https:"],
+        upgradeInsecureRequests: null, // Disable automatic HTTPS upgrade
       },
     },
+    crossOriginEmbedderPolicy: false,
+    crossOriginOpenerPolicy: false,
+    hsts: false, // Disable HSTS to prevent HTTPS redirects
   }));
 
   // CORS configuration
   app.use(cors({
     origin: process.env.NODE_ENV === 'production' 
-      ? ['https://*.replit.app', 'https://*.replit.dev']
+      ? ['https://*.replit.app', 'https://*.replit.dev', 'http://54.197.65.143:5000', 'http://54.197.65.143:8000']
       : ['http://localhost:5173', 'http://localhost:5000'],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
@@ -35,10 +39,10 @@ export function setupSecurityMiddleware(app: Express) {
   // Compression
   app.use(compression());
 
-  // Rate limiting
+  // Rate limiting for general API endpoints
   const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
-    max: process.env.NODE_ENV === 'production' ? 100 : 1000, // limit each IP to 100 requests per windowMs in production
+    max: process.env.NODE_ENV === 'production' ? 1000 : 1000, // limit each IP to 1000 requests per windowMs
     message: {
       error: 'Too many requests from this IP, please try again later.',
     },
@@ -46,6 +50,23 @@ export function setupSecurityMiddleware(app: Express) {
     legacyHeaders: false,
   });
   
+  // Rate limiting for polling endpoints (more lenient)
+  const pollingLimiter = rateLimit({
+    windowMs: 1 * 60 * 1000, // 1 minute
+    max: 60, // limit each IP to 60 requests per minute for polling
+    message: {
+      error: 'Too many polling requests, please try again later.',
+    },
+    standardHeaders: true,
+    legacyHeaders: false,
+  });
+  
+  // Apply polling limiter to specific endpoints
+  app.use('/api/jobs', pollingLimiter);
+  app.use('/api/stats', pollingLimiter);
+  app.use('/api/activities', pollingLimiter);
+  
+  // Apply general limiter to other API endpoints
   app.use('/api/', limiter);
 
   // File upload rate limiting (more restrictive)

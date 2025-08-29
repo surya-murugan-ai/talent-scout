@@ -67,7 +67,9 @@ export async function checkDatabaseHealth(): Promise<DatabaseHealth> {
       tables,
       connectionTest: true,
       totalRecords,
-      lastActivity: lastActivityResult.rows[0]?.created_at || undefined
+      lastActivity: typeof lastActivityResult.rows[0]?.created_at === 'string' 
+        ? lastActivityResult.rows[0].created_at 
+        : undefined
     };
     
   } catch (error) {

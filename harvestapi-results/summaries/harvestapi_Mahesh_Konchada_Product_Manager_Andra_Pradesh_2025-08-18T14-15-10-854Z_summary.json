@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-08-18T14:15:10.854Z",
+  "searchQuery": "Mahesh Konchada Product Manager  Andra Pradesh",
+  "totalResults": 1,
+  "profiles": [
+    {
+      "index": 1,
+      "name": "Mahesh Konchada",
+      "headline": "Product Manager - AI solutions (Aimplify)",
+      "location": "Andhra Pradesh, India",
+      "currentCompany": "Aimplify",
+      "currentPosition": "N/A",
+      "linkedinUrl": "https://www.linkedin.com/in/mahesh-konchada-996985150",
+      "connectionsCount": 1588,
+      "skillsCount": 20,
+      "experienceCount": 9,
+      "educationCount": 2
+    }
+  ],
+  "originalFile": "harvestapi_Mahesh_Konchada_Product_Manager_Andra_Pradesh_2025-08-18T14-15-10-854Z.json"
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-08-18T14:16:28.698Z",
+  "searchQuery": "Profile enrichment for: Anurag Rajbhar - https://www.linkedin.com/in/anurag-rajbhar-23b8571b9",
+  "totalResults": 1,
+  "profiles": [
+    {
+      "index": 1,
+      "name": "Anurag Rajbhar",
+      "headline": "Software Engineer at Tech Mahindra(SBI Life)",
+      "location": "Mumbai, Maharashtra, India",
+      "currentCompany": "Tech Mahindra",
+      "currentPosition": "N/A",
+      "linkedinUrl": "https://www.linkedin.com/in/anurag-rajbhar-23b8571b9",
+      "connectionsCount": 1026,
+      "skillsCount": 28,
+      "experienceCount": 2,
+      "educationCount": 1
+    }
+  ],
+  "originalFile": "harvestapi_Profile_enrichment_for_Anurag_Rajbhar_httpswwwlinkedincominanuragrajbhar23b8571b9_2025-08-18T14-16-28-698Z.json"
+}

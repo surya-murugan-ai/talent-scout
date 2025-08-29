@@ -1,0 +1,518 @@
+{
+  "timestamp": "2025-08-18T13:57:02.840Z",
+  "searchQuery": "Profile enrichment for: Shiv Das - https://www.linkedin.com/in/shiv-das-13a0768",
+  "rawData": [
+    {
+      "id": "ACoAAAFu4D4BUhDjgsF6B_cLIiydFudku2NnUgQ",
+      "publicIdentifier": "shiv-das-13a0768",
+      "linkedinUrl": "https://www.linkedin.com/in/shiv-das-13a0768",
+      "firstName": "Shiv",
+      "lastName": "Das",
+      "headline": "Founder at Aimplify Technologies",
+      "about": null,
+      "openToWork": false,
+      "hiring": false,
+      "photo": "https://media.licdn.com/dms/image/v2/C5103AQHr2NiL-7tUMQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1539956307360?e=1758153600&v=beta&t=-HGitSpuHfA-ado-XZJgjjRu72OqRwW3vMQGPfYe3rs",
+      "premium": false,
+      "influencer": false,
+      "location": {
+        "linkedinText": "Bengaluru, Karnataka, India",
+        "countryCode": "IN",
+        "parsed": {
+          "text": "Bengaluru, India",
+          "countryCode": "IN",
+          "regionCode": null,
+          "country": "India",
+          "countryFull": "India",
+          "state": "Karnataka",
+          "city": "Bengaluru"
+        }
+      },
+      "verified": false,
+      "registeredAt": "2008-04-20T08:19:45.000Z",
+      "topSkills": null,
+      "connectionsCount": 1646,
+      "followerCount": 1659,
+      "currentPosition": [
+        {
+          "companyName": "Aimplify"
+        }
+      ],
+      "experience": [
+        {
+          "position": "Founder",
+          "location": "Bengaluru, Karnataka, India",
+          "employmentType": "Full-time",
+          "workplaceType": "On-site",
+          "companyName": "Aimplify",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/aimplifytech/",
+          "companyId": "100532730",
+          "companyUniversalName": "aimplifytech",
+          "duration": "1 yr 9 mos",
+          "description": null,
+          "skills": [
+            "Artificial Intelligence (AI)",
+            "Investment Advisory",
+            "Environmental, Social, and Governance (ESG)",
+            "Generative AI",
+            "Management Consulting",
+            "Supply Chain Management",
+            "AI strategy",
+            "wealth management",
+            "IT Strategy",
+            "Market Research"
+          ],
+          "startDate": {
+            "month": "Dec",
+            "year": 2023,
+            "text": "Dec 2023"
+          },
+          "endDate": {
+            "text": "Present"
+          }
+        },
+        {
+          "position": "Chief Executive Officer",
+          "location": null,
+          "employmentType": null,
+          "workplaceType": null,
+          "companyName": "Pattern Effects Labs",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/13404262/",
+          "companyId": "13404262",
+          "duration": "8 yrs 4 mos",
+          "description": null,
+          "skills": null,
+          "startDate": {
+            "month": "May",
+            "year": 2017,
+            "text": "May 2017"
+          },
+          "endDate": {
+            "text": "Present"
+          }
+        },
+        {
+          "position": "Co-Founder",
+          "location": "Bengaluru, Karnataka, India",
+          "employmentType": "Full-time",
+          "workplaceType": null,
+          "companyName": "Vetted Ecosystem",
+          "companyLinkedinUrl": "https://www.linkedin.com/search/results/all/?keywords=Vetted+Ecosystem",
+          "duration": "2 yrs 2 mos",
+          "description": null,
+          "skills": null,
+          "startDate": {
+            "month": "Jan",
+            "year": 2022,
+            "text": "Jan 2022"
+          },
+          "endDate": {
+            "month": "Feb",
+            "year": 2024,
+            "text": "Feb 2024"
+          }
+        },
+        {
+          "position": "Vice President - Technology",
+          "location": "Greater Bengaluru Area",
+          "employmentType": null,
+          "workplaceType": null,
+          "companyName": "Accenture",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/1033/",
+          "companyId": "1033",
+          "duration": "2 yrs 7 mos",
+          "description": null,
+          "skills": null,
+          "startDate": {
+            "month": "Sep",
+            "year": 2014,
+            "text": "Sep 2014"
+          },
+          "endDate": {
+            "month": "Mar",
+            "year": 2017,
+            "text": "Mar 2017"
+          }
+        },
+        {
+          "position": "Manager",
+          "location": "Bengaluru, Karnataka, India",
+          "employmentType": null,
+          "workplaceType": null,
+          "companyName": "Accenture",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/1033/",
+          "companyId": "1033",
+          "duration": "3 yrs 1 mo",
+          "description": null,
+          "skills": null,
+          "startDate": {
+            "month": "Sep",
+            "year": 2011,
+            "text": "Sep 2011"
+          },
+          "endDate": {
+            "month": "Sep",
+            "year": 2014,
+            "text": "Sep 2014"
+          }
+        },
+        {
+          "position": "Associate Manager",
+          "location": null,
+          "employmentType": null,
+          "workplaceType": null,
+          "companyName": "Accenture",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/1033/",
+          "companyId": "1033",
+          "duration": "3 yrs 1 mo",
+          "description": null,
+          "skills": null,
+          "startDate": {
+            "month": "Sep",
+            "year": 2008,
+            "text": "Sep 2008"
+          },
+          "endDate": {
+            "month": "Sep",
+            "year": 2011,
+            "text": "Sep 2011"
+          }
+        },
+        {
+          "position": "Consultant",
+          "location": null,
+          "employmentType": null,
+          "workplaceType": null,
+          "companyName": "Accenture",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/1033/",
+          "companyId": "1033",
+          "duration": "2 yrs 7 mos",
+          "description": null,
+          "skills": null,
+          "startDate": {
+            "month": "Mar",
+            "year": 2006,
+            "text": "Mar 2006"
+          },
+          "endDate": {
+            "month": "Sep",
+            "year": 2008,
+            "text": "Sep 2008"
+          }
+        }
+      ],
+      "education": [
+        {
+          "schoolName": "Xavier Institute of Management(XIM Bhubaneswar)",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/410859/",
+          "degree": "Master of Business Administration (MBA)",
+          "fieldOfStudy": null,
+          "skills": [],
+          "startDate": {
+            "year": 2004,
+            "text": "2004"
+          },
+          "endDate": {
+            "year": 2006,
+            "text": "2006"
+          },
+          "period": "2004 - 2006"
+        },
+        {
+          "schoolName": "Stewart School Cuttack",
+          "schoolLinkedinUrl": "https://www.linkedin.com/search/results/all/?keywords=Stewart+School+Cuttack",
+          "degree": "ICSE",
+          "fieldOfStudy": null,
+          "skills": [],
+          "startDate": {
+            "year": 1986,
+            "text": "1986"
+          },
+          "endDate": {
+            "year": 1996,
+            "text": "1996"
+          },
+          "period": "1986 - 1996"
+        },
+        {
+          "schoolName": "XLRI Jamshedpur",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/365197/",
+          "degree": "PGCBM",
+          "fieldOfStudy": "General Management",
+          "skills": [],
+          "startDate": null,
+          "endDate": {
+            "text": ""
+          }
+        }
+      ],
+      "certifications": [],
+      "projects": [],
+      "volunteering": [],
+      "receivedRecommendations": [],
+      "skills": [
+        {
+          "name": "Environmental, Social, and Governance (ESG)",
+          "positions": [
+            "Founder at Aimplify"
+          ]
+        },
+        {
+          "name": "Generative AI",
+          "positions": [
+            "Founder at Aimplify"
+          ]
+        },
+        {
+          "name": "Supply Chain Management",
+          "positions": [
+            "Founder at Aimplify"
+          ]
+        },
+        {
+          "name": "AI strategy",
+          "positions": [
+            "Founder at Aimplify"
+          ]
+        },
+        {
+          "name": "wealth management",
+          "positions": [
+            "Founder at Aimplify"
+          ]
+        },
+        {
+          "name": "Market Research",
+          "positions": [
+            "Founder at Aimplify"
+          ],
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "Management Consulting",
+          "positions": [
+            "Founder at Aimplify"
+          ],
+          "endorsements": "13 endorsements"
+        },
+        {
+          "name": "Pre-sales",
+          "endorsements": "5 endorsements"
+        },
+        {
+          "name": "Business Analysis",
+          "endorsements": "12 endorsements"
+        },
+        {
+          "name": "IT Strategy",
+          "positions": [
+            "Founder at Aimplify"
+          ],
+          "endorsements": "6 endorsements"
+        },
+        {
+          "name": "Business Process Re-engineering",
+          "endorsements": "15 endorsements"
+        },
+        {
+          "name": "Process Consulting",
+          "endorsements": "2 endorsements"
+        },
+        {
+          "name": "Solution Architecture",
+          "endorsements": "8 endorsements"
+        },
+        {
+          "name": "Benchmarking",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "Requirements Analysis",
+          "endorsements": "11 endorsements"
+        },
+        {
+          "name": "Business Process Design",
+          "endorsements": "10 endorsements"
+        },
+        {
+          "name": "Global Delivery",
+          "endorsements": "3 endorsements"
+        },
+        {
+          "name": "Business Process",
+          "endorsements": "4 endorsements"
+        },
+        {
+          "name": "Business Process Improvement",
+          "endorsements": "8 endorsements"
+        },
+        {
+          "name": "Business Transformation",
+          "endorsements": "6 endorsements"
+        },
+        {
+          "name": "Software Project Management",
+          "endorsements": "5 endorsements"
+        },
+        {
+          "name": "Team Management",
+          "endorsements": "6 endorsements"
+        },
+        {
+          "name": "Management",
+          "endorsements": "4 endorsements"
+        },
+        {
+          "name": "Business Strategy",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "Vendor Management",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "FinTech"
+        },
+        {
+          "name": "Machine Learning"
+        },
+        {
+          "name": "Investment Advisory",
+          "positions": [
+            "Founder at Aimplify"
+          ]
+        },
+        {
+          "name": "Artificial Intelligence (AI)",
+          "positions": [
+            "Founder at Aimplify"
+          ]
+        },
+        {
+          "name": "Capital Markets",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "scm"
+        },
+        {
+          "name": "Strategy",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "Team Building",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "Fundraising",
+          "endorsements": "1 endorsement"
+        }
+      ],
+      "publications": [],
+      "courses": [],
+      "patents": [],
+      "honorsAndAwards": [],
+      "languages": [],
+      "featured": null,
+      "moreProfiles": [
+        {
+          "id": "ACoAAAGVpXYBqiLExqamEyK8Bqm-LSL9VZiNhJY",
+          "firstName": "Shashikumar",
+          "lastName": "JM",
+          "publicIdentifier": "shashikumar-jm-61aaa08",
+          "linkedinUrl": "https://www.linkedin.com/in/shashikumar-jm-61aaa08"
+        },
+        {
+          "id": "ACoAAACLVwEB3kKEg8U9dmfuee6XiTnuacYLMS8",
+          "firstName": "Leila",
+          "lastName": "Shayegi",
+          "publicIdentifier": "leila-shayegi",
+          "linkedinUrl": "https://www.linkedin.com/in/leila-shayegi"
+        },
+        {
+          "id": "ACoAAAC7MF8BW00tRocZUS7v0Fdo8gNtSw40-G4",
+          "firstName": "Ramesh",
+          "lastName": "Govindan",
+          "publicIdentifier": "ramesh-govindan-3931374",
+          "linkedinUrl": "https://www.linkedin.com/in/ramesh-govindan-3931374"
+        },
+        {
+          "id": "ACoAAE0PwWUBzejgJlBuct4ZQEMXEikpEODBDiI",
+          "firstName": "Chandrika",
+          "lastName": "Patnaik",
+          "position": "BBM-Marketing Major | Xim University |",
+          "publicIdentifier": "chandrika-patnaik-485b95300",
+          "linkedinUrl": "https://www.linkedin.com/in/chandrika-patnaik-485b95300"
+        },
+        {
+          "id": "ACoAAAB8zu4BpH8TvLtc2B4RH5ZqSIyF__Fxfes",
+          "firstName": "Puneet",
+          "lastName": "Pahuja",
+          "publicIdentifier": "pahujapuneet",
+          "linkedinUrl": "https://www.linkedin.com/in/pahujapuneet"
+        },
+        {
+          "id": "ACoAAE2i1nABAyd4V8ATNHihUn_UauDSNEIJ-dE",
+          "firstName": "Rakesh",
+          "lastName": "Panda",
+          "position": "Unsecured Asset | Rural Banking | Micro Liability| Product and Policy",
+          "publicIdentifier": "rakesh-panda-754263304",
+          "linkedinUrl": "https://www.linkedin.com/in/rakesh-panda-754263304"
+        },
+        {
+          "id": "ACoAAEo8rO0BV-OQhtnlQU_lX6KBj4a-cvD1jgM",
+          "firstName": "Haq Dad",
+          "lastName": "Ariamanush",
+          "position": "Human Resources Coordinator at Aga Khan Education Service",
+          "publicIdentifier": "haq-dad-ariamanush-ab91412a9",
+          "linkedinUrl": "https://www.linkedin.com/in/haq-dad-ariamanush-ab91412a9"
+        },
+        {
+          "id": "ACoAAAAjPWsBjGwsviqKzFBJkD-dAVQaHmTpI_0",
+          "firstName": "Loy  ",
+          "lastName": "Halder",
+          "publicIdentifier": "loy-halder-60b934",
+          "linkedinUrl": "https://www.linkedin.com/in/loy-halder-60b934"
+        },
+        {
+          "id": "ACoAAD4DSZoBq8ugMLIIBvLV3arnTET1w4CEBMg",
+          "firstName": "Sriram",
+          "lastName": "Sanjog",
+          "position": "School Of Commerce, Deputy Commerce Secretary || XIM UNIVERSITY | JK PAPER |",
+          "publicIdentifier": "sriram-sanjog-",
+          "linkedinUrl": "https://www.linkedin.com/in/sriram-sanjog-"
+        },
+        {
+          "id": "ACoAAFD15xcBi0UQaVDMgD4-s7Lxxe2keoAurAE",
+          "firstName": "Usharshi",
+          "lastName": "Saha",
+          "position": "Student at Xavier Institute of Management(XIM Bhubaneswar) studying BBM (Marketing) ,National Service Scheme (NSS) Shadow Member ",
+          "publicIdentifier": "usharshi-saha-073a8131a",
+          "linkedinUrl": "https://www.linkedin.com/in/usharshi-saha-073a8131a"
+        },
+        {
+          "id": "ACoAAFuXcYQBvxM9X64bOHU8LweZQw1SsUpG_JM",
+          "firstName": "Paul",
+          "lastName": "Mist",
+          "position": "--",
+          "publicIdentifier": "paul-mist-00475636a",
+          "linkedinUrl": "https://www.linkedin.com/in/paul-mist-00475636a"
+        }
+      ],
+      "_meta": {
+        "pagination": {
+          "totalElements": 1,
+          "totalPages": 1,
+          "pageNumber": 1,
+          "previousElements": 0,
+          "pageSize": 25
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "totalResults": 1,
+    "source": "harvestapi/linkedin-profile-search",
+    "savedAt": "2025-08-18T13:57:02.840Z"
+  }
+}

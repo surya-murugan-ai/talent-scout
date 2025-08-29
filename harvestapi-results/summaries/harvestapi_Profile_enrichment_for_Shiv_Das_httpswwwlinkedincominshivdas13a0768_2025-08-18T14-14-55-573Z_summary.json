@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-08-18T14:14:55.573Z",
+  "searchQuery": "Profile enrichment for: Shiv Das - https://www.linkedin.com/in/shiv-das-13a0768",
+  "totalResults": 1,
+  "profiles": [
+    {
+      "index": 1,
+      "name": "Shiv Das",
+      "headline": "Founder at Aimplify Technologies",
+      "location": "Bengaluru, Karnataka, India",
+      "currentCompany": "Aimplify",
+      "currentPosition": "N/A",
+      "linkedinUrl": "https://www.linkedin.com/in/shiv-das-13a0768",
+      "connectionsCount": 1646,
+      "skillsCount": 34,
+      "experienceCount": 7,
+      "educationCount": 3
+    }
+  ],
+  "originalFile": "harvestapi_Profile_enrichment_for_Shiv_Das_httpswwwlinkedincominshivdas13a0768_2025-08-18T14-14-55-573Z.json"
+}

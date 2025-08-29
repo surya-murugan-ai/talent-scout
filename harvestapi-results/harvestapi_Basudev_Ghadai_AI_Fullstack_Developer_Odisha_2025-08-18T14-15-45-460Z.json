@@ -1,0 +1,861 @@
+{
+  "timestamp": "2025-08-18T14:15:45.460Z",
+  "searchQuery": "Basudev Ghadai AI Fullstack Developer  Odisha",
+  "rawData": [
+    {
+      "id": "ACoAADNEhP8BHqHYsSeNWnT9U-NGpTMJjX7v_zA",
+      "publicIdentifier": "basudev-ghadai-67b07b200",
+      "linkedinUrl": "https://www.linkedin.com/in/basudev-ghadai-67b07b200",
+      "firstName": "Basudev",
+      "lastName": "Ghadai",
+      "websites": [
+        "https://basudevghadai.vercel.app/"
+      ],
+      "headline": "AI Fullstack Developer at Aimplify | Ex-IBM Intern | Python Developer | AI & ML | Certified in Python for Data Science",
+      "about": "I am an AI Fullstack Developer at Aimplify, focused on building production-grade, AI-powered applications tightly integrated with cloud-native architectures. My core skill set includes Python, FastAPI, LangGraph, LangChain, and Model Context Protocol (MCP) for orchestrating complex multi-agent systems and autonomous AI workflows. I leverage cloud platforms like Google Cloud Platform (GCP) and AWS to deploy scalable, resilient AI solutions. I work extensively with large language models (LLMs) such as LLaMA 3, GPT, and DeepSeek, enabling intelligent agent design, task automation, and real-time decision-making.\n\nPreviously, at Sapat International Pvt Ltd, I engineered backend systems using Python, Django, Flask, and Odoo, customized ERP modules, and enhanced the OpenedX LMS for e-learning platforms. I also developed AI-driven automation systems using OpenAI's GPT models, AWS SageMaker, and Open Hands, integrating them into cloud environments for high availability and performance.\n\nEarlier, as a Service Engineer at CPS India Pvt Ltd, I was responsible for enterprise software optimization and troubleshooting. At Confluex Marketing Pvt Ltd, I contributed to web application development using Django and Flask, with a strong focus on RESTful APIs and database optimization. During my internship at IBM, I worked on AI/ML projects involving predictive analytics, deploying solutions to the cloud via Heroku.\n\nI hold certifications in Python for Data Science and related technologies from HackerRank and Sololearn. My portfolio includes web scraping tools, intelligent automation scripts, and a custom Flask-based personal website.\n\nWith a deep passion for AI, cloud-native development, and intelligent systems, I strive to build solutions that are scalable, efficient, and transformative in the AI-first era.",
+      "openToWork": false,
+      "hiring": false,
+      "photo": "https://media.licdn.com/dms/image/v2/D4D03AQFzM7kRkVvxhQ/profile-displayphoto-crop_800_800/B4DZhqpHhUG8AM-/0/1754135821991?e=1758153600&v=beta&t=zvHVVdAnswoIysgtgaBvCkNVaaLrfiNtqzYyGFvN9to",
+      "premium": false,
+      "influencer": false,
+      "location": {
+        "linkedinText": "Odisha, India",
+        "countryCode": "IN",
+        "parsed": {
+          "text": "Odisha, India",
+          "countryCode": "IN",
+          "regionCode": null,
+          "country": "India",
+          "countryFull": "India",
+          "state": "Odisha"
+        }
+      },
+      "verified": true,
+      "registeredAt": "2020-11-23T14:55:47.182Z",
+      "topSkills": "Python (Programming Language) • Back-End Web Development • agentic AI • Large Language Models (LLM) • GEN AI",
+      "connectionsCount": 948,
+      "followerCount": 977,
+      "currentPosition": [
+        {
+          "companyName": "Aimplify"
+        }
+      ],
+      "experience": [
+        {
+          "position": "AI Fullstack Developer",
+          "location": "Bengaluru, Karnataka, India",
+          "employmentType": "Full-time",
+          "workplaceType": "On-site",
+          "companyName": "Aimplify",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/aimplifytech/",
+          "companyId": "100532730",
+          "companyUniversalName": "aimplifytech",
+          "duration": "5 mos",
+          "description": "At Aimplify, I built and deployed AI-powered automation and analytics solutions, integrating intelligent agents, live dashboards, and cloud-based systems. My work spanned full-stack development (FastAPI, React), AI analytics integration, and AWS-based deployments, delivering scalable, real-time solutions that enhanced efficiency and decision-making.",
+          "skills": [
+            "Large Language Models (LLM)",
+            "Python (Programming Language)",
+            "LangChain",
+            "lama",
+            "Artificial Intelligence (AI)",
+            "GEN AI",
+            "agentic AI"
+          ],
+          "startDate": {
+            "month": "Apr",
+            "year": 2025,
+            "text": "Apr 2025"
+          },
+          "endDate": {
+            "text": "Present"
+          }
+        },
+        {
+          "position": "Software Developer",
+          "location": "Mumbai, Maharashtra, India",
+          "employmentType": "Full-time",
+          "workplaceType": null,
+          "companyName": "Sapat International",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/27510417/",
+          "companyId": "27510417",
+          "duration": "1 yr",
+          "description": "Software Developer specializing in Python, with hands-on experience in AWS, API integration, and containerization using Docker. Successfully contributed to projects involving Open edX, enhancing e-learning platforms, and implemented Odoo ERP solutions to streamline business processes.",
+          "skills": [
+            "API Development",
+            "DSA",
+            "Back-End Web Development",
+            "Odoo",
+            "agentic AI",
+            "Scripting",
+            "Object-Relational Mapping (ORM)",
+            "Python",
+            "Amazon Web Services (AWS)",
+            "Databases",
+            "Time Management",
+            "Artificial Intelligence (AI)",
+            "PostgreSQL"
+          ],
+          "startDate": {
+            "month": "Apr",
+            "year": 2024,
+            "text": "Apr 2024"
+          },
+          "endDate": {
+            "month": "Mar",
+            "year": 2025,
+            "text": "Mar 2025"
+          }
+        },
+        {
+          "position": "Technical Service Engineer",
+          "location": "Mumbai, Maharashtra, India",
+          "employmentType": "Full-time",
+          "workplaceType": "On-site",
+          "companyName": "Central Parking Services",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/13712815/",
+          "companyId": "13712815",
+          "duration": "10 mos",
+          "description": "working at Jio world convention centre",
+          "skills": [
+            "Software Consulting",
+            "Computer Hardware",
+            "Python (Programming Language)",
+            "Field Service Engineering",
+            "Computer Hardware Troubleshooting",
+            "Software Configuration Management"
+          ],
+          "startDate": {
+            "month": "Jun",
+            "year": 2023,
+            "text": "Jun 2023"
+          },
+          "endDate": {
+            "month": "Mar",
+            "year": 2024,
+            "text": "Mar 2024"
+          }
+        },
+        {
+          "position": "Freelance backend developer ",
+          "location": null,
+          "employmentType": null,
+          "workplaceType": "Remote",
+          "companyName": "Freelance",
+          "companyLinkedinUrl": "https://www.linkedin.com/search/results/all/?keywords=Freelance",
+          "duration": "6 mos",
+          "description": "freelancer",
+          "skills": [
+            "AWS Command Line Interface (CLI)",
+            "Selenium WebDriver",
+            "Django",
+            "Python (Programming Language)",
+            "Python",
+            "Amazon Web Services (AWS)",
+            "Flask",
+            "Selenium",
+            "Cloud Computing",
+            "Django REST Framework"
+          ],
+          "startDate": {
+            "month": "Dec",
+            "year": 2022,
+            "text": "Dec 2022"
+          },
+          "endDate": {
+            "month": "May",
+            "year": 2023,
+            "text": "May 2023"
+          }
+        },
+        {
+          "position": "Python backend Developer",
+          "location": null,
+          "employmentType": "Full-time",
+          "workplaceType": null,
+          "companyName": "Confluex",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/13734529/",
+          "companyId": "13734529",
+          "duration": "4 mos",
+          "description": null,
+          "skills": [
+            "API Development",
+            "A/B Testing",
+            "Swagger API",
+            "Web Technologies",
+            "Web Development",
+            "Object-Oriented Programming (OOP)",
+            "Problem Solving",
+            "Endpoint",
+            "MongoDB",
+            "Django",
+            "Python (Programming Language)",
+            "Pinata",
+            "Flask",
+            "Databases",
+            "Time Management",
+            "Beautiful Soup",
+            "Unit Testing",
+            "REST APIs"
+          ],
+          "startDate": {
+            "month": "Aug",
+            "year": 2022,
+            "text": "Aug 2022"
+          },
+          "endDate": {
+            "month": "Nov",
+            "year": 2022,
+            "text": "Nov 2022"
+          }
+        },
+        {
+          "position": "Internship Trainee(backed)",
+          "location": "Banglore ",
+          "employmentType": "Internship",
+          "workplaceType": null,
+          "companyName": "Confluex",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/13734529/",
+          "companyId": "13734529",
+          "duration": "3 mos",
+          "description": null,
+          "skills": [
+            "Test Automation",
+            "Object-Oriented Programming (OOP)",
+            "MongoDB",
+            "Selenium WebDriver",
+            "Django",
+            "Python (Programming Language)",
+            "Selenium",
+            "Beautiful Soup",
+            "Selenium Testing"
+          ],
+          "startDate": {
+            "month": "May",
+            "year": 2022,
+            "text": "May 2022"
+          },
+          "endDate": {
+            "month": "Jul",
+            "year": 2022,
+            "text": "Jul 2022"
+          }
+        },
+        {
+          "position": "Internship Trainee(AI /ML)",
+          "location": null,
+          "employmentType": "Internship",
+          "workplaceType": "Remote",
+          "companyName": "IBM",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/1009/",
+          "companyId": "1009",
+          "duration": "5 mos",
+          "description": null,
+          "skills": [
+            "Pandas (Software)",
+            "Matplotlib",
+            "Data Analysis",
+            "Data Visualization",
+            "Python (Programming Language)",
+            "NumPy",
+            "Seaborn",
+            "Machine Learning",
+            "Artificial Intelligence (AI)"
+          ],
+          "startDate": {
+            "month": "Oct",
+            "year": 2021,
+            "text": "Oct 2021"
+          },
+          "endDate": {
+            "month": "Feb",
+            "year": 2022,
+            "text": "Feb 2022"
+          }
+        }
+      ],
+      "education": [
+        {
+          "schoolName": "Indira Gandhi National Open University",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/15105582/",
+          "degree": "BCA",
+          "fieldOfStudy": "Computer Science",
+          "skills": [
+            "Python (Programming Language)",
+            "C (Programming Language)",
+            "C++",
+            "Java",
+            "DSA",
+            "Database Management System (DBMS)",
+            "Assembly Language",
+            "x86 Assembly",
+            "Amazon Web Services (AWS)",
+            "JavaScript",
+            "Core Java"
+          ],
+          "startDate": {
+            "month": "Jun",
+            "year": 2022,
+            "text": "Jun 2022"
+          },
+          "endDate": {
+            "month": "Jun",
+            "year": 2025,
+            "text": "Jun 2025"
+          },
+          "period": "Jun 2022 - Jun 2025"
+        },
+        {
+          "schoolName": "NSTI BHUBANESWAR",
+          "schoolLinkedinUrl": "https://www.linkedin.com/search/results/all/?keywords=NSTI+BHUBANESWAR",
+          "degree": "Advance Diploma ",
+          "fieldOfStudy": "IT",
+          "skills": [
+            "Relational Databases",
+            "Front-End Development",
+            "HTML5",
+            "PostgreSQL",
+            "Tkinter",
+            "Computer Science",
+            "SQL",
+            "Amazon Web Services (AWS)",
+            "Object-Relational Mapping (ORM)",
+            "Panda",
+            "Object-Oriented Programming (OOP)",
+            "Data Structures"
+          ],
+          "insights": "Grade: 86",
+          "startDate": {
+            "year": 2019,
+            "text": "2019"
+          },
+          "endDate": {
+            "year": 2021,
+            "text": "2021"
+          },
+          "period": "2019 - 2021"
+        }
+      ],
+      "certifications": [
+        {
+          "title": "Prompt Design in Vertex AI Skill Badge",
+          "issuedAt": "Issued Apr 2025",
+          "issuedBy": "Google",
+          "issuedByLink": "https://www.linkedin.com/company/1441/"
+        },
+        {
+          "title": "Introduction to Generative AI",
+          "issuedAt": "Issued Jan 2025",
+          "issuedBy": "Google",
+          "issuedByLink": null
+        }
+      ],
+      "projects": [],
+      "volunteering": [],
+      "receivedRecommendations": [],
+      "skills": [
+        {
+          "name": "LangChain",
+          "positions": [
+            "AI Fullstack Developer at Aimplify"
+          ]
+        },
+        {
+          "name": "lama",
+          "positions": [
+            "AI Fullstack Developer at Aimplify"
+          ]
+        },
+        {
+          "name": "agentic AI",
+          "positions": [
+            "2 experiences across Aimplify and 1 other company",
+            "Prompt Design in Vertex AI Skill Badge"
+          ]
+        },
+        {
+          "name": "Large Language Models (LLM)",
+          "positions": [
+            "AI Fullstack Developer at Aimplify"
+          ]
+        },
+        {
+          "name": "GEN AI",
+          "positions": [
+            "AI Fullstack Developer at Aimplify"
+          ]
+        },
+        {
+          "name": "Scripting",
+          "positions": [
+            "Software Developer at Sapat International"
+          ]
+        },
+        {
+          "name": "JavaScript",
+          "positions": [
+            "Indira Gandhi National Open University"
+          ]
+        },
+        {
+          "name": "Core Java",
+          "positions": [
+            "Indira Gandhi National Open University"
+          ]
+        },
+        {
+          "name": "Odoo",
+          "positions": [
+            "Software Developer at Sapat International"
+          ]
+        },
+        {
+          "name": "Python ",
+          "positions": [
+            "2 experiences across Sapat International and 1 other company"
+          ]
+        },
+        {
+          "name": "Django REST Framework"
+        },
+        {
+          "name": "Cloud Computing"
+        },
+        {
+          "name": "AWS Command Line Interface (CLI)"
+        },
+        {
+          "name": "Matplotlib",
+          "positions": [
+            "Internship Trainee(AI /ML) at IBM"
+          ]
+        },
+        {
+          "name": "Seaborn",
+          "positions": [
+            "Internship Trainee(AI /ML) at IBM"
+          ]
+        },
+        {
+          "name": "C (Programming Language)",
+          "positions": [
+            "Indira Gandhi National Open University"
+          ]
+        },
+        {
+          "name": "C++",
+          "positions": [
+            "Indira Gandhi National Open University"
+          ]
+        },
+        {
+          "name": "DSA",
+          "positions": [
+            "Software Developer at Sapat International",
+            "Indira Gandhi National Open University"
+          ]
+        },
+        {
+          "name": "Assembly Language",
+          "positions": [
+            "Indira Gandhi National Open University"
+          ]
+        },
+        {
+          "name": "x86 Assembly",
+          "positions": [
+            "Indira Gandhi National Open University"
+          ]
+        },
+        {
+          "name": "Hotel Management"
+        },
+        {
+          "name": "Field Service Engineering",
+          "positions": [
+            "Technical Service Engineer at Central Parking Services"
+          ]
+        },
+        {
+          "name": "Software Configuration Management",
+          "positions": [
+            "Technical Service Engineer at Central Parking Services"
+          ]
+        },
+        {
+          "name": "Software Consulting",
+          "positions": [
+            "Technical Service Engineer at Central Parking Services"
+          ]
+        },
+        {
+          "name": "Computer Hardware",
+          "positions": [
+            "Technical Service Engineer at Central Parking Services"
+          ]
+        },
+        {
+          "name": "Computer Hardware Troubleshooting",
+          "positions": [
+            "Technical Service Engineer at Central Parking Services"
+          ]
+        },
+        {
+          "name": "Subversion"
+        },
+        {
+          "name": "Front-End Development"
+        },
+        {
+          "name": "Object-Relational Mapping (ORM)",
+          "positions": [
+            "Software Developer at Sapat International"
+          ]
+        },
+        {
+          "name": "Computer Science"
+        },
+        {
+          "name": "HTML5"
+        },
+        {
+          "name": "Unit Testing",
+          "positions": [
+            "Python backend Developer at Confluex"
+          ]
+        },
+        {
+          "name": "Data Structures"
+        },
+        {
+          "name": "Time Management",
+          "positions": [
+            "2 experiences across Sapat International and 1 other company"
+          ]
+        },
+        {
+          "name": "Web Technologies",
+          "positions": [
+            "Python backend Developer at Confluex"
+          ]
+        },
+        {
+          "name": "Back-End Web Development",
+          "positions": [
+            "Software Developer at Sapat International"
+          ]
+        },
+        {
+          "name": "Relational Databases"
+        },
+        {
+          "name": "Problem Solving",
+          "positions": [
+            "Python backend Developer at Confluex"
+          ]
+        },
+        {
+          "name": "Panda"
+        },
+        {
+          "name": "Tkinter"
+        },
+        {
+          "name": "Object-Oriented Programming (OOP)",
+          "positions": [
+            "2 experiences at Confluex",
+            "Python for Data Science and AI"
+          ]
+        },
+        {
+          "name": "REST APIs",
+          "positions": [
+            "Python backend Developer at Confluex"
+          ],
+          "assessments": "Passed LinkedIn Skill Assessment"
+        },
+        {
+          "name": "PostgreSQL",
+          "positions": [
+            "Software Developer at Sapat International"
+          ]
+        },
+        {
+          "name": "Pandas (Software)",
+          "positions": [
+            "Internship Trainee(AI /ML) at IBM"
+          ]
+        },
+        {
+          "name": "Amazon Web Services (AWS)",
+          "positions": [
+            "2 experiences across Sapat International and 1 other company",
+            "2 educational experiences at Indira Gandhi National Open University"
+          ]
+        },
+        {
+          "name": "SQL"
+        },
+        {
+          "name": "NumPy",
+          "positions": [
+            "Internship Trainee(AI /ML) at IBM"
+          ]
+        },
+        {
+          "name": "A/B Testing",
+          "positions": [
+            "Python backend Developer at Confluex"
+          ]
+        },
+        {
+          "name": "Data Analysis",
+          "positions": [
+            "Internship Trainee(AI /ML) at IBM"
+          ]
+        },
+        {
+          "name": "Data Visualization",
+          "positions": [
+            "Internship Trainee(AI /ML) at IBM"
+          ]
+        },
+        {
+          "name": "Test Automation",
+          "positions": [
+            "Internship Trainee(backed) at Confluex"
+          ]
+        },
+        {
+          "name": "Selenium WebDriver"
+        },
+        {
+          "name": "Selenium"
+        },
+        {
+          "name": "Selenium Testing",
+          "positions": [
+            "Internship Trainee(backed) at Confluex"
+          ]
+        },
+        {
+          "name": "Databases",
+          "positions": [
+            "2 experiences across Sapat International and 1 other company"
+          ]
+        },
+        {
+          "name": "Pinata",
+          "positions": [
+            "Python backend Developer at Confluex"
+          ]
+        },
+        {
+          "name": "Beautiful Soup",
+          "positions": [
+            "2 experiences at Confluex"
+          ]
+        },
+        {
+          "name": "Swagger API",
+          "positions": [
+            "Python backend Developer at Confluex"
+          ]
+        },
+        {
+          "name": "Endpoint ",
+          "positions": [
+            "Python backend Developer at Confluex"
+          ]
+        },
+        {
+          "name": "Artificial Intelligence (AI)",
+          "positions": [
+            "3 experiences across Aimplify and 2 other companies"
+          ]
+        },
+        {
+          "name": "Web Development",
+          "positions": [
+            "Python backend Developer at Confluex"
+          ]
+        },
+        {
+          "name": "Jango "
+        },
+        {
+          "name": "API Development",
+          "positions": [
+            "2 experiences across Sapat International and 1 other company"
+          ]
+        },
+        {
+          "name": "Flask"
+        },
+        {
+          "name": "Django",
+          "assessments": "Passed LinkedIn Skill Assessment"
+        },
+        {
+          "name": "Java",
+          "positions": [
+            "Indira Gandhi National Open University"
+          ],
+          "endorsements": "2 endorsements"
+        },
+        {
+          "name": "Python (Programming Language)",
+          "positions": [
+            "6 experiences across Aimplify and 4 other companies",
+            "Indira Gandhi National Open University",
+            "Python(Basic)"
+          ]
+        },
+        {
+          "name": "Database Management System (DBMS)",
+          "positions": [
+            "Indira Gandhi National Open University"
+          ]
+        },
+        {
+          "name": "PHP"
+        },
+        {
+          "name": "MySQL"
+        },
+        {
+          "name": "HTML"
+        },
+        {
+          "name": "Cascading Style Sheets (CSS)"
+        },
+        {
+          "name": "English"
+        },
+        {
+          "name": "MongoDB",
+          "positions": [
+            "2 experiences at Confluex"
+          ],
+          "assessments": "Passed LinkedIn Skill Assessment",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "Machine Learning",
+          "positions": [
+            "Internship Trainee(AI /ML) at IBM"
+          ],
+          "assessments": "Passed LinkedIn Skill Assessment"
+        },
+        {
+          "name": "Linux",
+          "assessments": "Passed LinkedIn Skill Assessment"
+        }
+      ],
+      "publications": [],
+      "courses": [],
+      "patents": [],
+      "honorsAndAwards": [],
+      "languages": [],
+      "featured": null,
+      "moreProfiles": [
+        {
+          "id": "ACoAACxTdFIBxeCGIc4-2AIZ_Kz2AF23ijK-nhg",
+          "firstName": "Sandeep",
+          "lastName": "Sutradhar",
+          "publicIdentifier": "sandeep-sutradhar-86a076189",
+          "linkedinUrl": "https://www.linkedin.com/in/sandeep-sutradhar-86a076189"
+        },
+        {
+          "id": "ACoAAF0EUHkBD6YrIeS7SOyO9yCBSn2J4jzErgs",
+          "firstName": "Nazzii",
+          "lastName": "Amin",
+          "position": "Student at Indira Gandhi National Open University",
+          "publicIdentifier": "nazzii-amin-0a1768376",
+          "linkedinUrl": "https://www.linkedin.com/in/nazzii-amin-0a1768376"
+        },
+        {
+          "id": "ACoAAC8UvBUBYbdvWm4T5PqZcuXFADaJyUgrc5g",
+          "firstName": "Akshat",
+          "lastName": "shrivastava",
+          "publicIdentifier": "akshat-shrivastava18",
+          "linkedinUrl": "https://www.linkedin.com/in/akshat-shrivastava18"
+        },
+        {
+          "id": "ACoAAF05tpEBgd90-BzzR_uwlJlxzioIP82OWEE",
+          "firstName": "SHIFA SHAHANAZ",
+          "lastName": "A S",
+          "position": "Student at Calicut University, Thenhipalem, Malapuram",
+          "publicIdentifier": "shifa-shahanaz-a-s-329975377",
+          "linkedinUrl": "https://www.linkedin.com/in/shifa-shahanaz-a-s-329975377"
+        },
+        {
+          "id": "ACoAAFzdAZQB_Gl0Pnzvpuq77armn3JgUQ3Vsm0",
+          "firstName": "ROHIT",
+          "lastName": "Thakur",
+          "position": "Student at Indira Gandhi National Open University",
+          "publicIdentifier": "rohit-thakur-330925375",
+          "linkedinUrl": "https://www.linkedin.com/in/rohit-thakur-330925375"
+        },
+        {
+          "id": "ACoAABZ2X-0BKdo-BVRAZwf3t2ASrJbKFAePfTg",
+          "firstName": "Ruptanu",
+          "lastName": "De",
+          "publicIdentifier": "ruptanu-de",
+          "linkedinUrl": "https://www.linkedin.com/in/ruptanu-de"
+        },
+        {
+          "id": "ACoAACKPgtIBlN_v6icLQHkedFhmcra0N5HXQQM",
+          "firstName": "DEEPSHIKHA",
+          "lastName": "Y.",
+          "publicIdentifier": "deepshikhayadav2000",
+          "linkedinUrl": "https://www.linkedin.com/in/deepshikhayadav2000"
+        },
+        {
+          "id": "ACoAAFp6rDkB2AMVaBnKPBiPWoNgckwNvv8TY3I",
+          "firstName": "lukas",
+          "lastName": "vara",
+          "position": "Project Specialist at Cyient",
+          "publicIdentifier": "lukas-vara-989455364",
+          "linkedinUrl": "https://www.linkedin.com/in/lukas-vara-989455364"
+        },
+        {
+          "id": "ACoAAF0GRCQBHal-crqS_6kjXhDGU8N7Cc6oX9c",
+          "firstName": "Harsh",
+          "lastName": "Yadav",
+          "position": "Aspiring Data Analyst | Proficient in Power BI, SQL, Excel & Data Visualization | Seeking Data Analysis Opportunities",
+          "publicIdentifier": "harsh-yadav-11880a376",
+          "linkedinUrl": "https://www.linkedin.com/in/harsh-yadav-11880a376"
+        },
+        {
+          "id": "ACoAAF1J4KoBpmn7wjVzjX9S2ZBrcogqnRARR0s",
+          "firstName": "Varun",
+          "lastName": "Kumar",
+          "position": "CA Article/CA Finalist",
+          "publicIdentifier": "varun-kumar-3a21a6378",
+          "linkedinUrl": "https://www.linkedin.com/in/varun-kumar-3a21a6378"
+        },
+        {
+          "id": "ACoAAAFTmEoBPa3iyge4v5ufD0MCPiioRFFDIbE",
+          "firstName": "Manjunath",
+          "lastName": "Janardhan",
+          "publicIdentifier": "manjunath-janardhan-54a5537",
+          "linkedinUrl": "https://www.linkedin.com/in/manjunath-janardhan-54a5537"
+        }
+      ],
+      "_meta": {
+        "pagination": {
+          "totalElements": 1,
+          "totalPages": 1,
+          "pageNumber": 1,
+          "previousElements": 0,
+          "pageSize": 25
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "totalResults": 1,
+    "source": "harvestapi/linkedin-profile-search",
+    "savedAt": "2025-08-18T14:15:45.460Z"
+  }
+}

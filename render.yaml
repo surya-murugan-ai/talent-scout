@@ -2,7 +2,7 @@ services:
   - type: web
     name: talent-scout-fullstack
     runtime: node
-    buildCommand: npm run build:render
+    buildCommand: npm install && npm run build:render
     startCommand: npm start
     envVars:
       - key: NODE_ENV

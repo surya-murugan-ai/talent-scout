@@ -145,7 +145,7 @@ test-runner.js
 *.tmp
 
 # Package manager files
-package-lock.json
+# package-lock.json  # Commented out for production deployment
 yarn.lock
 pnpm-lock.yaml
 

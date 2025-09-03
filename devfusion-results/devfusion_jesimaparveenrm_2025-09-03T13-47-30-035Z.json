@@ -1,0 +1,692 @@
+{
+  "timestamp": "2025-09-03T13:47:30.035Z",
+  "linkedinUrl": "https://linkedin.com/in/jesimaparveenrm",
+  "rawData": {
+    "linkedinUrl": "https://linkedin.com/in/jesimaparveenrm",
+    "firstName": "Jesima Parveen",
+    "lastName": "Raja Mohammed",
+    "fullName": "Jesima Parveen Raja Mohammed",
+    "headline": "UI/UX Designer",
+    "connections": 1873,
+    "followers": 1968,
+    "email": null,
+    "mobileNumber": null,
+    "jobTitle": "Creative UX Designer",
+    "companyName": "Snippet Commerce 360°",
+    "companyIndustry": "Computer Software",
+    "companyWebsite": "snippetcommerce360.com",
+    "companyLinkedin": "linkedin.com/company/square-datalabs-llc",
+    "companyFoundedIn": null,
+    "companySize": "11-50",
+    "currentJobDuration": "1 yr 11 mos",
+    "currentJobDurationInYrs": 1.92,
+    "topSkillsByEndorsements": null,
+    "addressCountryOnly": "India",
+    "addressWithCountry": "Kochi, Kerala, India",
+    "addressWithoutCountry": "Kochi, Kerala",
+    "profilePic": "https://media.licdn.com/dms/image/v2/D5603AQELWwjRDoRQbQ/profile-displayphoto-scale_100_100/B56ZfTa_F9HUAk-/0/1751598758436?e=1759968000&v=beta&t=nM8j9Q-ENKpfmVZqn5h3nxAE3plIUF1I7iNXRJzTwsI",
+    "profilePicHighQuality": "https://media.licdn.com/dms/image/v2/D5603AQELWwjRDoRQbQ/profile-displayphoto-crop_800_800/B56ZfTa_F9HUAQ-/0/1751598758321?e=1759968000&v=beta&t=zbr31xpUPCj5u35t9HBhjeYC3yFYhwnPaq2xyssIaIg",
+    "about": "I’m Jesima Parveen R.M, a passionate UI/UX designer who views every interface as a dialogue between human emotion and digital precision. With 3 years of experience crafting intuitive products across real estate, eCommerce, SaaS, and internal tools, I don’t just design screens I design how people feel when they use them.\n\nFrom dashboards and CRM systems to responsive mobile flows, my journey through internships, freelance projects, and a full-time role has been rooted in usability, accessibility, and brand coherence. I'm skilled in Figma, Adobe XD, and Photoshop, and fluent in wireframing, prototyping, user research, heuristic evaluation, and usability testing.\n\nHolding a B.E. in Engineering (GPA 8.77) and backed by certifications from Google and CalArts, I bring both structure and soul to design. Inspired by psychology, philosophy, and storytelling, I approach every challenge with empathy, curiosity, and a deep respect for the user. I’m on a mission to blend creativity with strategy to craft digital experiences that are not just functional, but unforgettable.",
+    "publicIdentifier": "jesimaparveenrm",
+    "openConnection": null,
+    "urn": "ACoAADpWjl8BZ2vcZNPaBrxXGIFBAFHu6pAnEH0",
+    "creatorWebsite": {
+      "name": "My portfolio  ",
+      "link": "https://www.behance.net/jesimaparveenrm"
+    },
+    "experiences": [
+      {
+        "companyId": "90474807",
+        "companyUrn": "urn:li:fsd_company:90474807",
+        "companyLink1": "https://www.linkedin.com/company/90474807/",
+        "logo": "https://media.licdn.com/dms/image/v2/D4D0BAQHB-E6rG0jdog/company-logo_100_100/B4DZjRbWL2H4AY-/0/1755860264269/snippetcommerce360_logo?e=1759968000&v=beta&t=w89VjKa28kHENCa9OwHmuZzbNh-EC6ThYIKHvisVOXI",
+        "title": "Creative UX Designer",
+        "subtitle": "Square DataLabs LLC · Full-time",
+        "caption": "Nov 2023 - Present · 1 yr 11 mos",
+        "metadata": "Kochi, Kerala, India · On-site",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "  helped me get this job"
+              },
+              {
+                "type": "textComponent",
+                "text": "Designed dashboards, admin panels, and CRM systems for real estate,\neCommerce, and internal tools\nBuilt scalable UI components aligned with brand and accessibility standards,\nEnhanced user journeys with wireframes, prototypes, and usability-driven design,\nCreated visual assets like logos and templates for consistent cross-platform design,\nWorked with cross-functional teams to deliver features efficiently."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "companyId": "80766052",
+        "companyUrn": "urn:li:fsd_company:80766052",
+        "companyLink1": "https://www.linkedin.com/company/80766052/",
+        "logo": "https://media.licdn.com/dms/image/v2/D4D0BAQE3kL400xSATA/company-logo_100_100/B4DZiJe0FKH8AQ-/0/1754653213479/shoppeal_logo?e=1759968000&v=beta&t=eZeVyfy2kswR8h_MN1JZTM22pGB4oDE1z0-P5SkOb1s",
+        "title": "UX/UI Designer",
+        "subtitle": "Shoppeal Tech · Internship",
+        "caption": "Sep 2023 - Nov 2023 · 3 mos",
+        "metadata": "Kalyan, Maharashtra, India · Remote",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "textComponent",
+                "text": "Revamped course-related website to improve usability and retention,\nImplemented accessibility-focused design improvements."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "companyId": "14384499",
+        "companyUrn": "urn:li:fsd_company:14384499",
+        "companyLink1": "https://www.linkedin.com/company/14384499/",
+        "logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFCkSVuceKbBA/company-logo_200_200/company-logo_200_200/0/1690398765013/teamoreoo_logo?e=1759968000&v=beta&t=zGwx2-_HT55tA0BbDnU1_NKhtgyPluEyP-PvxkyvasU",
+        "title": "UX/UI Designer",
+        "subtitle": "Team Oreo · Internship",
+        "caption": "Sep 2023 - Nov 2023 · 3 mos",
+        "metadata": "London Area, United Kingdom · Remote",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "textComponent",
+                "text": "Enhanced official company website layout and user flow,\nConducted heuristic evaluations and introduced conversion-driven UI updates."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "companyId": "95014631",
+        "companyUrn": "urn:li:fsd_company:95014631",
+        "companyLink1": "https://www.linkedin.com/company/95014631/",
+        "logo": "https://media.licdn.com/dms/image/v2/D560BAQHDmIfYA5sY7w/company-logo_200_200/company-logo_200_200/0/1685777115831?e=1759968000&v=beta&t=yMna_yc5YJ34jhlbrv8IDXgWar62vDFzMxucWKZO1ug",
+        "title": "UX/UI Designer",
+        "subtitle": "CodSoft · Internship",
+        "caption": "Sep 2023 - Oct 2023 · 2 mos",
+        "metadata": "Kolkata, West Bengal, India · Remote",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "textComponent",
+                "text": "<<<Join dynamic team as a UI/UX Designer Intern and embark on a journey to enhance my design skills.\n<<<Design Website, Mobile UI, Email Marketing Template, restaurant menu as a Task"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "companyLink1": "https://www.linkedin.com/search/results/all/?keywords=Self-employed",
+        "title": "UI/UX Designer",
+        "subtitle": "Self-employed",
+        "caption": "Jan 2023 - Sep 2023 · 9 mos",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "textComponent",
+                "text": "I have developed and curated comprehensive online courses, leveraging my self-taught proficiency in design. My expertise in designing courses combines both my passion for the subject matter and a dedication to providing valuable and engaging learning experiences. I take pride in my ability to translate self-acquired design skills into effective educational content that resonates with learners."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "updates": [],
+    "skills": [
+      {
+        "title": "A/B Testing",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Creative UX Designer at Square DataLabs LLC"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Heuristic Evaluation",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Creative UX Designer at Square DataLabs LLC"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UX Design Process Understanding",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Georgia Institute of Technology"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Information Architecture",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Georgia Institute of Technology"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Interaction Design Principles",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Georgia Institute of Technology"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Usability Concepts",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Georgia Institute of Technology"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Design Thinking Basics",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Georgia Institute of Technology"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "User Research Awareness",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Georgia Institute of Technology"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": " adobe xd",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "UI/UX Designer (Self-employed)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "  wireframe",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "UI/UX Designer (Self-employed)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI Design",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "2 experiences across CodSoft and 1 other company"
+              },
+              {
+                "type": "insightComponent",
+                "text": "Coursera"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UX Design",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "2 experiences across CodSoft and 1 other company"
+              },
+              {
+                "type": "insightComponent",
+                "text": "Coursera"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Visual Communication",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Coursera"
+              },
+              {
+                "type": "insightComponent",
+                "text": "Graphic Design Specialization"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "branding communication",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Coursera"
+              },
+              {
+                "type": "insightComponent",
+                "text": "Graphic Design Specialization"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Graphic Design",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Coursera"
+              },
+              {
+                "type": "insightComponent",
+                "text": "Graphic Design Specialization"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Art History",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Coursera"
+              },
+              {
+                "type": "insightComponent",
+                "text": "Graphic Design Specialization"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "prototype",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Google UX Design Specialization"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "wireframe",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Google UX Design Specialization"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "User Research",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Creative UX Designer at Square DataLabs LLC"
+              },
+              {
+                "type": "insightComponent",
+                "text": "Google UX Design Specialization"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "mockup",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Google UX Design Specialization"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "profilePicAllDimensions": [
+      {
+        "width": 100,
+        "height": 100,
+        "url": "https://media.licdn.com/dms/image/v2/D5603AQELWwjRDoRQbQ/profile-displayphoto-scale_100_100/B56ZfTa_F9HUAk-/0/1751598758436?e=1759968000&v=beta&t=nM8j9Q-ENKpfmVZqn5h3nxAE3plIUF1I7iNXRJzTwsI"
+      },
+      {
+        "width": 200,
+        "height": 200,
+        "url": "https://media.licdn.com/dms/image/v2/D5603AQELWwjRDoRQbQ/profile-displayphoto-scale_200_200/B56ZfTa_F9HUAg-/0/1751598758436?e=1759968000&v=beta&t=5M1lJ9TlLgkpkU16vwCP86CswV82smx0bUJZMtba4DU"
+      },
+      {
+        "width": 800,
+        "height": 800,
+        "url": "https://media.licdn.com/dms/image/v2/D5603AQELWwjRDoRQbQ/profile-displayphoto-crop_800_800/B56ZfTa_F9HUAQ-/0/1751598758321?e=1759968000&v=beta&t=zbr31xpUPCj5u35t9HBhjeYC3yFYhwnPaq2xyssIaIg"
+      },
+      {
+        "width": 400,
+        "height": 400,
+        "url": "https://media.licdn.com/dms/image/v2/D5603AQELWwjRDoRQbQ/profile-displayphoto-scale_400_400/B56ZfTa_F9HUAo-/0/1751598758436?e=1759968000&v=beta&t=_ABNzhptnbS2GQo69t6NYv6BBrWI74VilLC-uLRWSdc"
+      }
+    ],
+    "educations": [
+      {
+        "companyId": "15088812",
+        "companyUrn": "urn:li:fsd_company:15088812",
+        "companyLink1": "https://www.linkedin.com/company/15088812/",
+        "logo": "https://media.licdn.com/dms/image/v2/C560BAQHhJebJh5K3PQ/company-logo_200_200/company-logo_200_200/0/1631529404703?e=1759968000&v=beta&t=2pOiMC2QKWvBOveuC3Huf8Kh3ugPO60gzP-kKjTiqug",
+        "title": "DesignBoat UI/UX School",
+        "subtitle": "UI/UX Design",
+        "caption": "Aug 2025 - Feb 2026",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "companyId": "77663205",
+        "companyUrn": "urn:li:fsd_company:77663205",
+        "companyLink1": "https://www.linkedin.com/company/77663205/",
+        "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQElUhj0AoCXPw/company-logo_200_200/company-logo_200_200/0/1640987068231/courseralearning_logo?e=1759968000&v=beta&t=RunYIzrU_dvPrpCX84gerVs6O2MAVsM5qmcQBL9Si9U",
+        "title": "Coursera",
+        "subtitle": "Graphic Design Specialization(California Institute of the Arts), Graphic Design",
+        "caption": "May 2023 - Aug 2023",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Grade: 95"
+              },
+              {
+                "type": "textComponent",
+                "text": "Course Certificates Completed :\n\nFundamentals of Graphic Design\nIdeas from the History of Graphic Design\nIntroduction to Typography\nIntroduction to Imagemaking\nBrand New Brand"
+              },
+              {
+                "type": "mediaComponent",
+                "text": "Graphic Design",
+                "thumbnail": "https://media.licdn.com/dms/image/v2/D562DAQEj4AJcnw2QRQ/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1692013973766?e=1757512800&v=beta&t=iqcpbOka2HOdw43a66ISIS1iPE5J3r-lU6_9WSt2Gu4"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "licenseAndCertificates": [
+      {
+        "companyId": "2453129",
+        "companyUrn": "urn:li:fsd_company:2453129",
+        "companyLink1": "https://www.linkedin.com/company/2453129/",
+        "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQGexnfBxeEG-g/company-logo_200_200/company-logo_200_200/0/1630530042036/coursera_logo?e=1759968000&v=beta&t=Dl6tBk6n-MWsZf7zaMnd74BqHP_9LaxvyeyNz8cPX20",
+        "title": "Brand New Brand",
+        "subtitle": "Coursera",
+        "caption": "Issued Aug 2023",
+        "metadata": "Credential ID S2K4J4AQP6NQ",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "companyId": "1441",
+        "companyUrn": "urn:li:fsd_company:1441",
+        "companyLink1": "https://www.linkedin.com/company/1441/",
+        "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQHiNSL4Or29cg/company-logo_200_200/company-logo_200_200/0/1631311446380?e=1759968000&v=beta&t=OQsuyFE-NRStieVKaWrjVYh9OL9IYUWGn-KFqrYbEV4",
+        "title": "Create High-Fidelity Designs and Prototypes in Figma",
+        "subtitle": "Google",
+        "caption": "Issued Aug 2023",
+        "metadata": "Credential ID 4V9KPEK5Q7DD",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "honorsAndAwards": [],
+    "languages": [
+      {
+        "title": "English",
+        "caption": "Professional working proficiency",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Tamil",
+        "caption": "Native or bilingual proficiency",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "volunteerAndAwards": [],
+    "verifications": [],
+    "promos": [],
+    "highlights": [],
+    "projects": [],
+    "publications": [],
+    "patents": [],
+    "courses": [],
+    "testScores": [],
+    "organizations": [],
+    "volunteerCauses": [],
+    "interests": [
+      {
+        "section_name": "Top Voices",
+        "section_components": [
+          {
+            "titleV2": "Anthony Carlton",
+            "caption": "48,655 followers",
+            "subtitle": "Helping CRE investors raise more capital | Writing on business, lifestyle design, & digital leverage @ antcarlton.substack.com",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/in/anthonyrcarlton",
+            "subComponents": []
+          },
+          {
+            "titleV2": "Bill Gates",
+            "caption": "38,672,035 followers",
+            "subtitle": "Chair, Gates Foundation and Founder, Breakthrough Energy",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/in/williamhgates",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Companies",
+        "section_components": [
+          {
+            "titleV2": "Microsoft",
+            "caption": "26,254,922 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1035/",
+            "subComponents": []
+          },
+          {
+            "titleV2": "Deloitte",
+            "caption": "19,590,533 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1038/",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Groups",
+        "section_components": [
+          {
+            "titleV2": "UX Writers & Content Designers",
+            "caption": "50,834 members",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/groups/8251547",
+            "subComponents": []
+          },
+          {
+            "titleV2": "UX/UI Design Brasil",
+            "caption": "25,752 members",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/groups/12268545",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Newsletters",
+        "section_components": [
+          {
+            "titleV2": "Certification & Career Guides",
+            "caption": "Published biweekly",
+            "subtitle": "Your go-to guide for certifications, skills, and career growth — delivered twice a week.",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/newsletters/7367392094962876416",
+            "subComponents": [
+              {
+                "insightComponent": {
+                  "text": "Hachion",
+                  "actionTarget": "https://www.linkedin.com/company/50093713/"
+                }
+              }
+            ]
+          },
+          {
+            "titleV2": "UiuxCreative Newsletter",
+            "caption": "Published weekly",
+            "subtitle": "Insights and expertise on UX Design, Technology, and Visual Design",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/newsletters/7008608771979550720",
+            "subComponents": [
+              {
+                "insightComponent": {
+                  "text": "Ruben Cespedes",
+                  "actionTarget": "https://www.linkedin.com/in/cespedesruben"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section_name": "Schools",
+        "section_components": [
+          {
+            "titleV2": "MyCaptain",
+            "caption": "71,986 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/school/68318962/",
+            "subComponents": []
+          },
+          {
+            "titleV2": "Coursera",
+            "caption": "218,287 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/school/77663205/",
+            "subComponents": []
+          }
+        ]
+      }
+    ],
+    "recommendations": []
+  },
+  "metadata": {
+    "source": "dev_fusion/Linkedin-Profile-Scraper",
+    "savedAt": "2025-09-03T13:47:30.035Z"
+  }
+}

@@ -305,7 +305,7 @@ Respond with JSON in this exact format:
 export async function batchAnalyzeCandidates(
   candidates: any[], 
   jobDescription = "", 
-  weights: { openToWork: number; skillMatch: number; jobStability: number; engagement: number },
+  weights: { openToWork: number; skillMatch: number; jobStability: number; engagement: number; companyDifference: number },
   onProgress?: (processed: number, total: number) => void
 ): Promise<CandidateAnalysis[]> {
   const results: CandidateAnalysis[] = [];
@@ -329,6 +329,7 @@ export async function batchAnalyzeCandidates(
         openToWork: 0,
         jobStability: 0,
         engagement: 0,
+        companyConsistency: 0,
         overallScore: 0,
         priority: 'Low',
         insights: ['Analysis failed - manual review required']

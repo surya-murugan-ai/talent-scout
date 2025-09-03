@@ -1,0 +1,159 @@
+{
+  "filename": "Resume UIUX-Jessy.pdf",
+  "timestamp": "2025-09-03T12:46:54.845Z",
+  "processingTime": 7324,
+  "confidence": 85,
+  "rawText": "\n\nJesima Parveen R.M\nUI/UX Designer - 3 years of Experience\nPhone: 6374652257\nEmail: jessyuiuxdesigner@gmail.com\nPortfolio: behance.net/jesimaparveenrm\nLinkedin: linkedin.com/in/jesimaparveenrm\nPROFESSIONAL\nEXPERIENCE\nDesigned dashboards, admin panels, and CRM systems for real estate,\neCommerce, and internal tools\nBuilt scalable UI components aligned with brand and accessibility standards\nEnhanced user journeys with wireframes, prototypes, and usability-driven design\nCreated visual assets like logos and templates for consistent cross-platform\ndesign\nWorked with cross-functional teams to deliver features efficiently\nUI/UX Designer\nSnippet Commerce 360°  | 2023-2025\nRevamped course-related website to improve usability and retention\nImplemented accessibility-focused design improvements\nUI/UX Design Intern\nShoppeal | Sep 2023-Nov 2023\nEnhanced official company website layout and user flow\nConducted heuristic evaluations and introduced conversion-driven UI updates\nUI/UX Design Intern\nTeam Oreo | Sep 2023-Nov 2023\nDesigned mobile login/signup flows for apps ensuring seamless user experience\nCreated responsive email templates improving user engagement\nDeveloped a dynamic restaurant menu interface for mobile platforms\nUI/UX Design Intern\nCodsoft | Sep 2023-Oct 2023\nProvided solutions for enhancing user experience on LinkedIn. \nConducted UX case study on a cake customization app. \nContributed to additional e-commerce projects. \nFreelance Designer\nFreelancer | Jan 2023-Sep 2023\nEDUCATION\nJansons Institute of Technology | GPA: 8.77\nBachelor of Engineering | 2019-2023\nSKILLS\nTools: Figma, Adobe XD, Photoshop\nUX: Wireframing, Prototyping, User Research, Personas, Usability Testing\nAnalysis: Google Analytics, A/B Testing, Heuristic Evaluation\nSoft Skills: Empathy, Design Thinking, Collaboration, Communication, Leadership \n \n\nCOURSES &\nCERTIFICATIONS \nGoogle UX Design | Feb 2023 - Aug 2023\nGoogle-Coursera\nGraphic Design Specialization | May 2023 - Aug 2023\nCalifornia Institute of Arts -Coursera \nPERSONAL\nINTERESTS\nCreative: Art & Sketching | Illustration | Caricature | Logo Design | Storytelling\nAnalytical: Psychology | Human Behaviour | Philosophy | Cognitive Design | Reading UX Books\nFigma For UX Design | April 2023 \nLinkedin\nIntroduction to User Experience Design | Feb 2023 \nGerogia Institute of Technology-Coursera\nLANGUAGE\n Tamil | English | Malayalam \nDECLARATION\nI confirm that the above information is accurate to the best of my knowledge.\nDATE\nPLACE\nSIGNATURE",
+  "extractedData": {
+    "name": "Jesima Parveen R.M",
+    "email": "jessyuiuxdesigner@gmail.com",
+    "phone": "6374652257",
+    "linkedinUrl": "https://linkedin.com/in/jesimaparveenrm",
+    "githubUrl": null,
+    "portfolioUrl": "https://behance.net/jesimaparveenrm",
+    "location": null,
+    "title": "UI/UX Designer",
+    "summary": null,
+    "experience": [
+      {
+        "jobTitle": "UI/UX Designer",
+        "company": "Snippet Commerce 360°",
+        "duration": "2023-2025",
+        "startDate": "2023",
+        "endDate": "2025",
+        "techUsed": [],
+        "description": "Revamped course-related website to improve usability and retention. Implemented accessibility-focused design improvements.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "UI/UX Design Intern",
+        "company": "Shoppeal",
+        "duration": "Sep 2023-Nov 2023",
+        "startDate": "2023-09",
+        "endDate": "2023-11",
+        "techUsed": [],
+        "description": "Enhanced official company website layout and user flow. Conducted heuristic evaluations and introduced conversion-driven UI updates.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "UI/UX Design Intern",
+        "company": "Team Oreo",
+        "duration": "Sep 2023-Nov 2023",
+        "startDate": "2023-09",
+        "endDate": "2023-11",
+        "techUsed": [],
+        "description": "Designed mobile login/signup flows for apps ensuring seamless user experience. Created responsive email templates improving user engagement. Developed a dynamic restaurant menu interface for mobile platforms.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "UI/UX Design Intern",
+        "company": "Codsoft",
+        "duration": "Sep 2023-Oct 2023",
+        "startDate": "2023-09",
+        "endDate": "2023-10",
+        "techUsed": [],
+        "description": "Provided solutions for enhancing user experience on LinkedIn. Conducted UX case study on a cake customization app. Contributed to additional e-commerce projects.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Freelance Designer",
+        "company": "Freelancer",
+        "duration": "Jan 2023-Sep 2023",
+        "startDate": "2023-01",
+        "endDate": "2023-09",
+        "techUsed": [],
+        "description": null,
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Engineering",
+        "field": null,
+        "university": "Jansons Institute of Technology",
+        "year": "2023",
+        "percentage": null,
+        "gpa": "8.77",
+        "location": null
+      }
+    ],
+    "projects": [],
+    "achievements": [],
+    "certifications": [
+      {
+        "name": "Google UX Design",
+        "issuer": "Google-Coursera",
+        "date": "Feb 2023 - Aug 2023",
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "Graphic Design Specialization",
+        "issuer": "California Institute of Arts -Coursera",
+        "date": "May 2023 - Aug 2023",
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "Figma For UX Design",
+        "issuer": "Linkedin",
+        "date": "April 2023",
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "Introduction to User Experience Design",
+        "issuer": "Georgia Institute of Technology-Coursera",
+        "date": "Feb 2023",
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      }
+    ],
+    "skills": [
+      "Figma",
+      "Adobe XD",
+      "Photoshop",
+      "Wireframing",
+      "Prototyping",
+      "User Research",
+      "Personas",
+      "Usability Testing",
+      "Google Analytics",
+      "A/B Testing",
+      "Heuristic Evaluation",
+      "Empathy",
+      "Design Thinking",
+      "Collaboration",
+      "Communication",
+      "Leadership"
+    ],
+    "interests": [
+      "Art & Sketching",
+      "Illustration",
+      "Caricature",
+      "Logo Design",
+      "Storytelling",
+      "Psychology",
+      "Human Behaviour",
+      "Philosophy",
+      "Cognitive Design",
+      "Reading UX Books"
+    ],
+    "languages": [
+      "Tamil",
+      "English",
+      "Malayalam"
+    ],
+    "originalData": {
+      "filename": "Resume UIUX-Jessy.pdf",
+      "rawText": "Jesima Parveen R.M UI/UX Designer - 3 years of Experience Phone: 6374652257 Email: jessyuiuxdesigner@gmail.com Portfolio: behance.net/jesimaparveenrm Linkedin: linkedin.com/in/jesimaparveenrm PROFESSIONAL EXPERIENCE Designed dashboards, admin panels, and CRM systems for real estate, eCommerce, and internal tools Built scalable UI components aligned with brand and accessibility standards Enhanced user journeys with wireframes, prototypes, and usability-driven design Created visual assets like logos and templates for consistent cross-platform design Worked with cross-functional teams to deliver features efficiently UI/UX Designer Snippet Commerce 360° | 2023-2025 Revamped course-related website to improve usability and retention Implemented accessibility-focused design improvements UI/UX Design Intern Shoppeal | Sep 2023-Nov 2023 Enhanced official company website layout and user flow Conducted heuristic evaluations and introduced conversion-driven UI updates UI/UX Design Intern Team Oreo | Sep 2023-Nov 2023 Designed mobile login/signup flows for apps ensuring seamless user experience Created responsive email templates improving user engagement Developed a dynamic restaurant menu interface for mobile platforms UI/UX Design Intern Codsoft | Sep 2023-Oct 2023 Provided solutions for enhancing user experience on LinkedIn. Conducted UX case study on a cake customization app. Contributed to additional e-commerce projects. Freelance Designer Freelancer | Jan 2023-Sep 2023 EDUCATION Jansons Institute of Technology | GPA: 8.77 Bachelor of Engineering | 2019-2023 SKILLS Tools: Figma, Adobe XD, Photoshop UX: Wireframing, Prototyping, User Research, Personas, Usability Testing Analysis: Google Analytics, A/B Testing, Heuristic Evaluation Soft Skills: Empathy, Design Thinking, Collaboration, Communication, Leadership COURSES & CERTIFICATIONS Google UX Design | Feb 2023 - Aug 2023 Google-Coursera Graphic Design Specialization | May 2023 - Aug 2023 California Institute of Arts -Cours"
+    },
+    "source": "resume",
+    "confidence": 85,
+    "processingTime": 0
+  }
+}

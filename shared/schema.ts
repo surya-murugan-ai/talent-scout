@@ -30,7 +30,6 @@ export const candidates = pgTable("candidates", {
   notes: text("notes"),
   linkedinNotes: text("linkedin_notes"), // Notes from recent posts/comments
   
-<<<<<<< HEAD
   // Enhanced fields for better data extraction
   firstName: text("first_name"),
   lastName: text("last_name"),
@@ -60,14 +59,13 @@ export const candidates = pgTable("candidates", {
   sourceFile: text("source_file"),
   processingDate: timestamp("processing_date"),
   dataQuality: real("data_quality"), // 0-100 score of data completeness
-=======
+  
   // Company comparison and hireability fields
   companyDifference: text("company_difference"), // Difference between resume company and LinkedIn company
   companyDifferenceScore: real("company_difference_score").default(0), // Score for company difference (0-10)
   hireabilityScore: real("hireability_score").default(0), // Overall hireability score (0-10)
   hireabilityFactors: jsonb("hireability_factors").default([]), // Factors affecting hireability
   potentialToJoin: text("potential_to_join").default("Unknown"), // High, Medium, Low, Unknown
->>>>>>> f1a54160bf1416a973abca96f0a46d4353508e89
   
   // ATS History fields
   atsId: text("ats_id"), // ID from ATS system

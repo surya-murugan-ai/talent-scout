@@ -1,8 +1,7 @@
 module.exports = {
   apps: [{
     name: 'talent-scout-app',
-    script: 'npx',
-    args: 'tsx server/index.ts',
+    script: 'dist-server/index.js',
     cwd: '/home/ubuntu/apps/talent-scout',
     env: {
       NODE_ENV: 'production',

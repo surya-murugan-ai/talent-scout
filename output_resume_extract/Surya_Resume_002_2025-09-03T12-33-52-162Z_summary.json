@@ -1,0 +1,143 @@
+{
+  "filename": "Surya_Resume_002.pdf",
+  "timestamp": "2025-09-03T12:33:52.163Z",
+  "processingTime": 7158,
+  "confidence": 98,
+  "extractedData": {
+    "name": "Surya Murugan",
+    "email": "surya.murugan.2026@gmail.com",
+    "phone": "9967137495",
+    "title": "Python Developer | Software Developer",
+    "location": "Mumbai",
+    "summary": "Results-driven Software and AI Developer with expertise in Python, SQL, and Django, specializing in machine learning, deep learning (FastAI, Hugging Face), and AI-driven applications. Experienced in developing finance-focused AI tools, Chrome extensions, and trading automation. Strong problem-solving skills with a passion for building scalable AI solutions. Seeking opportunities to apply AI and software development expertise to drive innovation.",
+    "experience": [
+      {
+        "jobTitle": "Jr. Software Developer",
+        "company": "Sapat International Pvt Ltd",
+        "duration": "April 2024 - Present",
+        "startDate": "2024-04",
+        "endDate": "Present",
+        "techUsed": [
+          "Python",
+          "Flask",
+          "RESTful APIs",
+          "Odoo",
+          "OpenedX",
+          "AI-powered automation"
+        ],
+        "description": "Develop and maintain scalable backend applications using Python and Flask. Design and manage RESTful APIs to enable seamless system integration. Customize and extend Odoo ERP modules to meet specific business needs. Enhance OpenedX LMS by implementing tailored features for better e-learning experiences. Collaborate with cross-functional teams to deliver high-performance, reliable applications. Utilize Open Hands platform to build and deploy AI-powered automation solutions.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Computer Engineering (BE)",
+        "field": "Computer Engineering",
+        "university": "Saraswati College of Engineering (Mumbai University)",
+        "year": "2023",
+        "percentage": "67.81%",
+        "gpa": "7.48",
+        "location": "Mumbai"
+      },
+      {
+        "degree": "HSC",
+        "field": "Biofocal Science: Electronics",
+        "university": "Arya Gurukul International Jr College",
+        "year": "2018",
+        "percentage": "64%",
+        "gpa": null,
+        "location": "Navi Mumbai"
+      }
+    ],
+    "skills": [
+      "Python",
+      "Flask",
+      "Django",
+      "FastAPI",
+      "Streamlit",
+      "HTML",
+      "CSS",
+      "Javascript",
+      "REST APIs",
+      "Performance Optimization",
+      "Scikit-learn",
+      "OpenAI",
+      "LangGraph",
+      "HuggingFace",
+      "BeautifulSoup",
+      "Agentic AI",
+      "Workflow Automation",
+      "Odoo",
+      "OpenedX",
+      "AWS",
+      "SQL",
+      "NoSQL",
+      "Web Scraping",
+      "HTML/XML Parsing",
+      "Git",
+      "Communication",
+      "Collaboration",
+      "Problem-Solving",
+      "Mentorship"
+    ],
+    "projects": [
+      {
+        "name": "QR4Order API",
+        "description": "Developed a QR-based ordering system API for the F&B sector.",
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Customized OpenedX LMS",
+        "description": "Enhanced e-learning platforms with custom feature development.",
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Event Job Portal",
+        "description": "Developed a dynamic job portal using Django, WebSockets, enabling real-time communication, social interactions, and recruiter-employee engagement.",
+        "techUsed": [
+          "Django",
+          "WebSockets"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Mental Health Companion",
+        "description": "Built an AI-powered platform integrating ML models and web scraping to assess mental health and recommend nearby therapists. Optimized performance using Redis caching.",
+        "techUsed": [
+          "ML models",
+          "web scraping",
+          "Redis caching"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Supervised Machine Learning: Regression and Classification",
+        "issuer": "DeepLearning.AI",
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "AI Agent Fundamentals",
+        "issuer": "HuggingFace",
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      }
+    ]
+  }
+}

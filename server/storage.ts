@@ -127,45 +127,7 @@ export class PostgresStorage implements IStorage {
 
   // Candidates
   async getCandidates(limit = 50, offset = 0): Promise<Candidate[]> {
-    const result = await db.select({
-      id: candidates.id,
-      name: candidates.name,
-      email: candidates.email,
-      phone: candidates.phone,
-      title: candidates.title,
-      company: candidates.company,
-      currentEmployer: candidates.currentEmployer,
-      linkedinUrl: candidates.linkedinUrl,
-      githubUrl: candidates.githubUrl,
-      portfolioUrl: candidates.portfolioUrl,
-      location: candidates.location,
-      linkedinLastActive: candidates.linkedinLastActive,
-      skills: candidates.skills,
-      score: candidates.score,
-      priority: candidates.priority,
-      openToWork: candidates.openToWork,
-      lastActive: candidates.lastActive,
-      notes: candidates.notes,
-      linkedinNotes: candidates.linkedinNotes,
-      companyDifference: candidates.companyDifference,
-      companyDifferenceScore: candidates.companyDifferenceScore,
-      hireabilityScore: candidates.hireabilityScore,
-      hireabilityFactors: candidates.hireabilityFactors,
-      potentialToJoin: candidates.potentialToJoin,
-      atsId: candidates.atsId,
-      selectionStatus: candidates.selectionStatus,
-      selectionDate: candidates.selectionDate,
-      joiningOutcome: candidates.joiningOutcome,
-      atsNotes: candidates.atsNotes,
-      source: candidates.source,
-      originalData: candidates.originalData,
-      enrichedData: candidates.enrichedData,
-      extractedData: candidates.extractedData,
-      confidence: candidates.confidence,
-      processingTime: candidates.processingTime,
-      createdAt: candidates.createdAt,
-      updatedAt: candidates.updatedAt
-    })
+    const result = await db.select()
       .from(candidates)
       .orderBy(desc(candidates.score))
       .limit(limit)
@@ -174,45 +136,7 @@ export class PostgresStorage implements IStorage {
   }
 
   async getCandidate(id: string): Promise<Candidate | undefined> {
-    const result = await db.select({
-      id: candidates.id,
-      name: candidates.name,
-      email: candidates.email,
-      phone: candidates.phone,
-      title: candidates.title,
-      company: candidates.company,
-      currentEmployer: candidates.currentEmployer,
-      linkedinUrl: candidates.linkedinUrl,
-      githubUrl: candidates.githubUrl,
-      portfolioUrl: candidates.portfolioUrl,
-      location: candidates.location,
-      linkedinLastActive: candidates.linkedinLastActive,
-      skills: candidates.skills,
-      score: candidates.score,
-      priority: candidates.priority,
-      openToWork: candidates.openToWork,
-      lastActive: candidates.lastActive,
-      notes: candidates.notes,
-      linkedinNotes: candidates.linkedinNotes,
-      companyDifference: candidates.companyDifference,
-      companyDifferenceScore: candidates.companyDifferenceScore,
-      hireabilityScore: candidates.hireabilityScore,
-      hireabilityFactors: candidates.hireabilityFactors,
-      potentialToJoin: candidates.potentialToJoin,
-      atsId: candidates.atsId,
-      selectionStatus: candidates.selectionStatus,
-      selectionDate: candidates.selectionDate,
-      joiningOutcome: candidates.joiningOutcome,
-      atsNotes: candidates.atsNotes,
-      source: candidates.source,
-      originalData: candidates.originalData,
-      enrichedData: candidates.enrichedData,
-      extractedData: candidates.extractedData,
-      confidence: candidates.confidence,
-      processingTime: candidates.processingTime,
-      createdAt: candidates.createdAt,
-      updatedAt: candidates.updatedAt
-    }).from(candidates).where(eq(candidates.id, id)).limit(1);
+    const result = await db.select().from(candidates).where(eq(candidates.id, id)).limit(1);
     return result[0];
   }
 
@@ -245,45 +169,7 @@ export class PostgresStorage implements IStorage {
   }
 
   async getCandidatesByPriority(priority: string): Promise<Candidate[]> {
-    const result = await db.select({
-      id: candidates.id,
-      name: candidates.name,
-      email: candidates.email,
-      phone: candidates.phone,
-      title: candidates.title,
-      company: candidates.company,
-      currentEmployer: candidates.currentEmployer,
-      linkedinUrl: candidates.linkedinUrl,
-      githubUrl: candidates.githubUrl,
-      portfolioUrl: candidates.portfolioUrl,
-      location: candidates.location,
-      linkedinLastActive: candidates.linkedinLastActive,
-      skills: candidates.skills,
-      score: candidates.score,
-      priority: candidates.priority,
-      openToWork: candidates.openToWork,
-      lastActive: candidates.lastActive,
-      notes: candidates.notes,
-      linkedinNotes: candidates.linkedinNotes,
-      companyDifference: candidates.companyDifference,
-      companyDifferenceScore: candidates.companyDifferenceScore,
-      hireabilityScore: candidates.hireabilityScore,
-      hireabilityFactors: candidates.hireabilityFactors,
-      potentialToJoin: candidates.potentialToJoin,
-      atsId: candidates.atsId,
-      selectionStatus: candidates.selectionStatus,
-      selectionDate: candidates.selectionDate,
-      joiningOutcome: candidates.joiningOutcome,
-      atsNotes: candidates.atsNotes,
-      source: candidates.source,
-      originalData: candidates.originalData,
-      enrichedData: candidates.enrichedData,
-      extractedData: candidates.extractedData,
-      confidence: candidates.confidence,
-      processingTime: candidates.processingTime,
-      createdAt: candidates.createdAt,
-      updatedAt: candidates.updatedAt
-    })
+    const result = await db.select()
       .from(candidates)
       .where(eq(candidates.priority, priority))
       .orderBy(desc(candidates.score));
@@ -306,15 +192,17 @@ export class PostgresStorage implements IStorage {
   }
 
   async getCandidatesByExperience(minYears: number, maxYears?: number): Promise<Candidate[]> {
-    let query = db.select()
-      .from(candidates)
-      .where(gte(candidates.yearsOfExperience, minYears));
+    let conditions = [gte(candidates.yearsOfExperience, minYears)];
     
     if (maxYears) {
-      query = query.where(lte(candidates.yearsOfExperience, maxYears));
+      conditions.push(lte(candidates.yearsOfExperience, maxYears));
     }
     
-    const result = await query.orderBy(desc(candidates.score));
+    const result = await db.select()
+      .from(candidates)
+      .where(and(...conditions))
+      .orderBy(desc(candidates.score));
+    
     return result;
   }
 

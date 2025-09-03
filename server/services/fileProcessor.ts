@@ -357,7 +357,7 @@ export class FileProcessor {
         try {
           const saved = await ResumeDataService.saveResumeData(
             data.extractedData,
-            files.find(f => f.buffer === data.originalData?.buffer)?.filename || 'unknown',
+            files.find(f => f.filename.includes(data.extractedData.name || 'unknown'))?.filename || 'unknown',
             data.processingTime,
             data.confidence
           );

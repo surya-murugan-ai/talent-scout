@@ -544,11 +544,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.log(`Enriching candidate ${candidate.name} with LinkedIn data`);
 
       // Enrich with real LinkedIn data
-      const enrichedProfile = await enrichLinkedInProfile(linkedinUrl, candidate.name, candidate.company);
+      const enrichedProfile = await enrichLinkedInProfile(linkedinUrl, candidate.name, candidate.company || undefined);
 
       // Re-analyze with new data
       const project = await storage.getProject("default-project");
-      const weights = project?.scoringWeights || {
+      const weights: { openToWork: number; skillMatch: number; jobStability: number; engagement: number; companyDifference: number } = (project?.scoringWeights as { openToWork: number; skillMatch: number; jobStability: number; engagement: number; companyDifference: number }) || {
         openToWork: 40,
         skillMatch: 30,
         jobStability: 15,
@@ -630,7 +630,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       // Get current scoring weights
       const project = await storage.getProject("default-project");
-      const weights = project?.scoringWeights || {
+      const weights: { openToWork: number; skillMatch: number; jobStability: number; engagement: number; companyDifference: number } = (project?.scoringWeights as { openToWork: number; skillMatch: number; jobStability: number; engagement: number; companyDifference: number }) || {
         openToWork: 30,
         skillMatch: 25,
         jobStability: 15,
@@ -724,6 +724,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
           const hireabilityFactors = calculateHireabilityFactors(candidateData, linkedInProfile, analysis);
 
           // Update the candidate with LinkedIn data
+          if (!resumeCandidate) {
+            console.error(`Failed to create/update candidate ${candidateData.name}`);
+            continue;
+          }
+          
           await storage.updateCandidate(resumeCandidate.id, {
             title: linkedInProfile.title || candidateData.title,
             company: candidateData.company, // ALWAYS keep resume company

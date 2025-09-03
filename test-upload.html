@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .upload-section { margin: 20px 0; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        .result { margin-top: 20px; padding: 10px; background: #f0f0f0; border-radius: 3px; }
+        .error { background: #ffebee; color: #c62828; }
+        .success { background: #e8f5e8; color: #2e7d32; }
+    </style>
+</head>
+<body>
+    <h1>File Upload Test</h1>
+    
+    <div class="upload-section">
+        <h3>Single File Upload</h3>
+        <form id="singleUploadForm">
+            <input type="file" id="singleFile" name="files" accept=".csv,.xlsx,.xls" required>
+            <button type="submit">Upload Single File</button>
+        </form>
+        <div id="singleResult" class="result"></div>
+    </div>
+
+    <div class="upload-section">
+        <h3>Multiple File Upload</h3>
+        <form id="multipleUploadForm">
+            <input type="file" id="multipleFiles" name="files" accept=".csv,.xlsx,.xls,.pdf,.docx" multiple required>
+            <button type="submit">Upload Multiple Files</button>
+        </form>
+        <div id="multipleResult" class="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('singleUploadForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData();
+            const file = document.getElementById('singleFile').files[0];
+            if (file) {
+                formData.append('files', file);
+                await uploadFile(formData, 'singleResult');
+            }
+        });
+
+        document.getElementById('multipleUploadForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData();
+            const files = document.getElementById('multipleFiles').files;
+            for (let file of files) {
+                formData.append('files', file);
+            }
+            await uploadFile(formData, 'multipleResult');
+        });
+
+        async function uploadFile(formData, resultId) {
+            const resultDiv = document.getElementById(resultId);
+            resultDiv.innerHTML = 'Uploading...';
+            resultDiv.className = 'result';
+
+            try {
+                const response = await fetch('http://localhost:5000/api/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+                
+                if (response.ok) {
+                    resultDiv.innerHTML = `<strong>Success!</strong> ${data.message}`;
+                    resultDiv.className = 'result success';
+                } else {
+                    resultDiv.innerHTML = `<strong>Error:</strong> ${data.error || data.message}`;
+                    resultDiv.className = 'result error';
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<strong>Error:</strong> ${error.message}`;
+                resultDiv.className = 'result error';
+            }
+        }
+    </script>
+</body>
+</html>

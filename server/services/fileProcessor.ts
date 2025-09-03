@@ -1,6 +1,8 @@
 import csv from 'csv-parser';
 import * as XLSX from 'xlsx';
 import { Readable } from 'stream';
+import { ResumeParser, ResumeData, ComprehensiveResumeData } from './resumeParser.js';
+import { ResumeDataService } from './resumeDataService.js';
 
 export interface ProcessedCandidate {
   name: string;
@@ -331,7 +333,7 @@ export class FileProcessor {
   }
 
   static getSupportedFileTypes(): string[] {
-    return ['.csv', '.xlsx', '.xls'];
+    return ['.csv', '.xlsx', '.xls', '.pdf', '.docx'];
   }
 
   static validateFileType(filename: string): boolean {
@@ -339,6 +341,78 @@ export class FileProcessor {
     return supportedTypes.some(type => filename.toLowerCase().endsWith(type));
   }
 
+  /**
+   * Process resume files (PDF, DOCX) with comprehensive data extraction
+   */
+  static async processResumes(files: { buffer: Buffer; filename: string }[]): Promise<ProcessedCandidate[]> {
+    try {
+      console.log('=== FILE PROCESSOR: Processing Resume Files ===');
+      console.log('Files to process:', files.map(f => f.filename));
+      
+      const resumeData = await ResumeParser.parseMultipleResumes(files);
+      
+      // Save extracted data to database
+      const savedData = [];
+      for (const data of resumeData) {
+        try {
+          const saved = await ResumeDataService.saveResumeData(
+            data.extractedData,
+            files.find(f => f.buffer === data.originalData?.buffer)?.filename || 'unknown',
+            data.processingTime,
+            data.confidence
+          );
+          savedData.push(saved);
+          console.log(`Saved resume data for ${data.extractedData.name}:`, saved);
+        } catch (saveError) {
+          console.error(`Failed to save resume data for ${data.extractedData.name}:`, saveError);
+        }
+      }
+      
+      // Convert comprehensive resume data to ProcessedCandidate format
+      const processedCandidates = resumeData.map(data => {
+        const comprehensive = data.extractedData;
+        
+        // Create a ProcessedCandidate with comprehensive data stored in originalData
+        const candidate: ProcessedCandidate = {
+          name: comprehensive.name,
+          email: comprehensive.email,
+          title: comprehensive.title,
+          company: comprehensive.experience?.[0]?.company || undefined,
+          skills: comprehensive.skills,
+          linkedinUrl: comprehensive.linkedinUrl,
+          location: comprehensive.location,
+          phone: comprehensive.phone,
+          experience: comprehensive.experience?.[0]?.duration || undefined,
+          // Store comprehensive data in originalData
+          originalData: {
+            ...comprehensive,
+            rawText: data.rawText.substring(0, 1000) // Store excerpt
+          },
+          source: 'resume',
+          confidence: data.confidence,
+          processingTime: data.processingTime
+        };
+
+        return candidate;
+      });
+
+      console.log('=== FILE PROCESSOR: Final Processed Candidates ===');
+      console.log('Number of candidates processed:', processedCandidates.length);
+      console.log('Number of candidates saved to database:', savedData.length);
+      processedCandidates.forEach((candidate, index) => {
+        console.log(`Candidate ${index + 1}:`, JSON.stringify(candidate, null, 2));
+      });
+      console.log('=== END FILE PROCESSOR ===');
+
+      return processedCandidates;
+    } catch (error) {
+      throw new Error(`Resume processing failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
+  }
+
+  /**
+   * Determine file type and process accordingly
+   */
   static async processFile(buffer: Buffer, filename: string): Promise<ProcessedCandidate[]> {
     if (!this.validateFileType(filename)) {
       throw new Error(`Unsupported file type. Supported types: ${this.getSupportedFileTypes().join(', ')}`);
@@ -350,6 +424,9 @@ export class FileProcessor {
       return this.processCSV(buffer);
     } else if (lowerFilename.endsWith('.xlsx') || lowerFilename.endsWith('.xls')) {
       return this.processExcel(buffer);
+    } else if (lowerFilename.endsWith('.pdf') || lowerFilename.endsWith('.docx')) {
+      const candidates = await this.processResumes([{ buffer, filename }]);
+      return candidates;
     }
 
     throw new Error('Unable to determine file type');

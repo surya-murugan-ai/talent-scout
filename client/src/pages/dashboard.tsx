@@ -12,6 +12,7 @@ import AIStatus from "@/components/AIStatus";
 import ActivityFeed from "@/components/ActivityFeed";
 import NotificationsPanel from "@/components/NotificationsPanel";
 import DatabaseStatus from "@/components/DatabaseStatus";
+import ResumeDataPage from "@/pages/resume-data";
 import { Button } from "@/components/ui/button";
 import { Trash2 } from "lucide-react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -176,6 +177,9 @@ export default function Dashboard() {
             </div>
           </div>
         );
+
+      case "resume-data":
+        return <ResumeDataPage />;
 
       case "history":
         return (

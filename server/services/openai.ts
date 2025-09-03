@@ -10,6 +10,7 @@ export interface CandidateAnalysis {
   openToWork: number;
   jobStability: number;
   engagement: number;
+  companyConsistency: number;
   overallScore: number;
   priority: 'High' | 'Medium' | 'Low';
   insights: string[];
@@ -34,7 +35,7 @@ export interface LinkedInProfile {
 export async function analyzeCandidate(
   candidateData: any, 
   jobDescription = "", 
-  weights: { openToWork: number; skillMatch: number; jobStability: number; engagement: number }
+  weights: { openToWork: number; skillMatch: number; jobStability: number; engagement: number; companyDifference: number }
 ): Promise<CandidateAnalysis> {
   try {
     const prompt = `
@@ -51,8 +52,11 @@ Scoring Criteria Weights:
 - Skill Match: ${weights.skillMatch}%
 - Job Stability: ${weights.jobStability}%
 - Platform Engagement: ${weights.engagement}%
+- Company Consistency: ${weights.companyDifference}%
 
 Please analyze this candidate and provide scores (0-10) for each criterion, an overall weighted score, priority level (High/Medium/Low), and actionable insights.
+
+Consider the company consistency between resume and LinkedIn data as an important factor in assessing candidate reliability and current status.
 
 Respond with JSON in this exact format:
 {
@@ -60,6 +64,7 @@ Respond with JSON in this exact format:
   "openToWork": number (0-10),
   "jobStability": number (0-10),
   "engagement": number (0-10),
+  "companyConsistency": number (0-10),
   "overallScore": number (0-10),
   "priority": "High" | "Medium" | "Low",
   "insights": ["insight1", "insight2", "insight3"]
@@ -90,6 +95,7 @@ Respond with JSON in this exact format:
       openToWork: Math.max(0, Math.min(10, analysis.openToWork || 0)),
       jobStability: Math.max(0, Math.min(10, analysis.jobStability || 0)),
       engagement: Math.max(0, Math.min(10, analysis.engagement || 0)),
+      companyConsistency: Math.max(0, Math.min(10, analysis.companyConsistency || 0)),
       overallScore: Math.max(0, Math.min(10, analysis.overallScore || 0)),
       priority: ['High', 'Medium', 'Low'].includes(analysis.priority) ? analysis.priority : 'Low',
       insights: Array.isArray(analysis.insights) ? analysis.insights.slice(0, 5) : []
@@ -332,3 +338,5 @@ export async function batchAnalyzeCandidates(
   
   return results;
 }
+
+export { openai };

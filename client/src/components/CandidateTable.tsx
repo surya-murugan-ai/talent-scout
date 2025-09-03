@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { Filter, Download, ExternalLink, Heart, Mail, Zap } from "lucide-react";
+import { Filter, Download, ExternalLink, Heart, Mail, Zap, Eye } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { LinkedInTestDialog } from "./LinkedInTestDialog";
+import { CandidateDetailsModal } from "./CandidateDetailsModal";
 import { CandidateTableSkeleton } from "@/components/LoadingStates";
 import { LoadingSpinner } from "@/components/ui/loading-spinner";
 import type { Candidate } from "@shared/schema";
@@ -15,6 +16,8 @@ export default function CandidateTable() {
   const [currentPage, setCurrentPage] = useState(1);
   const [filterPriority, setFilterPriority] = useState<string>("");
   const [showLinkedInTest, setShowLinkedInTest] = useState(false);
+  const [selectedCandidate, setSelectedCandidate] = useState<Candidate | null>(null);
+  const [showCandidateDetails, setShowCandidateDetails] = useState(false);
   const { toast } = useToast();
   const queryClient = useQueryClient();
 
@@ -86,10 +89,119 @@ export default function CandidateTable() {
     return colors[index];
   };
 
+  const calculateHireability = (candidate: Candidate) => {
+    const resumeCompany = candidate.company;
+    const linkedinCompany = candidate.currentEmployer;
+    
+    // If companies are the same, show "Hireable" (green)
+    if (resumeCompany && linkedinCompany && resumeCompany === linkedinCompany) {
+      return { status: "Hireable", color: "bg-green-100 text-green-800 border-green-300" };
+    }
+    
+    // If companies are different, show "Potential" (orange)
+    // Note: Duration comparison logic can be enhanced later when duration data is available
+    if (resumeCompany && linkedinCompany && resumeCompany !== linkedinCompany) {
+      return { status: "Potential", color: "bg-orange-100 text-orange-800 border-orange-300" };
+    }
+    
+    // If no company data on either resume or LinkedIn, show "Fresher" (blue)
+    if ((!resumeCompany || resumeCompany === "Not mentioned") && (!linkedinCompany || linkedinCompany === "Not mentioned")) {
+      return { status: "Fresher", color: "bg-blue-100 text-blue-800 border-blue-300" };
+    }
+    
+    // Default case - if only one has company data, show "Potential"
+    return { status: "Potential", color: "bg-orange-100 text-orange-800 border-orange-300" };
+  };
+
+  const getHireabilityBadgeColor = (potentialToJoin: string) => {
+    switch (potentialToJoin) {
+      case "High":
+        return "bg-green-100 text-green-800 border-green-300";
+      case "Medium":
+        return "bg-amber-100 text-amber-800 border-amber-300";
+      case "Low":
+        return "bg-red-100 text-red-800 border-red-300";
+      default:
+        return "bg-slate-100 text-slate-800 border-slate-300";
+    }
+  };
+
 
 
   const handleExport = () => {
     exportMutation.mutate(filterPriority || undefined);
+  };
+
+  const handleViewDetails = (candidate: Candidate) => {
+    setSelectedCandidate(candidate);
+    setShowCandidateDetails(true);
+  };
+
+  const handleCloseDetails = () => {
+    setShowCandidateDetails(false);
+    setSelectedCandidate(null);
+  };
+
+  const handleAnalyzeCompany = async (candidateId: string) => {
+    try {
+      const response = await fetch(`/api/candidates/${candidateId}/analyze-company`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to analyze company');
+      }
+
+      const result = await response.json();
+      
+      // Refresh the candidates data
+      queryClient.invalidateQueries({ queryKey: ['/api/candidates'] });
+      
+      toast({
+        title: "Company analysis completed",
+        description: result.message,
+      });
+    } catch (error) {
+      toast({
+        title: "Company analysis failed",
+        description: error instanceof Error ? error.message : "An error occurred",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const handleAnalyzeAllCompanies = async () => {
+    try {
+      const response = await fetch('/api/candidates/analyze-all-companies', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to analyze all companies');
+      }
+
+      const result = await response.json();
+      
+      // Refresh the candidates data
+      queryClient.invalidateQueries({ queryKey: ['/api/candidates'] });
+      
+      toast({
+        title: "Bulk company analysis completed",
+        description: result.message,
+      });
+    } catch (error) {
+      toast({
+        title: "Bulk company analysis failed",
+        description: error instanceof Error ? error.message : "An error occurred",
+        variant: "destructive",
+      });
+    }
   };
 
   if (isLoading) {
@@ -144,6 +256,17 @@ export default function CandidateTable() {
             </Button>
             
             <Button
+              variant="outline"
+              size="sm"
+              onClick={handleAnalyzeAllCompanies}
+              className="text-green-600 hover:text-green-900 border-green-300"
+              data-testid="button-analyze-all-companies"
+            >
+              <Zap className="w-4 h-4 mr-2" />
+              Analyze All Companies
+            </Button>
+            
+            <Button
               size="sm"
               onClick={handleExport}
               disabled={exportMutation.isPending}
@@ -162,15 +285,21 @@ export default function CandidateTable() {
       </CardHeader>
       <CardContent className="p-0 flex-1 overflow-auto">
         <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-slate-100">
-          <table className="w-full min-w-[1200px]">
+          <table className="w-full min-w-[1800px]">
             <thead className="bg-slate-50">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider min-w-[250px]">
                   Candidate
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider min-w-[200px]">
-                  Current Employer
+                  Resume Current Employer
                 </th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider min-w-[200px]">
+                  LinkedIn Current Employer
+                </th>
+                {/* <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider min-w-[180px]">
+                  Company Difference
+                </th> */}
                 <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider min-w-[100px]">
                   Score
                 </th>
@@ -181,12 +310,15 @@ export default function CandidateTable() {
                   Open to Work
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider min-w-[120px]">
+                  Hireability
+                </th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider min-w-[120px]">
                   Last Active
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider min-w-[200px]">
                   Source
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider min-w-[120px]">
+                <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider min-w-[200px]">
                   Actions
                 </th>
               </tr>
@@ -194,7 +326,7 @@ export default function CandidateTable() {
             <tbody className="bg-white divide-y divide-slate-200">
               {candidates.length === 0 ? (
                 <tr>
-                  <td colSpan={8} className="px-6 py-12 text-center">
+                  <td colSpan={11} className="px-6 py-12 text-center">
                     <div className="text-slate-500">
                       <p className="text-lg font-medium">No candidates found</p>
                       <p className="text-sm mt-1">Upload a CSV or Excel file to get started with candidate processing</p>
@@ -220,17 +352,17 @@ export default function CandidateTable() {
                             {candidate.title || "Professional"}
                           </div>
                           <div className="text-xs text-slate-400 mt-1 truncate">
-                            {candidate.company || "Unknown Company"}
+                            {candidate.company || "Not mentioned"}
                           </div>
                         </div>
                       </div>
                     </td>
                     
-                    {/* Current Employer */}
+                    {/* Resume Current Employer */}
                     <td className="px-6 py-4 whitespace-nowrap min-w-[200px]">
                       <div className="text-sm">
-                        <div className="font-medium text-slate-900 truncate" title={candidate.currentEmployer || candidate.company || "Unknown"}>
-                          {candidate.currentEmployer || candidate.company || "Unknown Company"}
+                        <div className="font-medium text-slate-900 truncate" title={candidate.company || "Not mentioned"}>
+                          {candidate.company || "Not mentioned"}
                         </div>
                         <div className="text-xs text-slate-500 flex items-center space-x-2 mt-1">
                           {candidate.email && (
@@ -242,6 +374,17 @@ export default function CandidateTable() {
                               <Mail className="w-3 h-3" />
                             </button>
                           )}
+                        </div>
+                      </div>
+                    </td>
+                    
+                    {/* LinkedIn Current Employer */}
+                    <td className="px-6 py-4 whitespace-nowrap min-w-[200px]">
+                      <div className="text-sm">
+                        <div className="font-medium text-slate-900 truncate" title={candidate.currentEmployer || "Not mentioned"}>
+                          {candidate.currentEmployer || "Not mentioned"}
+                        </div>
+                        <div className="text-xs text-slate-500 flex items-center space-x-2 mt-1">
                           {candidate.linkedinUrl && (
                             <button
                               onClick={() => window.open(candidate.linkedinUrl!, '_blank')}
@@ -254,6 +397,21 @@ export default function CandidateTable() {
                         </div>
                       </div>
                     </td>
+                    
+                    {/* Company Difference - Commented Out
+                    <td className="px-6 py-4 whitespace-nowrap min-w-[180px]">
+                      <div className="text-sm">
+                        <div className="font-medium text-slate-900 truncate" title={candidate.companyDifference || "No analysis available"}>
+                          {candidate.companyDifference || "No analysis"}
+                        </div>
+                        {candidate.companyDifferenceScore !== undefined && (
+                          <div className="text-xs text-slate-500 mt-1">
+                            Score: {candidate.companyDifferenceScore.toFixed(1)}/10
+                          </div>
+                        )}
+                      </div>
+                    </td>
+                    */}
                     
                     {/* Score */}
                     <td className="px-6 py-4 whitespace-nowrap">
@@ -293,6 +451,25 @@ export default function CandidateTable() {
                             Not seeking
                           </Badge>
                         )}
+                      </div>
+                    </td>
+                    
+                    {/* Hireability */}
+                    <td className="px-6 py-4 whitespace-nowrap min-w-[120px]">
+                      <div className="text-center">
+                        <div className="flex items-center justify-center">
+                          {(() => {
+                            const hireability = calculateHireability(candidate);
+                            return (
+                              <Badge 
+                                className={hireability.color}
+                                title={`Resume: ${candidate.company || 'Unknown'}, LinkedIn: ${candidate.currentEmployer || 'Unknown'}`}
+                              >
+                                {hireability.status}
+                              </Badge>
+                            );
+                          })()}
+                        </div>
                       </div>
                     </td>
 
@@ -343,6 +520,25 @@ export default function CandidateTable() {
                     
                     {/* Actions */}
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
+                      <button
+                        onClick={() => handleViewDetails(candidate)}
+                        className="text-blue-600 hover:text-blue-800"
+                        data-testid={`button-view-details-${index}`}
+                        title="View Detailed Information"
+                      >
+                        <Eye className="w-4 h-4" />
+                      </button>
+                      
+                      {/* Company Analysis Button - Commented Out
+                      <button
+                        onClick={() => handleAnalyzeCompany(candidate.id)}
+                        className="text-green-600 hover:text-green-800"
+                        data-testid={`button-analyze-company-${index}`}
+                        title="Analyze Company Difference"
+                      >
+                        <Zap className="w-4 h-4" />
+                      </button>
+                      */}
                       {candidate.linkedinUrl && (
                         <button
                           onClick={() => window.open(candidate.linkedinUrl!, '_blank')}
@@ -415,6 +611,13 @@ export default function CandidateTable() {
       <LinkedInTestDialog
         open={showLinkedInTest}
         onOpenChange={setShowLinkedInTest}
+      />
+      
+      {/* Candidate Details Modal */}
+      <CandidateDetailsModal
+        candidate={selectedCandidate}
+        isOpen={showCandidateDetails}
+        onClose={handleCloseDetails}
       />
     </Card>
   );

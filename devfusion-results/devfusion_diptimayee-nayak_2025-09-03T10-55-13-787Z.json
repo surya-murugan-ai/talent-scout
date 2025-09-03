@@ -1,0 +1,325 @@
+{
+  "timestamp": "2025-09-03T10:55:13.787Z",
+  "linkedinUrl": "https://linkedin.com/in/diptimayee-nayak",
+  "rawData": {
+    "linkedinUrl": "https://linkedin.com/in/diptimayee-nayak",
+    "firstName": "DIPTIMAYEE",
+    "lastName": "NAYAK",
+    "fullName": "DIPTIMAYEE NAYAK",
+    "headline": "Senior Software Engineer at Accenture",
+    "connections": 93,
+    "followers": 98,
+    "email": null,
+    "mobileNumber": null,
+    "jobTitle": "Custom Software Engineering Sr Analyst",
+    "companyName": "Accenture",
+    "companyIndustry": "Information Technology And Services",
+    "companyWebsite": "accenture.com",
+    "companyLinkedin": "linkedin.com/company/accenture",
+    "companyFoundedIn": 1989,
+    "companySize": "10001+",
+    "currentJobDuration": "3 yrs 4 mos",
+    "currentJobDurationInYrs": 3.33,
+    "topSkillsByEndorsements": null,
+    "addressCountryOnly": "India",
+    "addressWithCountry": "Karnataka, India",
+    "addressWithoutCountry": "Karnataka",
+    "profilePic": "https://media.licdn.com/dms/image/v2/C5603AQHSG1EkmzWfEw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1604920247492?e=1759968000&v=beta&t=yPWDezEcrjYA2dYYQAzG8Z79qALnVf-8Gh1JPUHJAzo",
+    "profilePicHighQuality": "https://media.licdn.com/dms/image/v2/C5603AQHSG1EkmzWfEw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1604920247492?e=1759968000&v=beta&t=bPOmbY5ZadAi8DP1AZ7GOarEOmQxKJT-UVjibOSWMLg",
+    "about": "To pursue a highly rewarding career, seek a job in a challenging and healthy work environment where I can utilize my skills and knowledge efficiently for organizational growth.\nCurrently working as a Software Engineer with 4.9 + years of work experience with ASP.NET, C#.NET, MVC, GIT Lab, SQL SERVER 2008r2 & 2016. Having Sound Knowledge in ASP.NET MVC and CICD.\nAbility to build rapid trust and relationships, work as an Individual Contributor as well as a Great Team Player. Always upfront to learn New Technologies and Quick Learns/Adopts with different situations",
+    "publicIdentifier": "diptimayee-nayak",
+    "openConnection": null,
+    "urn": "ACoAACY-7I8Bfa0lq28s-mx2BCek8rQY8brCFeE",
+    "experiences": [
+      {
+        "companyId": "1033",
+        "companyUrn": "urn:li:fsd_company:1033",
+        "companyLink1": "https://www.linkedin.com/company/1033/",
+        "logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEgtOEcxlXMog/company-logo_200_200/B4DZfqEQWkHAAQ-/0/1751978673981/accenture_logo?e=1759968000&v=beta&t=DPIsIBfOXmEgG0ZIMlUqaWHGjb88S_wrfiocUHpurNs",
+        "title": "Custom Software Engineering Sr Analyst",
+        "subtitle": "Accenture · Full-time",
+        "caption": "Jun 2022 - Present · 3 yrs 4 mos",
+        "metadata": "Bengaluru, Karnataka, India",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "companyId": "625779",
+        "companyUrn": "urn:li:fsd_company:625779",
+        "companyLink1": "https://www.linkedin.com/company/625779/",
+        "logo": "https://media.licdn.com/dms/image/v2/C560BAQEOy2Z-LkOBpw/company-logo_200_200/company-logo_200_200/0/1630669307614/processware_systems_p_ltd__logo?e=1759968000&v=beta&t=BFQf94RDJpCHMtmhzDuMBBBm2hGrj4KRC3WpvEkoOnE",
+        "title": "Software Engineer",
+        "subtitle": "Processware Systems (P) Ltd., · Full-time",
+        "caption": "Sep 2018 - Present · 7 yrs 1 mo",
+        "metadata": "Bengaluru, Karnataka, India",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "companyId": "3556625",
+        "companyUrn": "urn:li:fsd_company:3556625",
+        "companyLink1": "https://www.linkedin.com/company/3556625/",
+        "logo": "https://media.licdn.com/dms/image/v2/D560BAQH8_ljJ8SfwYQ/company-logo_200_200/B56Zf4mV56GUAQ-/0/1752222490983/rlabsglobal_logo?e=1759968000&v=beta&t=U6osVeUQ8uahGUGMPuEF4XazFltvVxYlAV95J6XCbjA",
+        "title": "RLabs Enterprise Services Ltd.",
+        "subtitle": "Full-time · 1 yr 1 mo",
+        "caption": "Bengaluru, Karnataka, India",
+        "breakdown": true,
+        "subComponents": [
+          {
+            "title": "Software Engineer",
+            "caption": "Jun 2021 - Jun 2022 · 1 yr 1 mo",
+            "description": []
+          },
+          {
+            "title": "Software Engineer",
+            "caption": "Jun 2021 - Jun 2022 · 1 yr 1 mo",
+            "description": []
+          }
+        ]
+      },
+      {
+        "companyId": "13668243",
+        "companyUrn": "urn:li:fsd_company:13668243",
+        "companyLink1": "https://www.linkedin.com/company/13668243/",
+        "logo": "https://media.licdn.com/dms/image/v2/C510BAQHV_w80wH4ipw/company-logo_200_200/company-logo_200_200/0/1631309616323?e=1759968000&v=beta&t=708dROMSZULWapGv8ilVb7IaM4F64xSXKRy7Uypka5w",
+        "title": "Junior Software Developer",
+        "subtitle": "XPRO Solutions Pvt Ltd · Full-time",
+        "caption": "Jun 2016 - Jan 2018 · 1 yr 8 mos",
+        "metadata": "Bhubaneswar, Orissa, India",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "updates": [],
+    "skills": [
+      {
+        "title": "C#",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Passed LinkedIn Skill Assessment"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Object-Oriented Programming (OOP)",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Software Development",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "SQL",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "ASP.NET MVC",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "C++",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "ASP.NET",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "profilePicAllDimensions": [
+      {
+        "width": 100,
+        "height": 100,
+        "url": "https://media.licdn.com/dms/image/v2/C5603AQHSG1EkmzWfEw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1604920247492?e=1759968000&v=beta&t=yPWDezEcrjYA2dYYQAzG8Z79qALnVf-8Gh1JPUHJAzo"
+      },
+      {
+        "width": 200,
+        "height": 200,
+        "url": "https://media.licdn.com/dms/image/v2/C5603AQHSG1EkmzWfEw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1604920247492?e=1759968000&v=beta&t=Sb9ihlpFJDUCdRTAQSi-P47N3bvK2706xJuSD-tx9HM"
+      },
+      {
+        "width": 400,
+        "height": 400,
+        "url": "https://media.licdn.com/dms/image/v2/C5603AQHSG1EkmzWfEw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1604920247492?e=1759968000&v=beta&t=EOjU9bNy2YVh9F4sGGI4U7eaPRTUq0CoBKwXKrVGSfI"
+      },
+      {
+        "width": 532,
+        "height": 532,
+        "url": "https://media.licdn.com/dms/image/v2/C5603AQHSG1EkmzWfEw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1604920247492?e=1759968000&v=beta&t=bPOmbY5ZadAi8DP1AZ7GOarEOmQxKJT-UVjibOSWMLg"
+      }
+    ],
+    "educations": [
+      {
+        "companyId": "15121981",
+        "companyUrn": "urn:li:fsd_company:15121981",
+        "companyLink1": "https://www.linkedin.com/company/15121981/",
+        "logo": "https://media.licdn.com/dms/image/v2/D560BAQHG3Jip7cUyEg/company-logo_200_200/company-logo_200_200/0/1715610902306/silicontech_bbs_logo?e=1759968000&v=beta&t=iMaydE74IJovnJtLvh6MSgGuHeAtI387W5BKsqfcARE",
+        "title": "Silicon Institute of Technology (SIT), Bhubaneswar",
+        "subtitle": "Bachelor's degree, Computer Software Engineering",
+        "caption": "2011 - 2014",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "companyLink1": "https://www.linkedin.com/search/results/all/?keywords=government+polytechnic+",
+        "title": "government polytechnic ",
+        "subtitle": "diploma, Computer Science",
+        "caption": "2008 - 2011",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Grade: First"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "licenseAndCertificates": [],
+    "honorsAndAwards": [],
+    "languages": [],
+    "volunteerAndAwards": [],
+    "verifications": [],
+    "promos": [],
+    "highlights": [],
+    "projects": [],
+    "publications": [],
+    "patents": [],
+    "courses": [],
+    "testScores": [],
+    "organizations": [],
+    "volunteerCauses": [],
+    "interests": [
+      {
+        "section_name": "Companies",
+        "section_components": [
+          {
+            "titleV2": "Oracle",
+            "caption": "10,646,198 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1028/",
+            "subComponents": []
+          },
+          {
+            "titleV2": "Accenture",
+            "caption": "13,758,044 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1033/",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Groups",
+        "section_components": [
+          {
+            "titleV2": "Idea Citizen | Curated, Spam-Free, Community for Thinkers",
+            "caption": "1,540,281 members",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/groups/138801",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Newsletters",
+        "section_components": [
+          {
+            "titleV2": "HCLTech Trends and Insights",
+            "caption": "Published monthly",
+            "subtitle": "Exploring technology's potential to accelerate innovation and create business value",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/newsletters/7079374504170258432",
+            "subComponents": [
+              {
+                "insightComponent": {
+                  "text": "HCLTech",
+                  "actionTarget": "https://www.linkedin.com/company/1756/"
+                }
+              }
+            ]
+          },
+          {
+            "titleV2": "Digital+ News",
+            "caption": "Published monthly",
+            "subtitle": "HCLSoftware Digital + News | August Issue",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/newsletters/7100144277837520896",
+            "subComponents": [
+              {
+                "insightComponent": {
+                  "text": "HCLSoftware",
+                  "actionTarget": "https://www.linkedin.com/company/18599018/"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section_name": "Schools",
+        "section_components": [
+          {
+            "titleV2": "Silicon Institute of Technology (SIT), Bhubaneswar",
+            "caption": "13,268 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/school/15121981/",
+            "subComponents": []
+          }
+        ]
+      }
+    ],
+    "recommendations": []
+  },
+  "metadata": {
+    "source": "dev_fusion/Linkedin-Profile-Scraper",
+    "savedAt": "2025-09-03T10:55:13.790Z"
+  }
+}

@@ -10,6 +10,7 @@ export interface ScoringWeights {
   skillMatch: number;
   jobStability: number;
   engagement: number;
+  companyDifference: number;
 }
 
 export interface Candidate {
@@ -18,6 +19,7 @@ export interface Candidate {
   email?: string;
   title?: string;
   company?: string;
+  currentEmployer?: string;
   linkedinUrl?: string;
   skills?: string[];
   score?: number;
@@ -25,6 +27,14 @@ export interface Candidate {
   openToWork: boolean;
   lastActive?: string;
   notes?: string;
+  
+  // Company comparison and hireability fields
+  companyDifference?: string;
+  companyDifferenceScore?: number;
+  hireabilityScore?: number;
+  hireabilityFactors?: string[];
+  potentialToJoin?: 'High' | 'Medium' | 'Low' | 'Unknown';
+  
   createdAt?: string;
   updatedAt?: string;
 }

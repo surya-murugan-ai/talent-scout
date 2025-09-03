@@ -1,4 +1,4 @@
-import { Bot, Gauge, Upload, Settings, TrendingUp, History, Folder, LogOut } from "lucide-react";
+import { Bot, Gauge, Upload, Settings, TrendingUp, History, Folder, LogOut, FileText } from "lucide-react";
 
 interface SidebarProps {
   activeTab: string;
@@ -9,6 +9,7 @@ export default function Sidebar({ activeTab, onTabChange }: SidebarProps) {
   const navItems = [
     { id: "dashboard", label: "Dashboard", icon: Gauge },
     { id: "upload", label: "Upload Candidates", icon: Upload },
+    { id: "resume-data", label: "Resume Data", icon: FileText },
     { id: "scoring", label: "Scoring Configuration", icon: Settings },
     { id: "analytics", label: "Analytics", icon: TrendingUp },
     { id: "history", label: "Processing History", icon: History },

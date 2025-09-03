@@ -1,0 +1,129 @@
+{
+  "filename": "CV_Mahesh__Konchada 12.pdf",
+  "timestamp": "2025-09-03T09:49:09.898Z",
+  "processingTime": 18349,
+  "confidence": 95,
+  "extractedData": {
+    "name": "Mahesh Konchada",
+    "email": "mkonchada0@gmail.com",
+    "phone": "+91-9642971300",
+    "title": "Strategic Account Partner",
+    "location": null,
+    "summary": "Results-driven Business Analyst with a strategic blend of analytical capabilities and stakeholder management expertise. Combining a strong Computer Science foundation with proven experience in data-driven decision making, requirements analysis, and business process optimization. Demonstrated excellence in extracting actionable insights from data, translating business needs into technical solutions, and communicating complex concepts to diverse audiences.",
+    "experience": [
+      {
+        "jobTitle": "Strategic Account Partner",
+        "company": "Andolasoft",
+        "duration": "Feb 2025 - Present",
+        "startDate": "2025-02",
+        "endDate": "Present",
+        "techUsed": [],
+        "description": "Analyzed client business needs across CRM, project management, and construction tool implementations, translating requirements into optimized solutions. Employed market analysis to identify and acquire high-value enterprise clients across diverse product categories, exceeding quarterly targets. Developed comprehensive documentation and presentations for all levels of client organizations, from operational teams to C-suite executives. Streamlined client onboarding workflows, resulting in faster implementation and improved user adoption rates. Identified strategic business opportunities through analysis of customer feedback and market trends, developing data-backed product improvement recommendations.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Assistant Management Trainee",
+        "company": "Asian Paints",
+        "duration": "May 2024 - Nov 2024",
+        "startDate": "2024-05",
+        "endDate": "2024-11",
+        "techUsed": [
+          "Data Visualization"
+        ],
+        "description": "Leading a team of 5 across five territories, managing 600+ dealers and driving month-on-month sales growth through data-driven strategies. Conducted market analyses leveraging data visualization techniques to identify growth opportunities, using insights to open new dealerships and expand market presence. Spearheaded the creation of interactive dashboards visualizing key performance indicators and territory sales trends, enabling real-time monitoring of 600+ dealers and data-driven course correction strategies. Implemented data-driven solutions to optimize sales processes, improve dealer payment cycles, and enhance overall territory performance. Managed team performance through data-backed insights, setting targeted goals and providing analytical tools to improve efficiency.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Management Trainee",
+        "company": "Semiconsoul Technologies Private Ltd.",
+        "duration": "Feb 2020 - July 2021",
+        "startDate": "2020-02",
+        "endDate": "2021-07",
+        "techUsed": [
+          "IoT",
+          "Healthcare",
+          "Smart Factories",
+          "Urban Infrastructure"
+        ],
+        "description": "Collaborated with development teams to design comprehensive IoT solutions across Healthcare, Smart Factories, and Urban Infrastructure technologies. Developed and delivered compelling presentations showcasing IoT gateway middleware, device handling platforms, and transformative digital technologies. Created detailed technical documentation addressing complex technological requirements in Indoor Tracking, Asset Monitoring, and Industrial IoT. Served as a critical bridge between technical teams and business users, translating intricate technological capabilities into clear business benefits. Developed strategic solution proposals for diverse domains including Defence Electronics, Smart Cities, and IoT Gateway technologies.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Master of Business Administration",
+        "field": "Marketing and Systems, Minor in Strategy",
+        "university": "Xavier Institute of Management",
+        "year": "2024",
+        "percentage": null,
+        "gpa": null,
+        "location": "Bhubaneshwar"
+      },
+      {
+        "degree": "Bachelor of Technology",
+        "field": "Computer Science and Engineering",
+        "university": "Sri Venkateswara University College of Engineering",
+        "year": "2019",
+        "percentage": null,
+        "gpa": null,
+        "location": "Tirupati"
+      }
+    ],
+    "skills": [
+      "DBMS (MySQL)",
+      "C",
+      "Python",
+      "SQL",
+      "AI Prompt Engineering",
+      "Power BI",
+      "Tableau",
+      "MS PowerPoint",
+      "MS Excel",
+      "Orangescrum",
+      "CRM Leaf"
+    ],
+    "projects": [],
+    "certifications": [
+      {
+        "name": "AI Product Management Specialization",
+        "issuer": "Duke University, Coursera",
+        "date": "2024",
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "IT Presales Management Masterclass",
+        "issuer": "Udemy",
+        "date": "2024",
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "Certified in Marketing Research and Consumer Behavior",
+        "issuer": "Coursera",
+        "date": "2022",
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "Certified in Positioning: What you need for a Successful Marketing Strategy",
+        "issuer": "Coursera",
+        "date": "2022",
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "Certified in Fundamentals of Digital Marketing",
+        "issuer": "Google",
+        "date": "2020",
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      }
+    ]
+  }
+}

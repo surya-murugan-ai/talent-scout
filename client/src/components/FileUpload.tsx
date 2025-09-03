@@ -22,25 +22,36 @@ export default function FileUpload() {
   const queryClient = useQueryClient();
 
   const uploadMutation = useMutation({
-    mutationFn: async (file: File) => {
+    mutationFn: async (files: File[]) => {
       const formData = new FormData();
-      formData.append("file", file);
+      files.forEach(file => {
+        formData.append("files", file);
+      });
       
       const response = await apiRequest("POST", "/api/upload", formData);
       return response.json();
     },
-    onSuccess: (data, file) => {
-      setUploadedFiles(prev => 
-        prev.map(f => 
-          f.name === file.name 
-            ? { ...f, status: "processing", jobId: data.jobId }
-            : f
-        )
-      );
+    onSuccess: (data, files) => {
+      // Update file statuses based on processing results
+      if (data.processingResults && Array.isArray(data.processingResults)) {
+        data.processingResults.forEach((result: any) => {
+          setUploadedFiles(prev => 
+            prev.map(f => 
+              f.name === result.filename 
+                ? { 
+                    ...f, 
+                    status: result.success ? "processing" : "error",
+                    jobId: result.jobId 
+                  }
+                : f
+            )
+          );
+        });
+      }
       
       toast({
-        title: "File uploaded successfully",
-        description: `${file.name} is now being processed`,
+        title: "Files uploaded successfully",
+        description: `${files.length} file(s) are now being processed`,
       });
       
       // Invalidate all relevant queries to refresh UI
@@ -49,14 +60,17 @@ export default function FileUpload() {
       queryClient.invalidateQueries({ queryKey: ["/api/jobs"] });
       queryClient.invalidateQueries({ queryKey: ["/api/activities"] });
     },
-    onError: (error, file) => {
-      setUploadedFiles(prev => 
-        prev.map(f => 
-          f.name === file.name 
-            ? { ...f, status: "error" }
-            : f
-        )
-      );
+    onError: (error, files) => {
+      // Mark all files as error
+      files.forEach(file => {
+        setUploadedFiles(prev => 
+          prev.map(f => 
+            f.name === file.name 
+              ? { ...f, status: "error" }
+              : f
+          )
+        );
+      });
       
       toast({
         title: "Upload failed",
@@ -67,16 +81,17 @@ export default function FileUpload() {
   });
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
-    acceptedFiles.forEach(file => {
-      const uploadedFile: UploadedFile = {
-        name: file.name,
-        size: file.size,
-        status: "uploading",
-      };
-      
-      setUploadedFiles(prev => [...prev, uploadedFile]);
-      uploadMutation.mutate(file);
-    });
+    // Add all files to the list first
+    const newUploadedFiles = acceptedFiles.map(file => ({
+      name: file.name,
+      size: file.size,
+      status: "uploading" as const,
+    }));
+    
+    setUploadedFiles(prev => [...prev, ...newUploadedFiles]);
+    
+    // Upload all files as a batch
+    uploadMutation.mutate(acceptedFiles);
   }, [uploadMutation]);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
@@ -85,7 +100,11 @@ export default function FileUpload() {
       'text/csv': ['.csv'],
       'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': ['.xlsx'],
       'application/vnd.ms-excel': ['.xls'],
+      'application/pdf': ['.pdf'],
+      'application/vnd.openxmlformats-officedocument.wordprocessingml.document': ['.docx']
     },
+    multiple: true,
+    maxFiles: 20,
     maxSize: 50 * 1024 * 1024, // 50MB
   });
 
@@ -158,9 +177,9 @@ export default function FileUpload() {
           <h4 className="text-lg font-medium text-slate-900 mb-2">
             Drop files here or click to browse
           </h4>
-          <p className="text-slate-600 mb-4">
-            Supports CSV, Excel files up to 50MB
-          </p>
+                      <p className="text-slate-600 mb-4">
+              Supports CSV, Excel, PDF, and DOCX files up to 50MB each (max 20 files)
+            </p>
           <Button 
             type="button"
             className="bg-primary hover:bg-blue-700 text-white"

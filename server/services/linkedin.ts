@@ -1,6 +1,7 @@
 import { ApifyClient } from 'apify-client';
 import * as fs from 'fs';
 import * as path from 'path';
+import { ResumeDataService } from './resumeDataService.js';
 
 interface LinkedInProfile {
   name: string;
@@ -87,6 +88,10 @@ interface ApifyLinkedInSearchInput {
   schools?: string[];
 }
 
+interface ApifyDevFusionInput {
+  profileUrls: string[];
+}
+
 interface ApifyLinkedInSearchResult {
   profileUrl: string;
   name: string;
@@ -121,6 +126,72 @@ export class LinkedInService {
     this.apifyClient = new ApifyClient({
       token: apifyToken,
     });
+  }
+
+  /**
+   * Use dev_fusion/Linkedin-Profile-Scraper actor to get profile details from LinkedIn URL
+   */
+  private async getProfileWithDevFusion(linkedinUrl: string): Promise<any> {
+    try {
+      console.log(`Using dev_fusion/Linkedin-Profile-Scraper for URL: ${linkedinUrl}`);
+      
+      const input: ApifyDevFusionInput = {
+        profileUrls: [linkedinUrl]
+      };
+
+      // Run the dev_fusion actor
+      const run = await this.apifyClient.actor("dev_fusion/Linkedin-Profile-Scraper").call(input);
+      
+      // Fetch results
+      const { items } = await this.apifyClient.dataset(run.defaultDatasetId).listItems();
+      
+      if (!items || items.length === 0) {
+        console.log('No profile data found with dev_fusion actor');
+        return null;
+      }
+
+      console.log(`Found profile data with dev_fusion actor:`, items[0]);
+      return items[0];
+      
+    } catch (error) {
+      console.error('Error using dev_fusion actor:', error);
+      return null;
+    }
+  }
+
+  /**
+   * Save raw dev_fusion results to a JSON file
+   */
+  private saveDevFusionResults(data: any, linkedinUrl: string, timestamp: string = new Date().toISOString()): void {
+    try {
+      // Create results directory if it doesn't exist
+      const resultsDir = path.join(process.cwd(), 'devfusion-results');
+      if (!fs.existsSync(resultsDir)) {
+        fs.mkdirSync(resultsDir, { recursive: true });
+      }
+
+      // Create filename with timestamp and profile identifier
+      const profileId = linkedinUrl.split('/in/')[1]?.split('?')[0] || 'unknown';
+      const filename = `devfusion_${profileId}_${timestamp.replace(/[:.]/g, '-')}.json`;
+      const filepath = path.join(resultsDir, filename);
+
+      // Save the raw data
+      const resultData = {
+        timestamp: timestamp,
+        linkedinUrl: linkedinUrl,
+        rawData: data,
+        metadata: {
+          source: 'dev_fusion/Linkedin-Profile-Scraper',
+          savedAt: new Date().toISOString()
+        }
+      };
+
+      fs.writeFileSync(filepath, JSON.stringify(resultData, null, 2));
+      console.log(`✅ DevFusion results saved to: ${filepath}`);
+      
+    } catch (error) {
+      console.error('❌ Failed to save DevFusion results:', error);
+    }
   }
 
   /**
@@ -264,7 +335,7 @@ export class LinkedInService {
   }
 
   /**
-   * Search LinkedIn profiles using Apify harvestapi/linkedin-profile-search
+   * Search LinkedIn profiles using Apify actors based on available data
    */
   async searchProfilesWithApify(
     name: string,
@@ -282,7 +353,47 @@ export class LinkedInService {
         return null;
       }
 
-      // Prepare search input
+      // Check if any candidates have LinkedIn URLs - if so, use dev_fusion actor
+      if (candidates && candidates.length > 0) {
+        const candidateWithLinkedIn = candidates.find(c => c.linkedinUrl && c.linkedinUrl.includes('linkedin.com/in/'));
+        if (candidateWithLinkedIn) {
+          console.log(`Found candidate with LinkedIn URL: ${candidateWithLinkedIn.linkedinUrl}, using dev_fusion actor`);
+          
+          const devFusionData = await this.getProfileWithDevFusion(candidateWithLinkedIn.linkedinUrl);
+          if (devFusionData) {
+            // Save the dev_fusion results
+            this.saveDevFusionResults(devFusionData, candidateWithLinkedIn.linkedinUrl);
+            
+            // Update database with the fetched LinkedIn data
+            try {
+              // Update candidate record
+              await ResumeDataService.updateCandidateWithLinkedInData(
+                candidateWithLinkedIn.id,
+                devFusionData,
+                'dev_fusion'
+              );
+              
+              // Update resume data if available
+              if (candidateWithLinkedIn.resumeDataId) {
+                await ResumeDataService.updateResumeDataWithLinkedIn(
+                  candidateWithLinkedIn.resumeDataId,
+                  devFusionData,
+                  'dev_fusion'
+                );
+              }
+            } catch (dbError) {
+              console.warn('Failed to update database with LinkedIn data:', dbError);
+            }
+            
+            // Return the LinkedIn URL for further processing
+            return candidateWithLinkedIn.linkedinUrl;
+          } else {
+            console.log('Dev_fusion actor failed, falling back to harvestapi search');
+          }
+        }
+      }
+
+      // Prepare search input for harvestapi
       const searchInput: ApifyLinkedInSearchInput = {
         profileScraperMode: "Full",
         maxItems: maxResults,
@@ -317,7 +428,7 @@ export class LinkedInService {
 
       console.log('Apify search input:', JSON.stringify(searchInput, null, 2));
 
-      // Run the Apify actor
+      // Run the harvestapi Apify actor
       const run = await this.apifyClient.actor("harvestapi/linkedin-profile-search").call(searchInput);
       
       // Fetch results
@@ -588,9 +699,62 @@ export class LinkedInService {
         throw new Error('APIFY_API_TOKEN not configured. LinkedIn enrichment requires valid API credentials.');
       }
 
-      // Instead of trying to enrich by URL (which doesn't work well), 
-      // let's search again with the same parameters to get the full profile data
       console.log(`Enriching LinkedIn profile for: ${name} (${profileUrl})`);
+      
+      // If we have a LinkedIn URL, try to use dev_fusion actor for direct profile scraping
+      if (profileUrl && profileUrl.includes('linkedin.com/in/')) {
+        console.log('LinkedIn URL detected, using dev_fusion actor for direct profile scraping');
+        
+        const devFusionData = await this.getProfileWithDevFusion(profileUrl);
+        if (devFusionData) {
+          // Save the dev_fusion results
+          this.saveDevFusionResults(devFusionData, profileUrl);
+          
+          // Transform dev_fusion data to our format
+          const enrichedProfile = this.transformDevFusionData(devFusionData);
+          enrichedProfile.profileUrl = profileUrl;
+          
+          // Update database with the fetched LinkedIn data
+          try {
+            if (candidates && candidates.length > 0) {
+              // Find the candidate that matches this LinkedIn URL
+              const matchingCandidate = candidates.find(c => 
+                c.linkedinUrl === profileUrl || 
+                c.linkedinUrl === profileUrl.replace(/\/$/, '') ||
+                profileUrl.includes(c.name?.split(' ')[0] || '')
+              );
+              
+              if (matchingCandidate) {
+                // Update candidate record
+                await ResumeDataService.updateCandidateWithLinkedInData(
+                  matchingCandidate.id,
+                  devFusionData,
+                  'dev_fusion'
+                );
+                
+                // Update resume data if available
+                if (matchingCandidate.resumeDataId) {
+                  await ResumeDataService.updateResumeDataWithLinkedIn(
+                    matchingCandidate.resumeDataId,
+                    devFusionData,
+                    'dev_fusion'
+                  );
+                }
+              }
+            }
+          } catch (dbError) {
+            console.warn('Failed to update database with LinkedIn data:', dbError);
+          }
+          
+          console.log('Successfully enriched profile using dev_fusion actor');
+          return enrichedProfile;
+        } else {
+          console.log('Dev_fusion actor failed, falling back to harvestapi search');
+        }
+      }
+      
+      // Fallback to harvestapi search if no LinkedIn URL or dev_fusion failed
+      console.log('Using harvestapi actor for profile search/enrichment');
       
       try {
         // Search again with the same parameters to get full profile data
@@ -664,6 +828,39 @@ export class LinkedInService {
           console.log(`Set LinkedIn URL in enriched profile: ${foundLinkedInUrl}`);
         }
         
+        // Update database with the fetched LinkedIn data
+        try {
+          if (candidates && candidates.length > 0) {
+            // Find the candidate that matches this profile
+            const matchingCandidate = candidates.find(c => 
+              c.linkedinUrl === profileUrl || 
+              c.linkedinUrl === foundLinkedInUrl ||
+              c.name === enrichedProfile.name ||
+              (c.title && c.title.toLowerCase().includes(enrichedProfile.title?.toLowerCase() || ''))
+            );
+            
+            if (matchingCandidate) {
+              // Update candidate record
+              await ResumeDataService.updateCandidateWithLinkedInData(
+                matchingCandidate.id,
+                profileData,
+                'harvestapi'
+              );
+              
+              // Update resume data if available
+              if (matchingCandidate.resumeDataId) {
+                await ResumeDataService.updateResumeDataWithLinkedIn(
+                  matchingCandidate.resumeDataId,
+                  profileData,
+                  'harvestapi'
+                );
+              }
+            }
+          }
+        } catch (dbError) {
+          console.warn('Failed to update database with LinkedIn data:', dbError);
+        }
+        
         return enrichedProfile;
       } catch (apifyError: any) {
         // Handle specific Apify errors
@@ -682,6 +879,229 @@ export class LinkedInService {
       console.error('LinkedIn profile enrichment failed:', error);
       throw error; // Re-throw the error instead of falling back to mock data
     }
+  }
+
+  /**
+   * Transform dev_fusion LinkedIn profile data to our LinkedIn profile format
+   */
+  private transformDevFusionData(data: any): LinkedInProfile {
+    console.log('🔍 Raw dev_fusion data structure:');
+    console.log('Keys:', Object.keys(data));
+    
+    // Handle the nested structure from dev_fusion actor
+    let profileData = data;
+    if (data.rawData) {
+      profileData = data.rawData;
+      console.log('📁 Found rawData, using nested structure');
+    }
+    
+    console.log('Profile data keys:', Object.keys(profileData));
+    console.log('🔍 Experiences array:', JSON.stringify(profileData.experiences, null, 2));
+    
+    // Extract experience data from the dev_fusion format
+    const experiences: Array<{
+      title: string;
+      company: string;
+      duration: string;
+      description: string;
+    }> = [];
+    
+    if (profileData.experiences && Array.isArray(profileData.experiences)) {
+      profileData.experiences.forEach((exp: any) => {
+        // Extract company from subtitle (e.g., "Aimplify · Full-time" -> "Aimplify")
+        let companyName = 'Unknown';
+        if (exp.subtitle) {
+          // Split by "·" and take the first part (company name)
+          companyName = exp.subtitle.split('·')[0].trim();
+          console.log(`🔍 Extracted company from subtitle: "${exp.subtitle}" -> "${companyName}"`);
+        } else if (exp.company) {
+          companyName = exp.company;
+          console.log(`🔍 Using exp.company: "${companyName}"`);
+        } else if (exp.companyName) {
+          companyName = exp.companyName;
+          console.log(`🔍 Using exp.companyName: "${companyName}"`);
+        } else {
+          console.log(`⚠️ No company data found for experience: ${exp.title}`);
+        }
+        
+        experiences.push({
+          title: exp.title || exp.position || exp.jobTitle || 'Unknown',
+          company: companyName,
+          duration: exp.duration || exp.timePeriod || exp.currentJobDuration || 'Unknown',
+          description: exp.description || ''
+        });
+      });
+    }
+
+    // Extract education data
+    const education: Array<{
+      school: string;
+      degree: string;
+      field: string;
+      years: string;
+    }> = [];
+    
+    if (data.education && Array.isArray(data.education)) {
+      data.education.forEach((edu: any) => {
+        education.push({
+          school: edu.school || edu.institution || 'Unknown',
+          degree: edu.degree || 'Unknown',
+          field: edu.field || edu.major || 'Unknown',
+          years: edu.years || edu.timePeriod || 'Unknown'
+        });
+      });
+    }
+
+    // Extract skills
+    const skills = data.skills || data.skill || [];
+    
+    // Extract certifications
+    const certifications: Array<{
+      name: string;
+      issuer: string;
+      date: string;
+    }> = [];
+    
+    if (data.certifications && Array.isArray(data.certifications)) {
+      data.certifications.forEach((cert: any) => {
+        certifications.push({
+          name: cert.name || cert.title || 'Unknown',
+          issuer: cert.issuer || cert.organization || 'Unknown',
+          date: cert.date || cert.issuedDate || 'Unknown'
+        });
+      });
+    }
+
+    // Determine current company and position from most recent experience
+    let currentCompany = 'Unknown';
+    let currentPosition = profileData.headline || profileData.title || profileData.jobTitle || 'Unknown';
+    
+    // First, try to get company from experience data (most reliable)
+    if (experiences.length > 0) {
+      // Use the first experience entry as it's typically the most recent
+      const mostRecent = experiences[0];
+      currentCompany = mostRecent.company;
+      currentPosition = mostRecent.title;
+      console.log(`✅ Using most recent experience: ${currentPosition} at ${currentCompany}`);
+      console.log(`🔍 Experience data:`, JSON.stringify(mostRecent, null, 2));
+      
+      // If company is still "Unknown", try subtitle fallback
+      if (currentCompany === 'Unknown' && profileData.experiences && Array.isArray(profileData.experiences) && profileData.experiences.length > 0) {
+        const rawMostRecent = profileData.experiences[0];
+        console.log(`🔍 Raw experience data for fallback:`, JSON.stringify(rawMostRecent, null, 2));
+        
+        if (rawMostRecent.subtitle) {
+          currentCompany = rawMostRecent.subtitle.split('·')[0].trim();
+          console.log(`✅ Using subtitle fallback after Unknown: ${currentPosition} at ${currentCompany}`);
+        } else if (rawMostRecent.company) {
+          currentCompany = rawMostRecent.company;
+          console.log(`✅ Using raw company fallback: ${currentPosition} at ${currentCompany}`);
+        } else if (rawMostRecent.companyName) {
+          currentCompany = rawMostRecent.companyName;
+          console.log(`✅ Using raw companyName fallback: ${currentPosition} at ${currentCompany}`);
+        } else if (rawMostRecent.companyLink1) {
+          // Extract company name from LinkedIn company URL
+          const companyUrl = rawMostRecent.companyLink1;
+          const companyName = companyUrl.split('/company/')[1]?.split('/')[0] || 'Unknown';
+          currentCompany = companyName;
+          console.log(`✅ Using companyLink1 fallback: ${currentPosition} at ${currentCompany}`);
+        } else if (rawMostRecent.title && rawMostRecent.title.includes('(') && rawMostRecent.title.includes(')')) {
+          // Extract company from title like "Product Manager - AI solutions (Aimplify)"
+          const match = rawMostRecent.title.match(/\(([^)]+)\)/);
+          if (match) {
+            currentCompany = match[1];
+            console.log(`✅ Using title extraction fallback: ${currentPosition} at ${currentCompany}`);
+          }
+        }
+      }
+    } 
+    // Fallback: try to extract from subtitle directly
+    else if (profileData.experiences && Array.isArray(profileData.experiences) && profileData.experiences.length > 0) {
+      const mostRecent = profileData.experiences[0];
+      if (mostRecent.subtitle) {
+        currentCompany = mostRecent.subtitle.split('·')[0].trim();
+        currentPosition = mostRecent.title || 'Unknown';
+        console.log(`✅ Using subtitle fallback: ${currentPosition} at ${currentCompany}`);
+      }
+    }
+    // Additional fallback: try different possible company fields from profileData
+    else if (profileData.companyName) {
+      currentCompany = profileData.companyName;
+      console.log(`✅ Using profileData.companyName: ${currentCompany}`);
+    } else if (profileData.company) {
+      currentCompany = profileData.company;
+      console.log(`✅ Using profileData.company: ${currentCompany}`);
+    } else if (profileData.currentCompany) {
+      currentCompany = profileData.currentCompany;
+      console.log(`✅ Using profileData.currentCompany: ${currentCompany}`);
+    }
+    
+    // Final comprehensive check - if still "Unknown", try all possible sources
+    if (currentCompany === 'Unknown' && profileData.experiences && Array.isArray(profileData.experiences) && profileData.experiences.length > 0) {
+      const rawMostRecent = profileData.experiences[0];
+      console.log(`🔍 Final fallback attempt with raw data:`, JSON.stringify(rawMostRecent, null, 2));
+      
+      // Try all possible company fields
+      if (rawMostRecent.subtitle) {
+        currentCompany = rawMostRecent.subtitle.split('·')[0].trim();
+        console.log(`✅ Final subtitle fallback: ${currentPosition} at ${currentCompany}`);
+      } else if (rawMostRecent.company) {
+        currentCompany = rawMostRecent.company;
+        console.log(`✅ Final company fallback: ${currentPosition} at ${currentCompany}`);
+      } else if (rawMostRecent.companyName) {
+        currentCompany = rawMostRecent.companyName;
+        console.log(`✅ Final companyName fallback: ${currentPosition} at ${currentCompany}`);
+      } else if (rawMostRecent.companyLink1) {
+        const companyUrl = rawMostRecent.companyLink1;
+        const companyName = companyUrl.split('/company/')[1]?.split('/')[0] || 'Unknown';
+        currentCompany = companyName;
+        console.log(`✅ Final companyLink1 fallback: ${currentPosition} at ${currentCompany}`);
+      } else if (rawMostRecent.title && rawMostRecent.title.includes('(') && rawMostRecent.title.includes(')')) {
+        // Extract company from title like "Product Manager - AI solutions (Aimplify)"
+        const match = rawMostRecent.title.match(/\(([^)]+)\)/);
+        if (match) {
+          currentCompany = match[1];
+          console.log(`✅ Final title extraction fallback: ${currentPosition} at ${currentCompany}`);
+        }
+      }
+    }
+    
+    console.log(`🔍 Final company extraction: ${currentCompany} for position: ${currentPosition}`);
+    console.log(`🔍 All available company fields:`, {
+      subtitle: profileData.experiences?.[0]?.subtitle,
+      company: profileData.experiences?.[0]?.company,
+      companyName: profileData.experiences?.[0]?.companyName,
+      companyLink1: profileData.experiences?.[0]?.companyLink1
+    });
+
+    return {
+      name: profileData.name || profileData.fullName || 'Unknown',
+      title: currentPosition,
+      company: currentCompany,
+      skills: Array.isArray(skills) ? skills : [skills].filter(Boolean),
+      openToWork: profileData.openToWork || false,
+      lastActive: profileData.lastActive || profileData.lastSeen || 'Unknown',
+      profileUrl: profileData.profileUrl || profileData.linkedinUrl || profileData.url,
+      jobHistory: experiences.map(exp => ({
+        role: exp.title,
+        company: exp.company,
+        duration: exp.duration
+      })),
+      recentActivity: profileData.recentActivity || [],
+      headline: profileData.headline || profileData.title,
+      location: profileData.location || profileData.geographicArea || profileData.addressWithCountry,
+      summary: profileData.summary || profileData.about || profileData.description,
+      experience: experiences,
+      education: education,
+      connections: profileData.connections || profileData.connectionsCount || 0,
+      profilePicture: profileData.profilePicture || profileData.profileImage || profileData.profilePic,
+      currentCompany: currentCompany,
+      currentPosition: currentPosition,
+      industry: profileData.industry || profileData.companyIndustry,
+      languages: profileData.languages || [],
+      certifications: certifications,
+      posts: profileData.posts || profileData.updates || []
+    };
   }
 
   /**

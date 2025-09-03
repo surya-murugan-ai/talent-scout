@@ -13,7 +13,8 @@ import {
   candidates,
   projects,
   processingJobs,
-  activities
+  activities,
+  resumeData
 } from "@shared/schema";
 import { randomUUID } from "crypto";
 import { drizzle } from 'drizzle-orm/neon-http';
@@ -32,6 +33,7 @@ export interface IStorage {
   // Candidates
   getCandidates(limit?: number, offset?: number): Promise<Candidate[]>;
   getCandidate(id: string): Promise<Candidate | undefined>;
+  getCandidateByEmail(email: string): Promise<Candidate | undefined>;
   createCandidate(candidate: InsertCandidate): Promise<Candidate>;
   updateCandidate(id: string, candidate: Partial<Candidate>): Promise<Candidate | undefined>;
   deleteCandidate(id: string): Promise<boolean>;
@@ -59,6 +61,11 @@ export interface IStorage {
   // Activities
   getRecentActivities(limit?: number): Promise<Activity[]>;
   createActivity(activity: InsertActivity): Promise<Activity>;
+  
+  // Clear data methods
+  clearAllCandidates(): Promise<void>;
+  clearAllProcessingJobs(): Promise<void>;
+  clearAllActivities(): Promise<void>;
 }
 
 export class PostgresStorage implements IStorage {
@@ -111,7 +118,45 @@ export class PostgresStorage implements IStorage {
 
   // Candidates
   async getCandidates(limit = 50, offset = 0): Promise<Candidate[]> {
-    const result = await db.select()
+    const result = await db.select({
+      id: candidates.id,
+      name: candidates.name,
+      email: candidates.email,
+      phone: candidates.phone,
+      title: candidates.title,
+      company: candidates.company,
+      currentEmployer: candidates.currentEmployer,
+      linkedinUrl: candidates.linkedinUrl,
+      githubUrl: candidates.githubUrl,
+      portfolioUrl: candidates.portfolioUrl,
+      location: candidates.location,
+      linkedinLastActive: candidates.linkedinLastActive,
+      skills: candidates.skills,
+      score: candidates.score,
+      priority: candidates.priority,
+      openToWork: candidates.openToWork,
+      lastActive: candidates.lastActive,
+      notes: candidates.notes,
+      linkedinNotes: candidates.linkedinNotes,
+      companyDifference: candidates.companyDifference,
+      companyDifferenceScore: candidates.companyDifferenceScore,
+      hireabilityScore: candidates.hireabilityScore,
+      hireabilityFactors: candidates.hireabilityFactors,
+      potentialToJoin: candidates.potentialToJoin,
+      atsId: candidates.atsId,
+      selectionStatus: candidates.selectionStatus,
+      selectionDate: candidates.selectionDate,
+      joiningOutcome: candidates.joiningOutcome,
+      atsNotes: candidates.atsNotes,
+      source: candidates.source,
+      originalData: candidates.originalData,
+      enrichedData: candidates.enrichedData,
+      extractedData: candidates.extractedData,
+      confidence: candidates.confidence,
+      processingTime: candidates.processingTime,
+      createdAt: candidates.createdAt,
+      updatedAt: candidates.updatedAt
+    })
       .from(candidates)
       .orderBy(desc(candidates.score))
       .limit(limit)
@@ -120,7 +165,50 @@ export class PostgresStorage implements IStorage {
   }
 
   async getCandidate(id: string): Promise<Candidate | undefined> {
-    const result = await db.select().from(candidates).where(eq(candidates.id, id)).limit(1);
+    const result = await db.select({
+      id: candidates.id,
+      name: candidates.name,
+      email: candidates.email,
+      phone: candidates.phone,
+      title: candidates.title,
+      company: candidates.company,
+      currentEmployer: candidates.currentEmployer,
+      linkedinUrl: candidates.linkedinUrl,
+      githubUrl: candidates.githubUrl,
+      portfolioUrl: candidates.portfolioUrl,
+      location: candidates.location,
+      linkedinLastActive: candidates.linkedinLastActive,
+      skills: candidates.skills,
+      score: candidates.score,
+      priority: candidates.priority,
+      openToWork: candidates.openToWork,
+      lastActive: candidates.lastActive,
+      notes: candidates.notes,
+      linkedinNotes: candidates.linkedinNotes,
+      companyDifference: candidates.companyDifference,
+      companyDifferenceScore: candidates.companyDifferenceScore,
+      hireabilityScore: candidates.hireabilityScore,
+      hireabilityFactors: candidates.hireabilityFactors,
+      potentialToJoin: candidates.potentialToJoin,
+      atsId: candidates.atsId,
+      selectionStatus: candidates.selectionStatus,
+      selectionDate: candidates.selectionDate,
+      joiningOutcome: candidates.joiningOutcome,
+      atsNotes: candidates.atsNotes,
+      source: candidates.source,
+      originalData: candidates.originalData,
+      enrichedData: candidates.enrichedData,
+      extractedData: candidates.extractedData,
+      confidence: candidates.confidence,
+      processingTime: candidates.processingTime,
+      createdAt: candidates.createdAt,
+      updatedAt: candidates.updatedAt
+    }).from(candidates).where(eq(candidates.id, id)).limit(1);
+    return result[0];
+  }
+
+  async getCandidateByEmail(email: string): Promise<Candidate | undefined> {
+    const result = await db.select().from(candidates).where(eq(candidates.email, email)).limit(1);
     return result[0];
   }
 
@@ -148,7 +236,45 @@ export class PostgresStorage implements IStorage {
   }
 
   async getCandidatesByPriority(priority: string): Promise<Candidate[]> {
-    const result = await db.select()
+    const result = await db.select({
+      id: candidates.id,
+      name: candidates.name,
+      email: candidates.email,
+      phone: candidates.phone,
+      title: candidates.title,
+      company: candidates.company,
+      currentEmployer: candidates.currentEmployer,
+      linkedinUrl: candidates.linkedinUrl,
+      githubUrl: candidates.githubUrl,
+      portfolioUrl: candidates.portfolioUrl,
+      location: candidates.location,
+      linkedinLastActive: candidates.linkedinLastActive,
+      skills: candidates.skills,
+      score: candidates.score,
+      priority: candidates.priority,
+      openToWork: candidates.openToWork,
+      lastActive: candidates.lastActive,
+      notes: candidates.notes,
+      linkedinNotes: candidates.linkedinNotes,
+      companyDifference: candidates.companyDifference,
+      companyDifferenceScore: candidates.companyDifferenceScore,
+      hireabilityScore: candidates.hireabilityScore,
+      hireabilityFactors: candidates.hireabilityFactors,
+      potentialToJoin: candidates.potentialToJoin,
+      atsId: candidates.atsId,
+      selectionStatus: candidates.selectionStatus,
+      selectionDate: candidates.selectionDate,
+      joiningOutcome: candidates.joiningOutcome,
+      atsNotes: candidates.atsNotes,
+      source: candidates.source,
+      originalData: candidates.originalData,
+      enrichedData: candidates.enrichedData,
+      extractedData: candidates.extractedData,
+      confidence: candidates.confidence,
+      processingTime: candidates.processingTime,
+      createdAt: candidates.createdAt,
+      updatedAt: candidates.updatedAt
+    })
       .from(candidates)
       .where(eq(candidates.priority, priority))
       .orderBy(desc(candidates.score));
@@ -254,6 +380,22 @@ export class PostgresStorage implements IStorage {
   async createActivity(insertActivity: InsertActivity): Promise<Activity> {
     const result = await db.insert(activities).values(insertActivity).returning();
     return result[0];
+  }
+
+  // Clear data methods
+  async clearAllCandidates(): Promise<void> {
+    // Clear resume data first due to foreign key constraints
+    await db.delete(resumeData);
+    // Then clear candidates
+    await db.delete(candidates);
+  }
+
+  async clearAllProcessingJobs(): Promise<void> {
+    await db.delete(processingJobs);
+  }
+
+  async clearAllActivities(): Promise<void> {
+    await db.delete(activities);
   }
 }
 

@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: talent-scout-fullstack
+    runtime: node
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: APIFY_API_TOKEN
+        sync: false
+    healthCheckPath: /health
+    autoDeploy: true

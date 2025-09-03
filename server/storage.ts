@@ -18,7 +18,7 @@ import {
 import { randomUUID } from "crypto";
 import { drizzle } from 'drizzle-orm/neon-http';
 import { neon } from '@neondatabase/serverless';
-import { eq, desc, and, sql } from 'drizzle-orm';
+import { eq, desc, and, sql, gte, lte, like, inArray } from 'drizzle-orm';
 
 const neonSql = neon(process.env.DATABASE_URL!);
 const db = drizzle(neonSql);
@@ -42,6 +42,15 @@ export interface IStorage {
     processing: number;
     avgScore: number;
   }>;
+
+  // Enhanced candidate queries
+  getCandidatesBySkills(skills: string[]): Promise<Candidate[]>;
+  getCandidatesByExperience(minYears: number, maxYears?: number): Promise<Candidate[]>;
+  getCandidatesByDataQuality(minQuality: number): Promise<Candidate[]>;
+  getCandidatesByLocation(location: string): Promise<Candidate[]>;
+  getCandidatesByCompany(company: string): Promise<Candidate[]>;
+  searchCandidates(query: string): Promise<Candidate[]>;
+  getCandidatesBySource(source: string): Promise<Candidate[]>;
 
   // Projects
   getProjects(): Promise<Project[]>;
@@ -155,6 +164,91 @@ export class PostgresStorage implements IStorage {
     return result;
   }
 
+  // Enhanced candidate queries
+  async getCandidatesBySkills(skills: string[]): Promise<Candidate[]> {
+    // Search for candidates with any of the specified skills
+    const skillConditions = skills.map(skill => 
+      sql`${candidates.skills}::text ILIKE ${`%${skill}%`}`
+    );
+    
+    const result = await db.select()
+      .from(candidates)
+      .where(sql`(${skillConditions.join(' OR ')})`)
+      .orderBy(desc(candidates.score));
+    
+    return result;
+  }
+
+  async getCandidatesByExperience(minYears: number, maxYears?: number): Promise<Candidate[]> {
+    let query = db.select()
+      .from(candidates)
+      .where(gte(candidates.yearsOfExperience, minYears));
+    
+    if (maxYears) {
+      query = query.where(lte(candidates.yearsOfExperience, maxYears));
+    }
+    
+    const result = await query.orderBy(desc(candidates.score));
+    return result;
+  }
+
+  async getCandidatesByDataQuality(minQuality: number): Promise<Candidate[]> {
+    const result = await db.select()
+      .from(candidates)
+      .where(gte(candidates.dataQuality, minQuality))
+      .orderBy(desc(candidates.dataQuality));
+    
+    return result;
+  }
+
+  async getCandidatesByLocation(location: string): Promise<Candidate[]> {
+    const result = await db.select()
+      .from(candidates)
+      .where(like(candidates.location, `%${location}%`))
+      .orderBy(desc(candidates.score));
+    
+    return result;
+  }
+
+  async getCandidatesByCompany(company: string): Promise<Candidate[]> {
+    const result = await db.select()
+      .from(candidates)
+      .where(
+        sql`(${candidates.company} ILIKE ${`%${company}%`} OR ${candidates.currentCompany} ILIKE ${`%${company}%`})`
+      )
+      .orderBy(desc(candidates.score));
+    
+    return result;
+  }
+
+  async searchCandidates(query: string): Promise<Candidate[]> {
+    const searchTerm = `%${query}%`;
+    const result = await db.select()
+      .from(candidates)
+      .where(
+        sql`(
+          ${candidates.name} ILIKE ${searchTerm} OR
+          ${candidates.title} ILIKE ${searchTerm} OR
+          ${candidates.company} ILIKE ${searchTerm} OR
+          ${candidates.currentCompany} ILIKE ${searchTerm} OR
+          ${candidates.location} ILIKE ${searchTerm} OR
+          ${candidates.skills}::text ILIKE ${searchTerm}
+        )`
+      )
+      .orderBy(desc(candidates.score));
+    
+    return result;
+  }
+
+  async getCandidatesBySource(source: string): Promise<Candidate[]> {
+    const result = await db.select()
+      .from(candidates)
+      .where(eq(candidates.source, source))
+      .orderBy(desc(candidates.createdAt));
+    
+    return result;
+  }
+
   async getCandidatesStats(): Promise<{
     total: number;
     highPriority: number;
@@ -211,9 +305,7 @@ export class PostgresStorage implements IStorage {
 
   // Processing Jobs
   async getProcessingJobs(): Promise<ProcessingJob[]> {
-    const result = await db.select()
-      .from(processingJobs)
-      .orderBy(desc(processingJobs.createdAt));
+    const result = await db.select().from(processingJobs).orderBy(desc(processingJobs.createdAt));
     return result;
   }
 
@@ -222,8 +314,8 @@ export class PostgresStorage implements IStorage {
     return result[0];
   }
 
-  async createProcessingJob(insertJob: InsertProcessingJob): Promise<ProcessingJob> {
-    const result = await db.insert(processingJobs).values(insertJob).returning();
+  async createProcessingJob(insertProcessingJob: InsertProcessingJob): Promise<ProcessingJob> {
+    const result = await db.insert(processingJobs).values(insertProcessingJob).returning();
     return result[0];
   }
 
@@ -238,12 +330,13 @@ export class PostgresStorage implements IStorage {
   async getActiveProcessingJobs(): Promise<ProcessingJob[]> {
     const result = await db.select()
       .from(processingJobs)
-      .where(sql`status IN ('processing', 'pending')`);
+      .where(eq(processingJobs.status, 'processing'))
+      .orderBy(desc(processingJobs.createdAt));
     return result;
   }
 
   // Activities
-  async getRecentActivities(limit = 10): Promise<Activity[]> {
+  async getRecentActivities(limit = 50): Promise<Activity[]> {
     const result = await db.select()
       .from(activities)
       .orderBy(desc(activities.createdAt))

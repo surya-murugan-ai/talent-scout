@@ -26,6 +26,36 @@ export const candidates = pgTable("candidates", {
   notes: text("notes"),
   linkedinNotes: text("linkedin_notes"), // Notes from recent posts/comments
   
+  // Enhanced fields for better data extraction
+  firstName: text("first_name"),
+  lastName: text("last_name"),
+  middleName: text("middle_name"),
+  currentTitle: text("current_title"),
+  currentCompany: text("current_company"),
+  yearsOfExperience: real("years_of_experience"),
+  education: jsonb("education").default([]), // Array of education objects
+  workHistory: jsonb("work_history").default([]), // Array of work history objects
+  certifications: jsonb("certifications").default([]), // Array of certification objects
+  languages: jsonb("languages").default([]), // Array of languages
+  salary: text("salary"),
+  availability: text("availability"),
+  remotePreference: text("remote_preference"),
+  visaStatus: text("visa_status"),
+  linkedinHeadline: text("linkedin_headline"),
+  linkedinSummary: text("linkedin_summary"),
+  linkedinConnections: integer("linkedin_connections"),
+  
+  // Contact information
+  alternateEmail: text("alternate_email"),
+  website: text("website"),
+  github: text("github"),
+  portfolio: text("portfolio"),
+  
+  // Additional metadata
+  sourceFile: text("source_file"),
+  processingDate: timestamp("processing_date"),
+  dataQuality: real("data_quality"), // 0-100 score of data completeness
+  
   // ATS History fields
   atsId: text("ats_id"), // ID from ATS system
   selectionStatus: text("selection_status"), // Offered, Selected, etc.
@@ -34,7 +64,7 @@ export const candidates = pgTable("candidates", {
   atsNotes: text("ats_notes"), // Additional notes from ATS
   
   // Source tracking
-  source: text("source").default("upload"), // upload, ats, manual
+  source: text("source").default("upload"), // upload, ats, manual, apify
   
   originalData: jsonb("original_data"),
   enrichedData: jsonb("enriched_data"),

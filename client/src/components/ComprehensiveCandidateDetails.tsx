@@ -4,7 +4,7 @@ import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
-import { ExternalLink, Mail, Phone, MapPin, Calendar, Award, GraduationCap, Code, Trophy, Heart, Globe, User } from 'lucide-react';
+import { ExternalLink, Mail, Phone, MapPin, Calendar, Award, GraduationCap, Code, Trophy, Heart, Globe, User, Briefcase } from 'lucide-react';
 
 interface Experience {
   jobTitle: string;
@@ -138,6 +138,7 @@ export function ComprehensiveCandidateDetails({
   const comprehensiveData: ComprehensiveCandidateData | null = 
     candidate.originalData ? candidate.originalData :
     (candidate as any).extractedData ? (candidate as any).extractedData :
+    (candidate as any).enrichedData ? (candidate as any).enrichedData :
     candidate.source === 'resume' ? candidate as any :
     null;
 
@@ -449,7 +450,35 @@ export function ComprehensiveCandidateDetails({
                 ))}
               </div>
             ) : (
-              <p className="text-muted-foreground text-center py-8">No experience information available</p>
+              <div className="text-center py-8">
+                <p className="text-muted-foreground mb-4">No detailed experience information available</p>
+                {/* Fallback: Show basic company info if available */}
+                {(candidate.company || candidate.currentEmployer) && (
+                  <div className="bg-gray-50 p-4 rounded-lg border">
+                    <h4 className="font-medium text-gray-900 mb-2">Available Company Information:</h4>
+                    <div className="space-y-2 text-sm">
+                      {candidate.company && (
+                        <div className="flex items-center gap-2">
+                          <Briefcase className="h-4 w-4 text-gray-500" />
+                          <span><strong>Resume Company:</strong> {candidate.company}</span>
+                        </div>
+                      )}
+                      {candidate.currentEmployer && (
+                        <div className="flex items-center gap-2">
+                          <Globe className="h-4 w-4 text-blue-500" />
+                          <span><strong>LinkedIn Company:</strong> {candidate.currentEmployer}</span>
+                        </div>
+                      )}
+                      {candidate.title && (
+                        <div className="flex items-center gap-2">
+                          <User className="h-4 w-4 text-green-500" />
+                          <span><strong>Title:</strong> {candidate.title}</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
             )}
           </TabsContent>
 

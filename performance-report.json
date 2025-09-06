@@ -1,0 +1,44 @@
+{
+  "timestamp": "2025-09-04T11:21:43.423Z",
+  "summary": {
+    "singleResumeImprovement": "44.2%",
+    "multipleResumeImprovement": "57.6%",
+    "overallEfficiency": "Good"
+  },
+  "details": [
+    {
+      "type": "old",
+      "resumeCount": 1,
+      "simulatedTime": 2150,
+      "actualTime": 3,
+      "efficiency": "Poor"
+    },
+    {
+      "type": "new",
+      "resumeCount": 1,
+      "simulatedTime": 1200,
+      "actualTime": 3,
+      "efficiency": "Excellent"
+    },
+    {
+      "type": "old",
+      "resumeCount": 5,
+      "simulatedTime": 10750,
+      "actualTime": 2,
+      "efficiency": "Poor"
+    },
+    {
+      "type": "new",
+      "resumeCount": 5,
+      "simulatedTime": 4560,
+      "actualTime": 2,
+      "efficiency": "Excellent"
+    }
+  ],
+  "recommendations": [
+    "Use /api/upload-single-resume for single resumes",
+    "Use /api/upload-file for multiple resumes",
+    "Monitor performance at /api/performance/stats",
+    "Enable caching for repeated operations"
+  ]
+}

@@ -172,7 +172,9 @@ export class LinkedInService {
 
       // Create filename with timestamp and profile identifier
       const profileId = linkedinUrl.split('/in/')[1]?.split('?')[0] || 'unknown';
-      const filename = `devfusion_${profileId}_${timestamp.replace(/[:.]/g, '-')}.json`;
+      // Clean profileId to remove invalid filename characters
+      const cleanProfileId = profileId.replace(/[<>:"/\\|?*]/g, '-');
+      const filename = `devfusion_${cleanProfileId}_${timestamp.replace(/[:.]/g, '-')}.json`;
       const filepath = path.join(resultsDir, filename);
 
       // Save the raw data

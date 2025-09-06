@@ -30,11 +30,19 @@ export function setupSecurityMiddleware(app: Express) {
   app.use(cors({
     origin: process.env.NODE_ENV === 'production' 
       ? ['https://*.replit.app', 'https://*.replit.dev', 'http://54.197.65.143:5000', 'http://54.197.65.143:8000']
-      : ['http://localhost:5173', 'http://localhost:5000'],
+      : true, // Allow all origins in development
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   }));
+
+  // Add CORS debugging in development
+  if (process.env.NODE_ENV !== 'production') {
+    app.use((req, res, next) => {
+      console.log(`🌐 CORS Request: ${req.method} ${req.path} from origin: ${req.headers.origin || 'no-origin'}`);
+      next();
+    });
+  }
 
   // Compression
   app.use(compression());

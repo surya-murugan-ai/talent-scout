@@ -53,6 +53,11 @@ export interface IStorage {
   getCandidatesByCompany(company: string): Promise<Candidate[]>;
   searchCandidates(query: string): Promise<Candidate[]>;
   getCandidatesBySource(source: string): Promise<Candidate[]>;
+  
+  // Eeezo-specific methods
+  getCandidatesByCompanyId(comId: string, options?: { status?: string; limit?: number; offset?: number }): Promise<Candidate[]>;
+  getEeezoProcessingStatus(comId: string): Promise<any>;
+  updateCandidateEeezoStatus(candidateId: string, updateData: { eeezoStatus?: string; notes?: string }): Promise<Candidate | undefined>;
 
   // Projects
   getProjects(): Promise<Project[]>;
@@ -361,6 +366,122 @@ export class PostgresStorage implements IStorage {
   async createActivity(insertActivity: InsertActivity): Promise<Activity> {
     const result = await db.insert(activities).values(insertActivity).returning();
     return result[0];
+  }
+
+  // Eeezo-specific methods
+  async getCandidatesByCompanyId(comId: string, options: {
+    status?: string;
+    limit?: number;
+    offset?: number;
+  } = {}): Promise<Candidate[]> {
+    try {
+      let whereCondition = eq(candidates.comId, comId);
+      
+      if (options.status) {
+        whereCondition = and(
+          eq(candidates.comId, comId),
+          eq(candidates.eeezoStatus, options.status)
+        )!;
+      }
+      
+      const query = db.select().from(candidates)
+        .where(whereCondition)
+        .orderBy(desc(candidates.createdAt))
+        .limit(options.limit || 100)
+        .offset(options.offset || 0);
+      
+      return await query;
+      
+    } catch (error) {
+      console.error('Error fetching candidates by company ID:', error);
+      throw new Error(`Failed to fetch candidates: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
+  }
+
+  async getEeezoProcessingStatus(comId: string): Promise<any> {
+    try {
+      const result = await db.select({
+        eeezoStatus: candidates.eeezoStatus,
+        enrichmentStatus: candidates.enrichmentStatus,
+        count: sql<number>`count(*)`
+      })
+      .from(candidates)
+      .where(eq(candidates.comId, comId))
+      .groupBy(candidates.eeezoStatus, candidates.enrichmentStatus);
+      
+      const status = {
+        totalCandidates: 0,
+        uploaded: 0,
+        processed: 0,
+        enriched: 0,
+        completed: 0,
+        pendingEnrichment: 0,
+        failedEnrichment: 0
+      };
+      
+      result.forEach(candidate => {
+        status.totalCandidates += candidate.count;
+        
+        switch (candidate.eeezoStatus) {
+          case 'uploaded':
+            status.uploaded += candidate.count;
+            break;
+          case 'processed':
+            status.processed += candidate.count;
+            break;
+          case 'enriched':
+            status.enriched += candidate.count;
+            break;
+          case 'completed':
+            status.completed += candidate.count;
+            break;
+        }
+        
+        switch (candidate.enrichmentStatus) {
+          case 'pending':
+            status.pendingEnrichment += candidate.count;
+            break;
+          case 'failed':
+            status.failedEnrichment += candidate.count;
+            break;
+        }
+      });
+      
+      return status;
+      
+    } catch (error) {
+      console.error('Error fetching Eeezo status:', error);
+      throw new Error(`Failed to fetch status: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
+  }
+
+  async updateCandidateEeezoStatus(candidateId: string, updateData: {
+    eeezoStatus?: string;
+    notes?: string;
+  }): Promise<Candidate | undefined> {
+    try {
+      const [updatedCandidate] = await db.update(candidates)
+        .set({
+          eeezoStatus: updateData.eeezoStatus,
+          notes: updateData.notes,
+          updatedAt: new Date()
+        })
+        .where(eq(candidates.id, candidateId))
+        .returning();
+      
+      // Log activity
+      await db.insert(activities).values({
+        type: 'eezo_status_update',
+        message: `Eeezo status updated for candidate ${candidateId}`,
+        details: `Status: ${updateData.eeezoStatus}, Notes: ${updateData.notes || 'None'}`
+      });
+      
+      return updatedCandidate;
+      
+    } catch (error) {
+      console.error('Error updating candidate Eeezo status:', error);
+      throw new Error(`Failed to update status: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
   }
 
   // Clear data methods

@@ -284,9 +284,9 @@ export default function CandidateTable() {
         </div>
       </CardHeader>
       <CardContent className="p-0 flex-1 overflow-auto">
-        <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-slate-100">
+        <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-slate-100 relative">
           <table className="w-full min-w-[1800px]">
-            <thead className="bg-slate-50">
+            <thead className="sticky-table-header">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider min-w-[250px]">
                   Candidate
@@ -312,9 +312,6 @@ export default function CandidateTable() {
                 <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider min-w-[120px]">
                   Hireability
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider min-w-[120px]">
-                  Last Active
-                </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider min-w-[200px]">
                   Source
                 </th>
@@ -326,7 +323,7 @@ export default function CandidateTable() {
             <tbody className="bg-white divide-y divide-slate-200">
               {candidates.length === 0 ? (
                 <tr>
-                  <td colSpan={11} className="px-6 py-12 text-center">
+                  <td colSpan={10} className="px-6 py-12 text-center">
                     <div className="text-slate-500">
                       <p className="text-lg font-medium">No candidates found</p>
                       <p className="text-sm mt-1">Upload a CSV or Excel file to get started with candidate processing</p>
@@ -502,23 +499,6 @@ export default function CandidateTable() {
                       </div>
                     </td>
 
-                    {/* Last Active */}
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500 min-w-[120px]">
-                      {candidate.linkedinLastActive ? (
-                        <div className="text-center">
-                          <div className="font-medium text-slate-700">
-                            {new Date(candidate.linkedinLastActive).toLocaleDateString()}
-                          </div>
-                          <div className="text-xs text-slate-500">LinkedIn</div>
-                        </div>
-                      ) : candidate.lastActive ? (
-                        <div className="text-center">
-                          {candidate.lastActive}
-                        </div>
-                      ) : (
-                        <span className="text-slate-400">Unknown</span>
-                      )}
-                    </td>
 
                     {/* Source */}
                     <td className="px-6 py-4 whitespace-nowrap min-w-[200px]">

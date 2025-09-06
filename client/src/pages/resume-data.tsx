@@ -61,7 +61,6 @@ interface ResumeData {
     processingTime: number;
     source: string;
     createdAt: string;
-    updatedAt: string;
   };
   candidate: {
     id: string;
@@ -81,7 +80,6 @@ interface ResumeData {
     notes: string | null;
     source: string;
     createdAt: string;
-    updatedAt: string;
   } | null;
 }
 
@@ -298,7 +296,7 @@ export default function ResumeDataPage() {
 
       {/* Detailed View Modal */}
       <Dialog open={!!selectedResume} onOpenChange={() => setSelectedResume(null)}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-white">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-white">
           <DialogHeader className="bg-white border-b border-gray-200 pb-4">
             <DialogTitle className="flex items-center space-x-2 text-gray-900">
               <FileText className="h-5 w-5 text-blue-600" />

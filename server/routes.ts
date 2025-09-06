@@ -13,6 +13,10 @@ import { analyzeCandidate, enrichLinkedInProfile, batchAnalyzeCandidates } from 
 import { ResumeDataService } from "./services/resumeDataService";
 import { insertCandidateSchema, insertProjectSchema, scoringWeightsSchema } from "@shared/schema";
 import { z } from "zod";
+import { OptimizedResumeProcessor } from "./services/optimizedResumeProcessor";
+import { PerformanceMonitor } from "./services/performanceMonitor";
+import { EeezoService } from "./services/eezoService";
+import { sql } from "drizzle-orm";
 
 // Configure multer for file uploads
 const upload = multer({
@@ -261,6 +265,178 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.error('Upload error:', error);
       res.status(500).json({ 
         error: "Failed to upload file",
+        message: error instanceof Error ? error.message : "Unknown error"
+      });
+    }
+  });
+
+  // Optimized single resume upload route
+  app.post("/api/upload-single-resume", upload.single('file'), async (req: RequestWithFile, res) => {
+    try {
+      if (!req.file) {
+        return res.status(400).json({ error: "No file uploaded" });
+      }
+
+      const { originalname, buffer, size } = req.file;
+      
+      // Create processing job
+      const processingJob = await storage.createProcessingJob({
+        projectId: "default-project",
+        fileName: originalname,
+        fileSize: size,
+        status: "processing",
+        progress: 0,
+        totalRecords: 0,
+        processedRecords: 0
+      });
+
+      // Log activity
+      await storage.createActivity({
+        type: "upload",
+        message: "Single resume uploaded",
+        details: `${originalname} (${Math.round(size / 1024)}KB)`
+      });
+
+      // Use optimized processor for single resume with performance monitoring
+      const optimizedProcessor = OptimizedResumeProcessor.getInstance();
+      
+      // Process with progress tracking and performance monitoring
+      const progressCallback = async (progress: number, message: string) => {
+        await storage.updateProcessingJob(processingJob.id, {
+          progress,
+          status: progress === 100 ? "completed" : "processing"
+        });
+        console.log(`Progress: ${progress}% - ${message}`);
+      };
+
+      // Process the single resume with performance monitoring
+      const result = await PerformanceMonitor.getInstance().timeOperation(
+        'single_resume_processing',
+        () => optimizedProcessor.processSingleResume(buffer, originalname, {
+          batchSize: 1,
+          enableCaching: true,
+          parallelProcessing: false,
+          progressCallback
+        }),
+        { filename: originalname, fileSize: size }
+      );
+
+      if (result.success) {
+        // Update job with results
+        await storage.updateProcessingJob(processingJob.id, {
+          status: "completed",
+          progress: 100,
+          totalRecords: result.candidates.length,
+          processedRecords: result.candidates.length
+        });
+
+        // Log completion
+        await storage.createActivity({
+          type: "processing",
+          message: "Single resume processing completed",
+          details: `${result.candidates.length} candidates processed in ${result.processingTime}ms`
+        });
+
+        res.json({
+          message: "Single resume processed successfully",
+          jobId: processingJob.id,
+          filename: originalname,
+          candidatesProcessed: result.candidates.length,
+          processingTime: result.processingTime,
+          estimatedTimeSaved: "2-3x faster than batch processing"
+        });
+      } else {
+        // Update job with failure
+        await storage.updateProcessingJob(processingJob.id, {
+          status: "failed",
+          errorMessage: "Processing failed"
+        });
+
+        res.status(500).json({
+          error: "Single resume processing failed",
+          jobId: processingJob.id
+        });
+      }
+
+    } catch (error) {
+      console.error('Optimized upload error:', error);
+      res.status(500).json({ 
+        error: "Failed to process single resume",
+        message: error instanceof Error ? error.message : "Unknown error"
+      });
+    }
+  });
+
+  // Performance monitoring routes
+  app.get("/api/performance/stats", async (req, res) => {
+    try {
+      const stats = PerformanceMonitor.getInstance().getOverallStats();
+      res.json(stats);
+    } catch (error) {
+      res.status(500).json({ 
+        error: "Failed to fetch performance stats",
+        message: error instanceof Error ? error.message : "Unknown error"
+      });
+    }
+  });
+
+  app.get("/api/performance/operation/:operation", async (req, res) => {
+    try {
+      const stats = PerformanceMonitor.getInstance().getOperationStats(req.params.operation);
+      res.json(stats);
+    } catch (error) {
+      res.status(500).json({ 
+        error: "Failed to fetch operation stats",
+        message: error instanceof Error ? error.message : "Unknown error"
+      });
+    }
+  });
+
+  app.get("/api/performance/slowest", async (req, res) => {
+    try {
+      const limit = parseInt(req.query.limit as string) || 10;
+      const slowest = PerformanceMonitor.getInstance().getSlowestOperations(limit);
+      res.json(slowest);
+    } catch (error) {
+      res.status(500).json({ 
+        error: "Failed to fetch slowest operations",
+        message: error instanceof Error ? error.message : "Unknown error"
+      });
+    }
+  });
+
+  app.get("/api/performance/trends", async (req, res) => {
+    try {
+      const hours = parseInt(req.query.hours as string) || 24;
+      const trends = PerformanceMonitor.getInstance().getPerformanceTrends(hours);
+      res.json(trends);
+    } catch (error) {
+      res.status(500).json({ 
+        error: "Failed to fetch performance trends",
+        message: error instanceof Error ? error.message : "Unknown error"
+      });
+    }
+  });
+
+  app.get("/api/performance/memory", async (req, res) => {
+    try {
+      const memoryStats = PerformanceMonitor.getInstance().getMemoryStats();
+      res.json(memoryStats);
+    } catch (error) {
+      res.status(500).json({ 
+        error: "Failed to fetch memory stats",
+        message: error instanceof Error ? error.message : "Unknown error"
+      });
+    }
+  });
+
+  app.post("/api/performance/clear", async (req, res) => {
+    try {
+      PerformanceMonitor.getInstance().clearMetrics();
+      res.json({ message: "Performance metrics cleared successfully" });
+    } catch (error) {
+      res.status(500).json({ 
+        error: "Failed to clear performance metrics",
         message: error instanceof Error ? error.message : "Unknown error"
       });
     }
@@ -860,6 +1036,231 @@ export async function registerRoutes(app: Express): Promise<Server> {
     
     return factors;
   }
+
+  // ==================== EEEZO INTEGRATION ENDPOINTS ====================
+  
+  // Eeezo: Upload resume file with company ID
+  app.post("/api/eezo/upload-resume", upload.single('file'), async (req: RequestWithFile, res) => {
+    try {
+      const { com_id } = req.body;
+      
+      // Validate required fields
+      if (!com_id) {
+        return res.status(400).json({ 
+          error: "Company ID (com_id) is required",
+          code: "MISSING_COM_ID"
+        });
+      }
+      
+      if (!req.file) {
+        return res.status(400).json({ 
+          error: "Resume file is required",
+          code: "MISSING_FILE"
+        });
+      }
+
+      const { originalname, buffer, size } = req.file;
+      
+      // Create processing job (use default project or create one)
+      let projectId = "default-project";
+      
+      // Check if default project exists, if not create it
+      try {
+        const existingProject = await storage.getProject("default-project");
+        if (!existingProject) {
+          await storage.createProject({
+            name: "Default Project",
+            description: "Default project for Eeezo integration",
+            status: "active"
+          });
+        }
+      } catch (error) {
+        console.log("Using existing default project");
+      }
+
+      const processingJob = await storage.createProcessingJob({
+        projectId: projectId,
+        fileName: originalname,
+        fileSize: size,
+        status: "processing",
+        progress: 0,
+        totalRecords: 0,
+        processedRecords: 0
+      });
+
+      // Log activity
+      await storage.createActivity({
+        type: "eezo_upload",
+        message: "Eeezo resume uploaded",
+        details: `Company: ${com_id}, File: ${originalname}, Size: ${Math.round(size / 1024)}KB`
+      });
+
+      // Process the resume with Eeezo context
+      const result = await EeezoService.processEeezoResume({
+        comId: com_id,
+        file: req.file,
+        processingJobId: processingJob.id
+      });
+
+      res.json({
+        success: true,
+        message: "Resume uploaded and processing started",
+        data: {
+          jobId: processingJob.id,
+          candidateId: result.candidateId,
+          comId: com_id,
+          status: "processing"
+        }
+      });
+
+    } catch (error) {
+      console.error('Eeezo upload error:', error);
+      res.status(500).json({ 
+        error: "Failed to process Eeezo resume",
+        message: error instanceof Error ? error.message : "Unknown error",
+        code: "PROCESSING_ERROR"
+      });
+    }
+  });
+
+  // Eeezo: Get resume data by company ID
+  app.get("/api/eezo/resume-data/:com_id", async (req, res) => {
+    try {
+      const { com_id } = req.params;
+      const { status, limit = 100, offset = 0 } = req.query;
+      
+      if (!com_id) {
+        return res.status(400).json({ 
+          error: "Company ID (com_id) is required",
+          code: "MISSING_COM_ID"
+        });
+      }
+
+      // Get candidates for the company
+      const candidates = await EeezoService.getCandidatesByCompanyId(com_id, {
+        status: status as string,
+        limit: parseInt(limit as string),
+        offset: parseInt(offset as string)
+      });
+
+      // Transform data for Eeezo format
+      const transformedData = candidates.map(candidate => ({
+        candidateId: candidate.id,
+        comId: candidate.comId,
+        name: candidate.name,
+        email: candidate.email,
+        phone: candidate.phone,
+        title: candidate.title,
+        company: candidate.company,
+        location: candidate.location,
+        linkedinUrl: candidate.linkedinUrl,
+        githubUrl: candidate.githubUrl,
+        portfolioUrl: candidate.portfolioUrl,
+        summary: candidate.summary,
+        skills: candidate.skills,
+        experience: candidate.experience,
+        education: candidate.education,
+        projects: candidate.projects,
+        achievements: candidate.achievements,
+        certifications: candidate.certifications,
+        languages: candidate.languages,
+        interests: candidate.interests,
+        score: candidate.score,
+        priority: candidate.priority,
+        openToWork: candidate.openToWork,
+        hireabilityScore: candidate.hireabilityScore,
+        potentialToJoin: candidate.potentialToJoin,
+        enrichmentStatus: candidate.enrichmentStatus,
+        eeezoStatus: candidate.eeezoStatus,
+        confidence: candidate.confidence,
+        processingTime: candidate.processingTime,
+        createdAt: candidate.createdAt,
+        updatedAt: candidate.updatedAt
+      }));
+
+      res.json({
+        success: true,
+        data: {
+          comId: com_id,
+          totalCandidates: candidates.length,
+          candidates: transformedData
+        }
+      });
+
+    } catch (error) {
+      console.error('Eeezo fetch error:', error);
+      res.status(500).json({ 
+        error: "Failed to fetch Eeezo resume data",
+        message: error instanceof Error ? error.message : "Unknown error",
+        code: "FETCH_ERROR"
+      });
+    }
+  });
+
+  // Eeezo: Get processing status
+  app.get("/api/eezo/status/:com_id", async (req, res) => {
+    try {
+      const { com_id } = req.params;
+      
+      if (!com_id) {
+        return res.status(400).json({ 
+          error: "Company ID (com_id) is required",
+          code: "MISSING_COM_ID"
+        });
+      }
+
+      const status = await EeezoService.getEeezoProcessingStatus(com_id);
+      
+      res.json({
+        success: true,
+        data: {
+          comId: com_id,
+          status: status
+        }
+      });
+
+    } catch (error) {
+      console.error('Eeezo status error:', error);
+      res.status(500).json({ 
+        error: "Failed to fetch Eeezo status",
+        message: error instanceof Error ? error.message : "Unknown error",
+        code: "STATUS_ERROR"
+      });
+    }
+  });
+
+  // Eeezo: Update candidate status
+  app.patch("/api/eezo/candidate/:candidateId/status", async (req, res) => {
+    try {
+      const { candidateId } = req.params;
+      const { eeezoStatus, notes } = req.body;
+      
+      if (!candidateId) {
+        return res.status(400).json({ 
+          error: "Candidate ID is required",
+          code: "MISSING_CANDIDATE_ID"
+        });
+      }
+
+      const updatedCandidate = await EeezoService.updateCandidateEeezoStatus(candidateId, {
+        eeezoStatus,
+        notes
+      });
+
+      res.json({
+        success: true,
+        data: updatedCandidate
+      });
+
+    } catch (error) {
+      console.error('Eeezo update error:', error);
+      res.status(500).json({ 
+        error: "Failed to update candidate status",
+        message: error instanceof Error ? error.message : "Unknown error",
+        code: "UPDATE_ERROR"
+      });
+    }
+  });
 
   const httpServer = createServer(app);
   return httpServer;

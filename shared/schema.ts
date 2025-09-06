@@ -11,6 +11,14 @@ export const users = pgTable("users", {
 
 export const candidates = pgTable("candidates", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  
+  // Eeezo Integration Fields
+  comId: varchar("com_id"), // Company ID from Eeezo system
+  eeezoResumeUrl: text("eezo_resume_url"), // Original resume URL from Eeezo
+  eeezoUploadDate: timestamp("eezo_upload_date"),
+  eeezoStatus: text("eezo_status").default("uploaded"), // uploaded, processed, enriched, completed
+  
+  // Basic Information
   name: text("name").notNull(),
   email: text("email"),
   phone: text("phone"),
@@ -21,13 +29,27 @@ export const candidates = pgTable("candidates", {
   githubUrl: text("github_url"),
   portfolioUrl: text("portfolio_url"),
   location: text("location"),
-  linkedinLastActive: timestamp("linkedin_last_active"), // Last active date on LinkedIn
+  summary: text("summary"), // Professional summary
+  
+  // Resume-specific fields (consolidated from resume_data)
+  filename: text("filename"), // Original filename
+  rawText: text("raw_text"), // Raw extracted text
+  experience: jsonb("experience").default([]), // Work experience array
+  education: jsonb("education").default([]), // Education array
+  projects: jsonb("projects").default([]), // Projects array
+  achievements: jsonb("achievements").default([]), // Achievements array
+  interests: jsonb("interests").default([]), // Interests array
+  
+  // Skills and Certifications
   skills: jsonb("skills").default([]),
-  score: real("score").default(0),
-  priority: text("priority").default("Low"), // High, Medium, Low
-  openToWork: boolean("open_to_work").default(false),
-  lastActive: text("last_active"),
-  notes: text("notes"),
+  certifications: jsonb("certifications").default([]),
+  languages: jsonb("languages").default([]),
+  
+  // LinkedIn Enrichment Data
+  linkedinLastActive: timestamp("linkedin_last_active"),
+  linkedinHeadline: text("linkedin_headline"),
+  linkedinSummary: text("linkedin_summary"),
+  linkedinConnections: integer("linkedin_connections"),
   linkedinNotes: text("linkedin_notes"), // Notes from recent posts/comments
   
   // Enhanced fields for better data extraction
@@ -37,17 +59,11 @@ export const candidates = pgTable("candidates", {
   currentTitle: text("current_title"),
   currentCompany: text("current_company"),
   yearsOfExperience: real("years_of_experience"),
-  education: jsonb("education").default([]), // Array of education objects
   workHistory: jsonb("work_history").default([]), // Array of work history objects
-  certifications: jsonb("certifications").default([]), // Array of certification objects
-  languages: jsonb("languages").default([]), // Array of languages
   salary: text("salary"),
   availability: text("availability"),
   remotePreference: text("remote_preference"),
   visaStatus: text("visa_status"),
-  linkedinHeadline: text("linkedin_headline"),
-  linkedinSummary: text("linkedin_summary"),
-  linkedinConnections: integer("linkedin_connections"),
   
   // Contact information
   alternateEmail: text("alternate_email"),
@@ -55,10 +71,11 @@ export const candidates = pgTable("candidates", {
   github: text("github"),
   portfolio: text("portfolio"),
   
-  // Additional metadata
-  sourceFile: text("source_file"),
-  processingDate: timestamp("processing_date"),
-  dataQuality: real("data_quality"), // 0-100 score of data completeness
+  // Scoring and Analysis
+  score: real("score").default(0),
+  priority: text("priority").default("Low"), // High, Medium, Low
+  openToWork: boolean("open_to_work").default(false),
+  lastActive: text("last_active"),
   
   // Company comparison and hireability fields
   companyDifference: text("company_difference"), // Difference between resume company and LinkedIn company
@@ -74,8 +91,17 @@ export const candidates = pgTable("candidates", {
   joiningOutcome: text("joining_outcome"), // Declined, Dropped, No Communication
   atsNotes: text("ats_notes"), // Additional notes from ATS
   
-  // Source tracking
-  source: text("source").default("upload"), // upload, ats, manual, apify
+  // Data Source and Processing
+  source: text("source").default("upload"), // upload, ats, manual, apify, eeezo
+  dataSource: text("data_source").default("resume"), // resume, linkedin, manual, eeezo, ats
+  enrichmentStatus: text("enrichment_status").default("pending"), // pending, in_progress, completed, failed
+  enrichmentDate: timestamp("enrichment_date"),
+  enrichmentSource: text("enrichment_source"), // dev_fusion, harvestapi, manual
+  
+  // Additional metadata
+  sourceFile: text("source_file"),
+  processingDate: timestamp("processing_date"),
+  dataQuality: real("data_quality"), // 0-100 score of data completeness
   
   // Resume extraction data
   originalData: jsonb("original_data"),
@@ -83,8 +109,12 @@ export const candidates = pgTable("candidates", {
   extractedData: jsonb("extracted_data"), // Structured extracted data
   confidence: real("confidence").default(0),
   processingTime: integer("processing_time").default(0),
+  
+  // Notes and Comments
+  notes: text("notes"),
+  
+  // Timestamps
   createdAt: timestamp("created_at").default(sql`now()`),
-  updatedAt: timestamp("updated_at").default(sql`now()`),
 });
 
 // New table for storing detailed resume data

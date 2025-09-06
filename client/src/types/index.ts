@@ -48,7 +48,6 @@ export interface Candidate {
   source?: string | null;
   
   createdAt?: string | null;
-  updatedAt?: string | null;
 }
 
 export interface ProcessingJob {
@@ -62,7 +61,6 @@ export interface ProcessingJob {
   processedRecords: number;
   errorMessage?: string;
   createdAt?: string;
-  updatedAt?: string;
 }
 
 export interface Activity {

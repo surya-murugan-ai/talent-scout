@@ -55,6 +55,7 @@ export interface IStorage {
   
   // Eeezo-specific methods
   getCandidatesByCompanyId(comId: string, options?: { status?: string; limit?: number; offset?: number }): Promise<Candidate[]>;
+  getCandidatesByIds(candidateIds: string[], comId: string): Promise<Candidate[]>;
   getEeezoProcessingStatus(comId: string): Promise<any>;
   updateCandidateEeezoStatus(candidateId: string, updateData: { eeezoStatus?: string; notes?: string }): Promise<Candidate | undefined>;
 
@@ -437,6 +438,31 @@ export class PostgresStorage implements IStorage {
       
     } catch (error) {
       console.error('Error fetching candidates by company ID:', error);
+      throw new Error(`Failed to fetch candidates: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
+  }
+
+  async getCandidatesByIds(candidateIds: string[], comId: string): Promise<Candidate[]> {
+    try {
+      if (candidateIds.length === 0) {
+        return [];
+      }
+
+      const result = await db.select()
+        .from(candidates)
+        .where(
+          and(
+            inArray(candidates.id, candidateIds),
+            eq(candidates.comId, comId),
+            eq(candidates.resumeStatus, 'active')
+          )
+        )
+        .orderBy(desc(candidates.createdAt));
+
+      return result;
+      
+    } catch (error) {
+      console.error('Error fetching candidates by IDs:', error);
       throw new Error(`Failed to fetch candidates: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }
   }

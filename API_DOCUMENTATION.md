@@ -242,7 +242,62 @@ curl -X PATCH "http://localhost:5000/api/candidates/b40285bd-e9a8-4437-bd47-db6e
 
 ---
 
-### 6. Upload Resume (Eeezo Integration)
+### 6. Get Specific Candidates by IDs
+
+**POST** `/api/candidates/bulk`
+
+Fetch specific candidates by their IDs and company ID. This endpoint allows the frontend to request only the candidates they need.
+
+**Request Body:**
+```json
+{
+  "candidateIds": ["7cab6c6f-a941-4d43-8766-d0d0cbf48367", "another-candidate-id"],
+  "com_id": "eezo-123"
+}
+```
+
+**Example Request:**
+```bash
+curl -X POST "http://localhost:5000/api/candidates/bulk" \
+  -H "Content-Type: application/json" \
+  -d '{"candidateIds":["7cab6c6f-a941-4d43-8766-d0d0cbf48367"],"com_id":"eezo-123"}'
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "comId": "eezo-123",
+    "requestedIds": ["7cab6c6f-a941-4d43-8766-d0d0cbf48367"],
+    "foundCandidates": 1,
+    "candidates": [
+      {
+        "id": "7cab6c6f-a941-4d43-8766-d0d0cbf48367",
+        "comId": "eezo-123",
+        "name": "RAJESWARI.N",
+        "email": "rajeerajeswari640@gmail.com",
+        "phone": "+91 9346543414",
+        "title": "Professional",
+        "location": "Bengaluru",
+        "score": 1.5,
+        "priority": "Low",
+        "resumeStatus": "active",
+        "availability": "Immediate",
+        "createdAt": "2025-09-09T05:07:01.515Z"
+      }
+    ]
+  }
+}
+```
+
+**Error Responses:**
+- `400` - Missing company ID or candidate IDs
+- `500` - Server error during fetch
+
+---
+
+### 7. Upload Resume (Eeezo Integration)
 
 **POST** `/api/eezo/upload-resume`
 

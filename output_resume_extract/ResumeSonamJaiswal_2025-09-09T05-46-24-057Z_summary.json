@@ -1,0 +1,107 @@
+{
+  "filename": "ResumeSonamJaiswal.pdf",
+  "timestamp": "2025-09-09T05:46:24.069Z",
+  "processingTime": 6478,
+  "confidence": 73,
+  "extractedData": {
+    "name": "Sonam Jaiswal",
+    "email": "Sonamjaiswal5892@gmail.com",
+    "phone": "8931874656",
+    "title": null,
+    "location": "Bargwan, Chopan, Sonbhadra",
+    "summary": "to seek challenging position in reputed company where I can utilize my skills and abilities while being resource full innovating and flexible wherever I choose to work.",
+    "experience": [],
+    "education": [
+      {
+        "degree": "B.Tech",
+        "field": "Computer Science",
+        "university": "Himalayan Institute of Technology and Management",
+        "year": "2021-APPREARING",
+        "percentage": null,
+        "gpa": "7.2",
+        "location": "BKT, Lucknow"
+      },
+      {
+        "degree": "Diploma",
+        "field": "Information Technology",
+        "university": "Government Polytechnic Aurai",
+        "year": "2020",
+        "percentage": "76.50%",
+        "gpa": null,
+        "location": null
+      },
+      {
+        "degree": "High School",
+        "field": null,
+        "university": "Pt. Vidyadhar Inter College Kabari, Travan, Sonbhadra",
+        "year": "2017",
+        "percentage": "79%",
+        "gpa": null,
+        "location": null
+      }
+    ],
+    "skills": [
+      "Machine learning",
+      "GUI",
+      "BIG DATA",
+      "Deep learning",
+      "Cloud Computing",
+      "HTML",
+      "CSS",
+      "JQUERY",
+      "BOOTSTRAP",
+      "JavaScript",
+      "Ajax",
+      "MySQL",
+      "PHP",
+      "Laravel",
+      "Codeignitor",
+      "Python",
+      "API",
+      "Git Hub"
+    ],
+    "projects": [
+      {
+        "name": null,
+        "description": null,
+        "techUsed": [],
+        "duration": null,
+        "url": "https://hunarindia.org.in/",
+        "achievements": []
+      },
+      {
+        "name": null,
+        "description": null,
+        "techUsed": [],
+        "duration": null,
+        "url": "https://courses.udyami.org.in/",
+        "achievements": []
+      },
+      {
+        "name": null,
+        "description": null,
+        "techUsed": [],
+        "duration": null,
+        "url": "https://courses.iid.org.in/",
+        "achievements": []
+      },
+      {
+        "name": null,
+        "description": null,
+        "techUsed": [],
+        "duration": null,
+        "url": "https://pms.samadhandigitech.org.in/",
+        "achievements": []
+      },
+      {
+        "name": null,
+        "description": null,
+        "techUsed": [],
+        "duration": null,
+        "url": "https://www.kgmu.org/",
+        "achievements": []
+      }
+    ],
+    "certifications": []
+  }
+}

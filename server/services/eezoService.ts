@@ -1,6 +1,6 @@
 import { db } from '../db.js';
 import { candidates, activities } from '../../shared/schema.js';
-import { eq, and } from 'drizzle-orm';
+import { eq, and, sql } from 'drizzle-orm';
 import { ResumeParser } from './resumeParser.js';
 import { linkedInService } from './linkedin.js';
 import { analyzeCandidate } from './openai.js';
@@ -352,17 +352,17 @@ export class EeezoService {
    */
   static async getEeezoProcessingStatus(comId: string) {
     try {
-      const candidates = await db.select({
-        eeezoStatus: candidates.eezoStatus,
-        enrichmentStatus: candidates.enrichmentStatus,
-        count: sql<number>`count(*)`
-      })
-      .from(candidates)
-      .where(eq(candidates.comId, comId))
-      .groupBy(candidates.eezoStatus, candidates.enrichmentStatus);
+      console.log(`Fetching Eeezo status for comId: ${comId}`);
+      
+      // First, let's get all candidates for this comId to see what we have
+      const allCandidates = await db.select()
+        .from(candidates)
+        .where(eq(candidates.comId, comId));
+      
+      console.log(`Found ${allCandidates.length} candidates for comId ${comId}`);
       
       const status = {
-        totalCandidates: 0,
+        totalCandidates: allCandidates.length,
         uploaded: 0,
         processed: 0,
         enriched: 0,
@@ -371,34 +371,38 @@ export class EeezoService {
         failedEnrichment: 0
       };
       
-      candidates.forEach(candidate => {
-        status.totalCandidates += candidate.count;
-        
-        switch (candidate.eezoStatus) {
-          case 'uploaded':
-            status.uploaded += candidate.count;
-            break;
-          case 'processed':
-            status.processed += candidate.count;
-            break;
-          case 'enriched':
-            status.enriched += candidate.count;
-            break;
-          case 'completed':
-            status.completed += candidate.count;
-            break;
+      // Count by status
+      allCandidates.forEach(candidate => {
+        if (candidate.eezoStatus) {
+          switch (candidate.eezoStatus) {
+            case 'uploaded':
+              status.uploaded++;
+              break;
+            case 'processed':
+              status.processed++;
+              break;
+            case 'enriched':
+              status.enriched++;
+              break;
+            case 'completed':
+              status.completed++;
+              break;
+          }
         }
         
-        switch (candidate.enrichmentStatus) {
-          case 'pending':
-            status.pendingEnrichment += candidate.count;
-            break;
-          case 'failed':
-            status.failedEnrichment += candidate.count;
-            break;
+        if (candidate.enrichmentStatus) {
+          switch (candidate.enrichmentStatus) {
+            case 'pending':
+              status.pendingEnrichment++;
+              break;
+            case 'failed':
+              status.failedEnrichment++;
+              break;
+          }
         }
       });
       
+      console.log('Status result:', status);
       return status;
       
     } catch (error) {

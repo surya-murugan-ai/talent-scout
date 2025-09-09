@@ -33,6 +33,16 @@ Content-Type: application/json
 }
 ```
 
+### 📋 Get Specific Candidates
+```bash
+POST /api/candidates/bulk
+Content-Type: application/json
+{
+  "candidateIds": ["id1", "id2"],
+  "com_id": "company_id"
+}
+```
+
 ### 📤 Upload Resume
 ```bash
 POST /api/eezo/upload-resume

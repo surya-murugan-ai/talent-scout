@@ -1,0 +1,145 @@
+{
+  "filename": "ResumeKorunamoyeeHousing.pdf",
+  "timestamp": "2025-09-09T05:46:16.075Z",
+  "processingTime": 7888,
+  "confidence": 78,
+  "extractedData": {
+    "name": "Sucheta Goswami",
+    "email": "sucheta.himu@gmail.com",
+    "phone": "9382278865",
+    "title": null,
+    "location": "Kolkata, WB, India",
+    "summary": null,
+    "experience": [
+      {
+        "jobTitle": "Technical Developer",
+        "company": "SCORDEMY",
+        "duration": "Aug 2023 – Present",
+        "startDate": "2023-08",
+        "endDate": "Present",
+        "techUsed": [
+          "PHP Laravel"
+        ],
+        "description": "Working on PHP Laravel in Scordemy, handling backend and UI of Scordemy Learning App.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Masters of Computer Application",
+        "field": null,
+        "university": "University College of Science and Technology, University of Calcutta",
+        "year": "2023",
+        "percentage": null,
+        "gpa": "8.24",
+        "location": "Kolkata, WB, India"
+      },
+      {
+        "degree": "Bachelor of Science (B.Sc Hons)",
+        "field": "Computer Science",
+        "university": "Asansol Girls' College, Kazi Nazrul University",
+        "year": "2021",
+        "percentage": null,
+        "gpa": "8.08",
+        "location": "Asansol, WB, India"
+      }
+    ],
+    "skills": [
+      "Python",
+      "SQL",
+      "Java",
+      "HTML",
+      "CSS",
+      "Javascript",
+      "PHP Laravel",
+      "bootstrap",
+      "Sklearn",
+      "Pandas",
+      "Numpy",
+      "Matplotlib",
+      "Power BI",
+      "VsCode",
+      "Google Colab",
+      "Pycharm",
+      "Excel",
+      "Github",
+      "Machine Learning",
+      "Clustering",
+      "Regression",
+      "Classification",
+      "Data Modeling",
+      "Data Visualization"
+    ],
+    "projects": [
+      {
+        "name": "SCORDEMY",
+        "description": "PHP Laravel Project: Student registration and purchase course’s form creation - Database configuration and migration -performing crud (create, read, update, delete) operation through eloquent ORM using routing buttons - establishing relation between two tables using hasone - search function-Showing customer and purchase data through table - Signup and Login page creation – using middleware and cookies to authenticate user login.",
+        "techUsed": [
+          "PHP Laravel"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "DEEKSHAA",
+        "description": "Learning app for Down Syndrome Children: An app comprises of learning modules and basic games(drag and drop, puzzle.etc.) as assessments with a BKT(Bayesian Knowledge Tracing) model.",
+        "techUsed": [
+          "Google Colab",
+          "Android Studio",
+          "Flutter",
+          "BKT Model",
+          "Semi-Supervised Learning",
+          "Data Labeling",
+          "Agglomerative Clustering",
+          "Linear Regression"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Pharma Sales Data Analysis using Power BI",
+        "description": "Medicine sales report creation, Visualizing – Total Sales(month, week days and year wise), medicine wise maximum sales, Calculating sales percentage of each medicine out of total sales, sales report creation of medicines discretely.",
+        "techUsed": [
+          "Power BI"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Breast Cancer Prediction",
+        "description": "Breast cancer prediction by predicting whether a tumor is malignant or benign.",
+        "techUsed": [
+          "HTML",
+          "CSS",
+          "Django",
+          "Random Forest",
+          "Python"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Google Analytics for Beginners",
+        "issuer": null,
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "Certification on IBM CSRBOX: Data Analytics Internship Plan",
+        "issuer": null,
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      }
+    ]
+  }
+}

@@ -151,6 +151,55 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Get specific candidates by IDs and company ID
+  app.post("/api/candidates/bulk", async (req, res) => {
+    try {
+      const { candidateIds, com_id } = req.body;
+      
+      if (!com_id) {
+        return res.status(400).json({ 
+          error: "Company ID (com_id) is required",
+          code: "MISSING_COMPANY_ID"
+        });
+      }
+
+      if (!candidateIds || !Array.isArray(candidateIds) || candidateIds.length === 0) {
+        return res.status(400).json({ 
+          error: "Candidate IDs array is required and must not be empty",
+          code: "MISSING_CANDIDATE_IDS"
+        });
+      }
+
+      // Validate that all IDs are strings
+      const invalidIds = candidateIds.filter(id => typeof id !== 'string' || !id.trim());
+      if (invalidIds.length > 0) {
+        return res.status(400).json({ 
+          error: "All candidate IDs must be non-empty strings",
+          code: "INVALID_CANDIDATE_IDS"
+        });
+      }
+
+      const candidates = await storage.getCandidatesByIds(candidateIds, com_id);
+      
+      res.json({
+        success: true,
+        data: {
+          comId: com_id,
+          requestedIds: candidateIds,
+          foundCandidates: candidates.length,
+          candidates: candidates
+        }
+      });
+    } catch (error) {
+      console.error('Bulk candidates fetch error:', error);
+      res.status(500).json({ 
+        error: "Failed to fetch candidates",
+        message: error instanceof Error ? error.message : "Unknown error",
+        code: "BULK_FETCH_ERROR"
+      });
+    }
+  });
+
   // Upload and process candidate file - using 'files' field name
   app.post("/api/upload", upload.array('files', 20), async (req: any, res) => {
     try {

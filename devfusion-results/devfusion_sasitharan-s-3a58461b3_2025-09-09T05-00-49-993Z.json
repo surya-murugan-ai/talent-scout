@@ -1,0 +1,146 @@
+{
+  "timestamp": "2025-09-09T05:00:49.993Z",
+  "linkedinUrl": "https://www.linkedin.com/in/sasitharan-s-3a58461b3",
+  "rawData": {
+    "linkedinUrl": "https://www.linkedin.com/in/sasitharan-s-3a58461b3",
+    "firstName": "sasitharan",
+    "lastName": "S",
+    "fullName": "sasitharan S",
+    "headline": "Civil Engineering Professional at Modern Engineering & Construction ",
+    "connections": 8,
+    "followers": 8,
+    "email": null,
+    "mobileNumber": null,
+    "jobTitle": "Civil Engineering Professional",
+    "companyName": "Modern Engineering & Construction",
+    "companyIndustry": "Civil Engineering",
+    "companyWebsite": null,
+    "companyLinkedin": "linkedin.com/company/modern-engineering-construction",
+    "companyFoundedIn": null,
+    "companySize": "11-50",
+    "currentJobDuration": "6 yrs 3 mos",
+    "currentJobDurationInYrs": 6.25,
+    "topSkillsByEndorsements": null,
+    "addressCountryOnly": "India",
+    "addressWithCountry": "Kovilpatti, Tamil Nadu, India",
+    "addressWithoutCountry": "Kovilpatti, Tamil Nadu",
+    "profilePic": null,
+    "profilePicHighQuality": null,
+    "about": null,
+    "publicIdentifier": "sasitharan-s-3a58461b3",
+    "openConnection": null,
+    "urn": "ACoAADHHvq0BncFXRFxARYv8iRntG4BYneJd8Ko",
+    "experiences": [
+      {
+        "companyId": "36997583",
+        "companyUrn": "urn:li:fsd_company:36997583",
+        "companyLink1": "https://www.linkedin.com/company/36997583/",
+        "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQEhkihV9KF5qQ/company-logo_200_200/company-logo_200_200/0/1630537594080?e=1760572800&v=beta&t=GHAhwnITjTSDdx7WO-quxpX476esSW204o6oZg53Zgk",
+        "title": "Modern Engineering & Construction ",
+        "subtitle": "Full-time · 6 yrs 3 mos",
+        "caption": "Kovilpatti, Tamil Nadu, India",
+        "breakdown": true,
+        "subComponents": [
+          {
+            "title": "Civil Engineering Professional",
+            "caption": "Jul 2019 - Present · 6 yrs 3 mos",
+            "description": []
+          },
+          {
+            "title": "Site Engineer",
+            "caption": "Jul 2019 - Present · 6 yrs 3 mos",
+            "description": []
+          }
+        ]
+      }
+    ],
+    "updates": [],
+    "skills": [
+      {
+        "title": "Construction",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "AutoCAD",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "profilePicAllDimensions": [],
+    "educations": [
+      {
+        "companyId": "26588638",
+        "companyUrn": "urn:li:fsd_company:26588638",
+        "companyLink1": "https://www.linkedin.com/company/26588638/",
+        "logo": "https://media.licdn.com/dms/image/v2/C510BAQF6Bpoj_3VabQ/company-logo_200_200/company-logo_200_200/0/1630599079666?e=1760572800&v=beta&t=Fl-Ow1i2zKNesfQn3ONv8X4E0hO0Y87jJKGr2UZjpqw",
+        "title": "The Lakshmi Mills Higher Secondary School",
+        "subtitle": "JJ COLLEGE OF ENGINEERING AND TECHNOLOGY , Civil Engineering",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "licenseAndCertificates": [],
+    "honorsAndAwards": [],
+    "languages": [],
+    "volunteerAndAwards": [],
+    "verifications": [],
+    "promos": [],
+    "highlights": [],
+    "projects": [],
+    "publications": [],
+    "patents": [],
+    "courses": [],
+    "testScores": [],
+    "organizations": [],
+    "volunteerCauses": [],
+    "interests": [
+      {
+        "section_name": "Companies",
+        "section_components": [
+          {
+            "titleV2": "Dalmia Bharat Group",
+            "caption": "311,065 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/89138/",
+            "subComponents": []
+          },
+          {
+            "titleV2": "The India Cements Ltd",
+            "caption": "21,959 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1949679/",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Schools",
+        "section_components": [
+          {
+            "titleV2": "The Lakshmi Mills Higher Secondary School",
+            "caption": "530 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/school/26588638/",
+            "subComponents": []
+          }
+        ]
+      }
+    ],
+    "recommendations": []
+  },
+  "metadata": {
+    "source": "dev_fusion/Linkedin-Profile-Scraper",
+    "savedAt": "2025-09-09T05:00:49.994Z"
+  }
+}

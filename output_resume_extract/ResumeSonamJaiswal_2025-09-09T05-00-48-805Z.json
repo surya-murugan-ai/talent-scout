@@ -1,0 +1,125 @@
+{
+  "filename": "ResumeSonamJaiswal.pdf",
+  "timestamp": "2025-09-09T05:00:48.805Z",
+  "processingTime": 8663,
+  "confidence": 73,
+  "rawText": "\n\n \n \n \n \n \n \n \n \nSONAM JAISWAL \n \n \n \n \nCONTACT: 8931874656 \nEMAIL: \nSonamjaiswal5892@gmail.com \nADDRESS: Bargwan,chopan \n,sonbhadra \n \nOBJECTIVE: \nto seek challenging position \nin reputed company where I \ncan utilize my skills and \nabilities while being resource \nfull innovating and flexible \nwherever I choose to work. \n \nPERSONAL DETAIL: \nDate of birth:26/08/2001 \nGender: Female \nLanguage: Hindi,English \nMaterial status: Unmarried \nReligion: Hindu \n \nHOBBIES AND INTREST \n• DEVLOPMENT \n• Leadership \n• Learning \n• Gaming \nEDUCATION \n[B.TECH IN COMPUTER SCIENCE(2021-APPREARING) ] \nI have completing by B.tech in[AKTU] from Himalayan instute of \ntechnology and management with current SGPA 7.2 ,BKT,lucknow \n[Diploma in Information technology(2017-2020)] \nI have completed my diploma(BTEUP Board) from Government \npolytechnic Aurai with percentage of 76.50 % in 2020 \n[HIGH SCHOOL(2016-2017)] \nI have completed my 10\nth \n(UP Board) from pt. vidyadhar inter collage \nkabari,travan ,sonbhadra with an percentage of 79 % in 2017 \n \nTRAINING \n2 Months Summer Training (2018) \nCompleted Summer training from DigiCoder Technologies \n6 Months Aprentics with PHP (2021) \nCompleted Summer training from Techpile Technologies pvt. Ltd. \n1 Year Internship with Data Science(2022-23) \nCompleted Internship from Ineuron. \nEXPERIENCE \n1.2 year Experience(PHP Laravel ,codeigniter) . \n \nPROJECTS (Work on) \n     https://hunarindia.org.in/ \n     https://courses.udyami.org.in/ \n     https://courses.iid.org.in/ \n     https://pms.samadhandigitech.org.in/ \n     https://www.kgmu.org/ \nGENERAL SKILL \n      Machine learning GUI, BIG DATA , Deep learning ,Cloud Computing \nTECHNICAL SKILLS \n• Scripts & Web : HTML, CSS, JQUERY, BOOTSTRAP, javascript, \nAjax  \n• Database : Mysql  \n• Server Side :PHP, Laravel , Codeignitor , Python, API \n• Repository Tools : Git Hub \n ",
+  "extractedData": {
+    "name": "Sonam Jaiswal",
+    "email": "Sonamjaiswal5892@gmail.com",
+    "phone": "8931874656",
+    "linkedinUrl": null,
+    "githubUrl": null,
+    "portfolioUrl": null,
+    "location": "Bargwan, Chopan, Sonbhadra",
+    "title": null,
+    "summary": "To seek challenging position in reputed company where I can utilize my skills and abilities while being resourceful, innovating and flexible wherever I choose to work.",
+    "experience": [],
+    "education": [
+      {
+        "degree": "B.Tech",
+        "field": "Computer Science",
+        "university": "Himalayan Institute of Technology and Management",
+        "year": "2021-APPREARING",
+        "percentage": null,
+        "gpa": "7.2",
+        "location": "BKT, Lucknow"
+      },
+      {
+        "degree": "Diploma",
+        "field": "Information Technology",
+        "university": "Government Polytechnic Aurai",
+        "year": "2020",
+        "percentage": "76.50%",
+        "gpa": null,
+        "location": null
+      },
+      {
+        "degree": "High School",
+        "field": null,
+        "university": "Pt. Vidyadhar Inter College Kabari, Travan, Sonbhadra",
+        "year": "2017",
+        "percentage": "79%",
+        "gpa": null,
+        "location": null
+      }
+    ],
+    "projects": [
+      {
+        "name": "Hunar India",
+        "description": null,
+        "techUsed": [],
+        "duration": null,
+        "url": "https://hunarindia.org.in/",
+        "achievements": []
+      },
+      {
+        "name": "Udyami Courses",
+        "description": null,
+        "techUsed": [],
+        "duration": null,
+        "url": "https://courses.udyami.org.in/",
+        "achievements": []
+      },
+      {
+        "name": "IID Courses",
+        "description": null,
+        "techUsed": [],
+        "duration": null,
+        "url": "https://courses.iid.org.in/",
+        "achievements": []
+      },
+      {
+        "name": "Samadhan Digitech PMS",
+        "description": null,
+        "techUsed": [],
+        "duration": null,
+        "url": "https://pms.samadhandigitech.org.in/",
+        "achievements": []
+      }
+    ],
+    "achievements": [],
+    "certifications": [],
+    "skills": [
+      "Machine learning",
+      "GUI",
+      "BIG DATA",
+      "Deep learning",
+      "Cloud Computing",
+      "HTML",
+      "CSS",
+      "JQUERY",
+      "BOOTSTRAP",
+      "JavaScript",
+      "Ajax",
+      "MySQL",
+      "PHP",
+      "Laravel",
+      "Codeigniter",
+      "Python",
+      "API",
+      "Git Hub"
+    ],
+    "interests": [
+      "Development",
+      "Leadership",
+      "Learning",
+      "Gaming"
+    ],
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "salary": null,
+    "availability": null,
+    "remotePreference": null,
+    "visaStatus": null,
+    "originalData": {
+      "filename": "ResumeSonamJaiswal.pdf",
+      "rawText": "SONAM JAISWAL CONTACT: 8931874656 EMAIL: Sonamjaiswal5892@gmail.com ADDRESS: Bargwan,chopan ,sonbhadra OBJECTIVE: to seek challenging position in reputed company where I can utilize my skills and abilities while being resource full innovating and flexible wherever I choose to work. PERSONAL DETAIL: Date of birth:26/08/2001 Gender: Female Language: Hindi,English Material status: Unmarried Religion: Hindu HOBBIES AND INTREST • DEVLOPMENT • Leadership • Learning • Gaming EDUCATION [B.TECH IN COMPUTER SCIENCE(2021-APPREARING) ] I have completing by B.tech in[AKTU] from Himalayan instute of technology and management with current SGPA 7.2 ,BKT,lucknow [Diploma in Information technology(2017-2020)] I have completed my diploma(BTEUP Board) from Government polytechnic Aurai with percentage of 76.50 % in 2020 [HIGH SCHOOL(2016-2017)] I have completed my 10 th (UP Board) from pt. vidyadhar inter collage kabari,travan ,sonbhadra with an percentage of 79 % in 2017 TRAINING 2 Months Summer Training (2018) Completed Summer training from DigiCoder Technologies 6 Months Aprentics with PHP (2021) Completed Summer training from Techpile Technologies pvt. Ltd. 1 Year Internship with Data Science(2022-23) Completed Internship from Ineuron. EXPERIENCE 1.2 year Experience(PHP Laravel ,codeigniter) . PROJECTS (Work on) https://hunarindia.org.in/ https://courses.udyami.org.in/ https://courses.iid.org.in/ https://pms.samadhandigitech.org.in/ https://www.kgmu.org/ GENERAL SKILL Machine learning GUI, BIG DATA , Deep learning ,Cloud Computing TECHNICAL SKILLS • Scripts & Web : HTML, CSS, JQUERY, BOOTSTRAP, javascript, Ajax • Database : Mysql • Server Side :PHP, Laravel , Codeignitor , Python, API • Repository Tools : Git Hub"
+    },
+    "source": "resume",
+    "confidence": 73,
+    "processingTime": 0
+  }
+}

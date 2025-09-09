@@ -582,6 +582,316 @@ Get dashboard statistics.
 
 ---
 
+### 19. Bulk Resume Upload with WebSocket
+
+**POST** `/api/eezo/upload-bulk-resumes`
+
+Upload multiple resume files with real-time WebSocket progress updates.
+
+**Request Body (multipart/form-data):**
+- `com_id` (required): Company ID
+- `files` (required): Array of resume files (PDF, DOCX, DOC) - max 20 files
+
+**Example Request:**
+```bash
+curl -X POST "http://localhost:5000/api/eezo/upload-bulk-resumes" \
+  -F "com_id=eezo-123" \
+  -F "files=@resume1.pdf" \
+  -F "files=@resume2.docx" \
+  -F "files=@resume3.doc"
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "message": "Bulk upload started",
+  "data": {
+    "sessionId": "bulk_1694256789_abc123def",
+    "comId": "eezo-123",
+    "totalFiles": 3,
+    "status": "processing",
+    "websocketUrl": "ws://localhost:5000/ws"
+  }
+}
+```
+
+---
+
+### 20. Bulk Upload Session Status
+
+**GET** `/api/eezo/bulk-status/:sessionId`
+
+Get the current status of a bulk upload session.
+
+**Path Parameters:**
+- `sessionId`: Session ID returned from bulk upload
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "sessionId": "bulk_1694256789_abc123def",
+    "comId": "eezo-123",
+    "totalFiles": 3,
+    "completedFiles": 2,
+    "progress": 67,
+    "candidates": [
+      {
+        "candidateId": "uuid-1",
+        "name": "John Doe",
+        "email": "john@example.com",
+        "score": 8.5,
+        "priority": "High"
+      }
+    ],
+    "errors": [
+      {
+        "fileName": "resume3.doc",
+        "error": "Invalid file format"
+      }
+    ],
+    "isComplete": false
+  }
+}
+```
+
+---
+
+### 21. WebSocket Connection Info
+
+**GET** `/api/websocket/info`
+
+Get WebSocket server information and connection details.
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "websocketUrl": "ws://localhost:5000/ws",
+    "connectedClients": 2,
+    "activeSessions": 1,
+    "messageTypes": [
+      "processing_started",
+      "upload_progress",
+      "resume_completed",
+      "upload_error",
+      "upload_complete"
+    ]
+  }
+}
+```
+
+---
+
+## WebSocket Integration
+
+### Connection
+
+Connect to the WebSocket server for real-time updates:
+
+```javascript
+const ws = new WebSocket('ws://localhost:5000/ws');
+
+ws.onopen = function(event) {
+  console.log('Connected to WebSocket');
+};
+
+ws.onmessage = function(event) {
+  const data = JSON.parse(event.data);
+  console.log('Received:', data.type, data.data);
+};
+```
+
+### Message Types
+
+#### 1. Processing Started
+```json
+{
+  "type": "processing_started",
+  "data": {
+    "message": "Connected to TalentScout WebSocket",
+    "clientId": "client_1694256789_abc123"
+  },
+  "timestamp": "2025-09-09T02:30:00.000Z"
+}
+```
+
+#### 2. Upload Progress
+```json
+{
+  "type": "upload_progress",
+  "data": {
+    "sessionId": "bulk_1694256789_abc123def",
+    "comId": "eezo-123",
+    "totalFiles": 3,
+    "completedFiles": 1,
+    "currentFile": "resume1.pdf",
+    "progress": 33
+  },
+  "timestamp": "2025-09-09T02:30:00.000Z",
+  "sessionId": "bulk_1694256789_abc123def"
+}
+```
+
+#### 3. Resume Completed
+```json
+{
+  "type": "resume_completed",
+  "data": {
+    "sessionId": "bulk_1694256789_abc123def",
+    "comId": "eezo-123",
+    "candidate": {
+      "candidateId": "uuid-1",
+      "name": "John Doe",
+      "email": "john@example.com",
+      "score": 8.5,
+      "priority": "High"
+    },
+    "totalCompleted": 1,
+    "totalFiles": 3
+  },
+  "timestamp": "2025-09-09T02:30:00.000Z",
+  "sessionId": "bulk_1694256789_abc123def"
+}
+```
+
+#### 4. Upload Error
+```json
+{
+  "type": "upload_error",
+  "data": {
+    "sessionId": "bulk_1694256789_abc123def",
+    "comId": "eezo-123",
+    "fileName": "resume3.doc",
+    "error": "Invalid file format",
+    "totalCompleted": 2,
+    "totalFiles": 3
+  },
+  "timestamp": "2025-09-09T02:30:00.000Z",
+  "sessionId": "bulk_1694256789_abc123def"
+}
+```
+
+#### 5. Upload Complete
+```json
+{
+  "type": "upload_complete",
+  "data": {
+    "sessionId": "bulk_1694256789_abc123def",
+    "comId": "eezo-123",
+    "totalCandidates": 2,
+    "totalErrors": 1,
+    "candidates": [...],
+    "errors": [...]
+  },
+  "timestamp": "2025-09-09T02:30:00.000Z",
+  "sessionId": "bulk_1694256789_abc123def"
+}
+```
+
+### Frontend Integration Example
+
+```javascript
+class TalentScoutWebSocket {
+  constructor() {
+    this.ws = null;
+    this.sessionId = null;
+    this.candidates = [];
+    this.errors = [];
+  }
+
+  connect() {
+    this.ws = new WebSocket('ws://localhost:5000/ws');
+    
+    this.ws.onopen = () => {
+      console.log('Connected to TalentScout WebSocket');
+    };
+    
+    this.ws.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      this.handleMessage(data);
+    };
+    
+    this.ws.onclose = () => {
+      console.log('WebSocket connection closed');
+    };
+  }
+
+  handleMessage(data) {
+    switch (data.type) {
+      case 'upload_progress':
+        this.updateProgress(data.data);
+        break;
+      case 'resume_completed':
+        this.addCandidate(data.data.candidate);
+        break;
+      case 'upload_error':
+        this.addError(data.data.fileName, data.data.error);
+        break;
+      case 'upload_complete':
+        this.completeUpload(data.data);
+        break;
+    }
+  }
+
+  async uploadBulkResumes(comId, files) {
+    const formData = new FormData();
+    formData.append('com_id', comId);
+    
+    for (let file of files) {
+      formData.append('files', file);
+    }
+    
+    const response = await fetch('http://localhost:5000/api/eezo/upload-bulk-resumes', {
+      method: 'POST',
+      body: formData
+    });
+    
+    const result = await response.json();
+    if (result.success) {
+      this.sessionId = result.data.sessionId;
+      console.log('Upload started:', this.sessionId);
+    }
+  }
+
+  updateProgress(data) {
+    // Update UI progress bar
+    const progress = (data.completedFiles / data.totalFiles) * 100;
+    console.log(`Progress: ${progress}% - ${data.currentFile}`);
+  }
+
+  addCandidate(candidate) {
+    this.candidates.push(candidate);
+    // Update UI candidate list
+    console.log('New candidate:', candidate.name);
+  }
+
+  addError(fileName, error) {
+    this.errors.push({ fileName, error });
+    // Update UI error list
+    console.log('Error:', fileName, error);
+  }
+
+  completeUpload(data) {
+    console.log('Upload complete:', data.totalCandidates, 'candidates');
+    // Update UI with final results
+  }
+}
+
+// Usage
+const talentScout = new TalentScoutWebSocket();
+talentScout.connect();
+
+// Upload files
+const fileInput = document.getElementById('files');
+talentScout.uploadBulkResumes('eezo-123', fileInput.files);
+```
+
+---
+
 ## Data Models
 
 ### Candidate Object

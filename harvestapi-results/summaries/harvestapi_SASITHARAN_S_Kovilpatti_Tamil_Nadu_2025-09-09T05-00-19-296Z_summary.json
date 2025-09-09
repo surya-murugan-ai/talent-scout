@@ -1,0 +1,47 @@
+{
+  "timestamp": "2025-09-09T05:00:19.296Z",
+  "searchQuery": "SASITHARAN S   Kovilpatti, Tamil Nadu",
+  "totalResults": 3,
+  "profiles": [
+    {
+      "index": 1,
+      "name": "sasitharan S",
+      "headline": "Civil Engineering Professional at Modern Engineering & Construction ",
+      "location": "Kovilpatti, Tamil Nadu, India",
+      "currentCompany": "Modern Engineering & Construction ",
+      "currentPosition": "N/A",
+      "linkedinUrl": "https://www.linkedin.com/in/sasitharan-s-3a58461b3",
+      "connectionsCount": 8,
+      "skillsCount": 2,
+      "experienceCount": 2,
+      "educationCount": 1
+    },
+    {
+      "index": 2,
+      "name": "sasitharan s",
+      "headline": "--",
+      "location": "Kovilpatti, Tamil Nadu, India",
+      "currentCompany": "Modern Engineering & Construction ",
+      "currentPosition": "N/A",
+      "linkedinUrl": "https://www.linkedin.com/in/sasitharan-s-a0331020a",
+      "connectionsCount": "N/A",
+      "skillsCount": 0,
+      "experienceCount": 1,
+      "educationCount": 0
+    },
+    {
+      "index": 3,
+      "name": "sasitharan s",
+      "headline": "Full Stack Developer- Dot Net + Angular",
+      "location": "Kovilpatti, Tamil Nadu, India",
+      "currentCompany": "BMO SOFTWARE",
+      "currentPosition": "N/A",
+      "linkedinUrl": "https://www.linkedin.com/in/sasitharan-s-a33b84229",
+      "connectionsCount": 336,
+      "skillsCount": 40,
+      "experienceCount": 3,
+      "educationCount": 1
+    }
+  ],
+  "originalFile": "harvestapi_SASITHARAN_S_Kovilpatti_Tamil_Nadu_2025-09-09T05-00-19-296Z.json"
+}

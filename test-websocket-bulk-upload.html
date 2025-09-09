@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalentScout - Bulk Upload with WebSocket</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        
+        .section h2 {
+            color: #34495e;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        input[type="file"] {
+            padding: 5px;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        button:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+        
+        .success {
+            background-color: #27ae60;
+        }
+        
+        .error {
+            background-color: #e74c3c;
+        }
+        
+        .warning {
+            background-color: #f39c12;
+        }
+        
+        .status {
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        
+        .status.success {
+            background-color: #d5f4e6;
+            color: #27ae60;
+            border: 1px solid #27ae60;
+        }
+        
+        .status.error {
+            background-color: #fadbd8;
+            color: #e74c3c;
+            border: 1px solid #e74c3c;
+        }
+        
+        .status.info {
+            background-color: #d6eaf8;
+            color: #2980b9;
+            border: 1px solid #2980b9;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: #3498db;
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .candidates-list {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            background-color: white;
+        }
+        
+        .candidate-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .candidate-item:last-child {
+            border-bottom: none;
+        }
+        
+        .candidate-info {
+            flex: 1;
+        }
+        
+        .candidate-name {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .candidate-email {
+            color: #7f8c8d;
+            font-size: 12px;
+        }
+        
+        .candidate-score {
+            background-color: #3498db;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .errors-list {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #e74c3c;
+            border-radius: 4px;
+            padding: 10px;
+            background-color: #fadbd8;
+        }
+        
+        .error-item {
+            padding: 5px 0;
+            color: #e74c3c;
+            font-size: 12px;
+        }
+        
+        .websocket-status {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        
+        .websocket-status.connected {
+            background-color: #27ae60;
+        }
+        
+        .websocket-status.disconnected {
+            background-color: #e74c3c;
+        }
+        
+        .websocket-status.connecting {
+            background-color: #f39c12;
+        }
+        
+        .log {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 TalentScout Bulk Upload with WebSocket</h1>
+        
+        <!-- WebSocket Connection Status -->
+        <div class="section">
+            <h2>🔌 WebSocket Connection</h2>
+            <div class="form-group">
+                <label>Connection Status:</label>
+                <div>
+                    <span class="websocket-status" id="wsStatus"></span>
+                    <span id="wsStatusText">Disconnected</span>
+                </div>
+            </div>
+            <button onclick="connectWebSocket()">Connect</button>
+            <button onclick="disconnectWebSocket()">Disconnect</button>
+            <button onclick="getWebSocketInfo()">Get Info</button>
+        </div>
+        
+        <!-- Bulk Upload Form -->
+        <div class="section">
+            <h2>📤 Bulk Resume Upload</h2>
+            <form id="bulkUploadForm">
+                <div class="form-group">
+                    <label for="comId">Company ID:</label>
+                    <input type="text" id="comId" value="eezo-123" required>
+                </div>
+                <div class="form-group">
+                    <label for="files">Resume Files (PDF, DOCX, DOC):</label>
+                    <input type="file" id="files" multiple accept=".pdf,.docx,.doc" required>
+                </div>
+                <button type="submit" id="uploadBtn">Upload Resumes</button>
+                <button type="button" onclick="clearResults()">Clear Results</button>
+            </form>
+        </div>
+        
+        <!-- Upload Progress -->
+        <div class="section" id="progressSection" style="display: none;">
+            <h2>📊 Upload Progress</h2>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%">0%</div>
+            </div>
+            <div id="progressText">Ready to upload...</div>
+            <div id="currentFile" style="margin-top: 10px; font-style: italic;"></div>
+        </div>
+        
+        <!-- Results -->
+        <div class="section" id="resultsSection" style="display: none;">
+            <h2>✅ Results</h2>
+            <div id="resultsSummary" class="status info"></div>
+            
+            <h3>📋 Processed Candidates</h3>
+            <div class="candidates-list" id="candidatesList"></div>
+            
+            <h3>❌ Errors</h3>
+            <div class="errors-list" id="errorsList"></div>
+        </div>
+        
+        <!-- Session Status -->
+        <div class="section" id="sessionSection" style="display: none;">
+            <h2>📋 Session Status</h2>
+            <div class="form-group">
+                <label for="sessionId">Session ID:</label>
+                <input type="text" id="sessionId" readonly>
+            </div>
+            <button onclick="getSessionStatus()">Refresh Status</button>
+            <div id="sessionStatus"></div>
+        </div>
+        
+        <!-- WebSocket Log -->
+        <div class="section">
+            <h2>📝 WebSocket Log</h2>
+            <button onclick="clearLog()">Clear Log</button>
+            <div class="log" id="wsLog"></div>
+        </div>
+    </div>
+
+    <script>
+        let ws = null;
+        let currentSessionId = null;
+        let candidates = [];
+        let errors = [];
+        
+        // WebSocket connection
+        function connectWebSocket() {
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                log('WebSocket already connected');
+                return;
+            }
+            
+            updateWSStatus('connecting', 'Connecting...');
+            log('Connecting to WebSocket...');
+            
+            ws = new WebSocket('ws://localhost:5000/ws');
+            
+            ws.onopen = function(event) {
+                updateWSStatus('connected', 'Connected');
+                log('✅ WebSocket connected successfully');
+            };
+            
+            ws.onmessage = function(event) {
+                try {
+                    const data = JSON.parse(event.data);
+                    log(`📨 Received: ${data.type}`);
+                    handleWebSocketMessage(data);
+                } catch (error) {
+                    log(`❌ Error parsing WebSocket message: ${error.message}`);
+                }
+            };
+            
+            ws.onclose = function(event) {
+                updateWSStatus('disconnected', 'Disconnected');
+                log(`🔌 WebSocket closed: ${event.code} - ${event.reason}`);
+            };
+            
+            ws.onerror = function(error) {
+                updateWSStatus('disconnected', 'Error');
+                log(`❌ WebSocket error: ${error}`);
+            };
+        }
+        
+        function disconnectWebSocket() {
+            if (ws) {
+                ws.close();
+                ws = null;
+            }
+        }
+        
+        function updateWSStatus(status, text) {
+            const statusEl = document.getElementById('wsStatus');
+            const textEl = document.getElementById('wsStatusText');
+            
+            statusEl.className = `websocket-status ${status}`;
+            textEl.textContent = text;
+        }
+        
+        function handleWebSocketMessage(data) {
+            switch (data.type) {
+                case 'processing_started':
+                    log(`🚀 Processing started: ${data.data.message}`);
+                    break;
+                    
+                case 'upload_progress':
+                    updateProgress(data.data);
+                    break;
+                    
+                case 'resume_completed':
+                    addCandidate(data.data.candidate);
+                    log(`✅ Resume completed: ${data.data.candidate.name}`);
+                    break;
+                    
+                case 'upload_error':
+                    addError(data.data.fileName, data.data.error);
+                    log(`❌ Upload error: ${data.data.fileName} - ${data.data.error}`);
+                    break;
+                    
+                case 'upload_complete':
+                    completeUpload(data.data);
+                    log(`🎉 Upload complete: ${data.data.totalCandidates} candidates, ${data.data.totalErrors} errors`);
+                    break;
+                    
+                default:
+                    log(`📨 Unknown message type: ${data.type}`);
+            }
+        }
+        
+        function updateProgress(data) {
+            const progressFill = document.getElementById('progressFill');
+            const progressText = document.getElementById('progressText');
+            const currentFile = document.getElementById('currentFile');
+            
+            const percentage = data.progress || 0;
+            progressFill.style.width = `${percentage}%`;
+            progressFill.textContent = `${percentage}%`;
+            
+            progressText.textContent = `Processing ${data.completedFiles}/${data.totalFiles} files`;
+            currentFile.textContent = data.currentFile ? `Current: ${data.currentFile}` : '';
+            
+            document.getElementById('progressSection').style.display = 'block';
+        }
+        
+        function addCandidate(candidate) {
+            candidates.push(candidate);
+            updateCandidatesList();
+        }
+        
+        function addError(fileName, error) {
+            errors.push({ fileName, error });
+            updateErrorsList();
+        }
+        
+        function updateCandidatesList() {
+            const list = document.getElementById('candidatesList');
+            list.innerHTML = '';
+            
+            candidates.forEach(candidate => {
+                const item = document.createElement('div');
+                item.className = 'candidate-item';
+                item.innerHTML = `
+                    <div class="candidate-info">
+                        <div class="candidate-name">${candidate.name}</div>
+                        <div class="candidate-email">${candidate.email || 'No email'}</div>
+                    </div>
+                    <div class="candidate-score">${candidate.score || 'N/A'}</div>
+                `;
+                list.appendChild(item);
+            });
+        }
+        
+        function updateErrorsList() {
+            const list = document.getElementById('errorsList');
+            list.innerHTML = '';
+            
+            errors.forEach(error => {
+                const item = document.createElement('div');
+                item.className = 'error-item';
+                item.textContent = `${error.fileName}: ${error.error}`;
+                list.appendChild(item);
+            });
+        }
+        
+        function completeUpload(data) {
+            const summary = document.getElementById('resultsSummary');
+            summary.innerHTML = `
+                Upload Complete!<br>
+                ✅ ${data.totalCandidates} candidates processed<br>
+                ❌ ${data.totalErrors} errors<br>
+                Session: ${data.sessionId}
+            `;
+            summary.className = 'status success';
+            
+            document.getElementById('resultsSection').style.display = 'block';
+        }
+        
+        // Bulk upload form
+        document.getElementById('bulkUploadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const comId = document.getElementById('comId').value;
+            const files = document.getElementById('files').files;
+            
+            if (files.length === 0) {
+                alert('Please select at least one file');
+                return;
+            }
+            
+            if (!ws || ws.readyState !== WebSocket.OPEN) {
+                alert('Please connect to WebSocket first');
+                return;
+            }
+            
+            const uploadBtn = document.getElementById('uploadBtn');
+            uploadBtn.disabled = true;
+            uploadBtn.textContent = 'Uploading...';
+            
+            try {
+                const formData = new FormData();
+                formData.append('com_id', comId);
+                
+                for (let i = 0; i < files.length; i++) {
+                    formData.append('files', files[i]);
+                }
+                
+                log(`🚀 Starting bulk upload: ${files.length} files for company ${comId}`);
+                
+                const response = await fetch('http://localhost:5000/api/eezo/upload-bulk-resumes', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    currentSessionId = result.data.sessionId;
+                    document.getElementById('sessionId').value = currentSessionId;
+                    document.getElementById('sessionSection').style.display = 'block';
+                    
+                    log(`✅ Upload started successfully. Session: ${currentSessionId}`);
+                } else {
+                    throw new Error(result.error || 'Upload failed');
+                }
+                
+            } catch (error) {
+                log(`❌ Upload error: ${error.message}`);
+                alert(`Upload failed: ${error.message}`);
+            } finally {
+                uploadBtn.disabled = false;
+                uploadBtn.textContent = 'Upload Resumes';
+            }
+        });
+        
+        // Session status
+        async function getSessionStatus() {
+            if (!currentSessionId) {
+                alert('No active session');
+                return;
+            }
+            
+            try {
+                const response = await fetch(`http://localhost:5000/api/eezo/bulk-status/${currentSessionId}`);
+                const result = await response.json();
+                
+                if (result.success) {
+                    const statusDiv = document.getElementById('sessionStatus');
+                    statusDiv.innerHTML = `
+                        <div class="status info">
+                            <strong>Session Status:</strong><br>
+                            Progress: ${result.data.progress}%<br>
+                            Files: ${result.data.completedFiles}/${result.data.totalFiles}<br>
+                            Candidates: ${result.data.candidates.length}<br>
+                            Errors: ${result.data.errors.length}<br>
+                            Complete: ${result.data.isComplete ? 'Yes' : 'No'}
+                        </div>
+                    `;
+                } else {
+                    throw new Error(result.error || 'Failed to get status');
+                }
+            } catch (error) {
+                log(`❌ Status error: ${error.message}`);
+            }
+        }
+        
+        // WebSocket info
+        async function getWebSocketInfo() {
+            try {
+                const response = await fetch('http://localhost:5000/api/websocket/info');
+                const result = await response.json();
+                
+                if (result.success) {
+                    log(`📊 WebSocket Info:
+                        URL: ${result.data.websocketUrl}
+                        Connected Clients: ${result.data.connectedClients}
+                        Active Sessions: ${result.data.activeSessions}
+                        Message Types: ${result.data.messageTypes.join(', ')}`);
+                } else {
+                    throw new Error(result.error || 'Failed to get info');
+                }
+            } catch (error) {
+                log(`❌ Info error: ${error.message}`);
+            }
+        }
+        
+        // Utility functions
+        function clearResults() {
+            candidates = [];
+            errors = [];
+            currentSessionId = null;
+            
+            document.getElementById('resultsSection').style.display = 'none';
+            document.getElementById('sessionSection').style.display = 'none';
+            document.getElementById('progressSection').style.display = 'none';
+            document.getElementById('progressFill').style.width = '0%';
+            document.getElementById('progressFill').textContent = '0%';
+            document.getElementById('progressText').textContent = 'Ready to upload...';
+            document.getElementById('currentFile').textContent = '';
+            document.getElementById('sessionId').value = '';
+        }
+        
+        function clearLog() {
+            document.getElementById('wsLog').textContent = '';
+        }
+        
+        function log(message) {
+            const logEl = document.getElementById('wsLog');
+            const timestamp = new Date().toLocaleTimeString();
+            logEl.textContent += `[${timestamp}] ${message}\n`;
+            logEl.scrollTop = logEl.scrollHeight;
+        }
+        
+        // Auto-connect on page load
+        window.addEventListener('load', function() {
+            log('🚀 TalentScout Bulk Upload Test Page Loaded');
+            log('💡 Click "Connect" to establish WebSocket connection');
+        });
+    </script>
+</body>
+</html>

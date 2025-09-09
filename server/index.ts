@@ -3,6 +3,7 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import { setupSecurityMiddleware, setupErrorHandling } from "./middleware/security";
+import { websocketService } from "./services/websocketService";
 
 const app = express();
 
@@ -55,6 +56,9 @@ app.get('/health', (req, res) => {
 (async () => {
   const server = await registerRoutes(app);
 
+  // Initialize WebSocket server
+  websocketService.initialize(server);
+
   // importantly only setup vite in development and after
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
@@ -79,5 +83,6 @@ app.get('/health', (req, res) => {
     log(`serving on port ${port}`);
     log(`Environment: ${process.env.NODE_ENV || 'development'}`);
     log(`Health check: http://localhost:${port}/health`);
+    log(`WebSocket server: ws://localhost:${port}/ws`);
   });
 })();

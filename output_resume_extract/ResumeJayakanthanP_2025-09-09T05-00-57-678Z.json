@@ -1,0 +1,108 @@
+{
+  "filename": "ResumeJayakanthanP.pdf",
+  "timestamp": "2025-09-09T05:00:57.678Z",
+  "processingTime": 7087,
+  "confidence": 80,
+  "rawText": "\n\n \n \n \n \n \n \n \n \n 8825816433 \n \n Pjayakanthan17@gmail.com \n3/317,Duraisamy nagar,  \n \n \nKallavi,Uthangarai(Tk), \nKrishnagiri-635304. \n \n \nPERSONAL PROFILE \n \nI am a professional engineer who \nhas been featured in maintaining \nquality checking and Installation of \nlift. \n \nPERSONAL SKILLS \n \nWillingness to Learn \n \n \nAdaptability \n \n \nDecision Making \n \n \nInterpersonal \n \n \nCommunication \n \nSelf-Motivated \nDedicated \n \n \nTECHNICAL SKILLS \n \nWeb developer:- \n \nFrontend- HTML,CSS,JAVASCRIPT \n (AJAX,QUERY),BOOTSTRAP \n\nBackend-PHP,CODIGNITER FRAMEWORK \n \nDATABASE-MYSQL\nJAYAKANTHAN P \n \nSoftware developer \n \nEMPLOYMENT HISTORY PURCHASE TRAINEE \n \nVELTECH UNIVERSITY(06 JUNE'2022-currently working) \n \n Develop and maintain dynamic, high-performance web \napplications using PHP programming language Database \nUpdated  \n Design and implement database structures for web \napplications \n Debug and troubleshoot issues as they arise \n Working Knowledge Of PHPMYAdmin \n Strong Knowledge Of AJAX and JSON \n Create and Maintain the Webites \n Database Updated  \n Application Development and Testing application \n Solving the Quiers \n \nGS ELEVATORS(06 JULY'2020 - 28 MARCH'2021) \n \n Maintain updated and lifts and services.\n\n Duties and responsibility assembly\n\n Install the elevators repair and maintenance.\nACADEMIC BACKGROUND BACHELOR OF ENGINEERING \n \nMECHANICAL ENGINEERING(2017-2021) \n \nINSTITUTE : TAMILNADU COLLEGE OF ENGINERING \n \nUNIVERSITY   : ANNA UNIVERSITY \n \nCGPA                :  7.46 \nHIGHER SECONDARY COURSE (2016-2017) \n \n      INSTITUTE : SIR BALA VIDHYA MATRIC HIGHER    \nSECONDARY SCHOOL \n \nBOARD             : STATE BOARD \n \nPERCENTAGE : 76.25% \nSECONDARY SCHOOL LEAVING COURSE (2015-2016) \n \n    INSTITUTE       : SIR BALA VIDHYA MATRIC HIGHER \nSECONDARY SCHOOL \n \nBOARD            : STATE BOARD \n \nPERCENTAGE : 83%\n\n  \n \nINTERESTS \n \nListening Music \n \n \nVolunteer Work/Community Involvement \n \n \n-Blue Cross \n \n-Orphanage camp \n \n-Tree-Plantation camp \nTraveling \n \nPERSONAL DETAILS \n \nFATHER'S NAME \n \n: PALANI.M \n \nMOTHER'S NAME \n \n: PADMASRI.S \n \nNATIONALITY : Indian \n \nLANGUAGES KNOWN : Tamil,English \n \n \nDECLARATION \n \nI solemly declare that the above information furnished is correct to my knowledge and belief. \n \n \nDATE : \n \nPLACE : KRISHNAGIRI(JAYAKANTHAN P) \n\n ",
+  "extractedData": {
+    "name": "Jayakanthan P",
+    "email": "Pjayakanthan17@gmail.com",
+    "phone": "8825816433",
+    "linkedinUrl": null,
+    "githubUrl": null,
+    "portfolioUrl": null,
+    "location": "Krishnagiri-635304",
+    "title": "Software developer",
+    "summary": null,
+    "experience": [
+      {
+        "jobTitle": "Purchase Trainee",
+        "company": "Veltech University",
+        "duration": "06 June 2022 - currently working",
+        "startDate": "2022-06",
+        "endDate": "Present",
+        "techUsed": [
+          "PHP",
+          "PHPMYAdmin",
+          "AJAX",
+          "JSON"
+        ],
+        "description": "Develop and maintain dynamic, high-performance web applications using PHP programming language. Design and implement database structures for web applications. Debug and troubleshoot issues as they arise. Create and maintain the websites. Application development and testing application. Solving the queries.",
+        "achievements": []
+      },
+      {
+        "jobTitle": null,
+        "company": "GS Elevators",
+        "duration": "06 July 2020 - 28 March 2021",
+        "startDate": "2020-07",
+        "endDate": "2021-03",
+        "techUsed": [],
+        "description": "Maintain updated lifts and services. Duties and responsibility assembly. Install the elevators repair and maintenance.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Engineering",
+        "field": "Mechanical Engineering",
+        "university": "Tamilnadu College of Engineering",
+        "year": "2021",
+        "percentage": null,
+        "gpa": "7.46",
+        "location": null
+      },
+      {
+        "degree": "Higher Secondary Course",
+        "field": null,
+        "university": "Sir Bala Vidhya Matric Higher Secondary School",
+        "year": "2017",
+        "percentage": "76.25%",
+        "gpa": null,
+        "location": null
+      },
+      {
+        "degree": "Secondary School Leaving Course",
+        "field": null,
+        "university": "Sir Bala Vidhya Matric Higher Secondary School",
+        "year": "2016",
+        "percentage": "83%",
+        "gpa": null,
+        "location": null
+      }
+    ],
+    "projects": [],
+    "achievements": [],
+    "certifications": [],
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "AJAX",
+      "Query",
+      "Bootstrap",
+      "PHP",
+      "Codigniter Framework",
+      "MySQL"
+    ],
+    "interests": [
+      "Listening Music",
+      "Volunteer Work/Community Involvement",
+      "Traveling"
+    ],
+    "languages": [
+      "Tamil",
+      "English"
+    ],
+    "salary": null,
+    "availability": null,
+    "remotePreference": null,
+    "visaStatus": "Indian",
+    "originalData": {
+      "filename": "ResumeJayakanthanP.pdf",
+      "rawText": "8825816433 Pjayakanthan17@gmail.com 3/317,Duraisamy nagar, Kallavi,Uthangarai(Tk), Krishnagiri-635304. PERSONAL PROFILE I am a professional engineer who has been featured in maintaining quality checking and Installation of lift. PERSONAL SKILLS Willingness to Learn Adaptability Decision Making Interpersonal Communication Self-Motivated Dedicated TECHNICAL SKILLS Web developer:- Frontend- HTML,CSS,JAVASCRIPT (AJAX,QUERY),BOOTSTRAP  Backend-PHP,CODIGNITER FRAMEWORK DATABASE-MYSQL JAYAKANTHAN P Software developer EMPLOYMENT HISTORY PURCHASE TRAINEE VELTECH UNIVERSITY(06 JUNE'2022-currently working)  Develop and maintain dynamic, high-performance web applications using PHP programming language Database Updated  Design and implement database structures for web applications  Debug and troubleshoot issues as they arise  Working Knowledge Of PHPMYAdmin  Strong Knowledge Of AJAX and JSON  Create and Maintain the Webites  Database Updated  Application Development and Testing application  Solving the Quiers GS ELEVATORS(06 JULY'2020 - 28 MARCH'2021)  Maintain updated and lifts and services.   Duties and responsibility assembly   Install the elevators repair and maintenance. ACADEMIC BACKGROUND BACHELOR OF ENGINEERING MECHANICAL ENGINEERING(2017-2021) INSTITUTE : TAMILNADU COLLEGE OF ENGINERING UNIVERSITY : ANNA UNIVERSITY CGPA : 7.46 HIGHER SECONDARY COURSE (2016-2017) INSTITUTE : SIR BALA VIDHYA MATRIC HIGHER SECONDARY SCHOOL BOARD : STATE BOARD PERCENTAGE : 76.25% SECONDARY SCHOOL LEAVING COURSE (2015-2016) INSTITUTE : SIR BALA VIDHYA MATRIC HIGHER SECONDARY SCHOOL BOARD : STATE BOARD PERCENTAGE : 83% INTERESTS Listening Music Volunteer Work/Community Involvement -Blue Cross -Orphanage camp -Tree-Plantation camp Traveling PERSONAL DETAILS FATHER'S NAME : PALANI.M MOTHER'S NAME : PADMASRI.S NATIONALITY : Indian LANGUAGES KNOWN : Tamil,English DECLARATION I solemly declare that the above information furnished is correct to my knowledge and belief. DATE : PLA"
+    },
+    "source": "resume",
+    "confidence": 80,
+    "processingTime": 0
+  }
+}

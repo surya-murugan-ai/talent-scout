@@ -94,6 +94,24 @@ PATCH /api/candidates/{id}/enrich
 DELETE /api/clear-all-data
 ```
 
+### 📤 Bulk Upload with WebSocket
+```bash
+POST /api/eezo/upload-bulk-resumes
+Content-Type: multipart/form-data
+com_id: company_id
+files: resume_files[]
+```
+
+### 📊 Bulk Upload Status
+```bash
+GET /api/eezo/bulk-status/{session_id}
+```
+
+### 🔌 WebSocket Info
+```bash
+GET /api/websocket/info
+```
+
 ---
 
 ## Required Parameters

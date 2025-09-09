@@ -1,0 +1,303 @@
+{
+  "timestamp": "2025-09-09T05:00:50.307Z",
+  "linkedinUrl": "https://www.linkedin.com/in/sucheta-goswami-b45a90264/",
+  "rawData": {
+    "linkedinUrl": "https://www.linkedin.com/in/sucheta-goswami-b45a90264/",
+    "firstName": "Sucheta",
+    "lastName": "Goswami",
+    "fullName": "Sucheta Goswami",
+    "headline": "--",
+    "connections": 854,
+    "followers": 864,
+    "email": null,
+    "mobileNumber": null,
+    "jobTitle": null,
+    "companyName": null,
+    "companyIndustry": null,
+    "companyWebsite": null,
+    "companyLinkedin": null,
+    "companyFoundedIn": null,
+    "companySize": null,
+    "currentJobDuration": null,
+    "currentJobDurationInYrs": 0,
+    "topSkillsByEndorsements": null,
+    "addressCountryOnly": "India",
+    "addressWithCountry": "Kolkata, West Bengal, India",
+    "addressWithoutCountry": "Kolkata, West Bengal",
+    "profilePic": "https://media.licdn.com/dms/image/v2/D5603AQE0BNzCmnWIig/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1688025165452?e=1760572800&v=beta&t=f8UP_5Q0klaPkcWJeJuBmzTuACldVfNhU7VtuGlG6mo",
+    "profilePicHighQuality": "https://media.licdn.com/dms/image/v2/D5603AQE0BNzCmnWIig/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1688025165452?e=1760572800&v=beta&t=UfQLX-97FbdHEoShtCZs8wXLIdG1zRV9gyOtyDLhlio",
+    "about": null,
+    "publicIdentifier": "sucheta-goswami-b45a90264",
+    "openConnection": null,
+    "urn": "ACoAAEDxl2UBdNkPZxtBO_33wNuxQHGgmKY8jrc",
+    "experiences": [],
+    "updates": [],
+    "skills": [
+      {
+        "title": "Microsoft Power BI",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Java",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Python (Programming Language)",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Machine Learning",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "MySQL",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "profilePicAllDimensions": [
+      {
+        "width": 100,
+        "height": 100,
+        "url": "https://media.licdn.com/dms/image/v2/D5603AQE0BNzCmnWIig/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1688025165452?e=1760572800&v=beta&t=f8UP_5Q0klaPkcWJeJuBmzTuACldVfNhU7VtuGlG6mo"
+      },
+      {
+        "width": 200,
+        "height": 200,
+        "url": "https://media.licdn.com/dms/image/v2/D5603AQE0BNzCmnWIig/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1688025165452?e=1760572800&v=beta&t=sCKhUHwTXDSdOdtyROOr7zi8PQid79L_QvoEkJwsN0o"
+      },
+      {
+        "width": 400,
+        "height": 400,
+        "url": "https://media.licdn.com/dms/image/v2/D5603AQE0BNzCmnWIig/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1688025165452?e=1760572800&v=beta&t=XTAg7nzgoqIztHhN7LWdo6bFNwcluTAVEoyvoc3gHRY"
+      },
+      {
+        "width": 800,
+        "height": 800,
+        "url": "https://media.licdn.com/dms/image/v2/D5603AQE0BNzCmnWIig/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1688025165452?e=1760572800&v=beta&t=UfQLX-97FbdHEoShtCZs8wXLIdG1zRV9gyOtyDLhlio"
+      }
+    ],
+    "educations": [
+      {
+        "companyId": "633270",
+        "companyUrn": "urn:li:fsd_company:633270",
+        "companyLink1": "https://www.linkedin.com/company/633270/",
+        "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFh7eq25cxxVQ/company-logo_200_200/company-logo_200_200/0/1638670579227/university_of_calcutta_logo?e=1760572800&v=beta&t=t3yP8EpS9cbdQCXEChIlhs7Qe-WqBQBrjJbrpSi3pwE",
+        "title": "University of Calcutta",
+        "subtitle": "Mca, Computer Application ",
+        "caption": "2021 - 2023",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "companyId": "15105944",
+        "companyUrn": "urn:li:fsd_company:15105944",
+        "companyLink1": "https://www.linkedin.com/company/15105944/",
+        "logo": "https://media.licdn.com/dms/image/v2/D560BAQGTbrnnL-0YDQ/company-logo_200_200/company-logo_200_200/0/1711285527944?e=1760572800&v=beta&t=O7JrmxvpBmepQhp_0riPIn7ejJbUJypZHF08z-nkXrc",
+        "title": "Asansol Girls' College",
+        "subtitle": "Bachelor's degree, Computer Science",
+        "caption": "Jun 2018 - Sep 2021",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Grade: 8.08"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "licenseAndCertificates": [],
+    "honorsAndAwards": [],
+    "languages": [],
+    "volunteerAndAwards": [],
+    "verifications": [],
+    "promos": [],
+    "highlights": [],
+    "projects": [
+      {
+        "title": "Analyzing Pharma sales data insights and visualization",
+        "subtitle": "Apr 2023 - Jul 2023",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Associated with University of Calcutta"
+              },
+              {
+                "type": "textComponent",
+                "text": "data analysis and visualization of sales data"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Deeksha: The learning app",
+        "subtitle": "Jan 2023 - Jul 2023",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Associated with University of Calcutta"
+              },
+              {
+                "type": "textComponent",
+                "text": "a learning app for down syndrome children developed using machine learning algorithms such as semi supervised learning,linear regression,agglomerative clustering."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "publications": [],
+    "patents": [],
+    "courses": [],
+    "testScores": [],
+    "organizations": [],
+    "volunteerCauses": [],
+    "interests": [
+      {
+        "section_name": "Top Voices",
+        "section_components": [
+          {
+            "titleV2": "Raj Vikramaditya",
+            "caption": "862,033 followers",
+            "subtitle": "Building takeUforward(1M+ Users) | Ex - Google, Media.net, Amazon | YouTuber(800K+) | JGEC",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/in/rajstriver",
+            "subComponents": []
+          },
+          {
+            "titleV2": "Mohit Joshi",
+            "caption": "153,404 followers",
+            "subtitle": "CEO and Managing Director at Tech Mahindra; Non Executive Director at Aviva",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/in/themohitjoshipage",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Companies",
+        "section_components": [
+          {
+            "titleV2": "Ericsson",
+            "caption": "2,186,531 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1060/",
+            "subComponents": []
+          },
+          {
+            "titleV2": "Cisco",
+            "caption": "7,051,985 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1063/",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Groups",
+        "section_components": [
+          {
+            "titleV2": "New Delhi (NCR) Jobs",
+            "caption": "72 members",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/groups/9546173",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Newsletters",
+        "section_components": [
+          {
+            "titleV2": "Geek Gazette",
+            "caption": "Published weekly",
+            "subtitle": "Nerdy News & Nerdy Views - Just for You!",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/newsletters/7176517715833106432",
+            "subComponents": [
+              {
+                "insightComponent": {
+                  "text": "Pitangent Analytics and Technology Solutions Pvt. Ltd.",
+                  "actionTarget": "https://www.linkedin.com/company/35687543/"
+                }
+              }
+            ]
+          },
+          {
+            "titleV2": "InnoInsight: PATs Tech Talk",
+            "caption": "Published weekly",
+            "subtitle": "Gain invaluable insights into the world of tech with InnoInsight, PiTangent's platform for thought-provoking tech talks.",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/newsletters/7183352650292236288",
+            "subComponents": [
+              {
+                "insightComponent": {
+                  "text": "Pitangent Analytics and Technology Solutions Pvt. Ltd.",
+                  "actionTarget": "https://www.linkedin.com/company/35687543/"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section_name": "Schools",
+        "section_components": [
+          {
+            "titleV2": "Brainware University",
+            "caption": "75,644 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/school/13454676/",
+            "subComponents": []
+          },
+          {
+            "titleV2": "Asansol Girls' College",
+            "caption": "1,400 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/school/15105944/",
+            "subComponents": []
+          }
+        ]
+      }
+    ],
+    "recommendations": []
+  },
+  "metadata": {
+    "source": "dev_fusion/Linkedin-Profile-Scraper",
+    "savedAt": "2025-09-09T05:00:50.308Z"
+  }
+}

@@ -15,6 +15,7 @@ import { z } from "zod";
 import { OptimizedResumeProcessor } from "./services/optimizedResumeProcessor";
 import { PerformanceMonitor } from "./services/performanceMonitor";
 import { EeezoService } from "./services/eezoService";
+import { websocketService } from "./services/websocketService";
 import { sql } from "drizzle-orm";
 
 // Configure multer for file uploads
@@ -1071,6 +1072,83 @@ export async function registerRoutes(app: Express): Promise<Server> {
     return factors;
   }
 
+  // Async function to process bulk resumes with WebSocket updates
+  async function processBulkResumesAsync(sessionId: string, comId: string, files: any[]) {
+    try {
+      console.log(`🔄 Processing ${files.length} resumes for session ${sessionId}`);
+      
+      // Update progress - starting
+      websocketService.updateProgress(sessionId, {
+        currentFile: "Starting processing..."
+      });
+
+      // Process each file sequentially to avoid overwhelming the system
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const { originalname, buffer, size } = file;
+        
+        try {
+          console.log(`📄 Processing file ${i + 1}/${files.length}: ${originalname}`);
+          
+          // Update progress - current file
+          websocketService.updateProgress(sessionId, {
+            currentFile: originalname
+          });
+
+          // Create processing job for this file
+          const processingJob = await storage.createProcessingJob({
+            projectId: "default-project",
+            fileName: originalname,
+            fileSize: size,
+            status: "processing",
+            progress: 0,
+            totalRecords: 0,
+            processedRecords: 0
+          });
+
+          // Process the resume using EeezoService
+          const result = await EeezoService.processEeezoResume({
+            comId: comId,
+            file: file,
+            processingJobId: processingJob.id
+          });
+
+          // Add completed candidate to WebSocket session
+          websocketService.addCompletedCandidate(sessionId, {
+            candidateId: result.candidateId,
+            name: result.name || originalname.replace(/\.(pdf|docx|doc)$/i, ''),
+            email: result.email,
+            score: result.score,
+            priority: result.priority
+          });
+
+          console.log(`✅ Completed file ${i + 1}/${files.length}: ${originalname} -> Candidate: ${result.candidateId}`);
+
+          // Small delay between files to prevent rate limiting
+          await new Promise(resolve => setTimeout(resolve, 1000));
+
+        } catch (error) {
+          console.error(`❌ Error processing file ${originalname}:`, error);
+          
+          // Add error to WebSocket session
+          websocketService.addError(sessionId, originalname, 
+            error instanceof Error ? error.message : "Unknown error"
+          );
+        }
+      }
+
+      console.log(`🎉 Bulk processing completed for session ${sessionId}`);
+
+    } catch (error) {
+      console.error(`💥 Bulk processing failed for session ${sessionId}:`, error);
+      
+      // Add general error to session
+      websocketService.addError(sessionId, "Bulk Processing", 
+        error instanceof Error ? error.message : "Unknown error"
+      );
+    }
+  }
+
   // ==================== EEEZO INTEGRATION ENDPOINTS ====================
   
   // Eeezo: Upload resume file with company ID
@@ -1291,6 +1369,131 @@ export async function registerRoutes(app: Express): Promise<Server> {
         error: "Failed to update candidate status",
         message: error instanceof Error ? error.message : "Unknown error",
         code: "UPDATE_ERROR"
+      });
+    }
+  });
+
+  // ==================== BULK UPLOAD WITH WEBSOCKET ====================
+  
+  // Bulk resume upload with real-time WebSocket updates
+  app.post("/api/eezo/upload-bulk-resumes", upload.array('files', 20), async (req: any, res) => {
+    try {
+      const { com_id } = req.body;
+      
+      // Validate required fields
+      if (!com_id) {
+        return res.status(400).json({ 
+          error: "Company ID (com_id) is required",
+          code: "MISSING_COM_ID"
+        });
+      }
+      
+      if (!req.files || req.files.length === 0) {
+        return res.status(400).json({ 
+          error: "At least one resume file is required",
+          code: "MISSING_FILES"
+        });
+      }
+
+      // Generate session ID for this bulk upload
+      const sessionId = `bulk_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+      
+      // Create WebSocket session for real-time updates
+      const session = websocketService.createUploadSession(sessionId, com_id, req.files.length);
+      
+      console.log(`🚀 Starting bulk upload session: ${sessionId} for company ${com_id} with ${req.files.length} files`);
+
+      // Log activity
+      await storage.createActivity({
+        type: "bulk_upload",
+        message: "Bulk resume upload started",
+        details: `Company: ${com_id}, Files: ${req.files.length}, Session: ${sessionId}`
+      });
+
+      // Process files asynchronously with WebSocket updates
+      processBulkResumesAsync(sessionId, com_id, req.files);
+
+      res.json({
+        success: true,
+        message: "Bulk upload started",
+        data: {
+          sessionId,
+          comId: com_id,
+          totalFiles: req.files.length,
+          status: "processing",
+          websocketUrl: `ws://localhost:${process.env.PORT || 5000}/ws`
+        }
+      });
+
+    } catch (error) {
+      console.error('Bulk upload error:', error);
+      res.status(500).json({ 
+        error: "Failed to start bulk upload",
+        message: error instanceof Error ? error.message : "Unknown error",
+        code: "BULK_UPLOAD_ERROR"
+      });
+    }
+  });
+
+  // Get bulk upload session status
+  app.get("/api/eezo/bulk-status/:sessionId", async (req, res) => {
+    try {
+      const { sessionId } = req.params;
+      
+      const session = websocketService.getSession(sessionId);
+      if (!session) {
+        return res.status(404).json({ 
+          error: "Session not found",
+          code: "SESSION_NOT_FOUND"
+        });
+      }
+
+      res.json({
+        success: true,
+        data: {
+          sessionId,
+          comId: session.comId,
+          totalFiles: session.totalFiles,
+          completedFiles: session.completedFiles,
+          progress: Math.round((session.completedFiles / session.totalFiles) * 100),
+          candidates: session.candidates,
+          errors: session.errors,
+          isComplete: session.completedFiles >= session.totalFiles
+        }
+      });
+
+    } catch (error) {
+      console.error('Bulk status error:', error);
+      res.status(500).json({ 
+        error: "Failed to fetch bulk status",
+        message: error instanceof Error ? error.message : "Unknown error",
+        code: "STATUS_ERROR"
+      });
+    }
+  });
+
+  // Get WebSocket connection info
+  app.get("/api/websocket/info", async (req, res) => {
+    try {
+      res.json({
+        success: true,
+        data: {
+          websocketUrl: `ws://localhost:${process.env.PORT || 5000}/ws`,
+          connectedClients: websocketService.getConnectedClientsCount(),
+          activeSessions: websocketService.getActiveSessions().length,
+          messageTypes: [
+            'processing_started',
+            'upload_progress', 
+            'resume_completed',
+            'upload_error',
+            'upload_complete'
+          ]
+        }
+      });
+    } catch (error) {
+      res.status(500).json({ 
+        error: "Failed to fetch WebSocket info",
+        message: error instanceof Error ? error.message : "Unknown error"
       });
     }
   });

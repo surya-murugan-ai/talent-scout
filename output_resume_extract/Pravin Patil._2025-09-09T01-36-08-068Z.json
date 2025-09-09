@@ -1,0 +1,33 @@
+{
+  "filename": "Pravin Patil..pdf",
+  "timestamp": "2025-09-09T01:36:08.069Z",
+  "processingTime": 4360,
+  "confidence": 0,
+  "rawText": "",
+  "extractedData": {
+    "name": null,
+    "email": null,
+    "phone": null,
+    "linkedinUrl": null,
+    "githubUrl": null,
+    "portfolioUrl": null,
+    "location": null,
+    "title": null,
+    "summary": null,
+    "experience": [],
+    "education": [],
+    "projects": [],
+    "achievements": [],
+    "certifications": [],
+    "skills": [],
+    "interests": [],
+    "languages": [],
+    "originalData": {
+      "filename": "Pravin Patil..pdf",
+      "rawText": ""
+    },
+    "source": "resume",
+    "confidence": 0,
+    "processingTime": 0
+  }
+}

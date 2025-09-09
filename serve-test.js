@@ -17,7 +17,7 @@ app.use(express.static(__dirname));
 
 // Serve the test HTML file
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'test-eezo-upload.html'));
+    res.sendFile(path.join(__dirname, 'test-resume-status.html'));
 });
 
 app.listen(port, () => {

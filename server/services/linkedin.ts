@@ -1,7 +1,7 @@
 import { ApifyClient } from 'apify-client';
 import * as fs from 'fs';
 import * as path from 'path';
-import { ResumeDataService } from './resumeDataService.js';
+// import { ResumeDataService } from './resumeDataService.js'; // Commented out - using consolidated candidates table
 
 interface LinkedInProfile {
   name: string;
@@ -368,21 +368,21 @@ export class LinkedInService {
             
             // Update database with the fetched LinkedIn data
             try {
-              // Update candidate record
-              await ResumeDataService.updateCandidateWithLinkedInData(
-                candidateWithLinkedIn.id,
-                devFusionData,
-                'dev_fusion'
-              );
-              
-              // Update resume data if available
-              if (candidateWithLinkedIn.resumeDataId) {
-                await ResumeDataService.updateResumeDataWithLinkedIn(
-                  candidateWithLinkedIn.resumeDataId,
-                  devFusionData,
-                  'dev_fusion'
-                );
-              }
+              // Update candidate record - TODO: Update to use consolidated candidates table
+              // await ResumeDataService.updateCandidateWithLinkedInData(
+              //   candidateWithLinkedIn.id,
+              //   devFusionData,
+              //   'dev_fusion'
+              // );
+
+              // Update resume data if available - TODO: Update to use consolidated candidates table
+              // if (candidateWithLinkedIn.resumeDataId) {
+              //   await ResumeDataService.updateResumeDataWithLinkedIn(
+              //     candidateWithLinkedIn.resumeDataId,
+              //     devFusionData,
+              //     'dev_fusion'
+              //   );
+              // }
             } catch (dbError) {
               console.warn('Failed to update database with LinkedIn data:', dbError);
             }
@@ -727,21 +727,21 @@ export class LinkedInService {
               );
               
               if (matchingCandidate) {
-                // Update candidate record
-                await ResumeDataService.updateCandidateWithLinkedInData(
-                  matchingCandidate.id,
-                  devFusionData,
-                  'dev_fusion'
-                );
-                
-                // Update resume data if available
-                if (matchingCandidate.resumeDataId) {
-                  await ResumeDataService.updateResumeDataWithLinkedIn(
-                    matchingCandidate.resumeDataId,
-                    devFusionData,
-                    'dev_fusion'
-                  );
-                }
+                // Update candidate record - TODO: Update to use consolidated candidates table
+                // await ResumeDataService.updateCandidateWithLinkedInData(
+                //   matchingCandidate.id,
+                //   devFusionData,
+                //   'dev_fusion'
+                // );
+
+                // Update resume data if available - TODO: Update to use consolidated candidates table
+                // if (matchingCandidate.resumeDataId) {
+                //   await ResumeDataService.updateResumeDataWithLinkedIn(
+                //     matchingCandidate.resumeDataId,
+                //     devFusionData,
+                //     'dev_fusion'
+                //   );
+                // }
               }
             }
           } catch (dbError) {
@@ -842,21 +842,21 @@ export class LinkedInService {
             );
             
             if (matchingCandidate) {
-              // Update candidate record
-              await ResumeDataService.updateCandidateWithLinkedInData(
-                matchingCandidate.id,
-                profileData,
-                'harvestapi'
-              );
-              
-              // Update resume data if available
-              if (matchingCandidate.resumeDataId) {
-                await ResumeDataService.updateResumeDataWithLinkedIn(
-                  matchingCandidate.resumeDataId,
-                  profileData,
-                  'harvestapi'
-                );
-              }
+              // Update candidate record - TODO: Update to use consolidated candidates table
+              // await ResumeDataService.updateCandidateWithLinkedInData(
+              //   matchingCandidate.id,
+              //   profileData,
+              //   'harvestapi'
+              // );
+
+              // Update resume data if available - TODO: Update to use consolidated candidates table
+              // if (matchingCandidate.resumeDataId) {
+              //   await ResumeDataService.updateResumeDataWithLinkedIn(
+              //     matchingCandidate.resumeDataId,
+              //     profileData,
+              //     'harvestapi'
+              //   );
+              // }
             }
           }
         } catch (dbError) {

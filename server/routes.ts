@@ -10,7 +10,6 @@ interface RequestWithFile extends Request {
 import { storage } from "./storage";
 import { FileProcessor } from "./services/fileProcessor";
 import { analyzeCandidate, enrichLinkedInProfile, batchAnalyzeCandidates } from "./services/openai";
-import { ResumeDataService } from "./services/resumeDataService";
 import { insertCandidateSchema, insertProjectSchema, scoringWeightsSchema } from "@shared/schema";
 import { z } from "zod";
 import { OptimizedResumeProcessor } from "./services/optimizedResumeProcessor";
@@ -77,21 +76,39 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Get all candidates with pagination
+  // Get all candidates with pagination and company filtering
   app.get("/api/candidates", async (req, res) => {
     try {
-      const limit = parseInt(req.query.limit as string) || 50;
-      const offset = parseInt(req.query.offset as string) || 0;
-      const priority = req.query.priority as string;
+      const { com_id, limit = 50, offset = 0, priority } = req.query;
+      
+      if (!com_id) {
+        return res.status(400).json({ 
+          error: "Company ID (com_id) is required",
+          code: "MISSING_COMPANY_ID"
+        });
+      }
+
+      const limitNum = parseInt(limit as string) || 50;
+      const offsetNum = parseInt(offset as string) || 0;
 
       let candidates;
       if (priority) {
-        candidates = await storage.getCandidatesByPriority(priority);
+        candidates = await storage.getCandidatesByPriority(priority as string, com_id as string);
       } else {
-        candidates = await storage.getCandidates(limit, offset);
+        candidates = await storage.getCandidates(com_id as string, limitNum, offsetNum);
       }
 
-      res.json(candidates);
+      res.json({
+        success: true,
+        data: candidates,
+        pagination: {
+          limit: limitNum,
+          offset: offsetNum,
+          count: candidates.length,
+          hasMore: candidates.length === limitNum
+        },
+        company: com_id
+      });
     } catch (error) {
       res.status(500).json({ 
         error: "Failed to fetch candidates",
@@ -100,14 +117,31 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Get single candidate
+  // Get single candidate with company validation
   app.get("/api/candidates/:id", async (req, res) => {
     try {
-      const candidate = await storage.getCandidate(req.params.id);
-      if (!candidate) {
-        return res.status(404).json({ error: "Candidate not found" });
+      const { com_id } = req.query;
+      
+      if (!com_id) {
+        return res.status(400).json({ 
+          error: "Company ID (com_id) is required",
+          code: "MISSING_COMPANY_ID"
+        });
       }
-      res.json(candidate);
+
+      const candidate = await storage.getCandidate(req.params.id, com_id as string);
+      if (!candidate) {
+        return res.status(404).json({ 
+          error: "Candidate not found",
+          code: "CANDIDATE_NOT_FOUND"
+        });
+      }
+      
+      res.json({
+        success: true,
+        data: candidate,
+        company: com_id
+      });
     } catch (error) {
       res.status(500).json({ 
         error: "Failed to fetch candidate",
@@ -593,11 +627,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Get resume data
+  // Get resume data (now consolidated in candidates table)
   app.get("/api/resume-data", async (req, res) => {
     try {
-      const allResumeData = await ResumeDataService.getAllResumeData();
-      res.json(allResumeData);
+      const candidates = await storage.getCandidates(100, 0);
+      res.json(candidates);
     } catch (error) {
       res.status(500).json({ 
         error: "Failed to fetch resume data",
@@ -606,17 +640,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Get resume data by candidate ID
+  // Get resume data by candidate ID (now consolidated in candidates table)
   app.get("/api/resume-data/:candidateId", async (req, res) => {
     try {
       const { candidateId } = req.params;
-      const resumeData = await ResumeDataService.getResumeDataByCandidateId(candidateId);
+      const candidate = await storage.getCandidate(candidateId);
       
-      if (!resumeData) {
+      if (!candidate) {
         return res.status(404).json({ error: "Resume data not found" });
       }
       
-      res.json(resumeData);
+      res.json(candidate);
     } catch (error) {
       res.status(500).json({ 
         error: "Failed to fetch resume data",
@@ -1174,8 +1208,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         eeezoStatus: candidate.eeezoStatus,
         confidence: candidate.confidence,
         processingTime: candidate.processingTime,
-        createdAt: candidate.createdAt,
-        updatedAt: candidate.updatedAt
+        createdAt: candidate.createdAt
       }));
 
       res.json({
@@ -1258,6 +1291,153 @@ export async function registerRoutes(app: Express): Promise<Server> {
         error: "Failed to update candidate status",
         message: error instanceof Error ? error.message : "Unknown error",
         code: "UPDATE_ERROR"
+      });
+    }
+  });
+
+  // Resume Status Management: Handle CORS preflight for resume status endpoint
+  app.options("/api/candidates/:candidateId/resume-status", (req, res) => {
+    res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
+    res.header('Access-Control-Allow-Methods', 'PATCH, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
+    res.header('Access-Control-Max-Age', '86400');
+    res.status(200).end();
+  });
+
+  // Resume Status Management: Update candidate resume status with company validation
+  app.patch("/api/candidates/:candidateId/resume-status", async (req, res) => {
+    try {
+      const { candidateId } = req.params;
+      const { status, com_id } = req.body;
+      
+      if (!candidateId) {
+        return res.status(400).json({ 
+          error: "Candidate ID is required",
+          code: "MISSING_CANDIDATE_ID"
+        });
+      }
+
+      if (!com_id) {
+        return res.status(400).json({ 
+          error: "Company ID (com_id) is required",
+          code: "MISSING_COMPANY_ID"
+        });
+      }
+
+      if (!status || !['active', 'inactive'].includes(status)) {
+        return res.status(400).json({ 
+          error: "Status must be 'active' or 'inactive'",
+          code: "INVALID_STATUS"
+        });
+      }
+
+      const updatedCandidate = await storage.updateCandidateResumeStatus(candidateId, status, com_id);
+
+      if (!updatedCandidate) {
+        return res.status(404).json({ 
+          error: "Candidate not found or does not belong to this company",
+          code: "CANDIDATE_NOT_FOUND"
+        });
+      }
+
+      res.json({
+        success: true,
+        data: {
+          candidateId: updatedCandidate.id,
+          name: updatedCandidate.name,
+          resumeStatus: updatedCandidate.resumeStatus,
+          comId: updatedCandidate.comId,
+          message: `Resume status updated to ${status}`
+        }
+      });
+
+    } catch (error) {
+      console.error('Resume status update error:', error);
+      res.status(500).json({ 
+        error: "Failed to update resume status",
+        message: error instanceof Error ? error.message : "Unknown error",
+        code: "STATUS_UPDATE_ERROR"
+      });
+    }
+  });
+
+  // Debug endpoint: Get all unique com_id values
+  app.get("/api/debug/com-ids", async (req, res) => {
+    try {
+      // Use direct database query to get all com_id values
+      const { db } = await import('./db.js');
+      const { candidates } = await import('@shared/schema');
+      
+      const result = await db.select({
+        comId: candidates.comId
+      }).from(candidates);
+      
+      // Group by com_id
+      const comIdGroups: { [key: string]: number } = {};
+      let candidatesWithoutComId = 0;
+      
+      for (const candidate of result) {
+        if (candidate.comId) {
+          comIdGroups[candidate.comId] = (comIdGroups[candidate.comId] || 0) + 1;
+        } else {
+          candidatesWithoutComId++;
+        }
+      }
+      
+      const comIds = Object.entries(comIdGroups).map(([comId, count]) => ({ com_id: comId, count }));
+      
+      res.json({
+        success: true,
+        data: {
+          comIds: comIds.sort((a, b) => b.count - a.count),
+          candidatesWithoutComId,
+          totalUniqueComIds: comIds.length
+        }
+      });
+    } catch (error) {
+      res.status(500).json({ 
+        error: "Failed to fetch com_id values",
+        message: error instanceof Error ? error.message : "Unknown error"
+      });
+    }
+  });
+
+  // Get inactive resumes with company filtering and pagination
+  app.get("/api/candidates/inactive", async (req, res) => {
+    try {
+      const { com_id, limit = 100, offset = 0 } = req.query;
+      
+      if (!com_id) {
+        return res.status(400).json({ 
+          error: "Company ID (com_id) is required",
+          code: "MISSING_COMPANY_ID"
+        });
+      }
+      
+      const limitNum = parseInt(limit as string) || 100;
+      const offsetNum = parseInt(offset as string) || 0;
+      
+      const inactiveCandidates = await storage.getCandidatesByResumeStatus('inactive', com_id as string, limitNum, offsetNum);
+      
+      res.json({
+        success: true,
+        data: inactiveCandidates,
+        pagination: {
+          limit: limitNum,
+          offset: offsetNum,
+          count: inactiveCandidates.length,
+          hasMore: inactiveCandidates.length === limitNum
+        },
+        company: com_id,
+        message: `Found ${inactiveCandidates.length} inactive candidates for company ${com_id}`
+      });
+
+    } catch (error) {
+      console.error('Get inactive candidates error:', error);
+      res.status(500).json({ 
+        error: "Failed to fetch inactive candidates",
+        message: error instanceof Error ? error.message : "Unknown error",
+        code: "FETCH_INACTIVE_ERROR"
       });
     }
   });

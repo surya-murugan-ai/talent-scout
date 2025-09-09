@@ -72,11 +72,14 @@ export class EeezoService {
         confidence = 0;
       }
       
-      // Save candidate data with Eeezo context
+      // Enhanced field mapping from resume parser output
       const candidateData = {
+        // Eeezo-specific fields
         comId: request.comId,
         eeezoUploadDate: new Date(),
         eeezoStatus: 'uploaded',
+        
+        // Basic Information
         name: extractedData.name,
         email: extractedData.email || null,
         phone: extractedData.phone || null,
@@ -87,6 +90,8 @@ export class EeezoService {
         portfolioUrl: extractedData.portfolioUrl || null,
         location: extractedData.location || null,
         summary: extractedData.summary || null,
+        
+        // Resume-specific fields
         filename: filename,
         rawText: extractedData.rawText || null,
         experience: extractedData.experience || [],
@@ -97,6 +102,28 @@ export class EeezoService {
         skills: extractedData.skills || [],
         certifications: extractedData.certifications || [],
         languages: extractedData.languages || [],
+        
+        // Enhanced fields - extract from name
+        firstName: extractedData.name ? extractedData.name.split(' ')[0] : null,
+        lastName: extractedData.name ? extractedData.name.split(' ').slice(1).join(' ') : null,
+        
+        // Enhanced fields - extract from experience
+        currentTitle: extractedData.experience?.[0]?.jobTitle || extractedData.title || null,
+        currentCompany: extractedData.experience?.[0]?.company || null,
+        
+        // Calculate years of experience from experience array
+        yearsOfExperience: this.calculateYearsOfExperience(extractedData.experience || []),
+        
+        // Work history (same as experience for now)
+        workHistory: extractedData.experience || [],
+        
+        // Additional fields from resume
+        salary: extractedData.salary || null,
+        availability: extractedData.availability || null,
+        remotePreference: extractedData.remotePreference || null,
+        visaStatus: extractedData.visaStatus || null,
+        
+        // Data source and processing
         source: 'eezo',
         dataSource: 'resume',
         enrichmentStatus: 'pending',
@@ -105,7 +132,9 @@ export class EeezoService {
         confidence: confidence,
         processingTime: processingTime,
         createdAt: new Date(),
-        updatedAt: new Date()
+        
+        // Resume status
+        resumeStatus: 'active'
       };
       
       // Insert candidate into database
@@ -158,8 +187,7 @@ export class EeezoService {
       // Update enrichment status
       await db.update(candidates)
         .set({ 
-          enrichmentStatus: 'in_progress',
-          updatedAt: new Date()
+          enrichmentStatus: 'in_progress'
         })
         .where(eq(candidates.id, candidateId));
       
@@ -179,11 +207,10 @@ export class EeezoService {
           enrichmentStatus: 'completed',
           enrichmentDate: new Date(),
           enrichmentSource: 'harvestapi',
-          eeezoStatus: 'enriched',
-          updatedAt: new Date()
+          eeezoStatus: 'enriched'
         };
         
-        // Map LinkedIn data to candidate fields
+        // Map LinkedIn data to candidate fields (preserve resume data, only add LinkedIn-specific fields)
         if (linkedInProfile.name) updateData.name = linkedInProfile.name;
         if (linkedInProfile.title || linkedInProfile.headline) {
           updateData.title = linkedInProfile.title || linkedInProfile.headline;
@@ -195,14 +222,34 @@ export class EeezoService {
         if (linkedInProfile.summary || linkedInProfile.about) {
           updateData.summary = linkedInProfile.summary || linkedInProfile.about;
         }
-        if (linkedInProfile.skills) updateData.skills = linkedInProfile.skills;
-        if (linkedInProfile.experience) updateData.experience = linkedInProfile.experience;
-        if (linkedInProfile.education) updateData.education = linkedInProfile.education;
-        if (linkedInProfile.certifications) updateData.certifications = linkedInProfile.certifications;
+        // Merge skills instead of replacing (resume skills + LinkedIn skills)
+        if (linkedInProfile.skills) {
+          const existingSkills = updateData.skills || [];
+          const linkedinSkills = Array.isArray(linkedInProfile.skills) 
+            ? linkedInProfile.skills.map(s => typeof s === 'string' ? s : s.title || s.name || s)
+            : [];
+          updateData.skills = [...new Set([...existingSkills, ...linkedinSkills])];
+        }
+        // Don't overwrite experience, education, certifications - keep resume data
+        // Only add LinkedIn-specific fields
         if (linkedInProfile.profileUrl) updateData.linkedinUrl = linkedInProfile.profileUrl;
         if (linkedInProfile.openToWork !== undefined) updateData.openToWork = linkedInProfile.openToWork;
         if (linkedInProfile.lastActive) updateData.lastActive = linkedInProfile.lastActive;
         if (linkedInProfile.connections) updateData.linkedinConnections = linkedInProfile.connections;
+        
+        // Add LinkedIn-specific fields
+        if (linkedInProfile.headline) updateData.linkedinHeadline = linkedInProfile.headline;
+        if (linkedInProfile.about) updateData.linkedinSummary = linkedInProfile.about;
+        if (linkedInProfile.lastActive) {
+          try {
+            const lastActiveDate = new Date(linkedInProfile.lastActive);
+            if (!isNaN(lastActiveDate.getTime())) {
+              updateData.linkedinLastActive = lastActiveDate;
+            }
+          } catch (error) {
+            console.warn('Invalid lastActive date:', linkedInProfile.lastActive, error);
+          }
+        }
         
         // Store enriched data
         updateData.enrichedData = linkedInProfile;
@@ -371,8 +418,7 @@ export class EeezoService {
       const [updatedCandidate] = await db.update(candidates)
         .set({
           eeezoStatus: updateData.eezoStatus,
-          notes: updateData.notes,
-          updatedAt: new Date()
+          notes: updateData.notes
         })
         .where(eq(candidates.id, candidateId))
         .returning();
@@ -389,6 +435,47 @@ export class EeezoService {
     } catch (error) {
       console.error('Error updating candidate Eeezo status:', error);
       throw new Error(`Failed to update status: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
+  }
+
+  /**
+   * Calculate years of experience from experience array
+   */
+  private static calculateYearsOfExperience(experience: any[]): number | null {
+    if (!experience || experience.length === 0) {
+      return null;
+    }
+
+    try {
+      let totalMonths = 0;
+      const currentDate = new Date();
+      
+      for (const exp of experience) {
+        if (exp.startDate && exp.endDate) {
+          try {
+            const startDate = new Date(exp.startDate);
+            const endDate = exp.endDate === 'Present' || exp.endDate === 'Current' ? currentDate : new Date(exp.endDate);
+            
+            if (startDate && endDate && !isNaN(startDate.getTime()) && !isNaN(endDate.getTime())) {
+              const months = (endDate.getFullYear() - startDate.getFullYear()) * 12 + (endDate.getMonth() - startDate.getMonth());
+              totalMonths += Math.max(0, months);
+            }
+          } catch (error) {
+            console.warn('Invalid date in experience:', exp.startDate, exp.endDate, error);
+          }
+        } else if (exp.duration) {
+          // Try to parse duration string like "2 years 6 months" or "3 years"
+          const durationMatch = exp.duration.match(/(\d+)\s*(?:year|yr|y)/i);
+          if (durationMatch) {
+            totalMonths += parseInt(durationMatch[1]) * 12;
+          }
+        }
+      }
+      
+      return totalMonths > 0 ? Math.round((totalMonths / 12) * 10) / 10 : null; // Round to 1 decimal place
+    } catch (error) {
+      console.warn('Error calculating years of experience:', error);
+      return null;
     }
   }
 }

@@ -643,7 +643,11 @@ CRITICAL: Only extract information that is actually present in the text below. D
   ],
   "skills": ["Skill1", "Skill2", "Skill3"],
   "interests": ["Interest1", "Interest2"],
-  "languages": ["Language1", "Language2"]
+  "languages": ["Language1", "Language2"],
+  "salary": "Expected salary or current salary",
+  "availability": "Availability status (e.g., 'Immediately', '2 weeks notice', 'Available')",
+  "remotePreference": "Remote work preference (e.g., 'Remote', 'Hybrid', 'On-site')",
+  "visaStatus": "Visa status (e.g., 'US Citizen', 'H1B', 'Green Card', 'F1')"
 }
 
 ${hyperlinksContext}Resume Text:

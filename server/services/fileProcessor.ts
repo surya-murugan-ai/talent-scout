@@ -2,7 +2,7 @@ import csv from 'csv-parser';
 import * as XLSX from 'xlsx';
 import { Readable } from 'stream';
 import { ResumeParser, ResumeData, ComprehensiveResumeData } from './resumeParser.js';
-import { ResumeDataService } from './resumeDataService.js';
+// import { ResumeDataService } from './resumeDataService.js'; // Commented out - using consolidated candidates table
 
 export interface ProcessedCandidate {
   name: string;
@@ -355,14 +355,15 @@ export class FileProcessor {
       const savedData = [];
       for (const data of resumeData) {
         try {
-          const saved = await ResumeDataService.saveResumeData(
-            data.extractedData,
-            files.find(f => f.filename.includes(data.extractedData.name || 'unknown'))?.filename || 'unknown',
-            data.processingTime,
-            data.confidence
-          );
-          savedData.push(saved);
-          console.log(`Saved resume data for ${data.extractedData.name}:`, saved);
+          // TODO: Update to use consolidated candidates table
+          // const saved = await ResumeDataService.saveResumeData(
+          //   data.extractedData,
+          //   files.find(f => f.filename.includes(data.extractedData.name || 'unknown'))?.filename || 'unknown',
+          //   data.processingTime,
+          //   data.confidence
+          // );
+          // savedData.push(saved);
+          // console.log(`Saved resume data for ${data.extractedData.name}:`, saved);
         } catch (saveError) {
           console.error(`Failed to save resume data for ${data.extractedData.name}:`, saveError);
         }

@@ -77,6 +77,9 @@ export const candidates = pgTable("candidates", {
   openToWork: boolean("open_to_work").default(false),
   lastActive: text("last_active"),
   
+  // Resume Status
+  resumeStatus: text("resume_status").default("active"), // active, inactive
+  
   // Company comparison and hireability fields
   companyDifference: text("company_difference"), // Difference between resume company and LinkedIn company
   companyDifferenceScore: real("company_difference_score").default(0), // Score for company difference (0-10)
@@ -115,42 +118,6 @@ export const candidates = pgTable("candidates", {
   
   // Timestamps
   createdAt: timestamp("created_at").default(sql`now()`),
-});
-
-// New table for storing detailed resume data
-export const resumeData = pgTable("resume_data", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  candidateId: varchar("candidate_id").references(() => candidates.id),
-  filename: text("filename").notNull(),
-  
-  // Basic Info
-  name: text("name").notNull(),
-  email: text("email"),
-  phone: text("phone"),
-  linkedinUrl: text("linkedin_url"),
-  githubUrl: text("github_url"),
-  portfolioUrl: text("portfolio_url"),
-  location: text("location"),
-  title: text("title"),
-  summary: text("summary"),
-  
-  // Structured Data
-  experience: jsonb("experience").default([]),
-  education: jsonb("education").default([]),
-  projects: jsonb("projects").default([]),
-  achievements: jsonb("achievements").default([]),
-  certifications: jsonb("certifications").default([]),
-  skills: jsonb("skills").default([]),
-  interests: jsonb("interests").default([]),
-  languages: jsonb("languages").default([]),
-  
-  // Metadata
-  rawText: text("raw_text"),
-  confidence: real("confidence").default(0),
-  processingTime: integer("processing_time").default(0),
-  source: text("source").default("resume"),
-  createdAt: timestamp("created_at").default(sql`now()`),
-  updatedAt: timestamp("updated_at").default(sql`now()`),
 });
 
 export const projects = pgTable("projects", {
@@ -200,11 +167,6 @@ export const insertCandidateSchema = createInsertSchema(candidates).omit({
   createdAt: true, 
   updatedAt: true
 });
-export const insertResumeDataSchema = createInsertSchema(resumeData).omit({ 
-  id: true, 
-  createdAt: true, 
-  updatedAt: true
-});
 
 export const insertProjectSchema = createInsertSchema(projects).omit({ 
   id: true, 
@@ -226,8 +188,6 @@ export type User = typeof users.$inferSelect;
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type Candidate = typeof candidates.$inferSelect;
 export type InsertCandidate = z.infer<typeof insertCandidateSchema>;
-export type ResumeData = typeof resumeData.$inferSelect;
-export type InsertResumeData = z.infer<typeof insertResumeDataSchema>;
 export type Project = typeof projects.$inferSelect;
 export type InsertProject = z.infer<typeof insertProjectSchema>;
 export type ProcessingJob = typeof processingJobs.$inferSelect;

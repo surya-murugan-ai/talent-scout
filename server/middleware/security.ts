@@ -32,8 +32,9 @@ export function setupSecurityMiddleware(app: Express) {
       ? ['https://*.replit.app', 'https://*.replit.dev', 'http://54.197.65.143:5000', 'http://54.197.65.143:8000']
       : true, // Allow all origins in development
     credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+    optionsSuccessStatus: 200, // Some legacy browsers (IE11, various SmartTVs) choke on 204
   }));
 
   // Add CORS debugging in development

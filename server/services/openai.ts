@@ -38,6 +38,10 @@ export async function analyzeCandidate(
   weights: { openToWork: number; skillMatch: number; jobStability: number; engagement: number; companyDifference: number }
 ): Promise<CandidateAnalysis> {
   try {
+    console.log('=== AI ANALYSIS DEBUG ===');
+    console.log('Candidate data being analyzed:', JSON.stringify(candidateData, null, 2));
+    console.log('Weights:', weights);
+    
     const prompt = `
 You are an AI talent acquisition expert. Analyze the following candidate profile and provide a detailed assessment.
 
@@ -88,6 +92,8 @@ Respond with JSON in this exact format:
     });
 
     const analysis = JSON.parse(response.choices[0].message.content || "{}");
+    
+    console.log('LLM Analysis Response:', JSON.stringify(analysis, null, 2));
     
     // Validate and normalize the response
     return {

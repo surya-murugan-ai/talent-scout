@@ -13,8 +13,7 @@ import {
   candidates,
   projects,
   processingJobs,
-  activities,
-  resumeData
+  activities
 } from "@shared/schema";
 import { randomUUID } from "crypto";
 import { drizzle } from 'drizzle-orm/neon-http';
@@ -31,14 +30,14 @@ export interface IStorage {
   createUser(user: InsertUser): Promise<User>;
 
   // Candidates
-  getCandidates(limit?: number, offset?: number): Promise<Candidate[]>;
-  getCandidate(id: string): Promise<Candidate | undefined>;
-  getCandidateByEmail(email: string): Promise<Candidate | undefined>;
+  getCandidates(comId: string, limit?: number, offset?: number): Promise<Candidate[]>;
+  getCandidate(id: string, comId?: string): Promise<Candidate | undefined>;
+  getCandidateByEmail(email: string, comId: string): Promise<Candidate | undefined>;
   createCandidate(candidate: InsertCandidate): Promise<Candidate>;
-  updateCandidate(id: string, candidate: Partial<Candidate>): Promise<Candidate | undefined>;
-  deleteCandidate(id: string): Promise<boolean>;
-  getCandidatesByPriority(priority: string): Promise<Candidate[]>;
-  getCandidatesStats(): Promise<{
+  updateCandidate(id: string, candidate: Partial<Candidate>, comId?: string): Promise<Candidate | undefined>;
+  deleteCandidate(id: string, comId?: string): Promise<boolean>;
+  getCandidatesByPriority(priority: string, comId: string): Promise<Candidate[]>;
+  getCandidatesStats(comId: string): Promise<{
     total: number;
     highPriority: number;
     processing: number;
@@ -46,11 +45,11 @@ export interface IStorage {
   }>;
 
   // Enhanced candidate queries
-  getCandidatesBySkills(skills: string[]): Promise<Candidate[]>;
-  getCandidatesByExperience(minYears: number, maxYears?: number): Promise<Candidate[]>;
-  getCandidatesByDataQuality(minQuality: number): Promise<Candidate[]>;
-  getCandidatesByLocation(location: string): Promise<Candidate[]>;
-  getCandidatesByCompany(company: string): Promise<Candidate[]>;
+  getCandidatesBySkills(skills: string[], comId: string): Promise<Candidate[]>;
+  getCandidatesByExperience(minYears: number, comId: string, maxYears?: number): Promise<Candidate[]>;
+  getCandidatesByDataQuality(minQuality: number, comId: string): Promise<Candidate[]>;
+  getCandidatesByLocation(location: string, comId: string): Promise<Candidate[]>;
+  getCandidatesByCompany(company: string, comId: string): Promise<Candidate[]>;
   searchCandidates(query: string): Promise<Candidate[]>;
   getCandidatesBySource(source: string): Promise<Candidate[]>;
   
@@ -75,6 +74,10 @@ export interface IStorage {
   // Activities
   getRecentActivities(limit?: number): Promise<Activity[]>;
   createActivity(activity: InsertActivity): Promise<Activity>;
+  
+  // Resume status management
+  updateCandidateResumeStatus(candidateId: string, status: 'active' | 'inactive', comId?: string): Promise<Candidate | undefined>;
+  getCandidatesByResumeStatus(status: 'active' | 'inactive', comId: string, limit?: number, offset?: number): Promise<Candidate[]>;
   
   // Clear data methods
   clearAllCandidates(): Promise<void>;
@@ -131,22 +134,38 @@ export class PostgresStorage implements IStorage {
   }
 
   // Candidates
-  async getCandidates(limit = 50, offset = 0): Promise<Candidate[]> {
+  async getCandidates(comId: string, limit = 50, offset = 0): Promise<Candidate[]> {
     const result = await db.select()
       .from(candidates)
+      .where(and(
+        eq(candidates.comId, comId),
+        eq(candidates.resumeStatus, 'active')
+      ))
       .orderBy(desc(candidates.score))
       .limit(limit)
       .offset(offset);
     return result;
   }
 
-  async getCandidate(id: string): Promise<Candidate | undefined> {
-    const result = await db.select().from(candidates).where(eq(candidates.id, id)).limit(1);
+  async getCandidate(id: string, comId?: string): Promise<Candidate | undefined> {
+    let whereCondition = eq(candidates.id, id);
+    
+    if (comId) {
+      whereCondition = and(eq(candidates.id, id), eq(candidates.comId, comId));
+    }
+    
+    const result = await db.select().from(candidates).where(whereCondition).limit(1);
     return result[0];
   }
 
-  async getCandidateByEmail(email: string): Promise<Candidate | undefined> {
-    const result = await db.select().from(candidates).where(eq(candidates.email, email)).limit(1);
+  async getCandidateByEmail(email: string, comId: string): Promise<Candidate | undefined> {
+    const result = await db.select()
+      .from(candidates)
+      .where(and(
+        eq(candidates.email, email),
+        eq(candidates.comId, comId)
+      ))
+      .limit(1);
     return result[0];
   }
 
@@ -157,7 +176,7 @@ export class PostgresStorage implements IStorage {
 
   async updateCandidate(id: string, updates: Partial<Candidate>): Promise<Candidate | undefined> {
     const result = await db.update(candidates)
-      .set({ ...updates, updatedAt: new Date() })
+      .set(updates)
       .where(eq(candidates.id, id))
       .returning();
     return result[0];
@@ -176,7 +195,10 @@ export class PostgresStorage implements IStorage {
   async getCandidatesByPriority(priority: string): Promise<Candidate[]> {
     const result = await db.select()
       .from(candidates)
-      .where(eq(candidates.priority, priority))
+      .where(and(
+        eq(candidates.priority, priority),
+        eq(candidates.resumeStatus, 'active')
+      ))
       .orderBy(desc(candidates.score));
     return result;
   }
@@ -190,14 +212,20 @@ export class PostgresStorage implements IStorage {
     
     const result = await db.select()
       .from(candidates)
-      .where(sql`(${skillConditions.join(' OR ')})`)
+      .where(and(
+        sql`(${skillConditions.join(' OR ')})`,
+        eq(candidates.resumeStatus, 'active')
+      ))
       .orderBy(desc(candidates.score));
     
     return result;
   }
 
   async getCandidatesByExperience(minYears: number, maxYears?: number): Promise<Candidate[]> {
-    let conditions = [gte(candidates.yearsOfExperience, minYears)];
+    let conditions = [
+      gte(candidates.yearsOfExperience, minYears),
+      eq(candidates.resumeStatus, 'active')
+    ];
     
     if (maxYears) {
       conditions.push(lte(candidates.yearsOfExperience, maxYears));
@@ -214,7 +242,10 @@ export class PostgresStorage implements IStorage {
   async getCandidatesByDataQuality(minQuality: number): Promise<Candidate[]> {
     const result = await db.select()
       .from(candidates)
-      .where(gte(candidates.dataQuality, minQuality))
+      .where(and(
+        gte(candidates.dataQuality, minQuality),
+        eq(candidates.resumeStatus, 'active')
+      ))
       .orderBy(desc(candidates.dataQuality));
     
     return result;
@@ -223,7 +254,10 @@ export class PostgresStorage implements IStorage {
   async getCandidatesByLocation(location: string): Promise<Candidate[]> {
     const result = await db.select()
       .from(candidates)
-      .where(like(candidates.location, `%${location}%`))
+      .where(and(
+        like(candidates.location, `%${location}%`),
+        eq(candidates.resumeStatus, 'active')
+      ))
       .orderBy(desc(candidates.score));
     
     return result;
@@ -232,9 +266,10 @@ export class PostgresStorage implements IStorage {
   async getCandidatesByCompany(company: string): Promise<Candidate[]> {
     const result = await db.select()
       .from(candidates)
-      .where(
-        sql`(${candidates.company} ILIKE ${`%${company}%`} OR ${candidates.currentCompany} ILIKE ${`%${company}%`})`
-      )
+      .where(and(
+        sql`(${candidates.company} ILIKE ${`%${company}%`} OR ${candidates.currentCompany} ILIKE ${`%${company}%`})`,
+        eq(candidates.resumeStatus, 'active')
+      ))
       .orderBy(desc(candidates.score));
     
     return result;
@@ -244,7 +279,7 @@ export class PostgresStorage implements IStorage {
     const searchTerm = `%${query}%`;
     const result = await db.select()
       .from(candidates)
-      .where(
+      .where(and(
         sql`(
           ${candidates.name} ILIKE ${searchTerm} OR
           ${candidates.title} ILIKE ${searchTerm} OR
@@ -252,8 +287,9 @@ export class PostgresStorage implements IStorage {
           ${candidates.currentCompany} ILIKE ${searchTerm} OR
           ${candidates.location} ILIKE ${searchTerm} OR
           ${candidates.skills}::text ILIKE ${searchTerm}
-        )`
-      )
+        )`,
+        eq(candidates.resumeStatus, 'active')
+      ))
       .orderBy(desc(candidates.score));
     
     return result;
@@ -262,7 +298,10 @@ export class PostgresStorage implements IStorage {
   async getCandidatesBySource(source: string): Promise<Candidate[]> {
     const result = await db.select()
       .from(candidates)
-      .where(eq(candidates.source, source))
+      .where(and(
+        eq(candidates.source, source),
+        eq(candidates.resumeStatus, 'active')
+      ))
       .orderBy(desc(candidates.createdAt));
     
     return result;
@@ -375,12 +414,16 @@ export class PostgresStorage implements IStorage {
     offset?: number;
   } = {}): Promise<Candidate[]> {
     try {
-      let whereCondition = eq(candidates.comId, comId);
+      let whereCondition = and(
+        eq(candidates.comId, comId),
+        eq(candidates.resumeStatus, 'active')
+      );
       
       if (options.status) {
         whereCondition = and(
           eq(candidates.comId, comId),
-          eq(candidates.eeezoStatus, options.status)
+          eq(candidates.eeezoStatus, options.status),
+          eq(candidates.resumeStatus, 'active')
         )!;
       }
       
@@ -463,8 +506,7 @@ export class PostgresStorage implements IStorage {
       const [updatedCandidate] = await db.update(candidates)
         .set({
           eeezoStatus: updateData.eeezoStatus,
-          notes: updateData.notes,
-          updatedAt: new Date()
+          notes: updateData.notes
         })
         .where(eq(candidates.id, candidateId))
         .returning();
@@ -484,11 +526,63 @@ export class PostgresStorage implements IStorage {
     }
   }
 
+  async updateCandidateResumeStatus(candidateId: string, status: 'active' | 'inactive', comId?: string): Promise<Candidate | undefined> {
+    try {
+      let whereCondition = eq(candidates.id, candidateId);
+      
+      if (comId) {
+        whereCondition = and(eq(candidates.id, candidateId), eq(candidates.comId, comId));
+      }
+      
+      const [updatedCandidate] = await db.update(candidates)
+        .set({
+          resumeStatus: status
+        })
+        .where(whereCondition)
+        .returning();
+      
+      if (!updatedCandidate) {
+        return undefined;
+      }
+      
+      // Log activity
+      await db.insert(activities).values({
+        type: 'resume_status_update',
+        message: `Resume status updated to ${status} for candidate ${candidateId}`,
+        details: `Candidate: ${updatedCandidate?.name || 'Unknown'}, Status: ${status}, Company: ${comId || 'Unknown'}`
+      });
+      
+      return updatedCandidate;
+      
+    } catch (error) {
+      console.error('Error updating candidate resume status:', error);
+      throw new Error(`Failed to update resume status: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
+  }
+
+  async getCandidatesByResumeStatus(status: 'active' | 'inactive', comId: string, limit: number = 100, offset: number = 0): Promise<Candidate[]> {
+    try {
+      const result = await db.select()
+        .from(candidates)
+        .where(and(
+          eq(candidates.resumeStatus, status),
+          eq(candidates.comId, comId)
+        ))
+        .orderBy(desc(candidates.createdAt))
+        .limit(limit)
+        .offset(offset);
+      
+      return result;
+      
+    } catch (error) {
+      console.error('Error fetching candidates by resume status:', error);
+      throw new Error(`Failed to fetch candidates: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
+  }
+
   // Clear data methods
   async clearAllCandidates(): Promise<void> {
-    // Clear resume data first due to foreign key constraints
-    await db.delete(resumeData);
-    // Then clear candidates
+    // Clear candidates
     await db.delete(candidates);
   }
 

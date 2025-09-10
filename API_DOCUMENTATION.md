@@ -503,38 +503,184 @@ Get all processing jobs.
 
 ### 13. Scoring Configuration
 
-**GET** `/api/scoring`
+**GET** `/api/scoring?com_id={company_id}`
 
-Get current scoring weights configuration.
+Get current scoring weights configuration for a specific company.
+
+**Query Parameters:**
+- `com_id` (required): Company ID
+
+**Example Request:**
+```bash
+curl "http://localhost:5000/api/scoring?com_id=eezo-123"
+```
 
 **Response:**
 ```json
 {
-  "openToWork": 30,
-  "skillMatch": 25,
-  "jobStability": 15,
-  "engagement": 15,
-  "companyDifference": 15
+  "success": true,
+  "data": {
+    "id": "config-id",
+    "comId": "eezo-123",
+    "openToWork": 30,
+    "skillMatch": 25,
+    "jobStability": 25,
+    "platformEngagement": 20,
+    "createdAt": "2025-09-10T12:00:00Z",
+    "updatedAt": "2025-09-10T12:00:00Z"
+  },
+  "isDefault": false
 }
 ```
 
+**Note:** If no configuration exists for the company, returns default values with `isDefault: true`.
+
 **POST** `/api/scoring`
 
-Update scoring weights configuration.
+Update scoring weights configuration for a specific company. Weights must sum to 100%.
 
 **Request Body:**
 ```json
 {
-  "openToWork": 40,
+  "com_id": "eezo-123",
+  "openToWork": 30,
   "skillMatch": 30,
-  "jobStability": 15,
-  "engagement": 15
+  "jobStability": 20,
+  "platformEngagement": 20
 }
 ```
 
+**Example Request:**
+```bash
+curl -X POST "http://localhost:5000/api/scoring" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "com_id": "eezo-123",
+    "openToWork": 30,
+    "skillMatch": 30,
+    "jobStability": 20,
+    "platformEngagement": 20
+  }'
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "message": "Scoring weights updated successfully",
+  "data": {
+    "id": "config-id",
+    "comId": "eezo-123",
+    "openToWork": 30,
+    "skillMatch": 30,
+    "jobStability": 20,
+    "platformEngagement": 20,
+    "createdAt": "2025-09-10T12:00:00Z",
+    "updatedAt": "2025-09-10T13:00:00Z"
+  }
+}
+```
+
+**Validation Rules:**
+- All weights must be between 0-100
+- Total of all weights must equal 100
+- `com_id` is required
+
+**Individual Scoring Components:**
+
+1. **Open to Work Score (0-10):**
+   - LinkedIn `openToWork` flag: 10 points if true
+   - Profile summary analysis for keywords like "immediate joiner", "open for opportunity"
+   - Passive vs active job seeking signals
+
+2. **Job Stability Score (0-10):**
+   - Average tenure (last 2 jobs): 30% weight
+   - Longest tenure: 20% weight  
+   - Job changes in last 5 years: 25% weight
+   - Employment gaps: 15% weight
+   - Field/industry continuity: 10% weight
+
+3. **Platform Engagement Score (0-10):**
+   - LinkedIn last active: 40% weight
+   - LinkedIn connections: 20% weight
+   - LinkedIn activity/notes: 20% weight
+   - Profile completeness: 20% weight
+
+4. **Skill Match Score (0-10):**
+   - Currently placeholder (basic skill count)
+   - Future: JD-specific skill matching
+
+**Note:** Individual scores are automatically calculated and stored in candidate records as `openToWorkScore`, `jobStabilityScore`, `platformEngagementScore`, and `skillMatchScore`.
+
 ---
 
-### 14. Export Candidates
+### 14. Update Candidate Scores (External Team Integration)
+
+**PATCH** `/api/candidates/:candidateId/scores`
+
+Update candidate skill match and total scores. This endpoint is designed for external teams to update scores after their analysis.
+
+**Request Body:**
+```json
+{
+  "com_id": "eezo-123",
+  "skillMatchScore": 8.5,
+  "totalScore": 7.2,
+  "jobDescription": "Software Engineer position"
+}
+```
+
+**Parameters:**
+- `candidateId` (path): Candidate ID
+- `com_id` (body, required): Company ID
+- `skillMatchScore` (body, optional): Skill match score (0-10)
+- `totalScore` (body, optional): Total weighted score (0-10)
+- `jobDescription` (body, optional): Job description used for scoring
+
+**Example Request:**
+```bash
+curl -X PATCH "http://localhost:5000/api/candidates/7cab6c6f-a941-4d43-8766-d0d0cbf48367/scores" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "com_id": "eezo-123",
+    "skillMatchScore": 8.5,
+    "totalScore": 7.2,
+    "jobDescription": "Software Engineer position"
+  }'
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "candidateId": "7cab6c6f-a941-4d43-8766-d0d0cbf48367",
+    "name": "John Doe",
+    "comId": "eezo-123",
+    "skillMatchScore": 8.5,
+    "totalScore": 7.2,
+    "priority": "High",
+    "updatedAt": "2025-09-10T12:00:00Z"
+  },
+  "message": "Candidate scores updated successfully"
+}
+```
+
+**Validation Rules:**
+- At least one score (`skillMatchScore` or `totalScore`) must be provided
+- All scores must be between 0-10
+- `com_id` is required
+- Candidate must belong to the specified company
+
+**Automatic Updates:**
+- When `totalScore` is provided, the system automatically updates:
+  - `priority` (High: ≥7, Medium: ≥5, Low: <5)
+  - `hireabilityScore`
+  - `potentialToJoin`
+
+---
+
+### 15. Export Candidates
 
 **GET** `/api/export/csv`
 
@@ -977,6 +1123,10 @@ talentScout.uploadBulkResumes('eezo-123', fileInput.files);
   "hireabilityScore": "number",
   "potentialToJoin": "string",
   "hireabilityFactors": "array",
+  "openToWorkScore": "number (0-10)",
+  "skillMatchScore": "number (0-10)",
+  "jobStabilityScore": "number (0-10)",
+  "platformEngagementScore": "number (0-10)",
   "yearsOfExperience": "number",
   "salary": "string",
   "availability": "string",

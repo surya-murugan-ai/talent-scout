@@ -33,7 +33,19 @@ Content-Type: application/json
 }
 ```
 
-### 📋 Get Specific Candidates
+### 📊 Update Candidate Scores (External Team)
+```bash
+PATCH /api/candidates/{candidate_id}/scores
+Content-Type: application/json
+{
+  "com_id": "company_id",
+  "skillMatchScore": 8.5,
+  "totalScore": 7.2,
+  "jobDescription": "Job description"
+}
+```
+
+    ### 📋 Get Specific Candidates
 ```bash
 POST /api/candidates/bulk
 Content-Type: application/json
@@ -84,8 +96,19 @@ GET /api/jobs/{job_id}
 
 ### ⚙️ Scoring Configuration
 ```bash
-GET /api/scoring
+# Get scoring config for company
+GET /api/scoring?com_id={company_id}
+
+# Update scoring config for company
 POST /api/scoring
+Content-Type: application/json
+{
+  "com_id": "company_id",
+  "openToWork": 30,
+  "skillMatch": 30,
+  "jobStability": 20,
+  "platformEngagement": 20
+}
 ```
 
 ### 📤 Export Data
@@ -132,9 +155,12 @@ GET /api/websocket/info
 | `/api/candidates/{id}` | `com_id` |
 | `/api/candidates/inactive` | `com_id` |
 | `/api/candidates/{id}/resume-status` | `com_id` in body |
+| `/api/candidates/{id}/scores` | `com_id` in body + scores |
 | `/api/eezo/upload-resume` | `com_id`, `resume` file |
 | `/api/eezo/resume-data/{com_id}` | `com_id` in path |
 | `/api/eezo/status/{com_id}` | `com_id` in path |
+| `/api/scoring` (GET) | `com_id` in query |
+| `/api/scoring` (POST) | `com_id` in body + weights |
 
 ---
 
@@ -238,6 +264,29 @@ const upload = await fetch('http://localhost:5000/api/eezo/upload-resume', {
 
 # Third page
 ?limit=10&offset=20
+```
+
+---
+
+## Individual Scoring System
+
+Each candidate gets individual scores (0-10) automatically calculated:
+
+- **`openToWorkScore`**: LinkedIn flags + summary analysis
+- **`jobStabilityScore`**: Tenure, job changes, gaps, continuity  
+- **`platformEngagementScore`**: LinkedIn activity, connections, profile completeness
+- **`skillMatchScore`**: Skill matching (placeholder for JD-specific matching)
+
+### Scoring Configuration Weights
+Total must equal 100%. Default: 25% each.
+
+```json
+{
+  "openToWork": 30,      // % weight for open to work
+  "skillMatch": 30,      // % weight for skill matching  
+  "jobStability": 20,    // % weight for job stability
+  "platformEngagement": 20  // % weight for platform engagement
+}
 ```
 
 ---

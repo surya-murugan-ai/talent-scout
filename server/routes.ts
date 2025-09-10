@@ -558,35 +558,52 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Update scoring configuration
   app.post("/api/scoring", async (req, res) => {
     try {
-      const weights = scoringWeightsSchema.parse(req.body);
+      const { com_id, ...weights } = req.body;
+      
+      if (!com_id) {
+        return res.status(400).json({ error: "com_id is required" });
+      }
+      
+      const validatedWeights = scoringWeightsSchema.parse(weights);
       
       // Validate weights sum to 100
-      const total = weights.openToWork + weights.skillMatch + weights.jobStability + weights.engagement;
+      const total = validatedWeights.openToWork + validatedWeights.skillMatch + validatedWeights.jobStability + validatedWeights.platformEngagement;
       if (Math.abs(total - 100) > 0.1) {
         return res.status(400).json({ 
           error: "Scoring weights must sum to 100%" 
         });
       }
 
-      // Update default project scoring weights
-      const project = await storage.updateProject("default-project", {
-        scoringWeights: weights
-      });
+      // Check if config exists for this company
+      const existingConfig = await storage.getScoringConfig(com_id);
+      
+      let config;
+      if (existingConfig) {
+        // Update existing config
+        config = await storage.updateScoringConfig(com_id, validatedWeights);
+      } else {
+        // Create new config
+        config = await storage.createScoringConfig({
+          comId: com_id,
+          ...validatedWeights
+        });
+      }
 
-      if (!project) {
-        return res.status(404).json({ error: "Project not found" });
+      if (!config) {
+        return res.status(404).json({ error: "Failed to save scoring configuration" });
       }
 
       // Log activity
       await storage.createActivity({
         type: "scoring_update",
         message: "Scoring model updated",
-        details: `OpenAI weights reconfigured: OTW:${weights.openToWork}% SM:${weights.skillMatch}% JS:${weights.jobStability}% E:${weights.engagement}%`
+        details: `Scoring weights updated for ${com_id}: OTW:${validatedWeights.openToWork}% SM:${validatedWeights.skillMatch}% JS:${validatedWeights.jobStability}% PE:${validatedWeights.platformEngagement}%`
       });
 
       res.json({
+        success: true,
         message: "Scoring weights updated successfully",
-        weights
+        data: config
       });
 
     } catch (error) {
@@ -745,11 +762,35 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Get current scoring configuration
   app.get("/api/scoring", async (req, res) => {
     try {
-      const project = await storage.getProject("default-project");
-      if (!project) {
-        return res.status(404).json({ error: "Project not found" });
+      const com_id = req.query.com_id as string;
+      
+      if (!com_id) {
+        return res.status(400).json({ error: "com_id query parameter is required" });
       }
-      res.json(project.scoringWeights);
+      
+      const config = await storage.getScoringConfig(com_id);
+      
+      if (!config) {
+        // Return default configuration if none exists
+        const defaultConfig = {
+          comId: com_id,
+          openToWork: 25,
+          skillMatch: 25,
+          jobStability: 25,
+          platformEngagement: 25
+        };
+        return res.json({
+          success: true,
+          data: defaultConfig,
+          isDefault: true
+        });
+      }
+      
+      res.json({
+        success: true,
+        data: config,
+        isDefault: false
+      });
     } catch (error) {
       res.status(500).json({ 
         error: "Failed to fetch scoring configuration",
@@ -1690,6 +1731,106 @@ export async function registerRoutes(app: Express): Promise<Server> {
         error: "Failed to fetch inactive candidates",
         message: error instanceof Error ? error.message : "Unknown error",
         code: "FETCH_INACTIVE_ERROR"
+      });
+    }
+  });
+
+  // Update candidate scores (for external team integration)
+  app.patch("/api/candidates/:candidateId/scores", async (req, res) => {
+    try {
+      const { candidateId } = req.params;
+      const { com_id, skillMatchScore, totalScore, jobDescription } = req.body;
+      
+      if (!com_id) {
+        return res.status(400).json({ 
+          error: "Company ID (com_id) is required",
+          code: "MISSING_COMPANY_ID"
+        });
+      }
+      
+      if (skillMatchScore === undefined && totalScore === undefined) {
+        return res.status(400).json({ 
+          error: "At least one score (skillMatchScore or totalScore) must be provided",
+          code: "MISSING_SCORES"
+        });
+      }
+      
+      // Validate score ranges
+      if (skillMatchScore !== undefined && (skillMatchScore < 0 || skillMatchScore > 10)) {
+        return res.status(400).json({ 
+          error: "skillMatchScore must be between 0 and 10",
+          code: "INVALID_SCORE_RANGE"
+        });
+      }
+      
+      if (totalScore !== undefined && (totalScore < 0 || totalScore > 10)) {
+        return res.status(400).json({ 
+          error: "totalScore must be between 0 and 10",
+          code: "INVALID_SCORE_RANGE"
+        });
+      }
+      
+      // Get existing candidate to verify it belongs to the company
+      const existingCandidate = await storage.getCandidate(candidateId, com_id);
+      if (!existingCandidate) {
+        return res.status(404).json({ 
+          error: "Candidate not found or doesn't belong to the specified company",
+          code: "CANDIDATE_NOT_FOUND"
+        });
+      }
+      
+      // Prepare update data
+      const updateData: any = {};
+      if (skillMatchScore !== undefined) {
+        updateData.skillMatchScore = skillMatchScore;
+      }
+      if (totalScore !== undefined) {
+        updateData.score = totalScore;
+        // Update priority based on total score
+        if (totalScore >= 7) updateData.priority = 'High';
+        else if (totalScore >= 5) updateData.priority = 'Medium';
+        else updateData.priority = 'Low';
+        updateData.hireabilityScore = totalScore;
+        updateData.potentialToJoin = updateData.priority;
+      }
+      
+      // Update candidate
+      const updatedCandidate = await storage.updateCandidate(candidateId, updateData);
+      
+      if (!updatedCandidate) {
+        return res.status(500).json({ 
+          error: "Failed to update candidate scores",
+          code: "UPDATE_FAILED"
+        });
+      }
+      
+      // Log activity
+      await storage.createActivity({
+        type: "score_update",
+        message: "Candidate scores updated by external team",
+        details: `Candidate ${candidateId}: skillMatch=${skillMatchScore}, totalScore=${totalScore}, jobDescription=${jobDescription || 'N/A'}`
+      });
+      
+      res.json({
+        success: true,
+        data: {
+          candidateId: candidateId,
+          name: updatedCandidate.name,
+          comId: com_id,
+          skillMatchScore: updatedCandidate.skillMatchScore,
+          totalScore: updatedCandidate.score,
+          priority: updatedCandidate.priority,
+          updatedAt: new Date().toISOString()
+        },
+        message: "Candidate scores updated successfully"
+      });
+      
+    } catch (error) {
+      console.error('Update candidate scores error:', error);
+      res.status(500).json({ 
+        error: "Failed to update candidate scores",
+        message: error instanceof Error ? error.message : "Unknown error",
+        code: "UPDATE_SCORES_ERROR"
       });
     }
   });

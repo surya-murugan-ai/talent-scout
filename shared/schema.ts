@@ -77,6 +77,12 @@ export const candidates = pgTable("candidates", {
   openToWork: boolean("open_to_work").default(false),
   lastActive: text("last_active"),
   
+  // Individual Score Components (0-10 scale)
+  openToWorkScore: real("open_to_work_score").default(0), // Open to work score
+  skillMatchScore: real("skill_match_score").default(0), // Skill match score
+  jobStabilityScore: real("job_stability_score").default(0), // Job stability score
+  platformEngagementScore: real("platform_engagement_score").default(0), // Platform engagement score
+  
   // Resume Status
   resumeStatus: text("resume_status").default("active"), // active, inactive
   
@@ -160,12 +166,22 @@ export const activities = pgTable("activities", {
   createdAt: timestamp("created_at").default(sql`now()`),
 });
 
+export const scoringConfigs = pgTable("scoring_configs", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  comId: varchar("com_id").notNull().unique(), // Company ID
+  openToWork: integer("open_to_work").default(25), // Percentage (0-100)
+  skillMatch: integer("skill_match").default(25), // Percentage (0-100)
+  jobStability: integer("job_stability").default(25), // Percentage (0-100)
+  platformEngagement: integer("platform_engagement").default(25), // Percentage (0-100)
+  createdAt: timestamp("created_at").default(sql`now()`),
+  updatedAt: timestamp("updated_at").default(sql`now()`),
+});
+
 // Insert schemas
 export const insertUserSchema = createInsertSchema(users).omit({ id: true });
 export const insertCandidateSchema = createInsertSchema(candidates).omit({ 
   id: true, 
-  createdAt: true, 
-  updatedAt: true
+  createdAt: true
 });
 
 export const insertProjectSchema = createInsertSchema(projects).omit({ 
@@ -182,6 +198,11 @@ export const insertActivitySchema = createInsertSchema(activities).omit({
   id: true, 
   createdAt: true 
 });
+export const insertScoringConfigSchema = createInsertSchema(scoringConfigs).omit({ 
+  id: true, 
+  createdAt: true, 
+  updatedAt: true 
+});
 
 // Types
 export type User = typeof users.$inferSelect;
@@ -194,14 +215,15 @@ export type ProcessingJob = typeof processingJobs.$inferSelect;
 export type InsertProcessingJob = z.infer<typeof insertProcessingJobSchema>;
 export type Activity = typeof activities.$inferSelect;
 export type InsertActivity = z.infer<typeof insertActivitySchema>;
+export type ScoringConfig = typeof scoringConfigs.$inferSelect;
+export type InsertScoringConfig = z.infer<typeof insertScoringConfigSchema>;
 
 // Additional schemas for API requests
 export const scoringWeightsSchema = z.object({
   openToWork: z.number().min(0).max(100),
   skillMatch: z.number().min(0).max(100),
   jobStability: z.number().min(0).max(100),
-  engagement: z.number().min(0).max(100),
-  companyDifference: z.number().min(0).max(100), // New factor for company difference
+  platformEngagement: z.number().min(0).max(100),
 });
 
 export type ScoringWeights = z.infer<typeof scoringWeightsSchema>;

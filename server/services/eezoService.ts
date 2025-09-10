@@ -4,6 +4,8 @@ import { eq, and, sql } from 'drizzle-orm';
 import { ResumeParser } from './resumeParser.js';
 import { linkedInService } from './linkedin.js';
 import { analyzeCandidate } from './openai.js';
+import { IndividualScoringService } from './individualScoringService.js';
+import { storage } from '../storage.js';
 
 interface EeezoResumeRequest {
   comId: string;
@@ -80,7 +82,7 @@ export class EeezoService {
         eeezoStatus: 'uploaded',
         
         // Basic Information
-        name: extractedData.name,
+        name: extractedData.name || "Unknown",
         email: extractedData.email || null,
         phone: extractedData.phone || null,
         title: extractedData.title || null,
@@ -93,7 +95,7 @@ export class EeezoService {
         
         // Resume-specific fields
         filename: filename,
-        rawText: extractedData.rawText || null,
+        rawText: extractedData.originalData?.rawText || null,
         experience: extractedData.experience || [],
         education: extractedData.education || [],
         projects: extractedData.projects || [],
@@ -117,11 +119,11 @@ export class EeezoService {
         // Work history (same as experience for now)
         workHistory: extractedData.experience || [],
         
-        // Additional fields from resume
-        salary: extractedData.salary || null,
-        availability: extractedData.availability || null,
-        remotePreference: extractedData.remotePreference || null,
-        visaStatus: extractedData.visaStatus || null,
+        // Additional fields from resume (not available in current extraction)
+        salary: null,
+        availability: null,
+        remotePreference: null,
+        visaStatus: null,
         
         // Data source and processing
         source: 'eezo',
@@ -258,44 +260,129 @@ export class EeezoService {
           .set(updateData)
           .where(eq(candidates.id, candidateId));
         
-        // Perform AI analysis
+        // Perform individual scoring analysis
         try {
-          const analysis = await analyzeCandidate(updateData, '', {
-            openToWork: 30,
-            skillMatch: 25,
-            jobStability: 15,
-            engagement: 15,
-            companyDifference: 15
-          });
+          // Get candidate data for scoring
+          const candidateData = await db.select()
+            .from(candidates)
+            .where(eq(candidates.id, candidateId))
+            .limit(1);
           
-          // Update with analysis results
-          await db.update(candidates)
-            .set({
-              score: analysis.overallScore,
-              priority: analysis.priority,
-              hireabilityScore: analysis.overallScore, // Use overallScore as hireability score
-              potentialToJoin: analysis.priority === 'High' ? 'High' : analysis.priority === 'Medium' ? 'Medium' : 'Low',
-              hireabilityFactors: analysis.insights,
-              eeezoStatus: 'completed'
-            })
-            .where(eq(candidates.id, candidateId));
+          if (candidateData[0]) {
+            const candidate = candidateData[0];
+            
+            // Calculate individual scores
+            const individualScores = IndividualScoringService.calculateIndividualScores({
+              name: candidate.name || undefined,
+              email: candidate.email || undefined,
+              summary: candidate.summary || candidate.linkedinSummary || undefined,
+              openToWork: candidate.openToWork || undefined,
+              linkedinLastActive: candidate.linkedinLastActive || undefined,
+              linkedinConnections: candidate.linkedinConnections || undefined,
+              linkedinNotes: candidate.linkedinNotes || undefined,
+              linkedinSummary: candidate.linkedinSummary || undefined,
+              experience: Array.isArray(candidate.experience) ? candidate.experience : [],
+              skills: Array.isArray(candidate.skills) ? candidate.skills : []
+            });
+            
+            // Calculate overall priority based on individual scores
+            const avgScore = (individualScores.openToWorkScore + individualScores.jobStabilityScore + individualScores.platformEngagementScore) / 3;
+            let priority = 'Low';
+            if (avgScore >= 7) priority = 'High';
+            else if (avgScore >= 5) priority = 'Medium';
+            
+            // Update with individual scores
+            await db.update(candidates)
+              .set({
+                openToWorkScore: individualScores.openToWorkScore,
+                jobStabilityScore: individualScores.jobStabilityScore,
+                platformEngagementScore: individualScores.platformEngagementScore,
+                skillMatchScore: individualScores.skillMatchScore,
+                priority: priority,
+                hireabilityScore: avgScore,
+                potentialToJoin: priority,
+                eeezoStatus: 'completed'
+              })
+              .where(eq(candidates.id, candidateId));
+            
+            console.log(`✅ Individual scoring completed for candidate ${candidateId}:`, {
+              openToWork: individualScores.openToWorkScore,
+              jobStability: individualScores.jobStabilityScore,
+              platformEngagement: individualScores.platformEngagementScore,
+              priority,
+              avgScore
+            });
+          }
           
         } catch (analysisError) {
-          console.warn('AI analysis failed:', analysisError);
+          console.warn('Individual scoring failed:', analysisError);
         }
         
         console.log(`LinkedIn enrichment completed for candidate ${candidateId}`);
         
       } else {
-        // No LinkedIn data found
-        await db.update(candidates)
-          .set({ 
-            enrichmentStatus: 'completed',
-            enrichmentDate: new Date(),
-            enrichmentSource: 'none',
-            eeezoStatus: 'completed'
-          })
-          .where(eq(candidates.id, candidateId));
+        // No LinkedIn data found - still perform individual scoring with resume data only
+        try {
+          const candidateData = await db.select()
+            .from(candidates)
+            .where(eq(candidates.id, candidateId))
+            .limit(1);
+          
+          if (candidateData[0]) {
+            const candidate = candidateData[0];
+            
+            // Calculate individual scores (without LinkedIn data)
+            const individualScores = IndividualScoringService.calculateIndividualScores({
+              name: candidate.name || undefined,
+              email: candidate.email || undefined,
+              summary: candidate.summary || undefined,
+              openToWork: candidate.openToWork || false,
+              experience: Array.isArray(candidate.experience) ? candidate.experience : [],
+              skills: Array.isArray(candidate.skills) ? candidate.skills : []
+            });
+            
+            // Calculate overall priority based on available scores
+            const avgScore = (individualScores.openToWorkScore + individualScores.jobStabilityScore) / 2; // No platform engagement without LinkedIn
+            let priority = 'Low';
+            if (avgScore >= 7) priority = 'High';
+            else if (avgScore >= 5) priority = 'Medium';
+            
+            await db.update(candidates)
+              .set({ 
+                enrichmentStatus: 'completed',
+                enrichmentDate: new Date(),
+                enrichmentSource: 'none',
+                openToWorkScore: individualScores.openToWorkScore,
+                jobStabilityScore: individualScores.jobStabilityScore,
+                platformEngagementScore: 0, // No LinkedIn data available
+                skillMatchScore: individualScores.skillMatchScore,
+                priority: priority,
+                hireabilityScore: avgScore,
+                potentialToJoin: priority,
+                eeezoStatus: 'completed'
+              })
+              .where(eq(candidates.id, candidateId));
+              
+            console.log(`✅ Resume-only scoring completed for candidate ${candidateId}:`, {
+              openToWork: individualScores.openToWorkScore,
+              jobStability: individualScores.jobStabilityScore,
+              platformEngagement: 0,
+              priority,
+              avgScore
+            });
+          }
+        } catch (scoringError) {
+          console.warn('Resume-only scoring failed:', scoringError);
+          // Fallback update
+          await db.update(candidates)
+            .set({ 
+              enrichmentStatus: 'completed',
+              enrichmentDate: new Date(),
+              enrichmentSource: 'none',
+              eeezoStatus: 'completed'
+            })
+            .where(eq(candidates.id, candidateId));
+        }
       }
       
     } catch (error) {

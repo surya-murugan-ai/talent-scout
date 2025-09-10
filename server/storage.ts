@@ -9,11 +9,14 @@ import {
   type InsertProcessingJob,
   type Activity,
   type InsertActivity,
+  type ScoringConfig,
+  type InsertScoringConfig,
   users,
   candidates,
   projects,
   processingJobs,
-  activities
+  activities,
+  scoringConfigs
 } from "@shared/schema";
 import { randomUUID } from "crypto";
 import { drizzle } from 'drizzle-orm/neon-http';
@@ -75,6 +78,11 @@ export interface IStorage {
   // Activities
   getRecentActivities(limit?: number): Promise<Activity[]>;
   createActivity(activity: InsertActivity): Promise<Activity>;
+
+  // Scoring Configuration
+  getScoringConfig(comId: string): Promise<ScoringConfig | undefined>;
+  createScoringConfig(config: InsertScoringConfig): Promise<ScoringConfig>;
+  updateScoringConfig(comId: string, config: Partial<ScoringConfig>): Promise<ScoringConfig | undefined>;
   
   // Resume status management
   updateCandidateResumeStatus(candidateId: string, status: 'active' | 'inactive', comId?: string): Promise<Candidate | undefined>;
@@ -406,6 +414,38 @@ export class PostgresStorage implements IStorage {
   async createActivity(insertActivity: InsertActivity): Promise<Activity> {
     const result = await db.insert(activities).values(insertActivity).returning();
     return result[0];
+  }
+
+  // Scoring Configuration methods
+  async getScoringConfig(comId: string): Promise<ScoringConfig | undefined> {
+    try {
+      const result = await db.select()
+        .from(scoringConfigs)
+        .where(eq(scoringConfigs.comId, comId))
+        .limit(1);
+      return result[0];
+    } catch (error) {
+      console.error('Error fetching scoring config:', error);
+      return undefined;
+    }
+  }
+
+  async createScoringConfig(config: InsertScoringConfig): Promise<ScoringConfig> {
+    const result = await db.insert(scoringConfigs).values(config).returning();
+    return result[0];
+  }
+
+  async updateScoringConfig(comId: string, config: Partial<ScoringConfig>): Promise<ScoringConfig | undefined> {
+    try {
+      const result = await db.update(scoringConfigs)
+        .set({ ...config, updatedAt: new Date() })
+        .where(eq(scoringConfigs.comId, comId))
+        .returning();
+      return result[0];
+    } catch (error) {
+      console.error('Error updating scoring config:', error);
+      return undefined;
+    }
   }
 
   // Eeezo-specific methods

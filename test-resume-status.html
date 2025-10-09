@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Status Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .candidate-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+        .status-active {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .status-inactive {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        button:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+        }
+        .loading {
+            color: #007bff;
+            font-style: italic;
+        }
+        .error {
+            color: #dc3545;
+            background: #f8d7da;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .success {
+            color: #155724;
+            background: #d4edda;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        input, select {
+            font-size: 14px;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+        }
+        .manual-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+        .manual-section h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h1>🧪 Resume Status Management Test</h1>
+            <button onclick="window.location.href='test-eezo-upload.html'" style="background: #28a745;">
+                📤 Upload Resume
+            </button>
+        </div>
+        
+        <div>
+            <button onclick="loadCandidates()">🔄 Load Active Candidates</button>
+            <button onclick="testStatusUpdate()">⚡ Test Status Update</button>
+        </div>
+        
+        <!-- Manual Status Update Section -->
+        <div class="manual-section">
+            <h3>🎯 Manual Status Update</h3>
+            <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                <label for="candidateIdInput"><strong>Candidate ID:</strong></label>
+                <input 
+                    type="text" 
+                    id="candidateIdInput" 
+                    placeholder="Enter candidate ID" 
+                    style="flex: 1; min-width: 200px; padding: 8px; border: 1px solid #ddd; border-radius: 4px;"
+                >
+                <select id="statusSelect" style="padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                    <option value="inactive">Set to Inactive</option>
+                    <option value="active">Set to Active</option>
+                </select>
+                <button onclick="updateStatusManually()" style="background: #28a745;">
+                    📝 Update Status
+                </button>
+                <button onclick="fillWithFirstCandidate()" style="background: #17a2b8;">
+                    🔍 Use First Candidate
+                </button>
+                <button onclick="copyCandidateId()" style="background: #6c757d;">
+                    📋 Copy ID
+                </button>
+            </div>
+            <div id="manualUpdateResult" style="margin-top: 10px;"></div>
+        </div>
+        
+        <div id="status"></div>
+        <div id="candidates"></div>
+    </div>
+
+    <script>
+        const BASE_URL = 'http://localhost:5000';
+        let candidates = [];
+
+        async function loadCandidates() {
+            const statusDiv = document.getElementById('status');
+            const candidatesDiv = document.getElementById('candidates');
+            
+            statusDiv.innerHTML = '<div class="loading">Loading active candidates...</div>';
+            candidatesDiv.innerHTML = '';
+            
+            try {
+                const response = await fetch(`${BASE_URL}/api/candidates`);
+                const data = await response.json();
+                
+                candidates = data;
+                
+                if (candidates.length === 0) {
+                    statusDiv.innerHTML = '<div class="error">No active candidates found</div>';
+                    return;
+                }
+                
+                statusDiv.innerHTML = `<div class="success">Found ${candidates.length} active candidates</div>`;
+                
+                candidatesDiv.innerHTML = candidates.map(candidate => `
+                    <div class="candidate-card">
+                        <h3>${candidate.name || 'Unknown'}</h3>
+                        <p><strong>ID:</strong> ${candidate.id}</p>
+                        <p><strong>Status:</strong> <span class="status-${candidate.resumeStatus || 'active'}">${candidate.resumeStatus || 'active'}</span></p>
+                        <p><strong>Title:</strong> ${candidate.title || 'N/A'}</p>
+                        <p><strong>Company:</strong> ${candidate.company || 'N/A'}</p>
+                        <p><strong>Score:</strong> ${candidate.score || 0}</p>
+                        <button onclick="updateStatus('${candidate.id}', 'inactive')" ${candidate.resumeStatus === 'inactive' ? 'disabled' : ''}>
+                            Set Inactive
+                        </button>
+                        <button onclick="updateStatus('${candidate.id}', 'active')" ${candidate.resumeStatus === 'active' ? 'disabled' : ''}>
+                            Set Active
+                        </button>
+                    </div>
+                `).join('');
+                
+            } catch (error) {
+                statusDiv.innerHTML = `<div class="error">Error loading candidates: ${error.message}</div>`;
+            }
+        }
+
+        async function updateStatus(candidateId, status) {
+            const statusDiv = document.getElementById('status');
+            
+            statusDiv.innerHTML = `<div class="loading">Updating status to ${status}...</div>`;
+            
+            try {
+                const response = await fetch(`${BASE_URL}/api/candidates/${candidateId}/resume-status`, {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ status })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    statusDiv.innerHTML = `<div class="success">✅ ${result.data.message}</div>`;
+                    // Reload candidates to show updated status
+                    setTimeout(loadCandidates, 1000);
+                } else {
+                    statusDiv.innerHTML = `<div class="error">❌ ${result.error}</div>`;
+                }
+                
+            } catch (error) {
+                statusDiv.innerHTML = `<div class="error">❌ Error updating status: ${error.message}</div>`;
+            }
+        }
+
+        async function testStatusUpdate() {
+            if (candidates.length === 0) {
+                document.getElementById('status').innerHTML = '<div class="error">Please load candidates first</div>';
+                return;
+            }
+            
+            const candidate = candidates[0];
+            const statusDiv = document.getElementById('status');
+            
+            statusDiv.innerHTML = '<div class="loading">Running automated test...</div>';
+            
+            try {
+                // Test 1: Set to inactive
+                await updateStatus(candidate.id, 'inactive');
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                // Test 2: Load candidates (should show one less)
+                const response1 = await fetch(`${BASE_URL}/api/candidates`);
+                const data1 = await response1.json();
+                
+                statusDiv.innerHTML += `<div class="success">After setting inactive: ${data1.length} active candidates (was ${candidates.length})</div>`;
+                
+                // Test 3: Set back to active
+                await updateStatus(candidate.id, 'active');
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                // Test 4: Load candidates (should show original count)
+                const response2 = await fetch(`${BASE_URL}/api/candidates`);
+                const data2 = await response2.json();
+                
+                statusDiv.innerHTML += `<div class="success">After setting active: ${data2.length} active candidates</div>`;
+                statusDiv.innerHTML += '<div class="success">✅ Automated test completed successfully!</div>';
+                
+                // Reload the display
+                loadCandidates();
+                
+            } catch (error) {
+                statusDiv.innerHTML = `<div class="error">❌ Test failed: ${error.message}</div>`;
+            }
+        }
+
+        // Manual status update functions
+        async function updateStatusManually() {
+            const candidateId = document.getElementById('candidateIdInput').value.trim();
+            const status = document.getElementById('statusSelect').value;
+            const resultDiv = document.getElementById('manualUpdateResult');
+            
+            if (!candidateId) {
+                resultDiv.innerHTML = '<div class="error">❌ Please enter a candidate ID</div>';
+                return;
+            }
+            
+            resultDiv.innerHTML = '<div class="loading">Updating status...</div>';
+            
+            try {
+                console.log('Making PATCH request to:', `${BASE_URL}/api/candidates/${candidateId}/resume-status`);
+                console.log('Request body:', JSON.stringify({ status }));
+                
+                const response = await fetch(`${BASE_URL}/api/candidates/${candidateId}/resume-status`, {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ status })
+                });
+                
+                console.log('Response status:', response.status);
+                console.log('Response headers:', response.headers);
+                
+                const result = await response.json();
+                console.log('Response data:', result);
+                
+                if (result.success) {
+                    resultDiv.innerHTML = `
+                        <div class="success">
+                            ✅ ${result.data.message}<br>
+                            <strong>Candidate:</strong> ${result.data.name}<br>
+                            <strong>New Status:</strong> ${result.data.resumeStatus}
+                        </div>
+                    `;
+                    
+                    // Reload candidates to show updated status
+                    setTimeout(loadCandidates, 1000);
+                } else {
+                    resultDiv.innerHTML = `<div class="error">❌ ${result.error}</div>`;
+                }
+                
+            } catch (error) {
+                console.error('Error updating status:', error);
+                resultDiv.innerHTML = `<div class="error">❌ Error updating status: ${error.message}<br>Check browser console for details.</div>`;
+            }
+        }
+
+        function fillWithFirstCandidate() {
+            if (candidates.length > 0) {
+                const candidate = candidates[0];
+                document.getElementById('candidateIdInput').value = candidate.id;
+                document.getElementById('manualUpdateResult').innerHTML = `
+                    <div class="success">
+                        ✅ Filled with first candidate:<br>
+                        <strong>Name:</strong> ${candidate.name}<br>
+                        <strong>ID:</strong> ${candidate.id}<br>
+                        <strong>Current Status:</strong> ${candidate.resumeStatus || 'active'}
+                    </div>
+                `;
+            } else {
+                document.getElementById('manualUpdateResult').innerHTML = '<div class="error">❌ No candidates loaded. Please load candidates first.</div>';
+            }
+        }
+
+        function copyCandidateId() {
+            const candidateIdInput = document.getElementById('candidateIdInput');
+            if (candidateIdInput.value) {
+                navigator.clipboard.writeText(candidateIdInput.value).then(() => {
+                    document.getElementById('manualUpdateResult').innerHTML = '<div class="success">✅ Candidate ID copied to clipboard!</div>';
+                }).catch(() => {
+                    document.getElementById('manualUpdateResult').innerHTML = '<div class="error">❌ Failed to copy to clipboard</div>';
+                });
+            } else {
+                document.getElementById('manualUpdateResult').innerHTML = '<div class="error">❌ No candidate ID to copy</div>';
+            }
+        }
+
+        // Load candidates on page load
+        window.onload = loadCandidates;
+    </script>
+</body>
+</html>

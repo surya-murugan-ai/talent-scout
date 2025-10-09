@@ -1,0 +1,97 @@
+{
+  "filename": "4b703eb2-3c76-4cd5-9cf6-dc686622fe71.pdf",
+  "timestamp": "2025-09-29T08:59:09.093Z",
+  "processingTime": 4048,
+  "confidence": 80,
+  "rawText": "\n\nSubhash Kumar A\nKasaragod, Kerala\nsubhashka752woj4c_wya@indeedemail.com\n+91 70340 46701\nTo execute my innovative ideas in a challenging field for an organization.\nWilling to relocate: Anywhere\nWork Experience\nPHP Developer\nIntegrated redcherry solution\nJanuary 2022 to July 2022\n• Six months internship with training at Integrated Redcherry\nSolutions Pvt Ltd as PHP Devleoper.\nBiodata:\nName: Subhash Kumar A\nDate of Birth: 25-09-1995\nGender: Male\nNationality: Indian\nEducation\nMaster's in Computer Science\nKannur University - Kerala\nJune 2016 to April 2018\nBachelor's in Computer Science\nKannur University - Kerala\nJune 2013 to May 2016\nHSC in Science\nState board - Kerala\nJune 2011 to March 2013\nSSLC\nState Board\n2011\nSkills / IT Skills\n•Fundamentals of C and C++, Java, php, html.\n•PHP\n\n•MySQL\n•JavaScript\n•HTML5\n•AJAX\n•CSS",
+  "extractedData": {
+    "name": "Subhash Kumar A",
+    "email": "subhashka752woj4c_wya@indeedemail.com",
+    "phone": "+91 70340 46701",
+    "linkedinUrl": null,
+    "githubUrl": null,
+    "portfolioUrl": null,
+    "location": "Kasaragod, Kerala",
+    "title": null,
+    "summary": "To execute my innovative ideas in a challenging field for an organization.",
+    "experience": [
+      {
+        "jobTitle": "PHP Developer",
+        "company": "Integrated Redcherry Solutions Pvt Ltd",
+        "duration": "January 2022 - July 2022",
+        "startDate": "2022-01",
+        "endDate": "2022-07",
+        "techUsed": [
+          "PHP"
+        ],
+        "description": "Six months internship with training at Integrated Redcherry Solutions Pvt Ltd as PHP Developer.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Master's",
+        "field": "Computer Science",
+        "university": "Kannur University",
+        "year": "2018",
+        "percentage": null,
+        "gpa": null,
+        "location": "Kerala"
+      },
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science",
+        "university": "Kannur University",
+        "year": "2016",
+        "percentage": null,
+        "gpa": null,
+        "location": "Kerala"
+      },
+      {
+        "degree": "HSC",
+        "field": "Science",
+        "university": "State board",
+        "year": "2013",
+        "percentage": null,
+        "gpa": null,
+        "location": "Kerala"
+      },
+      {
+        "degree": "SSLC",
+        "field": null,
+        "university": "State Board",
+        "year": "2011",
+        "percentage": null,
+        "gpa": null,
+        "location": null
+      }
+    ],
+    "projects": [],
+    "achievements": [],
+    "certifications": [],
+    "skills": [
+      "Fundamentals of C and C++",
+      "Java",
+      "PHP",
+      "HTML",
+      "MySQL",
+      "JavaScript",
+      "HTML5",
+      "AJAX",
+      "CSS"
+    ],
+    "interests": [],
+    "languages": [],
+    "salary": null,
+    "availability": null,
+    "remotePreference": null,
+    "visaStatus": null,
+    "originalData": {
+      "filename": "4b703eb2-3c76-4cd5-9cf6-dc686622fe71.pdf",
+      "rawText": "Subhash Kumar A Kasaragod, Kerala subhashka752woj4c_wya@indeedemail.com +91 70340 46701 To execute my innovative ideas in a challenging field for an organization. Willing to relocate: Anywhere Work Experience PHP Developer Integrated redcherry solution January 2022 to July 2022 • Six months internship with training at Integrated Redcherry Solutions Pvt Ltd as PHP Devleoper. Biodata: Name: Subhash Kumar A Date of Birth: 25-09-1995 Gender: Male Nationality: Indian Education Master's in Computer Science Kannur University - Kerala June 2016 to April 2018 Bachelor's in Computer Science Kannur University - Kerala June 2013 to May 2016 HSC in Science State board - Kerala June 2011 to March 2013 SSLC State Board 2011 Skills / IT Skills •Fundamentals of C and C++, Java, php, html. •PHP •MySQL •JavaScript •HTML5 •AJAX •CSS"
+    },
+    "source": "resume",
+    "confidence": 80,
+    "processingTime": 0
+  }
+}

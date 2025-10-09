@@ -1,0 +1,413 @@
+{
+  "timestamp": "2025-10-09T06:46:42.016Z",
+  "searchQuery": "suriyakanth M react developer nirals",
+  "rawData": [
+    {
+      "id": "ACoAADoB7z0BL9IF01OMdLxR6_y1SaJZZcRS_uA",
+      "publicIdentifier": "suriyakanth-m-625b11231",
+      "linkedinUrl": "https://www.linkedin.com/in/suriyakanth-m-625b11231",
+      "firstName": "SURIYAKANTH",
+      "lastName": "M",
+      "headline": "React Developer at Nirals InfoTech | MCA Graduate with AI & ML Specialization | Building AI-Integrated Applications",
+      "about": "React Developer at Nirals InfoTech with experience in building modern web applications and integrating AI-driven features. MCA graduate with specialization in AI & ML, with award-winning projects in face recognition and emotion detection. Passionate about creating smarter, user-focused applications by blending web technologies with machine learning.",
+      "openToWork": false,
+      "hiring": false,
+      "photo": "https://media.licdn.com/dms/image/v2/D5603AQE_QyuKU6VzSg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1732200391670?e=1762992000&v=beta&t=Rf_AnHc1FrJpWA6Bu7BCiUhBoa_NVnWDVi6eAOpKN3U",
+      "premium": false,
+      "influencer": false,
+      "location": {
+        "linkedinText": "Sattur, Tamil Nadu, India",
+        "countryCode": "IN",
+        "parsed": {
+          "text": "Sattur, India",
+          "countryCode": "IN",
+          "regionCode": null,
+          "country": "India",
+          "countryFull": "India",
+          "state": "Tamil Nadu",
+          "city": "Sattur"
+        }
+      },
+      "verified": false,
+      "registeredAt": "2022-02-17T16:33:18.987Z",
+      "topSkills": null,
+      "connectionsCount": 15,
+      "followerCount": 16,
+      "currentPosition": [
+        {
+          "companyId": "16153648",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/16153648/",
+          "companyName": "Nirals",
+          "dateRange": {
+            "start": {
+              "month": 8,
+              "year": 2025,
+              "day": null
+            },
+            "end": null
+          }
+        }
+      ],
+      "profileTopEducation": [
+        {
+          "schoolId": "203655",
+          "companyId": "15106441",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/15106441/",
+          "schoolName": "AYYA NADAR JANAKI AMMAL COLLEGE"
+        }
+      ],
+      "experience": [
+        {
+          "position": "React Developer",
+          "location": "Kovilpatti, Tamil Nadu, India",
+          "employmentType": "Full-time",
+          "workplaceType": "On-site",
+          "companyName": "Nirals",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/nirals/",
+          "companyId": "16153648",
+          "companyUniversalName": "nirals",
+          "duration": "3 mos",
+          "description": null,
+          "skills": [
+            "React.js",
+            "Front-End Development",
+            "Flutter",
+            "Node.js",
+            "MongoDB",
+            "PHP"
+          ],
+          "startDate": {
+            "month": "Aug",
+            "year": 2025,
+            "text": "Aug 2025"
+          },
+          "endDate": {
+            "text": "Present"
+          }
+        }
+      ],
+      "education": [
+        {
+          "schoolName": "AYYA NADAR JANAKI AMMAL COLLEGE",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/15106441/",
+          "degree": "Master of Computer Applications - MCA",
+          "fieldOfStudy": "Computer Science",
+          "skills": [
+            "Artificial Intelligence (AI)",
+            "HTML",
+            "English",
+            "MySQL",
+            "PHP",
+            "Problem Solving",
+            "React.js",
+            "Software Development"
+          ],
+          "insights": "Grade: First Class (D)",
+          "startDate": {
+            "month": "Jun",
+            "year": 2023,
+            "text": "Jun 2023"
+          },
+          "endDate": {
+            "month": "May",
+            "year": 2025,
+            "text": "May 2025"
+          },
+          "period": "Jun 2023 - May 2025"
+        },
+        {
+          "schoolName": "Sri Kaliswari College",
+          "schoolLinkedinUrl": "https://www.linkedin.com/search/results/all/?keywords=Sri+Kaliswari+College",
+          "degree": "Bachelor",
+          "fieldOfStudy": "Information Technology",
+          "skills": [],
+          "startDate": null,
+          "endDate": {
+            "text": ""
+          }
+        }
+      ],
+      "certifications": [],
+      "projects": [],
+      "volunteering": [],
+      "receivedRecommendations": [],
+      "skills": [
+        {
+          "name": "Front-End Development",
+          "positions": [
+            "React Developer at Nirals"
+          ]
+        },
+        {
+          "name": "Flutter",
+          "positions": [
+            "React Developer at Nirals"
+          ]
+        },
+        {
+          "name": "Node.js",
+          "positions": [
+            "React Developer at Nirals"
+          ]
+        },
+        {
+          "name": "MongoDB",
+          "positions": [
+            "React Developer at Nirals"
+          ]
+        },
+        {
+          "name": "Research and Development (R&D)"
+        },
+        {
+          "name": "Software Development",
+          "positions": [
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        },
+        {
+          "name": "BSC"
+        },
+        {
+          "name": "Problem Solving",
+          "positions": [
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        },
+        {
+          "name": "React.js",
+          "positions": [
+            "React Developer at Nirals",
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        },
+        {
+          "name": "PHP",
+          "positions": [
+            "React Developer at Nirals",
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        },
+        {
+          "name": "Artificial Intelligence (AI)",
+          "positions": [
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        },
+        {
+          "name": "English",
+          "positions": [
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        },
+        {
+          "name": "Programming"
+        },
+        {
+          "name": "Microsoft Office"
+        },
+        {
+          "name": "HTML",
+          "positions": [
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        },
+        {
+          "name": "Java"
+        },
+        {
+          "name": "C++"
+        },
+        {
+          "name": "MySQL",
+          "positions": [
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        }
+      ],
+      "publications": [],
+      "courses": [],
+      "patents": [],
+      "honorsAndAwards": [],
+      "languages": [],
+      "causes": [],
+      "featured": null,
+      "composeOptionType": "UPSELL",
+      "moreProfiles": [
+        {
+          "id": "ACoAACVaS0ABqh--ZNsaC2NcC3Vnnu2d6y1apyU",
+          "firstName": "Denise ",
+          "lastName": "Gonzalez",
+          "position": "Translator",
+          "publicIdentifier": "denise-gonzalez-ferrario-a28a56155",
+          "linkedinUrl": "https://www.linkedin.com/in/denise-gonzalez-ferrario-a28a56155"
+        },
+        {
+          "id": "ACoAAESXtxYBEtngRGMYY8oGsiuUiRiAH6N6HcE",
+          "firstName": "NANTHAKUMAR",
+          "lastName": "R",
+          "publicIdentifier": "nanthakumar-r-55a494281",
+          "linkedinUrl": "https://www.linkedin.com/in/nanthakumar-r-55a494281"
+        },
+        {
+          "id": "ACoAAESNVYUBHXSOaXWgG3mMPrIimmrpiu7PGCk",
+          "firstName": "Thareef",
+          "lastName": "Ahamed",
+          "publicIdentifier": "thareef-ahamed-8b1206281",
+          "linkedinUrl": "https://www.linkedin.com/in/thareef-ahamed-8b1206281"
+        },
+        {
+          "id": "ACoAACOAYrcB99dxivGRDqXloLiDwWPqhRNDarY",
+          "firstName": "Lucía",
+          "lastName": "Samartino",
+          "position": "Professional singer | Vocal coach | Remote recordings worldwide from professional studio",
+          "publicIdentifier": "luciasamartino",
+          "linkedinUrl": "https://www.linkedin.com/in/luciasamartino"
+        },
+        {
+          "id": "ACoAAC4n6kAB0snAVOTTPLwPJuWiiYJbOaK8krU",
+          "firstName": "Clara",
+          "lastName": "Bernaudo",
+          "position": "Bachelor's degree in Film Scoring",
+          "publicIdentifier": "clara-bernaudo-628401197",
+          "linkedinUrl": "https://www.linkedin.com/in/clara-bernaudo-628401197"
+        },
+        {
+          "id": "ACoAAD9nlvYB2DZvyNc9uVDKe8aFgOqvnnuLnqs",
+          "firstName": "Balaharisankar",
+          "lastName": "L",
+          "publicIdentifier": "balaharisankar",
+          "linkedinUrl": "https://www.linkedin.com/in/balaharisankar"
+        },
+        {
+          "id": "ACoAAEK-ol8B677RJfr-kLTc_W3XKGwLG2VILp4",
+          "firstName": "Barath",
+          "lastName": "Vikraman",
+          "publicIdentifier": "barath-vikraman",
+          "linkedinUrl": "https://www.linkedin.com/in/barath-vikraman"
+        },
+        {
+          "id": "ACoAADvtJl8B73DJBcXfTqWkWmKOaNPl0rmTM6U",
+          "firstName": "Jimena ",
+          "lastName": "Arroyo",
+          "position": "Award-winning singer-songwriter. Signed with Crucial Music, Marmoset, Smash Coast Music, Likha Music International, TwoOhSix, Expressive Artists & more! Author, ENG<>SPA translator, ESL teacher, mom, INFJ, Gryffindor.",
+          "publicIdentifier": "jimenaarroyo",
+          "linkedinUrl": "https://www.linkedin.com/in/jimenaarroyo"
+        },
+        {
+          "id": "ACoAAAbQMXQBNl63prM3_FwweXmHYz3b1uw70BU",
+          "firstName": "Francisco",
+          "lastName": "M.",
+          "position": "Director de ventas Regional para Sudamérica en Qualys Inc | Pronóstico de ventas, Desarrollo de nuevos negocios, Crecimiento regional",
+          "publicIdentifier": "franmedero",
+          "linkedinUrl": "https://www.linkedin.com/in/franmedero"
+        },
+        {
+          "id": "ACoAAAZA9SgBbi5pyPomyS-6_H3KmsYr8qMTR-w",
+          "firstName": "Rosana",
+          "lastName": "Dupouy",
+          "position": "Producer, copywriter, video editor, radio host and singer",
+          "publicIdentifier": "rosana-dupouy-9741792b",
+          "linkedinUrl": "https://www.linkedin.com/in/rosana-dupouy-9741792b"
+        },
+        {
+          "id": "ACoAADUiW3sBggkc4AnF5-TADXkeJW9agalCh9A",
+          "firstName": "Sol",
+          "lastName": "Bouzon",
+          "position": "Singer / Composer / Music producer / Filmscoring Music",
+          "publicIdentifier": "sol-bouzon-bb766120a",
+          "linkedinUrl": "https://www.linkedin.com/in/sol-bouzon-bb766120a"
+        },
+        {
+          "id": "ACoAAB6kEG4B90VVU4OaZO8AMWywE7v951SnO-U",
+          "firstName": "Myriam",
+          "lastName": "Toker",
+          "position": "Voice - Vocal Pedagogy",
+          "publicIdentifier": "myriam-toker-4921b1124",
+          "linkedinUrl": "https://www.linkedin.com/in/myriam-toker-4921b1124"
+        },
+        {
+          "id": "ACoAAFR6MEoBenJ_3HYmwKUgQtiqvH0H0yVnl0Q",
+          "firstName": "Sureshkumar",
+          "lastName": "R",
+          "publicIdentifier": "r-sureshkumar",
+          "linkedinUrl": "https://www.linkedin.com/in/r-sureshkumar"
+        },
+        {
+          "id": "ACoAAARPj_IBjZ_vUJaY667kJNeZRGgwyYzchyE",
+          "firstName": "Mariselvam",
+          "lastName": "P.",
+          "publicIdentifier": "mariselvam-p-75627920",
+          "linkedinUrl": "https://www.linkedin.com/in/mariselvam-p-75627920"
+        },
+        {
+          "id": "ACoAACbjinMBhf40cwthcQn_lN-1YNmhWrtn7jo",
+          "firstName": "Santiago",
+          "lastName": "Zuloaga",
+          "position": "Santiago Zuloaga",
+          "publicIdentifier": "santiago-zuloaga-12b605162",
+          "linkedinUrl": "https://www.linkedin.com/in/santiago-zuloaga-12b605162"
+        },
+        {
+          "id": "ACoAADBsqA8BAikddZXwm7e0DQW3rA_Tzn8mbuI",
+          "firstName": "Mugesh",
+          "lastName": "Murugavel",
+          "publicIdentifier": "mugesh-murugavel-8130b61a8",
+          "linkedinUrl": "https://www.linkedin.com/in/mugesh-murugavel-8130b61a8"
+        },
+        {
+          "id": "ACoAAFsGkE8B4wa59cr0jwARte3GAV-a7-EtryM",
+          "firstName": "Tori",
+          "lastName": "Jane",
+          "position": "--",
+          "publicIdentifier": "tori-jane-37b537367",
+          "linkedinUrl": "https://www.linkedin.com/in/tori-jane-37b537367"
+        },
+        {
+          "id": "ACoAAESbSVsBLKs8WBGpGqS4LKznLJK26g4IUV4",
+          "firstName": "MATHAVA",
+          "lastName": "J",
+          "publicIdentifier": "mathava-j-aa3587281",
+          "linkedinUrl": "https://www.linkedin.com/in/mathava-j-aa3587281"
+        },
+        {
+          "id": "ACoAAEBqlRYBnq_sAi6wAE7AXwUnC-RB5XciUPY",
+          "firstName": "Theresa",
+          "lastName": "Perez Mendoza",
+          "position": "Licenciada en Música Cinematográfica - Estudiante de Psicología",
+          "publicIdentifier": "theresa-perez-mendoza-732b24261",
+          "linkedinUrl": "https://www.linkedin.com/in/theresa-perez-mendoza-732b24261"
+        },
+        {
+          "id": "ACoAAEPTEVcB5DoJkRjVj27WrW76tcermx6NltE",
+          "firstName": "POTHYESWARAN",
+          "lastName": "S",
+          "publicIdentifier": "pothyeswaran",
+          "linkedinUrl": "https://www.linkedin.com/in/pothyeswaran"
+        },
+        {
+          "id": "ACoAAEHm6ZMBugQ4tJlzP1G6z4ABXCvwHXXE2cs",
+          "firstName": "Anwar Mydheen",
+          "lastName": "K",
+          "publicIdentifier": "anwar-mydheen-k-b8334426a",
+          "linkedinUrl": "https://www.linkedin.com/in/anwar-mydheen-k-b8334426a"
+        }
+      ],
+      "openProfile": false,
+      "_meta": {
+        "pagination": {
+          "totalElements": 1,
+          "totalPages": 1,
+          "pageNumber": 1,
+          "previousElements": 0,
+          "pageSize": 25
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "totalResults": 1,
+    "source": "harvestapi/linkedin-profile-search",
+    "savedAt": "2025-10-09T06:46:42.016Z"
+  }
+}

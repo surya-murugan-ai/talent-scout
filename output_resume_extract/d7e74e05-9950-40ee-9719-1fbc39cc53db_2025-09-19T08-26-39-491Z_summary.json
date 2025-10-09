@@ -1,0 +1,151 @@
+{
+  "filename": "d7e74e05-9950-40ee-9719-1fbc39cc53db.pdf",
+  "timestamp": "2025-09-19T08:26:39.491Z",
+  "processingTime": 7874,
+  "confidence": 70,
+  "extractedData": {
+    "name": "Nidhin Joseph M P",
+    "email": "nidhinjosepjmp6_ioq@indeedemail.com",
+    "phone": "+91 70120 37458",
+    "title": null,
+    "location": "Alleppey, Kerala",
+    "summary": null,
+    "experience": [
+      {
+        "jobTitle": "Part Time Full Stack Developer",
+        "company": "Amiyon Solutions Pvt Ltd",
+        "duration": "January 2023 - Present",
+        "startDate": "2023-01",
+        "endDate": "Present",
+        "techUsed": [],
+        "description": null,
+        "achievements": []
+      },
+      {
+        "jobTitle": "PROJECT ASSISTANT",
+        "company": "KUTHIATHODU PANCHAYATH",
+        "duration": "January 2022 - Present",
+        "startDate": "2022-01",
+        "endDate": "Present",
+        "techUsed": [],
+        "description": null,
+        "achievements": []
+      },
+      {
+        "jobTitle": "Full Stack Developer",
+        "company": "ROGERSOFT",
+        "duration": "July 2020 - December 2021",
+        "startDate": "2020-07",
+        "endDate": "2021-12",
+        "techUsed": [
+          "Codeigniter",
+          "HTML",
+          "Photoshop",
+          "Hosting"
+        ],
+        "description": "Web developing",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Developer",
+        "company": "PROTRACKED",
+        "duration": "January 2019 - December 2019",
+        "startDate": "2019-01",
+        "endDate": "2019-12",
+        "techUsed": [
+          "Laravel",
+          "Vue js"
+        ],
+        "description": "Software developer",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Full Stack Developer",
+        "company": "ROGERSOFT",
+        "duration": "June 2018 - December 2018",
+        "startDate": "2018-06",
+        "endDate": "2018-12",
+        "techUsed": [
+          "Codeigniter",
+          "HTML",
+          "Photoshop",
+          "Hosting"
+        ],
+        "description": "Web developing",
+        "achievements": []
+      },
+      {
+        "jobTitle": "PHP Developer",
+        "company": "ROGERSOFT",
+        "duration": "March 2017 - June 2018",
+        "startDate": "2017-03",
+        "endDate": "2018-06",
+        "techUsed": [],
+        "description": "Web developing",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Web Developer",
+        "company": "CANRONE SOFTWARE",
+        "duration": "October 2015 - August 2016",
+        "startDate": "2015-10",
+        "endDate": "2016-08",
+        "techUsed": [],
+        "description": "Web developing",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "BCA",
+        "field": "Computer Science & Engineering",
+        "university": null,
+        "year": "2017 to Present",
+        "percentage": null,
+        "gpa": null,
+        "location": null
+      },
+      {
+        "degree": "SSLC",
+        "field": null,
+        "university": null,
+        "year": "2009",
+        "percentage": null,
+        "gpa": null,
+        "location": null
+      }
+    ],
+    "skills": [
+      "MY SQL",
+      "Dreamweaver",
+      "Eclipse",
+      "Photoshop",
+      "C",
+      "C++",
+      "HTML5",
+      "CSS3",
+      "C#.NET",
+      "Bootstrap",
+      "JavaScript",
+      "JAVA",
+      "PHP",
+      "Vue js",
+      "Yii2 Framework",
+      "Codeigniter Framework",
+      "Laravel Framework",
+      "Django Framework",
+      "ionic",
+      "AngularJs",
+      "Wordpress",
+      "Windows 10",
+      "Windows 8",
+      "Windows 7",
+      "XP",
+      "Linux",
+      "MS-Office 2003/2007/2010",
+      "SQL"
+    ],
+    "projects": [],
+    "certifications": []
+  }
+}

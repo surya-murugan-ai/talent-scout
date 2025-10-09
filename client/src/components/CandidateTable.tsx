@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { Filter, Download, ExternalLink, Heart, Mail, Zap, Eye } from "lucide-react";
+import { Filter, Download, ExternalLink, Heart, Mail, Zap, Eye, Info } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -284,9 +284,9 @@ export default function CandidateTable() {
         </div>
       </CardHeader>
       <CardContent className="p-0 flex-1 overflow-auto">
-        <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-slate-100">
+        <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-slate-100 relative">
           <table className="w-full min-w-[1800px]">
-            <thead className="bg-slate-50">
+            <thead className="sticky-table-header">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider min-w-[250px]">
                   Candidate
@@ -312,9 +312,6 @@ export default function CandidateTable() {
                 <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider min-w-[120px]">
                   Hireability
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider min-w-[120px]">
-                  Last Active
-                </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider min-w-[200px]">
                   Source
                 </th>
@@ -326,7 +323,7 @@ export default function CandidateTable() {
             <tbody className="bg-white divide-y divide-slate-200">
               {candidates.length === 0 ? (
                 <tr>
-                  <td colSpan={11} className="px-6 py-12 text-center">
+                  <td colSpan={10} className="px-6 py-12 text-center">
                     <div className="text-slate-500">
                       <p className="text-lg font-medium">No candidates found</p>
                       <p className="text-sm mt-1">Upload a CSV or Excel file to get started with candidate processing</p>
@@ -415,6 +412,35 @@ export default function CandidateTable() {
                     
                     {/* Score */}
                     <td className="px-6 py-4 whitespace-nowrap">
+                      <span className="text-lg font-bold text-slate-900" data-testid={`candidate-score-${index}`}>
+                        {candidate.score ? candidate.score.toFixed(1) : "0.0"}
+                      </span>
+                      {/* Score Details Info */}
+                      <div className="group relative ml-2">
+                        <Info className="w-3 h-3 text-slate-400 cursor-help" />
+                        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-slate-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50">
+                          <div className="font-medium mb-2">Score Breakdown</div>
+                          <div className="space-y-1 text-left">
+                            <div><span className="text-blue-300">Open to Work:</span> {candidate.openToWork ? "10/10" : "3/10"} (40%)</div>
+                            <div><span className="text-green-300">Skill Match:</span> {(() => {
+                              const skills = candidate.skills;
+                              if (skills && Array.isArray(skills) && skills.length > 0) {
+                                return `${Math.min(skills.length, 10)}/10`;
+                              }
+                              return "5/10";
+                            })()} (30%)</div>
+                            <div><span className="text-yellow-300">Job Stability:</span> {/* Company consistency logic */} (15%)</div>
+                            <div><span className="text-purple-300">Engagement:</span> {/* LinkedIn activity logic */} (15%)</div>
+                          </div>
+                          <div className="mt-2 text-slate-300 text-xs border-t border-slate-700 pt-2">
+                            <div className="font-medium">Formula:</div>
+                            <div>Score = (Open to Work × 0.4) + (Skill Match × 0.3) + (Job Stability × 0.15) + (Engagement × 0.15)</div>
+                          </div>
+                          <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-900"></div>
+                        </div>
+                      </div>
+                    </td>
+                    {/* <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center">
                         <span className="text-lg font-bold text-slate-900" data-testid={`candidate-score-${index}`}>
                           {candidate.score ? candidate.score.toFixed(1) : "0.0"}
@@ -426,7 +452,7 @@ export default function CandidateTable() {
                           />
                         </div>
                       </div>
-                    </td>
+                    </td> */}
                     
                     {/* Priority */}
                     <td className="px-6 py-4 whitespace-nowrap">
@@ -473,23 +499,6 @@ export default function CandidateTable() {
                       </div>
                     </td>
 
-                    {/* Last Active */}
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500 min-w-[120px]">
-                      {candidate.linkedinLastActive ? (
-                        <div className="text-center">
-                          <div className="font-medium text-slate-700">
-                            {new Date(candidate.linkedinLastActive).toLocaleDateString()}
-                          </div>
-                          <div className="text-xs text-slate-500">LinkedIn</div>
-                        </div>
-                      ) : candidate.lastActive ? (
-                        <div className="text-center">
-                          {candidate.lastActive}
-                        </div>
-                      ) : (
-                        <span className="text-slate-400">Unknown</span>
-                      )}
-                    </td>
 
                     {/* Source */}
                     <td className="px-6 py-4 whitespace-nowrap min-w-[200px]">

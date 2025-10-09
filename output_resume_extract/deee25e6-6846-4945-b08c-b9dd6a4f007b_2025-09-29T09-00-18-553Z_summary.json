@@ -1,0 +1,69 @@
+{
+  "filename": "deee25e6-6846-4945-b08c-b9dd6a4f007b.pdf",
+  "timestamp": "2025-09-29T09:00:18.553Z",
+  "processingTime": 5776,
+  "confidence": 93,
+  "extractedData": {
+    "name": "Kshirod B",
+    "email": "khirodbovpdm_2am@indeedemail.com",
+    "phone": "+91 80932 38305",
+    "title": "Web Developer",
+    "location": "Bengaluru, Karnataka",
+    "summary": "2+ years of experience in analysis, design, development and implementation of large scale, mission critical ERP projects. Experience in HTML 5, CSS 3, Bootstrap, PHP, Laravel, MySQL, WordPress. Experience in Photoshop. Deep understanding of Responsiveness design and other emerging UI paradigm. Excellent communication, interpersonal and analytical skills and highly motivated team player with the ability to work independently. Ability to learn and adapt quickly to the emerging new technologies and paradigm.",
+    "experience": [
+      {
+        "jobTitle": "Web Developer",
+        "company": "Relicons Technology Pvt. Limited",
+        "duration": "January 2021 - Present",
+        "startDate": "2021-01",
+        "endDate": "Present",
+        "techUsed": [
+          "Laravel"
+        ],
+        "description": "Created a live monitoring system for the energy generated at client and presented the data in a beautiful dashboard. Laravel has been used to data fetching and organizing along with pagination. Unique project to handle all the backend responsibilities of the E-commerce projects, starting from order placement to delivery. It's a multi-tenant and multi user fully configurable project to provide an end-to-end solution.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Tech",
+        "field": null,
+        "university": "Biju Pattnaik University of Technology",
+        "year": "2016",
+        "percentage": null,
+        "gpa": null,
+        "location": "Bengaluru, Karnataka"
+      }
+    ],
+    "skills": [
+      "HTML5",
+      "CSS",
+      "Bootstrap",
+      "PHP",
+      "Laravel",
+      "MySQL",
+      "WordPress"
+    ],
+    "projects": [
+      {
+        "name": "SMS (Solar Monitoring System)",
+        "description": "Created a live monitoring system for the energy generated at client and presented the data in a beautiful dashboard.",
+        "techUsed": [
+          "Laravel"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "EBA (E-commerce backend application)",
+        "description": "Unique project to handle all the backend responsibilities of the E-commerce projects, starting from order placement to delivery. It's a multi-tenant and multi user fully configurable project to provide an end-to-end solution.",
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "certifications": []
+  }
+}

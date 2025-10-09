@@ -1,0 +1,10 @@
+{
+  "timestamp": "2025-10-08T09:30:21.220Z",
+  "searchQuery": "John Smith Senior Engineer Google California",
+  "rawData": [],
+  "metadata": {
+    "totalResults": 0,
+    "source": "harvestapi/linkedin-profile-search",
+    "savedAt": "2025-10-08T09:30:21.220Z"
+  }
+}

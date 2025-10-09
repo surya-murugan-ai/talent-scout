@@ -1,0 +1,107 @@
+{
+  "filename": "ef0f10d1-bd99-4f38-b3d7-6d88d67092d1.pdf",
+  "timestamp": "2025-09-18T08:41:12.276Z",
+  "processingTime": 7447,
+  "confidence": 93,
+  "extractedData": {
+    "name": "BABU S R",
+    "email": "babusrofficial@gmail.com",
+    "phone": "6360328864",
+    "title": "Laravel Developer",
+    "location": "Bengaluru, Karnataka, India",
+    "summary": "Motivated Laravel developer with Eight Months of experience in designing, developing, and maintaining web applications. Proficient in PHP, MySQL, JavaScript, HTML, and CSS. Ability to work in a team environment and meet tight deadlines.",
+    "experience": [
+      {
+        "jobTitle": "Laravel Developer",
+        "company": "Web Digital Mantra It Services Limited",
+        "duration": "Oct 1st 2022 to Present",
+        "startDate": "2022-10",
+        "endDate": "Present",
+        "techUsed": [
+          "Laravel PHP framework",
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "Git",
+          "MySQL"
+        ],
+        "description": "Designed and developed web applications using Laravel PHP framework, HTML, CSS, and JavaScript. Worked on the development of the front-end and back-end of web applications. Created responsive designs that are optimized for desktop and mobile devices. Developed and maintained APIs for mobile and web applications. Worked with Git and version control to manage source code changes. Utilized MySQL to manage databases and performed data migrations. Collaborated with team members to develop efficient solutions for complex issues. Conducted code reviews and provided feedback to ensure the quality of code.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's Degree",
+        "field": "Science (PCM)",
+        "university": "University College of Science Tumkur",
+        "year": "2018",
+        "percentage": null,
+        "gpa": null,
+        "location": "Tumkur"
+      }
+    ],
+    "skills": [
+      "Laravel PHP framework",
+      "MySQL",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Git",
+      "API Development",
+      "Ajax"
+    ],
+    "projects": [
+      {
+        "name": "E-commerce website",
+        "description": "Developed an e-commerce website using Laravel, allowing customers to browse and purchase products securely. Implemented features like user registration, product search, shopping cart, and payment integration.",
+        "techUsed": [
+          "Laravel"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Matrimony platform",
+        "description": "Created a matrimony platform using Laravel, enabling users to create profiles, search for potential partners, and communicate securely. Implemented advanced search filters, matching algorithms, and privacy settings.",
+        "techUsed": [
+          "Laravel"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Tours and travels website",
+        "description": "Built a tours and travels website similar to MakeMyTrip using Laravel, providing users with the ability to search and book flights, hotels, and holiday packages. Implemented dynamic pricing, booking management, and integrated third-party APIs.",
+        "techUsed": [
+          "Laravel"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Informative dynamic website",
+        "description": "Developed an informative dynamic website using Laravel, allowing users to browse and search for articles, news, and resources. Implemented a content management system (CMS) for easy content updates.",
+        "techUsed": [
+          "Laravel"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Temple poojas project",
+        "description": "Created a temple poojas project using Laravel, where each pooja has different packages based on package prices. Implemented features such as package selection, payment integration, and booking management.",
+        "techUsed": [
+          "Laravel"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "certifications": []
+  }
+}

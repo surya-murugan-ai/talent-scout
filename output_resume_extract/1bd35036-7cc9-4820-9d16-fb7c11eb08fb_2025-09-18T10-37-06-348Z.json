@@ -1,0 +1,162 @@
+{
+  "filename": "1bd35036-7cc9-4820-9d16-fb7c11eb08fb.pdf",
+  "timestamp": "2025-09-18T10:37:06.348Z",
+  "processingTime": 9406,
+  "confidence": 80,
+  "rawText": "\n\nMadhanD\n30/40CExtensionStreet,NavalpurRanipet,RanipetDist,TamilNadu,632401|9655992565|\nmadhandayalan1999@gmail.com|https://www.linkedin.com/in/madhan-d-884a22202/\nEDUCATION\nNxtwaveDisruptiveTechnologies\nIndustryReadyCertificationinFull-stackDevelopment\nS.S.SCollegeofArts,ScienceandManagement.,Arcot\nBCA(BachelorofComputerApplications)_ComputerScienceEngineering(CSE)\n(69.4%)\n2017-2020\nGangadaraMatriculationHigherSecondarySchool,Ranipet\nIntermediate_Other(60.0%)\n2016-2017\nGangadaraMatriculationHigherSecondarySchool,Ranipet\nSecondarySchoolOfCertificate(73.0%)\n2014-2015\nSKILLS\nFrontend\nBackend:Python,Express,Node.js\nDatabases:SQLite\nOtherskills:C#,Express(node),Flexbox,Git,Linux,OOPs\nPROJECTS\nTypingSpeedTest(madhanspeedtest.ccbp.tech)\nAtypingspeedevaluatorthatmeasuresuser'stypingspeedandaccuracy.\n●UtilizesJavaScriptDOMoperationsandAPIstodynamicallyupdatethetimeranddisplayresults.\n●Implementsformvalidationtoensureuserscompletetheparagraphbeforesubmitting.\nTechnologiesused:HTML,CSS,JS,RESTAPICalls,Bootstrap\nBookmarkMaker(madhanbookmark.ccbp.tech)\nDevelopedbookmarkmakerwhereusercanaddlistofwebsiteswithcustomname,andcanvisitbookmarked\nwebsitelaterbyclickingonthespecificwebsite\n●DisplayedlistofbookmarkswithHTMLlistelementswithhyperlinkasurl,styledtodolistusingCSS,\nBootstrap.\n●DisplayedanewbookmarkdynamicallyintheUIbyusingJavaScriptDOMoperationswhentheuser\nsubmittedtheformwithbookmarkdetails.\n●ImplementedaddbookmarkfunctionalitybyusingForminputs,JavaScripteventlistenersandclicking\nonaparticularbookmarkopensthewebsiteinanewtab.\nTechnologiesused:HTML,CSS,JS,Bootstrap\nCountriesSearch(madhancntrysrc.ccbp.tech)\nAcomprehensivecountrysearchtool,providinginstantaccesstotheworld'scountriesandtheirpopulations.\n●ResponsivedesignthroughtheintegrationofBootstrapandCSSwithasynchronousdataretrieval\nthroughRESTAPIcalls.\n●EffortlesssearchfunctionalitythroughJavaScripteventlisteners,inputelementsandArrayfilter\nmethods.\nTechnologiesused:HTML,CSS,JS,RESTAPICalls,Bootstrap\nWORKEXPERIENCE\nNov ’22 - May ’23\n: HTML, CSS, Bootstrap, JavaScript, React.js\n\nPerfectDigitalMediaResourcesPvt,Ltd.(SoftwareDeveloper)Mar2021–Mar2022\nChennai,TamilNadu\nCreatingWebAdd-InsinMicrosoftOfficebyusingNode.js,JavaScript,React,HtmlandCSSUsedto\nworkingoncontracts,proposals,reports,technicaldocuments,articlesandbooks.Itsavestimeon\ncopy-editingbyproofreadingsoftware,sothatauthorscanpaymoreattentiontowhatmattersmost.\nACHIEVEMENTS\nDepartmentTopper\nDepartmentFirstin3rdSemesterUniversityExamination\nTournamentWinner\nWonVolleyballTournamentincollege\n\n",
+  "extractedData": {
+    "name": "Madhan D",
+    "email": "madhandayalan1999@gmail.com",
+    "phone": "9655992565",
+    "linkedinUrl": "https://www.linkedin.com/in/madhan-d-884a22202/",
+    "githubUrl": null,
+    "portfolioUrl": [
+      "http://madhanspeedtest.ccbp.tech/",
+      "http://madhanbookmark.ccbp.tech/",
+      "http://madhancntrysrc.ccbp.tech/"
+    ],
+    "location": "Navalpur Ranipet, Tamil Nadu, 632401",
+    "title": null,
+    "summary": null,
+    "experience": [
+      {
+        "jobTitle": "Software Developer",
+        "company": "Perfect Digital Media Resources Pvt, Ltd.",
+        "duration": "Mar 2021 – Mar 2022",
+        "startDate": "2021-03",
+        "endDate": "2022-03",
+        "techUsed": [
+          "Node.js",
+          "JavaScript",
+          "React",
+          "HTML",
+          "CSS"
+        ],
+        "description": "Creating Web Add-Ins in Microsoft Office by using Node.js, JavaScript, React, Html and CSS. Used to working on contracts, proposals, reports, technical documents, articles and books. It saves time on copy-editing by proofreading software, so that authors can pay more attention to what matters most.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "BCA",
+        "field": "Computer Science Engineering",
+        "university": "S.S.S College of Arts, Science and Management, Arcot",
+        "year": "2020",
+        "percentage": "69.4%",
+        "gpa": null,
+        "location": null
+      },
+      {
+        "degree": "Intermediate",
+        "field": "Other",
+        "university": "Gangadara Matriculation Higher Secondary School, Ranipet",
+        "year": "2017",
+        "percentage": "60.0%",
+        "gpa": null,
+        "location": null
+      },
+      {
+        "degree": "Secondary School Of Certificate",
+        "field": null,
+        "university": "Gangadara Matriculation Higher Secondary School, Ranipet",
+        "year": "2015",
+        "percentage": "73.0%",
+        "gpa": null,
+        "location": null
+      }
+    ],
+    "projects": [
+      {
+        "name": "Typing Speed Test",
+        "description": "A typing speed evaluator that measures user's typing speed and accuracy.",
+        "techUsed": [
+          "HTML",
+          "CSS",
+          "JS",
+          "REST API Calls",
+          "Bootstrap"
+        ],
+        "duration": null,
+        "url": "http://madhanspeedtest.ccbp.tech/",
+        "achievements": []
+      },
+      {
+        "name": "Bookmark Maker",
+        "description": "Developed bookmark maker where user can add list of websites with custom name, and can visit bookmarked website later by clicking on the specific website.",
+        "techUsed": [
+          "HTML",
+          "CSS",
+          "JS",
+          "Bootstrap"
+        ],
+        "duration": null,
+        "url": "http://madhanbookmark.ccbp.tech/",
+        "achievements": []
+      },
+      {
+        "name": "Countries Search",
+        "description": "A comprehensive country search tool, providing instant access to the world's countries and their populations.",
+        "techUsed": [
+          "HTML",
+          "CSS",
+          "JS",
+          "REST API Calls",
+          "Bootstrap"
+        ],
+        "duration": null,
+        "url": "http://madhancntrysrc.ccbp.tech/",
+        "achievements": []
+      }
+    ],
+    "achievements": [
+      {
+        "title": "Department Topper",
+        "description": "Department First in 3rd Semester University Examination",
+        "year": null,
+        "organization": null
+      },
+      {
+        "title": "Tournament Winner",
+        "description": "Won Volleyball Tournament in college",
+        "year": null,
+        "organization": null
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Industry Ready Certification in Full-stack Development",
+        "issuer": "Nxtwave Disruptive Technologies",
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      }
+    ],
+    "skills": [
+      "Frontend",
+      "Backend: Python",
+      "Express",
+      "Node.js",
+      "Databases: SQLite",
+      "C#",
+      "Express(node)",
+      "Flexbox",
+      "Git",
+      "Linux",
+      "OOPs"
+    ],
+    "interests": [],
+    "languages": [],
+    "salary": null,
+    "availability": null,
+    "remotePreference": null,
+    "visaStatus": null,
+    "originalData": {
+      "filename": "1bd35036-7cc9-4820-9d16-fb7c11eb08fb.pdf",
+      "rawText": "MadhanD 30/40CExtensionStreet,NavalpurRanipet,RanipetDist,TamilNadu,632401|9655992565| madhandayalan1999@gmail.com|https://www.linkedin.com/in/madhan-d-884a22202/ EDUCATION NxtwaveDisruptiveTechnologies IndustryReadyCertificationinFull-stackDevelopment S.S.SCollegeofArts,ScienceandManagement.,Arcot BCA(BachelorofComputerApplications)_ComputerScienceEngineering(CSE) (69.4%) 2017-2020 GangadaraMatriculationHigherSecondarySchool,Ranipet Intermediate_Other(60.0%) 2016-2017 GangadaraMatriculationHigherSecondarySchool,Ranipet SecondarySchoolOfCertificate(73.0%) 2014-2015 SKILLS Frontend Backend:Python,Express,Node.js Databases:SQLite Otherskills:C#,Express(node),Flexbox,Git,Linux,OOPs PROJECTS TypingSpeedTest(madhanspeedtest.ccbp.tech) Atypingspeedevaluatorthatmeasuresuser'stypingspeedandaccuracy. ●UtilizesJavaScriptDOMoperationsandAPIstodynamicallyupdatethetimeranddisplayresults. ●Implementsformvalidationtoensureuserscompletetheparagraphbeforesubmitting. Technologiesused:HTML,CSS,JS,RESTAPICalls,Bootstrap BookmarkMaker(madhanbookmark.ccbp.tech) Developedbookmarkmakerwhereusercanaddlistofwebsiteswithcustomname,andcanvisitbookmarked websitelaterbyclickingonthespecificwebsite ●DisplayedlistofbookmarkswithHTMLlistelementswithhyperlinkasurl,styledtodolistusingCSS, Bootstrap. ●DisplayedanewbookmarkdynamicallyintheUIbyusingJavaScriptDOMoperationswhentheuser submittedtheformwithbookmarkdetails. ●ImplementedaddbookmarkfunctionalitybyusingForminputs,JavaScripteventlistenersandclicking onaparticularbookmarkopensthewebsiteinanewtab. Technologiesused:HTML,CSS,JS,Bootstrap CountriesSearch(madhancntrysrc.ccbp.tech) Acomprehensivecountrysearchtool,providinginstantaccesstotheworld'scountriesandtheirpopulations. ●ResponsivedesignthroughtheintegrationofBootstrapandCSSwithasynchronousdataretrieval throughRESTAPIcalls. ●EffortlesssearchfunctionalitythroughJavaScripteventlisteners,inputelementsandArrayfilter methods. Technologiesused:HTML,CSS,JS,RESTAPICalls,Bootstrap WORKEXPERIENCE Nov ’22 -"
+    },
+    "source": "resume",
+    "confidence": 80,
+    "processingTime": 0
+  }
+}

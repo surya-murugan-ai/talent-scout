@@ -1,5 +1,5 @@
 import { db } from '../db.js';
-import { resumeData, candidates, activities } from '../../shared/schema.js';
+import { candidates, activities } from '../../shared/schema.js';
 import { eq } from 'drizzle-orm';
 import type { ComprehensiveResumeData } from './resumeParser.js';
 

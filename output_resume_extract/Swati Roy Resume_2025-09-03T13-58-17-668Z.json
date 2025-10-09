@@ -1,0 +1,147 @@
+{
+  "filename": "Swati Roy Resume.pdf",
+  "timestamp": "2025-09-03T13:58:17.668Z",
+  "processingTime": 7915,
+  "confidence": 95,
+  "rawText": "\n\nSwati Roy \nAspiring Product Designer with a tech background and a passion for human-centered design. \nswati98.roy@gmail.com | +91 9831437532 | Bengaluru, India | LinkedIn | Behance \n \nExperience \nUI/UX Designer \nBlurgs Innovations Pvt Ltd, Bengaluru — Apr 2024–Jun2025 \n• Led branding, website, and platform UI design for Dhoop, a solar panel maintenance SaaS. \n• Redesigned company website with a minimal layout and integrated Lottie animations for better storytelling. \n• Conducted product research for a Vessel Tracking & Monitoring System (VTMS) platform.  \n• Designed internal tools including a data annotation platform and an Agentic AI chatbot interface. \n• Created illustrations and product mockups for pitch decks. \nUI/UX Design Intern \nBrainQuest Consultancy & Training, Remote — Oct 2023–Dec 2023 \n• Collaborated with clients worldwide to design their websites using Wix. \nCloud Infrastructure Specialist \nIBM India Pvt Ltd, Kolkata — Sep 2021–Jul 2023 \n• Provided post-migration support to application infrastructure in AWS Cloud, as a part of the SRE team. \n \nSkills \n• Design Tools & Skills: Figma, Wireframing, Prototyping, UX Research, UI Design, Design Systems, Color \nTheory, Information Architecture, Wix, Lottielab, Canva, WordPress \n• Devops Tools: AWS (EC2, RDS, IAM, CloudWatch), Jenkins, Terraform, BitBucket, Jira \n• Languages & Frontend: HTML, CSS, Basics of ReactJS \n \nEducation \nB.Tech in Computer Science & Engineering \nSt. Thomas’ College of Engineering & Technology (MAKAUT), Kolkata — Jul 2017–Jul 2021 \nDGPA: 8.69\n \nCertifications ↗ \n• UI/UX Design Bootcamp — Designboat UI/UX School, Mar 2023 \n• Enterprise Design Thinking Practitioner — IBM, Dec 2022 \n• Foundations of UX Design — Google (Coursera), Oct 2022 \n• Azure Fundamentals (AZ-900) — Microsoft, Mar 2022 \n• ReactJS Course — Alien Brains, Apr 2019 ",
+  "extractedData": {
+    "name": "Swati Roy",
+    "email": "swati98.roy@gmail.com",
+    "phone": "+91 9831437532",
+    "linkedinUrl": "http://linkedin.com/in/swatiroy1998",
+    "githubUrl": null,
+    "portfolioUrl": "http://www.behance.net/swatiroy6",
+    "location": "Bengaluru, India",
+    "title": "Aspiring Product Designer",
+    "summary": "Aspiring Product Designer with a tech background and a passion for human-centered design.",
+    "experience": [
+      {
+        "jobTitle": "UI/UX Designer",
+        "company": "Blurgs Innovations Pvt Ltd",
+        "duration": "Apr 2024 - Jun 2025",
+        "startDate": "2024-04",
+        "endDate": "2025-06",
+        "techUsed": [
+          "Figma",
+          "Lottielab"
+        ],
+        "description": "Led branding, website, and platform UI design for Dhoop, a solar panel maintenance SaaS. Redesigned company website with a minimal layout and integrated Lottie animations for better storytelling. Conducted product research for a Vessel Tracking & Monitoring System (VTMS) platform. Designed internal tools including a data annotation platform and an Agentic AI chatbot interface. Created illustrations and product mockups for pitch decks.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "UI/UX Design Intern",
+        "company": "BrainQuest Consultancy & Training",
+        "duration": "Oct 2023 - Dec 2023",
+        "startDate": "2023-10",
+        "endDate": "2023-12",
+        "techUsed": [
+          "Wix"
+        ],
+        "description": "Collaborated with clients worldwide to design their websites using Wix.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Cloud Infrastructure Specialist",
+        "company": "IBM India Pvt Ltd",
+        "duration": "Sep 2021 - Jul 2023",
+        "startDate": "2021-09",
+        "endDate": "2023-07",
+        "techUsed": [
+          "AWS",
+          "Jenkins",
+          "Terraform",
+          "BitBucket",
+          "Jira"
+        ],
+        "description": "Provided post-migration support to application infrastructure in AWS Cloud, as a part of the SRE team.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Tech",
+        "field": "Computer Science & Engineering",
+        "university": "St. Thomas’ College of Engineering & Technology (MAKAUT)",
+        "year": "2021",
+        "percentage": null,
+        "gpa": "8.69",
+        "location": "Kolkata"
+      }
+    ],
+    "projects": [],
+    "achievements": [],
+    "certifications": [
+      {
+        "name": "UI/UX Design Bootcamp",
+        "issuer": "Designboat UI/UX School",
+        "date": "Mar 2023",
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "Enterprise Design Thinking Practitioner",
+        "issuer": "IBM",
+        "date": "Dec 2022",
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "Foundations of UX Design",
+        "issuer": "Google (Coursera)",
+        "date": "Oct 2022",
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "Azure Fundamentals (AZ-900)",
+        "issuer": "Microsoft",
+        "date": "Mar 2022",
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "ReactJS Course",
+        "issuer": "Alien Brains",
+        "date": "Apr 2019",
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      }
+    ],
+    "skills": [
+      "Figma",
+      "Wireframing",
+      "Prototyping",
+      "UX Research",
+      "UI Design",
+      "Design Systems",
+      "Color Theory",
+      "Information Architecture",
+      "Wix",
+      "Lottielab",
+      "Canva",
+      "WordPress",
+      "AWS",
+      "Jenkins",
+      "Terraform",
+      "BitBucket",
+      "Jira",
+      "HTML",
+      "CSS",
+      "Basics of ReactJS"
+    ],
+    "interests": [],
+    "languages": [],
+    "originalData": {
+      "filename": "Swati Roy Resume.pdf",
+      "rawText": "Swati Roy Aspiring Product Designer with a tech background and a passion for human-centered design. swati98.roy@gmail.com | +91 9831437532 | Bengaluru, India | LinkedIn | Behance Experience UI/UX Designer Blurgs Innovations Pvt Ltd, Bengaluru — Apr 2024–Jun2025 • Led branding, website, and platform UI design for Dhoop, a solar panel maintenance SaaS. • Redesigned company website with a minimal layout and integrated Lottie animations for better storytelling. • Conducted product research for a Vessel Tracking & Monitoring System (VTMS) platform. • Designed internal tools including a data annotation platform and an Agentic AI chatbot interface. • Created illustrations and product mockups for pitch decks. UI/UX Design Intern BrainQuest Consultancy & Training, Remote — Oct 2023–Dec 2023 • Collaborated with clients worldwide to design their websites using Wix. Cloud Infrastructure Specialist IBM India Pvt Ltd, Kolkata — Sep 2021–Jul 2023 • Provided post-migration support to application infrastructure in AWS Cloud, as a part of the SRE team. Skills • Design Tools & Skills: Figma, Wireframing, Prototyping, UX Research, UI Design, Design Systems, Color Theory, Information Architecture, Wix, Lottielab, Canva, WordPress • Devops Tools: AWS (EC2, RDS, IAM, CloudWatch), Jenkins, Terraform, BitBucket, Jira • Languages & Frontend: HTML, CSS, Basics of ReactJS Education B.Tech in Computer Science & Engineering St. Thomas’ College of Engineering & Technology (MAKAUT), Kolkata — Jul 2017–Jul 2021 DGPA: 8.69 Certifications ↗ • UI/UX Design Bootcamp — Designboat UI/UX School, Mar 2023 • Enterprise Design Thinking Practitioner — IBM, Dec 2022 • Foundations of UX Design — Google (Coursera), Oct 2022 • Azure Fundamentals (AZ-900) — Microsoft, Mar 2022 • ReactJS Course — Alien Brains, Apr 2019"
+    },
+    "source": "resume",
+    "confidence": 95,
+    "processingTime": 0
+  }
+}

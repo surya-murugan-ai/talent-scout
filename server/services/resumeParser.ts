@@ -55,17 +55,17 @@ export interface Certification {
 
 export interface ComprehensiveResumeData {
   // Basic Info
-  name: string;
-  email?: string;
-  phone?: string;
-  linkedinUrl?: string;
-  githubUrl?: string;
-  portfolioUrl?: string;
-  location?: string;
+  name: string | null;
+  email?: string | null;
+  phone?: string | null;
+  linkedinUrl?: string | null;
+  githubUrl?: string | null;
+  portfolioUrl?: string | null;
+  location?: string | null;
   
   // Professional Info
-  title?: string;
-  summary?: string;
+  title?: string | null;
+  summary?: string | null;
   experience: Experience[];
   education: Education[];
   projects: Project[];
@@ -363,8 +363,53 @@ export class ResumeParser {
       }
       
       // Also extract text using pdf-parse for LLM processing
+      console.log('📄 Starting PDF text extraction...');
+      console.log('Buffer size:', buffer.length, 'bytes');
+      
       const data = await pdfParse(buffer);
-      const text = data.text;
+      let text = data.text;
+      
+      console.log('📊 PDF Info:', {
+        pages: data.numpages,
+        textLength: text.length,
+        hasText: text.length > 0
+      });
+      
+      // If text extraction failed, try alternative methods
+      if (!text || text.trim().length < 10) {
+        console.log('⚠️  Primary PDF text extraction failed, trying alternative methods...');
+        console.log('Raw text preview:', JSON.stringify(text.substring(0, 100)));
+        
+        // Try with different options
+        try {
+          const altData = await pdfParse(buffer, {
+            // Try different parsing options
+            max: 0, // No page limit
+            version: 'v1.10.100' // Use specific version
+          });
+          text = altData.text;
+          console.log('Alternative extraction result length:', text.length);
+          if (text.length > 0) {
+            console.log('Alternative text preview:', text.substring(0, 200));
+          }
+        } catch (altError) {
+          console.warn('Alternative PDF extraction also failed:', altError);
+        }
+        
+        // If still no text, this might be an image-based PDF
+        if (!text || text.trim().length < 10) {
+          console.error('❌ PDF appears to be image-based or corrupted - no text could be extracted');
+          console.log('This PDF may require OCR (Optical Character Recognition) to extract text');
+          text = ''; // Ensure empty text
+        }
+      }
+      
+      console.log('Final extracted text length:', text.length);
+      if (text.length > 0) {
+        console.log('Text preview (first 200 chars):', text.substring(0, 200));
+      } else {
+        console.log('❌ No text extracted from PDF');
+      }
       
       console.log(`\n=== EXTRACTION COMPLETE ===`);
       console.log(`Total hyperlinks found: ${hyperlinks.length}`);
@@ -458,6 +503,40 @@ export class ResumeParser {
     console.log('Clean text length:', cleanText.length);
     console.log('Found hyperlinks:', hyperlinks);
     
+    // Check if text is empty or too short
+    if (cleanText.length < 10) {
+      console.warn('⚠️  Text extraction failed - text is too short or empty');
+      console.log('Raw text preview:', JSON.stringify(text.substring(0, 200)));
+      
+      // Return minimal data structure with error indication
+      return {
+        name: null,
+        email: null,
+        phone: null,
+        linkedinUrl: null,
+        githubUrl: null,
+        portfolioUrl: null,
+        location: null,
+        title: null,
+        summary: null,
+        experience: [],
+        education: [],
+        projects: [],
+        achievements: [],
+        certifications: [],
+        skills: [],
+        interests: [],
+        languages: [],
+        originalData: {
+          filename,
+          rawText: text
+        },
+        source: 'resume',
+        confidence: 0,
+        processingTime: 0
+      };
+    }
+    
     try {
       // Use LLM for comprehensive extraction with hyperlinks
       const extractedData = await this.extractWithLLM(cleanText, filename, hyperlinks);
@@ -491,8 +570,15 @@ IMPORTANT: Use these hyperlinks to fill in the appropriate URL fields:
 
 ` : '';
 
+    // Check if text is meaningful before proceeding
+    if (!text || text.trim().length < 10) {
+      throw new Error('Text is too short or empty for meaningful extraction');
+    }
+
     const prompt = `
 Extract comprehensive information from this resume text and return it as a JSON object with the following structure:
+
+CRITICAL: Only extract information that is actually present in the text below. Do NOT generate, invent, or create any fake data. If information is not found, use null or empty arrays.
 
 {
   "name": "Full Name",
@@ -557,7 +643,11 @@ Extract comprehensive information from this resume text and return it as a JSON 
   ],
   "skills": ["Skill1", "Skill2", "Skill3"],
   "interests": ["Interest1", "Interest2"],
-  "languages": ["Language1", "Language2"]
+  "languages": ["Language1", "Language2"],
+  "salary": "Expected salary or current salary",
+  "availability": "Availability status (e.g., 'Immediately', '2 weeks notice', 'Available')",
+  "remotePreference": "Remote work preference (e.g., 'Remote', 'Hybrid', 'On-site')",
+  "visaStatus": "Visa status (e.g., 'US Citizen', 'H1B', 'Green Card', 'F1')"
 }
 
 ${hyperlinksContext}Resume Text:
@@ -580,7 +670,7 @@ IMPORTANT: Only extract URLs that actually exist in the resume text or hyperlink
       messages: [
         {
           role: 'system',
-          content: 'You are an expert resume parser. Extract comprehensive information from resume text and return it as valid JSON ONLY. Do not include any markdown formatting, code blocks, or additional text. Return pure JSON that can be parsed directly.'
+          content: 'You are an expert resume parser. Extract ONLY information that is actually present in the provided text. Do NOT generate, invent, or create any fake data. If information is not found in the text, use null or empty arrays. Return valid JSON ONLY without any markdown formatting, code blocks, or additional text.'
         },
         {
           role: 'user',

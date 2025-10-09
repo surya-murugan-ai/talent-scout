@@ -1,0 +1,117 @@
+{
+  "filename": "477a0a57-152b-4a36-96e1-c94bef899cfa.pdf",
+  "timestamp": "2025-09-29T09:01:45.835Z",
+  "processingTime": 11339,
+  "confidence": 92,
+  "rawText": "\n\nPage 1 of 2 \nSheetal Karnawadi \nTech Architect \nOver 7 years of experience in software design\nand development, specializing in web\napplications using Java & React, data\nengineering using Scala, plugin development,\ngenerative AI, and agentic AI solutions using\nPython. \nsheetalsrk05@gmail.com \n9880409897 \nBangalore \nlinkedin.com/in/sheetal-karnawadi-\n9395b7103 \nSKILLS \nJava Python Spring Boot Fast API React Scala Apache Spark Kafka Elasticsearch \nMySQL Postgres Azure GCP Docker Kubernetes Redis Data warehouse Akka \nCassandra \nWORK EXPERIENCE \nTech Architect \nHashedIn By Deloitte \n11/2024 - Present,  Bangalore \nLeading research and innovation efforts with a team of 8 developers to build AI solutions across multiple domains. \nResearching and Designing multimodal agents, including audio and video agents, to develop automated AI solutions. \nUpskilling in cutting-edge technologies to design innovative solutions and address critical process challenges. \nExploring cloud solutions for deploying autonomous AI applications in distributed environments to ensure scalability. \nArchitected backend solution engine service version 2.0 to support SDLC-driven workflows. \nIntegrated LLM services to enable code generation, work breakdown, documentation, and migration tasks. \nSenior Software Engineer \nHashedIn By Deloitte \n03/2022 - 11/2024,  Bangalore \nLed two teams of 10 developers to design, develop, and deliver features for AI Assist plugin solutions. \nResearched and developed complex features for AI Assist 2.0, including authentication and LLM integrations. \nDesigned and developed the backend solution engine version 1.0 to accelerate key SDLC activities using LLM services, including\ncode generation, work breakdown, document creation, and code migration. \nLed a team of 8 Java developers to deliver the full-scale Access Control Tower application with comprehensive stress testing\nbefore releasing the application to production within the Walmart ecosystem. \nDesigned and developed solutions to automate access control and stakeholder alerting in Access Control Tower, including\nintegrations with OAuth, PingFederate, LDAP, and ServiceNow. \nImplemented a solution to generate petabytes of data for stress testing, ensuring alignment with project commitments. \nSoftware Engineer \nHashedIn By Deloitte \n11/2020 - 02/2022,  Bangalore \nUpgraded a single-node Akka state machine to a multi-node Akka cluster using Kubernetes node discovery, enabling successful\nproduction deployment. \nImplemented projection of Akka events from Cassandra to MySQL for seamless data integration with Tableau dashboards. \nSeamlessly migrated a legacy application to Walmart’s modern cloud-native platform using Akka cluster, maintaining full\nfunctional behavior. \nTransformed a legacy Walmart application to a next-gen tech stack, utilizing Akka actors for event-driven financial data\naggregation during business operations. \nLearned Apache Spark and Developed data pipelines with centralized schema validation, transformed data with applied rules\nand integrated with BigQuery to store the processed data. \nDeveloped a unified filter algorithm to manage filters for Reports REST APIs and integrated in React application. \nAchievements/Tasks \nAchievements/Tasks \nAchievements/Tasks \n\nPage 2 of 2 \nWORK EXPERIENCE \nSoftware Engineer \nJustbooks Solutions Pvt Ltd \n01/2018 - 10/2020,  Bangalore \nDeveloped five microservices for a book renting platform, including user management, catalog management, invoicing (MIS),\nnotification engine, search service. \nBuilt backend application with Spring Boot, MySQL, and Hibernate to handle complex transactional APIs efficiently. \nIntegrated payment services, including Paytm and Razorpay, with backend systems for seamless transaction processing. \nExtended services with Elasticsearch to enable real-time search and fast data access across applications. \nIntegrated AWS SES for email, Firebase for push notifications, and Ubona vendor for SMS to enable transaction-based user\ncommunications across applications. \nEDUCATION \nBE - Bachelor Of Engineering \nDayananda Sagar College Of Engineering \n08/2013 - 07/2017,  Bangalore \nPre-University Education \nAlvas Pre-University College, Moodbidre \n06/2011 - 04/2013,  Moodbidre, Mangalore \nAchievements/Tasks ",
+  "extractedData": {
+    "name": "Sheetal Karnawadi",
+    "email": "sheetalsrk05@gmail.com",
+    "phone": "9880409897",
+    "linkedinUrl": "https://linkedin.com/in/sheetal-karnawadi-9395b7103",
+    "githubUrl": null,
+    "portfolioUrl": null,
+    "location": "Bangalore",
+    "title": "Tech Architect",
+    "summary": "Over 7 years of experience in software design and development, specializing in web applications using Java & React, data engineering using Scala, plugin development, generative AI, and agentic AI solutions using Python.",
+    "experience": [
+      {
+        "jobTitle": "Tech Architect",
+        "company": "HashedIn By Deloitte",
+        "duration": "11/2024 - Present",
+        "startDate": "2024-11",
+        "endDate": "Present",
+        "techUsed": [],
+        "description": "Leading research and innovation efforts with a team of 8 developers to build AI solutions across multiple domains. Researching and Designing multimodal agents, including audio and video agents, to develop automated AI solutions. Upskilling in cutting-edge technologies to design innovative solutions and address critical process challenges. Exploring cloud solutions for deploying autonomous AI applications in distributed environments to ensure scalability. Architected backend solution engine service version 2.0 to support SDLC-driven workflows. Integrated LLM services to enable code generation, work breakdown, documentation, and migration tasks.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Senior Software Engineer",
+        "company": "HashedIn By Deloitte",
+        "duration": "03/2022 - 11/2024",
+        "startDate": "2022-03",
+        "endDate": "2024-11",
+        "techUsed": [],
+        "description": "Led two teams of 10 developers to design, develop, and deliver features for AI Assist plugin solutions. Researched and developed complex features for AI Assist 2.0, including authentication and LLM integrations. Designed and developed the backend solution engine version 1.0 to accelerate key SDLC activities using LLM services, including code generation, work breakdown, document creation, and code migration. Led a team of 8 Java developers to deliver the full-scale Access Control Tower application with comprehensive stress testing before releasing the application to production within the Walmart ecosystem. Designed and developed solutions to automate access control and stakeholder alerting in Access Control Tower, including integrations with OAuth, PingFederate, LDAP, and ServiceNow. Implemented a solution to generate petabytes of data for stress testing, ensuring alignment with project commitments.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Software Engineer",
+        "company": "HashedIn By Deloitte",
+        "duration": "11/2020 - 02/2022",
+        "startDate": "2020-11",
+        "endDate": "2022-02",
+        "techUsed": [],
+        "description": "Upgraded a single-node Akka state machine to a multi-node Akka cluster using Kubernetes node discovery, enabling successful production deployment. Implemented projection of Akka events from Cassandra to MySQL for seamless data integration with Tableau dashboards. Seamlessly migrated a legacy application to Walmart’s modern cloud-native platform using Akka cluster, maintaining full functional behavior. Transformed a legacy Walmart application to a next-gen tech stack, utilizing Akka actors for event-driven financial data aggregation during business operations. Learned Apache Spark and Developed data pipelines with centralized schema validation, transformed data with applied rules and integrated with BigQuery to store the processed data. Developed a unified filter algorithm to manage filters for Reports REST APIs and integrated in React application.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Software Engineer",
+        "company": "Justbooks Solutions Pvt Ltd",
+        "duration": "01/2018 - 10/2020",
+        "startDate": "2018-01",
+        "endDate": "2020-10",
+        "techUsed": [],
+        "description": "Developed five microservices for a book renting platform, including user management, catalog management, invoicing (MIS), notification engine, search service. Built backend application with Spring Boot, MySQL, and Hibernate to handle complex transactional APIs efficiently. Integrated payment services, including Paytm and Razorpay, with backend systems for seamless transaction processing. Extended services with Elasticsearch to enable real-time search and fast data access across applications. Integrated AWS SES for email, Firebase for push notifications, and Ubona vendor for SMS to enable transaction-based user communications across applications.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "BE - Bachelor Of Engineering",
+        "field": null,
+        "university": "Dayananda Sagar College Of Engineering",
+        "year": "2017",
+        "percentage": null,
+        "gpa": null,
+        "location": "Bangalore"
+      },
+      {
+        "degree": "Pre-University Education",
+        "field": null,
+        "university": "Alvas Pre-University College",
+        "year": "2013",
+        "percentage": null,
+        "gpa": null,
+        "location": "Moodbidre, Mangalore"
+      }
+    ],
+    "projects": [],
+    "achievements": [],
+    "certifications": [],
+    "skills": [
+      "Java",
+      "Python",
+      "Spring Boot",
+      "Fast API",
+      "React",
+      "Scala",
+      "Apache Spark",
+      "Kafka",
+      "Elasticsearch",
+      "MySQL",
+      "Postgres",
+      "Azure",
+      "GCP",
+      "Docker",
+      "Kubernetes",
+      "Redis",
+      "Data warehouse",
+      "Akka",
+      "Cassandra"
+    ],
+    "interests": [],
+    "languages": [],
+    "salary": null,
+    "availability": null,
+    "remotePreference": null,
+    "visaStatus": null,
+    "originalData": {
+      "filename": "477a0a57-152b-4a36-96e1-c94bef899cfa.pdf",
+      "rawText": "Page 1 of 2 Sheetal Karnawadi Tech Architect Over 7 years of experience in software design and development, specializing in web applications using Java & React, data engineering using Scala, plugin development, generative AI, and agentic AI solutions using Python. sheetalsrk05@gmail.com 9880409897 Bangalore linkedin.com/in/sheetal-karnawadi- 9395b7103 SKILLS Java Python Spring Boot Fast API React Scala Apache Spark Kafka Elasticsearch MySQL Postgres Azure GCP Docker Kubernetes Redis Data warehouse Akka Cassandra WORK EXPERIENCE Tech Architect HashedIn By Deloitte 11/2024 - Present, Bangalore Leading research and innovation efforts with a team of 8 developers to build AI solutions across multiple domains. Researching and Designing multimodal agents, including audio and video agents, to develop automated AI solutions. Upskilling in cutting-edge technologies to design innovative solutions and address critical process challenges. Exploring cloud solutions for deploying autonomous AI applications in distributed environments to ensure scalability. Architected backend solution engine service version 2.0 to support SDLC-driven workflows. Integrated LLM services to enable code generation, work breakdown, documentation, and migration tasks. Senior Software Engineer HashedIn By Deloitte 03/2022 - 11/2024, Bangalore Led two teams of 10 developers to design, develop, and deliver features for AI Assist plugin solutions. Researched and developed complex features for AI Assist 2.0, including authentication and LLM integrations. Designed and developed the backend solution engine version 1.0 to accelerate key SDLC activities using LLM services, including code generation, work breakdown, document creation, and code migration. Led a team of 8 Java developers to deliver the full-scale Access Control Tower application with comprehensive stress testing before releasing the application to production within the Walmart ecosystem. Designed and developed solutions to automate access control a"
+    },
+    "source": "resume",
+    "confidence": 92,
+    "processingTime": 0
+  }
+}

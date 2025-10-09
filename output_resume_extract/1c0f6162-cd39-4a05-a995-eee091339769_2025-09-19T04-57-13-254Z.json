@@ -1,0 +1,132 @@
+{
+  "filename": "1c0f6162-cd39-4a05-a995-eee091339769.pdf",
+  "timestamp": "2025-09-19T04:57:13.254Z",
+  "processingTime": 5747,
+  "confidence": 85,
+  "rawText": "\n\nSURIYAKANTH M\n9952419581\nsuriyakanth7717@gmail.com\nPROJECTS \nINTERN\nPUBLICATIONS\nONLINE EXAMINATION PORTAL  \n             Using  PHP,  MySQL,  JavaScript,  I  developed  a  secure  online\nexamination  portal  with  automatic  exam  submission  using  the\nPage Visibility API to prevent tab switching and malpractice.    \nFACE VERIFIED ATTENDANCE SYSTEM USING DJANGO \n       Attendance  system  with  barcode  scanning  and  facial\nrecognition for proper student verification. Added Background tasks\nfor automated monitoring. \n             I finished my internship at Meganar Technologies, Madurai\nas a UI/UX designer from December 2024 to April 2025. I worked on\na  project  called  Media  Jungle,  an  OTT  platform.  I  created\nwireframes, user flows, and prototypes, and worked closely with the\nteam to design the app and understand what users need to make\nit easy to use.\nFOSTERING EMOTIONAL INTELLIGENCE IN EDUCATIONAL\nENVIRONMENT \nJan 2024 \n     Developed a face detection and emotion analysis application\nusing Python, CNN, and Haar cascade to identify emotional states\n(happy, sad, disgusted, neutral, surprised, angry). And received Best\nPaper Award at the conference for innovative research applications\nEMOTION GUIDED ATTENDACE SYSTEM  \nApril 2024 \n     I extended the face detection and emotion analysis application\nto identify  students  and  record  their  attendance  based  on  their\nfacial emotional state. \nOBJECTIVE \nPassionate and punctual individual with an MCA degree, skilled in Web Development, data analysis,\nUI/UX design and research, and machine learning. Strong at understanding users, designing easy-\nto-use interfaces, and analyzing data to find useful insights. Looking for an entry-level role to apply\nmy skills and contribute to meaningful projects.\nB.Sc IT\nSri Kaliswari College\n2020 - 2023\n7.7 CGPA\n8.0 CGPA\nAyya Nadar Janaki Ammal College\nMCA\n2023 - 2025\nAyya Nadar Janaki Ammal College\nDiploma in AI and ML\n2023 - 2024\nEDUCATION\nEXPERTISE\nWeb Designing\nUI/UX Research and Design \nReact JS\nProblem Solving and Analysis\nGraphic Design\nMachine Learning\nPython\nNode JS\nPHP\nMS Office\nlinkedin",
+  "extractedData": {
+    "name": "SURIYAKANTH M",
+    "email": "suriyakanth7717@gmail.com",
+    "phone": "9952419581",
+    "linkedinUrl": "http://www.linkedin.com/in/suriyakanth-m-625b11231",
+    "githubUrl": null,
+    "portfolioUrl": null,
+    "location": null,
+    "title": null,
+    "summary": "Passionate and punctual individual with an MCA degree, skilled in Web Development, data analysis, UI/UX design and research, and machine learning. Strong at understanding users, designing easy-to-use interfaces, and analyzing data to find useful insights. Looking for an entry-level role to apply my skills and contribute to meaningful projects.",
+    "experience": [
+      {
+        "jobTitle": "UI/UX designer",
+        "company": "Meganar Technologies",
+        "duration": "December 2024 - April 2025",
+        "startDate": "2024-12",
+        "endDate": "2025-04",
+        "techUsed": [],
+        "description": "Worked on a project called Media Jungle, an OTT platform. Created wireframes, user flows, and prototypes, and worked closely with the team to design the app and understand what users need to make it easy to use.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Sc IT",
+        "field": null,
+        "university": "Sri Kaliswari College",
+        "year": "2023",
+        "percentage": null,
+        "gpa": "7.7",
+        "location": null
+      },
+      {
+        "degree": "MCA",
+        "field": null,
+        "university": "Ayya Nadar Janaki Ammal College",
+        "year": "2025",
+        "percentage": null,
+        "gpa": "8.0",
+        "location": null
+      },
+      {
+        "degree": "Diploma in AI and ML",
+        "field": null,
+        "university": "Ayya Nadar Janaki Ammal College",
+        "year": "2024",
+        "percentage": null,
+        "gpa": null,
+        "location": null
+      }
+    ],
+    "projects": [
+      {
+        "name": "ONLINE EXAMINATION PORTAL",
+        "description": "Developed a secure online examination portal with automatic exam submission using the Page Visibility API to prevent tab switching and malpractice.",
+        "techUsed": [
+          "PHP",
+          "MySQL",
+          "JavaScript"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "FACE VERIFIED ATTENDANCE SYSTEM USING DJANGO",
+        "description": "Attendance system with barcode scanning and facial recognition for proper student verification. Added Background tasks for automated monitoring.",
+        "techUsed": [
+          "Django"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "FOSTERING EMOTIONAL INTELLIGENCE IN EDUCATIONAL ENVIRONMENT",
+        "description": "Developed a face detection and emotion analysis application using Python, CNN, and Haar cascade to identify emotional states (happy, sad, disgusted, neutral, surprised, angry).",
+        "techUsed": [
+          "Python",
+          "CNN",
+          "Haar cascade"
+        ],
+        "duration": "Jan 2024",
+        "url": null,
+        "achievements": [
+          "Received Best Paper Award at the conference for innovative research applications"
+        ]
+      },
+      {
+        "name": "EMOTION GUIDED ATTENDACE SYSTEM",
+        "description": "Extended the face detection and emotion analysis application to identify students and record their attendance based on their facial emotional state.",
+        "techUsed": [],
+        "duration": "April 2024",
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "achievements": [],
+    "certifications": [],
+    "skills": [
+      "Web Designing",
+      "UI/UX Research and Design",
+      "React JS",
+      "Problem Solving and Analysis",
+      "Graphic Design",
+      "Machine Learning",
+      "Python",
+      "Node JS",
+      "PHP",
+      "MS Office"
+    ],
+    "interests": [],
+    "languages": [],
+    "salary": null,
+    "availability": null,
+    "remotePreference": null,
+    "visaStatus": null,
+    "originalData": {
+      "filename": "1c0f6162-cd39-4a05-a995-eee091339769.pdf",
+      "rawText": "SURIYAKANTH M 9952419581 suriyakanth7717@gmail.com PROJECTS INTERN PUBLICATIONS ONLINE EXAMINATION PORTAL Using PHP, MySQL, JavaScript, I developed a secure online examination portal with automatic exam submission using the Page Visibility API to prevent tab switching and malpractice. FACE VERIFIED ATTENDANCE SYSTEM USING DJANGO Attendance system with barcode scanning and facial recognition for proper student verification. Added Background tasks for automated monitoring. I finished my internship at Meganar Technologies, Madurai as a UI/UX designer from December 2024 to April 2025. I worked on a project called Media Jungle, an OTT platform. I created wireframes, user flows, and prototypes, and worked closely with the team to design the app and understand what users need to make it easy to use. FOSTERING EMOTIONAL INTELLIGENCE IN EDUCATIONAL ENVIRONMENT Jan 2024 Developed a face detection and emotion analysis application using Python, CNN, and Haar cascade to identify emotional states (happy, sad, disgusted, neutral, surprised, angry). And received Best Paper Award at the conference for innovative research applications EMOTION GUIDED ATTENDACE SYSTEM April 2024 I extended the face detection and emotion analysis application to identify students and record their attendance based on their facial emotional state. OBJECTIVE Passionate and punctual individual with an MCA degree, skilled in Web Development, data analysis, UI/UX design and research, and machine learning. Strong at understanding users, designing easy- to-use interfaces, and analyzing data to find useful insights. Looking for an entry-level role to apply my skills and contribute to meaningful projects. B.Sc IT Sri Kaliswari College 2020 - 2023 7.7 CGPA 8.0 CGPA Ayya Nadar Janaki Ammal College MCA 2023 - 2025 Ayya Nadar Janaki Ammal College Diploma in AI and ML 2023 - 2024 EDUCATION EXPERTISE Web Designing UI/UX Research and Design React JS Problem Solving and Analysis Graphic Design Machine Learning Python Node"
+    },
+    "source": "resume",
+    "confidence": 85,
+    "processingTime": 0
+  }
+}

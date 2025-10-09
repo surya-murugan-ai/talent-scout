@@ -1,0 +1,169 @@
+{
+  "filename": "d7e74e05-9950-40ee-9719-1fbc39cc53db.pdf",
+  "timestamp": "2025-09-19T08:26:39.491Z",
+  "processingTime": 7874,
+  "confidence": 70,
+  "rawText": "\n\nNidhin Joseph M P\nAlleppey, Kerala\nnidhinjosepjmp6_ioq@indeedemail.com\n+91 70120 37458\nName: -Nidhin Joseph M.P \nDate of Birth: -May 17, 1994 \nNationality: -Indian \nGender: -Male \nMarital Status: -Single \n \nName of Father: -Paul M.O \n \nName of Mother: -DessyPaul \n \nReligion: - Christian \n \nCast: -Latin Catholic \n \nNative Place: -Pallithode \n \nAddress: -Menamkatt(H), Pallithode P.O \nCherthala, Alappuzha (DIS), PIN: 688540\nWork Experience\nPart Time Full Stack Developer\nAmiyon Solutions Pvt Ltd - Thrissur, Kerala, 680308, IN\nJanuary 2023 to Present\nPROJECT ASSISTANT\nKUTHIATHODU PANCHAYATH\nJanuary 2022 to Present\nROGERSOFT - Kochi, KERALA, IN\nJuly 2020 to December 2021\nDesignation: Full Stack(Codeigniter, HTML, Photoshop, Hosting).\nWeb developing\nDeveloper (Laravel, Vue js)\nPROTRACKED - Cherthala, KERALA, IN\nJanuary 2019 to December 2019\nSoftware developer\nROGERSOFT - Kochi, KERALA, IN\nJune 2018 to December 2018\n\nDesignation: Full Stack(Codeigniter, HTML, Photoshop, Hosting).\nWeb developing\nPHP Developer\nROGERSOFT - Kochi, KERALA, IN\nMarch 2017 to June 2018\nWeb developing\nCANRONE SOFTWARE - Kochi, KERALA, IN\nOctober 2015 to August 2016\nDesignation: Web developing\nPROJECT\nEducation\nBCA in Computer Science & Engineering\n2017 to Present\nSSLC\n2009\nSkills / IT Skills\n•Programming:\n•MY SQL Software's: -Dreamweaver, Eclipse, Photoshop Technical Qualification: -Diploma in Computer\nScience & Engineering. Mobile No:-7012037458, 9072515594 DECLARATION I hereby declare that\nthe above information is factually correct to the best of my knowledge and belief. Place: Signature:\nDate: NIDHIN JOSEPH M.P\n•C, C++, HTML5, CSS3, C#.NET, Bootstrap, JavaScript, JAVA, PHP, Vue js, Yii2 Framework, Codeigniter\nFramework, Laravel Framework, Django Framework (python), ionic, AngularJs, Wordpress Operating\nSystem Windows 10, Windows 8, Windows 7, XP, Linux Office Packages MS-Office 2003/2007/2010\nDatabase Technologies:\n•HTML5\n•JavaScript\n•SQL",
+  "extractedData": {
+    "name": "Nidhin Joseph M P",
+    "email": "nidhinjosepjmp6_ioq@indeedemail.com",
+    "phone": "+91 70120 37458",
+    "linkedinUrl": null,
+    "githubUrl": null,
+    "portfolioUrl": null,
+    "location": "Alleppey, Kerala",
+    "title": null,
+    "summary": null,
+    "experience": [
+      {
+        "jobTitle": "Part Time Full Stack Developer",
+        "company": "Amiyon Solutions Pvt Ltd",
+        "duration": "January 2023 - Present",
+        "startDate": "2023-01",
+        "endDate": "Present",
+        "techUsed": [],
+        "description": null,
+        "achievements": []
+      },
+      {
+        "jobTitle": "PROJECT ASSISTANT",
+        "company": "KUTHIATHODU PANCHAYATH",
+        "duration": "January 2022 - Present",
+        "startDate": "2022-01",
+        "endDate": "Present",
+        "techUsed": [],
+        "description": null,
+        "achievements": []
+      },
+      {
+        "jobTitle": "Full Stack Developer",
+        "company": "ROGERSOFT",
+        "duration": "July 2020 - December 2021",
+        "startDate": "2020-07",
+        "endDate": "2021-12",
+        "techUsed": [
+          "Codeigniter",
+          "HTML",
+          "Photoshop",
+          "Hosting"
+        ],
+        "description": "Web developing",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Developer",
+        "company": "PROTRACKED",
+        "duration": "January 2019 - December 2019",
+        "startDate": "2019-01",
+        "endDate": "2019-12",
+        "techUsed": [
+          "Laravel",
+          "Vue js"
+        ],
+        "description": "Software developer",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Full Stack Developer",
+        "company": "ROGERSOFT",
+        "duration": "June 2018 - December 2018",
+        "startDate": "2018-06",
+        "endDate": "2018-12",
+        "techUsed": [
+          "Codeigniter",
+          "HTML",
+          "Photoshop",
+          "Hosting"
+        ],
+        "description": "Web developing",
+        "achievements": []
+      },
+      {
+        "jobTitle": "PHP Developer",
+        "company": "ROGERSOFT",
+        "duration": "March 2017 - June 2018",
+        "startDate": "2017-03",
+        "endDate": "2018-06",
+        "techUsed": [],
+        "description": "Web developing",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Web Developer",
+        "company": "CANRONE SOFTWARE",
+        "duration": "October 2015 - August 2016",
+        "startDate": "2015-10",
+        "endDate": "2016-08",
+        "techUsed": [],
+        "description": "Web developing",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "BCA",
+        "field": "Computer Science & Engineering",
+        "university": null,
+        "year": "2017 to Present",
+        "percentage": null,
+        "gpa": null,
+        "location": null
+      },
+      {
+        "degree": "SSLC",
+        "field": null,
+        "university": null,
+        "year": "2009",
+        "percentage": null,
+        "gpa": null,
+        "location": null
+      }
+    ],
+    "projects": [],
+    "achievements": [],
+    "certifications": [],
+    "skills": [
+      "MY SQL",
+      "Dreamweaver",
+      "Eclipse",
+      "Photoshop",
+      "C",
+      "C++",
+      "HTML5",
+      "CSS3",
+      "C#.NET",
+      "Bootstrap",
+      "JavaScript",
+      "JAVA",
+      "PHP",
+      "Vue js",
+      "Yii2 Framework",
+      "Codeigniter Framework",
+      "Laravel Framework",
+      "Django Framework",
+      "ionic",
+      "AngularJs",
+      "Wordpress",
+      "Windows 10",
+      "Windows 8",
+      "Windows 7",
+      "XP",
+      "Linux",
+      "MS-Office 2003/2007/2010",
+      "SQL"
+    ],
+    "interests": [],
+    "languages": [],
+    "salary": null,
+    "availability": null,
+    "remotePreference": null,
+    "visaStatus": null,
+    "originalData": {
+      "filename": "d7e74e05-9950-40ee-9719-1fbc39cc53db.pdf",
+      "rawText": "Nidhin Joseph M P Alleppey, Kerala nidhinjosepjmp6_ioq@indeedemail.com +91 70120 37458 Name: -Nidhin Joseph M.P Date of Birth: -May 17, 1994 Nationality: -Indian Gender: -Male Marital Status: -Single Name of Father: -Paul M.O Name of Mother: -DessyPaul Religion: - Christian Cast: -Latin Catholic Native Place: -Pallithode Address: -Menamkatt(H), Pallithode P.O Cherthala, Alappuzha (DIS), PIN: 688540 Work Experience Part Time Full Stack Developer Amiyon Solutions Pvt Ltd - Thrissur, Kerala, 680308, IN January 2023 to Present PROJECT ASSISTANT KUTHIATHODU PANCHAYATH January 2022 to Present ROGERSOFT - Kochi, KERALA, IN July 2020 to December 2021 Designation: Full Stack(Codeigniter, HTML, Photoshop, Hosting). Web developing Developer (Laravel, Vue js) PROTRACKED - Cherthala, KERALA, IN January 2019 to December 2019 Software developer ROGERSOFT - Kochi, KERALA, IN June 2018 to December 2018 Designation: Full Stack(Codeigniter, HTML, Photoshop, Hosting). Web developing PHP Developer ROGERSOFT - Kochi, KERALA, IN March 2017 to June 2018 Web developing CANRONE SOFTWARE - Kochi, KERALA, IN October 2015 to August 2016 Designation: Web developing PROJECT Education BCA in Computer Science & Engineering 2017 to Present SSLC 2009 Skills / IT Skills •Programming: •MY SQL Software's: -Dreamweaver, Eclipse, Photoshop Technical Qualification: -Diploma in Computer Science & Engineering. Mobile No:-7012037458, 9072515594 DECLARATION I hereby declare that the above information is factually correct to the best of my knowledge and belief. Place: Signature: Date: NIDHIN JOSEPH M.P •C, C++, HTML5, CSS3, C#.NET, Bootstrap, JavaScript, JAVA, PHP, Vue js, Yii2 Framework, Codeigniter Framework, Laravel Framework, Django Framework (python), ionic, AngularJs, Wordpress Operating System Windows 10, Windows 8, Windows 7, XP, Linux Office Packages MS-Office 2003/2007/2010 Database Technologies: •HTML5 •JavaScript •SQL"
+    },
+    "source": "resume",
+    "confidence": 70,
+    "processingTime": 0
+  }
+}

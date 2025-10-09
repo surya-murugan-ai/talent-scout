@@ -16,17 +16,21 @@ export interface ScoringWeights {
 export interface Candidate {
   id: string;
   name: string;
-  email?: string;
-  title?: string;
-  company?: string;
-  currentEmployer?: string;
-  linkedinUrl?: string;
+  email?: string | null;
+  phone?: string | null;
+  title?: string | null;
+  company?: string | null;
+  currentEmployer?: string | null;
+  linkedinUrl?: string | null;
+  githubUrl?: string | null;
+  portfolioUrl?: string | null;
+  location?: string | null;
   skills?: string[];
   score?: number;
   priority: 'High' | 'Medium' | 'Low';
   openToWork: boolean;
-  lastActive?: string;
-  notes?: string;
+  lastActive?: string | null;
+  notes?: string | null;
   
   // Company comparison and hireability fields
   companyDifference?: string;
@@ -35,8 +39,15 @@ export interface Candidate {
   hireabilityFactors?: string[];
   potentialToJoin?: 'High' | 'Medium' | 'Low' | 'Unknown';
   
-  createdAt?: string;
-  updatedAt?: string;
+  // Additional fields for comprehensive data
+  originalData?: any;
+  extractedData?: any;
+  enrichedData?: any;
+  confidence?: number;
+  processingTime?: number;
+  source?: string | null;
+  
+  createdAt?: string | null;
 }
 
 export interface ProcessingJob {
@@ -50,7 +61,6 @@ export interface ProcessingJob {
   processedRecords: number;
   errorMessage?: string;
   createdAt?: string;
-  updatedAt?: string;
 }
 
 export interface Activity {

@@ -1,0 +1,88 @@
+{
+  "filename": "58b4c83f-7e14-41a0-baa8-061349c12463.pdf",
+  "timestamp": "2025-09-29T08:58:46.735Z",
+  "processingTime": 3419,
+  "confidence": 73,
+  "rawText": "\n\nSASITHARAN S \nCity: Kovilpatti, Tamil Nadu |Cell Phone: +91 8870244640 | Email: sasitharan8113@gmail.com \n \nCareer Statement: To build a strong career in IT sector through hard work, dedication, constant learning \napproach and ability to take new and challenging responsibilities to benefit the company. \n \nEDUCATION \n \nJ.J. College of Engineering and Technology, Trichy \nBE | Percentage – 61.8% | Major: Civil Engineering | 2019 \n \nThe Lakshmi Mills Higher Secondary School, Kovilpatti \nHSE| Percentage – 73.75% | Major: Computer Science | 2015 \n \nThe Lakshmi Mills Higher Secondary School, Kovilpatti \nSSLC| Percentage – 83.6% | 2013 \nSKILLS \n \no Basic Knowledge of Java Programming Language. \no Basic Knowledge of Spring Boot framework. \no Strong concept and practical knowledge of object-oriented Programming in Java. \no Strong concept of collections, Exception handling, file handling in java.  \no Basic Knowledge of Amazon Web Services. \no Learn about the Create Table, Insert, Update, Delete in MySQL. \no Excellent Problem solving, Analytical and communication skills. \no Good knowledge of Backup and Restore in MySQL. \no Basic Knowledge of HTML and CSS. \no Ability to learn new Skills quicky. \n \nCERTIFICATIONS \n \no Completed Training on “Introduction to HTML5” in Coursera. \n \nADDITIONAL SKILLS \n \no Programming Language – Java. \no Database - MySQL. \no Web Technology - HTML5, CSS. ",
+  "extractedData": {
+    "name": "Sasitharan S",
+    "email": "sasitharan8113@gmail.com",
+    "phone": "+91 8870244640",
+    "linkedinUrl": null,
+    "githubUrl": null,
+    "portfolioUrl": null,
+    "location": "Kovilpatti, Tamil Nadu",
+    "title": null,
+    "summary": "To build a strong career in IT sector through hard work, dedication, constant learning approach and ability to take new and challenging responsibilities to benefit the company.",
+    "experience": [],
+    "education": [
+      {
+        "degree": "BE",
+        "field": "Civil Engineering",
+        "university": "J.J. College of Engineering and Technology, Trichy",
+        "year": "2019",
+        "percentage": "61.8%",
+        "gpa": null,
+        "location": null
+      },
+      {
+        "degree": "HSE",
+        "field": "Computer Science",
+        "university": "The Lakshmi Mills Higher Secondary School, Kovilpatti",
+        "year": "2015",
+        "percentage": "73.75%",
+        "gpa": null,
+        "location": null
+      },
+      {
+        "degree": "SSLC",
+        "field": null,
+        "university": "The Lakshmi Mills Higher Secondary School, Kovilpatti",
+        "year": "2013",
+        "percentage": "83.6%",
+        "gpa": null,
+        "location": null
+      }
+    ],
+    "projects": [],
+    "achievements": [],
+    "certifications": [
+      {
+        "name": "Introduction to HTML5",
+        "issuer": "Coursera",
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      }
+    ],
+    "skills": [
+      "Java Programming Language",
+      "Spring Boot framework",
+      "Object-oriented Programming in Java",
+      "Collections",
+      "Exception handling",
+      "File handling in Java",
+      "Amazon Web Services",
+      "MySQL",
+      "HTML",
+      "CSS",
+      "Problem solving",
+      "Analytical skills",
+      "Communication skills"
+    ],
+    "interests": [],
+    "languages": [],
+    "salary": null,
+    "availability": null,
+    "remotePreference": null,
+    "visaStatus": null,
+    "originalData": {
+      "filename": "58b4c83f-7e14-41a0-baa8-061349c12463.pdf",
+      "rawText": "SASITHARAN S City: Kovilpatti, Tamil Nadu |Cell Phone: +91 8870244640 | Email: sasitharan8113@gmail.com Career Statement: To build a strong career in IT sector through hard work, dedication, constant learning approach and ability to take new and challenging responsibilities to benefit the company. EDUCATION J.J. College of Engineering and Technology, Trichy BE | Percentage – 61.8% | Major: Civil Engineering | 2019 The Lakshmi Mills Higher Secondary School, Kovilpatti HSE| Percentage – 73.75% | Major: Computer Science | 2015 The Lakshmi Mills Higher Secondary School, Kovilpatti SSLC| Percentage – 83.6% | 2013 SKILLS o Basic Knowledge of Java Programming Language. o Basic Knowledge of Spring Boot framework. o Strong concept and practical knowledge of object-oriented Programming in Java. o Strong concept of collections, Exception handling, file handling in java. o Basic Knowledge of Amazon Web Services. o Learn about the Create Table, Insert, Update, Delete in MySQL. o Excellent Problem solving, Analytical and communication skills. o Good knowledge of Backup and Restore in MySQL. o Basic Knowledge of HTML and CSS. o Ability to learn new Skills quicky. CERTIFICATIONS o Completed Training on “Introduction to HTML5” in Coursera. ADDITIONAL SKILLS o Programming Language – Java. o Database - MySQL. o Web Technology - HTML5, CSS."
+    },
+    "source": "resume",
+    "confidence": 73,
+    "processingTime": 0
+  }
+}

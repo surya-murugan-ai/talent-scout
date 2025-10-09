@@ -1,0 +1,590 @@
+{
+  "timestamp": "2025-09-03T14:29:01.123Z",
+  "linkedinUrl": "https://linkedin.com/in/harish-sekar",
+  "rawData": {
+    "linkedinUrl": "https://linkedin.com/in/harish-sekar",
+    "firstName": "Harish",
+    "lastName": "S.",
+    "fullName": "Harish S.",
+    "headline": "Software Engineer @ State Farm | Full Stack Web Developer",
+    "connections": 297,
+    "followers": 301,
+    "email": null,
+    "mobileNumber": null,
+    "jobTitle": "Technical Consultant",
+    "companyName": "State Farm",
+    "companyIndustry": "Insurance",
+    "companyWebsite": "statefarm.com",
+    "companyLinkedin": "linkedin.com/company/state_farm",
+    "companyFoundedIn": 1922,
+    "companySize": "10001+",
+    "currentJobDuration": "2 yrs 5 mos",
+    "currentJobDurationInYrs": 2.42,
+    "topSkillsByEndorsements": "Java, Amazon Web Services (AWS)",
+    "addressCountryOnly": null,
+    "addressWithCountry": "United States",
+    "addressWithoutCountry": "United States",
+    "profilePic": null,
+    "profilePicHighQuality": null,
+    "about": "Self-directed and motivated Software Engineer who works effectively in a dynamic environment.",
+    "publicIdentifier": "harish-sekar",
+    "openConnection": null,
+    "urn": "ACoAABqCTokBbpUXlJskWjGBFPfIwfM0NulowZE",
+    "experiences": [
+      {
+        "companyId": "2381",
+        "companyUrn": "urn:li:fsd_company:2381",
+        "companyLink1": "https://www.linkedin.com/company/2381/",
+        "logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGe3IHsGr7hjQ/company-logo_200_200/company-logo_200_200/0/1686247139310/state_farm_logo?e=1759968000&v=beta&t=LR7eVQVkbuMflT9jOwid3ylUBTqVFZETk3rQ12C_MKU",
+        "title": "State Farm",
+        "subtitle": "Contract · 7 yrs 6 mos",
+        "breakdown": true,
+        "subComponents": [
+          {
+            "title": "Technical Consultant",
+            "caption": "May 2023 - Present · 2 yrs 5 mos",
+            "metadata": "United States",
+            "description": [
+              {
+                "type": "textComponent",
+                "text": "B2B Full stack Software Engineer "
+              }
+            ]
+          },
+          {
+            "title": "Lead",
+            "caption": "Mar 2022 - May 2023 · 1 yr 3 mos",
+            "metadata": "India",
+            "description": [
+              {
+                "type": "textComponent",
+                "text": "Statefarm B2B Web team - Full Stack Software Web Developer"
+              }
+            ]
+          },
+          {
+            "title": "Senior Application Developer",
+            "caption": "Apr 2018 - Mar 2022 · 4 yrs",
+            "metadata": "Bloomington, Illinois",
+            "description": [
+              {
+                "type": "textComponent",
+                "text": "StateFarm Insurance - Business to Business  Full Stack Software Engineer"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "companyId": "14313",
+        "companyUrn": "urn:li:fsd_company:14313",
+        "companyLink1": "https://www.linkedin.com/company/14313/",
+        "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFwdRM69lLB5A/company-logo_200_200/company-logo_200_200/0/1630551825716/wichita_state_university_logo?e=1759968000&v=beta&t=cWHhQwKg7z2mtbe2Xyt5_NOYXmnaG9Ty7fkQ_Eh3LVo",
+        "title": "Graduate Teaching Assistant",
+        "subtitle": "Wichita State University · Part-time",
+        "caption": "Jul 2016 - Dec 2016 · 6 mos",
+        "metadata": "Wichita, Kansas",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "companyId": "1318",
+        "companyUrn": "urn:li:fsd_company:1318",
+        "companyLink1": "https://www.linkedin.com/company/1318/",
+        "logo": "https://media.licdn.com/dms/image/v2/D4E0BAQEINH3Vf1swig/company-logo_200_200/company-logo_200_200/0/1730379480485/wipro_logo?e=1759968000&v=beta&t=BHKkwqP9Hry_0XpLUnevhaUPhnmGMTeZ_dzyvryQCgc",
+        "title": "Software Engineer",
+        "subtitle": "Wipro Limited · Full-time",
+        "caption": "Apr 2014 - Dec 2015 · 1 yr 9 mos",
+        "metadata": "Bengaluru, Karnataka",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "updates": [],
+    "skills": [
+      {
+        "title": "Cloud Computing",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Technical Consultant at State Farm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Solution Architecture",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Technical Consultant at State Farm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Okta Identity Cloud",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Technical Consultant at State Farm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Microsoft Entra ID",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Technical Consultant at State Farm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "GraphQL",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Technical Consultant at State Farm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "React router",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Technical Consultant at State Farm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Code Review",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Technical Consultant at State Farm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "TypeScript",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Technical Consultant at State Farm"
+              },
+              {
+                "type": "insightComponent",
+                "text": "Volunteer Computer Science Instructor"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Single Sign-On (SSO)",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Technical Consultant at State Farm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Argo",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Technical Consultant at State Farm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Scalr",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Technical Consultant at State Farm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "OpenShift",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Amazon Web Services (AWS)",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Technical Consultant at State Farm"
+              },
+              {
+                "type": "insightComponent",
+                "text": "1 endorsement"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Terraform",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Technical Consultant at State Farm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "IntelliJ IDEA",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Technical Consultant at State Farm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Spring Integration",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Technical Consultant at State Farm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Spring Batch",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Technical Consultant at State Farm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "PostgreSQL",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Technical Consultant at State Farm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Redux Thunk",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Technical Consultant at State Farm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Java",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Technical Consultant at State Farm"
+              },
+              {
+                "type": "insightComponent",
+                "text": "6 endorsements"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "profilePicAllDimensions": [],
+    "educations": [
+      {
+        "companyId": "14313",
+        "companyUrn": "urn:li:fsd_company:14313",
+        "companyLink1": "https://www.linkedin.com/company/14313/",
+        "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFwdRM69lLB5A/company-logo_200_200/company-logo_200_200/0/1630551825716/wichita_state_university_logo?e=1759968000&v=beta&t=cWHhQwKg7z2mtbe2Xyt5_NOYXmnaG9Ty7fkQ_Eh3LVo",
+        "title": "Wichita State University",
+        "subtitle": "Master's degree, Computer Science",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "companyId": "9561317",
+        "companyUrn": "urn:li:fsd_company:9561317",
+        "companyLink1": "https://www.linkedin.com/company/9561317/",
+        "logo": "https://media.licdn.com/dms/image/v2/C560BAQGUQawJnlKh8w/company-logo_200_200/company-logo_200_200/0/1630649987835/kct_logo?e=1759968000&v=beta&t=6pohYClpYgf3WTunF_E1K1wQuiwSHmvfzG3yGoz2koc",
+        "title": "Kumaraguru College of Technology",
+        "subtitle": "Bachelor's degree, Electronics and Communications Engineering",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "licenseAndCertificates": [],
+    "honorsAndAwards": [],
+    "languages": [],
+    "volunteerAndAwards": [
+      {
+        "companyId": "3691216",
+        "companyUrn": "urn:li:fsd_company:3691216",
+        "companyLink1": "https://www.linkedin.com/company/3691216/",
+        "logo": "https://media.licdn.com/dms/image/v2/D560BAQHygk6J5Odk8A/company-logo_200_200/company-logo_200_200/0/1728101513554?e=1759968000&v=beta&t=yoltwC2eeSCCoYMD-SFgK0pXQmtlV-zk0-4YFi7ZTyY",
+        "title": "Volunteer Computer Science Instructor",
+        "subtitle": "TEALSK12",
+        "caption": "Jul 2017 - Dec 2017 · 6 mos",
+        "metadata": "Education",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "verifications": [],
+    "promos": [],
+    "highlights": [],
+    "projects": [
+      {
+        "title": "IoT Tracker",
+        "subtitle": "Dec 2017 - Present",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "textComponent",
+                "text": "Designed and developed Spring Boot micro services which consumes (REST Web service) vehicle readings from IoT devices and produces the data upon request for Angular 4 front-end. Back-end performs analysis of data in real-time and alerts the user through UI dashboard, if necessary. Deployed the Docokerized app in AWS Elastic Bean Stack(PaaS) and used Spring Netflix Zuul Proxy/ Spring Cloud for API Gateway and Spring Eureka for Service Registry. Used MySQL for Database Service.\n\nUser Interface with following features:\nAbility to see details of all the vehicles like VIN, make, model, year etc.\nShow number of HIGH alerts within last 2 hours for all the vehicles and ability to sort list of vehicles based on it.\nAbility to plot vehicle's history of specific signal over a user selected time range, e.g. fuelVolume over 2 hours, engineRpm over last 15minutes.\nAbility to show vehicle's geolocation within last 30minutes on a map.\nAbility to list a vehicle's all historical alerts.\nAbility to send an email to the user when HIGH alerts are triggered for a vehicle."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Facts App",
+        "subtitle": "Oct 2017 - Present",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "textComponent",
+                "text": "Facts: 360\" offers more than 8,000 interesting, fun , random , world records,  Science , Statistics, Nature facts and famous quotes. Enjoy the largest collection of facts available anywhere. Discover facts you never knew. \n\n- More than 8,000 random facts to browse through in your free time.\n- Fact of the day notifications.\n- Add your  favourite facts to local Database.\n- Search the huge collection of facts for keywords.\n- Share your facts with your friends.\n- Listen to the facts with the text-to-speech option.\n- Simple and beautiful user interface."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "publications": [],
+    "patents": [],
+    "courses": [
+      {
+        "title": "Adv Software Engineering",
+        "subtitle": "CS-780",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Associated with Wichita State University"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Advanced Algorithms/Analysis",
+        "subtitle": "CS-721",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Associated with Wichita State University"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "testScores": [],
+    "organizations": [],
+    "volunteerCauses": [],
+    "interests": [
+      {
+        "section_name": "Companies",
+        "section_components": [
+          {
+            "titleV2": "WarnerMedia",
+            "caption": "672,369 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1000/",
+            "subComponents": []
+          },
+          {
+            "titleV2": "IBM",
+            "caption": "18,639,831 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1009/",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Groups",
+        "section_components": [
+          {
+            "titleV2": "React Js & React Native Developer's India",
+            "caption": "233,164 members",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/groups/10447580",
+            "subComponents": []
+          },
+          {
+            "titleV2": "Solution Architect",
+            "caption": "39,954 members",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/groups/90347",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Newsletters",
+        "section_components": [
+          {
+            "titleV2": "Introducing Vibe trading",
+            "caption": "Published weekly",
+            "subtitle": ".",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/newsletters/7354494882159251456",
+            "subComponents": [
+              {
+                "insightComponent": {
+                  "text": "Nithya Kumaran",
+                  "actionTarget": "https://www.linkedin.com/in/nithyakumaran"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section_name": "Schools",
+        "section_components": [
+          {
+            "titleV2": "Y Combinator",
+            "caption": "1,433,382 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/school/167872/",
+            "subComponents": []
+          },
+          {
+            "titleV2": "Mysore Medical College & Research Institute",
+            "caption": "1,693 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/school/8897313/",
+            "subComponents": []
+          }
+        ]
+      }
+    ],
+    "recommendations": []
+  },
+  "metadata": {
+    "source": "dev_fusion/Linkedin-Profile-Scraper",
+    "savedAt": "2025-09-03T14:29:01.123Z"
+  }
+}

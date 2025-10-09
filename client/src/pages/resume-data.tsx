@@ -61,7 +61,6 @@ interface ResumeData {
     processingTime: number;
     source: string;
     createdAt: string;
-    updatedAt: string;
   };
   candidate: {
     id: string;
@@ -81,7 +80,6 @@ interface ResumeData {
     notes: string | null;
     source: string;
     createdAt: string;
-    updatedAt: string;
   } | null;
 }
 
@@ -298,27 +296,28 @@ export default function ResumeDataPage() {
 
       {/* Detailed View Modal */}
       <Dialog open={!!selectedResume} onOpenChange={() => setSelectedResume(null)}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle className="flex items-center space-x-2">
-              <FileText className="h-5 w-5" />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-white">
+          <DialogHeader className="bg-white border-b border-gray-200 pb-4">
+            <DialogTitle className="flex items-center space-x-2 text-gray-900">
+              <FileText className="h-5 w-5 text-blue-600" />
               <span>Resume Details - {selectedResume?.resumeData.name}</span>
             </DialogTitle>
           </DialogHeader>
 
           {selectedResume && (
-            <Tabs defaultValue="basic" className="w-full">
-              <TabsList className="grid w-full grid-cols-6">
-                <TabsTrigger value="basic">Basic</TabsTrigger>
-                <TabsTrigger value="experience">Experience</TabsTrigger>
-                <TabsTrigger value="education">Education</TabsTrigger>
-                <TabsTrigger value="projects">Projects</TabsTrigger>
-                <TabsTrigger value="skills">Skills</TabsTrigger>
-                <TabsTrigger value="raw">Raw Text</TabsTrigger>
-              </TabsList>
+            <div className="px-6">
+              <Tabs defaultValue="basic" className="w-full">
+                <TabsList className="grid w-full grid-cols-6 bg-gray-100 border border-gray-200 mb-6">
+                  <TabsTrigger value="basic" className="py-2 px-3">Basic</TabsTrigger>
+                  <TabsTrigger value="experience" className="py-2 px-3">Experience</TabsTrigger>
+                  <TabsTrigger value="education" className="py-2 px-3">Education</TabsTrigger>
+                  <TabsTrigger value="projects" className="py-2 px-3">Projects</TabsTrigger>
+                  <TabsTrigger value="skills" className="py-2 px-3">Skills</TabsTrigger>
+                  <TabsTrigger value="raw" className="py-2 px-3">Raw Text</TabsTrigger>
+                </TabsList>
 
               <TabsContent value="basic" className="space-y-4">
-                <Card className="bg-white">
+                <Card className="bg-white border border-gray-200 shadow-sm">
                   <CardHeader>
                     <CardTitle>Basic Information</CardTitle>
                   </CardHeader>
@@ -397,7 +396,7 @@ export default function ResumeDataPage() {
               </TabsContent>
 
               <TabsContent value="experience">
-                <Card className="bg-white">
+                <Card className="bg-white border border-gray-200 shadow-sm">
                   <CardHeader>
                     <CardTitle>Work Experience</CardTitle>
                   </CardHeader>
@@ -435,7 +434,7 @@ export default function ResumeDataPage() {
               </TabsContent>
 
               <TabsContent value="education">
-                <Card className="bg-white">
+                <Card className="bg-white border border-gray-200 shadow-sm">
                   <CardHeader>
                     <CardTitle>Education</CardTitle>
                   </CardHeader>
@@ -464,7 +463,7 @@ export default function ResumeDataPage() {
               </TabsContent>
 
               <TabsContent value="projects">
-                <Card className="bg-white">
+                <Card className="bg-white border border-gray-200 shadow-sm">
                   <CardHeader>
                     <CardTitle>Projects</CardTitle>
                   </CardHeader>
@@ -500,7 +499,7 @@ export default function ResumeDataPage() {
               </TabsContent>
 
               <TabsContent value="skills">
-                <Card className="bg-white">
+                <Card className="bg-white border border-gray-200 shadow-sm">
                   <CardHeader>
                     <CardTitle>Skills & Certifications</CardTitle>
                   </CardHeader>
@@ -575,7 +574,7 @@ export default function ResumeDataPage() {
               </TabsContent>
 
               <TabsContent value="raw">
-                <Card className="bg-white">
+                <Card className="bg-white border border-gray-200 shadow-sm">
                   <CardHeader>
                     <CardTitle>Raw Extracted Text</CardTitle>
                   </CardHeader>
@@ -589,9 +588,10 @@ export default function ResumeDataPage() {
                     )}
                   </CardContent>
                 </Card>
-              </TabsContent>
-            </Tabs>
-          )}
+                              </TabsContent>
+              </Tabs>
+            </div>
+            )}
         </DialogContent>
       </Dialog>
     </div>

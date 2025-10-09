@@ -1,0 +1,166 @@
+{
+  "filename": "Harish - 8+ Years .Net Lead (1).pdf",
+  "timestamp": "2025-09-03T14:28:48.907Z",
+  "processingTime": 13731,
+  "confidence": 92,
+  "extractedData": {
+    "name": "HARISH SEKAR",
+    "email": "dsharish@outlook.com",
+    "phone": "+91 96290 10760",
+    "title": "Senior Software Engineer",
+    "location": "Bengaluru, India",
+    "summary": "Senior Software Engineer with 8 years of comprehensive experience in dotnet core enterprise application development, cloud integration, and microservices architecture. Proven expertise in leading complex ERP integrations, designing scalable solutions using Azure technologies, Azure Devops and implementing modern architectural patterns including Saga microservices. Strong background in Backend development with demonstrated success in migrating legacy systems to cloud-native architectures and dotnet core architecture.",
+    "experience": [
+      {
+        "jobTitle": "Senior Software Engineer",
+        "company": "Nublar Technology",
+        "duration": "January 2023 - Present",
+        "startDate": "2023-01",
+        "endDate": "Present",
+        "techUsed": [
+          "dotnet core",
+          "Azure",
+          "Azure Logic Apps",
+          "Azure App Services",
+          "Azure Function Apps",
+          "Kubernetes",
+          "Grafana"
+        ],
+        "description": "Spearheaded productization initiative by designing and implementing Saga architecture-based dotnet core microservices, successfully migrating customer-specific Logic Apps.",
+        "achievements": [
+          "Led comprehensive ERP integration solutions for Sage100 and QuickBooks Online using Azure Logic Apps.",
+          "Architected Azure Blob Storage mechanism to optimize API call efficiency, reducing order creation API calls by 60%."
+        ]
+      },
+      {
+        "jobTitle": "Software Engineer",
+        "company": "Nublar Technology",
+        "duration": "January 2021 - December 2022",
+        "startDate": "2021-01",
+        "endDate": "2022-12",
+        "techUsed": [
+          ".NET",
+          "Boomi middleware"
+        ],
+        "description": "Developed .NET API endpoints to integrate with Boomi middleware for EDI transform.",
+        "achievements": [
+          "Contributed to architecture decisions and technical design reviews.",
+          "Developed core .NET components for file processing dispatcher and routing."
+        ]
+      },
+      {
+        "jobTitle": "Software Engineer",
+        "company": "Nublar Technology",
+        "duration": "November 2019 - December 2020",
+        "startDate": "2019-11",
+        "endDate": "2020-12",
+        "techUsed": [
+          "Azure Logic Apps",
+          "Azure Function Apps"
+        ],
+        "description": "Designed and developed Azure Logic Apps to automate business workflows and integrate third-party systems.",
+        "achievements": [
+          "Successfully onboarded 15+ new clients to Azure platform, managing end-to-end migration processes."
+        ]
+      },
+      {
+        "jobTitle": "Software Developer",
+        "company": "Honeywell Technology Solutions",
+        "duration": "November 2018 - October 2019",
+        "startDate": "2018-11",
+        "endDate": "2019-10",
+        "techUsed": [
+          ".NET Core"
+        ],
+        "description": "Developed .NET Core web application enabling cross-functional teams to submit builds for QA testing.",
+        "achievements": [
+          "Maintained 99.5% uptime in production environment.",
+          "Automated email reporting system, reducing manual effort and improving stakeholder communication."
+        ]
+      },
+      {
+        "jobTitle": "Junior Software Developer",
+        "company": "Ebase Software Solutions",
+        "duration": "October 2017 - October 2018",
+        "startDate": "2017-10",
+        "endDate": "2018-10",
+        "techUsed": [
+          ".NET Core",
+          "Entity Framework Core"
+        ],
+        "description": "Built .NET Core web application streamlining workflows between insurance companies and healthcare providers.",
+        "achievements": [
+          "Automated Excel template generation process, reducing processing time from hours to minutes.",
+          "Improved query performance by 40%."
+        ]
+      },
+      {
+        "jobTitle": "Junior Software Developer",
+        "company": "Ebase Software Solutions",
+        "duration": "February 2017 - September 2017",
+        "startDate": "2017-02",
+        "endDate": "2017-09",
+        "techUsed": [
+          ".NET Core",
+          "Python"
+        ],
+        "description": "Developed .NET Core web application for managing technical interview processes.",
+        "achievements": [
+          "Integrated Python-based quiz engine with C# backend for automated candidate assessment."
+        ]
+      },
+      {
+        "jobTitle": "Associate Developer",
+        "company": "Ebase Software Solutions",
+        "duration": "October 2016 - January 2017",
+        "startDate": "2016-10",
+        "endDate": "2017-01",
+        "techUsed": [
+          "Moodle"
+        ],
+        "description": "Implemented Moodle-based Learning Management System for enterprise training programs.",
+        "achievements": [
+          "Prepared detailed project proposals including risk assessment, timeline estimation, and resource planning."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Engineering",
+        "field": "Computer Science",
+        "university": "Anna University",
+        "year": "Graduation Year",
+        "percentage": null,
+        "gpa": "7.6/10",
+        "location": "Chennai, India"
+      }
+    ],
+    "skills": [
+      "C#",
+      ".NET Core",
+      "Entity Framework",
+      "ASP.NET MVC",
+      "Microservices",
+      "Microsoft Azure",
+      "Saga Pattern",
+      "Kubernetes",
+      "Docker",
+      "Grafana",
+      "Azure DevOps",
+      "CI/CD Pipelines",
+      "Sage100",
+      "QuickBooks Online",
+      "NetSuite",
+      "SQL Server",
+      "MySQL",
+      "Visual Studio",
+      "Git",
+      "Azure Portal",
+      "Automation Testing",
+      "Unit Testing",
+      "Integration Testing"
+    ],
+    "projects": [],
+    "certifications": []
+  }
+}

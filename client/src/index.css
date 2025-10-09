@@ -93,6 +93,46 @@ body {
   background: #94a3b8;
 }
 
+/* Sticky table headers */
+.sticky-table-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: rgb(248 250 252); /* bg-slate-50 */
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); /* shadow-sm */
+  border-bottom: 1px solid rgb(226 232 240); /* border-slate-200 */
+}
+
+/* Ensure sticky behavior works in all browsers */
+.sticky-table-header th {
+  background-color: rgb(248 250 252); /* bg-slate-50 */
+  position: relative;
+}
+
+/* Add backdrop blur for better visual separation */
+.sticky-table-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(248 250 252 / 0.95); /* bg-slate-50 with opacity */
+  backdrop-filter: blur(8px);
+  z-index: -1;
+}
+
+/* Mobile responsive sticky headers */
+@media (max-width: 768px) {
+  .sticky-table-header {
+    position: relative; /* Fallback for mobile */
+  }
+  
+  .sticky-table-header::before {
+    display: none; /* Disable backdrop blur on mobile */
+  }
+}
+
 /* Animation enhancements */
 @keyframes pulse-fast {
   0%, 100% {

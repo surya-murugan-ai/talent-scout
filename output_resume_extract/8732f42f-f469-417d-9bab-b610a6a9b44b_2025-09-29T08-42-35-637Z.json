@@ -1,0 +1,173 @@
+{
+  "filename": "8732f42f-f469-417d-9bab-b610a6a9b44b.pdf",
+  "timestamp": "2025-09-29T08:42:35.637Z",
+  "processingTime": 31910,
+  "confidence": 97,
+  "rawText": "\n\nSourav Suman\nGen AI Developer\nsourav_suman@outlook.com\n8059944096\nBengaluru, India\ntinyurl.com/2psz5fu8\nlinkedin.com/in/srvsmn/\ngithub.com/srv-smn\nEducation\nBE: Computer Science and \nEngineering, \nSSGMCE, Maharashtra, India\nMaharashtra, India\nSkills\nLanguages\n•Python \n•JS\n• Solidity\nTechnology\n•Model Finetuning, Agents\n•Workflow\n•Voice Agents\n•RAG\n•Knowledge Graph\n•Transformer Architecture\n•Blockchain\nGen AI Frameworks\n•Langchain\n•Langgraph\n•AutoGen\n•LiveKit\nBackend\n•Node.js\n•Fast API\n•Subgraph\nProfile\nA Lead Developer with 5 years of experience, now specializing \nin building practical applications with Generative AI. Based in \nBangalore, India, my work involves architecting complex, \nagent-based systems for real-time voice and data processing \nusing frameworks like LangChain, LangGraph, and AutoGen. I \nalso specialize in fine-tuning Large Language Models (LLMs) \nand building scalable, privacy-aware solutions by \nimplementing advanced RAG pipelines and Knowledge Graphs.\nProfessional Experience\nLead Developer, Rapid Innovation\n08/2022 – Present\n•Led end-to-end development of Generative AI solutions, \nincluding intelligent agents, RAG pipelines, and fine-tuned \nLLMs for real-world applications.\n•Designed multi-step AI workflows and integrated GenAI \ncapabilities into products using tool use, MCP's.\n•Worked on project estimation, system architecture, and \ndevelopment of blockchain applications, including smart \ncontracts and Subgraph integrations on EVM chains.\nSoftware Developer, Persistent Systems, Pune\n07/2021 – 08/2022 | Pune\n•Developed smart contracts for various blockchain platforms \nto meet project requirements.\n•Integrated smart contracts with existing systems to enhance \nfunctionality and efficiency.\n•Conducted unit testing and implemented best practices to \nensure code quality.\n•Collaborated with cross-functional teams to ensure \nsuccessful project delivery.\nProjects\nPMMIC: Vision-Language Model for Industrial \nCompliance\n07/2025\n•Trained specialized vision models (like Qwen and Gemini) to \nautomatically find safety and compliance problems in photos \nof petroleum tanks.\n•Used efficient fine-tuning methods (SFT with LoRA) and \nreinforcement learning (GRPO) to build a highly accurate, \nlow-cost model.\n•The final AI is skilled at spotting both common and rare \nedge-case issues, making inspections faster and more \nreliable.\nTechnologies: Qwen2VL, Gemini 1.5 Flash, LoRA, SFT, GRPO, \nLLAMA Factory\n\nHachathons\nGoogle Agentic AI Day - \nFinalist\n07/2025\nGot select to build the solution \nbased on AI that can help farmers.\nEdu Chain Sem 3 Winner\n06/2025\nDeveloped a AI powered gamified \nlearning platform with OCID on \nedu chain.\nOutbound SIP Call Agent: High-Volume Conversational AI\n01/2025\n•Built a powerful AI agent that makes hundreds of human-like \nphone calls at once, perfect for automating large-scale \ncustomer outreach or lead qualification.\n•Kept conversations feeling natural and real-time by \nengineering a low-latency (~800ms) system using LiveKit for \nfast audio processing.\n•Designed a flexible system where different AI services \n(speech-to-text, language models) can be easily swapped, \nand used a RAG pipeline to give the AI a knowledge base for \nsmarter responses.\nTechnologies: Python, LiveKit, Twilio (SIP), RAG, AI \nWorkflows, LLMs, STT/TTS\nHatchala: Automated Tax Filing with AI & \nPrivacy-Preserving Workflows\n04/2024\n•Built an AI-driven system to classify tax forms, extract key \ndata, and auto-file with minimal human input.\n•Ensured privacy by masking sensitive data before LLM use \nand deploying secure, agent-based workflows.\n•Combined OCR + LLMs for accurate extraction and used RPA \nfor seamless end-to-end filing.\nTechnologies: Python, OpenAI, Gemini, Qwen, LangGraph, \nTesseract, Custom AI Agents, RPA\nMyHoudini: AI Voice Companion for Elderly Support\n08/2024\n•Developed a friendly, voice-controlled AI assistant to help \nelderly individuals manage daily tasks like reminders and \nscheduling, while also providing companionship.\n•Designed a cost-effective system using LiveKit for clear audio \nand a smart pipeline for the AI's speech processing, making \nthe technology affordable and accessible.\n•The assistant works hands-free, allowing users to simply talk \nto it to store memories, set appointments, or just have a \nconversation, making it easy and natural to use.\nTechnologies: LiveKit, Python, Large Language Models \n(LLMs), AI Agents, Speech-to-Text (STT), Text-to-Speech (TTS)",
+  "extractedData": {
+    "name": "Sourav Suman",
+    "email": "sourav_suman@outlook.com",
+    "phone": "8059944096",
+    "linkedinUrl": "https://www.linkedin.com/in/srvsmn/",
+    "githubUrl": "https://github.com/srv-smn",
+    "portfolioUrl": "https://tinyurl.com/2psz5fu8",
+    "location": "Bengaluru, India",
+    "title": "Gen AI Developer",
+    "summary": "A Lead Developer with 5 years of experience, now specializing in building practical applications with Generative AI. Based in Bangalore, India, my work involves architecting complex, agent-based systems for real-time voice and data processing using frameworks like LangChain, LangGraph, and AutoGen. I also specialize in fine-tuning Large Language Models (LLMs) and building scalable, privacy-aware solutions by implementing advanced RAG pipelines and Knowledge Graphs.",
+    "experience": [
+      {
+        "jobTitle": "Lead Developer",
+        "company": "Rapid Innovation",
+        "duration": "08/2022 - Present",
+        "startDate": "2022-08",
+        "endDate": "Present",
+        "techUsed": [
+          "Generative AI",
+          "RAG",
+          "LLMs",
+          "Blockchain",
+          "Subgraph"
+        ],
+        "description": "Led end-to-end development of Generative AI solutions, including intelligent agents, RAG pipelines, and fine-tuned LLMs for real-world applications. Designed multi-step AI workflows and integrated GenAI capabilities into products using tool use, MCP's. Worked on project estimation, system architecture, and development of blockchain applications, including smart contracts and Subgraph integrations on EVM chains.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Software Developer",
+        "company": "Persistent Systems",
+        "duration": "07/2021 - 08/2022",
+        "startDate": "2021-07",
+        "endDate": "2022-08",
+        "techUsed": [
+          "Blockchain",
+          "Smart Contracts"
+        ],
+        "description": "Developed smart contracts for various blockchain platforms to meet project requirements. Integrated smart contracts with existing systems to enhance functionality and efficiency. Conducted unit testing and implemented best practices to ensure code quality. Collaborated with cross-functional teams to ensure successful project delivery.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "BE",
+        "field": "Computer Science and Engineering",
+        "university": "SSGMCE",
+        "year": null,
+        "percentage": null,
+        "gpa": null,
+        "location": "Maharashtra, India"
+      }
+    ],
+    "projects": [
+      {
+        "name": "PMMIC: Vision-Language Model for Industrial Compliance",
+        "description": "Trained specialized vision models (like Qwen and Gemini) to automatically find safety and compliance problems in photos of petroleum tanks. Used efficient fine-tuning methods (SFT with LoRA) and reinforcement learning (GRPO) to build a highly accurate, low-cost model. The final AI is skilled at spotting both common and rare edge-case issues, making inspections faster and more reliable.",
+        "techUsed": [
+          "Qwen2VL",
+          "Gemini 1.5 Flash",
+          "LoRA",
+          "SFT",
+          "GRPO",
+          "LLAMA Factory"
+        ],
+        "duration": "07/2025",
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Outbound SIP Call Agent: High-Volume Conversational AI",
+        "description": "Built a powerful AI agent that makes hundreds of human-like phone calls at once, perfect for automating large-scale customer outreach or lead qualification. Kept conversations feeling natural and real-time by engineering a low-latency (~800ms) system using LiveKit for fast audio processing. Designed a flexible system where different AI services (speech-to-text, language models) can be easily swapped, and used a RAG pipeline to give the AI a knowledge base for smarter responses.",
+        "techUsed": [
+          "Python",
+          "LiveKit",
+          "Twilio (SIP)",
+          "RAG",
+          "AI Workflows",
+          "LLMs",
+          "STT/TTS"
+        ],
+        "duration": "01/2025",
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Hatchala: Automated Tax Filing with AI & Privacy-Preserving Workflows",
+        "description": "Built an AI-driven system to classify tax forms, extract key data, and auto-file with minimal human input. Ensured privacy by masking sensitive data before LLM use and deploying secure, agent-based workflows. Combined OCR + LLMs for accurate extraction and used RPA for seamless end-to-end filing.",
+        "techUsed": [
+          "Python",
+          "OpenAI",
+          "Gemini",
+          "Qwen",
+          "LangGraph",
+          "Tesseract",
+          "Custom AI Agents",
+          "RPA"
+        ],
+        "duration": "04/2024",
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "MyHoudini: AI Voice Companion for Elderly Support",
+        "description": "Developed a friendly, voice-controlled AI assistant to help elderly individuals manage daily tasks like reminders and scheduling, while also providing companionship. Designed a cost-effective system using LiveKit for clear audio and a smart pipeline for the AI's speech processing, making the technology affordable and accessible. The assistant works hands-free, allowing users to simply talk to it to store memories, set appointments, or just have a conversation, making it easy and natural to use.",
+        "techUsed": [
+          "LiveKit",
+          "Python",
+          "Large Language Models (LLMs)",
+          "AI Agents",
+          "Speech-to-Text (STT)",
+          "Text-to-Speech (TTS)"
+        ],
+        "duration": "08/2024",
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "achievements": [
+      {
+        "title": "Google Agentic AI Day - Finalist",
+        "description": "Got select to build the solution based on AI that can help farmers.",
+        "year": "07/2025",
+        "organization": null
+      },
+      {
+        "title": "Edu Chain Sem 3 Winner",
+        "description": "Developed a AI powered gamified learning platform with OCID on edu chain.",
+        "year": "06/2025",
+        "organization": null
+      }
+    ],
+    "certifications": [],
+    "skills": [
+      "Python",
+      "JS",
+      "Solidity",
+      "Model Finetuning",
+      "Agents",
+      "Workflow",
+      "Voice Agents",
+      "RAG",
+      "Knowledge Graph",
+      "Transformer Architecture",
+      "Blockchain",
+      "Langchain",
+      "Langgraph",
+      "AutoGen",
+      "LiveKit",
+      "Node.js",
+      "Fast API",
+      "Subgraph"
+    ],
+    "interests": [],
+    "languages": [],
+    "salary": null,
+    "availability": null,
+    "remotePreference": null,
+    "visaStatus": null,
+    "originalData": {
+      "filename": "8732f42f-f469-417d-9bab-b610a6a9b44b.pdf",
+      "rawText": "Sourav Suman Gen AI Developer sourav_suman@outlook.com 8059944096 Bengaluru, India tinyurl.com/2psz5fu8 linkedin.com/in/srvsmn/ github.com/srv-smn Education BE: Computer Science and Engineering, SSGMCE, Maharashtra, India Maharashtra, India Skills Languages •Python •JS • Solidity Technology •Model Finetuning, Agents •Workflow •Voice Agents •RAG •Knowledge Graph •Transformer Architecture •Blockchain Gen AI Frameworks •Langchain •Langgraph •AutoGen •LiveKit Backend •Node.js •Fast API •Subgraph Profile A Lead Developer with 5 years of experience, now specializing in building practical applications with Generative AI. Based in Bangalore, India, my work involves architecting complex, agent-based systems for real-time voice and data processing using frameworks like LangChain, LangGraph, and AutoGen. I also specialize in fine-tuning Large Language Models (LLMs) and building scalable, privacy-aware solutions by implementing advanced RAG pipelines and Knowledge Graphs. Professional Experience Lead Developer, Rapid Innovation 08/2022 – Present •Led end-to-end development of Generative AI solutions, including intelligent agents, RAG pipelines, and fine-tuned LLMs for real-world applications. •Designed multi-step AI workflows and integrated GenAI capabilities into products using tool use, MCP's. •Worked on project estimation, system architecture, and development of blockchain applications, including smart contracts and Subgraph integrations on EVM chains. Software Developer, Persistent Systems, Pune 07/2021 – 08/2022 | Pune •Developed smart contracts for various blockchain platforms to meet project requirements. •Integrated smart contracts with existing systems to enhance functionality and efficiency. •Conducted unit testing and implemented best practices to ensure code quality. •Collaborated with cross-functional teams to ensure successful project delivery. Projects PMMIC: Vision-Language Model for Industrial Compliance 07/2025 •Trained specialized vision models (like Qwen and"
+    },
+    "source": "resume",
+    "confidence": 97,
+    "processingTime": 0
+  }
+}

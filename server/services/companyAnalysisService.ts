@@ -213,7 +213,7 @@ export class CompanyAnalysisService {
         companyAnalysis.score,
         candidate.linkedinLastActive,
         candidate.linkedinNotes,
-        candidate.skills || [],
+        Array.isArray(candidate.skills) ? candidate.skills : [],
         candidate.location
       );
       

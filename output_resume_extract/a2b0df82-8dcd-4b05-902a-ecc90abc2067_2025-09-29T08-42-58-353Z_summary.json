@@ -1,0 +1,119 @@
+{
+  "filename": "a2b0df82-8dcd-4b05-902a-ecc90abc2067.pdf",
+  "timestamp": "2025-09-29T08:42:58.354Z",
+  "processingTime": 7061,
+  "confidence": 94,
+  "extractedData": {
+    "name": "MAGESHWARAN R",
+    "email": "mageshwaran951@gmail.com",
+    "phone": "+918870627408",
+    "title": "Senior Consultant – AI Engineering",
+    "location": "Chennai, India",
+    "summary": "Seasoned AI Engineer with a distinguished seven-year tenure in designing and implementing advanced Natural Language Processing and Document Intelligence systems.",
+    "experience": [
+      {
+        "jobTitle": "Senior Consultant – AI Engineering",
+        "company": "AstraZeneca",
+        "duration": "Dec 2021 - Present",
+        "startDate": "2021-12",
+        "endDate": "Present",
+        "techUsed": [
+          "Azure OpenAI",
+          "Qdrant",
+          "LLM",
+          "AWS Bedrock",
+          "OpenSearch",
+          "PubLayNet",
+          "Table Transformers"
+        ],
+        "description": "Leading the design, development, and delivery of Document Intelligence solutions to accelerate Clinical Study Design, Regulatory Submissions, Health Authority Interactions, and Patient Safety processes.",
+        "achievements": [
+          "Led the development and delivery of million-scale RAG pipeline for Clinical Study documents saving 12K FTE hours with a projection of 2.5M USD savings in 5 years",
+          "Led the development and delivery of Information Extraction and Metadata Tagging solutions saving 28K FTE hours"
+        ]
+      },
+      {
+        "jobTitle": "AI Engineer (Founding Team)",
+        "company": "YOU. Group HK",
+        "duration": "Feb 2021 - Nov 2021",
+        "startDate": "2021-02",
+        "endDate": "2021-11",
+        "techUsed": [
+          "Elasticsearch",
+          "AWS S3",
+          "AWS GLUE",
+          "AWS Redshift",
+          "AWS Lambda",
+          "AWS SNS",
+          "MongoDB"
+        ],
+        "description": "Developed Multilingual NLP pipelines for Sentiment Classification of Tourism Reviews, Cross-lingual Semantic Similarity, and Semantic Search for Tourism Products Analytics.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "AI Engineer (Early member in AI Group)",
+        "company": "Concord Nextstep India Pvt Ltd",
+        "duration": "Aug 2019 - Feb 2021",
+        "startDate": "2019-08",
+        "endDate": "2021-02",
+        "techUsed": [
+          "BERT",
+          "CNN-BiLSTM-CRF",
+          "LayoutLM",
+          "PubLayNet",
+          "Kubernetes",
+          "Azure"
+        ],
+        "description": "Research and Development of Information Extraction Systems for Electronic Health Records.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Project Engineer",
+        "company": "WIPRO Technologies - Automotive domain",
+        "duration": "Feb 2018 - Aug 2019",
+        "startDate": "2018-02",
+        "endDate": "2019-08",
+        "techUsed": [
+          "DCNN",
+          "Pylint",
+          "Pycharm",
+          "Squish"
+        ],
+        "description": "Responsible for Research and Implementation of State-of-the-Art techniques in DCNN which includes Importance sampling, Algorithm Optimization.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Tech",
+        "field": "Electrical and Electronics Engineering",
+        "university": "R.M.K College of Engineering and Technology",
+        "year": "2017",
+        "percentage": null,
+        "gpa": null,
+        "location": null
+      }
+    ],
+    "skills": [
+      "Semantic Search",
+      "Retrieval Augmented Generation",
+      "Agentic AI",
+      "LLMs",
+      "Generative AI",
+      "Named Entity Recognition",
+      "Object Detection",
+      "Image Segmentation",
+      "Image Processing",
+      "OCR",
+      "Data Cleaning and Augmentation",
+      "Python",
+      "Databases",
+      "Big Data Tools",
+      "Docker",
+      "Kubernetes",
+      "Airflow"
+    ],
+    "projects": [],
+    "certifications": []
+  }
+}

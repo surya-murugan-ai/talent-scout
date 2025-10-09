@@ -1,0 +1,430 @@
+{
+  "timestamp": "2025-10-09T06:56:25.311Z",
+  "linkedinUrl": "https://www.linkedin.com/in/suriyakanth-m-625b11231",
+  "rawData": {
+    "linkedinUrl": "https://www.linkedin.com/in/suriyakanth-m-625b11231",
+    "firstName": "SURIYAKANTH",
+    "lastName": "M",
+    "fullName": "SURIYAKANTH M",
+    "headline": "React Developer at Nirals InfoTech | MCA Graduate with AI & ML Specialization | Building AI-Integrated Applications",
+    "connections": 15,
+    "followers": 16,
+    "email": null,
+    "mobileNumber": null,
+    "jobTitle": "React Developer",
+    "companyName": "Nirals",
+    "companyIndustry": "Information Technology And Services",
+    "companyWebsite": "nirals.in",
+    "companyLinkedin": "linkedin.com/company/nirals",
+    "companyFoundedIn": 2014,
+    "companySize": "11-50",
+    "currentJobDuration": "3 mos",
+    "currentJobDurationInYrs": 0.25,
+    "topSkillsByEndorsements": null,
+    "addressCountryOnly": "India",
+    "addressWithCountry": "Sattur, Tamil Nadu, India",
+    "addressWithoutCountry": "Sattur, Tamil Nadu",
+    "profilePic": "https://media.licdn.com/dms/image/v2/D5603AQE_QyuKU6VzSg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1732200391667?e=1762992000&v=beta&t=DBasrU53ncL2O89VBk4a3DLW0DuQCS4ToHJquACPy3A",
+    "profilePicHighQuality": "https://media.licdn.com/dms/image/v2/D5603AQE_QyuKU6VzSg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1732200391670?e=1762992000&v=beta&t=Rf_AnHc1FrJpWA6Bu7BCiUhBoa_NVnWDVi6eAOpKN3U",
+    "about": "React Developer at Nirals InfoTech with experience in building modern web applications and integrating AI-driven features. MCA graduate with specialization in AI & ML, with award-winning projects in face recognition and emotion detection. Passionate about creating smarter, user-focused applications by blending web technologies with machine learning.",
+    "publicIdentifier": "suriyakanth-m-625b11231",
+    "openConnection": null,
+    "urn": "ACoAADoB7z0BL9IF01OMdLxR6_y1SaJZZcRS_uA",
+    "experiences": [
+      {
+        "companyId": "16153648",
+        "companyUrn": "urn:li:fsd_company:16153648",
+        "companyLink1": "https://www.linkedin.com/company/16153648/",
+        "logo": "https://media.licdn.com/dms/image/v2/C560BAQGbyyWtMpDzQw/company-logo_200_200/company-logo_200_200/0/1631349999982?e=1762992000&v=beta&t=0LRWrvMkJtS5hCMbsDUNUbkwfmwgqmOE7TaHET0GUUA",
+        "title": "React Developer",
+        "subtitle": "Nirals · Full-time",
+        "caption": "Aug 2025 - Present · 3 mos",
+        "metadata": "Kovilpatti, Tamil Nadu, India · On-site",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "companyId": "80332809",
+        "companyUrn": "urn:li:fsd_company:80332809",
+        "companyLink1": "https://www.linkedin.com/company/80332809/",
+        "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQHPQTk0vExtcg/company-logo_200_200/company-logo_200_200/0/1634209004992?e=1762992000&v=beta&t=Gsrw7vj2CDEFY-MSjf75S3RyFO5SPJMnZnk8jcdcw_w",
+        "title": "UX Designer",
+        "subtitle": "Meganar Technologies · Internship",
+        "caption": "Dec 2024 - May 2025 · 6 mos",
+        "metadata": "Madurai, Tamil Nadu, India · Hybrid",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "textComponent",
+                "text": "Worked in the projects like Media Jungle and LearnHub as UI UX Designer, I Wireframed and Designed the UI screens for these softwares using the Figma."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "updates": [],
+    "skills": [
+      {
+        "title": "Figma (Software)",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "UX Designer at Meganar Technologies"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "User Interface Design",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "UX Designer at Meganar Technologies"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Wireframing",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "UX Designer at Meganar Technologies"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "User Experience (UX)",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "UX Designer at Meganar Technologies"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Front-End Development",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "React Developer at Nirals"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Flutter",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "React Developer at Nirals"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Node.js",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "React Developer at Nirals"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "MongoDB",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "React Developer at Nirals"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Research and Development (R&D)",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Software Development",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "AYYA NADAR JANAKI AMMAL COLLEGE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "BSC",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Problem Solving",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "AYYA NADAR JANAKI AMMAL COLLEGE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "React.js",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "React Developer at Nirals"
+              },
+              {
+                "type": "insightComponent",
+                "text": "AYYA NADAR JANAKI AMMAL COLLEGE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "PHP",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "React Developer at Nirals"
+              },
+              {
+                "type": "insightComponent",
+                "text": "AYYA NADAR JANAKI AMMAL COLLEGE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Artificial Intelligence (AI)",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "AYYA NADAR JANAKI AMMAL COLLEGE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "English",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "AYYA NADAR JANAKI AMMAL COLLEGE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Programming",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Microsoft Office",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "HTML",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "AYYA NADAR JANAKI AMMAL COLLEGE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Java",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "profilePicAllDimensions": [
+      {
+        "width": 100,
+        "expiresAt": 1762992000000,
+        "height": 100,
+        "url": "https://media.licdn.com/dms/image/v2/D5603AQE_QyuKU6VzSg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1732200391667?e=1762992000&v=beta&t=DBasrU53ncL2O89VBk4a3DLW0DuQCS4ToHJquACPy3A"
+      },
+      {
+        "width": 200,
+        "expiresAt": 1762992000000,
+        "height": 200,
+        "url": "https://media.licdn.com/dms/image/v2/D5603AQE_QyuKU6VzSg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1732200391667?e=1762992000&v=beta&t=2Voj26SY1pj-vv-i8_x8RNTukcy4twYhA7BVThUyqWg"
+      },
+      {
+        "width": 400,
+        "expiresAt": 1762992000000,
+        "height": 400,
+        "url": "https://media.licdn.com/dms/image/v2/D5603AQE_QyuKU6VzSg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1732200391667?e=1762992000&v=beta&t=umLcUHulSDYQNyjw4W70U5vRZVAS8MKx7VZbx6gtpxM"
+      },
+      {
+        "width": 592,
+        "expiresAt": 1762992000000,
+        "height": 592,
+        "url": "https://media.licdn.com/dms/image/v2/D5603AQE_QyuKU6VzSg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1732200391670?e=1762992000&v=beta&t=Rf_AnHc1FrJpWA6Bu7BCiUhBoa_NVnWDVi6eAOpKN3U"
+      }
+    ],
+    "educations": [
+      {
+        "companyId": "15106441",
+        "companyUrn": "urn:li:fsd_company:15106441",
+        "companyLink1": "https://www.linkedin.com/company/15106441/",
+        "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQGzJ80nA-lTcA/company-logo_200_200/company-logo_200_200/0/1630546634810/ayya_nadar_janaki_ammal_college_logo?e=1762992000&v=beta&t=d9IL80T6TppnO181iHop63FRWyMUI8x0u-Rk4Km1AZM",
+        "title": "AYYA NADAR JANAKI AMMAL COLLEGE",
+        "subtitle": "Master of Computer Applications - MCA, Computer Science",
+        "caption": "Jun 2023 - May 2025",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Grade: First Class (D)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "companyLink1": "https://www.linkedin.com/search/results/all/?keywords=Sri+Kaliswari+College",
+        "title": "Sri Kaliswari College",
+        "subtitle": "Bachelor, Information Technology",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "licenseAndCertificates": [],
+    "honorsAndAwards": [],
+    "languages": [],
+    "volunteerAndAwards": [],
+    "verifications": [],
+    "promos": [],
+    "highlights": [],
+    "projects": [],
+    "publications": [],
+    "patents": [],
+    "courses": [],
+    "testScores": [],
+    "organizations": [],
+    "volunteerCauses": [],
+    "interests": [
+      {
+        "section_name": "Companies",
+        "section_components": [
+          {
+            "titleV2": "AYYA NADAR JANAKI AMMAL COLLEGE",
+            "caption": "9,931 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/15106441/",
+            "subComponents": []
+          },
+          {
+            "titleV2": "Nirals",
+            "caption": "316 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/16153648/",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Schools",
+        "section_components": [
+          {
+            "titleV2": "AYYA NADAR JANAKI AMMAL COLLEGE",
+            "caption": "9,931 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/school/15106441/",
+            "subComponents": []
+          }
+        ]
+      }
+    ],
+    "recommendations": []
+  },
+  "metadata": {
+    "source": "dev_fusion/Linkedin-Profile-Scraper",
+    "savedAt": "2025-10-09T06:56:25.311Z"
+  }
+}

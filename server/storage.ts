@@ -9,17 +9,19 @@ import {
   type InsertProcessingJob,
   type Activity,
   type InsertActivity,
+  type ScoringConfig,
+  type InsertScoringConfig,
   users,
   candidates,
   projects,
   processingJobs,
   activities,
-  resumeData
+  scoringConfigs
 } from "@shared/schema";
 import { randomUUID } from "crypto";
 import { drizzle } from 'drizzle-orm/neon-http';
 import { neon } from '@neondatabase/serverless';
-import { eq, desc, and, sql } from 'drizzle-orm';
+import { eq, desc, and, sql, gte, lte, like, inArray } from 'drizzle-orm';
 
 const neonSql = neon(process.env.DATABASE_URL!);
 const db = drizzle(neonSql);
@@ -31,19 +33,34 @@ export interface IStorage {
   createUser(user: InsertUser): Promise<User>;
 
   // Candidates
-  getCandidates(limit?: number, offset?: number): Promise<Candidate[]>;
-  getCandidate(id: string): Promise<Candidate | undefined>;
-  getCandidateByEmail(email: string): Promise<Candidate | undefined>;
+  getCandidates(comId: string, limit?: number, offset?: number): Promise<Candidate[]>;
+  getCandidate(id: string, comId?: string): Promise<Candidate | undefined>;
+  getCandidateByEmail(email: string, comId: string): Promise<Candidate | undefined>;
   createCandidate(candidate: InsertCandidate): Promise<Candidate>;
-  updateCandidate(id: string, candidate: Partial<Candidate>): Promise<Candidate | undefined>;
-  deleteCandidate(id: string): Promise<boolean>;
-  getCandidatesByPriority(priority: string): Promise<Candidate[]>;
-  getCandidatesStats(): Promise<{
+  updateCandidate(id: string, candidate: Partial<Candidate>, comId?: string): Promise<Candidate | undefined>;
+  deleteCandidate(id: string, comId?: string): Promise<boolean>;
+  getCandidatesByPriority(priority: string, comId: string): Promise<Candidate[]>;
+  getCandidatesStats(comId: string): Promise<{
     total: number;
     highPriority: number;
     processing: number;
     avgScore: number;
   }>;
+
+  // Enhanced candidate queries
+  getCandidatesBySkills(skills: string[], comId: string): Promise<Candidate[]>;
+  getCandidatesByExperience(minYears: number, comId: string, maxYears?: number): Promise<Candidate[]>;
+  getCandidatesByDataQuality(minQuality: number, comId: string): Promise<Candidate[]>;
+  getCandidatesByLocation(location: string, comId: string): Promise<Candidate[]>;
+  getCandidatesByCompany(company: string, comId: string): Promise<Candidate[]>;
+  searchCandidates(query: string): Promise<Candidate[]>;
+  getCandidatesBySource(source: string): Promise<Candidate[]>;
+  
+  // Eeezo-specific methods
+  getCandidatesByCompanyId(comId: string, options?: { status?: string; limit?: number; offset?: number }): Promise<Candidate[]>;
+  getCandidatesByIds(candidateIds: string[], comId: string): Promise<Candidate[]>;
+  getEeezoProcessingStatus(comId: string): Promise<any>;
+  updateCandidateEeezoStatus(candidateId: string, updateData: { eeezoStatus?: string; notes?: string }): Promise<Candidate | undefined>;
 
   // Projects
   getProjects(): Promise<Project[]>;
@@ -61,6 +78,15 @@ export interface IStorage {
   // Activities
   getRecentActivities(limit?: number): Promise<Activity[]>;
   createActivity(activity: InsertActivity): Promise<Activity>;
+
+  // Scoring Configuration
+  getScoringConfig(comId: string): Promise<ScoringConfig | undefined>;
+  createScoringConfig(config: InsertScoringConfig): Promise<ScoringConfig>;
+  updateScoringConfig(comId: string, config: Partial<ScoringConfig>): Promise<ScoringConfig | undefined>;
+  
+  // Resume status management
+  updateCandidateResumeStatus(candidateId: string, status: 'active' | 'inactive', comId?: string): Promise<Candidate | undefined>;
+  getCandidatesByResumeStatus(status: 'active' | 'inactive', comId: string, limit?: number, offset?: number): Promise<Candidate[]>;
   
   // Clear data methods
   clearAllCandidates(): Promise<void>;
@@ -96,7 +122,8 @@ export class PostgresStorage implements IStorage {
         });
       }
     } catch (error) {
-      console.error("Error initializing default data:", error);
+      console.warn("Database initialization failed (quota exceeded), but API will continue to work:", error.message);
+      // Don't throw the error, just log it and continue
     }
   }
 
@@ -117,98 +144,38 @@ export class PostgresStorage implements IStorage {
   }
 
   // Candidates
-  async getCandidates(limit = 50, offset = 0): Promise<Candidate[]> {
-    const result = await db.select({
-      id: candidates.id,
-      name: candidates.name,
-      email: candidates.email,
-      phone: candidates.phone,
-      title: candidates.title,
-      company: candidates.company,
-      currentEmployer: candidates.currentEmployer,
-      linkedinUrl: candidates.linkedinUrl,
-      githubUrl: candidates.githubUrl,
-      portfolioUrl: candidates.portfolioUrl,
-      location: candidates.location,
-      linkedinLastActive: candidates.linkedinLastActive,
-      skills: candidates.skills,
-      score: candidates.score,
-      priority: candidates.priority,
-      openToWork: candidates.openToWork,
-      lastActive: candidates.lastActive,
-      notes: candidates.notes,
-      linkedinNotes: candidates.linkedinNotes,
-      companyDifference: candidates.companyDifference,
-      companyDifferenceScore: candidates.companyDifferenceScore,
-      hireabilityScore: candidates.hireabilityScore,
-      hireabilityFactors: candidates.hireabilityFactors,
-      potentialToJoin: candidates.potentialToJoin,
-      atsId: candidates.atsId,
-      selectionStatus: candidates.selectionStatus,
-      selectionDate: candidates.selectionDate,
-      joiningOutcome: candidates.joiningOutcome,
-      atsNotes: candidates.atsNotes,
-      source: candidates.source,
-      originalData: candidates.originalData,
-      enrichedData: candidates.enrichedData,
-      extractedData: candidates.extractedData,
-      confidence: candidates.confidence,
-      processingTime: candidates.processingTime,
-      createdAt: candidates.createdAt,
-      updatedAt: candidates.updatedAt
-    })
+  async getCandidates(comId: string, limit = 50, offset = 0): Promise<Candidate[]> {
+    const result = await db.select()
       .from(candidates)
+      .where(and(
+        eq(candidates.comId, comId),
+        eq(candidates.resumeStatus, 'active')
+      ))
       .orderBy(desc(candidates.score))
       .limit(limit)
       .offset(offset);
     return result;
   }
 
-  async getCandidate(id: string): Promise<Candidate | undefined> {
-    const result = await db.select({
-      id: candidates.id,
-      name: candidates.name,
-      email: candidates.email,
-      phone: candidates.phone,
-      title: candidates.title,
-      company: candidates.company,
-      currentEmployer: candidates.currentEmployer,
-      linkedinUrl: candidates.linkedinUrl,
-      githubUrl: candidates.githubUrl,
-      portfolioUrl: candidates.portfolioUrl,
-      location: candidates.location,
-      linkedinLastActive: candidates.linkedinLastActive,
-      skills: candidates.skills,
-      score: candidates.score,
-      priority: candidates.priority,
-      openToWork: candidates.openToWork,
-      lastActive: candidates.lastActive,
-      notes: candidates.notes,
-      linkedinNotes: candidates.linkedinNotes,
-      companyDifference: candidates.companyDifference,
-      companyDifferenceScore: candidates.companyDifferenceScore,
-      hireabilityScore: candidates.hireabilityScore,
-      hireabilityFactors: candidates.hireabilityFactors,
-      potentialToJoin: candidates.potentialToJoin,
-      atsId: candidates.atsId,
-      selectionStatus: candidates.selectionStatus,
-      selectionDate: candidates.selectionDate,
-      joiningOutcome: candidates.joiningOutcome,
-      atsNotes: candidates.atsNotes,
-      source: candidates.source,
-      originalData: candidates.originalData,
-      enrichedData: candidates.enrichedData,
-      extractedData: candidates.extractedData,
-      confidence: candidates.confidence,
-      processingTime: candidates.processingTime,
-      createdAt: candidates.createdAt,
-      updatedAt: candidates.updatedAt
-    }).from(candidates).where(eq(candidates.id, id)).limit(1);
+  async getCandidate(id: string, comId?: string): Promise<Candidate | undefined> {
+    let whereCondition = eq(candidates.id, id);
+    
+    if (comId) {
+      whereCondition = and(eq(candidates.id, id), eq(candidates.comId, comId));
+    }
+    
+    const result = await db.select().from(candidates).where(whereCondition).limit(1);
     return result[0];
   }
 
-  async getCandidateByEmail(email: string): Promise<Candidate | undefined> {
-    const result = await db.select().from(candidates).where(eq(candidates.email, email)).limit(1);
+  async getCandidateByEmail(email: string, comId: string): Promise<Candidate | undefined> {
+    const result = await db.select()
+      .from(candidates)
+      .where(and(
+        eq(candidates.email, email),
+        eq(candidates.comId, comId)
+      ))
+      .limit(1);
     return result[0];
   }
 
@@ -219,7 +186,7 @@ export class PostgresStorage implements IStorage {
 
   async updateCandidate(id: string, updates: Partial<Candidate>): Promise<Candidate | undefined> {
     const result = await db.update(candidates)
-      .set({ ...updates, updatedAt: new Date() })
+      .set(updates)
       .where(eq(candidates.id, id))
       .returning();
     return result[0];
@@ -236,48 +203,117 @@ export class PostgresStorage implements IStorage {
   }
 
   async getCandidatesByPriority(priority: string): Promise<Candidate[]> {
-    const result = await db.select({
-      id: candidates.id,
-      name: candidates.name,
-      email: candidates.email,
-      phone: candidates.phone,
-      title: candidates.title,
-      company: candidates.company,
-      currentEmployer: candidates.currentEmployer,
-      linkedinUrl: candidates.linkedinUrl,
-      githubUrl: candidates.githubUrl,
-      portfolioUrl: candidates.portfolioUrl,
-      location: candidates.location,
-      linkedinLastActive: candidates.linkedinLastActive,
-      skills: candidates.skills,
-      score: candidates.score,
-      priority: candidates.priority,
-      openToWork: candidates.openToWork,
-      lastActive: candidates.lastActive,
-      notes: candidates.notes,
-      linkedinNotes: candidates.linkedinNotes,
-      companyDifference: candidates.companyDifference,
-      companyDifferenceScore: candidates.companyDifferenceScore,
-      hireabilityScore: candidates.hireabilityScore,
-      hireabilityFactors: candidates.hireabilityFactors,
-      potentialToJoin: candidates.potentialToJoin,
-      atsId: candidates.atsId,
-      selectionStatus: candidates.selectionStatus,
-      selectionDate: candidates.selectionDate,
-      joiningOutcome: candidates.joiningOutcome,
-      atsNotes: candidates.atsNotes,
-      source: candidates.source,
-      originalData: candidates.originalData,
-      enrichedData: candidates.enrichedData,
-      extractedData: candidates.extractedData,
-      confidence: candidates.confidence,
-      processingTime: candidates.processingTime,
-      createdAt: candidates.createdAt,
-      updatedAt: candidates.updatedAt
-    })
+    const result = await db.select()
       .from(candidates)
-      .where(eq(candidates.priority, priority))
+      .where(and(
+        eq(candidates.priority, priority),
+        eq(candidates.resumeStatus, 'active')
+      ))
       .orderBy(desc(candidates.score));
+    return result;
+  }
+
+  // Enhanced candidate queries
+  async getCandidatesBySkills(skills: string[]): Promise<Candidate[]> {
+    // Search for candidates with any of the specified skills
+    const skillConditions = skills.map(skill => 
+      sql`${candidates.skills}::text ILIKE ${`%${skill}%`}`
+    );
+    
+    const result = await db.select()
+      .from(candidates)
+      .where(and(
+        sql`(${skillConditions.join(' OR ')})`,
+        eq(candidates.resumeStatus, 'active')
+      ))
+      .orderBy(desc(candidates.score));
+    
+    return result;
+  }
+
+  async getCandidatesByExperience(minYears: number, maxYears?: number): Promise<Candidate[]> {
+    let conditions = [
+      gte(candidates.yearsOfExperience, minYears),
+      eq(candidates.resumeStatus, 'active')
+    ];
+    
+    if (maxYears) {
+      conditions.push(lte(candidates.yearsOfExperience, maxYears));
+    }
+    
+    const result = await db.select()
+      .from(candidates)
+      .where(and(...conditions))
+      .orderBy(desc(candidates.score));
+    
+    return result;
+  }
+
+  async getCandidatesByDataQuality(minQuality: number): Promise<Candidate[]> {
+    const result = await db.select()
+      .from(candidates)
+      .where(and(
+        gte(candidates.dataQuality, minQuality),
+        eq(candidates.resumeStatus, 'active')
+      ))
+      .orderBy(desc(candidates.dataQuality));
+    
+    return result;
+  }
+
+  async getCandidatesByLocation(location: string): Promise<Candidate[]> {
+    const result = await db.select()
+      .from(candidates)
+      .where(and(
+        like(candidates.location, `%${location}%`),
+        eq(candidates.resumeStatus, 'active')
+      ))
+      .orderBy(desc(candidates.score));
+    
+    return result;
+  }
+
+  async getCandidatesByCompany(company: string): Promise<Candidate[]> {
+    const result = await db.select()
+      .from(candidates)
+      .where(and(
+        sql`(${candidates.company} ILIKE ${`%${company}%`} OR ${candidates.currentCompany} ILIKE ${`%${company}%`})`,
+        eq(candidates.resumeStatus, 'active')
+      ))
+      .orderBy(desc(candidates.score));
+    
+    return result;
+  }
+
+  async searchCandidates(query: string): Promise<Candidate[]> {
+    const searchTerm = `%${query}%`;
+    const result = await db.select()
+      .from(candidates)
+      .where(and(
+        sql`(
+          ${candidates.name} ILIKE ${searchTerm} OR
+          ${candidates.title} ILIKE ${searchTerm} OR
+          ${candidates.company} ILIKE ${searchTerm} OR
+          ${candidates.currentCompany} ILIKE ${searchTerm} OR
+          ${candidates.location} ILIKE ${searchTerm} OR
+          ${candidates.skills}::text ILIKE ${searchTerm}
+        )`,
+        eq(candidates.resumeStatus, 'active')
+      ))
+      .orderBy(desc(candidates.score));
+    
+    return result;
+  }
+
+  async getCandidatesBySource(source: string): Promise<Candidate[]> {
+    const result = await db.select()
+      .from(candidates)
+      .where(and(
+        eq(candidates.source, source),
+        eq(candidates.resumeStatus, 'active')
+      ))
+      .orderBy(desc(candidates.createdAt));
+    
     return result;
   }
 
@@ -337,9 +373,7 @@ export class PostgresStorage implements IStorage {
 
   // Processing Jobs
   async getProcessingJobs(): Promise<ProcessingJob[]> {
-    const result = await db.select()
-      .from(processingJobs)
-      .orderBy(desc(processingJobs.createdAt));
+    const result = await db.select().from(processingJobs).orderBy(desc(processingJobs.createdAt));
     return result;
   }
 
@@ -348,8 +382,8 @@ export class PostgresStorage implements IStorage {
     return result[0];
   }
 
-  async createProcessingJob(insertJob: InsertProcessingJob): Promise<ProcessingJob> {
-    const result = await db.insert(processingJobs).values(insertJob).returning();
+  async createProcessingJob(insertProcessingJob: InsertProcessingJob): Promise<ProcessingJob> {
+    const result = await db.insert(processingJobs).values(insertProcessingJob).returning();
     return result[0];
   }
 
@@ -364,12 +398,13 @@ export class PostgresStorage implements IStorage {
   async getActiveProcessingJobs(): Promise<ProcessingJob[]> {
     const result = await db.select()
       .from(processingJobs)
-      .where(sql`status IN ('processing', 'pending')`);
+      .where(eq(processingJobs.status, 'processing'))
+      .orderBy(desc(processingJobs.createdAt));
     return result;
   }
 
   // Activities
-  async getRecentActivities(limit = 10): Promise<Activity[]> {
+  async getRecentActivities(limit = 50): Promise<Activity[]> {
     const result = await db.select()
       .from(activities)
       .orderBy(desc(activities.createdAt))
@@ -382,11 +417,239 @@ export class PostgresStorage implements IStorage {
     return result[0];
   }
 
+  // Scoring Configuration methods
+  async getScoringConfig(comId: string): Promise<ScoringConfig | undefined> {
+    try {
+      const result = await db.select()
+        .from(scoringConfigs)
+        .where(eq(scoringConfigs.comId, comId))
+        .limit(1);
+      return result[0];
+    } catch (error) {
+      console.error('Error fetching scoring config:', error);
+      return undefined;
+    }
+  }
+
+  async createScoringConfig(config: InsertScoringConfig): Promise<ScoringConfig> {
+    const result = await db.insert(scoringConfigs).values(config).returning();
+    return result[0];
+  }
+
+  async updateScoringConfig(comId: string, config: Partial<ScoringConfig>): Promise<ScoringConfig | undefined> {
+    try {
+      const result = await db.update(scoringConfigs)
+        .set({ ...config, updatedAt: new Date() })
+        .where(eq(scoringConfigs.comId, comId))
+        .returning();
+      return result[0];
+    } catch (error) {
+      console.error('Error updating scoring config:', error);
+      return undefined;
+    }
+  }
+
+  // Eeezo-specific methods
+  async getCandidatesByCompanyId(comId: string, options: {
+    status?: string;
+    limit?: number;
+    offset?: number;
+  } = {}): Promise<Candidate[]> {
+    try {
+      let whereCondition = and(
+        eq(candidates.comId, comId),
+        eq(candidates.resumeStatus, 'active')
+      );
+      
+      if (options.status) {
+        whereCondition = and(
+          eq(candidates.comId, comId),
+          eq(candidates.eeezoStatus, options.status),
+          eq(candidates.resumeStatus, 'active')
+        )!;
+      }
+      
+      const query = db.select().from(candidates)
+        .where(whereCondition)
+        .orderBy(desc(candidates.createdAt))
+        .limit(options.limit || 100)
+        .offset(options.offset || 0);
+      
+      return await query;
+      
+    } catch (error) {
+      console.error('Error fetching candidates by company ID:', error);
+      throw new Error(`Failed to fetch candidates: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
+  }
+
+  async getCandidatesByIds(candidateIds: string[], comId: string): Promise<Candidate[]> {
+    try {
+      if (candidateIds.length === 0) {
+        return [];
+      }
+
+      const result = await db.select()
+        .from(candidates)
+        .where(
+          and(
+            inArray(candidates.id, candidateIds),
+            eq(candidates.comId, comId),
+            eq(candidates.resumeStatus, 'active')
+          )
+        )
+        .orderBy(desc(candidates.createdAt));
+
+      return result;
+      
+    } catch (error) {
+      console.error('Error fetching candidates by IDs:', error);
+      throw new Error(`Failed to fetch candidates: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
+  }
+
+  async getEeezoProcessingStatus(comId: string): Promise<any> {
+    try {
+      const result = await db.select({
+        eeezoStatus: candidates.eeezoStatus,
+        enrichmentStatus: candidates.enrichmentStatus,
+        count: sql<number>`count(*)`
+      })
+      .from(candidates)
+      .where(eq(candidates.comId, comId))
+      .groupBy(candidates.eeezoStatus, candidates.enrichmentStatus);
+      
+      const status = {
+        totalCandidates: 0,
+        uploaded: 0,
+        processed: 0,
+        enriched: 0,
+        completed: 0,
+        pendingEnrichment: 0,
+        failedEnrichment: 0
+      };
+      
+      result.forEach(candidate => {
+        status.totalCandidates += candidate.count;
+        
+        switch (candidate.eeezoStatus) {
+          case 'uploaded':
+            status.uploaded += candidate.count;
+            break;
+          case 'processed':
+            status.processed += candidate.count;
+            break;
+          case 'enriched':
+            status.enriched += candidate.count;
+            break;
+          case 'completed':
+            status.completed += candidate.count;
+            break;
+        }
+        
+        switch (candidate.enrichmentStatus) {
+          case 'pending':
+            status.pendingEnrichment += candidate.count;
+            break;
+          case 'failed':
+            status.failedEnrichment += candidate.count;
+            break;
+        }
+      });
+      
+      return status;
+      
+    } catch (error) {
+      console.error('Error fetching Eeezo status:', error);
+      throw new Error(`Failed to fetch status: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
+  }
+
+  async updateCandidateEeezoStatus(candidateId: string, updateData: {
+    eeezoStatus?: string;
+    notes?: string;
+  }): Promise<Candidate | undefined> {
+    try {
+      const [updatedCandidate] = await db.update(candidates)
+        .set({
+          eeezoStatus: updateData.eeezoStatus,
+          notes: updateData.notes
+        })
+        .where(eq(candidates.id, candidateId))
+        .returning();
+      
+      // Log activity
+      await db.insert(activities).values({
+        type: 'eezo_status_update',
+        message: `Eeezo status updated for candidate ${candidateId}`,
+        details: `Status: ${updateData.eeezoStatus}, Notes: ${updateData.notes || 'None'}`
+      });
+      
+      return updatedCandidate;
+      
+    } catch (error) {
+      console.error('Error updating candidate Eeezo status:', error);
+      throw new Error(`Failed to update status: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
+  }
+
+  async updateCandidateResumeStatus(candidateId: string, status: 'active' | 'inactive', comId?: string): Promise<Candidate | undefined> {
+    try {
+      let whereCondition = eq(candidates.id, candidateId);
+      
+      if (comId) {
+        whereCondition = and(eq(candidates.id, candidateId), eq(candidates.comId, comId));
+      }
+      
+      const [updatedCandidate] = await db.update(candidates)
+        .set({
+          resumeStatus: status
+        })
+        .where(whereCondition)
+        .returning();
+      
+      if (!updatedCandidate) {
+        return undefined;
+      }
+      
+      // Log activity
+      await db.insert(activities).values({
+        type: 'resume_status_update',
+        message: `Resume status updated to ${status} for candidate ${candidateId}`,
+        details: `Candidate: ${updatedCandidate?.name || 'Unknown'}, Status: ${status}, Company: ${comId || 'Unknown'}`
+      });
+      
+      return updatedCandidate;
+      
+    } catch (error) {
+      console.error('Error updating candidate resume status:', error);
+      throw new Error(`Failed to update resume status: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
+  }
+
+  async getCandidatesByResumeStatus(status: 'active' | 'inactive', comId: string, limit: number = 100, offset: number = 0): Promise<Candidate[]> {
+    try {
+      const result = await db.select()
+        .from(candidates)
+        .where(and(
+          eq(candidates.resumeStatus, status),
+          eq(candidates.comId, comId)
+        ))
+        .orderBy(desc(candidates.createdAt))
+        .limit(limit)
+        .offset(offset);
+      
+      return result;
+      
+    } catch (error) {
+      console.error('Error fetching candidates by resume status:', error);
+      throw new Error(`Failed to fetch candidates: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
+  }
+
   // Clear data methods
   async clearAllCandidates(): Promise<void> {
-    // Clear resume data first due to foreign key constraints
-    await db.delete(resumeData);
-    // Then clear candidates
+    // Clear candidates
     await db.delete(candidates);
   }
 

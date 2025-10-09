@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eeezo Integration Test - TalentScout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #374151;
+            font-size: 1.1rem;
+        }
+
+        .form-group input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input[type="text"]:focus {
+            outline: none;
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        .file-upload {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-upload input[type="file"] {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .file-upload-label {
+            display: block;
+            padding: 20px;
+            border: 2px dashed #d1d5db;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #f9fafb;
+        }
+
+        .file-upload-label:hover {
+            border-color: #4f46e5;
+            background: #f0f4ff;
+        }
+
+        .file-upload-label.dragover {
+            border-color: #4f46e5;
+            background: #f0f4ff;
+            transform: scale(1.02);
+        }
+
+        .file-info {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f3f4f6;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-secondary {
+            background: #6b7280;
+            margin-top: 10px;
+        }
+
+        .btn-secondary:hover {
+            background: #4b5563;
+            box-shadow: 0 10px 20px rgba(107, 114, 128, 0.3);
+        }
+
+        .results {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .results.success {
+            background: #d1fae5;
+            border: 1px solid #10b981;
+            color: #065f46;
+        }
+
+        .results.error {
+            background: #fee2e2;
+            border: 1px solid #ef4444;
+            color: #991b1b;
+        }
+
+        .results h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .results pre {
+            background: rgba(0,0,0,0.05);
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .status-indicator.success {
+            background: #10b981;
+        }
+
+        .status-indicator.error {
+            background: #ef4444;
+        }
+
+        .status-indicator.loading {
+            background: #f59e0b;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .api-info {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .api-info h3 {
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+
+        .api-info code {
+            background: #e2e8f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #4f46e5;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h1>🚀 Eeezo Integration Test</h1>
+                    <p>Test resume upload with company ID to TalentScout</p>
+                </div>
+                <button onclick="window.location.href='test-resume-status.html'" style="background: #6f42c1; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+                    🎯 Resume Status Test
+                </button>
+            </div>
+        </div>
+
+        <div class="content">
+            <form id="uploadForm">
+                <div class="form-group">
+                    <label for="companyId">Company ID (com_id)</label>
+                    <input 
+                        type="text" 
+                        id="companyId" 
+                        name="companyId" 
+                        placeholder="Enter company ID (e.g., company-123)"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="resumeFile">Resume File</label>
+                    <div class="file-upload">
+                        <input 
+                            type="file" 
+                            id="resumeFile" 
+                            name="resumeFile" 
+                            accept=".pdf,.docx,.doc"
+                            required
+                        >
+                        <label for="resumeFile" class="file-upload-label">
+                            <div>📄 Click to select resume file or drag & drop</div>
+                            <div style="margin-top: 10px; font-size: 0.9rem; color: #6b7280;">
+                                Supports PDF, DOCX, DOC files (max 50MB)
+                            </div>
+                        </label>
+                    </div>
+                    <div id="fileInfo" class="file-info" style="display: none;"></div>
+                </div>
+
+                <button type="submit" class="btn" id="uploadBtn">
+                    <span class="status-indicator" id="statusIndicator"></span>
+                    Upload Resume
+                </button>
+
+                <button type="button" class="btn btn-secondary" id="testRetrieveBtn" style="display: none;">
+                    Test Data Retrieval
+                </button>
+
+                <button type="button" class="btn btn-secondary" id="refreshBtn" style="display: none;">
+                    🔄 Refresh Results
+                </button>
+
+                <button type="button" class="btn btn-secondary" id="statusBtn" style="display: none;">
+                    📊 Check Status Only
+                </button>
+
+                <button type="button" class="btn btn-secondary" id="testConnectionBtn">
+                    🔗 Test Connection
+                </button>
+            </form>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p id="loadingText">Processing resume...</p>
+            </div>
+
+            <div id="results" class="results"></div>
+
+            <div class="api-info">
+                <h3>📡 API Information</h3>
+                <p><strong>Upload Endpoint:</strong> <code>POST /api/eezo/upload-resume</code></p>
+                <p><strong>Retrieve Endpoint:</strong> <code>GET /api/eezo/resume-data/{com_id}</code></p>
+                <p><strong>Status Endpoint:</strong> <code>GET /api/eezo/status/{com_id}</code></p>
+                <p><strong>Base URL:</strong> <code id="baseUrl">http://localhost:5000</code></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const BASE_URL = 'http://localhost:5000'; // Change this to your server URL
+        
+        // DOM elements
+        const form = document.getElementById('uploadForm');
+        const fileInput = document.getElementById('resumeFile');
+        const fileInfo = document.getElementById('fileInfo');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const testRetrieveBtn = document.getElementById('testRetrieveBtn');
+        const results = document.getElementById('results');
+        const loading = document.getElementById('loading');
+        const statusIndicator = document.getElementById('statusIndicator');
+        const baseUrlElement = document.getElementById('baseUrl');
+
+        // Set base URL in the info section
+        baseUrlElement.textContent = BASE_URL;
+
+        // File upload handling
+        fileInput.addEventListener('change', handleFileSelect);
+        
+        // Drag and drop handling
+        const fileUploadLabel = document.querySelector('.file-upload-label');
+        fileUploadLabel.addEventListener('dragover', handleDragOver);
+        fileUploadLabel.addEventListener('dragleave', handleDragLeave);
+        fileUploadLabel.addEventListener('drop', handleDrop);
+
+        // Form submission
+        form.addEventListener('submit', handleSubmit);
+
+        // Test retrieve button
+        testRetrieveBtn.addEventListener('click', testDataRetrieval);
+
+        // Refresh button
+        const refreshBtn = document.getElementById('refreshBtn');
+        refreshBtn.addEventListener('click', refreshResults);
+
+        // Status button
+        const statusBtn = document.getElementById('statusBtn');
+        statusBtn.addEventListener('click', checkStatusOnly);
+
+        // Test connection button
+        const testConnectionBtn = document.getElementById('testConnectionBtn');
+        testConnectionBtn.addEventListener('click', testConnection);
+
+        // Test connection on page load
+        testConnection();
+
+        let currentCompanyId = '';
+
+        async function testConnection() {
+            setLoading(true, 'Testing server connection...');
+            hideResults();
+
+            try {
+                console.log('🔍 Testing connection to server...');
+                const response = await fetch(`${BASE_URL}/health`);
+                if (response.ok) {
+                    const result = await response.json();
+                    console.log('✅ Server connection successful:', result);
+                    showSuccess('Server connection successful!', result);
+                } else {
+                    console.warn('⚠️ Server responded with error:', response.status);
+                    showError(`Server responded with error: ${response.status} ${response.statusText}`);
+                }
+            } catch (error) {
+                console.error('❌ Server connection failed:', error);
+                showError(`Cannot connect to server: ${error.message}. Please check if the server is running on ${BASE_URL}`, {
+                    error: error.message,
+                    type: error.name,
+                    serverUrl: BASE_URL
+                });
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (file) {
+                displayFileInfo(file);
+            }
+        }
+
+        function handleDragOver(event) {
+            event.preventDefault();
+            event.currentTarget.classList.add('dragover');
+        }
+
+        function handleDragLeave(event) {
+            event.currentTarget.classList.remove('dragover');
+        }
+
+        function handleDrop(event) {
+            event.preventDefault();
+            event.currentTarget.classList.remove('dragover');
+            
+            const files = event.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files;
+                displayFileInfo(files[0]);
+            }
+        }
+
+        function displayFileInfo(file) {
+            const fileSize = (file.size / 1024 / 1024).toFixed(2);
+            fileInfo.innerHTML = `
+                <strong>Selected File:</strong> ${file.name}<br>
+                <strong>Size:</strong> ${fileSize} MB<br>
+                <strong>Type:</strong> ${file.type || 'Unknown'}
+            `;
+            fileInfo.style.display = 'block';
+        }
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            
+            const companyId = document.getElementById('companyId').value.trim();
+            const file = fileInput.files[0];
+
+            if (!companyId) {
+                showError('Please enter a company ID');
+                return;
+            }
+
+            if (!file) {
+                showError('Please select a resume file');
+                return;
+            }
+
+            // Validate file type
+            const allowedTypes = ['application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/msword'];
+            if (!allowedTypes.includes(file.type)) {
+                showError('Please select a PDF or DOCX file');
+                return;
+            }
+
+            // Validate file size (50MB limit)
+            if (file.size > 50 * 1024 * 1024) {
+                showError('File size must be less than 50MB');
+                return;
+            }
+
+            currentCompanyId = companyId;
+            await uploadResume(companyId, file);
+        }
+
+        async function uploadResume(companyId, file) {
+            setLoading(true, 'Uploading resume...');
+            hideResults();
+
+            try {
+                const formData = new FormData();
+                formData.append('file', file);
+                formData.append('com_id', companyId);
+
+                console.log('📤 Uploading to:', `${BASE_URL}/api/eezo/upload-resume`);
+                console.log('📤 Company ID:', companyId);
+                console.log('📤 File:', file.name, file.size, 'bytes');
+
+                const response = await fetch(`${BASE_URL}/api/eezo/upload-resume`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                console.log('📥 Response status:', response.status);
+                console.log('📥 Response headers:', Object.fromEntries(response.headers.entries()));
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    console.error('❌ Server error response:', errorText);
+                    try {
+                        const errorResult = JSON.parse(errorText);
+                        showError(`Upload failed: ${errorResult.error || 'Unknown error'}`, errorResult);
+                    } catch {
+                        showError(`Upload failed: ${response.status} ${response.statusText}`, { rawError: errorText });
+                    }
+                    return;
+                }
+
+                const result = await response.json();
+                console.log('✅ Upload success:', result);
+
+                showSuccess('Resume uploaded successfully!', result);
+                testRetrieveBtn.style.display = 'block';
+                refreshBtn.style.display = 'block';
+                statusBtn.style.display = 'block';
+            } catch (error) {
+                console.error('❌ Network error:', error);
+                showError(`Network error: ${error.message}`, { 
+                    error: error.message,
+                    type: error.name,
+                    stack: error.stack 
+                });
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        async function testDataRetrieval() {
+            if (!currentCompanyId) {
+                showError('No company ID available for testing');
+                return;
+            }
+
+            setLoading(true, 'Retrieving candidate data...');
+            hideResults();
+
+            try {
+                console.log('📥 Retrieving data for company:', currentCompanyId);
+                const response = await fetch(`${BASE_URL}/api/eezo/resume-data/${currentCompanyId}`);
+                
+                console.log('📥 Data response status:', response.status);
+                
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    console.error('❌ Data retrieval error:', errorText);
+                    try {
+                        const errorResult = JSON.parse(errorText);
+                        showError(`Data retrieval failed: ${errorResult.error || 'Unknown error'}`, errorResult);
+                    } catch {
+                        showError(`Data retrieval failed: ${response.status} ${response.statusText}`, { rawError: errorText });
+                    }
+                    return;
+                }
+
+                const result = await response.json();
+                console.log('✅ Data retrieval success:', result);
+
+                showSuccess('Data retrieval successful!', result);
+            } catch (error) {
+                console.error('❌ Data retrieval network error:', error);
+                showError(`Network error: ${error.message}`, { 
+                    error: error.message,
+                    type: error.name 
+                });
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        async function refreshResults() {
+            if (!currentCompanyId) {
+                showError('No company ID available for refresh');
+                return;
+            }
+
+            setLoading(true, 'Refreshing results...');
+            hideResults();
+
+            try {
+                // Get both data and status
+                const [dataResponse, statusResponse] = await Promise.all([
+                    fetch(`${BASE_URL}/api/eezo/resume-data/${currentCompanyId}`),
+                    fetch(`${BASE_URL}/api/eezo/status/${currentCompanyId}`)
+                ]);
+
+                const dataResult = await dataResponse.json();
+                const statusResult = await statusResponse.json();
+
+                if (dataResponse.ok && statusResponse.ok) {
+                    const combinedResult = {
+                        data: dataResult.data,
+                        status: statusResult.data.status,
+                        timestamp: new Date().toISOString()
+                    };
+                    showSuccess('Results refreshed successfully!', combinedResult);
+                } else {
+                    const error = dataResult.error || statusResult.error || 'Unknown error';
+                    showError(`Refresh failed: ${error}`, { dataResult, statusResult });
+                }
+            } catch (error) {
+                showError(`Network error: ${error.message}`);
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        async function checkStatusOnly() {
+            if (!currentCompanyId) {
+                showError('No company ID available for status check');
+                return;
+            }
+
+            setLoading(true, 'Checking processing status...');
+            hideResults();
+
+            try {
+                const response = await fetch(`${BASE_URL}/api/eezo/status/${currentCompanyId}`);
+                const result = await response.json();
+
+                if (response.ok) {
+                    showSuccess('Status check successful!', result);
+                } else {
+                    showError(`Status check failed: ${result.error || 'Unknown error'}`, result);
+                }
+            } catch (error) {
+                showError(`Network error: ${error.message}`);
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        function setLoading(isLoading, loadingText = 'Processing...') {
+            const loadingTextElement = document.getElementById('loadingText');
+            
+            if (isLoading) {
+                loading.style.display = 'block';
+                uploadBtn.disabled = true;
+                testRetrieveBtn.disabled = true;
+                refreshBtn.disabled = true;
+                statusBtn.disabled = true;
+                statusIndicator.className = 'status-indicator loading';
+                uploadBtn.innerHTML = '<span class="status-indicator loading"></span>Processing...';
+                loadingTextElement.textContent = loadingText;
+            } else {
+                loading.style.display = 'none';
+                uploadBtn.disabled = false;
+                testRetrieveBtn.disabled = false;
+                refreshBtn.disabled = false;
+                statusBtn.disabled = false;
+                statusIndicator.className = 'status-indicator success';
+                uploadBtn.innerHTML = '<span class="status-indicator success"></span>Upload Resume';
+            }
+        }
+
+        function showSuccess(message, data) {
+            results.className = 'results success';
+            results.innerHTML = `
+                <h3>✅ ${message}</h3>
+                <pre>${JSON.stringify(data, null, 2)}</pre>
+            `;
+            results.style.display = 'block';
+        }
+
+        function showError(message, data = null) {
+            results.className = 'results error';
+            let content = `<h3>❌ ${message}</h3>`;
+            if (data) {
+                content += `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+            }
+            results.innerHTML = content;
+            results.style.display = 'block';
+        }
+
+        function hideResults() {
+            results.style.display = 'none';
+        }
+
+        // Initialize
+        console.log('Eeezo Integration Test Page Loaded');
+        console.log('Base URL:', BASE_URL);
+    </script>
+</body>
+</html>

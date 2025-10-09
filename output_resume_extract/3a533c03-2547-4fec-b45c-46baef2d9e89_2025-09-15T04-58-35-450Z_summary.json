@@ -1,0 +1,109 @@
+{
+  "filename": "3a533c03-2547-4fec-b45c-46baef2d9e89.pdf",
+  "timestamp": "2025-09-15T04:58:35.451Z",
+  "processingTime": 28762,
+  "confidence": 80,
+  "extractedData": {
+    "name": "Amarnath Yadav",
+    "email": "amarnath.y@protonmail.com",
+    "phone": "9140259551",
+    "title": null,
+    "location": null,
+    "summary": "As a seasoned Java professional with 5 years of experience, I excel in designing and developing high-impact microservices-based systems. My expertise in Java, microservices architecture, and system design enables me to create scalable, robust solutions. I'm passionate about software engineering, a strong communicator, and a collaborative team player. With a track record of delivering quality projects on time and within budget, I'm dedicated to driving innovation and adding value to your organization.",
+    "experience": [
+      {
+        "jobTitle": "Senior Software Engineer",
+        "company": "AGILON HEALTH INC",
+        "duration": "JUN 2023 - PRESENT",
+        "startDate": "2023-06",
+        "endDate": "Present",
+        "techUsed": [
+          "Kafka",
+          "Airflow"
+        ],
+        "description": "Developed a foundational framework using Kafka and Airflow, enabling other teams to build on top of it efficiently. Led the efforts from requirement gathering to the final production-ready code deployment. Directed the integration of an enhanced XDR system for a new market region. Monitored, scaled, and performed extensive performance testing on a new HL7 processing system. Spearheaded efforts to create an automation testing team for the new processing system.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "SDE2",
+        "company": "AGILON HEALTH INC",
+        "duration": "AUG 2021 - JUN 2023",
+        "startDate": "2021-08",
+        "endDate": "2023-06",
+        "techUsed": [
+          "SOAP",
+          "WSDL",
+          "Microservices"
+        ],
+        "description": "Led the transformation of the Minerva system from a monolithic architecture to a microservices-based architecture. Independently developed a PDF builder service. Designed and implemented an advanced invoicing system for hospital services. Implemented robust WSDL APIs for Minerva HIS. Developed a system for Minerva HIS to generate XDR documents. Successfully collaborated with design and QA teams to develop and launch a new appointment system.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Software Engineer",
+        "company": "OARI COLLAB PVT LTD",
+        "duration": "SEP 2019 - AUG 2021",
+        "startDate": "2019-09",
+        "endDate": "2021-08",
+        "techUsed": [
+          "MongoDB",
+          "REST APIs"
+        ],
+        "description": "Implemented a Search Grammar on top of MongoDB. Developed REST APIs for hotel booking cancellations and automatic refund generation. Integrated IRCTC ticket booking APIs into the existing OARI system. Participated in coding activities and updating existing systems. Assisted in developing over 7 software solutions across web, desktop, and mobile platforms.",
+        "achievements": [
+          "Promoted within 8 months due to strong performance and organizational impact."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.TECH",
+        "field": "Computer Science and Engineering",
+        "university": "DR. A.P.J. ABDUL KALAM TECHNICAL UNIVERSITY",
+        "year": "2020",
+        "percentage": null,
+        "gpa": null,
+        "location": "Lucknow"
+      }
+    ],
+    "skills": [
+      "Java 8",
+      "Java 17",
+      "Java 21",
+      "Python",
+      "JavaScript",
+      "Angular",
+      "React",
+      "Microservices",
+      "Monolith",
+      "SOAP",
+      "REST",
+      "Spring Boot",
+      "Spring Context",
+      "Spring Security",
+      "Hibernate",
+      "Kubernetes",
+      "Docker",
+      "Tomcat",
+      "JBoss",
+      "Apache",
+      "Nginx",
+      "Kafka",
+      "Maven",
+      "Ant",
+      "SVN",
+      "CVS",
+      "Git",
+      "TFS",
+      "Jenkins",
+      "Sonar",
+      "FindBug",
+      "MongoDB",
+      "MySQL",
+      "PostgreSQL",
+      "Google Cloud",
+      "AWS"
+    ],
+    "projects": [],
+    "certifications": []
+  }
+}

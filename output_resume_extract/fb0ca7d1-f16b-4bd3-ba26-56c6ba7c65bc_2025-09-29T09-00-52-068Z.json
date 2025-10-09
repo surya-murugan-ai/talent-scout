@@ -1,0 +1,135 @@
+{
+  "filename": "fb0ca7d1-f16b-4bd3-ba26-56c6ba7c65bc.pdf",
+  "timestamp": "2025-09-29T09:00:52.068Z",
+  "processingTime": 6382,
+  "confidence": 94,
+  "rawText": "\n\nWork History\nEducation\nProjects\nInterests\nSoftware Developer\nHemanthj\nm\nContact\nAddress\nShimoga , India 577413\nPhone\n6361196611\nE-mail\nhemanthhemanthjm21797@gm\nail.com\nLinkedIn\nhttps://www.linkedin.com\n/in/hemanth-j-m-2001ms\nWWW\nhttps://github.com/freehuba\nSkills\nJava , Python, Django\nAdvanced\nC, C++, HTML,CSS ,PHP\nAdvanced\nAndroid iOS, UI Path (RPA)\nUpper intermediate\nJava RESTAPI, javascript\nUpper intermediate\nReact js, Spring core, Bootstrap\nIntermediate\nOracle, Mongo db, MySQL\nIntermediate\nUi&UXDesign, Express js\nIntermediate\nXML, jQuery, JSON\nIntermediate\nNode js, AWS, Git\nElementary\nTo seek and maintain full-time position that offers professional challenges\nutilizing interpersonal skills, excellent time management and problem-\nsolving skills.\nFull Stack Developer\nTake It Smart ,Kundapura\nDeveloped functional databases, applications and\nservers to support websites on back-end.\nUsed Node js, ORM and SQL/No-SQL to develop and\nmanage databases.\nCRT_NO : 150027\n2022-08 -\n2022-10\nFront End Developer\nVerzeo Edu Tech ,Kundapura\nCoded using HTML, CSS and JavaScript to develop\nfeatures for both mobile and desktop platforms.\nDesigned and updated layouts to meet usability and\nperformance requirements.\nCRT_NO : 2601122283\n2022-05 -\n2022-07\nB.E: Computer Science\nMIT - Kundapura\nAwarded : Academic topper 2021-2022\nCGPA : 8.33 / 10\n2019-06 -\n2023-05\n12th Class : PCM\nJunior College - Shimoga\nCGPA : 7.0 / 10\n2018-06 -\n2019-03\n10th Class : Computer\nJunior College - Shimoga\nCGPA : 7.0 / 10\n2016-06 -\n2017-03\nQ Spider Training ( 2 months ) : Expert in Program\nlanguage like Java, Python C, C++, Postman.\nRobotic Process Automation ( 2 months ) : learning ui\npath studio and building the automotive applications.\ni have done few more projects during my academic\nyear web applications (Ecommerce site, Toll tax\nmanagement) using android studio ISO apps like\n(Food app).\nPencil sketching , Swimming, listening Music, Bike Raiding",
+  "extractedData": {
+    "name": "Hemanthj m",
+    "email": "hemanthhemanthjm21797@gmail.com",
+    "phone": "6361196611",
+    "linkedinUrl": "https://www.linkedin.com/in/hemanth-j-m-2001ms",
+    "githubUrl": "https://github.com/freehuba",
+    "portfolioUrl": null,
+    "location": "Shimoga, India",
+    "title": "Software Developer",
+    "summary": "To seek and maintain full-time position that offers professional challenges utilizing interpersonal skills, excellent time management and problem-solving skills.",
+    "experience": [
+      {
+        "jobTitle": "Full Stack Developer",
+        "company": "Take It Smart",
+        "duration": "2022-08 - 2022-10",
+        "startDate": "2022-08",
+        "endDate": "2022-10",
+        "techUsed": [
+          "Node js",
+          "ORM",
+          "SQL",
+          "No-SQL"
+        ],
+        "description": "Developed functional databases, applications and servers to support websites on back-end.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Front End Developer",
+        "company": "Verzeo Edu Tech",
+        "duration": "2022-05 - 2022-07",
+        "startDate": "2022-05",
+        "endDate": "2022-07",
+        "techUsed": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+        "description": "Coded using HTML, CSS and JavaScript to develop features for both mobile and desktop platforms. Designed and updated layouts to meet usability and performance requirements.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.E",
+        "field": "Computer Science",
+        "university": "MIT - Kundapura",
+        "year": "2023",
+        "percentage": null,
+        "gpa": "8.33",
+        "location": "Kundapura"
+      },
+      {
+        "degree": "12th Class",
+        "field": "PCM",
+        "university": "Junior College - Shimoga",
+        "year": "2019",
+        "percentage": null,
+        "gpa": "7.0",
+        "location": "Shimoga"
+      },
+      {
+        "degree": "10th Class",
+        "field": "Computer",
+        "university": "Junior College - Shimoga",
+        "year": "2017",
+        "percentage": null,
+        "gpa": "7.0",
+        "location": "Shimoga"
+      }
+    ],
+    "projects": [],
+    "achievements": [
+      {
+        "title": "Academic topper",
+        "description": "Awarded for academic excellence in 2021-2022",
+        "year": "2022",
+        "organization": "MIT - Kundapura"
+      }
+    ],
+    "certifications": [],
+    "skills": [
+      "Java",
+      "Python",
+      "Django",
+      "C",
+      "C++",
+      "HTML",
+      "CSS",
+      "PHP",
+      "Android",
+      "iOS",
+      "UI Path (RPA)",
+      "Java RESTAPI",
+      "JavaScript",
+      "React js",
+      "Spring core",
+      "Bootstrap",
+      "Oracle",
+      "Mongo db",
+      "MySQL",
+      "Ui&UXDesign",
+      "Express js",
+      "XML",
+      "jQuery",
+      "JSON",
+      "Node js",
+      "AWS",
+      "Git"
+    ],
+    "interests": [
+      "Pencil sketching",
+      "Swimming",
+      "Listening Music",
+      "Bike Raiding"
+    ],
+    "languages": [],
+    "salary": null,
+    "availability": null,
+    "remotePreference": null,
+    "visaStatus": null,
+    "originalData": {
+      "filename": "fb0ca7d1-f16b-4bd3-ba26-56c6ba7c65bc.pdf",
+      "rawText": "Work History Education Projects Interests Software Developer Hemanthj m Contact Address Shimoga , India 577413 Phone 6361196611 E-mail hemanthhemanthjm21797@gm ail.com LinkedIn https://www.linkedin.com /in/hemanth-j-m-2001ms WWW https://github.com/freehuba Skills Java , Python, Django Advanced C, C++, HTML,CSS ,PHP Advanced Android iOS, UI Path (RPA) Upper intermediate Java RESTAPI, javascript Upper intermediate React js, Spring core, Bootstrap Intermediate Oracle, Mongo db, MySQL Intermediate Ui&UXDesign, Express js Intermediate XML, jQuery, JSON Intermediate Node js, AWS, Git Elementary To seek and maintain full-time position that offers professional challenges utilizing interpersonal skills, excellent time management and problem- solving skills. Full Stack Developer Take It Smart ,Kundapura Developed functional databases, applications and servers to support websites on back-end. Used Node js, ORM and SQL/No-SQL to develop and manage databases. CRT_NO : 150027 2022-08 - 2022-10 Front End Developer Verzeo Edu Tech ,Kundapura Coded using HTML, CSS and JavaScript to develop features for both mobile and desktop platforms. Designed and updated layouts to meet usability and performance requirements. CRT_NO : 2601122283 2022-05 - 2022-07 B.E: Computer Science MIT - Kundapura Awarded : Academic topper 2021-2022 CGPA : 8.33 / 10 2019-06 - 2023-05 12th Class : PCM Junior College - Shimoga CGPA : 7.0 / 10 2018-06 - 2019-03 10th Class : Computer Junior College - Shimoga CGPA : 7.0 / 10 2016-06 - 2017-03 Q Spider Training ( 2 months ) : Expert in Program language like Java, Python C, C++, Postman. Robotic Process Automation ( 2 months ) : learning ui path studio and building the automotive applications. i have done few more projects during my academic year web applications (Ecommerce site, Toll tax management) using android studio ISO apps like (Food app). Pencil sketching , Swimming, listening Music, Bike Raiding"
+    },
+    "source": "resume",
+    "confidence": 94,
+    "processingTime": 0
+  }
+}

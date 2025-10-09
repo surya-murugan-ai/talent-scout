@@ -1,0 +1,145 @@
+{
+  "timestamp": "2025-10-08T07:19:06.011Z",
+  "linkedinUrl": "https://www.linkedin.com/in/suresh-kumar-a14358163/",
+  "rawData": {
+    "linkedinUrl": "https://www.linkedin.com/in/suresh-kumar-a14358163/",
+    "firstName": "Suresh",
+    "lastName": "kumar",
+    "fullName": "Suresh kumar",
+    "headline": "MERN FULL STACK DEVELOPER - Immediate joiner",
+    "connections": 873,
+    "followers": 871,
+    "email": null,
+    "mobileNumber": null,
+    "jobTitle": null,
+    "companyName": null,
+    "companyIndustry": null,
+    "companyWebsite": null,
+    "companyLinkedin": null,
+    "companyFoundedIn": null,
+    "companySize": null,
+    "currentJobDuration": null,
+    "currentJobDurationInYrs": 0,
+    "topSkillsByEndorsements": null,
+    "addressCountryOnly": null,
+    "addressWithCountry": null,
+    "addressWithoutCountry": null,
+    "profilePic": null,
+    "profilePicHighQuality": null,
+    "about": null,
+    "publicIdentifier": "suresh-kumar-a14358163",
+    "openConnection": null,
+    "urn": "ACoAACcHZLABdRiAGLDoBd25OzvFuoqvaFmEZ-Y",
+    "experiences": [],
+    "updates": [],
+    "skills": [],
+    "profilePicAllDimensions": [],
+    "educations": [],
+    "licenseAndCertificates": [],
+    "honorsAndAwards": [],
+    "languages": [],
+    "volunteerAndAwards": [],
+    "verifications": [],
+    "promos": [],
+    "highlights": [],
+    "projects": [],
+    "publications": [],
+    "patents": [],
+    "courses": [],
+    "testScores": [],
+    "organizations": [],
+    "volunteerCauses": [],
+    "interests": [
+      {
+        "section_name": "Companies",
+        "section_components": [
+          {
+            "titleV2": "Tata Consultancy Services",
+            "caption": "17,943,231 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1353/",
+            "subComponents": []
+          },
+          {
+            "titleV2": "Cognizant",
+            "caption": "8,595,844 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1680/",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Groups",
+        "section_components": [
+          {
+            "titleV2": "Full Stack Developer: MEAN, MERN Angular, React, MongoDB, Express.js, Node.js, Web & App Development",
+            "caption": "19,284 members",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/groups/14009117",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Newsletters",
+        "section_components": [
+          {
+            "titleV2": "AI for Impact",
+            "caption": "Published biweekly",
+            "subtitle": "Explore Agentic AI, Legacy Modernization, and Scalable AI to drive enterprise value and responsible impact.",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/newsletters/7366540403853910019",
+            "subComponents": [
+              {
+                "insightComponent": {
+                  "text": "Cognizant",
+                  "actionTarget": "https://www.linkedin.com/company/1680/"
+                }
+              }
+            ]
+          },
+          {
+            "titleV2": "HCLTech AI Dispatch",
+            "caption": "Published monthly",
+            "subtitle": "Insights into the transformative impact of AI and GenAI across various industries.",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/newsletters/7371194082234130434",
+            "subComponents": [
+              {
+                "insightComponent": {
+                  "text": "HCLTech",
+                  "actionTarget": "https://www.linkedin.com/company/1756/"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section_name": "Schools",
+        "section_components": [
+          {
+            "titleV2": "Sharpener",
+            "caption": "44,577 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/school/74087378/",
+            "subComponents": []
+          },
+          {
+            "titleV2": "VHNSN College",
+            "caption": "3,356 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/school/15126635/",
+            "subComponents": []
+          }
+        ]
+      }
+    ],
+    "recommendations": []
+  },
+  "metadata": {
+    "source": "dev_fusion/Linkedin-Profile-Scraper",
+    "savedAt": "2025-10-08T07:19:06.011Z"
+  }
+}

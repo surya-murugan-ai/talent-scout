@@ -1,0 +1,198 @@
+{
+  "timestamp": "2025-10-08T14:59:55.057Z",
+  "linkedinUrl": "https://www.linkedin.com/in/surya-murugan-ragaiyan",
+  "rawData": {
+    "linkedinUrl": "https://www.linkedin.com/in/surya-murugan-ragaiyan",
+    "firstName": "Surya",
+    "lastName": "Murugan",
+    "fullName": "Surya Murugan",
+    "headline": "Python Backend Developer || Machine Learning || Deep Learning || Agentic AI || Flask || Django || DRF ||  SQL -- Open for Opportunity.",
+    "connections": 740,
+    "followers": 737,
+    "email": null,
+    "mobileNumber": null,
+    "jobTitle": null,
+    "companyName": null,
+    "companyIndustry": null,
+    "companyWebsite": null,
+    "companyLinkedin": null,
+    "companyFoundedIn": null,
+    "companySize": null,
+    "currentJobDuration": null,
+    "currentJobDurationInYrs": 0,
+    "topSkillsByEndorsements": null,
+    "addressCountryOnly": "India",
+    "addressWithCountry": "Mumbai, Maharashtra, India",
+    "addressWithoutCountry": "Mumbai, Maharashtra",
+    "profilePic": "https://media.licdn.com/dms/image/v2/D4D03AQFtW1Tu737xkQ/profile-displayphoto-scale_400_400/B4DZnAWfbzGkAg-/0/1759868746827?e=1762992000&v=beta&t=1pipAdT44FYvs1YIIYwD8E-qE0cBKospnEbq9C46qSs",
+    "profilePicHighQuality": "https://media.licdn.com/dms/image/v2/D4D03AQFtW1Tu737xkQ/profile-displayphoto-crop_800_800/B4DZnAWfbzGkAI-/0/1759868746734?e=1762992000&v=beta&t=t_Hv0RxFzCy4QNr66d7xwiQvlv4iqrZoTLM9oPXBsqA",
+    "about": null,
+    "publicIdentifier": "surya-murugan-ragaiyan",
+    "openConnection": null,
+    "urn": "ACoAADbFvlIBgwsNAgs9u8Lc8KMxJql2btTtsQs",
+    "experiences": [],
+    "updates": [],
+    "skills": [],
+    "profilePicAllDimensions": [
+      {
+        "width": 400,
+        "expiresAt": 1762992000000,
+        "height": 400,
+        "url": "https://media.licdn.com/dms/image/v2/D4D03AQFtW1Tu737xkQ/profile-displayphoto-scale_400_400/B4DZnAWfbzGkAg-/0/1759868746827?e=1762992000&v=beta&t=1pipAdT44FYvs1YIIYwD8E-qE0cBKospnEbq9C46qSs"
+      },
+      {
+        "width": 100,
+        "expiresAt": 1762992000000,
+        "height": 100,
+        "url": "https://media.licdn.com/dms/image/v2/D4D03AQFtW1Tu737xkQ/profile-displayphoto-scale_100_100/B4DZnAWfbzGkAc-/0/1759868746827?e=1762992000&v=beta&t=Z6S2J0qRwmEtTtjPmBCJEYXkAAWB3ufFkLlyQ8wmRnc"
+      },
+      {
+        "width": 200,
+        "expiresAt": 1762992000000,
+        "height": 200,
+        "url": "https://media.licdn.com/dms/image/v2/D4D03AQFtW1Tu737xkQ/profile-displayphoto-scale_200_200/B4DZnAWfbzGkAY-/0/1759868746827?e=1762992000&v=beta&t=uTZJ8MnGsmO5ZKyviK0vCcdojw6iVEbhJnOEiWSpxvw"
+      },
+      {
+        "width": 800,
+        "expiresAt": 1762992000000,
+        "height": 800,
+        "url": "https://media.licdn.com/dms/image/v2/D4D03AQFtW1Tu737xkQ/profile-displayphoto-crop_800_800/B4DZnAWfbzGkAI-/0/1759868746734?e=1762992000&v=beta&t=t_Hv0RxFzCy4QNr66d7xwiQvlv4iqrZoTLM9oPXBsqA"
+      }
+    ],
+    "educations": [],
+    "licenseAndCertificates": [],
+    "honorsAndAwards": [],
+    "languages": [],
+    "volunteerAndAwards": [],
+    "verifications": [],
+    "promos": [],
+    "highlights": [],
+    "projects": [],
+    "publications": [],
+    "patents": [],
+    "courses": [],
+    "testScores": [],
+    "organizations": [],
+    "volunteerCauses": [],
+    "interests": [
+      {
+        "section_name": "Top Voices",
+        "section_components": [
+          {
+            "titleV2": "Darshil Parmar",
+            "caption": "128,241 followers",
+            "subtitle": "Senior Data Engineer | Helping Data Engineers Crack Jobs | Founder @DataVidhya  | 🎥YouTube (181K+) @Darshil Parmar",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/in/darshil-parmar",
+            "subComponents": []
+          },
+          {
+            "titleV2": "Greg Isenberg",
+            "caption": "222,538 followers",
+            "subtitle": "CEO of Late Checkout, a portfolio of internet companies",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/in/gisenberg",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Companies",
+        "section_components": [
+          {
+            "titleV2": "IBM",
+            "caption": "18,774,126 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1009/",
+            "subComponents": []
+          },
+          {
+            "titleV2": "Deloitte",
+            "caption": "19,952,236 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1038/",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Groups",
+        "section_components": [
+          {
+            "titleV2": "Artificial Intelligence, Machine Learning, Data Science, Agentic, Generative AI, Scientist & Analyst",
+            "caption": "727,589 members",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/groups/7039829",
+            "subComponents": []
+          },
+          {
+            "titleV2": "🦾 Machine Learning, Artificial Intelligence, Deep Learning, Computer Vision, Robotics, Gen AI, GPT",
+            "caption": "796,851 members",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/groups/6773411",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Newsletters",
+        "section_components": [
+          {
+            "titleV2": "All About Datamatics",
+            "caption": "Published monthly",
+            "subtitle": "This newsletter will update you all about Datamatics",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/newsletters/6971444287892803584",
+            "subComponents": [
+              {
+                "insightComponent": {
+                  "text": "Datamatics",
+                  "actionTarget": "https://www.linkedin.com/company/163359/"
+                }
+              }
+            ]
+          },
+          {
+            "titleV2": "Wipro Insights",
+            "caption": "Published monthly",
+            "subtitle": "Our latest thinking on AI and (much) more!",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/newsletters/7341867077076480001",
+            "subComponents": [
+              {
+                "insightComponent": {
+                  "text": "Wipro",
+                  "actionTarget": "https://www.linkedin.com/company/1318/"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section_name": "Schools",
+        "section_components": [
+          {
+            "titleV2": "University of Mumbai",
+            "caption": "1,070,076 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/school/15093732/",
+            "subComponents": []
+          },
+          {
+            "titleV2": "PrepInsta",
+            "caption": "82,222 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/school/21178612/",
+            "subComponents": []
+          }
+        ]
+      }
+    ],
+    "recommendations": []
+  },
+  "metadata": {
+    "source": "dev_fusion/Linkedin-Profile-Scraper",
+    "savedAt": "2025-10-08T14:59:55.057Z"
+  }
+}

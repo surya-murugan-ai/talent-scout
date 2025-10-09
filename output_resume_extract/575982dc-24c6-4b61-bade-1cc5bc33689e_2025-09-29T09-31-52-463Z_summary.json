@@ -1,0 +1,101 @@
+{
+  "filename": "575982dc-24c6-4b61-bade-1cc5bc33689e.pdf",
+  "timestamp": "2025-09-29T09:31:52.463Z",
+  "processingTime": 6029,
+  "confidence": 66,
+  "extractedData": {
+    "name": "Marudhu Pandi Selvama",
+    "email": "marudhul022@gmail.com",
+    "phone": null,
+    "title": null,
+    "location": "62B Anna Colony, Alaoorani, Thiruthangal, Sivakasi, Virudhunagar-626130",
+    "summary": "Seeking a position in a company where I can make the best of my potential and build a valuable skill set and contribute to the overall growth of the organization.",
+    "experience": [],
+    "education": [
+      {
+        "degree": "B.TECH",
+        "field": "Information Technology",
+        "university": "Kalasalingam Academy of Research and Education",
+        "year": "2024",
+        "percentage": null,
+        "gpa": "7.28",
+        "location": "62B Anna Colony, Alaoorani, Thiruthangal, Sivakasi, Virudhunagar-626130"
+      },
+      {
+        "degree": "HSC",
+        "field": null,
+        "university": "Muthumari Matric Hr Sec School",
+        "year": "2020",
+        "percentage": "61%",
+        "gpa": null,
+        "location": null
+      },
+      {
+        "degree": "SSLC",
+        "field": null,
+        "university": "Muthumari Matric Hr Sec School",
+        "year": "2018",
+        "percentage": "51%",
+        "gpa": null,
+        "location": null
+      }
+    ],
+    "skills": [
+      "Leadership",
+      "Problem Solving",
+      "Time management",
+      "Communication",
+      "Python (Beginner)",
+      "HTML (Beginner)",
+      "CSS (Beginner)"
+    ],
+    "projects": [
+      {
+        "name": "Detection of Diabetic Retinopathy",
+        "description": "Creating a web application for checking eye diseases.",
+        "techUsed": [
+          "HTML",
+          "CSS",
+          "Python"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Web Development - Jewellery Website",
+        "description": "Inplant training at io solution in Coimbatore.",
+        "techUsed": [
+          "HTML",
+          "CSS",
+          "Python"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Web Portal for College's Training and Placement Cell",
+        "description": "A web portal to help students with placement.",
+        "techUsed": [
+          "HTML",
+          "CSS",
+          "Python"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Workshop on Investigation on Digital Forensics",
+        "issuer": null,
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      }
+    ]
+  }
+}

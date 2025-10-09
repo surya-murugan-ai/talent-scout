@@ -1,0 +1,229 @@
+{
+  "filename": "Harish - 8+ Years .Net Lead (1).pdf",
+  "timestamp": "2025-09-03T14:28:48.906Z",
+  "processingTime": 13731,
+  "confidence": 92,
+  "rawText": "\n\nHARISH SEKAR   \ndsharish@outlook.com | +91 96290 10760  \n  \nPROFESSIONAL SUMMARY  \nSenior Software Engineer with 8 years of comprehensive experience in dotnet core enterprise \napplication development, cloud integration, and microservices architecture. Proven expertise in \nleading complex ERP integrations, designing scalable solutions using Azure technologies, Azure \nDevops and implementing modern architectural patterns including Saga microservices. Strong \nbackground in Backend development with demonstrated success in migrating legacy systems to \ncloud-native architectures and dotnet core architecture.  \n  \nPROFESSIONAL EXPERIENCE  \nSenior Software Engineer | Nublar Technology, Bengaluru  \nJanuary 2023 – Present  \nProject: MyCarrier - Enterprise ERP Integration Platform  \n• Technical Leadership: Spearheaded productization initiative by designing and implementing \nSaga architecture-based dotnet core microservices, successfully migrating customer-specific \nLogic Apps. \n• Led comprehensive ERP integration solutions for Sage100 and QuickBooks Online using  \n• Azure Logic Apps. \n• Developed Azure App Services and Function Apps to bridge ERP systems with Logic Apps. \n• Integrated multiple Truckload APIs within Azure Logic Apps to streamline logistics and \n• transportation workflows. \n• Architected Azure Blob Storage mechanism to optimize API call efficiency, reducing  \n• order creation API calls by 60%.  \n• DevOps Implementation: Adopted Kubernetes orchestration and Grafana monitoring for \nenhanced system observability and scalability.  \n• Quality Assurance: Implemented comprehensive automation testing frameworks, improving \ndeployment reliability  \n \nSoftware Engineer| Nublar Technology, Bengaluru  \nJanuary 2021 – December 2022  \nProject: Trimble - Transportation & Logistics Solutions  \n• Developed .NET API endpoints to integrate with Boomi middleware for EDI transform  \n• Contributed to architecture decisions and technical design reviews  \n• Developed core .NET components for file processing dispatcher and routing  \n  \n  \n\n \nSoftware Engineer| Nublar Technology, Bengaluru  \nNovember 2019 – December 2020  \nProject: Kuebix - Azure Integrations  \n• Designed and developed Azure Logic Apps to automate business workflows and integrate thirdparty \nsystems  \n• Built Azure Function Apps to orchestrate and automate Logic App executions  \n• Implemented comprehensive testing frameworks and debugging processes to ensure code quality \nand reliability  \n• Successfully onboarded 15+ new clients to Azure platform, managing end-to-end migration \nprocesses  \n• Collaborated with stakeholders to identify critical business requirements while balancing design \nand functional performance  \nSoftware Developer | Honeywell Technology Solutions  \nNovember 2018 – October 2019  \nProject: SIR Tool - Build Management System  \n• Developed .NET Core web application enabling cross-functional teams to submit builds for \nQA testing  \n• Diagnosed and resolved critical application bugs, maintaining 99.5% uptime in production \nenvironment  \n• Improved bug detection efficiency and established 4-hour SLA for critical issue resolution • \nAutomated email reporting system, reducing manual effort and improving stakeholder \ncommunication  \nJunior Software Developer | Ebase Software Solutions October 2017 – October 2018  \nProject: PRISM - Insurance Process Management  \n• Built .NET Core web application streamlining workflows between insurance companies and \nhealthcare providers  \n• Automated Excel template generation process, reducing processing time from hours to \nminutes • Implemented robust data access layer using Entity Framework Core with \noptimized database queries  \n• Participated in database schema design and optimization, improving query performance by \n40%  \nJunior Software Developer | Ebase Software Solutions  \nFebruary 2017 – September 2017 Project: X-Space - HR Interview Management System  \n• Developed .NET Core web application for managing technical interview processes  \n• Integrated Python-based quiz engine with C# backend for automated candidate assessment  \n• Analysed business requirements and translated them into technical specifications and user \nstories  \n• Created RESTful web services using C# for seamless frontend-backend communication  \n\n \n \nAssociate Developer | Ebase Software Solutions  \nOctober 2016 – January 2017  \nProject: X-Cloud - Learning Management System  \n• Implemented Moodle-based Learning Management System for enterprise training \nprograms • Prepared detailed project proposals including risk assessment, timeline \nestimation, and resource planning  \n• Maintained comprehensive architecture documentation and technical specifications  \n• Collaborated with cross-functional teams to ensure project deliverables met quality \nstandards  \n  \nEDUCATION  \nBachelor of Engineering in Computer Science  \nAnna University, Chennai, India | CGPA: 7.6/10  \n  \nTECHNICAL EXPERTISE   \nCategory  Technologies  \nProgramming Languages  C#  \nFrameworks &  \nTechnologies  \n.NET Core, Entity Framework, ASP.NET MVC, Microservices  \nCloud Platforms  \nMicrosoft Azure (Logic Apps, Function Apps, App Services, Blob \nStorage)  \nArchitecture Patterns  Saga Pattern, Microservices, MVC, RESTful APIs  \nContainer Technologies  Kubernetes, Docker  \nMonitoring & DevOps  Grafana, Azure DevOps, CI/CD Pipelines  \nERP Systems  Sage100, QuickBooks Online, NetSuite  \nDatabases  SQL Server, MySQL  \nDevelopment Tools  Visual Studio, Git, Azure Portal  \nTesting  Automation Testing, Unit Testing, Integration Testing  \n  \n  \n  \n\n  \n  \nKEY ACHIEVEMENTS  \n✓ Led successful migration of legacy ERP integrations to modern Saga microservices architecture  \n✓ Designed and implemented Azure Blob Storage optimization reducing API calls by 60%  \n✓ Successfully migrated 15+ clients to Azure platform with zero downtime  \n✓ Improved deployment reliability by  through automation testing implementation  \n✓ Established technical leadership in microservices design and Kubernetes adoption  \n✓ Reduced bug detection time  through implementation of automated testing processes  \n✓ Maintained 99.5% system uptime across multiple enterprise applications  \n  \nPROFESSIONAL INTERESTS  \n• Microservices Architecture and Design Patterns  \n• Cloud-Native Application Development and DevOps  \n• Enterprise Integration Patterns and ERP Systems  \n• Kubernetes and Container Orchestration  \n• System Observability and Performance Monitoring  \n  ",
+  "extractedData": {
+    "name": "HARISH SEKAR",
+    "email": "dsharish@outlook.com",
+    "phone": "+91 96290 10760",
+    "linkedinUrl": null,
+    "githubUrl": null,
+    "portfolioUrl": null,
+    "location": "Bengaluru, India",
+    "title": "Senior Software Engineer",
+    "summary": "Senior Software Engineer with 8 years of comprehensive experience in dotnet core enterprise application development, cloud integration, and microservices architecture. Proven expertise in leading complex ERP integrations, designing scalable solutions using Azure technologies, Azure Devops and implementing modern architectural patterns including Saga microservices. Strong background in Backend development with demonstrated success in migrating legacy systems to cloud-native architectures and dotnet core architecture.",
+    "experience": [
+      {
+        "jobTitle": "Senior Software Engineer",
+        "company": "Nublar Technology",
+        "duration": "January 2023 - Present",
+        "startDate": "2023-01",
+        "endDate": "Present",
+        "techUsed": [
+          "dotnet core",
+          "Azure",
+          "Azure Logic Apps",
+          "Azure App Services",
+          "Azure Function Apps",
+          "Kubernetes",
+          "Grafana"
+        ],
+        "description": "Spearheaded productization initiative by designing and implementing Saga architecture-based dotnet core microservices, successfully migrating customer-specific Logic Apps.",
+        "achievements": [
+          "Led comprehensive ERP integration solutions for Sage100 and QuickBooks Online using Azure Logic Apps.",
+          "Architected Azure Blob Storage mechanism to optimize API call efficiency, reducing order creation API calls by 60%."
+        ]
+      },
+      {
+        "jobTitle": "Software Engineer",
+        "company": "Nublar Technology",
+        "duration": "January 2021 - December 2022",
+        "startDate": "2021-01",
+        "endDate": "2022-12",
+        "techUsed": [
+          ".NET",
+          "Boomi middleware"
+        ],
+        "description": "Developed .NET API endpoints to integrate with Boomi middleware for EDI transform.",
+        "achievements": [
+          "Contributed to architecture decisions and technical design reviews.",
+          "Developed core .NET components for file processing dispatcher and routing."
+        ]
+      },
+      {
+        "jobTitle": "Software Engineer",
+        "company": "Nublar Technology",
+        "duration": "November 2019 - December 2020",
+        "startDate": "2019-11",
+        "endDate": "2020-12",
+        "techUsed": [
+          "Azure Logic Apps",
+          "Azure Function Apps"
+        ],
+        "description": "Designed and developed Azure Logic Apps to automate business workflows and integrate third-party systems.",
+        "achievements": [
+          "Successfully onboarded 15+ new clients to Azure platform, managing end-to-end migration processes."
+        ]
+      },
+      {
+        "jobTitle": "Software Developer",
+        "company": "Honeywell Technology Solutions",
+        "duration": "November 2018 - October 2019",
+        "startDate": "2018-11",
+        "endDate": "2019-10",
+        "techUsed": [
+          ".NET Core"
+        ],
+        "description": "Developed .NET Core web application enabling cross-functional teams to submit builds for QA testing.",
+        "achievements": [
+          "Maintained 99.5% uptime in production environment.",
+          "Automated email reporting system, reducing manual effort and improving stakeholder communication."
+        ]
+      },
+      {
+        "jobTitle": "Junior Software Developer",
+        "company": "Ebase Software Solutions",
+        "duration": "October 2017 - October 2018",
+        "startDate": "2017-10",
+        "endDate": "2018-10",
+        "techUsed": [
+          ".NET Core",
+          "Entity Framework Core"
+        ],
+        "description": "Built .NET Core web application streamlining workflows between insurance companies and healthcare providers.",
+        "achievements": [
+          "Automated Excel template generation process, reducing processing time from hours to minutes.",
+          "Improved query performance by 40%."
+        ]
+      },
+      {
+        "jobTitle": "Junior Software Developer",
+        "company": "Ebase Software Solutions",
+        "duration": "February 2017 - September 2017",
+        "startDate": "2017-02",
+        "endDate": "2017-09",
+        "techUsed": [
+          ".NET Core",
+          "Python"
+        ],
+        "description": "Developed .NET Core web application for managing technical interview processes.",
+        "achievements": [
+          "Integrated Python-based quiz engine with C# backend for automated candidate assessment."
+        ]
+      },
+      {
+        "jobTitle": "Associate Developer",
+        "company": "Ebase Software Solutions",
+        "duration": "October 2016 - January 2017",
+        "startDate": "2016-10",
+        "endDate": "2017-01",
+        "techUsed": [
+          "Moodle"
+        ],
+        "description": "Implemented Moodle-based Learning Management System for enterprise training programs.",
+        "achievements": [
+          "Prepared detailed project proposals including risk assessment, timeline estimation, and resource planning."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Engineering",
+        "field": "Computer Science",
+        "university": "Anna University",
+        "year": "Graduation Year",
+        "percentage": null,
+        "gpa": "7.6/10",
+        "location": "Chennai, India"
+      }
+    ],
+    "projects": [],
+    "achievements": [
+      {
+        "title": "Led successful migration of legacy ERP integrations",
+        "description": "Led successful migration of legacy ERP integrations to modern Saga microservices architecture.",
+        "year": null,
+        "organization": null
+      },
+      {
+        "title": "Designed and implemented Azure Blob Storage optimization",
+        "description": "Designed and implemented Azure Blob Storage optimization reducing API calls by 60%.",
+        "year": null,
+        "organization": null
+      },
+      {
+        "title": "Successfully migrated 15+ clients to Azure platform",
+        "description": "Successfully migrated 15+ clients to Azure platform with zero downtime.",
+        "year": null,
+        "organization": null
+      },
+      {
+        "title": "Improved deployment reliability",
+        "description": "Improved deployment reliability by through automation testing implementation.",
+        "year": null,
+        "organization": null
+      },
+      {
+        "title": "Established technical leadership",
+        "description": "Established technical leadership in microservices design and Kubernetes adoption.",
+        "year": null,
+        "organization": null
+      },
+      {
+        "title": "Reduced bug detection time",
+        "description": "Reduced bug detection time through implementation of automated testing processes.",
+        "year": null,
+        "organization": null
+      },
+      {
+        "title": "Maintained 99.5% system uptime",
+        "description": "Maintained 99.5% system uptime across multiple enterprise applications.",
+        "year": null,
+        "organization": null
+      }
+    ],
+    "certifications": [],
+    "skills": [
+      "C#",
+      ".NET Core",
+      "Entity Framework",
+      "ASP.NET MVC",
+      "Microservices",
+      "Microsoft Azure",
+      "Saga Pattern",
+      "Kubernetes",
+      "Docker",
+      "Grafana",
+      "Azure DevOps",
+      "CI/CD Pipelines",
+      "Sage100",
+      "QuickBooks Online",
+      "NetSuite",
+      "SQL Server",
+      "MySQL",
+      "Visual Studio",
+      "Git",
+      "Azure Portal",
+      "Automation Testing",
+      "Unit Testing",
+      "Integration Testing"
+    ],
+    "interests": [
+      "Microservices Architecture and Design Patterns",
+      "Cloud-Native Application Development and DevOps",
+      "Enterprise Integration Patterns and ERP Systems",
+      "Kubernetes and Container Orchestration",
+      "System Observability and Performance Monitoring"
+    ],
+    "languages": [],
+    "originalData": {
+      "filename": "Harish - 8+ Years .Net Lead (1).pdf",
+      "rawText": "HARISH SEKAR dsharish@outlook.com | +91 96290 10760 PROFESSIONAL SUMMARY Senior Software Engineer with 8 years of comprehensive experience in dotnet core enterprise application development, cloud integration, and microservices architecture. Proven expertise in leading complex ERP integrations, designing scalable solutions using Azure technologies, Azure Devops and implementing modern architectural patterns including Saga microservices. Strong background in Backend development with demonstrated success in migrating legacy systems to cloud-native architectures and dotnet core architecture. PROFESSIONAL EXPERIENCE Senior Software Engineer | Nublar Technology, Bengaluru January 2023 – Present Project: MyCarrier - Enterprise ERP Integration Platform • Technical Leadership: Spearheaded productization initiative by designing and implementing Saga architecture-based dotnet core microservices, successfully migrating customer-specific Logic Apps. • Led comprehensive ERP integration solutions for Sage100 and QuickBooks Online using • Azure Logic Apps. • Developed Azure App Services and Function Apps to bridge ERP systems with Logic Apps. • Integrated multiple Truckload APIs within Azure Logic Apps to streamline logistics and • transportation workflows. • Architected Azure Blob Storage mechanism to optimize API call efficiency, reducing • order creation API calls by 60%. • DevOps Implementation: Adopted Kubernetes orchestration and Grafana monitoring for enhanced system observability and scalability. • Quality Assurance: Implemented comprehensive automation testing frameworks, improving deployment reliability Software Engineer| Nublar Technology, Bengaluru January 2021 – December 2022 Project: Trimble - Transportation & Logistics Solutions • Developed .NET API endpoints to integrate with Boomi middleware for EDI transform • Contributed to architecture decisions and technical design reviews • Developed core .NET components for file processing dispatcher and routing Software Engi"
+    },
+    "source": "resume",
+    "confidence": 92,
+    "processingTime": 0
+  }
+}

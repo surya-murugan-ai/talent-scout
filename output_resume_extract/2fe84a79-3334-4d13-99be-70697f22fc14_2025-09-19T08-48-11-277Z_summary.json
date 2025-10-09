@@ -1,0 +1,148 @@
+{
+  "filename": "2fe84a79-3334-4d13-99be-70697f22fc14.pdf",
+  "timestamp": "2025-09-19T08:48:11.278Z",
+  "processingTime": 11035,
+  "confidence": 93,
+  "extractedData": {
+    "name": "Ranjan Vishwakarma",
+    "email": "sharmaranjan7079@gmail.com",
+    "phone": "7488493253",
+    "title": "Laravel Developer",
+    "location": "Bangalore",
+    "summary": "Highly skilled Laravel Developer with 1.5+ years of professional experience. Demonstrated expertise in developing robust and scalable web applications using the Laravel framework.",
+    "experience": [
+      {
+        "jobTitle": "Laravel Developer",
+        "company": "Xcrino Business Solutions",
+        "duration": "February 2022 - Present",
+        "startDate": "2022-02",
+        "endDate": "Present",
+        "techUsed": [
+          "Laravel",
+          "Core PHP",
+          "REST APIs",
+          "HTML",
+          "CSS",
+          "BOOTSTRAP",
+          "JQUARY",
+          "PHP LARAVEL",
+          "MYQSL",
+          "Rest API",
+          "AJAX"
+        ],
+        "description": "Develop new project to tight deadlines using Laravel Framework, Core PHP. API integration. Creating new websites from scratch with the help of wireframe. Creating and customization free and paid both themes for web application. Creating mobile friendly websites. And troubleshoot, test and maintain the website in different platforms. Write clean, well-designed code, anyone can easily understand. Experience with REST APIs with a basic understanding of object-oriented programming (OOPs) design patterns. Experience using common third-party APIs.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Web Developer",
+        "company": "OMNINOS TECHNOLOGIES INTERNATIONAL PVT LTD.",
+        "duration": "September 2021 - March 2022",
+        "startDate": "2021-09",
+        "endDate": "2022-03",
+        "techUsed": [
+          "PHP"
+        ],
+        "description": "Paid Internship in PHP Technology.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "B. TECH",
+        "field": null,
+        "university": "Sagar Institute of Research & Technology, Bhopal (RGPV)",
+        "year": "2021",
+        "percentage": null,
+        "gpa": "7.27",
+        "location": "Bhopal"
+      },
+      {
+        "degree": "12th",
+        "field": null,
+        "university": "S.N. Sinha College, Aurangabad, (BSEB)",
+        "year": "2016",
+        "percentage": "51.4%",
+        "gpa": null,
+        "location": "Aurangabad"
+      },
+      {
+        "degree": "10th",
+        "field": null,
+        "university": "Sita High School, Harihar Ganj, (JAC)",
+        "year": "2014",
+        "percentage": "63.2%",
+        "gpa": null,
+        "location": "Harihar Ganj"
+      }
+    ],
+    "skills": [
+      "PHP",
+      "Laravel",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Ajax",
+      "jQuery",
+      "Theme Customization",
+      "Bootstrap",
+      "MySQL",
+      "Windows",
+      "Linux",
+      "VS Code",
+      "XAMPP",
+      "Wampserver64",
+      "Postman"
+    ],
+    "projects": [
+      {
+        "name": "Dating Application (Hunttr)",
+        "description": null,
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Hospital Management System",
+        "description": null,
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Service Based Management System",
+        "description": null,
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Human Resource Management System",
+        "description": null,
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Healthy Concept",
+        "description": null,
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Academy Management System",
+        "description": null,
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "certifications": []
+  }
+}

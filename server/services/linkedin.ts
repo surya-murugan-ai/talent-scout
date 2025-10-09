@@ -76,6 +76,7 @@ interface LinkedInSearchResponse {
 }
 
 interface ApifyLinkedInSearchInput {
+  searchQuery?: string;                 // Fuzzy search query (full name)
   currentCompanies?: string[];
   currentJobTitles?: string[];
   firstNames?: string[];
@@ -86,6 +87,9 @@ interface ApifyLinkedInSearchInput {
   pastJobTitles?: string[];
   profileScraperMode?: string;
   schools?: string[];
+  recentlyChangedJobs?: boolean;
+  yearsOfExperienceIds?: string[];
+  startPage?: number;
 }
 
 interface ApifyDevFusionInput {
@@ -122,6 +126,8 @@ export class LinkedInService {
     const apifyToken = process.env.APIFY_API_TOKEN;
     if (!apifyToken) {
       console.warn('APIFY_API_TOKEN not found. LinkedIn enrichment will use fallback mode.');
+    } else {
+      console.log(`✅ APIFY_API_TOKEN loaded: ${apifyToken.substring(0, 20)}...`);
     }
     this.apifyClient = new ApifyClient({
       token: apifyToken,
@@ -396,56 +402,66 @@ export class LinkedInService {
       }
 
       // Prepare search input for harvestapi
+      // Use searchQuery for fuzzy search with full name
       const searchInput: ApifyLinkedInSearchInput = {
+        searchQuery: name,               // Fuzzy search with full name
         profileScraperMode: "Full",
         maxItems: maxResults,
-        locations: location ? [location] : [],
-        currentJobTitles: title ? [title] : [],
+        startPage: 1
       };
+      
+      // Add location only if provided
+      if (location) {
+        searchInput.locations = [location];
+      }
+      
+      // Add title only if provided
+      if (title) {
+        searchInput.currentJobTitles = [title];
+      }
 
       // Extract company LinkedIn URLs from uploaded data
       if (candidates && candidates.length > 0) {
         const companyUrls = this.extractCompanyLinkedInUrls(candidates);
         if (companyUrls.length > 0) {
           searchInput.currentCompanies = companyUrls;
-          searchInput.pastCompanies = companyUrls;
           console.log(`Using ${companyUrls.length} company LinkedIn URLs from uploaded data`);
         }
       }
 
-      // Add company if provided
+      // Add company if provided (convert to LinkedIn company URL for better results)
       if (company) {
         if (!searchInput.currentCompanies) searchInput.currentCompanies = [];
-        searchInput.currentCompanies.push(company);
-      }
-
-      // Split name into first and last name if possible
-      const nameParts = name.trim().split(/\s+/);
-      if (nameParts.length >= 2) {
-        searchInput.firstNames = [nameParts[0]];
-        searchInput.lastNames = [nameParts[nameParts.length - 1]];
-      } else if (nameParts.length === 1) {
-        searchInput.firstNames = [nameParts[0]];
+        // Convert company name to LinkedIn URL format (lowercase, remove all spaces and special chars)
+        const companySlug = company.toLowerCase().replace(/\s+/g, '').replace(/[^a-z0-9]/g, '');
+        const companyLinkedInUrl = `https://www.linkedin.com/company/${companySlug}/`;
+        searchInput.currentCompanies.push(companyLinkedInUrl);
       }
 
       console.log('Apify search input:', JSON.stringify(searchInput, null, 2));
 
-      // Run the harvestapi Apify actor
-      const run = await this.apifyClient.actor("harvestapi/linkedin-profile-search").call(searchInput);
+      // Run the harvestapi Apify actor using actor ID
+      // .call() automatically waits for the actor to finish and returns the run object
+      console.log('⏳ Running Apify actor (this may take 20-30 seconds)...');
+      const run = await this.apifyClient.actor("M2FMdjRVeF1HPGFcc").call(searchInput);
+      console.log(`✅ Actor finished! (Run ID: ${run.id})`);
       
       // Fetch results
       const { items } = await this.apifyClient.dataset(run.defaultDatasetId).listItems();
+      
+      console.log(`📊 Apify returned ${items?.length || 0} results`);
       
       // Save the raw harvestapi results
       const searchQuery = `${name} ${title || ''} ${company || ''} ${location || ''}`.trim();
       this.saveHarvestApiResults(items, searchQuery);
       
       if (!items || items.length === 0) {
-        console.log('No LinkedIn profiles found with Apify search');
+        console.log('❌ No LinkedIn profiles found with Apify search');
+        console.log('💡 Tip: Try with fewer search criteria or check if the profile exists on LinkedIn');
         return null;
       }
 
-      console.log(`Found ${items.length} LinkedIn profiles with Apify search`);
+      console.log(`✅ Found ${items.length} LinkedIn profiles with Apify search`);
       
       // If we have results, use the first one (no scoring needed)
       if (items.length > 0) {
@@ -761,33 +777,47 @@ export class LinkedInService {
       try {
         // Search again with the same parameters to get full profile data
         const searchInput: ApifyLinkedInSearchInput = {
+          searchQuery: name,             // Use searchQuery for fuzzy search
           profileScraperMode: "Full",
           maxItems: 20,
-          locations: location ? [location] : [],
-          currentJobTitles: title ? [title] : [],
-          firstNames: name ? [name.split(' ')[0]] : [],
-          lastNames: name ? [name.split(' ').slice(-1)[0]] : [],
+          startPage: 1
         };
+        
+        // Add location only if provided
+        if (location) {
+          searchInput.locations = [location];
+        }
+        
+        // Add title only if provided
+        if (title) {
+          searchInput.currentJobTitles = [title];
+        }
 
         // Extract company LinkedIn URLs from uploaded data
         if (candidates && candidates.length > 0) {
           const companyUrls = this.extractCompanyLinkedInUrls(candidates);
           if (companyUrls.length > 0) {
             searchInput.currentCompanies = companyUrls;
-            searchInput.pastCompanies = companyUrls;
           }
         }
 
-        // Add company if provided
+        // Add company if provided (convert to LinkedIn company URL for better results)
         if (company) {
           if (!searchInput.currentCompanies) searchInput.currentCompanies = [];
-          searchInput.currentCompanies.push(company);
+          // Convert company name to LinkedIn URL format (lowercase, remove all spaces and special chars)
+          const companySlug = company.toLowerCase().replace(/\s+/g, '').replace(/[^a-z0-9]/g, '');
+          const companyLinkedInUrl = `https://www.linkedin.com/company/${companySlug}/`;
+          searchInput.currentCompanies.push(companyLinkedInUrl);
         }
 
         console.log('Enrichment search input:', JSON.stringify(searchInput, null, 2));
 
-        // Using the harvestapi LinkedIn Profile Search actor
-        const run = await this.apifyClient.actor("harvestapi/linkedin-profile-search").call(searchInput);
+        // Using the harvestapi LinkedIn Profile Search actor with actor ID
+        // .call() automatically waits for the actor to finish and returns the run object
+        console.log('⏳ Running Apify actor for enrichment (this may take 20-30 seconds)...');
+        const run = await this.apifyClient.actor("M2FMdjRVeF1HPGFcc").call(searchInput);
+        console.log(`✅ Enrichment actor finished! (Run ID: ${run.id})`);
+        
         const { items } = await this.apifyClient.dataset(run.defaultDatasetId).listItems();
         
         // Save the raw harvestapi results

@@ -1,0 +1,135 @@
+{
+  "filename": "7cb656a8-eff9-4318-bde1-e5a0f9cd6d82.pdf",
+  "timestamp": "2025-09-18T04:16:45.963Z",
+  "processingTime": 7719,
+  "confidence": 87,
+  "rawText": "\n\n \nSURESH \nKUMAR \n \nEDUCATION \nB.Sc IT \nV.H.N.S.N College \n \n       July 2015 - May 2018 \n       Virudhunagar, Tamilnadu \nXII \nK.V.S Hr. Sec. School  \n \n       June 2014 - May 2015 \n       Virudhunagar, Tamilnadu \n \nSKILLS \n● HTML \n● CSS \n● Javascript \n● Bootstrap \n● PHP MVC Framework \n● React , Redux \n● React Native \n● Asp.net Telerik \n● Mysql , Sql server, \nMongoDB , DynamoDB \n● AWS , Azure \n \nCERTIFICATIONS \nCompleted Certificate course in \n“Web Development Using \nPYTHON” \n \nWon first prize in web \ndevelopment competition \n \nWon second prize in web \ndevelopment competition \n \nsureshayyan444@gmail.com                    8760105087, 6383470896 \n \nVirudhunagar, Tamilnadu                         LinkedIn\n \n \nSOFTWARE DEVELOPER\n \nWORK EXPERIENCE \nSEPTEMBER 2023 - CURRENT \nPHP Developer & MERN STACK DEVELOPER R \nCloudb software solution pvt ltd  |  Virudhunagar, Tamilnadu \n● HEALTH FUND SYSTEM \nI developed a system using ASP.NET, Telerik, SQL Server, and AWS to \nmanage personal records, dependent information, job history, comments, \naddress history, and job classes. The system includes features like \ndocument uploads, company details, agreements, schedules, and \nprocessing screens.AWS for cloud infrastructure and SQL Server for \ndatabase management. \n● CREATIVE DESIGN PACK \nAn eCommerce website developed using React, Redux, and Serverless \nAWS services like S3 Bucket, DynamoDB, Cognito, Secrets Manager, and \nCloudFront. The admin allows create users, products, categories, and \ncustom pricing for users. The user side includes login, shopping cart, \nproduct browsing, user profile, previous orders, and the ability to reorder. \n● BCC ERP Project \nI developed a system using React, Node.js, MongoDB, and Redux, which \nincludes features such as web login/registration, master pages for city, \ndesignation, state, and degree, and client creation for schools with \nemployee mapping across multiple clients. Key modules include a \nmonthly calendar, leave requests, permissions, to-do tasks, payroll, \npayslips, master and monthly trackers, and employee management \n● Magoprinpro & Vindini vysage \nI developed a system using React, Redux, MongoDB, and Node.js, \nfeaturing web login, master pages for various data segments, and a \ntransaction management system for vendor creation, order placements, \npayments, and invoices. The platform also manages employee reports, \ncheck-ins, expense entries, and account year management. Key reports, \nincluding attendance, vendor, and payment reports, can be exported in \nPDF or CSV formats, and Firebase is integrated for web push notifications \non new orders, payments, or expense entries. \n● BEEBOOK (Accounting Software) \nBilling software using PHP, MySQL, and the MVC framework. My role \ninvolves maintaining the system, implementing updates, adding new \nfeatures, and fixing bugs based on client requests to ensure smooth and \nefficient operation \nFEBRUARY 2023 - AUGUST 2023 \nPHP Developer & Hardware maintenance \n \nVVV & Sons edible oils ltd (IDHAYAM Oil)  | Virudhunagar, Tamilnadu \n● Worked on the EARMS ERP Software, developed using PHP, MySQL, and \nthe MVC framework, providing updates and improvements on admin side. \n● \nManaged hardware tasks, including server maintenance and CCTV \nsystems, ensuring smooth and efficient operations. \n ",
+  "extractedData": {
+    "name": "Suresh Kumar",
+    "email": "sureshayyan444@gmail.com",
+    "phone": "8760105087",
+    "linkedinUrl": "https://www.linkedin.com/in/suresh-kumar-a14358163/",
+    "githubUrl": null,
+    "portfolioUrl": null,
+    "location": "Virudhunagar, Tamilnadu",
+    "title": "Software Developer",
+    "summary": null,
+    "experience": [
+      {
+        "jobTitle": "PHP Developer & MERN STACK DEVELOPER",
+        "company": "Cloudb software solution pvt ltd",
+        "duration": "September 2023 - Current",
+        "startDate": "2023-09",
+        "endDate": "Present",
+        "techUsed": [
+          "ASP.NET",
+          "Telerik",
+          "SQL Server",
+          "AWS",
+          "React",
+          "Redux",
+          "Serverless AWS",
+          "S3 Bucket",
+          "DynamoDB",
+          "Cognito",
+          "Secrets Manager",
+          "CloudFront",
+          "Node.js",
+          "MongoDB",
+          "Firebase"
+        ],
+        "description": "Developed various systems including Health Fund System, Creative Design Pack, BCC ERP Project, Magoprinpro & Vindini vysage, and BEEBOOK.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "PHP Developer & Hardware maintenance",
+        "company": "VVV & Sons edible oils ltd (IDHAYAM Oil)",
+        "duration": "February 2023 - August 2023",
+        "startDate": "2023-02",
+        "endDate": "2023-08",
+        "techUsed": [
+          "PHP",
+          "MySQL",
+          "MVC framework"
+        ],
+        "description": "Worked on EARMS ERP Software and managed hardware tasks including server maintenance and CCTV systems.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Sc IT",
+        "field": null,
+        "university": "V.H.N.S.N College",
+        "year": "2018",
+        "percentage": null,
+        "gpa": null,
+        "location": "Virudhunagar, Tamilnadu"
+      },
+      {
+        "degree": "XII",
+        "field": null,
+        "university": "K.V.S Hr. Sec. School",
+        "year": "2015",
+        "percentage": null,
+        "gpa": null,
+        "location": "Virudhunagar, Tamilnadu"
+      }
+    ],
+    "projects": [],
+    "achievements": [
+      {
+        "title": "First prize in web development competition",
+        "description": null,
+        "year": null,
+        "organization": null
+      },
+      {
+        "title": "Second prize in web development competition",
+        "description": null,
+        "year": null,
+        "organization": null
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Certificate course in Web Development Using PYTHON",
+        "issuer": null,
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      }
+    ],
+    "skills": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Bootstrap",
+      "PHP MVC Framework",
+      "React",
+      "Redux",
+      "React Native",
+      "Asp.net Telerik",
+      "Mysql",
+      "Sql server",
+      "MongoDB",
+      "DynamoDB",
+      "AWS",
+      "Azure"
+    ],
+    "interests": [],
+    "languages": [],
+    "salary": null,
+    "availability": null,
+    "remotePreference": null,
+    "visaStatus": null,
+    "originalData": {
+      "filename": "7cb656a8-eff9-4318-bde1-e5a0f9cd6d82.pdf",
+      "rawText": "SURESH KUMAR EDUCATION B.Sc IT V.H.N.S.N College July 2015 - May 2018 Virudhunagar, Tamilnadu XII K.V.S Hr. Sec. School June 2014 - May 2015 Virudhunagar, Tamilnadu SKILLS ● HTML ● CSS ● Javascript ● Bootstrap ● PHP MVC Framework ● React , Redux ● React Native ● Asp.net Telerik ● Mysql , Sql server, MongoDB , DynamoDB ● AWS , Azure CERTIFICATIONS Completed Certificate course in “Web Development Using PYTHON” Won first prize in web development competition Won second prize in web development competition sureshayyan444@gmail.com 8760105087, 6383470896 Virudhunagar, Tamilnadu LinkedIn SOFTWARE DEVELOPER WORK EXPERIENCE SEPTEMBER 2023 - CURRENT PHP Developer & MERN STACK DEVELOPER R Cloudb software solution pvt ltd | Virudhunagar, Tamilnadu ● HEALTH FUND SYSTEM I developed a system using ASP.NET, Telerik, SQL Server, and AWS to manage personal records, dependent information, job history, comments, address history, and job classes. The system includes features like document uploads, company details, agreements, schedules, and processing screens.AWS for cloud infrastructure and SQL Server for database management. ● CREATIVE DESIGN PACK An eCommerce website developed using React, Redux, and Serverless AWS services like S3 Bucket, DynamoDB, Cognito, Secrets Manager, and CloudFront. The admin allows create users, products, categories, and custom pricing for users. The user side includes login, shopping cart, product browsing, user profile, previous orders, and the ability to reorder. ● BCC ERP Project I developed a system using React, Node.js, MongoDB, and Redux, which includes features such as web login/registration, master pages for city, designation, state, and degree, and client creation for schools with employee mapping across multiple clients. Key modules include a monthly calendar, leave requests, permissions, to-do tasks, payroll, payslips, master and monthly trackers, and employee management ● Magoprinpro & Vindini vysage I developed a system using React, Redux, Mong"
+    },
+    "source": "resume",
+    "confidence": 87,
+    "processingTime": 0
+  }
+}

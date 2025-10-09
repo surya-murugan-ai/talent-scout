@@ -3,9 +3,12 @@ import multer from "multer";
 import { storage } from "./storage";
 import { FileProcessor } from "./services/fileProcessor";
 import { analyzeCandidate, enrichLinkedInProfile } from "./services/openai";
-import { ResumeDataService } from "./services/resumeDataService";
 import { scoringWeightsSchema } from "@shared/schema";
 import { z } from "zod";
+import { OptimizedResumeProcessor } from "./services/optimizedResumeProcessor";
+import { PerformanceMonitor } from "./services/performanceMonitor";
+import { EeezoService } from "./services/eezoService";
+import { websocketService } from "./services/websocketService";
 // Configure multer for file uploads
 const upload = multer({
     storage: multer.memoryStorage(),
@@ -65,20 +68,36 @@ export async function registerRoutes(app) {
             });
         }
     });
-    // Get all candidates with pagination
+    // Get all candidates with pagination and company filtering
     app.get("/api/candidates", async (req, res) => {
         try {
-            const limit = parseInt(req.query.limit) || 50;
-            const offset = parseInt(req.query.offset) || 0;
-            const priority = req.query.priority;
+            const { com_id, limit = 50, offset = 0, priority } = req.query;
+            if (!com_id) {
+                return res.status(400).json({
+                    error: "Company ID (com_id) is required",
+                    code: "MISSING_COMPANY_ID"
+                });
+            }
+            const limitNum = parseInt(limit) || 50;
+            const offsetNum = parseInt(offset) || 0;
             let candidates;
             if (priority) {
-                candidates = await storage.getCandidatesByPriority(priority);
+                candidates = await storage.getCandidatesByPriority(priority, com_id);
             }
             else {
-                candidates = await storage.getCandidates(limit, offset);
+                candidates = await storage.getCandidates(com_id, limitNum, offsetNum);
             }
-            res.json(candidates);
+            res.json({
+                success: true,
+                data: candidates,
+                pagination: {
+                    limit: limitNum,
+                    offset: offsetNum,
+                    count: candidates.length,
+                    hasMore: candidates.length === limitNum
+                },
+                company: com_id
+            });
         }
         catch (error) {
             res.status(500).json({
@@ -87,19 +106,77 @@ export async function registerRoutes(app) {
             });
         }
     });
-    // Get single candidate
+    // Get single candidate with company validation
     app.get("/api/candidates/:id", async (req, res) => {
         try {
-            const candidate = await storage.getCandidate(req.params.id);
-            if (!candidate) {
-                return res.status(404).json({ error: "Candidate not found" });
+            const { com_id } = req.query;
+            if (!com_id) {
+                return res.status(400).json({
+                    error: "Company ID (com_id) is required",
+                    code: "MISSING_COMPANY_ID"
+                });
             }
-            res.json(candidate);
+            const candidate = await storage.getCandidate(req.params.id, com_id);
+            if (!candidate) {
+                return res.status(404).json({
+                    error: "Candidate not found",
+                    code: "CANDIDATE_NOT_FOUND"
+                });
+            }
+            res.json({
+                success: true,
+                data: candidate,
+                company: com_id
+            });
         }
         catch (error) {
             res.status(500).json({
                 error: "Failed to fetch candidate",
                 message: error instanceof Error ? error.message : "Unknown error"
+            });
+        }
+    });
+    // Get specific candidates by IDs and company ID
+    app.post("/api/candidates/bulk", async (req, res) => {
+        try {
+            const { candidateIds, com_id } = req.body;
+            if (!com_id) {
+                return res.status(400).json({
+                    error: "Company ID (com_id) is required",
+                    code: "MISSING_COMPANY_ID"
+                });
+            }
+            if (!candidateIds || !Array.isArray(candidateIds) || candidateIds.length === 0) {
+                return res.status(400).json({
+                    error: "Candidate IDs array is required and must not be empty",
+                    code: "MISSING_CANDIDATE_IDS"
+                });
+            }
+            // Validate that all IDs are strings
+            const invalidIds = candidateIds.filter(id => typeof id !== 'string' || !id.trim());
+            if (invalidIds.length > 0) {
+                return res.status(400).json({
+                    error: "All candidate IDs must be non-empty strings",
+                    code: "INVALID_CANDIDATE_IDS"
+                });
+            }
+            const candidates = await storage.getCandidatesByIds(candidateIds, com_id);
+            res.json({
+                success: true,
+                data: {
+                    comId: com_id,
+                    requestedIds: candidateIds,
+                    foundCandidates: candidates.length,
+                    candidates: candidates
+                }
+            });
+        }
+        catch (error) {
+            console.error('Bulk candidates fetch error:', error);
+            res.status(500).json({
+                error: "Failed to fetch candidates",
+                message: error instanceof Error ? error.message : "Unknown error",
+                code: "BULK_FETCH_ERROR"
             });
         }
     });
@@ -235,6 +312,164 @@ export async function registerRoutes(app) {
             });
         }
     });
+    // Optimized single resume upload route
+    app.post("/api/upload-single-resume", upload.single('file'), async (req, res) => {
+        try {
+            if (!req.file) {
+                return res.status(400).json({ error: "No file uploaded" });
+            }
+            const { originalname, buffer, size } = req.file;
+            // Create processing job
+            const processingJob = await storage.createProcessingJob({
+                projectId: "default-project",
+                fileName: originalname,
+                fileSize: size,
+                status: "processing",
+                progress: 0,
+                totalRecords: 0,
+                processedRecords: 0
+            });
+            // Log activity
+            await storage.createActivity({
+                type: "upload",
+                message: "Single resume uploaded",
+                details: `${originalname} (${Math.round(size / 1024)}KB)`
+            });
+            // Use optimized processor for single resume with performance monitoring
+            const optimizedProcessor = OptimizedResumeProcessor.getInstance();
+            // Process with progress tracking and performance monitoring
+            const progressCallback = async (progress, message) => {
+                await storage.updateProcessingJob(processingJob.id, {
+                    progress,
+                    status: progress === 100 ? "completed" : "processing"
+                });
+                console.log(`Progress: ${progress}% - ${message}`);
+            };
+            // Process the single resume with performance monitoring
+            const result = await PerformanceMonitor.getInstance().timeOperation('single_resume_processing', () => optimizedProcessor.processSingleResume(buffer, originalname, {
+                batchSize: 1,
+                enableCaching: true,
+                parallelProcessing: false,
+                progressCallback
+            }), { filename: originalname, fileSize: size });
+            if (result.success) {
+                // Update job with results
+                await storage.updateProcessingJob(processingJob.id, {
+                    status: "completed",
+                    progress: 100,
+                    totalRecords: result.candidates.length,
+                    processedRecords: result.candidates.length
+                });
+                // Log completion
+                await storage.createActivity({
+                    type: "processing",
+                    message: "Single resume processing completed",
+                    details: `${result.candidates.length} candidates processed in ${result.processingTime}ms`
+                });
+                res.json({
+                    message: "Single resume processed successfully",
+                    jobId: processingJob.id,
+                    filename: originalname,
+                    candidatesProcessed: result.candidates.length,
+                    processingTime: result.processingTime,
+                    estimatedTimeSaved: "2-3x faster than batch processing"
+                });
+            }
+            else {
+                // Update job with failure
+                await storage.updateProcessingJob(processingJob.id, {
+                    status: "failed",
+                    errorMessage: "Processing failed"
+                });
+                res.status(500).json({
+                    error: "Single resume processing failed",
+                    jobId: processingJob.id
+                });
+            }
+        }
+        catch (error) {
+            console.error('Optimized upload error:', error);
+            res.status(500).json({
+                error: "Failed to process single resume",
+                message: error instanceof Error ? error.message : "Unknown error"
+            });
+        }
+    });
+    // Performance monitoring routes
+    app.get("/api/performance/stats", async (req, res) => {
+        try {
+            const stats = PerformanceMonitor.getInstance().getOverallStats();
+            res.json(stats);
+        }
+        catch (error) {
+            res.status(500).json({
+                error: "Failed to fetch performance stats",
+                message: error instanceof Error ? error.message : "Unknown error"
+            });
+        }
+    });
+    app.get("/api/performance/operation/:operation", async (req, res) => {
+        try {
+            const stats = PerformanceMonitor.getInstance().getOperationStats(req.params.operation);
+            res.json(stats);
+        }
+        catch (error) {
+            res.status(500).json({
+                error: "Failed to fetch operation stats",
+                message: error instanceof Error ? error.message : "Unknown error"
+            });
+        }
+    });
+    app.get("/api/performance/slowest", async (req, res) => {
+        try {
+            const limit = parseInt(req.query.limit) || 10;
+            const slowest = PerformanceMonitor.getInstance().getSlowestOperations(limit);
+            res.json(slowest);
+        }
+        catch (error) {
+            res.status(500).json({
+                error: "Failed to fetch slowest operations",
+                message: error instanceof Error ? error.message : "Unknown error"
+            });
+        }
+    });
+    app.get("/api/performance/trends", async (req, res) => {
+        try {
+            const hours = parseInt(req.query.hours) || 24;
+            const trends = PerformanceMonitor.getInstance().getPerformanceTrends(hours);
+            res.json(trends);
+        }
+        catch (error) {
+            res.status(500).json({
+                error: "Failed to fetch performance trends",
+                message: error instanceof Error ? error.message : "Unknown error"
+            });
+        }
+    });
+    app.get("/api/performance/memory", async (req, res) => {
+        try {
+            const memoryStats = PerformanceMonitor.getInstance().getMemoryStats();
+            res.json(memoryStats);
+        }
+        catch (error) {
+            res.status(500).json({
+                error: "Failed to fetch memory stats",
+                message: error instanceof Error ? error.message : "Unknown error"
+            });
+        }
+    });
+    app.post("/api/performance/clear", async (req, res) => {
+        try {
+            PerformanceMonitor.getInstance().clearMetrics();
+            res.json({ message: "Performance metrics cleared successfully" });
+        }
+        catch (error) {
+            res.status(500).json({
+                error: "Failed to clear performance metrics",
+                message: error instanceof Error ? error.message : "Unknown error"
+            });
+        }
+    });
     // Get processing jobs
     app.get("/api/jobs", async (req, res) => {
         try {
@@ -267,30 +502,45 @@ export async function registerRoutes(app) {
     // Update scoring configuration
     app.post("/api/scoring", async (req, res) => {
         try {
-            const weights = scoringWeightsSchema.parse(req.body);
+            const { com_id, ...weights } = req.body;
+            if (!com_id) {
+                return res.status(400).json({ error: "com_id is required" });
+            }
+            const validatedWeights = scoringWeightsSchema.parse(weights);
             // Validate weights sum to 100
-            const total = weights.openToWork + weights.skillMatch + weights.jobStability + weights.engagement;
+            const total = validatedWeights.openToWork + validatedWeights.skillMatch + validatedWeights.jobStability + validatedWeights.platformEngagement;
             if (Math.abs(total - 100) > 0.1) {
                 return res.status(400).json({
                     error: "Scoring weights must sum to 100%"
                 });
             }
-            // Update default project scoring weights
-            const project = await storage.updateProject("default-project", {
-                scoringWeights: weights
-            });
-            if (!project) {
-                return res.status(404).json({ error: "Project not found" });
+            // Check if config exists for this company
+            const existingConfig = await storage.getScoringConfig(com_id);
+            let config;
+            if (existingConfig) {
+                // Update existing config
+                config = await storage.updateScoringConfig(com_id, validatedWeights);
+            }
+            else {
+                // Create new config
+                config = await storage.createScoringConfig({
+                    comId: com_id,
+                    ...validatedWeights
+                });
+            }
+            if (!config) {
+                return res.status(404).json({ error: "Failed to save scoring configuration" });
             }
             // Log activity
             await storage.createActivity({
                 type: "scoring_update",
                 message: "Scoring model updated",
-                details: `OpenAI weights reconfigured: OTW:${weights.openToWork}% SM:${weights.skillMatch}% JS:${weights.jobStability}% E:${weights.engagement}%`
+                details: `Scoring weights updated for ${com_id}: OTW:${validatedWeights.openToWork}% SM:${validatedWeights.skillMatch}% JS:${validatedWeights.jobStability}% PE:${validatedWeights.platformEngagement}%`
             });
             res.json({
+                success: true,
                 message: "Scoring weights updated successfully",
-                weights
+                data: config
             });
         }
         catch (error) {
@@ -371,11 +621,11 @@ export async function registerRoutes(app) {
             });
         }
     });
-    // Get resume data
+    // Get resume data (now consolidated in candidates table)
     app.get("/api/resume-data", async (req, res) => {
         try {
-            const allResumeData = await ResumeDataService.getAllResumeData();
-            res.json(allResumeData);
+            const candidates = await storage.getCandidates(100, 0);
+            res.json(candidates);
         }
         catch (error) {
             res.status(500).json({
@@ -384,15 +634,15 @@ export async function registerRoutes(app) {
             });
         }
     });
-    // Get resume data by candidate ID
+    // Get resume data by candidate ID (now consolidated in candidates table)
     app.get("/api/resume-data/:candidateId", async (req, res) => {
         try {
             const { candidateId } = req.params;
-            const resumeData = await ResumeDataService.getResumeDataByCandidateId(candidateId);
-            if (!resumeData) {
+            const candidate = await storage.getCandidate(candidateId);
+            if (!candidate) {
                 return res.status(404).json({ error: "Resume data not found" });
             }
-            res.json(resumeData);
+            res.json(candidate);
         }
         catch (error) {
             res.status(500).json({
@@ -432,11 +682,31 @@ export async function registerRoutes(app) {
     // Get current scoring configuration
     app.get("/api/scoring", async (req, res) => {
         try {
-            const project = await storage.getProject("default-project");
-            if (!project) {
-                return res.status(404).json({ error: "Project not found" });
+            const com_id = req.query.com_id;
+            if (!com_id) {
+                return res.status(400).json({ error: "com_id query parameter is required" });
             }
-            res.json(project.scoringWeights);
+            const config = await storage.getScoringConfig(com_id);
+            if (!config) {
+                // Return default configuration if none exists
+                const defaultConfig = {
+                    comId: com_id,
+                    openToWork: 25,
+                    skillMatch: 25,
+                    jobStability: 25,
+                    platformEngagement: 25
+                };
+                return res.json({
+                    success: true,
+                    data: defaultConfig,
+                    isDefault: true
+                });
+            }
+            res.json({
+                success: true,
+                data: config,
+                isDefault: false
+            });
         }
         catch (error) {
             res.status(500).json({
@@ -752,6 +1022,601 @@ export async function registerRoutes(app) {
         }
         return factors;
     }
+    // Async function to process bulk resumes with WebSocket updates
+    async function processBulkResumesAsync(sessionId, comId, files) {
+        try {
+            console.log(`🔄 Processing ${files.length} resumes for session ${sessionId}`);
+            // Update progress - starting
+            websocketService.updateProgress(sessionId, {
+                currentFile: "Starting processing..."
+            });
+            // Process each file sequentially to avoid overwhelming the system
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const { originalname, buffer, size } = file;
+                try {
+                    console.log(`📄 Processing file ${i + 1}/${files.length}: ${originalname}`);
+                    // Update progress - current file
+                    websocketService.updateProgress(sessionId, {
+                        currentFile: originalname
+                    });
+                    // Create processing job for this file
+                    const processingJob = await storage.createProcessingJob({
+                        projectId: "default-project",
+                        fileName: originalname,
+                        fileSize: size,
+                        status: "processing",
+                        progress: 0,
+                        totalRecords: 0,
+                        processedRecords: 0
+                    });
+                    // Process the resume using EeezoService
+                    const result = await EeezoService.processEeezoResume({
+                        comId: comId,
+                        file: file,
+                        processingJobId: processingJob.id
+                    });
+                    // Add completed candidate to WebSocket session
+                    websocketService.addCompletedCandidate(sessionId, {
+                        candidateId: result.candidateId,
+                        name: result.name || originalname.replace(/\.(pdf|docx|doc)$/i, ''),
+                        email: result.email,
+                        score: result.score,
+                        priority: result.priority
+                    });
+                    console.log(`✅ Completed file ${i + 1}/${files.length}: ${originalname} -> Candidate: ${result.candidateId}`);
+                    // Small delay between files to prevent rate limiting
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                }
+                catch (error) {
+                    console.error(`❌ Error processing file ${originalname}:`, error);
+                    // Add error to WebSocket session
+                    websocketService.addError(sessionId, originalname, error instanceof Error ? error.message : "Unknown error");
+                }
+            }
+            console.log(`🎉 Bulk processing completed for session ${sessionId}`);
+        }
+        catch (error) {
+            console.error(`💥 Bulk processing failed for session ${sessionId}:`, error);
+            // Add general error to session
+            websocketService.addError(sessionId, "Bulk Processing", error instanceof Error ? error.message : "Unknown error");
+        }
+    }
+    // ==================== EEEZO INTEGRATION ENDPOINTS ====================
+    // Eeezo: Upload resume file with company ID
+    app.post("/api/eezo/upload-resume", upload.single('file'), async (req, res) => {
+        try {
+            const { com_id } = req.body;
+            // Validate required fields
+            if (!com_id) {
+                return res.status(400).json({
+                    error: "Company ID (com_id) is required",
+                    code: "MISSING_COM_ID"
+                });
+            }
+            if (!req.file) {
+                return res.status(400).json({
+                    error: "Resume file is required",
+                    code: "MISSING_FILE"
+                });
+            }
+            const { originalname, buffer, size } = req.file;
+            // Create processing job (use default project or create one)
+            let projectId = "default-project";
+            // Check if default project exists, if not create it
+            try {
+                const existingProject = await storage.getProject("default-project");
+                if (!existingProject) {
+                    await storage.createProject({
+                        name: "Default Project",
+                        description: "Default project for Eeezo integration",
+                        status: "active"
+                    });
+                }
+            }
+            catch (error) {
+                console.log("Using existing default project");
+            }
+            const processingJob = await storage.createProcessingJob({
+                projectId: projectId,
+                fileName: originalname,
+                fileSize: size,
+                status: "processing",
+                progress: 0,
+                totalRecords: 0,
+                processedRecords: 0
+            });
+            // Log activity
+            await storage.createActivity({
+                type: "eezo_upload",
+                message: "Eeezo resume uploaded",
+                details: `Company: ${com_id}, File: ${originalname}, Size: ${Math.round(size / 1024)}KB`
+            });
+            // Process the resume with Eeezo context
+            const result = await EeezoService.processEeezoResume({
+                comId: com_id,
+                file: req.file,
+                processingJobId: processingJob.id
+            });
+            res.json({
+                success: true,
+                message: "Resume uploaded and processing started",
+                data: {
+                    jobId: processingJob.id,
+                    candidateId: result.candidateId,
+                    comId: com_id,
+                    status: "processing"
+                }
+            });
+        }
+        catch (error) {
+            console.error('Eeezo upload error:', error);
+            res.status(500).json({
+                error: "Failed to process Eeezo resume",
+                message: error instanceof Error ? error.message : "Unknown error",
+                code: "PROCESSING_ERROR"
+            });
+        }
+    });
+    // Eeezo: Get resume data by company ID
+    app.get("/api/eezo/resume-data/:com_id", async (req, res) => {
+        try {
+            const { com_id } = req.params;
+            const { status, limit = 100, offset = 0 } = req.query;
+            if (!com_id) {
+                return res.status(400).json({
+                    error: "Company ID (com_id) is required",
+                    code: "MISSING_COM_ID"
+                });
+            }
+            // Get candidates for the company
+            const candidates = await EeezoService.getCandidatesByCompanyId(com_id, {
+                status: status,
+                limit: parseInt(limit),
+                offset: parseInt(offset)
+            });
+            // Transform data for Eeezo format
+            const transformedData = candidates.map(candidate => ({
+                candidateId: candidate.id,
+                comId: candidate.comId,
+                name: candidate.name,
+                email: candidate.email,
+                phone: candidate.phone,
+                title: candidate.title,
+                company: candidate.company,
+                location: candidate.location,
+                linkedinUrl: candidate.linkedinUrl,
+                githubUrl: candidate.githubUrl,
+                portfolioUrl: candidate.portfolioUrl,
+                summary: candidate.summary,
+                skills: candidate.skills,
+                experience: candidate.experience,
+                education: candidate.education,
+                projects: candidate.projects,
+                achievements: candidate.achievements,
+                certifications: candidate.certifications,
+                languages: candidate.languages,
+                interests: candidate.interests,
+                score: candidate.score,
+                priority: candidate.priority,
+                openToWork: candidate.openToWork,
+                hireabilityScore: candidate.hireabilityScore,
+                potentialToJoin: candidate.potentialToJoin,
+                enrichmentStatus: candidate.enrichmentStatus,
+                eeezoStatus: candidate.eeezoStatus,
+                confidence: candidate.confidence,
+                processingTime: candidate.processingTime,
+                createdAt: candidate.createdAt
+            }));
+            res.json({
+                success: true,
+                data: {
+                    comId: com_id,
+                    totalCandidates: candidates.length,
+                    candidates: transformedData
+                }
+            });
+        }
+        catch (error) {
+            console.error('Eeezo fetch error:', error);
+            res.status(500).json({
+                error: "Failed to fetch Eeezo resume data",
+                message: error instanceof Error ? error.message : "Unknown error",
+                code: "FETCH_ERROR"
+            });
+        }
+    });
+    // Eeezo: Get processing status
+    app.get("/api/eezo/status/:com_id", async (req, res) => {
+        try {
+            const { com_id } = req.params;
+            if (!com_id) {
+                return res.status(400).json({
+                    error: "Company ID (com_id) is required",
+                    code: "MISSING_COM_ID"
+                });
+            }
+            const status = await EeezoService.getEeezoProcessingStatus(com_id);
+            res.json({
+                success: true,
+                data: {
+                    comId: com_id,
+                    status: status
+                }
+            });
+        }
+        catch (error) {
+            console.error('Eeezo status error:', error);
+            res.status(500).json({
+                error: "Failed to fetch Eeezo status",
+                message: error instanceof Error ? error.message : "Unknown error",
+                code: "STATUS_ERROR"
+            });
+        }
+    });
+    // Eeezo: Update candidate status
+    app.patch("/api/eezo/candidate/:candidateId/status", async (req, res) => {
+        try {
+            const { candidateId } = req.params;
+            const { eeezoStatus, notes } = req.body;
+            if (!candidateId) {
+                return res.status(400).json({
+                    error: "Candidate ID is required",
+                    code: "MISSING_CANDIDATE_ID"
+                });
+            }
+            const updatedCandidate = await EeezoService.updateCandidateEeezoStatus(candidateId, {
+                eeezoStatus,
+                notes
+            });
+            res.json({
+                success: true,
+                data: updatedCandidate
+            });
+        }
+        catch (error) {
+            console.error('Eeezo update error:', error);
+            res.status(500).json({
+                error: "Failed to update candidate status",
+                message: error instanceof Error ? error.message : "Unknown error",
+                code: "UPDATE_ERROR"
+            });
+        }
+    });
+    // ==================== BULK UPLOAD WITH WEBSOCKET ====================
+    // Bulk resume upload with real-time WebSocket updates
+    app.post("/api/eezo/upload-bulk-resumes", upload.array('files', 20), async (req, res) => {
+        try {
+            const { com_id } = req.body;
+            // Validate required fields
+            if (!com_id) {
+                return res.status(400).json({
+                    error: "Company ID (com_id) is required",
+                    code: "MISSING_COM_ID"
+                });
+            }
+            if (!req.files || req.files.length === 0) {
+                return res.status(400).json({
+                    error: "At least one resume file is required",
+                    code: "MISSING_FILES"
+                });
+            }
+            // Generate session ID for this bulk upload
+            const sessionId = `bulk_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+            // Create WebSocket session for real-time updates
+            const session = websocketService.createUploadSession(sessionId, com_id, req.files.length);
+            console.log(`🚀 Starting bulk upload session: ${sessionId} for company ${com_id} with ${req.files.length} files`);
+            // Log activity
+            await storage.createActivity({
+                type: "bulk_upload",
+                message: "Bulk resume upload started",
+                details: `Company: ${com_id}, Files: ${req.files.length}, Session: ${sessionId}`
+            });
+            // Process files asynchronously with WebSocket updates
+            processBulkResumesAsync(sessionId, com_id, req.files);
+            res.json({
+                success: true,
+                message: "Bulk upload started",
+                data: {
+                    sessionId,
+                    comId: com_id,
+                    totalFiles: req.files.length,
+                    status: "processing",
+                    websocketUrl: `ws://localhost:${process.env.PORT || 5000}/ws`
+                }
+            });
+        }
+        catch (error) {
+            console.error('Bulk upload error:', error);
+            res.status(500).json({
+                error: "Failed to start bulk upload",
+                message: error instanceof Error ? error.message : "Unknown error",
+                code: "BULK_UPLOAD_ERROR"
+            });
+        }
+    });
+    // Get bulk upload session status
+    app.get("/api/eezo/bulk-status/:sessionId", async (req, res) => {
+        try {
+            const { sessionId } = req.params;
+            const session = websocketService.getSession(sessionId);
+            if (!session) {
+                return res.status(404).json({
+                    error: "Session not found",
+                    code: "SESSION_NOT_FOUND"
+                });
+            }
+            res.json({
+                success: true,
+                data: {
+                    sessionId,
+                    comId: session.comId,
+                    totalFiles: session.totalFiles,
+                    completedFiles: session.completedFiles,
+                    progress: Math.round((session.completedFiles / session.totalFiles) * 100),
+                    candidates: session.candidates,
+                    errors: session.errors,
+                    isComplete: session.completedFiles >= session.totalFiles
+                }
+            });
+        }
+        catch (error) {
+            console.error('Bulk status error:', error);
+            res.status(500).json({
+                error: "Failed to fetch bulk status",
+                message: error instanceof Error ? error.message : "Unknown error",
+                code: "STATUS_ERROR"
+            });
+        }
+    });
+    // Get WebSocket connection info
+    app.get("/api/websocket/info", async (req, res) => {
+        try {
+            res.json({
+                success: true,
+                data: {
+                    websocketUrl: `ws://localhost:${process.env.PORT || 5000}/ws`,
+                    connectedClients: websocketService.getConnectedClientsCount(),
+                    activeSessions: websocketService.getActiveSessions().length,
+                    messageTypes: [
+                        'processing_started',
+                        'upload_progress',
+                        'resume_completed',
+                        'upload_error',
+                        'upload_complete'
+                    ]
+                }
+            });
+        }
+        catch (error) {
+            res.status(500).json({
+                error: "Failed to fetch WebSocket info",
+                message: error instanceof Error ? error.message : "Unknown error"
+            });
+        }
+    });
+    // Resume Status Management: Handle CORS preflight for resume status endpoint
+    app.options("/api/candidates/:candidateId/resume-status", (req, res) => {
+        res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
+        res.header('Access-Control-Allow-Methods', 'PATCH, OPTIONS');
+        res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
+        res.header('Access-Control-Max-Age', '86400');
+        res.status(200).end();
+    });
+    // Resume Status Management: Update candidate resume status with company validation
+    app.patch("/api/candidates/:candidateId/resume-status", async (req, res) => {
+        try {
+            const { candidateId } = req.params;
+            const { status, com_id } = req.body;
+            if (!candidateId) {
+                return res.status(400).json({
+                    error: "Candidate ID is required",
+                    code: "MISSING_CANDIDATE_ID"
+                });
+            }
+            if (!com_id) {
+                return res.status(400).json({
+                    error: "Company ID (com_id) is required",
+                    code: "MISSING_COMPANY_ID"
+                });
+            }
+            if (!status || !['active', 'inactive'].includes(status)) {
+                return res.status(400).json({
+                    error: "Status must be 'active' or 'inactive'",
+                    code: "INVALID_STATUS"
+                });
+            }
+            const updatedCandidate = await storage.updateCandidateResumeStatus(candidateId, status, com_id);
+            if (!updatedCandidate) {
+                return res.status(404).json({
+                    error: "Candidate not found or does not belong to this company",
+                    code: "CANDIDATE_NOT_FOUND"
+                });
+            }
+            res.json({
+                success: true,
+                data: {
+                    candidateId: updatedCandidate.id,
+                    name: updatedCandidate.name,
+                    resumeStatus: updatedCandidate.resumeStatus,
+                    comId: updatedCandidate.comId,
+                    message: `Resume status updated to ${status}`
+                }
+            });
+        }
+        catch (error) {
+            console.error('Resume status update error:', error);
+            res.status(500).json({
+                error: "Failed to update resume status",
+                message: error instanceof Error ? error.message : "Unknown error",
+                code: "STATUS_UPDATE_ERROR"
+            });
+        }
+    });
+    // Debug endpoint: Get all unique com_id values
+    app.get("/api/debug/com-ids", async (req, res) => {
+        try {
+            // Use direct database query to get all com_id values
+            const { db } = await import('./db.js');
+            const { candidates } = await import('@shared/schema');
+            const result = await db.select({
+                comId: candidates.comId
+            }).from(candidates);
+            // Group by com_id
+            const comIdGroups = {};
+            let candidatesWithoutComId = 0;
+            for (const candidate of result) {
+                if (candidate.comId) {
+                    comIdGroups[candidate.comId] = (comIdGroups[candidate.comId] || 0) + 1;
+                }
+                else {
+                    candidatesWithoutComId++;
+                }
+            }
+            const comIds = Object.entries(comIdGroups).map(([comId, count]) => ({ com_id: comId, count }));
+            res.json({
+                success: true,
+                data: {
+                    comIds: comIds.sort((a, b) => b.count - a.count),
+                    candidatesWithoutComId,
+                    totalUniqueComIds: comIds.length
+                }
+            });
+        }
+        catch (error) {
+            res.status(500).json({
+                error: "Failed to fetch com_id values",
+                message: error instanceof Error ? error.message : "Unknown error"
+            });
+        }
+    });
+    // Get inactive resumes with company filtering and pagination
+    app.get("/api/candidates/inactive", async (req, res) => {
+        try {
+            const { com_id, limit = 100, offset = 0 } = req.query;
+            if (!com_id) {
+                return res.status(400).json({
+                    error: "Company ID (com_id) is required",
+                    code: "MISSING_COMPANY_ID"
+                });
+            }
+            const limitNum = parseInt(limit) || 100;
+            const offsetNum = parseInt(offset) || 0;
+            const inactiveCandidates = await storage.getCandidatesByResumeStatus('inactive', com_id, limitNum, offsetNum);
+            res.json({
+                success: true,
+                data: inactiveCandidates,
+                pagination: {
+                    limit: limitNum,
+                    offset: offsetNum,
+                    count: inactiveCandidates.length,
+                    hasMore: inactiveCandidates.length === limitNum
+                },
+                company: com_id,
+                message: `Found ${inactiveCandidates.length} inactive candidates for company ${com_id}`
+            });
+        }
+        catch (error) {
+            console.error('Get inactive candidates error:', error);
+            res.status(500).json({
+                error: "Failed to fetch inactive candidates",
+                message: error instanceof Error ? error.message : "Unknown error",
+                code: "FETCH_INACTIVE_ERROR"
+            });
+        }
+    });
+    // Update candidate scores (for external team integration)
+    app.patch("/api/candidates/:candidateId/scores", async (req, res) => {
+        try {
+            const { candidateId } = req.params;
+            const { com_id, skillMatchScore, totalScore, jobDescription } = req.body;
+            if (!com_id) {
+                return res.status(400).json({
+                    error: "Company ID (com_id) is required",
+                    code: "MISSING_COMPANY_ID"
+                });
+            }
+            if (skillMatchScore === undefined && totalScore === undefined) {
+                return res.status(400).json({
+                    error: "At least one score (skillMatchScore or totalScore) must be provided",
+                    code: "MISSING_SCORES"
+                });
+            }
+            // Validate score ranges
+            if (skillMatchScore !== undefined && (skillMatchScore < 0 || skillMatchScore > 10)) {
+                return res.status(400).json({
+                    error: "skillMatchScore must be between 0 and 10",
+                    code: "INVALID_SCORE_RANGE"
+                });
+            }
+            if (totalScore !== undefined && (totalScore < 0 || totalScore > 10)) {
+                return res.status(400).json({
+                    error: "totalScore must be between 0 and 10",
+                    code: "INVALID_SCORE_RANGE"
+                });
+            }
+            // Get existing candidate to verify it belongs to the company
+            const existingCandidate = await storage.getCandidate(candidateId, com_id);
+            if (!existingCandidate) {
+                return res.status(404).json({
+                    error: "Candidate not found or doesn't belong to the specified company",
+                    code: "CANDIDATE_NOT_FOUND"
+                });
+            }
+            // Prepare update data
+            const updateData = {};
+            if (skillMatchScore !== undefined) {
+                updateData.skillMatchScore = skillMatchScore;
+            }
+            if (totalScore !== undefined) {
+                updateData.score = totalScore;
+                // Update priority based on total score
+                if (totalScore >= 7)
+                    updateData.priority = 'High';
+                else if (totalScore >= 5)
+                    updateData.priority = 'Medium';
+                else
+                    updateData.priority = 'Low';
+                updateData.hireabilityScore = totalScore;
+                updateData.potentialToJoin = updateData.priority;
+            }
+            // Update candidate
+            const updatedCandidate = await storage.updateCandidate(candidateId, updateData);
+            if (!updatedCandidate) {
+                return res.status(500).json({
+                    error: "Failed to update candidate scores",
+                    code: "UPDATE_FAILED"
+                });
+            }
+            // Log activity
+            await storage.createActivity({
+                type: "score_update",
+                message: "Candidate scores updated by external team",
+                details: `Candidate ${candidateId}: skillMatch=${skillMatchScore}, totalScore=${totalScore}, jobDescription=${jobDescription || 'N/A'}`
+            });
+            res.json({
+                success: true,
+                data: {
+                    candidateId: candidateId,
+                    name: updatedCandidate.name,
+                    comId: com_id,
+                    skillMatchScore: updatedCandidate.skillMatchScore,
+                    totalScore: updatedCandidate.score,
+                    priority: updatedCandidate.priority,
+                    updatedAt: new Date().toISOString()
+                },
+                message: "Candidate scores updated successfully"
+            });
+        }
+        catch (error) {
+            console.error('Update candidate scores error:', error);
+            res.status(500).json({
+                error: "Failed to update candidate scores",
+                message: error instanceof Error ? error.message : "Unknown error",
+                code: "UPDATE_SCORES_ERROR"
+            });
+        }
+    });
     const httpServer = createServer(app);
     return httpServer;
 }

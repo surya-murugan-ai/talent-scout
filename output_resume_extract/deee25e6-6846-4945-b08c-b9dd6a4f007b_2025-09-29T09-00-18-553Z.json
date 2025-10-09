@@ -1,0 +1,87 @@
+{
+  "filename": "deee25e6-6846-4945-b08c-b9dd6a4f007b.pdf",
+  "timestamp": "2025-09-29T09:00:18.553Z",
+  "processingTime": 5776,
+  "confidence": 93,
+  "rawText": "\n\nKshirod B\nBengaluru, Karnataka\nkhirodbovpdm_2am@indeedemail.com\n+91 80932 38305\n● 2+ years of experience in analysis, design, development and implementation of large scale, mission\ncritical ERP projects \n● Experience in HTML 5, CSS 3, Bootstrap, PHP, Laravel, MySQL, WordPress. \n● Experience in Photoshop. \n● Deep understanding of Responsiveness design and other emerging UI paradigm. \n● Excellent communication, interpersonal and analytical skills and highly motivated team player with\nthe ability to work independently. \n● Ability to learn and adapt quickly to the emerging new technologies and paradigm.\nWork Experience\nWeb Developer\nRelicons Technology Pvt. Limited - Bengaluru, Karnataka\nJanuary 2021 to Present\nProject Name: SMS (Solar Monitoring System)\nClient: GPCL (Gujurat Power Corporation Limited)\nResponsibilities:\nCreated a live monitoring system for the energy generated at client and presented the data in a beautiful\ndashboard. Laravel has been used to data fetching and organizing along with pagination.\nProject Name: EBA (E-commerce backend application)\nClient: under development\nResponsibilities:\nUnique project to handle all the backend responsibilities of the E-commerce projects, starting from order\nplacement to delivery. It's a multi-tenant and multi user fully configurable project to provide an end-to-\nend solution.\nDomain Name:\nwww.bumpbirthbaby.in\nwww.apexestates.com\nwww.hawkseyesglobal.com\nwww.ckonnect.in/solidworks/\nwww.takencare. co. in\nwww.rimsbangalore. In\nwww.msramaiahfoundation.in\nwww.sssvijaymission. com\nwww.nivasconstruction.in\nwww.nishitadesign. com\n\nResponsibilities:\n• Developing the Code as per the requirements.\n• Involved in developing the business logic and connections to database.\n• Writing UI/Business validations.\n• Unit testing and integration testing of owned use cases.\nEducation\nB.Tech\nBiju Pattnaik University of Technology - Bengaluru, Karnataka\n2013 to 2016\nSkills / IT Skills\n•HTML5\n•CSS\n•Bootstrap\n•PHP\n•Laravel\n•MySQL\n•WordPress",
+  "extractedData": {
+    "name": "Kshirod B",
+    "email": "khirodbovpdm_2am@indeedemail.com",
+    "phone": "+91 80932 38305",
+    "linkedinUrl": null,
+    "githubUrl": null,
+    "portfolioUrl": null,
+    "location": "Bengaluru, Karnataka",
+    "title": "Web Developer",
+    "summary": "2+ years of experience in analysis, design, development and implementation of large scale, mission critical ERP projects. Experience in HTML 5, CSS 3, Bootstrap, PHP, Laravel, MySQL, WordPress. Experience in Photoshop. Deep understanding of Responsiveness design and other emerging UI paradigm. Excellent communication, interpersonal and analytical skills and highly motivated team player with the ability to work independently. Ability to learn and adapt quickly to the emerging new technologies and paradigm.",
+    "experience": [
+      {
+        "jobTitle": "Web Developer",
+        "company": "Relicons Technology Pvt. Limited",
+        "duration": "January 2021 - Present",
+        "startDate": "2021-01",
+        "endDate": "Present",
+        "techUsed": [
+          "Laravel"
+        ],
+        "description": "Created a live monitoring system for the energy generated at client and presented the data in a beautiful dashboard. Laravel has been used to data fetching and organizing along with pagination. Unique project to handle all the backend responsibilities of the E-commerce projects, starting from order placement to delivery. It's a multi-tenant and multi user fully configurable project to provide an end-to-end solution.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Tech",
+        "field": null,
+        "university": "Biju Pattnaik University of Technology",
+        "year": "2016",
+        "percentage": null,
+        "gpa": null,
+        "location": "Bengaluru, Karnataka"
+      }
+    ],
+    "projects": [
+      {
+        "name": "SMS (Solar Monitoring System)",
+        "description": "Created a live monitoring system for the energy generated at client and presented the data in a beautiful dashboard.",
+        "techUsed": [
+          "Laravel"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "EBA (E-commerce backend application)",
+        "description": "Unique project to handle all the backend responsibilities of the E-commerce projects, starting from order placement to delivery. It's a multi-tenant and multi user fully configurable project to provide an end-to-end solution.",
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "achievements": [],
+    "certifications": [],
+    "skills": [
+      "HTML5",
+      "CSS",
+      "Bootstrap",
+      "PHP",
+      "Laravel",
+      "MySQL",
+      "WordPress"
+    ],
+    "interests": [],
+    "languages": [],
+    "salary": null,
+    "availability": null,
+    "remotePreference": null,
+    "visaStatus": null,
+    "originalData": {
+      "filename": "deee25e6-6846-4945-b08c-b9dd6a4f007b.pdf",
+      "rawText": "Kshirod B Bengaluru, Karnataka khirodbovpdm_2am@indeedemail.com +91 80932 38305 ● 2+ years of experience in analysis, design, development and implementation of large scale, mission critical ERP projects ● Experience in HTML 5, CSS 3, Bootstrap, PHP, Laravel, MySQL, WordPress. ● Experience in Photoshop. ● Deep understanding of Responsiveness design and other emerging UI paradigm. ● Excellent communication, interpersonal and analytical skills and highly motivated team player with the ability to work independently. ● Ability to learn and adapt quickly to the emerging new technologies and paradigm. Work Experience Web Developer Relicons Technology Pvt. Limited - Bengaluru, Karnataka January 2021 to Present Project Name: SMS (Solar Monitoring System) Client: GPCL (Gujurat Power Corporation Limited) Responsibilities: Created a live monitoring system for the energy generated at client and presented the data in a beautiful dashboard. Laravel has been used to data fetching and organizing along with pagination. Project Name: EBA (E-commerce backend application) Client: under development Responsibilities: Unique project to handle all the backend responsibilities of the E-commerce projects, starting from order placement to delivery. It's a multi-tenant and multi user fully configurable project to provide an end-to- end solution. Domain Name: www.bumpbirthbaby.in www.apexestates.com www.hawkseyesglobal.com www.ckonnect.in/solidworks/ www.takencare. co. in www.rimsbangalore. In www.msramaiahfoundation.in www.sssvijaymission. com www.nivasconstruction.in www.nishitadesign. com Responsibilities: • Developing the Code as per the requirements. • Involved in developing the business logic and connections to database. • Writing UI/Business validations. • Unit testing and integration testing of owned use cases. Education B.Tech Biju Pattnaik University of Technology - Bengaluru, Karnataka 2013 to 2016 Skills / IT Skills •HTML5 •CSS •Bootstrap •PHP •Laravel •MySQL •WordPress"
+    },
+    "source": "resume",
+    "confidence": 93,
+    "processingTime": 0
+  }
+}

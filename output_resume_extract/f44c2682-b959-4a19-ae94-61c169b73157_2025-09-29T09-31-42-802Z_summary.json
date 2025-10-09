@@ -1,0 +1,63 @@
+{
+  "filename": "f44c2682-b959-4a19-ae94-61c169b73157.pdf",
+  "timestamp": "2025-09-29T09:31:42.802Z",
+  "processingTime": 3261,
+  "confidence": 82,
+  "extractedData": {
+    "name": "JAYAKANTHAN",
+    "email": "pjayakanthan17@gmail.com",
+    "phone": "8825816433",
+    "title": "php/laravel developer",
+    "location": "3/317 Duraisamy nagar, kallavi, uthangarai(tk), krishnagiri-635304",
+    "summary": "I am a skilled PHP developer with 1.3 years of experience in building web applications and websites. My expertise includes both front-end and back-end development, allowing me to create full-stack solutions that meet clients' needs. I am passionate about writing clean and efficient code, solving complex problems, and staying up-to-date with the latest web development trends. I am eager to contribute my skills and knowledge to dynamic and innovative projects.",
+    "experience": [],
+    "education": [
+      {
+        "degree": "HSC",
+        "field": null,
+        "university": "Sri Bala Vidhya Matric Hr Sec school",
+        "year": "2016-2017",
+        "percentage": "76.25%",
+        "gpa": null,
+        "location": null
+      },
+      {
+        "degree": "SSLC",
+        "field": null,
+        "university": "Sri bala vidhya matric higher secondary school",
+        "year": null,
+        "percentage": "83%",
+        "gpa": null,
+        "location": null
+      },
+      {
+        "degree": "B.E",
+        "field": "Mechanical Engineering",
+        "university": "Tamilnadu college of Engineering",
+        "year": null,
+        "percentage": null,
+        "gpa": null,
+        "location": null
+      }
+    ],
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Ajax",
+      "Jquery",
+      "Bootstrap",
+      "Php",
+      "Laravel Framework",
+      "MySQL",
+      "Visual Studio Code",
+      "Sublime",
+      "API Integration",
+      "Web Security Best Practices",
+      "Performance Optimization",
+      "Responsive Web Design"
+    ],
+    "projects": [],
+    "certifications": []
+  }
+}

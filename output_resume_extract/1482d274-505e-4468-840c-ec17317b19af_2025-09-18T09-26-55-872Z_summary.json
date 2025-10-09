@@ -1,0 +1,114 @@
+{
+  "filename": "1482d274-505e-4468-840c-ec17317b19af.pdf",
+  "timestamp": "2025-09-18T09:26:55.872Z",
+  "processingTime": 7602,
+  "confidence": 85,
+  "extractedData": {
+    "name": "SURIYAKANTH M",
+    "email": "suriyakanth7717@gmail.com",
+    "phone": "9952419581",
+    "title": null,
+    "location": null,
+    "summary": "Passionate and punctual individual with an MCA degree, skilled in Web Development, data analysis, UI/UX design and research, and machine learning. Strong at understanding users, designing easy-to-use interfaces, and analyzing data to find useful insights. Looking for an entry-level role to apply my skills and contribute to meaningful projects.",
+    "experience": [
+      {
+        "jobTitle": "UI/UX Designer",
+        "company": "Meganar Technologies",
+        "duration": "December 2024 - April 2025",
+        "startDate": "2024-12",
+        "endDate": "2025-04",
+        "techUsed": [],
+        "description": "Worked on a project called Media Jungle, an OTT platform. Created wireframes, user flows, and prototypes, and worked closely with the team to design the app and understand what users need to make it easy to use.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Sc IT",
+        "field": null,
+        "university": "Sri Kaliswari College",
+        "year": "2023",
+        "percentage": null,
+        "gpa": "7.7 CGPA",
+        "location": null
+      },
+      {
+        "degree": "MCA",
+        "field": null,
+        "university": "Ayya Nadar Janaki Ammal College",
+        "year": "2025",
+        "percentage": null,
+        "gpa": "8.0 CGPA",
+        "location": null
+      },
+      {
+        "degree": "Diploma in AI and ML",
+        "field": null,
+        "university": "Ayya Nadar Janaki Ammal College",
+        "year": "2024",
+        "percentage": null,
+        "gpa": null,
+        "location": null
+      }
+    ],
+    "skills": [
+      "Web Designing",
+      "UI/UX Research and Design",
+      "React JS",
+      "Problem Solving and Analysis",
+      "Graphic Design",
+      "Machine Learning",
+      "Python",
+      "Node JS",
+      "PHP",
+      "MS Office"
+    ],
+    "projects": [
+      {
+        "name": "Online Examination Portal",
+        "description": "Developed a secure online examination portal with automatic exam submission using the Page Visibility API to prevent tab switching and malpractice.",
+        "techUsed": [
+          "PHP",
+          "MySQL",
+          "JavaScript"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Face Verified Attendance System Using Django",
+        "description": "Attendance system with barcode scanning and facial recognition for proper student verification. Added Background tasks for automated monitoring.",
+        "techUsed": [
+          "Django"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Fostering Emotional Intelligence in Educational Environment",
+        "description": "Developed a face detection and emotion analysis application using Python, CNN, and Haar cascade to identify emotional states (happy, sad, disgusted, neutral, surprised, angry).",
+        "techUsed": [
+          "Python",
+          "CNN",
+          "Haar cascade"
+        ],
+        "duration": "Jan 2024",
+        "url": null,
+        "achievements": [
+          "Received Best Paper Award at the conference for innovative research applications"
+        ]
+      },
+      {
+        "name": "Emotion Guided Attendance System",
+        "description": "Extended the face detection and emotion analysis application to identify students and record their attendance based on their facial emotional state.",
+        "techUsed": [],
+        "duration": "April 2024",
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "certifications": []
+  }
+}

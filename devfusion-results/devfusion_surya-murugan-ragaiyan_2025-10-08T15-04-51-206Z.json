@@ -1,0 +1,420 @@
+{
+  "timestamp": "2025-10-08T15:04:51.206Z",
+  "linkedinUrl": "https://www.linkedin.com/in/surya-murugan-ragaiyan",
+  "rawData": {
+    "linkedinUrl": "https://www.linkedin.com/in/surya-murugan-ragaiyan",
+    "firstName": "Surya",
+    "lastName": "Murugan",
+    "fullName": "Surya Murugan",
+    "headline": "Python Backend Developer || Machine Learning || Deep Learning || Agentic AI || Flask || Django || DRF ||  SQL -- Open for Opportunity.",
+    "connections": 740,
+    "followers": 737,
+    "email": null,
+    "mobileNumber": null,
+    "jobTitle": null,
+    "companyName": null,
+    "companyIndustry": null,
+    "companyWebsite": null,
+    "companyLinkedin": null,
+    "companyFoundedIn": null,
+    "companySize": null,
+    "currentJobDuration": null,
+    "currentJobDurationInYrs": 0,
+    "topSkillsByEndorsements": null,
+    "addressCountryOnly": null,
+    "addressWithCountry": null,
+    "addressWithoutCountry": null,
+    "profilePic": null,
+    "profilePicHighQuality": null,
+    "about": null,
+    "publicIdentifier": "surya-murugan-ragaiyan",
+    "openConnection": null,
+    "urn": "ACoAADbFvlIBgwsNAgs9u8Lc8KMxJql2btTtsQs",
+    "experiences": [],
+    "updates": [],
+    "skills": [
+      {
+        "title": "n8n",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Full Stack Developer at Aimplify"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "AI Agents",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Full Stack Developer at Aimplify"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "JavaScript",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Full Stack Developer at Aimplify"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Databases",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Full Stack Developer at Aimplify"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Artificial Intelligence (AI)",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Supervised Machine Learning: Regression and Classification "
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Finance",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "SEBI :- Investor Certification Examination"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Financial Education",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "SEBI :- Investor Certification Examination"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Investments",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "SEBI :- Investor Certification Examination"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Linux",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Software Developer at Sapat International"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Object-Relational Mapping (ORM)",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Software Developer at Sapat International"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Nginx",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Bootstrap (Framework)",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Django",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Software Developer at Sapat International"
+              },
+              {
+                "type": "insightComponent",
+                "text": "Saraswati Education Societys Saraswati College of Engineering Kharghar Navi Mumbai"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Teamwork",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Web Scraping",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "SQL",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Software Developer at Sapat International"
+              },
+              {
+                "type": "insightComponent",
+                "text": "Saraswati Education Societys Saraswati College of Engineering Kharghar Navi Mumbai"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Python (Programming Language)",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "2 experiences across Aimplify and 1 other company"
+              },
+              {
+                "type": "insightComponent",
+                "text": "Passed LinkedIn Skill Assessment"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "English",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "HTML",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Git",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Software Developer at Sapat International"
+              },
+              {
+                "type": "insightComponent",
+                "text": "Saraswati Education Societys Saraswati College of Engineering Kharghar Navi Mumbai"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "profilePicAllDimensions": [],
+    "educations": [],
+    "licenseAndCertificates": [],
+    "honorsAndAwards": [],
+    "languages": [],
+    "volunteerAndAwards": [],
+    "verifications": [],
+    "promos": [],
+    "highlights": [],
+    "projects": [],
+    "publications": [],
+    "patents": [],
+    "courses": [],
+    "testScores": [],
+    "organizations": [],
+    "volunteerCauses": [],
+    "interests": [
+      {
+        "section_name": "Top Voices",
+        "section_components": [
+          {
+            "titleV2": "Greg Isenberg",
+            "caption": "222,538 followers",
+            "subtitle": "CEO of Late Checkout, a portfolio of internet companies",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/in/gisenberg",
+            "subComponents": []
+          },
+          {
+            "titleV2": "Darshil Parmar",
+            "caption": "128,241 followers",
+            "subtitle": "Senior Data Engineer | Helping Data Engineers Crack Jobs | Founder @DataVidhya  | 🎥YouTube (181K+) @Darshil Parmar",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/in/darshil-parmar",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Companies",
+        "section_components": [
+          {
+            "titleV2": "IBM",
+            "caption": "18,774,111 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1009/",
+            "subComponents": []
+          },
+          {
+            "titleV2": "Deloitte",
+            "caption": "19,952,281 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1038/",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Groups",
+        "section_components": [
+          {
+            "titleV2": "Artificial Intelligence, Machine Learning, Data Science, Agentic, Generative AI, Scientist & Analyst",
+            "caption": "727,591 members",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/groups/7039829",
+            "subComponents": []
+          },
+          {
+            "titleV2": "🦾 Machine Learning, Artificial Intelligence, Deep Learning, Computer Vision, Robotics, Gen AI, GPT",
+            "caption": "796,851 members",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/groups/6773411",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Newsletters",
+        "section_components": [
+          {
+            "titleV2": "All About Datamatics",
+            "caption": "Published monthly",
+            "subtitle": "This newsletter will update you all about Datamatics",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/newsletters/6971444287892803584",
+            "subComponents": [
+              {
+                "insightComponent": {
+                  "text": "Datamatics",
+                  "actionTarget": "https://www.linkedin.com/company/163359/"
+                }
+              }
+            ]
+          },
+          {
+            "titleV2": "Wipro Insights",
+            "caption": "Published monthly",
+            "subtitle": "Our latest thinking on AI and (much) more!",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/newsletters/7341867077076480001",
+            "subComponents": [
+              {
+                "insightComponent": {
+                  "text": "Wipro",
+                  "actionTarget": "https://www.linkedin.com/company/1318/"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section_name": "Schools",
+        "section_components": [
+          {
+            "titleV2": "University of Mumbai",
+            "caption": "1,070,079 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/school/15093732/",
+            "subComponents": []
+          },
+          {
+            "titleV2": "PrepInsta",
+            "caption": "82,222 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/school/21178612/",
+            "subComponents": []
+          }
+        ]
+      }
+    ],
+    "recommendations": []
+  },
+  "metadata": {
+    "source": "dev_fusion/Linkedin-Profile-Scraper",
+    "savedAt": "2025-10-08T15:04:51.206Z"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "filename": "ceac82c2-2ab4-49e3-99a4-87b49db190cc.pdf",
+  "timestamp": "2025-09-29T09:00:29.604Z",
+  "processingTime": 6395,
+  "confidence": 95,
+  "extractedData": {
+    "name": "Soni Kumari",
+    "email": "soni.sikkim21@gmail.com",
+    "phone": "7979068204",
+    "title": "Laravel PHP Developer",
+    "location": "Bangalore, India",
+    "summary": "1 Year of Experience in PHP, Laravel, Javascript, jQuery, MYSQL. Strong Development Experience in PHP, OOps concepts, MYSQL, HTML, CodeIgniter. Competent knowledge and skills in Object Oriented Design and Programming. Excellent analytical and logical programming skills with a good understanding at the conceptual level. Working Friendly with Git. Ability to work in a dynamic environment.",
+    "experience": [
+      {
+        "jobTitle": "Laravel PHP Developer",
+        "company": null,
+        "duration": null,
+        "startDate": null,
+        "endDate": null,
+        "techUsed": [
+          "PHP",
+          "MySQL"
+        ],
+        "description": "Developing application using Laravel PHP and MySql, Creation of custom web page for the content based website where the description of the customer relationship management (CRM), Expo Management and all details developed by me as developer under the guidance of one senior developer and designer. Functional and Unit Testing of the project as per the client requirement. Make reports.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Tech",
+        "field": "Information Technology",
+        "university": "Sikkim Manipal Institute of Technology",
+        "year": "2018",
+        "percentage": "60%",
+        "gpa": null,
+        "location": "Sikkim (Gangtok)"
+      },
+      {
+        "degree": "12th",
+        "field": null,
+        "university": "Evening College, Saharsa (BSEB)",
+        "year": "2013",
+        "percentage": "68%",
+        "gpa": null,
+        "location": null
+      },
+      {
+        "degree": "10th",
+        "field": null,
+        "university": "St. Joseph Pub School, Bihar (CBSE)",
+        "year": "2009",
+        "percentage": "63%",
+        "gpa": null,
+        "location": null
+      }
+    ],
+    "skills": [
+      "PHP",
+      "Laravel",
+      "jQuery",
+      "HTML",
+      "CSS",
+      "CodeIgniter",
+      "MySQL",
+      "JavaScript",
+      "Ajax"
+    ],
+    "projects": [
+      {
+        "name": "Job portal",
+        "description": null,
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Online Atm",
+        "description": "Internship Project, HP Kolkata",
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "certifications": []
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "filename": "57edf76f-7d73-4755-874b-3f979d025e08.pdf",
+  "timestamp": "2025-09-29T09:00:42.058Z",
+  "processingTime": 8813,
+  "confidence": 93,
+  "extractedData": {
+    "name": "Alvita Roycy Castelino",
+    "email": "98alvita@gmail.com",
+    "phone": "+91 8749019556",
+    "title": "PHP Developer",
+    "location": "Bangalore",
+    "summary": "PHP Developer with strong ability to collaborate with multiple teams to accomplish various projects. Successfully developed custom solutions to solve challenges and engineered designs to meet predetermined functionality goals.",
+    "experience": [
+      {
+        "jobTitle": "PHP Developer",
+        "company": "Silqen Software Pvt. Ltd.",
+        "duration": "06/2022 - 04/2023",
+        "startDate": "2022-06",
+        "endDate": "2023-04",
+        "techUsed": [
+          "PHP",
+          "Laravel",
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "jQuery",
+          "AJAX",
+          "MySQL"
+        ],
+        "description": "Strong knowledge of PHP web frameworks such as Laravel. Worked on large scale Laravel applications. Good knowledge of web technologies including HTML, CSS, JavaScript, jQuery and AJAX etc. Good knowledge in MySQL, Database design and query optimization.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "PHP Developer",
+        "company": "Aszen Technologies(OPC) Pvt. Ltd.",
+        "duration": "01/2022 - 05/2022",
+        "startDate": "2022-01",
+        "endDate": "2022-05",
+        "techUsed": [
+          "PHP",
+          "HTML",
+          "CSS",
+          "Bootstrap"
+        ],
+        "description": "Designed and developed web applications using PHP. Created user interface by using standard HTML, CSS and Bootstrap practices. Efficient, testable, and reusable PHP modules. Knowledge of object-oriented PHP programming.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Master of Science",
+        "field": "Information Science",
+        "university": "Manipal Academy of Higher Education",
+        "year": null,
+        "percentage": null,
+        "gpa": null,
+        "location": "Manipal"
+      },
+      {
+        "degree": "Bachelor of Science",
+        "field": "Computer Science",
+        "university": "Mangalore University",
+        "year": null,
+        "percentage": null,
+        "gpa": null,
+        "location": "Mangalore"
+      }
+    ],
+    "skills": [
+      "PHP",
+      "Laravel",
+      "MySQL",
+      "JavaScript",
+      "jQuery",
+      "Bootstrap",
+      "Ajax",
+      "HTML",
+      "CSS"
+    ],
+    "projects": [
+      {
+        "name": "Light Age Masters",
+        "description": "LightAgeMasters is a non-political and non-religious charitable trust. Mainly focus of this website is the wellbeing of its client’s and spiritual guidance. The objective of this project is to manage organization’s student activities. Almost the whole website is dynamic including all the contents you see in frontend. It Contains around fourteen modules which has their own functionalities.",
+        "techUsed": [
+          "HTML5",
+          "Bootstrap",
+          "CSS",
+          "JavaScript",
+          "jQuery",
+          "PHP",
+          "MySQL",
+          "Laravel framework"
+        ],
+        "duration": null,
+        "url": "https://lightagemasters.com/",
+        "achievements": []
+      },
+      {
+        "name": "SchoolsPe",
+        "description": "SchoolsPe is the premier destination for student admissions across all disciplines, from pre-university to business school. Offers a convenient platform for educational institutions and the student-parent community to smoothen the admission process.",
+        "techUsed": [
+          "HTML5",
+          "Bootstrap",
+          "CSS",
+          "JavaScript",
+          "jQuery",
+          "PHP",
+          "MySQL",
+          "Laravel framework"
+        ],
+        "duration": null,
+        "url": "https://www.schoolspe.com/",
+        "achievements": []
+      }
+    ],
+    "certifications": []
+  }
+}

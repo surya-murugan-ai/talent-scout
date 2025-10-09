@@ -1,0 +1,79 @@
+{
+  "filename": "4b703eb2-3c76-4cd5-9cf6-dc686622fe71.pdf",
+  "timestamp": "2025-09-29T08:59:09.093Z",
+  "processingTime": 4048,
+  "confidence": 80,
+  "extractedData": {
+    "name": "Subhash Kumar A",
+    "email": "subhashka752woj4c_wya@indeedemail.com",
+    "phone": "+91 70340 46701",
+    "title": null,
+    "location": "Kasaragod, Kerala",
+    "summary": "To execute my innovative ideas in a challenging field for an organization.",
+    "experience": [
+      {
+        "jobTitle": "PHP Developer",
+        "company": "Integrated Redcherry Solutions Pvt Ltd",
+        "duration": "January 2022 - July 2022",
+        "startDate": "2022-01",
+        "endDate": "2022-07",
+        "techUsed": [
+          "PHP"
+        ],
+        "description": "Six months internship with training at Integrated Redcherry Solutions Pvt Ltd as PHP Developer.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Master's",
+        "field": "Computer Science",
+        "university": "Kannur University",
+        "year": "2018",
+        "percentage": null,
+        "gpa": null,
+        "location": "Kerala"
+      },
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science",
+        "university": "Kannur University",
+        "year": "2016",
+        "percentage": null,
+        "gpa": null,
+        "location": "Kerala"
+      },
+      {
+        "degree": "HSC",
+        "field": "Science",
+        "university": "State board",
+        "year": "2013",
+        "percentage": null,
+        "gpa": null,
+        "location": "Kerala"
+      },
+      {
+        "degree": "SSLC",
+        "field": null,
+        "university": "State Board",
+        "year": "2011",
+        "percentage": null,
+        "gpa": null,
+        "location": null
+      }
+    ],
+    "skills": [
+      "Fundamentals of C and C++",
+      "Java",
+      "PHP",
+      "HTML",
+      "MySQL",
+      "JavaScript",
+      "HTML5",
+      "AJAX",
+      "CSS"
+    ],
+    "projects": [],
+    "certifications": []
+  }
+}

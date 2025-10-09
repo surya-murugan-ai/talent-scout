@@ -1,0 +1,82 @@
+{
+  "filename": "b16c833e-a8b6-4eaf-bfab-47524494d7d8.pdf",
+  "timestamp": "2025-09-29T09:31:34.422Z",
+  "processingTime": 4976,
+  "confidence": 80,
+  "extractedData": {
+    "name": "ABISHAK.I",
+    "email": "jovialabishak@gmail.com",
+    "phone": "8489044240",
+    "title": null,
+    "location": "Rameswaram, Tamil Nadu",
+    "summary": "Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including HTML5, PHP, Laravel, JavaScript, bootstrap, CSS, MySQL. Strong background in project management and customer relations.",
+    "experience": [
+      {
+        "jobTitle": "Associate Software Developer",
+        "company": "Ardhas Technology India Pvt.LTd",
+        "duration": "09/2021 to Present",
+        "startDate": "2021-09",
+        "endDate": "Present",
+        "techUsed": [],
+        "description": "Cooperate with developer to create clean interfaces and simple, intuitive interactions and experiences. Develop project concepts and maintain optimal workflow. Work with senior developer to manage large, complex design projects for corporate clients. Complete detailed programming and development tasks for front end and internal websites as well as challenging back-end server code. Carry out quality assurance tests to discover errors and optimize usability.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Web Developer (Inter)",
+        "company": null,
+        "duration": "06/2021 - 08/2021",
+        "startDate": "2021-06",
+        "endDate": "2021-08",
+        "techUsed": [],
+        "description": "Work with senior developer to manage projects for corporate clients. Complete detailed programming and development tasks for front end and internal websites as well as challenging back-end server code.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Engineering",
+        "field": "Mechanical Engineering",
+        "university": "K.S.Rangasamy College of Technology",
+        "year": "2019",
+        "percentage": null,
+        "gpa": "7.20",
+        "location": "Namakkal, Tamil Nadu"
+      },
+      {
+        "degree": "Higher Secondary Schooling",
+        "field": null,
+        "university": "Adharsh Vidhyalaya Hr. Sec. School",
+        "year": "2015",
+        "percentage": "76.33",
+        "gpa": null,
+        "location": "Erode, Tamil Nadu"
+      },
+      {
+        "degree": "SSLC Schooling",
+        "field": null,
+        "university": "St.Anne’s Matriculation School",
+        "year": "2013",
+        "percentage": "84",
+        "gpa": null,
+        "location": "Rameswaram, Tamil Nadu"
+      }
+    ],
+    "skills": [
+      "Project management",
+      "Strong decision maker",
+      "Complex problem solver",
+      "Creative design",
+      "Innovative",
+      "Service-focused",
+      "PHP",
+      "Laravel",
+      "JavaScript",
+      "HTML5",
+      "Bootstrap",
+      "CSS",
+      "MySQL"
+    ],
+    "projects": [],
+    "certifications": []
+  }
+}

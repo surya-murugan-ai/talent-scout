@@ -1,0 +1,82 @@
+{
+  "filename": "927943fb-1537-4fd0-a8f2-96b8665f05a4.pdf",
+  "timestamp": "2025-09-29T09:01:17.896Z",
+  "processingTime": 6720,
+  "confidence": 93,
+  "extractedData": {
+    "name": "Soumyadeep Sen",
+    "email": "soumyadeepbksc@gmail.com",
+    "phone": "7488079311",
+    "title": "Software Engineer",
+    "location": null,
+    "summary": "Software Engineer with Total 4+ years of IT experience in full stack development and application support, complemented by a Google Cloud Certified Associate Cloud Engineer credential. Experienced in handling client issues, alerts, ServiceNow tickets, and reporting while collaborating in enterprise environments. Strong interest in transitioning into Cloud Administration Monitoring (LogicMonitor, GCP) roles, leveraging certification and practical exposure to GCP services, Cloud Console, and Storage.",
+    "experience": [
+      {
+        "jobTitle": "System Engineer",
+        "company": "Tata Consultancy Services",
+        "duration": "08/2021-Present",
+        "startDate": "2021-08",
+        "endDate": "Present",
+        "techUsed": [
+          "Java",
+          "PostgreSQL",
+          "ASP.Net",
+          "Node.js",
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "Angular",
+          "React.js",
+          "MySQL"
+        ],
+        "description": "Supported client projects with a mix of development, monitoring, and issue resolution activities. Exposure to Google Cloud Platform (GCP) through certification and practical usage in managing Cloud Console Storage. Resolved client enrollment and login issues using Java and PostgreSQL for the Cetera Financial Group client. Handled ServiceNow tickets and performed proactive monitoring of alerts, escalating and resolving issues as per SLA. Developed Web APIs (ASP.Net, Node.js) and contributed to application enhancements. Collaborated in full stack development (HTML, CSS, JavaScript, Angular, React.js, Java, MySQL) for Citi Bank project. Collaborated in reporting, debugging, and proactive monitoring for client applications, ensuring smooth operations.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor Of Technology",
+        "field": "Electrical And Electronics Engineering",
+        "university": "Institute Of Engineering and Management, Kolkata",
+        "year": "2021",
+        "percentage": null,
+        "gpa": null,
+        "location": "Kolkata, West Bengal"
+      },
+      {
+        "degree": "High School",
+        "field": null,
+        "university": "Holy Cross School",
+        "year": "2016",
+        "percentage": null,
+        "gpa": null,
+        "location": "Bokaro Steel City, Jharkhand"
+      }
+    ],
+    "skills": [
+      "Google Cloud Platform (GCP)",
+      "Cloud Console",
+      "Cloud Storage",
+      "Proactive Monitoring Alerts",
+      "ServiceNow Ticketing",
+      "Java",
+      "Node.js",
+      "React.js",
+      "ASP.Net",
+      "Web API",
+      "MS Excel",
+      "MYSQL"
+    ],
+    "projects": [],
+    "certifications": [
+      {
+        "name": "Google Cloud Certified Associate Cloud Engineer",
+        "issuer": null,
+        "date": null,
+        "expiryDate": "2026-05",
+        "credentialId": null,
+        "url": null
+      }
+    ]
+  }
+}

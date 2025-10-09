@@ -1,0 +1,127 @@
+{
+  "filename": "3a533c03-2547-4fec-b45c-46baef2d9e89.pdf",
+  "timestamp": "2025-09-15T04:58:35.451Z",
+  "processingTime": 28762,
+  "confidence": 80,
+  "rawText": "\n\n  Amarnath Yadav  \n  • 9140259551 •  amarnath.y@protonmail.com  \nAs a seasoned Java professional with 5 years of experience, I excel in designing and developing high-impact \nmicroservices-based systems. My experFse in Java, microservices architecture, and system design enables me to \ncreate scalable, robust soluFons. I'm passionate about soIware engineering, a strong communicator, and a \ncollaboraFve team player. With a track record of delivering quality projects on Fme and within budget, I'm \ndedicated to driving innovaFon and adding value to your organizaFon.  \nSummary  \n• Around 5 years of experience in soIware design and development through various Java/J2ee/Spring \ntechnologies and frameworks.  \n• Key in contribuFng projects by understanding technical and funcFonal aspects of business. Strong \ntechnical skills in Java, JEE, Spring, Hibernate, Python, Agular, JavaScript, React, Web Services, XML, \nJSON, SOAP, and REST.  \n• Experience and ExperFse in wriFng Micro Services using Java/Spring Boot and deploying them to a \nCloud environment.  \n• Have Experience in the AWS environment in parFcular used EC2, S3, and RDS.  \n• Worked extensively in CollecJons, MulJthreading, JMS, JDBC, FILE IO, SerializaJon, and Socket \nprogramming.  \n• Have a good understanding of Object-oriented programming concepts, MulJthreading, and Various \ndesign principles and Methodologies including Microservice Design paRerns.  \n• Well-versed with Database management concepts, parFcularly with databases Mongo, MySQL, and \nPostgreSQL, DB2 Databases including wriFng SQL Queries, Stored Procedures and FuncJons.  \n• Experience in Web and ApplicaFon servers like Tomcat, WebLogic, Fuse Service mix, OC4J, JBoss, \nApache, and nginx.  \n• Hands-on experience in wriFng Web services with ResWul using CXF, Jersey, Spring and validaFng \nRest endpoints with Swagger, Postman, and SOAPUI.  \n• Experience in wriFng Web Services using SOAP with JAX-WS standard. Experience with Jasper \nReports /Jasper Template engine and generated CSV, pdf, and text reports million record level scale.  \n• Hands-on experience in Apache AcJveMQ and KaYa messaging systems. Experience in building tools \nMaven, Ant, Jenkins and Logging frameworks Log4J, Slf4j and unit tesFng frameworks JUnit, \nMockito, JMeter and code quality tools SonarQube, and FindBug.  \n• Experience with version control tools SVN, CVS, GIT, TFS and release management tools JIRA.  \n• Working experience developing and deploying soIware on plaWorms Windows, and Linux using tools \nPuRy, and WinSCP.  \n• Good at release management and post-producFon issues.  \n• Strong knowledge of installaFon and setup of applicaFons in Linux distribuFon. \n•  Experienced in all facets of soIware development life cycle, from requirements gathering, Analysis,  \n• Design, Development, TesFng to product release.  \n• Experienced in Agile, and Scrum-based development and good at working on sprints.  \n  \n  \n\nSkills  \nLanguages: Java 8, Java 17, Java 21, Python, JavaScript, Angular, React  \nArchitecture: Microservices, Monolith  \nProtocols: SOAP, REST  \nApplicaJon Framework: Spring Boot, Spring Context, Spring Security, Hibernate, Kubernetes, Docker.  \nWeb/Enterprise Server: Tomcat, JBoss, Apache, Nginx Programming   \nMessaging: Kaca  \nFrontend Technologies: Angular, React  \nProject Tools: Maven, Ant, SVN, CVS, Git, TFS, Jenkins.   \nQuality Tools: Sonar, FindBug   \nDatabase: MongoDB, MySQL, PostgreSQL  \nCloud: Google Cloud, AWS  \nExperience  \nJUN – 2023 -PRESENT  \nSenior So(ware Engineer, AGILON HEALTH INC  \n•\n \nKaYa and Airflow IntegraJon: Developed a foundaFonal framework using Kaca and Airflow, enabling \nother teams to build on top of it efficiently. This foundaFonal work ensured seamless data streaming and \norchestraFon across various services. \n•\n \nEnd-to-End Project Leadership: Led the efforts from requirement gathering to the final producFon-ready \ncode deployment. Coordinated with stakeholders to understand business needs, translated them into \ntechnical requirements, and ensured Fmely delivery of high-quality soIware soluFons. \n•\n \nEnhanced XDR IntegraJon: Directed the integraFon of an enhanced XDR system for a new market \nregion. This involved designing scalable and efficient soluFons, coordinaFng with cross-funcFonal teams, \nand ensuring the new integraFon met all regional compliance and performance standards. \n•\n \nHL7 Processing System: Monitored, scaled, and performed extensive performance tesFng on a new HL7 \nprocessing system. Ensured the system could handle large volumes of health data efficiently while \nmaintaining high accuracy and reliability. \n•\n \nAutomaJon TesJng Team Leadership: Spearheaded efforts to create an automaFon tesFng team for the \nnew processing system. Recruited and mentored team members, established best pracFces, and ensured \nthe team was equipped to handle comprehensive tesFng scenarios. \n•\n \nAutomaJon TesJng SOP CreaJon: Created a Standard OperaFng Procedure (SOP) for the automaFon \ntesFng team. This SOP included guidelines, best pracFces, and detailed workflows to ensure consistent \nand efficient tesFng processes across the team. \n \n \n \n  \n  \n\nAUG – 2021 -JUN -2023  \nSDE2, AGILON HEALTH INC  \n• Microservices Architecture MigraJon: Led the transformaFon of the Minerva system from a monolithic \narchitecture to a microservices-based architecture, significantly enhancing scalability, efficiency, and \navailability.  \n• PDF Builder Service: Independently developed a PDF builder service and collaborated with a team to \ndevelop a Search Service as a microservice, improving applicaFon funcFonality and performance.  \n• Invoicing System Development: Designed and implemented an advanced invoicing system for hospital \nservices, replacing the outdated HIS system and streamlining day-to-day billing processes.  \n• SOAP-based WSDL APIs: Implemented robust WSDL APIs for Minerva HIS, leveraging SOAP to enhance \ninteroperability and data exchange.  \n• XDR Document GeneraJon: Developed a system for Minerva HIS to generate XDR documents on health \nencounters, achieving a generaFon capacity of up to one million XDRs per day.  \n• New Appointment System: Successfully collaborated with design and QA teams to develop and launch a \nnew appointment system within 6 months, ahead of the scheduled Fmeline by 2 months.  \n• Technical Mentorship: Provided mentorship and resolved complex technological issues across various \nprojects, maintaining a customer saFsfacFon rate of over 97%.  \n• DocumentaJon and Training: Documented all systems and applicaFons comprehensively, streamlining \nbusiness procedures and significantly reducing onboarding Fme for new team members.  \n  \n  \n  \n  \n  \nSEP 2019 – AUG-2021  \nSOFTWARE ENGINEER, OARI COLLAB PVT LTD  \n• Search Grammar ImplementaJon: Implemented a Search Grammar on top of MongoDB to enhance \nsearch quality and minimize database hits.  \n• Hotel Booking APIs: Developed REST APIs for hotel booking cancellaFons and automaFc refund \ngeneraFon, improving customer service efficiency.  \n• IRCTC IntegraJon: Integrated IRCTC Fcket booking APIs into the exisFng OARI system, expanding system \ncapabiliFes.  \n• Coding and System Updates: ParFcipated in coding acFviFes, maintaining the integrity of program logic, \nand updaFng exisFng systems.  \n• Cross-Pla`orm Development: Assisted senior technology soluFons team members in developing over 7 \nsoIware soluFons across web, desktop, and mobile plaWorms.  \n• Project DocumentaJon: Created valuable project-specific assets such as knowledge transfer documents, \ntest plans, defect summary reports, and lessons learned documents, successfully delivering 7 releases \ninvolving UAT and regression tesFng.  \n• Rapid PromoJon: Promoted within 8 months due to strong performance and organizaFonal impact.   \nEducation  \nJUNE 2020  \nB.TECH | COMPUTER SCIENCE AND ENGINEERING  \nDR. A.P.J. ABDUL KALAM TECHNICAL UNIVERSITY |LUCKNOW  \n  ",
+  "extractedData": {
+    "name": "Amarnath Yadav",
+    "email": "amarnath.y@protonmail.com",
+    "phone": "9140259551",
+    "linkedinUrl": null,
+    "githubUrl": null,
+    "portfolioUrl": null,
+    "location": null,
+    "title": null,
+    "summary": "As a seasoned Java professional with 5 years of experience, I excel in designing and developing high-impact microservices-based systems. My expertise in Java, microservices architecture, and system design enables me to create scalable, robust solutions. I'm passionate about software engineering, a strong communicator, and a collaborative team player. With a track record of delivering quality projects on time and within budget, I'm dedicated to driving innovation and adding value to your organization.",
+    "experience": [
+      {
+        "jobTitle": "Senior Software Engineer",
+        "company": "AGILON HEALTH INC",
+        "duration": "JUN 2023 - PRESENT",
+        "startDate": "2023-06",
+        "endDate": "Present",
+        "techUsed": [
+          "Kafka",
+          "Airflow"
+        ],
+        "description": "Developed a foundational framework using Kafka and Airflow, enabling other teams to build on top of it efficiently. Led the efforts from requirement gathering to the final production-ready code deployment. Directed the integration of an enhanced XDR system for a new market region. Monitored, scaled, and performed extensive performance testing on a new HL7 processing system. Spearheaded efforts to create an automation testing team for the new processing system.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "SDE2",
+        "company": "AGILON HEALTH INC",
+        "duration": "AUG 2021 - JUN 2023",
+        "startDate": "2021-08",
+        "endDate": "2023-06",
+        "techUsed": [
+          "SOAP",
+          "WSDL",
+          "Microservices"
+        ],
+        "description": "Led the transformation of the Minerva system from a monolithic architecture to a microservices-based architecture. Independently developed a PDF builder service. Designed and implemented an advanced invoicing system for hospital services. Implemented robust WSDL APIs for Minerva HIS. Developed a system for Minerva HIS to generate XDR documents. Successfully collaborated with design and QA teams to develop and launch a new appointment system.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Software Engineer",
+        "company": "OARI COLLAB PVT LTD",
+        "duration": "SEP 2019 - AUG 2021",
+        "startDate": "2019-09",
+        "endDate": "2021-08",
+        "techUsed": [
+          "MongoDB",
+          "REST APIs"
+        ],
+        "description": "Implemented a Search Grammar on top of MongoDB. Developed REST APIs for hotel booking cancellations and automatic refund generation. Integrated IRCTC ticket booking APIs into the existing OARI system. Participated in coding activities and updating existing systems. Assisted in developing over 7 software solutions across web, desktop, and mobile platforms.",
+        "achievements": [
+          "Promoted within 8 months due to strong performance and organizational impact."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.TECH",
+        "field": "Computer Science and Engineering",
+        "university": "DR. A.P.J. ABDUL KALAM TECHNICAL UNIVERSITY",
+        "year": "2020",
+        "percentage": null,
+        "gpa": null,
+        "location": "Lucknow"
+      }
+    ],
+    "projects": [],
+    "achievements": [],
+    "certifications": [],
+    "skills": [
+      "Java 8",
+      "Java 17",
+      "Java 21",
+      "Python",
+      "JavaScript",
+      "Angular",
+      "React",
+      "Microservices",
+      "Monolith",
+      "SOAP",
+      "REST",
+      "Spring Boot",
+      "Spring Context",
+      "Spring Security",
+      "Hibernate",
+      "Kubernetes",
+      "Docker",
+      "Tomcat",
+      "JBoss",
+      "Apache",
+      "Nginx",
+      "Kafka",
+      "Maven",
+      "Ant",
+      "SVN",
+      "CVS",
+      "Git",
+      "TFS",
+      "Jenkins",
+      "Sonar",
+      "FindBug",
+      "MongoDB",
+      "MySQL",
+      "PostgreSQL",
+      "Google Cloud",
+      "AWS"
+    ],
+    "interests": [],
+    "languages": [],
+    "salary": null,
+    "availability": null,
+    "remotePreference": null,
+    "visaStatus": null,
+    "originalData": {
+      "filename": "3a533c03-2547-4fec-b45c-46baef2d9e89.pdf",
+      "rawText": "Amarnath Yadav • 9140259551 • amarnath.y@protonmail.com As a seasoned Java professional with 5 years of experience, I excel in designing and developing high-impact microservices-based systems. My experFse in Java, microservices architecture, and system design enables me to create scalable, robust soluFons. I'm passionate about soIware engineering, a strong communicator, and a collaboraFve team player. With a track record of delivering quality projects on Fme and within budget, I'm dedicated to driving innovaFon and adding value to your organizaFon. Summary • Around 5 years of experience in soIware design and development through various Java/J2ee/Spring technologies and frameworks. • Key in contribuFng projects by understanding technical and funcFonal aspects of business. Strong technical skills in Java, JEE, Spring, Hibernate, Python, Agular, JavaScript, React, Web Services, XML, JSON, SOAP, and REST. • Experience and ExperFse in wriFng Micro Services using Java/Spring Boot and deploying them to a Cloud environment. • Have Experience in the AWS environment in parFcular used EC2, S3, and RDS. • Worked extensively in CollecJons, MulJthreading, JMS, JDBC, FILE IO, SerializaJon, and Socket programming. • Have a good understanding of Object-oriented programming concepts, MulJthreading, and Various design principles and Methodologies including Microservice Design paRerns. • Well-versed with Database management concepts, parFcularly with databases Mongo, MySQL, and PostgreSQL, DB2 Databases including wriFng SQL Queries, Stored Procedures and FuncJons. • Experience in Web and ApplicaFon servers like Tomcat, WebLogic, Fuse Service mix, OC4J, JBoss, Apache, and nginx. • Hands-on experience in wriFng Web services with ResWul using CXF, Jersey, Spring and validaFng Rest endpoints with Swagger, Postman, and SOAPUI. • Experience in wriFng Web Services using SOAP with JAX-WS standard. Experience with Jasper Reports /Jasper Template engine and generated CSV, pdf, and text reports m"
+    },
+    "source": "resume",
+    "confidence": 80,
+    "processingTime": 0
+  }
+}

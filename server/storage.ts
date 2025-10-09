@@ -122,7 +122,8 @@ export class PostgresStorage implements IStorage {
         });
       }
     } catch (error) {
-      console.error("Error initializing default data:", error);
+      console.warn("Database initialization failed (quota exceeded), but API will continue to work:", error.message);
+      // Don't throw the error, just log it and continue
     }
   }
 

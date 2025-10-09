@@ -1,7 +1,6 @@
 import { ApifyClient } from 'apify-client';
 import * as fs from 'fs';
 import * as path from 'path';
-import { ResumeDataService } from './resumeDataService.js';
 export class LinkedInService {
     apifyClient;
     constructor() {
@@ -50,7 +49,9 @@ export class LinkedInService {
             }
             // Create filename with timestamp and profile identifier
             const profileId = linkedinUrl.split('/in/')[1]?.split('?')[0] || 'unknown';
-            const filename = `devfusion_${profileId}_${timestamp.replace(/[:.]/g, '-')}.json`;
+            // Clean profileId to remove invalid filename characters
+            const cleanProfileId = profileId.replace(/[<>:"/\\|?*]/g, '-');
+            const filename = `devfusion_${cleanProfileId}_${timestamp.replace(/[:.]/g, '-')}.json`;
             const filepath = path.join(resultsDir, filename);
             // Save the raw data
             const resultData = {
@@ -214,12 +215,20 @@ export class LinkedInService {
                         this.saveDevFusionResults(devFusionData, candidateWithLinkedIn.linkedinUrl);
                         // Update database with the fetched LinkedIn data
                         try {
-                            // Update candidate record
-                            await ResumeDataService.updateCandidateWithLinkedInData(candidateWithLinkedIn.id, devFusionData, 'dev_fusion');
-                            // Update resume data if available
-                            if (candidateWithLinkedIn.resumeDataId) {
-                                await ResumeDataService.updateResumeDataWithLinkedIn(candidateWithLinkedIn.resumeDataId, devFusionData, 'dev_fusion');
-                            }
+                            // Update candidate record - TODO: Update to use consolidated candidates table
+                            // await ResumeDataService.updateCandidateWithLinkedInData(
+                            //   candidateWithLinkedIn.id,
+                            //   devFusionData,
+                            //   'dev_fusion'
+                            // );
+                            // Update resume data if available - TODO: Update to use consolidated candidates table
+                            // if (candidateWithLinkedIn.resumeDataId) {
+                            //   await ResumeDataService.updateResumeDataWithLinkedIn(
+                            //     candidateWithLinkedIn.resumeDataId,
+                            //     devFusionData,
+                            //     'dev_fusion'
+                            //   );
+                            // }
                         }
                         catch (dbError) {
                             console.warn('Failed to update database with LinkedIn data:', dbError);
@@ -483,12 +492,20 @@ export class LinkedInService {
                                 c.linkedinUrl === profileUrl.replace(/\/$/, '') ||
                                 profileUrl.includes(c.name?.split(' ')[0] || ''));
                             if (matchingCandidate) {
-                                // Update candidate record
-                                await ResumeDataService.updateCandidateWithLinkedInData(matchingCandidate.id, devFusionData, 'dev_fusion');
-                                // Update resume data if available
-                                if (matchingCandidate.resumeDataId) {
-                                    await ResumeDataService.updateResumeDataWithLinkedIn(matchingCandidate.resumeDataId, devFusionData, 'dev_fusion');
-                                }
+                                // Update candidate record - TODO: Update to use consolidated candidates table
+                                // await ResumeDataService.updateCandidateWithLinkedInData(
+                                //   matchingCandidate.id,
+                                //   devFusionData,
+                                //   'dev_fusion'
+                                // );
+                                // Update resume data if available - TODO: Update to use consolidated candidates table
+                                // if (matchingCandidate.resumeDataId) {
+                                //   await ResumeDataService.updateResumeDataWithLinkedIn(
+                                //     matchingCandidate.resumeDataId,
+                                //     devFusionData,
+                                //     'dev_fusion'
+                                //   );
+                                // }
                             }
                         }
                     }
@@ -574,12 +591,20 @@ export class LinkedInService {
                             c.name === enrichedProfile.name ||
                             (c.title && c.title.toLowerCase().includes(enrichedProfile.title?.toLowerCase() || '')));
                         if (matchingCandidate) {
-                            // Update candidate record
-                            await ResumeDataService.updateCandidateWithLinkedInData(matchingCandidate.id, profileData, 'harvestapi');
-                            // Update resume data if available
-                            if (matchingCandidate.resumeDataId) {
-                                await ResumeDataService.updateResumeDataWithLinkedIn(matchingCandidate.resumeDataId, profileData, 'harvestapi');
-                            }
+                            // Update candidate record - TODO: Update to use consolidated candidates table
+                            // await ResumeDataService.updateCandidateWithLinkedInData(
+                            //   matchingCandidate.id,
+                            //   profileData,
+                            //   'harvestapi'
+                            // );
+                            // Update resume data if available - TODO: Update to use consolidated candidates table
+                            // if (matchingCandidate.resumeDataId) {
+                            //   await ResumeDataService.updateResumeDataWithLinkedIn(
+                            //     matchingCandidate.resumeDataId,
+                            //     profileData,
+                            //     'harvestapi'
+                            //   );
+                            // }
                         }
                     }
                 }

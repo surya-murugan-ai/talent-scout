@@ -1,0 +1,125 @@
+{
+  "filename": "2ff8b9cc-baf1-468d-8ca6-0e0c672fa9a6.pdf",
+  "timestamp": "2025-09-29T08:42:46.902Z",
+  "processingTime": 6849,
+  "confidence": 98,
+  "rawText": "\n\n                              VIKASH KUSHWAHA \n                     AI Engineer & Generative AI  \n vikash.ku.2406@gmail.com | LinkedIn  | Github | Portfolio | +91 9569083755 | Noida(UP) \n___________________________________________________________________ \n \nSUMMARY \n_________________________________________________________________________ \n  \nHighly motivated AI Engineer with expertise in developing intelligent agents, GenAI solutions and                                  \nLLMs. Skilled in Hugging Face, OpenAI API, Gemini API, LangChain, MERN stack and RAG \ntechniques, vector databases and embedding. Strong background in full-stack development, system \ndesign and scalable AI-driven applications.  \n \nTECHNICAL SKILLS \n___________________________________________________________________ \n \nAI/ML & Generative AI: LLMs(OpenAI, Gemini), LangChain, LangGraph, Hugging Face, VectorDB,                          \n                                 \n                            RAG, Agentic AI, MCP-Server, AI-Chatbots, Docker, Git. \n \nWeb Development: React.js, Node.js, Express.js, MongoDB, Tailwind CSS, REST APIs, FastAPI. \n \nProgramming Language: Java, JavaScript(ES6+), Python. \n \nSoft Skills: Problem Solving, Team Collaboration, Prompt Engineering.   \n \n                                                                      \nExperience \n_________________________________________________________________________ \n \nSoftware Engineer - Trainee | Round The Clock Technologies | June 2025 -Present \n \nDevelop client-focused full stack automation frameworks. \n \nOptimize test scripts and enhance performance, reducing manual testing,improving efficiency by 60%. \n \nEnsure high-quality software delivery through robust testing and monitoring. \n \nProjects Work \n_________________________________________________________________________  \n \n  \nAI-Powered Ticket Management System | Live-Link                            July 2025  \n \nBuilt an AI-powered ticketing system with smart categorization and automated routing, reducing \nmanual workload by 50%. \nImplemented role-based authentication, moderator assignment, and background job processing. \nIntegrated Gemini API, MongoDB, Inngest, and automated email notifications, improving response  \nTime and reliability.       \n \nAI-RAG-System | Live-Link  | React.js | Node.js | Tailwind CSS | August-2025                                               \nDevelop a multilingual Retrieval-Augmented Generation(RAG) system for the Indian Constitution.               \nIntegrated LangChain, Pinecone VectorDB, and Gemini API, enabling accurate question-answering  \nin multiple languages. \n \nAI-DSA-Assistant ChatBot |\n Live-Link  | React.js | Node.js | Tailwind CSS | August-2025                                          \nDeveloped an AI chatbot to assist with Data Structure & Algorithms, providing step-by-step coding \nguidance. \nIntegrated Gemini AI models for accurate problem solving, reducing student debugging time by 60%. \n.  \n \nEDUCATION \n___________________________________________________________________  \n \nBachelor of Technology in Computer Science Engineering(IOT)             \nRaj Kumar Goel Institute Of Technology, Ghaziabad | CGPA: 7.31 Sep 2021 - June 2025    \n \nADDITIONAL INFORMATION \n_______________________________________________________________________ \n \nJava Programming Certification \n2-Star Coder on GFG in contest (Ranked in top 20 in college ) ",
+  "extractedData": {
+    "name": "Vikash Kushwaha",
+    "email": "vikash.ku.2406@gmail.com",
+    "phone": "+91 9569083755",
+    "linkedinUrl": "https://www.linkedin.com/in/vikash-kushwaha-b36a71241/",
+    "githubUrl": "https://github.com/Kushwaha2406Vikash",
+    "portfolioUrl": "https://portfolio-seven-zeta-17.vercel.app/",
+    "location": "Noida(UP)",
+    "title": "AI Engineer & Generative AI",
+    "summary": "Highly motivated AI Engineer with expertise in developing intelligent agents, GenAI solutions and LLMs. Skilled in Hugging Face, OpenAI API, Gemini API, LangChain, MERN stack and RAG techniques, vector databases and embedding. Strong background in full-stack development, system design and scalable AI-driven applications.",
+    "experience": [
+      {
+        "jobTitle": "Software Engineer - Trainee",
+        "company": "Round The Clock Technologies",
+        "duration": "June 2025 - Present",
+        "startDate": "2025-06",
+        "endDate": "Present",
+        "techUsed": [],
+        "description": "Develop client-focused full stack automation frameworks. Optimize test scripts and enhance performance, reducing manual testing, improving efficiency by 60%. Ensure high-quality software delivery through robust testing and monitoring.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Technology",
+        "field": "Computer Science Engineering(IOT)",
+        "university": "Raj Kumar Goel Institute Of Technology, Ghaziabad",
+        "year": "2025",
+        "percentage": null,
+        "gpa": "7.31",
+        "location": "Ghaziabad"
+      }
+    ],
+    "projects": [
+      {
+        "name": "AI-Powered Ticket Management System",
+        "description": "Built an AI-powered ticketing system with smart categorization and automated routing, reducing manual workload by 50%. Implemented role-based authentication, moderator assignment, and background job processing. Integrated Gemini API, MongoDB, Inngest, and automated email notifications, improving response Time and reliability.",
+        "techUsed": [],
+        "duration": "July 2025",
+        "url": "https://ai-powered-ticket-assignment-system.vercel.app/login",
+        "achievements": []
+      },
+      {
+        "name": "AI-RAG-System",
+        "description": "Develop a multilingual Retrieval-Augmented Generation(RAG) system for the Indian Constitution. Integrated LangChain, Pinecone VectorDB, and Gemini API, enabling accurate question-answering in multiple languages.",
+        "techUsed": [
+          "React.js",
+          "Node.js",
+          "Tailwind CSS"
+        ],
+        "duration": "August 2025",
+        "url": "https://constitution-ai-rag-iyj4.vercel.app/",
+        "achievements": []
+      },
+      {
+        "name": "AI-DSA-Assistant ChatBot",
+        "description": "Developed an AI chatbot to assist with Data Structure & Algorithms, providing step-by-step coding guidance. Integrated Gemini AI models for accurate problem solving, reducing student debugging time by 60%.",
+        "techUsed": [
+          "React.js",
+          "Node.js",
+          "Tailwind CSS"
+        ],
+        "duration": "August 2025",
+        "url": "https://ai-dsa-assistant-chat-bot.vercel.app/",
+        "achievements": []
+      }
+    ],
+    "achievements": [],
+    "certifications": [
+      {
+        "name": "Java Programming Certification",
+        "issuer": null,
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      }
+    ],
+    "skills": [
+      "LLMs(OpenAI, Gemini)",
+      "LangChain",
+      "LangGraph",
+      "Hugging Face",
+      "VectorDB",
+      "RAG",
+      "Agentic AI",
+      "MCP-Server",
+      "AI-Chatbots",
+      "Docker",
+      "Git",
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "REST APIs",
+      "FastAPI",
+      "Java",
+      "JavaScript(ES6+)",
+      "Python",
+      "Problem Solving",
+      "Team Collaboration",
+      "Prompt Engineering"
+    ],
+    "interests": [],
+    "languages": [],
+    "salary": null,
+    "availability": null,
+    "remotePreference": null,
+    "visaStatus": null,
+    "originalData": {
+      "filename": "2ff8b9cc-baf1-468d-8ca6-0e0c672fa9a6.pdf",
+      "rawText": "VIKASH KUSHWAHA AI Engineer & Generative AI vikash.ku.2406@gmail.com | LinkedIn | Github | Portfolio | +91 9569083755 | Noida(UP) ___________________________________________________________________ SUMMARY _________________________________________________________________________ Highly motivated AI Engineer with expertise in developing intelligent agents, GenAI solutions and LLMs. Skilled in Hugging Face, OpenAI API, Gemini API, LangChain, MERN stack and RAG techniques, vector databases and embedding. Strong background in full-stack development, system design and scalable AI-driven applications. TECHNICAL SKILLS ___________________________________________________________________ AI/ML & Generative AI: LLMs(OpenAI, Gemini), LangChain, LangGraph, Hugging Face, VectorDB, RAG, Agentic AI, MCP-Server, AI-Chatbots, Docker, Git. Web Development: React.js, Node.js, Express.js, MongoDB, Tailwind CSS, REST APIs, FastAPI. Programming Language: Java, JavaScript(ES6+), Python. Soft Skills: Problem Solving, Team Collaboration, Prompt Engineering. Experience _________________________________________________________________________ Software Engineer - Trainee | Round The Clock Technologies | June 2025 -Present Develop client-focused full stack automation frameworks. Optimize test scripts and enhance performance, reducing manual testing,improving efficiency by 60%. Ensure high-quality software delivery through robust testing and monitoring. Projects Work _________________________________________________________________________ AI-Powered Ticket Management System | Live-Link July 2025 Built an AI-powered ticketing system with smart categorization and automated routing, reducing manual workload by 50%. Implemented role-based authentication, moderator assignment, and background job processing. Integrated Gemini API, MongoDB, Inngest, and automated email notifications, improving response Time and reliability. AI-RAG-System | Live-Link | React.js | Node.js | Tailwind CSS | August-2025 De"
+    },
+    "source": "resume",
+    "confidence": 98,
+    "processingTime": 0
+  }
+}

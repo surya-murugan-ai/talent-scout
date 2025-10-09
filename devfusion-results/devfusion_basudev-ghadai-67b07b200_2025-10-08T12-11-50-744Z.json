@@ -1,0 +1,529 @@
+{
+  "timestamp": "2025-10-08T12:11:50.744Z",
+  "linkedinUrl": "https://www.linkedin.com/in/basudev-ghadai-67b07b200",
+  "rawData": {
+    "linkedinUrl": "https://www.linkedin.com/in/basudev-ghadai-67b07b200",
+    "firstName": "Basudev",
+    "lastName": "Ghadai",
+    "fullName": "Basudev Ghadai",
+    "headline": "AI Fullstack Developer at Aimplify | Ex-IBM Intern | Python Developer | AI & ML | Certified in Python for Data Science",
+    "connections": 964,
+    "followers": 993,
+    "email": "basudev@aimplify.tech",
+    "mobileNumber": null,
+    "jobTitle": "AI Fullstack Developer",
+    "companyName": "Aimplify",
+    "companyIndustry": "Internet",
+    "companyWebsite": "aimplify.tech",
+    "companyLinkedin": "linkedin.com/company/aimplifytech",
+    "companyFoundedIn": 2023,
+    "companySize": "11-50",
+    "currentJobDuration": "7 mos",
+    "currentJobDurationInYrs": 0.58,
+    "topSkillsByEndorsements": null,
+    "addressCountryOnly": "India",
+    "addressWithCountry": "Odisha, India",
+    "addressWithoutCountry": "Odisha",
+    "profilePic": "https://media.licdn.com/dms/image/v2/D4D03AQFzM7kRkVvxhQ/profile-displayphoto-scale_400_400/B4DZhqpHhUG8Ak-/0/1754135822083?e=1762992000&v=beta&t=0bM73EikNnRh1YFNGoJSxXZDxQBNadFtYWlxudy0ONI",
+    "profilePicHighQuality": "https://media.licdn.com/dms/image/v2/D4D03AQFzM7kRkVvxhQ/profile-displayphoto-crop_800_800/B4DZhqpHhUG8AM-/0/1754135821991?e=1762992000&v=beta&t=0McMVE1lk-fAB2dbNuI8_BqmZNXmw_Hnkrb_RYtDk9U",
+    "about": "AI Fullstack Developer at Aimplify | Building cloud-native AI apps with Python, FastAPI, LangGraph & MCP | Deploying LLM-powered multi-agent systems on AWS & GCP | Passionate about scalable AI.",
+    "publicIdentifier": "basudev-ghadai-67b07b200",
+    "openConnection": null,
+    "urn": "ACoAADNEhP8BHqHYsSeNWnT9U-NGpTMJjX7v_zA",
+    "creatorWebsite": {
+      "name": "https://basudevghadai.vercel.app/",
+      "link": "https://basudevghadai.vercel.app/"
+    },
+    "experiences": [
+      {
+        "companyId": "100532730",
+        "companyUrn": "urn:li:fsd_company:100532730",
+        "companyLink1": "https://www.linkedin.com/company/100532730/",
+        "logo": "https://media.licdn.com/dms/image/v2/D560BAQGovr4JtIupxw/company-logo_200_200/company-logo_200_200/0/1708618538994?e=1762992000&v=beta&t=k-xZc7NwH7njEB12ZsTNqFhQcu2sfKmjBIHti3LKiRo",
+        "title": "AI Fullstack Developer",
+        "subtitle": "Aimplify · Full-time",
+        "caption": "Apr 2025 - Present · 7 mos",
+        "metadata": "Bengaluru, Karnataka, India · On-site",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "textComponent",
+                "text": "At Aimplify, I built and deployed AI-powered automation and analytics solutions, integrating intelligent agents, live dashboards, and cloud-based systems. My work spanned full-stack development (FastAPI, React), AI analytics integration, and AWS-based deployments, delivering scalable, real-time solutions that enhanced efficiency and decision-making."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "companyId": "27510417",
+        "companyUrn": "urn:li:fsd_company:27510417",
+        "companyLink1": "https://www.linkedin.com/company/27510417/",
+        "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQEr_Uta0N_sxA/company-logo_200_200/company-logo_200_200/0/1660024845585/sapat_international_private_limited_logo?e=1762992000&v=beta&t=IbYU0LIKpLS27BcoKfl6YrCbC5xsXaiZ2WyzBT3w2xQ",
+        "title": "Software Developer",
+        "subtitle": "Sapat International · Full-time",
+        "caption": "Apr 2024 - Mar 2025 · 1 yr",
+        "metadata": "Mumbai, Maharashtra, India",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "textComponent",
+                "text": "Software Developer specializing in Python, with hands-on experience in AWS, API integration, and containerization using Docker. Successfully contributed to projects involving Open edX, enhancing e-learning platforms, and implemented Odoo ERP solutions to streamline business processes."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "companyId": "13712815",
+        "companyUrn": "urn:li:fsd_company:13712815",
+        "companyLink1": "https://www.linkedin.com/company/13712815/",
+        "logo": "https://media.licdn.com/dms/image/v2/C510BAQGD8PUpnAN_Zg/company-logo_200_200/company-logo_200_200/0/1631421689334/central_parking_services_logo?e=1762992000&v=beta&t=cYJfiF3WocEozh3eAbTvxLD_-dLwPcwcbePmVHF-wG0",
+        "title": "Technical Service Engineer",
+        "subtitle": "Central Parking Services · Full-time",
+        "caption": "Jun 2023 - Mar 2024 · 10 mos",
+        "metadata": "Mumbai, Maharashtra, India · On-site",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "textComponent",
+                "text": "working at Jio world convention centre"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "companyLink1": "https://www.linkedin.com/search/results/all/?keywords=Freelance",
+        "title": "Freelance backend developer ",
+        "subtitle": "Freelance",
+        "caption": "Dec 2022 - May 2023 · 6 mos",
+        "metadata": "Remote  · Remote",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "textComponent",
+                "text": "freelancer"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "companyId": "13734529",
+        "companyUrn": "urn:li:fsd_company:13734529",
+        "companyLink1": "https://www.linkedin.com/company/13734529/",
+        "logo": "https://media.licdn.com/dms/image/v2/D560BAQFpOFhWNIPFRw/company-logo_200_200/company-logo_200_200/0/1680620377296/confluex_logo?e=1762992000&v=beta&t=gTjaRQDMtQ9_OIjvhnVDIfqyTZ4VcmoaA3qFJaBpskM",
+        "title": "Confluex",
+        "subtitle": "7 mos",
+        "breakdown": true,
+        "subComponents": [
+          {
+            "title": "Python backend Developer",
+            "subtitle": "Full-time",
+            "caption": "Aug 2022 - Nov 2022 · 4 mos",
+            "description": []
+          },
+          {
+            "title": "Internship Trainee(backed)",
+            "subtitle": "Internship",
+            "caption": "May 2022 - Jul 2022 · 3 mos",
+            "metadata": "Banglore ",
+            "description": []
+          }
+        ]
+      }
+    ],
+    "updates": [],
+    "skills": [
+      {
+        "title": "LangChain",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "AI Fullstack Developer at Aimplify"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "lama",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "AI Fullstack Developer at Aimplify"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "agentic AI",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "2 experiences across Aimplify and 1 other company"
+              },
+              {
+                "type": "insightComponent",
+                "text": "Introduction to Generative AI"
+              },
+              {
+                "type": "insightComponent",
+                "text": "Prompt Design in Vertex AI Skill Badge"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Large Language Models (LLM)",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "AI Fullstack Developer at Aimplify"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "GEN AI",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "AI Fullstack Developer at Aimplify"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Scripting",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Software Developer at Sapat International"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "JavaScript",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Indira Gandhi National Open University"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Core Java",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Indira Gandhi National Open University"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Odoo",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Software Developer at Sapat International"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Python ",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "2 experiences across Sapat International and 1 other company"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Django REST Framework",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Freelance backend developer (Freelance)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Cloud Computing",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Freelance backend developer (Freelance)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "AWS Command Line Interface (CLI)",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Freelance backend developer (Freelance)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Matplotlib",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Internship Trainee(AI /ML) at IBM"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Seaborn",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Internship Trainee(AI /ML) at IBM"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "C (Programming Language)",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Indira Gandhi National Open University"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "C++",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Indira Gandhi National Open University"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "DSA",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Software Developer at Sapat International"
+              },
+              {
+                "type": "insightComponent",
+                "text": "Indira Gandhi National Open University"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Assembly Language",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Indira Gandhi National Open University"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "x86 Assembly",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Indira Gandhi National Open University"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "profilePicAllDimensions": [
+      {
+        "width": 400,
+        "expiresAt": 1762992000000,
+        "height": 400,
+        "url": "https://media.licdn.com/dms/image/v2/D4D03AQFzM7kRkVvxhQ/profile-displayphoto-scale_400_400/B4DZhqpHhUG8Ak-/0/1754135822083?e=1762992000&v=beta&t=0bM73EikNnRh1YFNGoJSxXZDxQBNadFtYWlxudy0ONI"
+      },
+      {
+        "width": 800,
+        "expiresAt": 1762992000000,
+        "height": 800,
+        "url": "https://media.licdn.com/dms/image/v2/D4D03AQFzM7kRkVvxhQ/profile-displayphoto-crop_800_800/B4DZhqpHhUG8AM-/0/1754135821991?e=1762992000&v=beta&t=0McMVE1lk-fAB2dbNuI8_BqmZNXmw_Hnkrb_RYtDk9U"
+      },
+      {
+        "width": 200,
+        "expiresAt": 1762992000000,
+        "height": 200,
+        "url": "https://media.licdn.com/dms/image/v2/D4D03AQFzM7kRkVvxhQ/profile-displayphoto-scale_200_200/B4DZhqpHhUG8Ac-/0/1754135822083?e=1762992000&v=beta&t=6VXcaM2PK9xipJg0oHOLLAxQzRc0UQKJ7OEmIr_5SqU"
+      },
+      {
+        "width": 100,
+        "expiresAt": 1762992000000,
+        "height": 100,
+        "url": "https://media.licdn.com/dms/image/v2/D4D03AQFzM7kRkVvxhQ/profile-displayphoto-scale_100_100/B4DZhqpHhUG8Ag-/0/1754135822083?e=1762992000&v=beta&t=mWzoGWa-3HZG4aLFJDkl6YT1zjdMzBb6hSdXjN9G7qY"
+      }
+    ],
+    "educations": [
+      {
+        "companyId": "15105582",
+        "companyUrn": "urn:li:fsd_company:15105582",
+        "companyLink1": "https://www.linkedin.com/company/15105582/",
+        "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFSeGt81F28yg/company-logo_200_200/company-logo_200_200/0/1631325920062?e=1762992000&v=beta&t=fBazCGc6YCCw0GMzDYce8yuWNW1g8yxykIjFOTKKibg",
+        "title": "Indira Gandhi National Open University",
+        "subtitle": "BCA, Computer Science",
+        "caption": "Jun 2022 - Jun 2025",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "companyLink1": "https://www.linkedin.com/search/results/all/?keywords=NSTI+BHUBANESWAR",
+        "title": "NSTI BHUBANESWAR",
+        "subtitle": "Advance Diploma , IT",
+        "caption": "2019 - 2021",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Grade: 86"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "licenseAndCertificates": [
+      {
+        "companyId": "1441",
+        "companyUrn": "urn:li:fsd_company:1441",
+        "companyLink1": "https://www.linkedin.com/company/1441/",
+        "logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGv3cqOuUMY7g/company-logo_100_100/B4EZmhegXHGcAU-/0/1759350753990/google_logo?e=1762992000&v=beta&t=IRg6U5Y0wLiwKKScmm8QRs1ltqsQuamyWm_-jpDyPWM",
+        "title": "Prompt Design in Vertex AI Skill Badge",
+        "subtitle": "Google",
+        "caption": "Issued Apr 2025",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "companyLink1": null,
+        "title": "Introduction to Generative AI",
+        "subtitle": "Google",
+        "caption": "Issued Jan 2025",
+        "metadata": "Credential ID 13765204",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "honorsAndAwards": [],
+    "languages": [],
+    "volunteerAndAwards": [],
+    "verifications": [],
+    "promos": [],
+    "highlights": [],
+    "projects": [],
+    "publications": [],
+    "patents": [],
+    "courses": [],
+    "testScores": [],
+    "organizations": [],
+    "volunteerCauses": [],
+    "interests": [],
+    "recommendations": []
+  },
+  "metadata": {
+    "source": "dev_fusion/Linkedin-Profile-Scraper",
+    "savedAt": "2025-10-08T12:11:50.744Z"
+  }
+}

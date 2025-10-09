@@ -1,0 +1,107 @@
+{
+  "filename": "2ff8b9cc-baf1-468d-8ca6-0e0c672fa9a6.pdf",
+  "timestamp": "2025-09-29T08:42:46.902Z",
+  "processingTime": 6849,
+  "confidence": 98,
+  "extractedData": {
+    "name": "Vikash Kushwaha",
+    "email": "vikash.ku.2406@gmail.com",
+    "phone": "+91 9569083755",
+    "title": "AI Engineer & Generative AI",
+    "location": "Noida(UP)",
+    "summary": "Highly motivated AI Engineer with expertise in developing intelligent agents, GenAI solutions and LLMs. Skilled in Hugging Face, OpenAI API, Gemini API, LangChain, MERN stack and RAG techniques, vector databases and embedding. Strong background in full-stack development, system design and scalable AI-driven applications.",
+    "experience": [
+      {
+        "jobTitle": "Software Engineer - Trainee",
+        "company": "Round The Clock Technologies",
+        "duration": "June 2025 - Present",
+        "startDate": "2025-06",
+        "endDate": "Present",
+        "techUsed": [],
+        "description": "Develop client-focused full stack automation frameworks. Optimize test scripts and enhance performance, reducing manual testing, improving efficiency by 60%. Ensure high-quality software delivery through robust testing and monitoring.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Technology",
+        "field": "Computer Science Engineering(IOT)",
+        "university": "Raj Kumar Goel Institute Of Technology, Ghaziabad",
+        "year": "2025",
+        "percentage": null,
+        "gpa": "7.31",
+        "location": "Ghaziabad"
+      }
+    ],
+    "skills": [
+      "LLMs(OpenAI, Gemini)",
+      "LangChain",
+      "LangGraph",
+      "Hugging Face",
+      "VectorDB",
+      "RAG",
+      "Agentic AI",
+      "MCP-Server",
+      "AI-Chatbots",
+      "Docker",
+      "Git",
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "REST APIs",
+      "FastAPI",
+      "Java",
+      "JavaScript(ES6+)",
+      "Python",
+      "Problem Solving",
+      "Team Collaboration",
+      "Prompt Engineering"
+    ],
+    "projects": [
+      {
+        "name": "AI-Powered Ticket Management System",
+        "description": "Built an AI-powered ticketing system with smart categorization and automated routing, reducing manual workload by 50%. Implemented role-based authentication, moderator assignment, and background job processing. Integrated Gemini API, MongoDB, Inngest, and automated email notifications, improving response Time and reliability.",
+        "techUsed": [],
+        "duration": "July 2025",
+        "url": "https://ai-powered-ticket-assignment-system.vercel.app/login",
+        "achievements": []
+      },
+      {
+        "name": "AI-RAG-System",
+        "description": "Develop a multilingual Retrieval-Augmented Generation(RAG) system for the Indian Constitution. Integrated LangChain, Pinecone VectorDB, and Gemini API, enabling accurate question-answering in multiple languages.",
+        "techUsed": [
+          "React.js",
+          "Node.js",
+          "Tailwind CSS"
+        ],
+        "duration": "August 2025",
+        "url": "https://constitution-ai-rag-iyj4.vercel.app/",
+        "achievements": []
+      },
+      {
+        "name": "AI-DSA-Assistant ChatBot",
+        "description": "Developed an AI chatbot to assist with Data Structure & Algorithms, providing step-by-step coding guidance. Integrated Gemini AI models for accurate problem solving, reducing student debugging time by 60%.",
+        "techUsed": [
+          "React.js",
+          "Node.js",
+          "Tailwind CSS"
+        ],
+        "duration": "August 2025",
+        "url": "https://ai-dsa-assistant-chat-bot.vercel.app/",
+        "achievements": []
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Java Programming Certification",
+        "issuer": null,
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      }
+    ]
+  }
+}

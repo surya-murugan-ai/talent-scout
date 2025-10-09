@@ -1,0 +1,375 @@
+{
+  "filename": "Maria Antoniraj_.Net Lead_Tenjumps.pdf",
+  "timestamp": "2025-09-03T17:21:47.407Z",
+  "processingTime": 79814,
+  "confidence": 98,
+  "extractedData": {
+    "name": "Maria Antoniraj",
+    "email": "antoni651@gmail.com",
+    "phone": "+971502669478",
+    "title": "Senior Dotnet Developer",
+    "location": "Al Karama, Dubai, United Arab Emirates",
+    "summary": "8.6 Years of experience in the Requirements Gathering, analysis, design, and development of web applications and database design, Deployment and supporting using Microsoft Technologies. I am having good exposure on different domain like Insurance, Finance, Mutual Fund, Commercial, HRMS, and Healthcare projects for leading provider organizations. Good in Microsoft Visual Studio IDE using ASP.NET, C#, MVC 5.0, .Net Core, Web API, WCF, ORM (ADO, EF), Microservices, SQL, PL/SQL, OOPS, SOLID Principle, Design Pattern, AJAX, JavaScript, jQuery, HTML, CSS, Azure, git, LINQ, Angular. I hold a good knowledge of all the phases of software Development Life Cycle (SDLC) and possesses exceptional analytical and problem-solving skills and a good team player with excellent interpersonal and communication skills. I have completed my Bachelor of Computer Science and Master of Computer Application from India.",
+    "experience": [
+      {
+        "jobTitle": "Technical Lead II",
+        "company": "CitiusTech Healthcare Technology Pvt Ltd",
+        "duration": "Sep 2024 - Feb 2025",
+        "startDate": "2024-09",
+        "endDate": "2025-02",
+        "techUsed": [
+          ".Net Core",
+          "C#",
+          "Web API",
+          "WCF",
+          "jQuery",
+          "Ajax",
+          "GIT",
+          "Web Application",
+          "CSS",
+          "LINQ",
+          "bootstrap",
+          "SQL",
+          "Stored Procedure",
+          "Views",
+          "Microsoft Azure Cloud",
+          "Entity Framework",
+          "Design Pattern",
+          "microservices",
+          "unit testing",
+          "Angular"
+        ],
+        "description": "GE HealthCare provides clinicians with innovative imaging solutions and pharmaceutical diagnostic imaging agents for their radiology departments.",
+        "achievements": [
+          "Done some security-based enhancement and changes",
+          "Developed Finacle API",
+          "Developed and tested different cases",
+          "Back-end coding of Application and hardware setup",
+          "Maintained code versions on GitHub",
+          "Developed and integrated API",
+          "Deployed changes to git repository by DevOps"
+        ]
+      },
+      {
+        "jobTitle": "Senior Project Engineer",
+        "company": "Wipro Limited",
+        "duration": "Oct 2019 - Nov 2023",
+        "startDate": "2019-10",
+        "endDate": "2023-11",
+        "techUsed": [
+          "ASP.NET Webforms",
+          "ASP.NET MVC",
+          "C#",
+          "Web API",
+          "WCF",
+          "Windows Schedular",
+          "jQuery",
+          "Ajax",
+          "GIT",
+          "CSS",
+          "LINQ",
+          "bootstrap",
+          "SQL",
+          "Stored Procedure",
+          "Views",
+          "Microsoft Azure Cloud",
+          "ADO.NET",
+          "microservices",
+          "Angular"
+        ],
+        "description": "Worked on various projects including LEAP Portal and Project Management Information System (PMIS) for AVEVA Global.",
+        "achievements": [
+          "Developed and tested different cases",
+          "Back-end coding of Application and hardware setup",
+          "Maintained code versions on GitHub",
+          "Developed and integrated API",
+          "Deployed changes to git repository by DevOps"
+        ]
+      },
+      {
+        "jobTitle": ".Net Developer",
+        "company": "Future Focus Infotech Pvt Ltd (Client TCS)",
+        "duration": "Apr 2018 - Dec 2018",
+        "startDate": "2018-04",
+        "endDate": "2018-12",
+        "techUsed": [
+          "C# MVC",
+          ".Netcore",
+          "Web API",
+          "Entity Framework",
+          "StructureMap DI",
+          "jQuery",
+          "Microservices",
+          "Test Driven Development- Nunit",
+          "Moq",
+          "Agile Methodologies",
+          "Jira",
+          "Stash",
+          "GIT",
+          "VSTS",
+          "MICROSOFT AZURE Cloud",
+          "Design Pattern",
+          "unit testing"
+        ],
+        "description": "Worked on AVIVA Customer portal, a Hub with many micro applications.",
+        "achievements": [
+          "Followed agile based work mode with Scrum master",
+          "Worked story task in every sprint",
+          "Mentoring team members",
+          "Provided KT and trained new resources",
+          "Done test driven development and reviewed for quality code"
+        ]
+      },
+      {
+        "jobTitle": "Dotnet Developer",
+        "company": "JOULESTOWATTS BUSINESS SOLUTIONS pvt ltd (Client Capgemini)",
+        "duration": "Sep 2017 - March 2018",
+        "startDate": "2017-09",
+        "endDate": "2018-03",
+        "techUsed": [
+          "ASP.NET MVC",
+          "C#",
+          "Web Service",
+          "Web Application",
+          "WEB API",
+          "CSS",
+          "XML",
+          "SQL",
+          "Stored Procedure",
+          "Microsoft Azure cloud",
+          "git",
+          "microservices"
+        ],
+        "description": "Worked on MOSS 'Merchant Operations Support System'.",
+        "achievements": [
+          "Had support role in that dedicated team",
+          "Document preparation and database changes",
+          "Monitoring the entire application everyday",
+          "Written API function",
+          "Concentrated application performance, memory management and application security"
+        ]
+      },
+      {
+        "jobTitle": "Software Engineer",
+        "company": "Sterling Software pvt ltd",
+        "duration": "Feb 2016 - Aug 2017",
+        "startDate": "2016-02",
+        "endDate": "2017-08",
+        "techUsed": [
+          "ASP.NET Web Form",
+          "C#",
+          "Web Service",
+          "CSS",
+          "Java Script",
+          "MRT Report",
+          "Crystal Report",
+          "Stored Procedure",
+          "SQL",
+          "IIS",
+          "WCF",
+          "git",
+          "unit testing"
+        ],
+        "description": "Worked on CAMSOnline and Insunet projects.",
+        "achievements": [
+          "Developed Mutual Fund application in the Scratch level",
+          "Trained bellowed team members",
+          "Developed database design",
+          "Developed web services",
+          "Designed MRT Tool for report generation",
+          "Deployed changes to IIS Server"
+        ]
+      },
+      {
+        "jobTitle": "Junior Dotnet Developer",
+        "company": "Hesperus Infosys",
+        "duration": "Oct 2014 - Oct 2015",
+        "startDate": "2014-10",
+        "endDate": "2015-10",
+        "techUsed": [
+          "ASP.NET Web Form",
+          "C#",
+          "CSS",
+          "ADO.NET",
+          "Java Script",
+          "AJAX",
+          "SQL Server2008",
+          "Stored Procedure",
+          "Crystal Reports",
+          "IIS"
+        ],
+        "description": "Worked on HRMS - Human Resource Management System.",
+        "achievements": [
+          "Developed entire application with scratch level",
+          "Developed complete database design",
+          "Visited client place to understand the business process",
+          "Monitoring the application for daily basis",
+          "Concentrated application performance",
+          "Taken care of application deployment and server performance"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "M.C.A",
+        "field": "Computer Science",
+        "university": "St.Joseph’s College (Autonomous), Bharathidasan University",
+        "year": "2013",
+        "percentage": "77.8%",
+        "gpa": null,
+        "location": "Trichy, India"
+      },
+      {
+        "degree": "B. Sc",
+        "field": "Computer Science",
+        "university": "Sacred Heart College",
+        "year": "2010",
+        "percentage": "67%",
+        "gpa": null,
+        "location": "Tirupattur, Vellore, India"
+      }
+    ],
+    "skills": [
+      "C#",
+      "SQL",
+      "C",
+      "JavaScript",
+      "HTML",
+      "XML",
+      "CSS",
+      "jQuery",
+      "Ajax",
+      "Angular",
+      "IIS",
+      "Kestrel",
+      "Microsoft SQL Server 2008",
+      "Oracle 11",
+      "ASP.NET Web Form",
+      "ASP.NET MVC5",
+      ".Net Core",
+      "WEB API",
+      "WCF",
+      "ADO.NET",
+      "ENTITY FRAMEWORK",
+      "Microservices",
+      "MRT",
+      "Crystal Report",
+      "Visual Studio 2013",
+      "2012",
+      "2015",
+      "2017",
+      "2019",
+      "TFS",
+      "GIT",
+      "VSTS",
+      "MICROSOFT Azure"
+    ],
+    "projects": [
+      {
+        "name": "General Electric (GE) - Radiology",
+        "description": "GE HealthCare provides clinicians with innovative imaging solutions and pharmaceutical diagnostic imaging agents for their radiology departments.",
+        "techUsed": [
+          ".Net Core",
+          "C#",
+          "Web API",
+          "WCF",
+          "jQuery",
+          "Ajax",
+          "GIT",
+          "Web Application",
+          "CSS",
+          "LINQ",
+          "bootstrap",
+          "SQL",
+          "Stored Procedure",
+          "Views",
+          "Microsoft Azure Cloud",
+          "Entity Framework",
+          "Design Pattern",
+          "microservices",
+          "unit testing",
+          "Angular"
+        ],
+        "duration": "Sep 2024 - Feb 2025",
+        "url": null,
+        "achievements": [
+          "Done some security-based enhancement and changes",
+          "Developed Finacle API",
+          "Developed and tested different cases",
+          "Back-end coding of Application and hardware setup",
+          "Maintained code versions on GitHub",
+          "Developed and integrated API",
+          "Deployed changes to git repository by DevOps"
+        ]
+      },
+      {
+        "name": "Loreal India",
+        "description": "LEAP Portal is a web portal accessed by trainers of all divisions for education reporting, Scheduling calendar Record education activities.",
+        "techUsed": [
+          "ASP.NET Webforms",
+          "ASP.NET MVC",
+          "C#",
+          "Web API",
+          "WCF",
+          "Windows Schedular",
+          "jQuery",
+          "Ajax",
+          "GIT",
+          "CSS",
+          "LINQ",
+          "bootstrap",
+          "SQL",
+          "Stored Procedure",
+          "Views",
+          "Microsoft Azure Cloud",
+          "ADO.NET",
+          "microservices",
+          "Angular"
+        ],
+        "duration": "Aug 2023 - Nov 2023",
+        "url": null,
+        "achievements": [
+          "Developed and tested different cases",
+          "Back-end coding of Application and hardware setup",
+          "Maintained code versions on GitHub",
+          "Developed and integrated API",
+          "Deployed changes to git repository by DevOps"
+        ]
+      }
+    ],
+    "certifications": [
+      {
+        "name": "ASP.NET",
+        "issuer": "Shalom Infotech",
+        "date": "2012",
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "Azure Developer Associate",
+        "issuer": "Microsoft",
+        "date": "2025",
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "Hardware",
+        "issuer": "Systech",
+        "date": "2011",
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "Typewriting English",
+        "issuer": "Department of Technical Education, Tamil Nadu",
+        "date": "2011",
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      }
+    ]
+  }
+}

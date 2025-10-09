@@ -827,6 +827,259 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Quick Check: Search LinkedIn, score candidate, and save to database
+  app.post('/api/quick-check', async (req, res) => {
+    try {
+      const { name, email, company, title, location, com_id, saveToDatabase = true } = req.body;
+      
+      // Validate required fields
+      if (!name) {
+        return res.status(400).json({ 
+          error: "Name is required",
+          code: "MISSING_NAME"
+        });
+      }
+
+      const startTime = Date.now();
+      
+      console.log(`🔍 Quick Check for: ${name} (${title || 'N/A'}) at ${company || 'N/A'}`);
+
+      // Step 1: Check if candidate already exists by email
+      let existingCandidate = null;
+      if (email && saveToDatabase) {
+        try {
+          existingCandidate = await storage.getCandidateByEmail(email);
+        } catch (error) {
+          console.log('Could not check for existing candidate');
+        }
+      }
+
+      // Step 2: Search LinkedIn using Apify (with fuzzy search)
+      const { LinkedInService } = await import('./services/linkedin');
+      const linkedInService = new LinkedInService();
+      let linkedinUrl = null;
+      
+      try {
+        console.log(`🔍 Searching LinkedIn with fuzzy search for: ${name}`);
+        linkedinUrl = await linkedInService.searchProfiles(
+          name,
+          company,
+          title,
+          location
+        );
+        if (linkedinUrl) {
+          console.log(`✅ Found LinkedIn URL: ${linkedinUrl}`);
+        } else {
+          console.log(`⚠️ No LinkedIn profile found via Apify`);
+        }
+      } catch (error) {
+        console.error('❌ LinkedIn search error:', error);
+      }
+
+      // Step 3: Enrich profile if LinkedIn URL found
+      let linkedinProfile = null;
+      if (linkedinUrl) {
+        try {
+          linkedinProfile = await enrichLinkedInProfile(
+            linkedinUrl,
+            name,
+            company
+          );
+          console.log(`✅ LinkedIn profile enriched successfully`);
+        } catch (error) {
+          console.warn('LinkedIn enrichment failed:', error);
+        }
+      }
+
+      // Step 4: Get scoring weights
+      let weights: { openToWork: number; skillMatch: number; jobStability: number; engagement: number; companyDifference: number } = {
+        openToWork: 40,
+        skillMatch: 30,
+        jobStability: 15,
+        engagement: 15,
+        companyDifference: 15
+      };
+
+      if (com_id) {
+        try {
+          const config = await storage.getScoringConfig(com_id);
+          if (config) {
+            weights = {
+              openToWork: config.openToWork,
+              skillMatch: config.skillMatch,
+              jobStability: config.jobStability,
+              engagement: config.platformEngagement,
+              companyDifference: 15
+            };
+          }
+        } catch (error) {
+          console.log('Using default weights');
+        }
+      }
+
+      // Step 5: Analyze with AI
+      const candidateData = {
+        name,
+        email,
+        title,
+        company,
+        location,
+        skills: linkedinProfile?.skills?.join(', ') || '',
+        linkedinProfile: linkedinProfile,
+        resumeCompany: company,
+        linkedinCompany: linkedinProfile?.company
+      };
+
+      const analysis = await analyzeCandidate(candidateData, "", weights);
+      console.log(`✅ AI analysis completed: Score ${analysis.overallScore}`);
+
+      // Step 6: Calculate hireability
+      const hasCompanyDifference = company && linkedinProfile?.company && 
+        company !== linkedinProfile.company;
+      
+      let hireabilityScore = 0;
+      // Base score from AI analysis (40%)
+      hireabilityScore += analysis.overallScore * 4;
+      // Company difference bonus (20%)
+      if (hasCompanyDifference) hireabilityScore += 20;
+      // Open to work bonus (20%)
+      if (linkedinProfile?.openToWork) hireabilityScore += 20;
+      // Recent activity bonus (10%)
+      if (linkedinProfile?.lastActive && linkedinProfile.lastActive.includes('week')) hireabilityScore += 10;
+      // Skills bonus (10%)
+      if (linkedinProfile?.skills && linkedinProfile.skills.length >= 5) hireabilityScore += 10;
+      hireabilityScore = Math.min(hireabilityScore, 100);
+
+      const companyDifference = hasCompanyDifference ? "Different" : "Same";
+      const companyDifferenceScore = hasCompanyDifference ? weights.companyDifference : 0;
+
+      // Step 7: Save to database if requested
+      let savedCandidate = null;
+      if (saveToDatabase) {
+        try {
+          if (existingCandidate) {
+            savedCandidate = await storage.updateCandidate(existingCandidate.id, {
+              title: title || existingCandidate.title,
+              company: company || existingCandidate.company,
+              currentEmployer: linkedinProfile?.company || existingCandidate.currentEmployer,
+              linkedinUrl: linkedinUrl || existingCandidate.linkedinUrl,
+              location: location || existingCandidate.location,
+              skills: linkedinProfile?.skills || existingCandidate.skills,
+              score: analysis.overallScore,
+              priority: analysis.priority,
+              openToWork: linkedinProfile?.openToWork || false,
+              lastActive: linkedinProfile?.lastActive || 'Unknown',
+              notes: `Quick check: ${analysis.insights.join('; ')}`,
+              companyDifference: companyDifference,
+              companyDifferenceScore: companyDifferenceScore,
+              hireabilityScore: hireabilityScore,
+              potentialToJoin: hireabilityScore >= 70 ? 'High' : hireabilityScore >= 50 ? 'Medium' : 'Low',
+              enrichedData: linkedinProfile,
+              source: 'quick-check',
+              comId: com_id || null
+            });
+            console.log(`✅ Updated existing candidate: ${existingCandidate.id}`);
+          } else {
+            savedCandidate = await storage.createCandidate({
+              name,
+              email: email || null,
+              title: title || null,
+              company: company || null,
+              currentEmployer: linkedinProfile?.company || null,
+              linkedinUrl: linkedinUrl || null,
+              location: location || null,
+              skills: linkedinProfile?.skills || [],
+              score: analysis.overallScore,
+              priority: analysis.priority,
+              openToWork: linkedinProfile?.openToWork || false,
+              lastActive: linkedinProfile?.lastActive || 'Unknown',
+              notes: `Quick check: ${analysis.insights.join('; ')}`,
+              companyDifference: companyDifference,
+              companyDifferenceScore: companyDifferenceScore,
+              hireabilityScore: hireabilityScore,
+              potentialToJoin: hireabilityScore >= 70 ? 'High' : hireabilityScore >= 50 ? 'Medium' : 'Low',
+              enrichedData: linkedinProfile,
+              source: 'quick-check',
+              comId: com_id || null
+            });
+            console.log(`✅ Created new candidate: ${savedCandidate.id}`);
+          }
+
+          await storage.createActivity({
+            type: "quick_check",
+            message: "Quick check completed",
+            details: `${name} - Score: ${analysis.overallScore}, Priority: ${analysis.priority}`
+          });
+        } catch (dbError) {
+          console.error('Failed to save to database:', dbError);
+        }
+      }
+
+      const processingTime = Date.now() - startTime;
+
+      res.json({
+        success: true,
+        data: {
+          candidateId: savedCandidate?.id || null,
+          candidateInfo: {
+            name,
+            email,
+            providedCompany: company,
+            providedTitle: title,
+            location
+          },
+          linkedinProfile: linkedinProfile ? {
+            profileUrl: linkedinUrl,
+            currentCompany: linkedinProfile.company,
+            currentTitle: linkedinProfile.title,
+            skills: linkedinProfile.skills,
+            openToWork: linkedinProfile.openToWork,
+            lastActive: linkedinProfile.lastActive,
+            jobHistory: linkedinProfile.jobHistory,
+            recentActivity: linkedinProfile.recentActivity
+          } : null,
+          scoring: {
+            skillMatch: analysis.skillMatch,
+            openToWork: analysis.openToWork,
+            jobStability: analysis.jobStability,
+            engagement: analysis.engagement,
+            companyConsistency: analysis.companyConsistency,
+            overallScore: analysis.overallScore,
+            priority: analysis.priority
+          },
+          hireability: {
+            score: hireabilityScore,
+            potentialToJoin: hireabilityScore >= 70 ? 'High' : hireabilityScore >= 50 ? 'Medium' : 'Low',
+            factors: {
+              openToWork: linkedinProfile?.openToWork || false,
+              companyMatch: !hasCompanyDifference,
+              recentActivity: linkedinProfile?.lastActive?.includes('week') || false,
+              skillsAvailable: (linkedinProfile?.skills?.length || 0) > 0
+            }
+          },
+          insights: analysis.insights,
+          companyDifference: hasCompanyDifference ? 
+            `Different (Resume: ${company}, LinkedIn: ${linkedinProfile?.company})` : 
+            'Same',
+          savedToDatabase: saveToDatabase && savedCandidate !== null,
+          isExistingCandidate: existingCandidate !== null
+        },
+        processingTime,
+        message: saveToDatabase ? 
+          (existingCandidate ? "Candidate updated in database" : "New candidate saved to database") :
+          "Quick check completed - data not saved"
+      });
+
+    } catch (error) {
+      console.error('Quick check failed:', error);
+      res.status(500).json({ 
+        error: "Quick check failed",
+        message: error instanceof Error ? error.message : "Unknown error",
+        code: "QUICK_CHECK_ERROR"
+      });
+    }
+  });
+
   // Enrich existing candidate with real LinkedIn data
   app.patch('/api/candidates/:id/enrich', async (req, res) => {
     try {

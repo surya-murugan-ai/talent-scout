@@ -1,0 +1,79 @@
+{
+  "filename": "c6dfcef8-aef6-4dad-b359-77a2522205e2.pdf",
+  "timestamp": "2025-09-29T08:59:01.575Z",
+  "processingTime": 4070,
+  "confidence": 92,
+  "extractedData": {
+    "name": "LIKITHA.C",
+    "email": "likithac603@gmail.com",
+    "phone": "6361981895",
+    "title": "Webdeveloper",
+    "location": "Bangalore",
+    "summary": "Entrylevelwebdeveloperwith6+monthsofexperienceinDesigningand Developing.Seekinganopportunitytoexpandmydevelopmentskillsandgain successfromawell-versedcompany.GoodexperienceinFigmadesigningand webdevelopment.",
+    "experience": [
+      {
+        "jobTitle": "WebDeveloper",
+        "company": "Slyaka",
+        "duration": "02/2023-present",
+        "startDate": "2023-02",
+        "endDate": "Present",
+        "techUsed": [],
+        "description": "DevelopedthewebsiteofSlyakacompanywhichshowstheservicesprovided bythecompany. Managingthelivewebsiteandprovidingdevelopmentservices.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Designer-Intern",
+        "company": "ShopEG",
+        "duration": "03/2022-06/2022",
+        "startDate": "2022-03",
+        "endDate": "2022-06",
+        "techUsed": [
+          "Figma"
+        ],
+        "description": "DesignedafewcatalogpostersforShopEG,theretailapp. PostersdesignedinFigmausingdifferentstylesandthemestoattractthe customers Catalogincludespriceandoffersavailablefortheretailproducts.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Sc.(PCM)",
+        "field": null,
+        "university": "Soundarya Institute of Management and Science",
+        "year": "2021",
+        "percentage": null,
+        "gpa": null,
+        "location": "Bangalore University"
+      },
+      {
+        "degree": "Pre-University",
+        "field": null,
+        "university": "Soundarya Composite PU College",
+        "year": "2018",
+        "percentage": null,
+        "gpa": null,
+        "location": "Karnataka Board"
+      },
+      {
+        "degree": "SSLC",
+        "field": null,
+        "university": "Standard English School",
+        "year": "2016",
+        "percentage": null,
+        "gpa": null,
+        "location": "Karnataka Board"
+      }
+    ],
+    "skills": [
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "Javascript",
+      "ReactJs",
+      "Figma",
+      "PowerBI",
+      "SQL"
+    ],
+    "projects": [],
+    "certifications": []
+  }
+}

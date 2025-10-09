@@ -1,0 +1,145 @@
+{
+  "filename": "b1c3fbf8-ea26-4826-b9f4-80241f1e2e26.pdf",
+  "timestamp": "2025-09-16T06:40:45.372Z",
+  "processingTime": 8118,
+  "confidence": 93,
+  "rawText": "\n\n \n \n \n \n \n \n \n \n \n \n \n98alvita@gmail.com \n \n+91 8749019556 \n \nBangalore \n \nSKILLS \n \n \n \n \n \n   \n \n \n \nLANGUAGES \n \nEnglish \nFull Professional Proficiency \n \nKannada \nNative or Bilingual Proficiency \n \nHindi \n   Full Professional Proficiency \n \nTulu \nNative or Bilingual Proficiency \n \nKonkani \nNative or Bilingual Proficiency \n \n \n \nINTERESTS \n \nWORK EXPERIENCE – 1.4 YEARS \n \nPHP Developer                                                                                                        Bangalore \nSilqen Software Pvt. Ltd. \n06/2022 – 04/2023 \nAchievements/Tasks \nStrong knowledge of PHP web frameworks such as Laravel. \nWorked on large scale Laravel applications. \nGood knowledge of web technologies including HTML, CSS, JavaScript, jQuery and AJAX etc. \nGood knowledge in MySQL, Database design and query \noptimization  \n \nPHP Developer \nAszen Technologies(OPC) Pvt. Ltd. \n01/2022 - 05/2022, Bangalore \nAchievements/Tasks \nDesigned and developed web applications using PHP \nCreated user interface by using standard HTML, CSS and Bootstrap \npractices. \nEfficient, testable, and reusable PHP modules. \nKnowledge of object-oriented PHP programming \n \n \nProjects \n*Light Age Masters (https://lightagemasters.com/)                                                \nDescription: \nLightAgeMasters is a non-political and non-religious charitable trust.  \nMainly focus of this website is the wellbeing of its client’s and spiritual guidance. \nThe objective of this project is to manage organization’s student activities.  \nAlmost the whole website is dynamic including all the contents you see in frontend.   \nIt Contains around fourteen modules which has their own functionalities. \nEnvironment: HTML5, Bootstrap, CSS, JavaScript, jQuery, PHP, MySQL, Laravel framework. \n \n*SchoolsPe (https://www.schoolspe.com/)                          \nDescription: \nSchoolsPe is the premier destination for student admissions across all disciplines, \nfrom pre -university to business school. \nOffers a convenient platform for educational institutions and the student-parent community \nto smoothen the admission process. \nEnvironment: HTML5, Bootstrap, CSS, JavaScript, jQuery, PHP, MySQL, Laravel framework. \n \nEDUCATION \n \nMaster of Science (Information Science) \nManipal Academy of Higher Education, Manipal  \n06/2018 - 07/2020 \n \nBachelor of Science (Computer Science) \nMangalore University, Mangalore  \n06/2015 - 07/2018 \n \n  \nAjax HTML CSS \nAlvita Roycy Castelino  \nPHP Developer \n \nPHP Developer with strong ability to collaborate with multiple teams to accomplish various projects. Successfully developed \ncustom solutions to solve challenges and engineered designs to meet predetermined functionality goals. \nReading \nLaravel \nPHP MySQL \nJavaScript jQuery \nBootstrap \nLearning Programming ",
+  "extractedData": {
+    "name": "Alvita Roycy Castelino",
+    "email": "98alvita@gmail.com",
+    "phone": "+91 8749019556",
+    "linkedinUrl": null,
+    "githubUrl": null,
+    "portfolioUrl": null,
+    "location": "Bangalore",
+    "title": "PHP Developer",
+    "summary": "PHP Developer with strong ability to collaborate with multiple teams to accomplish various projects. Successfully developed custom solutions to solve challenges and engineered designs to meet predetermined functionality goals.",
+    "experience": [
+      {
+        "jobTitle": "PHP Developer",
+        "company": "Silqen Software Pvt. Ltd.",
+        "duration": "06/2022 - 04/2023",
+        "startDate": "2022-06",
+        "endDate": "2023-04",
+        "techUsed": [
+          "PHP",
+          "Laravel",
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "jQuery",
+          "AJAX",
+          "MySQL"
+        ],
+        "description": "Strong knowledge of PHP web frameworks such as Laravel. Worked on large scale Laravel applications. Good knowledge of web technologies including HTML, CSS, JavaScript, jQuery and AJAX etc. Good knowledge in MySQL, Database design and query optimization.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "PHP Developer",
+        "company": "Aszen Technologies(OPC) Pvt. Ltd.",
+        "duration": "01/2022 - 05/2022",
+        "startDate": "2022-01",
+        "endDate": "2022-05",
+        "techUsed": [
+          "PHP",
+          "HTML",
+          "CSS",
+          "Bootstrap"
+        ],
+        "description": "Designed and developed web applications using PHP. Created user interface by using standard HTML, CSS and Bootstrap practices. Efficient, testable, and reusable PHP modules. Knowledge of object-oriented PHP programming.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Master of Science",
+        "field": "Information Science",
+        "university": "Manipal Academy of Higher Education",
+        "year": null,
+        "percentage": null,
+        "gpa": null,
+        "location": "Manipal"
+      },
+      {
+        "degree": "Bachelor of Science",
+        "field": "Computer Science",
+        "university": "Mangalore University",
+        "year": null,
+        "percentage": null,
+        "gpa": null,
+        "location": "Mangalore"
+      }
+    ],
+    "projects": [
+      {
+        "name": "Light Age Masters",
+        "description": "LightAgeMasters is a non-political and non-religious charitable trust. Mainly focus of this website is the wellbeing of its client’s and spiritual guidance. The objective of this project is to manage organization’s student activities. Almost the whole website is dynamic including all the contents you see in frontend. It Contains around fourteen modules which has their own functionalities.",
+        "techUsed": [
+          "HTML5",
+          "Bootstrap",
+          "CSS",
+          "JavaScript",
+          "jQuery",
+          "PHP",
+          "MySQL",
+          "Laravel framework"
+        ],
+        "duration": null,
+        "url": "https://lightagemasters.com/",
+        "achievements": []
+      },
+      {
+        "name": "SchoolsPe",
+        "description": "SchoolsPe is the premier destination for student admissions across all disciplines, from pre-university to business school. Offers a convenient platform for educational institutions and the student-parent community to smoothen the admission process.",
+        "techUsed": [
+          "HTML5",
+          "Bootstrap",
+          "CSS",
+          "JavaScript",
+          "jQuery",
+          "PHP",
+          "MySQL",
+          "Laravel framework"
+        ],
+        "duration": null,
+        "url": "https://www.schoolspe.com/",
+        "achievements": []
+      }
+    ],
+    "achievements": [],
+    "certifications": [],
+    "skills": [
+      "PHP",
+      "Laravel",
+      "MySQL",
+      "JavaScript",
+      "jQuery",
+      "Bootstrap",
+      "Ajax",
+      "HTML",
+      "CSS"
+    ],
+    "interests": [
+      "Reading",
+      "Learning Programming"
+    ],
+    "languages": [
+      "English",
+      "Kannada",
+      "Hindi",
+      "Tulu",
+      "Konkani"
+    ],
+    "salary": null,
+    "availability": null,
+    "remotePreference": null,
+    "visaStatus": null,
+    "originalData": {
+      "filename": "b1c3fbf8-ea26-4826-b9f4-80241f1e2e26.pdf",
+      "rawText": "98alvita@gmail.com +91 8749019556 Bangalore SKILLS LANGUAGES English Full Professional Proficiency Kannada Native or Bilingual Proficiency Hindi Full Professional Proficiency Tulu Native or Bilingual Proficiency Konkani Native or Bilingual Proficiency INTERESTS WORK EXPERIENCE – 1.4 YEARS PHP Developer Bangalore Silqen Software Pvt. Ltd. 06/2022 – 04/2023 Achievements/Tasks Strong knowledge of PHP web frameworks such as Laravel. Worked on large scale Laravel applications. Good knowledge of web technologies including HTML, CSS, JavaScript, jQuery and AJAX etc. Good knowledge in MySQL, Database design and query optimization PHP Developer Aszen Technologies(OPC) Pvt. Ltd. 01/2022 - 05/2022, Bangalore Achievements/Tasks Designed and developed web applications using PHP Created user interface by using standard HTML, CSS and Bootstrap practices. Efficient, testable, and reusable PHP modules. Knowledge of object-oriented PHP programming Projects *Light Age Masters (https://lightagemasters.com/) Description: LightAgeMasters is a non-political and non-religious charitable trust. Mainly focus of this website is the wellbeing of its client’s and spiritual guidance. The objective of this project is to manage organization’s student activities. Almost the whole website is dynamic including all the contents you see in frontend. It Contains around fourteen modules which has their own functionalities. Environment: HTML5, Bootstrap, CSS, JavaScript, jQuery, PHP, MySQL, Laravel framework. *SchoolsPe (https://www.schoolspe.com/) Description: SchoolsPe is the premier destination for student admissions across all disciplines, from pre -university to business school. Offers a convenient platform for educational institutions and the student-parent community to smoothen the admission process. Environment: HTML5, Bootstrap, CSS, JavaScript, jQuery, PHP, MySQL, Laravel framework. EDUCATION Master of Science (Information Science) Manipal Academy of Higher Education, Manipal 06/2018 - 07/2020 B"
+    },
+    "source": "resume",
+    "confidence": 93,
+    "processingTime": 0
+  }
+}

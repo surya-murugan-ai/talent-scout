@@ -1,0 +1,114 @@
+{
+  "filename": "57b4ef25-abc9-4b08-821d-1ac8dcbe1c7c.pdf",
+  "timestamp": "2025-09-16T06:40:32.968Z",
+  "processingTime": 7844,
+  "confidence": 95,
+  "rawText": "\n\n \nCURRICULUM VITAE  ( Immediate Joining) \n  \nName      :-   Soni  kumari   \n \n Address      :-   BTM 1st stage,Bangalore-560068 \n Contact No :-   7979068204,   +91 8016836457      \nE-mail  Address :-  soni.sikkim21@gmail.com \n \n  \nCareer Objective:  \n \nIn search of a position which  would  help  me to utilize  my skills developed during  my graduate \nstudies and offer me excellent opportunity to develop my career. \n \n \nSummery: \n \n1 Year  of  Experience in PHP, Laravel,Javascript, jQuery, MYSQL. \nStrong Development Experience in PHP, OOps concepts, MYSQL, HTML ,CodeIgniter \nCompetent knowledge and skills in Object Oriented Design and Programming. \nExcellent analytical and logical programming skills with a good understanding  \nat the conceptual level. \nWorking Friendly with Git,. \nAbility to work in a dynamic environment . \n \n \nPROFESSIONAL EXPERIENCE:  \nTitle: Job portal \nACADEMIC PROFILE: \n2013-18 B.Tech Information Technology from Sikkim Manipal Institute of \nTechnology, Sikkim (Gangtok) with 60% \n2011-13 12th from Evening College,Saharsa (BSEB) With 68%.  \n2008-09 10th from St.joseph Pub School,Bihar (CBSE) With 63% \n  \nRole :   Laravel PHP Developer ,(1 year Experience) \nEnvironment :   Php, MySql. \n \nResponsibilities \n \n: \n  \n  Developing application using Laravel PHP and MySql, Creation of  custom web page \nfor the content based website where the description of the customer  relationship  \nmanagement (CRM) ,Expo Management and all details developed by me as developer \nunder the guidance of one senior developer and designer. \n  Functional and Unit Testing of the project as per the client requirement. \n  Make reports. \n \n  \n\n \nSkills:   \nProgramming Languages : Php ,Laravel \nWeb Programming Skills : jQuery, HTML, CSS, PHP. CodeIgniter \nDatabase          : MYSQL. \nScripts          : JavaScript,jQuery and Ajax \nOperating Systems  : Windows7/8/8.1,Linux \n \nProjects:-  \n \n Worked as Laravel PHP developer and developed page for details of the clients listing \nand full details page of CRM (Customer Relationship Management) like FXOD, Money \nExpo and the functionality for Clients,lead,Deposits,Withdrawals of the clients with \ndynamic content and login for Members. \n \n • Internship Project, HP Kolkata \n Project based on‘Online Atm. \n  Training in Core Java conducted at HP Kolkata. \n \nTraining:-  \n \n Completed (JAVA,J2EE,SQL,Hibernate,Spring & Web Technologies) Training from Jspiders BTM \nBangalore. \n \nAchievements: \n1. Got appreciation amount from dedicated client and many appreciation email and review. \n2. Presented at well-known Project, Programming and applications conference . \nPersonal Profile: \nName          : Soni Kumari  \n   Daughter  of      : Kedar Panjiyar \n   Date of birth             : 12 Jan 1994 \n   Gender              : Female \n   Marital Status     :Unmarried  \n   Nationality             : Indian \n   Hobbies                     : Singing,Web Surfing,Movies. \n   Languages Known            : English,Hindi \n  Permanent Address    : Dahlan Road,  \n                                      Saharsa,Bihar-852201 \n \nDeclaration: \n                       I hereby declare that the above-mentioned information is correct up to my knowledge and I bear the \nresponsibility for the correctness of the above-mentioned  particulars. \n \nPlace:                                                                              (Signature) ",
+  "extractedData": {
+    "name": "Soni Kumari",
+    "email": "soni.sikkim21@gmail.com",
+    "phone": "7979068204",
+    "linkedinUrl": null,
+    "githubUrl": null,
+    "portfolioUrl": null,
+    "location": "BTM 1st stage, Bangalore",
+    "title": "Laravel PHP Developer",
+    "summary": "1 Year of Experience in PHP, Laravel, Javascript, jQuery, MYSQL. Strong Development Experience in PHP, OOps concepts, MYSQL, HTML, CodeIgniter. Competent knowledge and skills in Object Oriented Design and Programming. Excellent analytical and logical programming skills with a good understanding at the conceptual level. Working Friendly with Git. Ability to work in a dynamic environment.",
+    "experience": [
+      {
+        "jobTitle": "Laravel PHP Developer",
+        "company": null,
+        "duration": null,
+        "startDate": null,
+        "endDate": null,
+        "techUsed": [
+          "PHP",
+          "MySQL",
+          "Laravel"
+        ],
+        "description": "Developing application using Laravel PHP and MySql, Creation of custom web page for the content based website where the description of the customer relationship management (CRM), Expo Management and all details developed by me as developer under the guidance of one senior developer and designer. Functional and Unit Testing of the project as per the client requirement. Make reports.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Tech",
+        "field": "Information Technology",
+        "university": "Sikkim Manipal Institute of Technology",
+        "year": "2018",
+        "percentage": "60%",
+        "gpa": null,
+        "location": "Sikkim (Gangtok)"
+      }
+    ],
+    "projects": [
+      {
+        "name": "Job portal",
+        "description": "Developed page for details of the clients listing and full details page of CRM (Customer Relationship Management) like FXOD, Money Expo and the functionality for Clients, lead, Deposits, Withdrawals of the clients with dynamic content and login for Members.",
+        "techUsed": [
+          "Laravel",
+          "PHP"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Online Atm",
+        "description": "Internship Project at HP Kolkata.",
+        "techUsed": [
+          "Core Java"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "achievements": [
+      {
+        "title": "Appreciation from client",
+        "description": "Got appreciation amount from dedicated client and many appreciation email and review.",
+        "year": null,
+        "organization": null
+      },
+      {
+        "title": "Conference Presentation",
+        "description": "Presented at well-known Project, Programming and applications conference.",
+        "year": null,
+        "organization": null
+      }
+    ],
+    "certifications": [],
+    "skills": [
+      "PHP",
+      "Laravel",
+      "jQuery",
+      "HTML",
+      "CSS",
+      "CodeIgniter",
+      "MySQL",
+      "JavaScript",
+      "Ajax"
+    ],
+    "interests": [
+      "Singing",
+      "Web Surfing",
+      "Movies"
+    ],
+    "languages": [
+      "English",
+      "Hindi"
+    ],
+    "salary": null,
+    "availability": "Immediate",
+    "remotePreference": null,
+    "visaStatus": "Indian",
+    "originalData": {
+      "filename": "57b4ef25-abc9-4b08-821d-1ac8dcbe1c7c.pdf",
+      "rawText": "CURRICULUM VITAE ( Immediate Joining) Name :- Soni kumari Address :- BTM 1st stage,Bangalore-560068 Contact No :- 7979068204, +91 8016836457 E-mail Address :- soni.sikkim21@gmail.com Career Objective: In search of a position which would help me to utilize my skills developed during my graduate studies and offer me excellent opportunity to develop my career. Summery: 1 Year of Experience in PHP, Laravel,Javascript, jQuery, MYSQL. Strong Development Experience in PHP, OOps concepts, MYSQL, HTML ,CodeIgniter Competent knowledge and skills in Object Oriented Design and Programming. Excellent analytical and logical programming skills with a good understanding at the conceptual level. Working Friendly with Git,. Ability to work in a dynamic environment . PROFESSIONAL EXPERIENCE: Title: Job portal ACADEMIC PROFILE: 2013-18 B.Tech Information Technology from Sikkim Manipal Institute of Technology, Sikkim (Gangtok) with 60% 2011-13 12th from Evening College,Saharsa (BSEB) With 68%. 2008-09 10th from St.joseph Pub School,Bihar (CBSE) With 63% Role : Laravel PHP Developer ,(1 year Experience) Environment : Php, MySql. Responsibilities : Developing application using Laravel PHP and MySql, Creation of custom web page for the content based website where the description of the customer relationship management (CRM) ,Expo Management and all details developed by me as developer under the guidance of one senior developer and designer. Functional and Unit Testing of the project as per the client requirement. Make reports. Skills: Programming Languages : Php ,Laravel Web Programming Skills : jQuery, HTML, CSS, PHP. CodeIgniter Database : MYSQL. Scripts : JavaScript,jQuery and Ajax Operating Systems : Windows7/8/8.1,Linux Projects:-  Worked as Laravel PHP developer and developed page for details of the clients listing and full details page of CRM (Customer Relationship Management) like FXOD, Money Expo and the functionality for Clients,lead,Deposits,Withdrawals of the clients with dyna"
+    },
+    "source": "resume",
+    "confidence": 95,
+    "processingTime": 0
+  }
+}

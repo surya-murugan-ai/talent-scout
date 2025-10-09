@@ -1,0 +1,559 @@
+{
+  "timestamp": "2025-10-08T14:54:36.196Z",
+  "linkedinUrl": "https://www.linkedin.com/in/surya-murugan-ragaiyan",
+  "rawData": {
+    "linkedinUrl": "https://www.linkedin.com/in/surya-murugan-ragaiyan",
+    "firstName": "Surya",
+    "lastName": "Murugan",
+    "fullName": "Surya Murugan",
+    "headline": "Python Backend Developer || Machine Learning || Deep Learning || Agentic AI || Flask || Django || DRF ||  SQL -- Open for Opportunity.",
+    "connections": 740,
+    "followers": 737,
+    "email": "surya@aimplify.tech",
+    "mobileNumber": null,
+    "jobTitle": "Full Stack Developer",
+    "companyName": "Aimplify",
+    "companyIndustry": "Internet",
+    "companyWebsite": "aimplify.tech",
+    "companyLinkedin": "linkedin.com/company/aimplifytech",
+    "companyFoundedIn": 2023,
+    "companySize": "11-50",
+    "currentJobDuration": "6 mos",
+    "currentJobDurationInYrs": 0.5,
+    "topSkillsByEndorsements": null,
+    "addressCountryOnly": "India",
+    "addressWithCountry": "Mumbai, Maharashtra, India",
+    "addressWithoutCountry": "Mumbai, Maharashtra",
+    "profilePic": "https://media.licdn.com/dms/image/v2/D4D03AQFtW1Tu737xkQ/profile-displayphoto-scale_400_400/B4DZnAWfbzGkAg-/0/1759868746827?e=1762992000&v=beta&t=1pipAdT44FYvs1YIIYwD8E-qE0cBKospnEbq9C46qSs",
+    "profilePicHighQuality": "https://media.licdn.com/dms/image/v2/D4D03AQFtW1Tu737xkQ/profile-displayphoto-crop_800_800/B4DZnAWfbzGkAI-/0/1759868746734?e=1762992000&v=beta&t=t_Hv0RxFzCy4QNr66d7xwiQvlv4iqrZoTLM9oPXBsqA",
+    "about": "Passionate Software & AI Developer with expertise in Python, Django, SQL, and machine learning. I specialize in building AI-driven applications, finance tools, and automation solutions that optimize efficiency and decision-making.\n\nI’ve developed projects like:\n\nEvent Job Portal – A Django-based platform with real-time communication and social features for recruiters and employees.\nMental Health Companion – An AI-powered tool using machine learning and web scraping to assess mental health and recommend nearby therapists.\nCurrently exploring deep learning, AI agents, and finance applications, with a strong focus on AI-driven automation and trading solutions. Open to collaborations and opportunities in AI, software development, and fintech innovation.\n\nLet’s connect and build something impactful! 🚀",
+    "publicIdentifier": "surya-murugan-ragaiyan",
+    "openConnection": null,
+    "urn": "ACoAADbFvlIBgwsNAgs9u8Lc8KMxJql2btTtsQs",
+    "experiences": [
+      {
+        "companyId": "100532730",
+        "companyUrn": "urn:li:fsd_company:100532730",
+        "companyLink1": "https://www.linkedin.com/company/100532730/",
+        "logo": "https://media.licdn.com/dms/image/v2/D560BAQGovr4JtIupxw/company-logo_200_200/company-logo_200_200/0/1708618538994?e=1762992000&v=beta&t=k-xZc7NwH7njEB12ZsTNqFhQcu2sfKmjBIHti3LKiRo",
+        "title": "Full Stack Developer",
+        "subtitle": "Aimplify · Full-time",
+        "caption": "May 2025 - Present · 6 mos",
+        "metadata": "Bengaluru, Karnataka, India · On-site",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "companyId": "27510417",
+        "companyUrn": "urn:li:fsd_company:27510417",
+        "companyLink1": "https://www.linkedin.com/company/27510417/",
+        "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQEr_Uta0N_sxA/company-logo_200_200/company-logo_200_200/0/1660024845585/sapat_international_private_limited_logo?e=1762992000&v=beta&t=IbYU0LIKpLS27BcoKfl6YrCbC5xsXaiZ2WyzBT3w2xQ",
+        "title": "Software Developer",
+        "subtitle": "Sapat International · Full-time",
+        "caption": "Apr 2024 - May 2025 · 1 yr 2 mos",
+        "metadata": "Worli, Maharashtra, India · On-site",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "updates": [],
+    "skills": [
+      {
+        "title": "n8n",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Full Stack Developer at Aimplify"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "AI Agents",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Full Stack Developer at Aimplify"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "JavaScript",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Full Stack Developer at Aimplify"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Databases",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Full Stack Developer at Aimplify"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Artificial Intelligence (AI)",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Supervised Machine Learning: Regression and Classification "
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Finance",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "SEBI :- Investor Certification Examination"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Financial Education",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "SEBI :- Investor Certification Examination"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Investments",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "SEBI :- Investor Certification Examination"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Linux",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Software Developer at Sapat International"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Object-Relational Mapping (ORM)",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Software Developer at Sapat International"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Nginx",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Bootstrap (Framework)",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Django",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Software Developer at Sapat International"
+              },
+              {
+                "type": "insightComponent",
+                "text": "Saraswati Education Societys Saraswati College of Engineering Kharghar Navi Mumbai"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Teamwork",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Web Scraping",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "SQL",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Software Developer at Sapat International"
+              },
+              {
+                "type": "insightComponent",
+                "text": "Saraswati Education Societys Saraswati College of Engineering Kharghar Navi Mumbai"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Python (Programming Language)",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "2 experiences across Aimplify and 1 other company"
+              },
+              {
+                "type": "insightComponent",
+                "text": "Passed LinkedIn Skill Assessment"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "English",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "HTML",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Git",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Software Developer at Sapat International"
+              },
+              {
+                "type": "insightComponent",
+                "text": "Saraswati Education Societys Saraswati College of Engineering Kharghar Navi Mumbai"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "profilePicAllDimensions": [
+      {
+        "width": 400,
+        "expiresAt": 1762992000000,
+        "height": 400,
+        "url": "https://media.licdn.com/dms/image/v2/D4D03AQFtW1Tu737xkQ/profile-displayphoto-scale_400_400/B4DZnAWfbzGkAg-/0/1759868746827?e=1762992000&v=beta&t=1pipAdT44FYvs1YIIYwD8E-qE0cBKospnEbq9C46qSs"
+      },
+      {
+        "width": 100,
+        "expiresAt": 1762992000000,
+        "height": 100,
+        "url": "https://media.licdn.com/dms/image/v2/D4D03AQFtW1Tu737xkQ/profile-displayphoto-scale_100_100/B4DZnAWfbzGkAc-/0/1759868746827?e=1762992000&v=beta&t=Z6S2J0qRwmEtTtjPmBCJEYXkAAWB3ufFkLlyQ8wmRnc"
+      },
+      {
+        "width": 200,
+        "expiresAt": 1762992000000,
+        "height": 200,
+        "url": "https://media.licdn.com/dms/image/v2/D4D03AQFtW1Tu737xkQ/profile-displayphoto-scale_200_200/B4DZnAWfbzGkAY-/0/1759868746827?e=1762992000&v=beta&t=uTZJ8MnGsmO5ZKyviK0vCcdojw6iVEbhJnOEiWSpxvw"
+      },
+      {
+        "width": 800,
+        "expiresAt": 1762992000000,
+        "height": 800,
+        "url": "https://media.licdn.com/dms/image/v2/D4D03AQFtW1Tu737xkQ/profile-displayphoto-crop_800_800/B4DZnAWfbzGkAI-/0/1759868746734?e=1762992000&v=beta&t=t_Hv0RxFzCy4QNr66d7xwiQvlv4iqrZoTLM9oPXBsqA"
+      }
+    ],
+    "educations": [
+      {
+        "companyId": "15117850",
+        "companyUrn": "urn:li:fsd_company:15117850",
+        "companyLink1": "https://www.linkedin.com/company/15117850/",
+        "logo": "https://media.licdn.com/dms/image/v2/C510BAQEicKO2OeA1lQ/company-logo_200_200/company-logo_200_200/0/1630583375822/saraswati_education_societys_saraswati_college_of_engineering_kharghar_navi_mumbai_logo?e=1762992000&v=beta&t=AH_2jnkcE7_ehjdMs1HNdlYSSIfN2R7t5Zu6EJKWNJo",
+        "title": "Saraswati Education Societys Saraswati College of Engineering Kharghar Navi Mumbai",
+        "subtitle": "Bachelor's degree, Computer Engineering",
+        "caption": "Jun 2018 - May 2023",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Grade: 7.48"
+              },
+              {
+                "type": "textComponent",
+                "text": "On the way to Achieve great things, in my way"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "companyId": "15093732",
+        "companyUrn": "urn:li:fsd_company:15093732",
+        "companyLink1": "https://www.linkedin.com/company/15093732/",
+        "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQGsu_DimiqUow/company-logo_200_200/company-logo_200_200/0/1631357817785?e=1762992000&v=beta&t=nJCzkeB30GcAWMxkuFfmFG2WRjv8VOb62IbhsHHqwVQ",
+        "title": "University of Mumbai",
+        "subtitle": "Bachelor's degree, Computer Engineering",
+        "caption": "Jun 2018 - May 2023",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "licenseAndCertificates": [
+      {
+        "companyId": "15096409",
+        "companyUrn": "urn:li:fsd_company:15096409",
+        "companyLink1": "https://www.linkedin.com/company/15096409/",
+        "logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFjw-uoRGgODA/img-crop_100/img-crop_100/0/1722012801945?e=1762992000&v=beta&t=Z-nZxAdVff5BMq8_SG5fuuked2rysvCjHeu5II5_hiw",
+        "title": "SEBI :- Investor Certification Examination",
+        "subtitle": "National Institute of Securities Markets (NISM)",
+        "caption": "Issued Mar 2025 · Expires Mar 2027",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "mediaComponent",
+                "text": "Investor Certification Examination",
+                "thumbnail": "https://media.licdn.com/dms/image/v2/D4D2DAQH-FhnhIEF6hQ/profile-treasury-document-cover-images_480/B4DZV1XqmvHYAw-/0/1741430896256?e=1760540400&v=beta&t=rkYVgIvqONYWsH2WRO-sSOrUcrgTwbEEt-Q_WdZbVuY"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "companyLink1": null,
+        "title": "Supervised Machine Learning: Regression and Classification ",
+        "subtitle": "DeepLearning.AI",
+        "caption": "Issued Jan 2025",
+        "metadata": "Credential ID TBUP55RF98NV",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "mediaComponent",
+                "text": "Supervised Machine Learning",
+                "thumbnail": "https://media.licdn.com/dms/image/v2/D4D2DAQF0LBMACRCEyQ/profile-treasury-document-cover-images_1280/profile-treasury-document-cover-images_1280/0/1738230909579?e=1760540400&v=beta&t=fX54Tervg5m-ZpoDdsYEkTOiGIohOwgLyLjOFtlHiLY"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "honorsAndAwards": [],
+    "languages": [],
+    "volunteerAndAwards": [],
+    "verifications": [],
+    "promos": [],
+    "highlights": [],
+    "projects": [],
+    "publications": [],
+    "patents": [],
+    "courses": [],
+    "testScores": [],
+    "organizations": [],
+    "volunteerCauses": [],
+    "interests": [
+      {
+        "section_name": "Top Voices",
+        "section_components": [
+          {
+            "titleV2": "Jon Krohn",
+            "caption": "42,286 followers",
+            "subtitle": "Co-Founder of Y Carrot 🥕 Fellow at Lightning A.I. ⚡️ SuperDataScience Host 🎙️",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/in/jonkrohn",
+            "subComponents": []
+          },
+          {
+            "titleV2": "Darshil Parmar",
+            "caption": "128,240 followers",
+            "subtitle": "Senior Data Engineer | Helping Data Engineers Crack Jobs | Founder @DataVidhya  | 🎥YouTube (181K+) @Darshil Parmar",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/in/darshil-parmar",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Companies",
+        "section_components": [
+          {
+            "titleV2": "IBM",
+            "caption": "18,774,119 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1009/",
+            "subComponents": []
+          },
+          {
+            "titleV2": "Deloitte",
+            "caption": "19,952,173 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1038/",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Groups",
+        "section_components": [
+          {
+            "titleV2": "Artificial Intelligence, Machine Learning, Data Science, Agentic, Generative AI, Scientist & Analyst",
+            "caption": "727,587 members",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/groups/7039829",
+            "subComponents": []
+          },
+          {
+            "titleV2": "🦾 Machine Learning, Artificial Intelligence, Deep Learning, Computer Vision, Robotics, Gen AI, GPT",
+            "caption": "796,849 members",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/groups/6773411",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Newsletters",
+        "section_components": [
+          {
+            "titleV2": "All About Datamatics",
+            "caption": "Published monthly",
+            "subtitle": "This newsletter will update you all about Datamatics",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/newsletters/6971444287892803584",
+            "subComponents": [
+              {
+                "insightComponent": {
+                  "text": "Datamatics",
+                  "actionTarget": "https://www.linkedin.com/company/163359/"
+                }
+              }
+            ]
+          },
+          {
+            "titleV2": "Wipro Insights",
+            "caption": "Published monthly",
+            "subtitle": "Our latest thinking on AI and (much) more!",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/newsletters/7341867077076480001",
+            "subComponents": [
+              {
+                "insightComponent": {
+                  "text": "Wipro",
+                  "actionTarget": "https://www.linkedin.com/company/1318/"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section_name": "Schools",
+        "section_components": [
+          {
+            "titleV2": "University of Mumbai",
+            "caption": "1,070,074 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/school/15093732/",
+            "subComponents": []
+          },
+          {
+            "titleV2": "PrepInsta",
+            "caption": "82,222 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/school/21178612/",
+            "subComponents": []
+          }
+        ]
+      }
+    ],
+    "recommendations": []
+  },
+  "metadata": {
+    "source": "dev_fusion/Linkedin-Profile-Scraper",
+    "savedAt": "2025-10-08T14:54:36.197Z"
+  }
+}

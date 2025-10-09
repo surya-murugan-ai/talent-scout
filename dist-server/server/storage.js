@@ -1,7 +1,7 @@
-import { users, candidates, projects, processingJobs, activities, resumeData } from "@shared/schema";
+import { users, candidates, projects, processingJobs, activities, scoringConfigs } from "@shared/schema";
 import { drizzle } from 'drizzle-orm/neon-http';
 import { neon } from '@neondatabase/serverless';
-import { eq, desc, and, sql, gte, lte, like } from 'drizzle-orm';
+import { eq, desc, and, sql, gte, lte, like, inArray } from 'drizzle-orm';
 const neonSql = neon(process.env.DATABASE_URL);
 const db = drizzle(neonSql);
 export class PostgresStorage {
@@ -48,20 +48,28 @@ export class PostgresStorage {
         return result[0];
     }
     // Candidates
-    async getCandidates(limit = 50, offset = 0) {
+    async getCandidates(comId, limit = 50, offset = 0) {
         const result = await db.select()
             .from(candidates)
+            .where(and(eq(candidates.comId, comId), eq(candidates.resumeStatus, 'active')))
             .orderBy(desc(candidates.score))
             .limit(limit)
             .offset(offset);
         return result;
     }
-    async getCandidate(id) {
-        const result = await db.select().from(candidates).where(eq(candidates.id, id)).limit(1);
+    async getCandidate(id, comId) {
+        let whereCondition = eq(candidates.id, id);
+        if (comId) {
+            whereCondition = and(eq(candidates.id, id), eq(candidates.comId, comId));
+        }
+        const result = await db.select().from(candidates).where(whereCondition).limit(1);
         return result[0];
     }
-    async getCandidateByEmail(email) {
-        const result = await db.select().from(candidates).where(eq(candidates.email, email)).limit(1);
+    async getCandidateByEmail(email, comId) {
+        const result = await db.select()
+            .from(candidates)
+            .where(and(eq(candidates.email, email), eq(candidates.comId, comId)))
+            .limit(1);
         return result[0];
     }
     async createCandidate(insertCandidate) {
@@ -70,7 +78,7 @@ export class PostgresStorage {
     }
     async updateCandidate(id, updates) {
         const result = await db.update(candidates)
-            .set({ ...updates, updatedAt: new Date() })
+            .set(updates)
             .where(eq(candidates.id, id))
             .returning();
         return result[0];
@@ -86,7 +94,7 @@ export class PostgresStorage {
     async getCandidatesByPriority(priority) {
         const result = await db.select()
             .from(candidates)
-            .where(eq(candidates.priority, priority))
+            .where(and(eq(candidates.priority, priority), eq(candidates.resumeStatus, 'active')))
             .orderBy(desc(candidates.score));
         return result;
     }
@@ -96,12 +104,15 @@ export class PostgresStorage {
         const skillConditions = skills.map(skill => sql `${candidates.skills}::text ILIKE ${`%${skill}%`}`);
         const result = await db.select()
             .from(candidates)
-            .where(sql `(${skillConditions.join(' OR ')})`)
+            .where(and(sql `(${skillConditions.join(' OR ')})`, eq(candidates.resumeStatus, 'active')))
             .orderBy(desc(candidates.score));
         return result;
     }
     async getCandidatesByExperience(minYears, maxYears) {
-        let conditions = [gte(candidates.yearsOfExperience, minYears)];
+        let conditions = [
+            gte(candidates.yearsOfExperience, minYears),
+            eq(candidates.resumeStatus, 'active')
+        ];
         if (maxYears) {
             conditions.push(lte(candidates.yearsOfExperience, maxYears));
         }
@@ -114,21 +125,21 @@ export class PostgresStorage {
     async getCandidatesByDataQuality(minQuality) {
         const result = await db.select()
             .from(candidates)
-            .where(gte(candidates.dataQuality, minQuality))
+            .where(and(gte(candidates.dataQuality, minQuality), eq(candidates.resumeStatus, 'active')))
             .orderBy(desc(candidates.dataQuality));
         return result;
     }
     async getCandidatesByLocation(location) {
         const result = await db.select()
             .from(candidates)
-            .where(like(candidates.location, `%${location}%`))
+            .where(and(like(candidates.location, `%${location}%`), eq(candidates.resumeStatus, 'active')))
             .orderBy(desc(candidates.score));
         return result;
     }
     async getCandidatesByCompany(company) {
         const result = await db.select()
             .from(candidates)
-            .where(sql `(${candidates.company} ILIKE ${`%${company}%`} OR ${candidates.currentCompany} ILIKE ${`%${company}%`})`)
+            .where(and(sql `(${candidates.company} ILIKE ${`%${company}%`} OR ${candidates.currentCompany} ILIKE ${`%${company}%`})`, eq(candidates.resumeStatus, 'active')))
             .orderBy(desc(candidates.score));
         return result;
     }
@@ -136,21 +147,21 @@ export class PostgresStorage {
         const searchTerm = `%${query}%`;
         const result = await db.select()
             .from(candidates)
-            .where(sql `(
+            .where(and(sql `(
           ${candidates.name} ILIKE ${searchTerm} OR
           ${candidates.title} ILIKE ${searchTerm} OR
           ${candidates.company} ILIKE ${searchTerm} OR
           ${candidates.currentCompany} ILIKE ${searchTerm} OR
           ${candidates.location} ILIKE ${searchTerm} OR
           ${candidates.skills}::text ILIKE ${searchTerm}
-        )`)
+        )`, eq(candidates.resumeStatus, 'active')))
             .orderBy(desc(candidates.score));
         return result;
     }
     async getCandidatesBySource(source) {
         const result = await db.select()
             .from(candidates)
-            .where(eq(candidates.source, source))
+            .where(and(eq(candidates.source, source), eq(candidates.resumeStatus, 'active')))
             .orderBy(desc(candidates.createdAt));
         return result;
     }
@@ -237,11 +248,191 @@ export class PostgresStorage {
         const result = await db.insert(activities).values(insertActivity).returning();
         return result[0];
     }
+    // Scoring Configuration methods
+    async getScoringConfig(comId) {
+        try {
+            const result = await db.select()
+                .from(scoringConfigs)
+                .where(eq(scoringConfigs.comId, comId))
+                .limit(1);
+            return result[0];
+        }
+        catch (error) {
+            console.error('Error fetching scoring config:', error);
+            return undefined;
+        }
+    }
+    async createScoringConfig(config) {
+        const result = await db.insert(scoringConfigs).values(config).returning();
+        return result[0];
+    }
+    async updateScoringConfig(comId, config) {
+        try {
+            const result = await db.update(scoringConfigs)
+                .set({ ...config, updatedAt: new Date() })
+                .where(eq(scoringConfigs.comId, comId))
+                .returning();
+            return result[0];
+        }
+        catch (error) {
+            console.error('Error updating scoring config:', error);
+            return undefined;
+        }
+    }
+    // Eeezo-specific methods
+    async getCandidatesByCompanyId(comId, options = {}) {
+        try {
+            let whereCondition = and(eq(candidates.comId, comId), eq(candidates.resumeStatus, 'active'));
+            if (options.status) {
+                whereCondition = and(eq(candidates.comId, comId), eq(candidates.eeezoStatus, options.status), eq(candidates.resumeStatus, 'active'));
+            }
+            const query = db.select().from(candidates)
+                .where(whereCondition)
+                .orderBy(desc(candidates.createdAt))
+                .limit(options.limit || 100)
+                .offset(options.offset || 0);
+            return await query;
+        }
+        catch (error) {
+            console.error('Error fetching candidates by company ID:', error);
+            throw new Error(`Failed to fetch candidates: ${error instanceof Error ? error.message : 'Unknown error'}`);
+        }
+    }
+    async getCandidatesByIds(candidateIds, comId) {
+        try {
+            if (candidateIds.length === 0) {
+                return [];
+            }
+            const result = await db.select()
+                .from(candidates)
+                .where(and(inArray(candidates.id, candidateIds), eq(candidates.comId, comId), eq(candidates.resumeStatus, 'active')))
+                .orderBy(desc(candidates.createdAt));
+            return result;
+        }
+        catch (error) {
+            console.error('Error fetching candidates by IDs:', error);
+            throw new Error(`Failed to fetch candidates: ${error instanceof Error ? error.message : 'Unknown error'}`);
+        }
+    }
+    async getEeezoProcessingStatus(comId) {
+        try {
+            const result = await db.select({
+                eeezoStatus: candidates.eeezoStatus,
+                enrichmentStatus: candidates.enrichmentStatus,
+                count: sql `count(*)`
+            })
+                .from(candidates)
+                .where(eq(candidates.comId, comId))
+                .groupBy(candidates.eeezoStatus, candidates.enrichmentStatus);
+            const status = {
+                totalCandidates: 0,
+                uploaded: 0,
+                processed: 0,
+                enriched: 0,
+                completed: 0,
+                pendingEnrichment: 0,
+                failedEnrichment: 0
+            };
+            result.forEach(candidate => {
+                status.totalCandidates += candidate.count;
+                switch (candidate.eeezoStatus) {
+                    case 'uploaded':
+                        status.uploaded += candidate.count;
+                        break;
+                    case 'processed':
+                        status.processed += candidate.count;
+                        break;
+                    case 'enriched':
+                        status.enriched += candidate.count;
+                        break;
+                    case 'completed':
+                        status.completed += candidate.count;
+                        break;
+                }
+                switch (candidate.enrichmentStatus) {
+                    case 'pending':
+                        status.pendingEnrichment += candidate.count;
+                        break;
+                    case 'failed':
+                        status.failedEnrichment += candidate.count;
+                        break;
+                }
+            });
+            return status;
+        }
+        catch (error) {
+            console.error('Error fetching Eeezo status:', error);
+            throw new Error(`Failed to fetch status: ${error instanceof Error ? error.message : 'Unknown error'}`);
+        }
+    }
+    async updateCandidateEeezoStatus(candidateId, updateData) {
+        try {
+            const [updatedCandidate] = await db.update(candidates)
+                .set({
+                eeezoStatus: updateData.eeezoStatus,
+                notes: updateData.notes
+            })
+                .where(eq(candidates.id, candidateId))
+                .returning();
+            // Log activity
+            await db.insert(activities).values({
+                type: 'eezo_status_update',
+                message: `Eeezo status updated for candidate ${candidateId}`,
+                details: `Status: ${updateData.eeezoStatus}, Notes: ${updateData.notes || 'None'}`
+            });
+            return updatedCandidate;
+        }
+        catch (error) {
+            console.error('Error updating candidate Eeezo status:', error);
+            throw new Error(`Failed to update status: ${error instanceof Error ? error.message : 'Unknown error'}`);
+        }
+    }
+    async updateCandidateResumeStatus(candidateId, status, comId) {
+        try {
+            let whereCondition = eq(candidates.id, candidateId);
+            if (comId) {
+                whereCondition = and(eq(candidates.id, candidateId), eq(candidates.comId, comId));
+            }
+            const [updatedCandidate] = await db.update(candidates)
+                .set({
+                resumeStatus: status
+            })
+                .where(whereCondition)
+                .returning();
+            if (!updatedCandidate) {
+                return undefined;
+            }
+            // Log activity
+            await db.insert(activities).values({
+                type: 'resume_status_update',
+                message: `Resume status updated to ${status} for candidate ${candidateId}`,
+                details: `Candidate: ${updatedCandidate?.name || 'Unknown'}, Status: ${status}, Company: ${comId || 'Unknown'}`
+            });
+            return updatedCandidate;
+        }
+        catch (error) {
+            console.error('Error updating candidate resume status:', error);
+            throw new Error(`Failed to update resume status: ${error instanceof Error ? error.message : 'Unknown error'}`);
+        }
+    }
+    async getCandidatesByResumeStatus(status, comId, limit = 100, offset = 0) {
+        try {
+            const result = await db.select()
+                .from(candidates)
+                .where(and(eq(candidates.resumeStatus, status), eq(candidates.comId, comId)))
+                .orderBy(desc(candidates.createdAt))
+                .limit(limit)
+                .offset(offset);
+            return result;
+        }
+        catch (error) {
+            console.error('Error fetching candidates by resume status:', error);
+            throw new Error(`Failed to fetch candidates: ${error instanceof Error ? error.message : 'Unknown error'}`);
+        }
+    }
     // Clear data methods
     async clearAllCandidates() {
-        // Clear resume data first due to foreign key constraints
-        await db.delete(resumeData);
-        // Then clear candidates
+        // Clear candidates
         await db.delete(candidates);
     }
     async clearAllProcessingJobs() {

@@ -1,0 +1,392 @@
+{
+  "timestamp": "2025-10-09T07:29:38.882Z",
+  "linkedinUrl": "https://www.linkedin.com/in/sahil-yadav-3baba7230",
+  "rawData": {
+    "linkedinUrl": "https://www.linkedin.com/in/sahil-yadav-3baba7230",
+    "firstName": "Sahil",
+    "lastName": "Yadav",
+    "fullName": "Sahil Yadav",
+    "headline": "Project Engineer @ Wipro | Developing Engaging Web Interfaces",
+    "connections": 132,
+    "followers": 136,
+    "email": "sahil.yadav@wipro.com",
+    "mobileNumber": null,
+    "jobTitle": "Project Engineer",
+    "companyName": "Wipro",
+    "companyIndustry": "Information Technology And Services",
+    "companyWebsite": "wipro.com",
+    "companyLinkedin": "linkedin.com/company/wipro",
+    "companyFoundedIn": 1945,
+    "companySize": "10001+",
+    "currentJobDuration": "5 mos",
+    "currentJobDurationInYrs": 0.42,
+    "topSkillsByEndorsements": null,
+    "addressCountryOnly": "India",
+    "addressWithCountry": "Mahendragarh, Haryana, India",
+    "addressWithoutCountry": "Mahendragarh, Haryana",
+    "profilePic": "https://media.licdn.com/dms/image/v2/D4D03AQFCN4U6PMwFVA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1723723669335?e=1762992000&v=beta&t=0QBxIX9KLYJ78YvVeGpUvjzxZs9Tkcxby-RP-q7I8PQ",
+    "profilePicHighQuality": "https://media.licdn.com/dms/image/v2/D4D03AQFCN4U6PMwFVA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723723669399?e=1762992000&v=beta&t=z3AgZzn31kgdq-zM-v0tuBh-G7W97dFlo8tbOFzYtFs",
+    "about": "As a passionate and motivated software engineer with a strong foundation in frontend development, I aim to leverage my technical skills and creativity to build impactful and user-centric digital solutions. I am eager to join a dynamic team where I can contribute to innovative projects, continuously learn from experienced professionals, and grow as a developer. My goal is to deliver high-quality code and intuitive interfaces that enhance user experience and drive business success.",
+    "publicIdentifier": "sahil-yadav-3baba7230",
+    "openConnection": null,
+    "urn": "ACoAADnXX34BXnyevUD_L-etXO27oQT4aEcd6kc",
+    "experiences": [
+      {
+        "companyId": "1318",
+        "companyUrn": "urn:li:fsd_company:1318",
+        "companyLink1": "https://www.linkedin.com/company/1318/",
+        "logo": "https://media.licdn.com/dms/image/v2/D4E0BAQEINH3Vf1swig/company-logo_200_200/company-logo_200_200/0/1730379480485/wipro_logo?e=1762992000&v=beta&t=W7dLzR4uW2bDwLVRMk6spGoMvlgRSDitjUxJrFn6ei0",
+        "title": "Project Engineer",
+        "subtitle": "Wipro · Full-time",
+        "caption": "Jun 2025 - Present · 5 mos",
+        "metadata": "Kolkata, West Bengal, India · Hybrid",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "updates": [],
+    "skills": [
+      {
+        "title": "HTML5",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "CHANDIGARH UNIVERSITY"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "JavaScript",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "CHANDIGARH UNIVERSITY"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Web Interface Design",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Reliability Testing",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Responsive Web Design",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Computer Science",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "English",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Cascading Style Sheets (CSS)",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "CHANDIGARH UNIVERSITY"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "E-Commerce",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "User Interface Design",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Playing Cricket",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Software Architecture",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Reliability",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Operational Efficiency",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "React.js",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "CHANDIGARH UNIVERSITY"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Data Structures",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "CHANDIGARH UNIVERSITY"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Front-End Development",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "SQL",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "CHANDIGARH UNIVERSITY"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "C++",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "CHANDIGARH UNIVERSITY"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "profilePicAllDimensions": [
+      {
+        "width": 100,
+        "expiresAt": 1762992000000,
+        "height": 100,
+        "url": "https://media.licdn.com/dms/image/v2/D4D03AQFCN4U6PMwFVA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1723723669335?e=1762992000&v=beta&t=0QBxIX9KLYJ78YvVeGpUvjzxZs9Tkcxby-RP-q7I8PQ"
+      },
+      {
+        "width": 200,
+        "expiresAt": 1762992000000,
+        "height": 200,
+        "url": "https://media.licdn.com/dms/image/v2/D4D03AQFCN4U6PMwFVA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1723723669335?e=1762992000&v=beta&t=mtzZn1jr-WaQLqMjq0ZSXM52VSZcqIAOe6e4oyHxwzo"
+      },
+      {
+        "width": 400,
+        "expiresAt": 1762992000000,
+        "height": 400,
+        "url": "https://media.licdn.com/dms/image/v2/D4D03AQFCN4U6PMwFVA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1723723669335?e=1762992000&v=beta&t=NsokEhj3NPTQfaCXOdCdcD1fiPHZi23-aVsqgqLu92U"
+      },
+      {
+        "width": 480,
+        "expiresAt": 1762992000000,
+        "height": 480,
+        "url": "https://media.licdn.com/dms/image/v2/D4D03AQFCN4U6PMwFVA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723723669399?e=1762992000&v=beta&t=z3AgZzn31kgdq-zM-v0tuBh-G7W97dFlo8tbOFzYtFs"
+      }
+    ],
+    "educations": [
+      {
+        "companyId": "8282089",
+        "companyUrn": "urn:li:fsd_company:8282089",
+        "companyLink1": "https://www.linkedin.com/company/8282089/",
+        "logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEuPBIM-KISlA/company-logo_200_200/company-logo_200_200/0/1692166384127/chandigarh_university_logo?e=1762992000&v=beta&t=eYO5UhklMO6GoKlu3LMRaseDCwXBLNw2PveLmZr--9Y",
+        "title": "CHANDIGARH UNIVERSITY",
+        "subtitle": "Bachelor of Engineering - BE, Computer Science",
+        "caption": "2020 - 2025",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "companyId": "8282089",
+        "companyUrn": "urn:li:fsd_company:8282089",
+        "companyLink1": "https://www.linkedin.com/company/8282089/",
+        "logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEuPBIM-KISlA/company-logo_200_200/company-logo_200_200/0/1692166384127/chandigarh_university_logo?e=1762992000&v=beta&t=eYO5UhklMO6GoKlu3LMRaseDCwXBLNw2PveLmZr--9Y",
+        "title": "CHANDIGARH UNIVERSITY",
+        "subtitle": "Bachelor of Engineering - BE, Computer Science",
+        "caption": "Jun 2020 - Jun 2024",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "textComponent",
+                "text": "Aspiring Software Engineer and Frontend Developer with a passion for creating intuitive and responsive web applications. Proficient in HTML, CSS, JavaScript, and React, with a strong foundation in software development principles. Eager to contribute to innovative projects and grow within a dynamic tech environment."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "licenseAndCertificates": [],
+    "honorsAndAwards": [],
+    "languages": [],
+    "volunteerAndAwards": [],
+    "verifications": [],
+    "promos": [],
+    "highlights": [],
+    "projects": [],
+    "publications": [],
+    "patents": [],
+    "courses": [],
+    "testScores": [],
+    "organizations": [],
+    "volunteerCauses": [],
+    "interests": [
+      {
+        "section_name": "Companies",
+        "section_components": [
+          {
+            "titleV2": "Wipro",
+            "caption": "11,218,628 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1318/",
+            "subComponents": []
+          },
+          {
+            "titleV2": "HCLTech",
+            "caption": "8,241,271 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1756/",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Newsletters",
+        "section_components": [
+          {
+            "titleV2": "Wipro Insights",
+            "caption": "Published monthly",
+            "subtitle": "Our latest thinking on AI and (much) more!",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/newsletters/7341867077076480001",
+            "subComponents": [
+              {
+                "insightComponent": {
+                  "text": "Wipro",
+                  "actionTarget": "https://www.linkedin.com/company/1318/"
+                }
+              }
+            ]
+          },
+          {
+            "titleV2": "Straight to the future",
+            "caption": "Published monthly",
+            "subtitle": "Sharing insights for action",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/newsletters/7189542727338876928",
+            "subComponents": [
+              {
+                "insightComponent": {
+                  "text": "Capgemini",
+                  "actionTarget": "https://www.linkedin.com/company/157240/"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section_name": "Schools",
+        "section_components": [
+          {
+            "titleV2": "CHANDIGARH UNIVERSITY",
+            "caption": "299,310 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/school/8282089/",
+            "subComponents": []
+          }
+        ]
+      }
+    ],
+    "recommendations": []
+  },
+  "metadata": {
+    "source": "dev_fusion/Linkedin-Profile-Scraper",
+    "savedAt": "2025-10-09T07:29:38.882Z"
+  }
+}

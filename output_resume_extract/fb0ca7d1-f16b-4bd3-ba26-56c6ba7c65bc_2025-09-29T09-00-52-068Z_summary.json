@@ -1,0 +1,105 @@
+{
+  "filename": "fb0ca7d1-f16b-4bd3-ba26-56c6ba7c65bc.pdf",
+  "timestamp": "2025-09-29T09:00:52.068Z",
+  "processingTime": 6382,
+  "confidence": 94,
+  "extractedData": {
+    "name": "Hemanthj m",
+    "email": "hemanthhemanthjm21797@gmail.com",
+    "phone": "6361196611",
+    "title": "Software Developer",
+    "location": "Shimoga, India",
+    "summary": "To seek and maintain full-time position that offers professional challenges utilizing interpersonal skills, excellent time management and problem-solving skills.",
+    "experience": [
+      {
+        "jobTitle": "Full Stack Developer",
+        "company": "Take It Smart",
+        "duration": "2022-08 - 2022-10",
+        "startDate": "2022-08",
+        "endDate": "2022-10",
+        "techUsed": [
+          "Node js",
+          "ORM",
+          "SQL",
+          "No-SQL"
+        ],
+        "description": "Developed functional databases, applications and servers to support websites on back-end.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Front End Developer",
+        "company": "Verzeo Edu Tech",
+        "duration": "2022-05 - 2022-07",
+        "startDate": "2022-05",
+        "endDate": "2022-07",
+        "techUsed": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+        "description": "Coded using HTML, CSS and JavaScript to develop features for both mobile and desktop platforms. Designed and updated layouts to meet usability and performance requirements.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.E",
+        "field": "Computer Science",
+        "university": "MIT - Kundapura",
+        "year": "2023",
+        "percentage": null,
+        "gpa": "8.33",
+        "location": "Kundapura"
+      },
+      {
+        "degree": "12th Class",
+        "field": "PCM",
+        "university": "Junior College - Shimoga",
+        "year": "2019",
+        "percentage": null,
+        "gpa": "7.0",
+        "location": "Shimoga"
+      },
+      {
+        "degree": "10th Class",
+        "field": "Computer",
+        "university": "Junior College - Shimoga",
+        "year": "2017",
+        "percentage": null,
+        "gpa": "7.0",
+        "location": "Shimoga"
+      }
+    ],
+    "skills": [
+      "Java",
+      "Python",
+      "Django",
+      "C",
+      "C++",
+      "HTML",
+      "CSS",
+      "PHP",
+      "Android",
+      "iOS",
+      "UI Path (RPA)",
+      "Java RESTAPI",
+      "JavaScript",
+      "React js",
+      "Spring core",
+      "Bootstrap",
+      "Oracle",
+      "Mongo db",
+      "MySQL",
+      "Ui&UXDesign",
+      "Express js",
+      "XML",
+      "jQuery",
+      "JSON",
+      "Node js",
+      "AWS",
+      "Git"
+    ],
+    "projects": [],
+    "certifications": []
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "filename": "597b6af5-0e48-4fda-8baa-97e395f0c3ee.pdf",
+  "timestamp": "2025-10-09T10:01:28.933Z",
+  "processingTime": 10681,
+  "confidence": 90,
+  "extractedData": {
+    "name": "Madhan D",
+    "email": "madhandayalan1999@gmail.com",
+    "phone": "9655992565",
+    "title": "Software Developer",
+    "location": "Chennai, Tamil Nadu",
+    "summary": null,
+    "experience": [
+      {
+        "jobTitle": "Software Developer",
+        "company": "Perfect Digital Media Resources Pvt, Ltd.",
+        "duration": "Mar 2021 – Mar 2022",
+        "startDate": "2021-03",
+        "endDate": "2022-03",
+        "techUsed": [
+          "Node.js",
+          "JavaScript",
+          "React",
+          "HTML",
+          "CSS"
+        ],
+        "description": "Creating Web Add-Ins in Microsoft Office by using Node.js, JavaScript, React, Html and CSS. Used to working on contracts, proposals, reports, technical documents, articles and books. It saves time on copy-editing by proofreading software, so that authors can pay more attention to what matters most.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Computer Applications",
+        "field": "Computer Science Engineering",
+        "university": "S.S.S College of Arts, Science and Management, Arcot",
+        "year": "2020",
+        "percentage": "69.4%",
+        "gpa": null,
+        "location": null
+      },
+      {
+        "degree": "Intermediate",
+        "field": "Other",
+        "university": "Gangadara Matriculation Higher Secondary School, Ranipet",
+        "year": "2017",
+        "percentage": "60.0%",
+        "gpa": null,
+        "location": null
+      },
+      {
+        "degree": "Secondary School Of Certificate",
+        "field": null,
+        "university": "Gangadara Matriculation Higher Secondary School, Ranipet",
+        "year": "2015",
+        "percentage": "73.0%",
+        "gpa": null,
+        "location": null
+      }
+    ],
+    "skills": [
+      "Python",
+      "Express",
+      "Node.js",
+      "SQLite",
+      "C#",
+      "Flexbox",
+      "Git",
+      "Linux",
+      "OOPs"
+    ],
+    "projects": [
+      {
+        "name": "Typing Speed Test",
+        "description": "A typing speed evaluator that measures user's typing speed and accuracy.",
+        "techUsed": [
+          "HTML",
+          "CSS",
+          "JS",
+          "REST API Calls",
+          "Bootstrap"
+        ],
+        "duration": null,
+        "url": "http://madhanspeedtest.ccbp.tech/",
+        "achievements": []
+      },
+      {
+        "name": "Bookmark Maker",
+        "description": "Developed bookmark maker where user can add list of websites with custom name, and can visit bookmarked website later by clicking on the specific website.",
+        "techUsed": [
+          "HTML",
+          "CSS",
+          "JS",
+          "Bootstrap"
+        ],
+        "duration": null,
+        "url": "http://madhanbookmark.ccbp.tech/",
+        "achievements": []
+      },
+      {
+        "name": "Countries Search",
+        "description": "A comprehensive country search tool, providing instant access to the world's countries and their populations.",
+        "techUsed": [
+          "HTML",
+          "CSS",
+          "JS",
+          "REST API Calls",
+          "Bootstrap"
+        ],
+        "duration": null,
+        "url": "http://madhancntrysrc.ccbp.tech/",
+        "achievements": []
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Industry Ready Certification in Full-stack Development",
+        "issuer": "Nxtwave Disruptive Technologies",
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      }
+    ]
+  }
+}

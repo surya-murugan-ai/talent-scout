@@ -1,0 +1,501 @@
+{
+  "timestamp": "2025-10-13T06:40:38.980Z",
+  "searchQuery": "Profile enrichment for: suriyakanth m - https://www.linkedin.com/in/suriyakanth-m-625b11231",
+  "rawData": [
+    {
+      "id": "ACoAADoB7z0BL9IF01OMdLxR6_y1SaJZZcRS_uA",
+      "publicIdentifier": "suriyakanth-m-625b11231",
+      "linkedinUrl": "https://www.linkedin.com/in/suriyakanth-m-625b11231",
+      "firstName": "SURIYAKANTH",
+      "lastName": "M",
+      "headline": "React Developer at Nirals InfoTech | MCA Graduate with AI & ML Specialization | Building AI-Integrated Applications",
+      "about": "React Developer at Nirals InfoTech with experience in building modern web applications and integrating AI-driven features. MCA graduate with specialization in AI & ML, with award-winning projects in face recognition and emotion detection. Passionate about creating smarter, user-focused applications by blending web technologies with machine learning.",
+      "openToWork": false,
+      "hiring": false,
+      "photo": "https://media.licdn.com/dms/image/v2/D5603AQE_QyuKU6VzSg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1732200391670?e=1762992000&v=beta&t=Rf_AnHc1FrJpWA6Bu7BCiUhBoa_NVnWDVi6eAOpKN3U",
+      "premium": false,
+      "influencer": false,
+      "location": {
+        "linkedinText": "Sattur, Tamil Nadu, India",
+        "countryCode": "IN",
+        "parsed": {
+          "text": "Sattur, India",
+          "countryCode": "IN",
+          "regionCode": null,
+          "country": "India",
+          "countryFull": "India",
+          "state": "Tamil Nadu",
+          "city": "Sattur"
+        }
+      },
+      "verified": false,
+      "registeredAt": "2022-02-17T16:33:18.987Z",
+      "topSkills": null,
+      "connectionsCount": 18,
+      "followerCount": 21,
+      "currentPosition": [
+        {
+          "companyId": "16153648",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/16153648/",
+          "companyName": "Nirals",
+          "dateRange": {
+            "start": {
+              "month": 8,
+              "year": 2025,
+              "day": null
+            },
+            "end": null
+          }
+        }
+      ],
+      "profileTopEducation": [
+        {
+          "schoolId": "203655",
+          "companyId": "15106441",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/15106441/",
+          "schoolName": "AYYA NADAR JANAKI AMMAL COLLEGE"
+        }
+      ],
+      "experience": [
+        {
+          "position": "React Developer",
+          "location": "Kovilpatti, Tamil Nadu, India",
+          "employmentType": "Full-time",
+          "workplaceType": "On-site",
+          "companyName": "Nirals",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/nirals/",
+          "companyId": "16153648",
+          "companyUniversalName": "nirals",
+          "duration": "3 mos",
+          "description": null,
+          "skills": [
+            "React.js",
+            "Front-End Development",
+            "Flutter",
+            "Node.js",
+            "MongoDB",
+            "PHP"
+          ],
+          "startDate": {
+            "month": "Aug",
+            "year": 2025,
+            "text": "Aug 2025"
+          },
+          "endDate": {
+            "text": "Present"
+          }
+        },
+        {
+          "position": "UX Designer",
+          "location": "Madurai, Tamil Nadu, India",
+          "employmentType": "Internship",
+          "workplaceType": "Hybrid",
+          "companyName": "Meganar Technologies",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/80332809/",
+          "companyId": "80332809",
+          "duration": "6 mos",
+          "description": "Worked in the projects like Media Jungle and LearnHub as UI UX Designer, I Wireframed and Designed the UI screens for these softwares using the Figma.",
+          "skills": [
+            "Figma (Software)",
+            "User Interface Design",
+            "Wireframing",
+            "User Experience (UX)"
+          ],
+          "startDate": {
+            "month": "Dec",
+            "year": 2024,
+            "text": "Dec 2024"
+          },
+          "endDate": {
+            "month": "May",
+            "year": 2025,
+            "text": "May 2025"
+          }
+        }
+      ],
+      "education": [
+        {
+          "schoolName": "AYYA NADAR JANAKI AMMAL COLLEGE",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/15106441/",
+          "degree": "Master of Computer Applications - MCA",
+          "fieldOfStudy": "Computer Science",
+          "skills": [
+            "Artificial Intelligence (AI)",
+            "HTML",
+            "English",
+            "MySQL",
+            "PHP",
+            "Problem Solving",
+            "React.js",
+            "Software Development",
+            "Python (Programming Language)",
+            "Django"
+          ],
+          "insights": "Grade: 81%",
+          "startDate": {
+            "month": "Jun",
+            "year": 2023,
+            "text": "Jun 2023"
+          },
+          "endDate": {
+            "month": "May",
+            "year": 2025,
+            "text": "May 2025"
+          },
+          "period": "Jun 2023 - May 2025"
+        },
+        {
+          "schoolName": "Sri Kaliswari College",
+          "schoolLinkedinUrl": "https://www.linkedin.com/search/results/all/?keywords=Sri+Kaliswari+College",
+          "degree": "Bachelor",
+          "fieldOfStudy": "Information Technology",
+          "skills": [
+            "Programming",
+            "PHP",
+            ".NET Framework",
+            "SQL",
+            "Python (Programming Language)",
+            "C (Programming Language)"
+          ],
+          "insights": "Grade: 79%",
+          "startDate": {
+            "month": "Jun",
+            "year": 2020,
+            "text": "Jun 2020"
+          },
+          "endDate": {
+            "month": "May",
+            "year": 2023,
+            "text": "May 2023"
+          },
+          "period": "Jun 2020 - May 2023"
+        }
+      ],
+      "certifications": [],
+      "projects": [],
+      "volunteering": [],
+      "receivedRecommendations": [],
+      "skills": [
+        {
+          "name": "Django",
+          "positions": [
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        },
+        {
+          "name": ".NET Framework"
+        },
+        {
+          "name": "SQL"
+        },
+        {
+          "name": "Python (Programming Language)",
+          "positions": [
+            "2 educational experiences at AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        },
+        {
+          "name": "C (Programming Language)"
+        },
+        {
+          "name": "Figma (Software)",
+          "positions": [
+            "UX Designer at Meganar Technologies"
+          ]
+        },
+        {
+          "name": "User Interface Design",
+          "positions": [
+            "UX Designer at Meganar Technologies"
+          ]
+        },
+        {
+          "name": "Wireframing",
+          "positions": [
+            "UX Designer at Meganar Technologies"
+          ]
+        },
+        {
+          "name": "User Experience (UX)",
+          "positions": [
+            "UX Designer at Meganar Technologies"
+          ]
+        },
+        {
+          "name": "Front-End Development",
+          "positions": [
+            "React Developer at Nirals"
+          ]
+        },
+        {
+          "name": "Flutter",
+          "positions": [
+            "React Developer at Nirals"
+          ]
+        },
+        {
+          "name": "Node.js",
+          "positions": [
+            "React Developer at Nirals"
+          ]
+        },
+        {
+          "name": "MongoDB",
+          "positions": [
+            "React Developer at Nirals"
+          ]
+        },
+        {
+          "name": "Research and Development (R&D)"
+        },
+        {
+          "name": "Software Development",
+          "positions": [
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        },
+        {
+          "name": "BSC"
+        },
+        {
+          "name": "Problem Solving",
+          "positions": [
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        },
+        {
+          "name": "React.js",
+          "positions": [
+            "React Developer at Nirals",
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        },
+        {
+          "name": "PHP",
+          "positions": [
+            "React Developer at Nirals",
+            "2 educational experiences at AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        },
+        {
+          "name": "Artificial Intelligence (AI)",
+          "positions": [
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        },
+        {
+          "name": "English",
+          "positions": [
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        },
+        {
+          "name": "Programming"
+        },
+        {
+          "name": "Microsoft Office"
+        },
+        {
+          "name": "HTML",
+          "positions": [
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        },
+        {
+          "name": "Java"
+        },
+        {
+          "name": "C++"
+        },
+        {
+          "name": "MySQL",
+          "positions": [
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        }
+      ],
+      "publications": [],
+      "courses": [],
+      "patents": [],
+      "honorsAndAwards": [],
+      "languages": [],
+      "causes": [],
+      "featured": null,
+      "moreProfiles": [
+        {
+          "id": "ACoAADbtkJwB5g6CSCa5HvRGkUBh1tEAqTHYhqM",
+          "firstName": "Lakshmanan",
+          "lastName": "R",
+          "publicIdentifier": "lakshmanan-r-a50755218",
+          "linkedinUrl": "https://www.linkedin.com/in/lakshmanan-r-a50755218"
+        },
+        {
+          "id": "ACoAAESbIPEBU87i_7KR9ScK6QLFtfLJEALudKo",
+          "firstName": "HARIHARAN",
+          "lastName": "P",
+          "position": "Microbiologist at Micro Labs Ltd API",
+          "publicIdentifier": "hariharan-p-b01581281",
+          "linkedinUrl": "https://www.linkedin.com/in/hariharan-p-b01581281"
+        },
+        {
+          "id": "ACoAAD3Z6XkBsjybZrHZmVNi391jpPJ796Q9syw",
+          "firstName": "Karthick",
+          "lastName": "Nandan",
+          "position": "Chartered Accountant (Nov'24) | PwC AC | Assurance | JSRS and Associates | B.Com (Computer Application)",
+          "publicIdentifier": "karthick-nandan",
+          "linkedinUrl": "https://www.linkedin.com/in/karthick-nandan"
+        },
+        {
+          "id": "ACoAAFS9P08BU9D3c_Q40q9IfwYS3BnhTjhzs7s",
+          "firstName": "Mani",
+          "lastName": "Muthu",
+          "position": "fresher python developer | django developer | Node js | Front end developer | Back end developer",
+          "publicIdentifier": "mani-muthu-5a7154338",
+          "linkedinUrl": "https://www.linkedin.com/in/mani-muthu-5a7154338"
+        },
+        {
+          "id": "ACoAAB_BjYYBjQ5Ijglor3i_Hc8Hdct-ZtuhCUc",
+          "firstName": "vinodhini",
+          "lastName": "Jaisankar",
+          "publicIdentifier": "vinodhini-jaisankar-99a51412a",
+          "linkedinUrl": "https://www.linkedin.com/in/vinodhini-jaisankar-99a51412a"
+        },
+        {
+          "id": "ACoAAEjixVMBZ7MpihBuviRaEoRotDceniEtmdE",
+          "firstName": "Pandi",
+          "lastName": "selvam P",
+          "publicIdentifier": "pandi-selvam-p-1ab62b2a1",
+          "linkedinUrl": "https://www.linkedin.com/in/pandi-selvam-p-1ab62b2a1"
+        },
+        {
+          "id": "ACoAAETQyF4Bv5Kw-X_ROKHmYlr_LlT-bRKOPXs",
+          "firstName": "Pethu",
+          "lastName": "raja",
+          "position": "MERN Stack Developer | MongoDB, Node.js, Express, React| Crafting Dynamic & Responsive Application",
+          "publicIdentifier": "pethurajac",
+          "linkedinUrl": "https://www.linkedin.com/in/pethurajac"
+        },
+        {
+          "id": "ACoAAD1_Oj8BmTbtOGf7Y4QH5KFInNfTZVHdTY0",
+          "firstName": "Rubesh",
+          "lastName": "Dharun K",
+          "publicIdentifier": "k-rubesh-dharun",
+          "linkedinUrl": "https://www.linkedin.com/in/k-rubesh-dharun"
+        },
+        {
+          "id": "ACoAADzpSjQBzjrFeL9iy1jAL3PRe8-iQno5jzE",
+          "firstName": "Karthikeyan",
+          "lastName": "M",
+          "position": "Software Developer with Good knowledge in Backend Development using Java, Spring Boot, Microservices, PostgreSQL and Unix.",
+          "publicIdentifier": "karthikeyan-m-b582a5246",
+          "linkedinUrl": "https://www.linkedin.com/in/karthikeyan-m-b582a5246"
+        },
+        {
+          "id": "ACoAAECoBXQBN3sVdatSgOxxZCgOvbPAOuXRQvs",
+          "firstName": "Hari Dinesh",
+          "lastName": "Kumar",
+          "publicIdentifier": "haridineshkumar",
+          "linkedinUrl": "https://www.linkedin.com/in/haridineshkumar"
+        },
+        {
+          "id": "ACoAAFoDuKwBVzIYABZO9RAmpsLLqeHHbMCDkd8",
+          "firstName": "Guruabinaya",
+          "lastName": "G",
+          "publicIdentifier": "guruabinaya07",
+          "linkedinUrl": "https://www.linkedin.com/in/guruabinaya07"
+        },
+        {
+          "id": "ACoAAFwK6L4BqQ_gq_c2JOPTbZpgsG_c_IBUwc4",
+          "firstName": "Benjamin ",
+          "lastName": "Rios",
+          "position": "--",
+          "publicIdentifier": "benjamin-rios-1921a5371",
+          "linkedinUrl": "https://www.linkedin.com/in/benjamin-rios-1921a5371"
+        },
+        {
+          "id": "ACoAAFVq1ZABKynh7mhSTXSMh6XZTQJfpfXyBpc",
+          "firstName": "Sakthivel",
+          "lastName": "Balasubramaniyan",
+          "position": "Senior Medical Coder",
+          "publicIdentifier": "sakthivel-balasubramaniyan-b28b1b33b",
+          "linkedinUrl": "https://www.linkedin.com/in/sakthivel-balasubramaniyan-b28b1b33b"
+        },
+        {
+          "id": "ACoAAE0GlrkB-ozwgZl82XAu-ra_4t96wSXBXv0",
+          "firstName": "Rajasimman",
+          "lastName": "k",
+          "position": "Android Developer (Kotlin/Java) | Spring Boot Enthusiast | Full-Stack Mobile App Builder",
+          "publicIdentifier": "rajasimman-k",
+          "linkedinUrl": "https://www.linkedin.com/in/rajasimman-k"
+        },
+        {
+          "id": "ACoAACgY8mkBtGMFWmfSKMpiU1MKp3MMVc6fjZc",
+          "firstName": "Vignesh",
+          "lastName": "G",
+          "publicIdentifier": "vignesh-g-749363169",
+          "linkedinUrl": "https://www.linkedin.com/in/vignesh-g-749363169"
+        },
+        {
+          "id": "ACoAAEeh2Y4BAQzGymgwjvxMJfNP0sj5W-DFwxc",
+          "firstName": "maheshwaran",
+          "lastName": "a",
+          "position": "Attended AYYA NADAR JANAKI AMMAL COLLEGE",
+          "publicIdentifier": "maheshwaran-a-b26587296",
+          "linkedinUrl": "https://www.linkedin.com/in/maheshwaran-a-b26587296"
+        },
+        {
+          "id": "ACoAAEPTEVcB5DoJkRjVj27WrW76tcermx6NltE",
+          "firstName": "POTHYESWARAN",
+          "lastName": "S",
+          "publicIdentifier": "pothyeswaran",
+          "linkedinUrl": "https://www.linkedin.com/in/pothyeswaran"
+        },
+        {
+          "id": "ACoAAD38_FYBcE72lXuz6hs34O6mgLaR8b4Pk74",
+          "firstName": "Thivesh",
+          "lastName": "Ellappan",
+          "publicIdentifier": "thivesh-ellappan-b86359250",
+          "linkedinUrl": "https://www.linkedin.com/in/thivesh-ellappan-b86359250"
+        },
+        {
+          "id": "ACoAAFOAa1IBiAi-GnHpzlqqBTEW3WL6O99Tvow",
+          "firstName": "SATHISHKUMAR",
+          "lastName": "S",
+          "publicIdentifier": "sathishtz",
+          "linkedinUrl": "https://www.linkedin.com/in/sathishtz"
+        },
+        {
+          "id": "ACoAAESSjn4BF73_2AY2u0injG6dbtcy9wPC31E",
+          "firstName": "Jothimani",
+          "lastName": "S",
+          "position": "Student at MSCIMHR, Madurai/ Career guidance Coach, Specialization in Clinical psychology.",
+          "publicIdentifier": "jothimani-s-992350281",
+          "linkedinUrl": "https://www.linkedin.com/in/jothimani-s-992350281"
+        },
+        {
+          "id": "ACoAAEame80BabYz72rCIZSmYnUflCzUgPdMCXE",
+          "firstName": "Arunadevi",
+          "lastName": "G",
+          "position": "MBA/Marketing/Finance",
+          "publicIdentifier": "arunadevi-g-779b62290",
+          "linkedinUrl": "https://www.linkedin.com/in/arunadevi-g-779b62290"
+        }
+      ],
+      "openProfile": false,
+      "_meta": {
+        "pagination": {
+          "totalElements": 1,
+          "totalPages": 1,
+          "pageNumber": 1,
+          "previousElements": 0,
+          "pageSize": 25
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "totalResults": 1,
+    "source": "harvestapi/linkedin-profile-search",
+    "savedAt": "2025-10-13T06:40:38.981Z"
+  }
+}

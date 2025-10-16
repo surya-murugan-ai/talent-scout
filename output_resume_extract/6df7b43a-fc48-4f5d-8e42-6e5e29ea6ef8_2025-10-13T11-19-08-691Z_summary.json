@@ -1,0 +1,276 @@
+{
+  "filename": "6df7b43a-fc48-4f5d-8e42-6e5e29ea6ef8.pdf",
+  "timestamp": "2025-10-13T11:19:08.691Z",
+  "processingTime": 51148,
+  "confidence": 78,
+  "extractedData": {
+    "name": "Sunny Singh",
+    "email": "sunnysingh1994.ss@gmail.com",
+    "phone": "+91-9620781541",
+    "title": null,
+    "location": "Bengaluru, India",
+    "summary": null,
+    "experience": [
+      {
+        "jobTitle": "Associate Technical Leader",
+        "company": "Speed Engineering Solutions",
+        "duration": "July 2025 - Present",
+        "startDate": "2025-07",
+        "endDate": "Present",
+        "techUsed": [
+          "Javascript",
+          "Node.js",
+          "Express",
+          "PostgreSQL",
+          "Git",
+          "Jest",
+          "AWS(SQS, S3, Fargate)",
+          "Winston",
+          "Morgan",
+          "React"
+        ],
+        "description": "Led backend hardening: introduced centralized error handling, structured JSON logging (Winston), and layered security (helmet, rate limiting, sanitization, RBAC). Architected role-based access model (Cognito groups + middleware) enforcing least-privilege across upload, processing, validation, and read APIs. Designed and implemented asynchronous job pipeline (SQS + worker pattern) with traceable job lifecycle in RDS. Added automated validation negative-path test scaffolding (Jest + Supertest) to improve reliability and catch regressions early. Refactored configuration environment strategy: eliminated hard-coded secrets, added DB skip mode for faster local/dev/test cycles. Introduced feature toggles and granular per-route rate limiting to protect high-cost operations and enable controlled rollout.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Associate Consultant, Engineering",
+        "company": "GlobalLogic",
+        "duration": "September 2023 - May 2025",
+        "startDate": "2023-09",
+        "endDate": "2025-05",
+        "techUsed": [
+          "Javascript",
+          "Node.js",
+          "Kafka",
+          "AWS (Lambda, ECS, SNS/SQS)",
+          "Docker",
+          "Kubernetes",
+          "Terraform",
+          "Jenkins",
+          "Express",
+          "PostgreSQL",
+          "Splunk",
+          "React",
+          "Jest",
+          "WebSockets",
+          "OAuth 2.0/JWT",
+          "Typescript"
+        ],
+        "description": "Architected and led migration of a legacy monolith into decoupled Node.js microservices powered by Apache Kafka, achieving real-time, fault-tolerant event streaming for emergency notifications. Reduced end-to-end latency by 40% and increased overall system resilience. Designed and implemented the core backend for a fall-detection application that monitors elderly users via IoT sensors. Orchestrated automated family alerts and seamless 911 dispatch through AWS SNS/SQS and Lambda, ensuring 99.9% uptime under peak loads. Devised Docker-based containerization strategies and Jenkins-driven pipelines, enacting blue/green deployments across Kubernetes clusters. Cut release cycle time by 60% and eliminated manual intervention through Infrastructure as Code (Terraform) and automated health-check rollbacks. Engineered a centralized authentication and authorization framework using OAuth 2.0 and JWTs in Express.js, enforcing role-based access controls across microservices. Conducted threat modeling and integrated Splunk for real-time security monitoring and audit trails. Collaborated with frontend teams to optimize React components—leveraging custom hooks, code-splitting, lazy loading, and React.memo—to boost client-side rendering speeds by 35%. Implemented WebSocket communication (WS) for low-latency chat, replacing third-party dependencies and reducing operational costs by 25%. Established comprehensive testing standards—unit, integration, and contract tests with Jest and React Testing Library—driving code coverage above 90%. Led and mentored a cross-functional team of 8 engineers in code reviews, clean-code best practices, and microservices design patterns.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Full Stack Developer",
+        "company": "Webmagnat LLC",
+        "duration": "September 2021 - August 2023",
+        "startDate": "2021-09",
+        "endDate": "2023-08",
+        "techUsed": [
+          "Node.js",
+          "React",
+          "GraphQL",
+          "Prisma",
+          "PostgreSQL",
+          "Elasticsearch",
+          "Redis",
+          "Socket.io",
+          "Docker",
+          "AWS (EC2, EKS/ECS, S3, CodeCommit, CloudWatch)",
+          "Terraform",
+          "GitHub Actions",
+          "Mocha",
+          "Jest"
+        ],
+        "description": "Engineered a high-throughput travel metasearch platform in Node.js, React and AWS, processing 1M+ daily queries with p99 latency<200 ms. Architected a resilient Elasticsearch cluster on AWS EC2/EKS with auto-scaling and Terraform-managed IaC, driving search response times down by 60% under peak load. Built a React-powered SPA for real-time result filtering and booking workflows—leveraging WebSocket (Socket.io), code-splitting and custom hooks to boost user engagement by 35%. Consolidated 10+ external flight, hotel and car-rental APIs into a unified GraphQL gateway (Node.js + Express), increasing result coverage by 85% and simplifying frontend data consumption. Designed relational schemas with Prisma ORM over PostgreSQL, introduced advanced indexing and Redis caching, cutting database query time by 70% at scale. Spearheaded CI/CD transformation with GitHub Actions, Docker-based pipelines and blue/green deployments on AWS ECS, slashing release cycle time by 50% and reducing production incidents by 75%. Instituted comprehensive test suites using Mocha and Jest—achieving above 90% coverage—and championed peer code reviews and clean-code standards across the engineering team.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Software Engineer",
+        "company": "Koach AI",
+        "duration": "January 2021 - August 2021",
+        "startDate": "2021-01",
+        "endDate": "2021-08",
+        "techUsed": [
+          "AWS (EC2, S3)",
+          "MariaDB",
+          "Node.js",
+          "TypeScript",
+          "Express.js",
+          "Docker",
+          "GitHub Actions",
+          "Jest",
+          "OAuth 2.0"
+        ],
+        "description": "Led Node.js backend modernization, instituting coding standards and architectural best practices that improved code maintainability and reduced defect rates by 15%. Scaled database performance for a high-traffic web application by redesigning MariaDB schemas, tuning indexes, and refactoring complex queries—cutting average response times by 40%. Implemented horizontal scaling using the Node.js cluster module and Docker containers, boosting concurrent request throughput by 50% under peak load. Implemented event-driven programming in Node.js to build scalable and responsive applications, leveraging asynchronous event handling to improve system performance and efficiency.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Product Solution Engineer",
+        "company": "Recko",
+        "duration": "June 2020 - December 2020",
+        "startDate": "2020-06",
+        "endDate": "2020-12",
+        "techUsed": [
+          "Node.js",
+          "Java",
+          "Javascript",
+          "AWS",
+          "Docker",
+          "Typescript",
+          "Elasticsearch",
+          "Express",
+          "Git",
+          "Jest",
+          "Dropwizard"
+        ],
+        "description": "Enhanced and redesigned the backend in Node.js using TypeScript, focusing on code improvement and optimizing performance. Developed REST APIs according to project requirements and utilized Jest for rigorous testing to ensure reliability and efficiency. Focused on optimizing Node.js performance through various techniques, including code refactoring, efficient resource management, and performance profiling, to enhance application speed and scalability.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Application Developer",
+        "company": "Juspay",
+        "duration": "March 2019 - November 2019",
+        "startDate": "2019-03",
+        "endDate": "2019-11",
+        "techUsed": [
+          "Node.js",
+          "Java",
+          "Javascript",
+          "Purescript",
+          "Haskell",
+          "Spring",
+          "Git",
+          "Jest"
+        ],
+        "description": "Integrated the SMS User Consent API into the current SDK version and refactored legacy code to facilitate the deployment of the updated SDK. Developed pixel-perfect UIs with seamless payment integration using Purescript for multiple merchants, leveraging the Presto framework. Enhanced the existing encryption method to enable secure log reading in the current SDK, developed in Java and built on the Spring framework.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Software Developer",
+        "company": "Zibtek",
+        "duration": "October 2018 - March 2019",
+        "startDate": "2018-10",
+        "endDate": "2019-03",
+        "techUsed": [
+          "Node.js",
+          "Javascript",
+          "Express",
+          "Mysql",
+          "Git",
+          "Jest",
+          "Restful API"
+        ],
+        "description": "Integrated user-facing components developed by front-end teams with server-side logic, while designing and implementing robust data storage solutions.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Software Engineer",
+        "company": "Hashtaag - KGJ Software Technologies",
+        "duration": "September 2017 - April 2018",
+        "startDate": "2017-09",
+        "endDate": "2018-04",
+        "techUsed": [
+          "Node.js",
+          "Javascript",
+          "Express",
+          "Mysql",
+          "Git",
+          "Jest",
+          "Restful API"
+        ],
+        "description": "Architected and developed the complete backend from scratch using Node.js, Express.js, and MySQL. Gained extensive experience in designing and developing RESTful APIs.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor Of Engineering",
+        "field": "Computer Science",
+        "university": "Nitte Meenakshi Institute of Technology (VTU)",
+        "year": "2016",
+        "percentage": null,
+        "gpa": null,
+        "location": "Bengaluru, INDIA"
+      }
+    ],
+    "skills": [
+      "C",
+      "JavaScript",
+      "TypeScript",
+      "Java",
+      "Python",
+      "SQL",
+      "AWS (EC2, DynamoDB, S3, SQS, Lambda)",
+      "Docker",
+      "Kubernetes",
+      "Splunk",
+      "Kafka",
+      "PostgreSQL",
+      "MongoDB",
+      "Elasticsearch",
+      "Redis",
+      "Prisma",
+      "Node.js",
+      "Express.js",
+      "Spring",
+      "React",
+      "GraphQL",
+      "RESTful APIs",
+      "Jest",
+      "Git",
+      "Linux"
+    ],
+    "projects": [
+      {
+        "name": "Speech-Based Wheelchair Control System",
+        "description": "Architected and prototyped a hands-free mobility solution leveraging Bluetooth Low Energy (BLE) and Android’s Voice API. Developed an Android application that interprets natural-language voice commands to deliver real-time steering, speed modulation, and directional control. Enhanced autonomy for users with motor impairments by enabling precise, low-latency wheelchair operation without manual input.",
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Online Cab Reservation Platform",
+        "description": "Engineered a scalable reservation system underpinned by a normalized SQL database schema to manage trips, drivers, and passenger profiles. Designed and implemented data models, stored procedures, and transaction workflows to ensure ACID compliance and high throughput. Delivered an intuitive interface for booking management, reporting, and administrative oversight, streamlining operations and improving data integrity.",
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Java Certification",
+        "issuer": "Cambridge Certification Authority",
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "Udemy Git and GitHub Course",
+        "issuer": "Udemy",
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "Udemy Spring and Spring Boot with Hibernate Course",
+        "issuer": "Udemy",
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "Udemy Advanced JavaScript Course",
+        "issuer": "Udemy",
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      }
+    ]
+  }
+}

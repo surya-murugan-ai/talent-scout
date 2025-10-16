@@ -1,0 +1,133 @@
+{
+  "filename": "5b26bc26-c2c2-4068-8ee4-69ab07e47363.pdf",
+  "timestamp": "2025-10-13T11:41:00.407Z",
+  "processingTime": 5549,
+  "confidence": 98,
+  "rawText": "\n\nNithish Kumar\n+91 9025105082|iamnithish100@gmail.com|linkedin.com/in/nithishkumar2002|github.com/Nithish-2012002\nSUMMARY\nHighly motivated and detail-oriented Software Engineer with a strong foundation inReact,Node.js, andSQL. Proficient in\nbuilding scalable and responsive web applications, crafting efficient backend solutions, and designing robust database\nsystems. Adept at collaborating in team environments and leveraging problem-solving skills to deliver innovative and\nuser-centric software solutions. Passionate about learning and staying updated with the latest technologies to drive\nimpactful results.\nTECHNICAL SKILLS\nProgramming Languages: Java, Python, JavaScript, SQL\nTechnologies:HTML, CSS, Tailwind CSS JavaScript (ES6+), Node.js, React, SQL,Git\nBackend Skills: Node.js, Express.js, RESTful APIs, Authentication (JWT/OAuth)\nPROJECTS\nEEEZOOct 2024 – Present\nAn Recruitement PortalReact.js, Node.js, SQL\n•Developed dynamic and responsive web interfaces usingReact.jsandTailwind CSS\nto enhance user experience.\n•Implemented seamless API integration to efficiently fetch and display backend data.\nEvotingMay 2024 – Oct 2024\nInGovern Research ServicesHTML, Node.js, SQL,Ajax\n•Developed an end-to-end web application with six user login profiles, each having\ndifferent levels of authorization.\n•Contributed to developing responsive web pages and backend logic usingNode.jsandAJAXto fetch and display dynamic data.\nEXPERIENCE\nSoftware Development EngineerApril 2024 – present\nNirals Information Technologies Pvt.LmtKovilpatti ,India\n•Developing and deploying software applications for various Clients\nSoftware Engineer InternSep 2022 – Feb 2023\nCogniot Technologies Pvt.lmtKovilpatti, India\n•Developed Web Pages, Built Deep learning Projects\nEDUCATION\nNational Engineering CollegeKovilpatti, India\nB.E. in Computer Science and EngineeringAug 2020 – Apr 2024\nCERTIFICATIONS\n•Scaler Certified Node.Js Professional\n•Infosys Springboard - Javascript Certification\n•NPTEL - Cloud Computing",
+  "extractedData": {
+    "name": "Nithish Kumar",
+    "email": "iamnithish100@gmail.com",
+    "phone": "+91 9025105082",
+    "linkedinUrl": "https://linkedin.com/in/nithishkumar2002",
+    "githubUrl": "https://github.com/Nithish-2012002",
+    "portfolioUrl": null,
+    "location": "Kovilpatti, India",
+    "title": "Software Development Engineer",
+    "summary": "Highly motivated and detail-oriented Software Engineer with a strong foundation in React, Node.js, and SQL. Proficient in building scalable and responsive web applications, crafting efficient backend solutions, and designing robust database systems. Adept at collaborating in team environments and leveraging problem-solving skills to deliver innovative and user-centric software solutions. Passionate about learning and staying updated with the latest technologies to drive impactful results.",
+    "experience": [
+      {
+        "jobTitle": "Software Development Engineer",
+        "company": "Nirals Information Technologies Pvt.Lmt",
+        "duration": "April 2024 - present",
+        "startDate": "2024-04",
+        "endDate": "Present",
+        "techUsed": [],
+        "description": "Developing and deploying software applications for various Clients",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Software Engineer Intern",
+        "company": "Cogniot Technologies Pvt.lmt",
+        "duration": "Sep 2022 - Feb 2023",
+        "startDate": "2022-09",
+        "endDate": "2023-02",
+        "techUsed": [],
+        "description": "Developed Web Pages, Built Deep learning Projects",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.E.",
+        "field": "Computer Science and Engineering",
+        "university": "National Engineering College",
+        "year": "2024",
+        "percentage": null,
+        "gpa": null,
+        "location": "Kovilpatti, India"
+      }
+    ],
+    "projects": [
+      {
+        "name": "EEEZO",
+        "description": "Developed dynamic and responsive web interfaces using React.js and Tailwind CSS to enhance user experience. Implemented seamless API integration to efficiently fetch and display backend data.",
+        "techUsed": [
+          "React.js",
+          "Node.js",
+          "SQL"
+        ],
+        "duration": "Oct 2024 – Present",
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Evoting",
+        "description": "Developed an end-to-end web application with six user login profiles, each having different levels of authorization. Contributed to developing responsive web pages and backend logic using Node.js and AJAX to fetch and display dynamic data.",
+        "techUsed": [
+          "HTML",
+          "Node.js",
+          "SQL",
+          "Ajax"
+        ],
+        "duration": "May 2024 – Oct 2024",
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "achievements": [],
+    "certifications": [
+      {
+        "name": "Scaler Certified Node.Js Professional",
+        "issuer": null,
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "Infosys Springboard - Javascript Certification",
+        "issuer": null,
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "NPTEL - Cloud Computing",
+        "issuer": null,
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      }
+    ],
+    "skills": [
+      "Java",
+      "Python",
+      "JavaScript",
+      "SQL",
+      "HTML",
+      "CSS",
+      "Tailwind CSS",
+      "Node.js",
+      "React",
+      "Git",
+      "Express.js",
+      "RESTful APIs",
+      "Authentication (JWT/OAuth)"
+    ],
+    "interests": [],
+    "languages": [],
+    "salary": null,
+    "availability": null,
+    "remotePreference": null,
+    "visaStatus": null,
+    "originalData": {
+      "filename": "5b26bc26-c2c2-4068-8ee4-69ab07e47363.pdf",
+      "rawText": "Nithish Kumar +91 9025105082|iamnithish100@gmail.com|linkedin.com/in/nithishkumar2002|github.com/Nithish-2012002 SUMMARY Highly motivated and detail-oriented Software Engineer with a strong foundation inReact,Node.js, andSQL. Proficient in building scalable and responsive web applications, crafting efficient backend solutions, and designing robust database systems. Adept at collaborating in team environments and leveraging problem-solving skills to deliver innovative and user-centric software solutions. Passionate about learning and staying updated with the latest technologies to drive impactful results. TECHNICAL SKILLS Programming Languages: Java, Python, JavaScript, SQL Technologies:HTML, CSS, Tailwind CSS JavaScript (ES6+), Node.js, React, SQL,Git Backend Skills: Node.js, Express.js, RESTful APIs, Authentication (JWT/OAuth) PROJECTS EEEZOOct 2024 – Present An Recruitement PortalReact.js, Node.js, SQL •Developed dynamic and responsive web interfaces usingReact.jsandTailwind CSS to enhance user experience. •Implemented seamless API integration to efficiently fetch and display backend data. EvotingMay 2024 – Oct 2024 InGovern Research ServicesHTML, Node.js, SQL,Ajax •Developed an end-to-end web application with six user login profiles, each having different levels of authorization. •Contributed to developing responsive web pages and backend logic usingNode.jsandAJAXto fetch and display dynamic data. EXPERIENCE Software Development EngineerApril 2024 – present Nirals Information Technologies Pvt.LmtKovilpatti ,India •Developing and deploying software applications for various Clients Software Engineer InternSep 2022 – Feb 2023 Cogniot Technologies Pvt.lmtKovilpatti, India •Developed Web Pages, Built Deep learning Projects EDUCATION National Engineering CollegeKovilpatti, India B.E. in Computer Science and EngineeringAug 2020 – Apr 2024 CERTIFICATIONS •Scaler Certified Node.Js Professional •Infosys Springboard - Javascript Certification •NPTEL - Cloud Computing"
+    },
+    "source": "resume",
+    "confidence": 98,
+    "processingTime": 0
+  }
+}

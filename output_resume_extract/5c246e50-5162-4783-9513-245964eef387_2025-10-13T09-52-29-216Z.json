@@ -1,0 +1,123 @@
+{
+  "filename": "5c246e50-5162-4783-9513-245964eef387.pdf",
+  "timestamp": "2025-10-13T09:52:29.216Z",
+  "processingTime": 7608,
+  "confidence": 83,
+  "rawText": "\n\n•\n01/2021\n01/2018\n11/2021 - 01/2022\n01/2022 - 03/2022\n03/2022 - 07/2022\n07/2022 - 11/2022\n11/2022 - Present\nPowered by\nEXPERIENCE\nJUNIOR SOFTWARE DEVELOPER\nGlinjos Innovations Software Solutions LLP\nI m working as a Software Developer and very much dedicated to create  \nand innovate trending as well as unique mobile and web applications.\nEDUCATION\nBachelor Of Computer Applications\nBCA\no 12th Board\nKannur University\nPROJECTS\nO\u0000ar\nkannur\nOffar was an Online Shopping site and was developed using PDO . Offar was  \ntoo helpful to compare offers among various shops at Kannur.\nAuditorium\nkannur\nAuditorium was a management project developed using the language  \nCodeigniter. And it was manages whole thinks related to an auditorium such \nas  \nBooking, Scheduling, Billing, Cancellations etc.\nGDiary\nkannur\nGdiary was a project developed in Laravel and it was used to manage whole  \nthinks of a firm such as Company creations, Hiring Staffs, Salary \nmanagement,  \nGST billing , Transaction management, Estimations etc.\nChitty\nkannur\nThe project is a mobile application developed with Android Java. It mainly  \ndeveloped for people in a particular locality.It has three different phases like  \nadmin,agents and users and it provides reports like ledger,draw details and  \npayments etc.\nOnReach\nkannur\nThe project is a mobile application developed with Flutter dart. The project is  \nfor Staffs in a school or collage and its main aim is to record each students  \nexamination marks in a class .\nLANGUAGES\nMalayalam\nNative\nEnglish\nNative\nHindi\nAdvanced\nTamil\nAdvanced\nSKILLS\nLaravelCodeIgniter\nPython DjangoMySQLPHP\nAndroidFlutter\nwww.enhancv.com\nE\nqe\nJISHNU RAJ U\nJUNIOR SOFTWARE DEVELOPER\n\u000091 7907751406jishnuraj0610@gmail.com\nLinkedIn/PortfolioKannur Kerala\n",
+  "extractedData": {
+    "name": "JISHNU RAJ U",
+    "email": "jishnuraj0610@gmail.com",
+    "phone": "+91 7907751406",
+    "linkedinUrl": null,
+    "githubUrl": null,
+    "portfolioUrl": "www.enhancv.com",
+    "location": "Kannur, Kerala",
+    "title": "JUNIOR SOFTWARE DEVELOPER",
+    "summary": null,
+    "experience": [
+      {
+        "jobTitle": "JUNIOR SOFTWARE DEVELOPER",
+        "company": "Glinjos Innovations Software Solutions LLP",
+        "duration": "11/2022 - Present",
+        "startDate": "2022-11",
+        "endDate": "Present",
+        "techUsed": [],
+        "description": "I m working as a Software Developer and very much dedicated to create and innovate trending as well as unique mobile and web applications.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor Of Computer Applications",
+        "field": "BCA",
+        "university": "Kannur University",
+        "year": null,
+        "percentage": null,
+        "gpa": null,
+        "location": null
+      }
+    ],
+    "projects": [
+      {
+        "name": "Offar",
+        "description": "Offar was an Online Shopping site and was developed using PDO. Offar was too helpful to compare offers among various shops at Kannur.",
+        "techUsed": [
+          "PDO"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Auditorium",
+        "description": "Auditorium was a management project developed using the language Codeigniter. And it was manages whole thinks related to an auditorium such as Booking, Scheduling, Billing, Cancellations etc.",
+        "techUsed": [
+          "Codeigniter"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "GDiary",
+        "description": "Gdiary was a project developed in Laravel and it was used to manage whole thinks of a firm such as Company creations, Hiring Staffs, Salary management, GST billing, Transaction management, Estimations etc.",
+        "techUsed": [
+          "Laravel"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Chitty",
+        "description": "The project is a mobile application developed with Android Java. It mainly developed for people in a particular locality. It has three different phases like admin, agents and users and it provides reports like ledger, draw details and payments etc.",
+        "techUsed": [
+          "Android Java"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "OnReach",
+        "description": "The project is a mobile application developed with Flutter dart. The project is for Staffs in a school or collage and its main aim is to record each students examination marks in a class.",
+        "techUsed": [
+          "Flutter dart"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "achievements": [],
+    "certifications": [],
+    "skills": [
+      "Laravel",
+      "CodeIgniter",
+      "Python",
+      "Django",
+      "MySQL",
+      "PHP",
+      "Android",
+      "Flutter"
+    ],
+    "interests": [],
+    "languages": [
+      "Malayalam",
+      "English",
+      "Hindi",
+      "Tamil"
+    ],
+    "salary": null,
+    "availability": null,
+    "remotePreference": null,
+    "visaStatus": null,
+    "originalData": {
+      "filename": "5c246e50-5162-4783-9513-245964eef387.pdf",
+      "rawText": "• 01/2021 01/2018 11/2021 - 01/2022 01/2022 - 03/2022 03/2022 - 07/2022 07/2022 - 11/2022 11/2022 - Present Powered by EXPERIENCE JUNIOR SOFTWARE DEVELOPER Glinjos Innovations Software Solutions LLP I m working as a Software Developer and very much dedicated to create and innovate trending as well as unique mobile and web applications. EDUCATION Bachelor Of Computer Applications BCA o 12th Board Kannur University PROJECTS O\u0000ar kannur Offar was an Online Shopping site and was developed using PDO . Offar was too helpful to compare offers among various shops at Kannur. Auditorium kannur Auditorium was a management project developed using the language Codeigniter. And it was manages whole thinks related to an auditorium such as Booking, Scheduling, Billing, Cancellations etc. GDiary kannur Gdiary was a project developed in Laravel and it was used to manage whole thinks of a firm such as Company creations, Hiring Staffs, Salary management, GST billing , Transaction management, Estimations etc. Chitty kannur The project is a mobile application developed with Android Java. It mainly developed for people in a particular locality.It has three different phases like admin,agents and users and it provides reports like ledger,draw details and payments etc. OnReach kannur The project is a mobile application developed with Flutter dart. The project is for Staffs in a school or collage and its main aim is to record each students examination marks in a class . LANGUAGES Malayalam Native English Native Hindi Advanced Tamil Advanced SKILLS LaravelCodeIgniter Python DjangoMySQLPHP AndroidFlutter www.enhancv.com E qe JISHNU RAJ U JUNIOR SOFTWARE DEVELOPER \u000091 7907751406jishnuraj0610@gmail.com LinkedIn/PortfolioKannur Kerala "
+    },
+    "source": "resume",
+    "confidence": 83,
+    "processingTime": 0
+  }
+}

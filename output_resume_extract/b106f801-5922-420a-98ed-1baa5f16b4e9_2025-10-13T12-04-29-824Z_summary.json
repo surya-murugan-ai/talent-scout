@@ -1,0 +1,104 @@
+{
+  "filename": "b106f801-5922-420a-98ed-1baa5f16b4e9.pdf",
+  "timestamp": "2025-10-13T12:04:29.824Z",
+  "processingTime": 10380,
+  "confidence": 87,
+  "extractedData": {
+    "name": "Suresh Kumar",
+    "email": "sureshayyan444@gmail.com",
+    "phone": "8760105087",
+    "title": "Software Developer",
+    "location": "Virudhunagar, Tamilnadu",
+    "summary": null,
+    "experience": [
+      {
+        "jobTitle": "PHP Developer & MERN STACK DEVELOPER",
+        "company": "R Cloudb software solution pvt ltd",
+        "duration": "September 2023 - Current",
+        "startDate": "2023-09",
+        "endDate": "Present",
+        "techUsed": [
+          "ASP.NET",
+          "Telerik",
+          "SQL Server",
+          "AWS",
+          "React",
+          "Redux",
+          "Serverless AWS",
+          "S3 Bucket",
+          "DynamoDB",
+          "Cognito",
+          "Secrets Manager",
+          "CloudFront",
+          "Node.js",
+          "MongoDB",
+          "Firebase"
+        ],
+        "description": "Developed various systems and eCommerce websites using a range of technologies including ASP.NET, Telerik, SQL Server, AWS, React, Redux, Node.js, MongoDB, and Firebase.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "PHP Developer & Hardware maintenance",
+        "company": "VVV & Sons edible oils ltd (IDHAYAM Oil)",
+        "duration": "February 2023 - August 2023",
+        "startDate": "2023-02",
+        "endDate": "2023-08",
+        "techUsed": [
+          "PHP",
+          "MySQL",
+          "MVC framework"
+        ],
+        "description": "Worked on EARMS ERP Software, providing updates and improvements on the admin side, and managed hardware tasks including server maintenance and CCTV systems.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Sc IT",
+        "field": null,
+        "university": "V.H.N.S.N College",
+        "year": "2018",
+        "percentage": null,
+        "gpa": null,
+        "location": "Virudhunagar, Tamilnadu"
+      },
+      {
+        "degree": "XII",
+        "field": null,
+        "university": "K.V.S Hr. Sec. School",
+        "year": "2015",
+        "percentage": null,
+        "gpa": null,
+        "location": "Virudhunagar, Tamilnadu"
+      }
+    ],
+    "skills": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Bootstrap",
+      "PHP MVC Framework",
+      "React",
+      "Redux",
+      "React Native",
+      "Asp.net Telerik",
+      "Mysql",
+      "Sql server",
+      "MongoDB",
+      "DynamoDB",
+      "AWS",
+      "Azure"
+    ],
+    "projects": [],
+    "certifications": [
+      {
+        "name": "Certificate course in Web Development Using PYTHON",
+        "issuer": null,
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      }
+    ]
+  }
+}

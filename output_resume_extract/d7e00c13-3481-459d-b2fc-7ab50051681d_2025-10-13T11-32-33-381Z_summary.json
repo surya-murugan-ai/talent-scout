@@ -1,0 +1,67 @@
+{
+  "filename": "d7e00c13-3481-459d-b2fc-7ab50051681d.pdf",
+  "timestamp": "2025-10-13T11:32:33.381Z",
+  "processingTime": 5686,
+  "confidence": 92,
+  "extractedData": {
+    "name": "Karthik Kumar T",
+    "email": "tkarthi6381@gmail.com",
+    "phone": "6381564418",
+    "title": "Teaching Professional",
+    "location": null,
+    "summary": "A passionate and dynamic teaching professional specializing in Commerce and Accountancy, aiming to foster a love for learning through motivational and interactive teaching methods. With a strong academic background, extensive public speaking experience, and a proven record of leadership, I seek to contribute effectively to the holistic development of students while continually evolving as an educator.",
+    "experience": [
+      {
+        "jobTitle": "Intern Teacher",
+        "company": "Municipal Higher Secondary School, Sattur",
+        "duration": "Sep - Jan",
+        "startDate": null,
+        "endDate": null,
+        "techUsed": [],
+        "description": "Taught PG school students for 80 days as part of B.Ed internship. Developed lesson plans, assessed student progress, and conducted engaging classroom sessions.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Ed",
+        "field": null,
+        "university": "P.S.N.L College, Sattur",
+        "year": "2025",
+        "percentage": null,
+        "gpa": null,
+        "location": "Sattur"
+      },
+      {
+        "degree": "M.Com",
+        "field": null,
+        "university": "Sri Krishnasamy College, Sattur",
+        "year": "2023",
+        "percentage": null,
+        "gpa": null,
+        "location": "Sattur"
+      },
+      {
+        "degree": "B.Com",
+        "field": null,
+        "university": "Sri Krishnasamy College, Sattur",
+        "year": "2021",
+        "percentage": null,
+        "gpa": null,
+        "location": "Sattur"
+      }
+    ],
+    "skills": [
+      "Commerce",
+      "Accountancy",
+      "Public Speaking & Communication",
+      "Leadership & Motivation",
+      "Creative Writing & Poetry",
+      "Classroom Management",
+      "Event Coordination",
+      "Student Engagement Strategies"
+    ],
+    "projects": [],
+    "certifications": []
+  }
+}

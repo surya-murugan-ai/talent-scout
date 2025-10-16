@@ -1,0 +1,365 @@
+{
+  "timestamp": "2025-10-09T12:52:37.782Z",
+  "searchQuery": "Profile enrichment for: Vignesh G - https://www.linkedin.com/in/vignesh-g-749363169",
+  "rawData": [
+    {
+      "id": "ACoAACgY8mkBtGMFWmfSKMpiU1MKp3MMVc6fjZc",
+      "publicIdentifier": "vignesh-g-749363169",
+      "linkedinUrl": "https://www.linkedin.com/in/vignesh-g-749363169",
+      "firstName": "Vignesh",
+      "lastName": "G",
+      "headline": "Senior Developer at Nirals Info - Tech",
+      "about": null,
+      "openToWork": false,
+      "hiring": false,
+      "photo": "https://media.licdn.com/dms/image/v2/D5603AQHpEnbpMEtRBg/profile-displayphoto-crop_800_800/B56ZfQDsMBGQAQ-/0/1751542319647?e=1762992000&v=beta&t=3poovPXWdqufwuXEO0nyuxk8VtYcj_kidQkT2rasX_c",
+      "premium": true,
+      "influencer": false,
+      "location": {
+        "linkedinText": "Virudhunagar, Tamil Nadu, India",
+        "countryCode": "IN",
+        "parsed": {
+          "text": "Tamil Nadu, India",
+          "countryCode": "IN",
+          "regionCode": null,
+          "country": "India",
+          "countryFull": "India",
+          "state": "Tamil Nadu"
+        }
+      },
+      "verified": true,
+      "registeredAt": "2018-07-21T10:06:11.017Z",
+      "topSkills": null,
+      "connectionsCount": 2,
+      "followerCount": 3,
+      "currentPosition": [
+        {
+          "companyId": "16153648",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/16153648/",
+          "companyName": "Nirals",
+          "dateRange": {
+            "start": {
+              "month": 10,
+              "year": 2021,
+              "day": null
+            },
+            "end": null
+          }
+        }
+      ],
+      "profileTopEducation": [
+        {
+          "schoolId": "219680",
+          "companyId": "15125134",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/15125134/",
+          "schoolName": "Sri Vidya College of Engineering and Technology"
+        }
+      ],
+      "experience": [
+        {
+          "position": "Senior Software Engineer",
+          "location": "Kovilpatti, Tamil Nadu, India",
+          "employmentType": "Full-time",
+          "workplaceType": "On-site",
+          "companyName": "Nirals",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/nirals/",
+          "companyId": "16153648",
+          "companyUniversalName": "nirals",
+          "duration": "4 yrs 1 mo",
+          "description": null,
+          "skills": [
+            "Vector Databases",
+            "React.js",
+            "JavaScript",
+            "Node.js",
+            "HTML",
+            "PHP",
+            "Playwriting",
+            "Python (Programming Language)",
+            "TypeScript",
+            "Web Applications",
+            "Tailwind CSS"
+          ],
+          "startDate": {
+            "month": "Oct",
+            "year": 2021,
+            "text": "Oct 2021"
+          },
+          "endDate": {
+            "text": "Present"
+          }
+        }
+      ],
+      "education": [
+        {
+          "schoolName": "Sri Vidya College of Engineering and Technology",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/15125134/",
+          "degree": "BE - Bachelor of Engineering",
+          "fieldOfStudy": "Computer Engineering",
+          "skills": [],
+          "startDate": {
+            "year": 2015,
+            "text": "2015"
+          },
+          "endDate": {
+            "year": 2019,
+            "text": "2019"
+          },
+          "period": "2015 - 2019"
+        }
+      ],
+      "certifications": [],
+      "projects": [],
+      "volunteering": [],
+      "receivedRecommendations": [],
+      "skills": [
+        {
+          "name": "React.js",
+          "positions": [
+            "Senior Software Engineer at Nirals"
+          ]
+        },
+        {
+          "name": "Node.js",
+          "positions": [
+            "Senior Software Engineer at Nirals"
+          ]
+        },
+        {
+          "name": "PHP",
+          "positions": [
+            "Senior Software Engineer at Nirals"
+          ]
+        },
+        {
+          "name": "Python (Programming Language)",
+          "positions": [
+            "Senior Software Engineer at Nirals"
+          ]
+        },
+        {
+          "name": "Vector Databases",
+          "positions": [
+            "Senior Software Engineer at Nirals"
+          ]
+        },
+        {
+          "name": "Playwriting",
+          "positions": [
+            "Senior Software Engineer at Nirals"
+          ]
+        },
+        {
+          "name": "TypeScript",
+          "positions": [
+            "Senior Software Engineer at Nirals"
+          ]
+        },
+        {
+          "name": "SQL"
+        },
+        {
+          "name": "Software Development"
+        },
+        {
+          "name": "Web Applications",
+          "positions": [
+            "Senior Software Engineer at Nirals"
+          ]
+        },
+        {
+          "name": "jQuery"
+        },
+        {
+          "name": "PostgreSQL"
+        },
+        {
+          "name": "Tailwind CSS",
+          "positions": [
+            "Senior Software Engineer at Nirals"
+          ]
+        },
+        {
+          "name": "Bootstrap (Framework)"
+        },
+        {
+          "name": "JavaScript",
+          "positions": [
+            "Senior Software Engineer at Nirals"
+          ]
+        },
+        {
+          "name": "HTML",
+          "positions": [
+            "Senior Software Engineer at Nirals"
+          ]
+        },
+        {
+          "name": "Cascading Style Sheets (CSS)"
+        }
+      ],
+      "publications": [],
+      "courses": [],
+      "patents": [],
+      "honorsAndAwards": [],
+      "languages": [],
+      "causes": [],
+      "featured": null,
+      "composeOptionType": "UPSELL",
+      "moreProfiles": [
+        {
+          "id": "ACoAADgUjngBQL4yQjs9VNDejR_ZGZvTu5d3i4c",
+          "firstName": "Rajesh ",
+          "lastName": "Kanna G",
+          "position": "Design engineer |NPD | Medical device| Project planning & management |Product Design |",
+          "publicIdentifier": "rajesh-kanna-g-848119223",
+          "linkedinUrl": "https://www.linkedin.com/in/rajesh-kanna-g-848119223"
+        },
+        {
+          "id": "ACoAADZxOcQBVwlj0488fkIFBVs6BXPxqvNJZss",
+          "firstName": "Ragu",
+          "lastName": "Ram",
+          "position": "Tungsten/Kofax developer",
+          "publicIdentifier": "ragu-ram-230a86215",
+          "linkedinUrl": "https://www.linkedin.com/in/ragu-ram-230a86215"
+        },
+        {
+          "id": "ACoAACf-dC8Bbq9GkDFc1WBmJ9qWeFs6g3quIaw",
+          "firstName": "Ashok",
+          "lastName": "Kumar G",
+          "position": "Senior Product designer - IMOS || Product Development",
+          "publicIdentifier": "ashok-kumar-g-a13866168",
+          "linkedinUrl": "https://www.linkedin.com/in/ashok-kumar-g-a13866168"
+        },
+        {
+          "id": "ACoAAFyR_wgB5TM9g1oNnOcWQpWdApHqhnXw96I",
+          "firstName": "Prasenjit",
+          "lastName": "Maitra",
+          "position": "--",
+          "publicIdentifier": "prasenjit-maitra-548154374",
+          "linkedinUrl": "https://www.linkedin.com/in/prasenjit-maitra-548154374"
+        },
+        {
+          "id": "ACoAAD0s2HcB_F2GKyfDIhbSHmAhQAgSFD6157s",
+          "firstName": "Sathya",
+          "lastName": "M",
+          "publicIdentifier": "sathya-m-09b880247",
+          "linkedinUrl": "https://www.linkedin.com/in/sathya-m-09b880247"
+        },
+        {
+          "id": "ACoAAD0TAKIBEpS4NZzDsRArPV6FFEc9qhFKRF0",
+          "firstName": "PRASANNA SRI SOWMIYA",
+          "lastName": "M",
+          "publicIdentifier": "prasanna-sri-sowmiya-m-b421a3247",
+          "linkedinUrl": "https://www.linkedin.com/in/prasanna-sri-sowmiya-m-b421a3247"
+        },
+        {
+          "id": "ACoAADlMwjMBAMDpd_bIjG6AYOzezy0n4RwA_R8",
+          "firstName": "Selvaraj",
+          "lastName": "R",
+          "position": "JUNIOR DESIGN ENGINEER - PED",
+          "publicIdentifier": "selvaraj-r-303b46229",
+          "linkedinUrl": "https://www.linkedin.com/in/selvaraj-r-303b46229"
+        },
+        {
+          "id": "ACoAADsM4PwBHUXiyJmuCzSTzOdpGq2o4ViIwcE",
+          "firstName": "Ragamathi",
+          "lastName": "M G",
+          "publicIdentifier": "ragamathi5",
+          "linkedinUrl": "https://www.linkedin.com/in/ragamathi5"
+        },
+        {
+          "id": "ACoAAEM6SkEBfzrxFWVcWb6s6dgYxLGm8eVxZxA",
+          "firstName": "Archana",
+          "lastName": "Shanmugavel",
+          "publicIdentifier": "archana-shanmugavel-229890275",
+          "linkedinUrl": "https://www.linkedin.com/in/archana-shanmugavel-229890275"
+        },
+        {
+          "id": "ACoAABxYcZABTMxvSc8lKtgCUueSYl83jrX9Gd8",
+          "firstName": "Shanmuga",
+          "lastName": "Priya",
+          "publicIdentifier": "shanmuga-priya-41431b113",
+          "linkedinUrl": "https://www.linkedin.com/in/shanmuga-priya-41431b113"
+        },
+        {
+          "id": "ACoAACXw9Z0BVPgALw-acbMAEAkf4HEhG2Dc214",
+          "firstName": "Ganeshkumar",
+          "lastName": "Murugesan",
+          "position": "Digital Marketing Manager | Performance Marketing | SEO/SEM | Google Ads & Meta Ads | Growth & Demand Generation | B2B & B2C",
+          "publicIdentifier": "ganeshkumar-murugesan",
+          "linkedinUrl": "https://www.linkedin.com/in/ganeshkumar-murugesan"
+        },
+        {
+          "id": "ACoAADleXFsBxK1MOlmv7oz2nreyqch_lqvpe_M",
+          "firstName": "Priya",
+          "lastName": "Dharshini",
+          "publicIdentifier": "priya-dharshini-9b740122a",
+          "linkedinUrl": "https://www.linkedin.com/in/priya-dharshini-9b740122a"
+        },
+        {
+          "id": "ACoAACgXCQoBUk4GjCxdiN6rCtH651TlgpNmGXg",
+          "firstName": "Surya",
+          "lastName": "R",
+          "position": "Project Engineer at NISSI Engineering Solution Pvt. Ltd.|IEC61850 configuration|sicam pas Configuration||Simatic wincc configuration|IEC104 configuration|Sicam A8000 Configuration",
+          "publicIdentifier": "r-suryaravi",
+          "linkedinUrl": "https://www.linkedin.com/in/r-suryaravi"
+        },
+        {
+          "id": "ACoAAAW8LpoBTtOH-4ZUJbzB09jAiIod5EpCxOE",
+          "firstName": "Dr.P.Kavitha",
+          "lastName": "Raghavan",
+          "publicIdentifier": "kavitha-raghavan-1b628228",
+          "linkedinUrl": "https://www.linkedin.com/in/kavitha-raghavan-1b628228"
+        },
+        {
+          "id": "ACoAAECBAL8BfOVYJoj1mJFzTHVvM8yI78aiHn4",
+          "firstName": "U Masif",
+          "lastName": "Ahamed",
+          "position": "Aspiring Python Full Stack Developer | Web Developer | AI & Chatbot Enthusiast",
+          "publicIdentifier": "masifahamedu",
+          "linkedinUrl": "https://www.linkedin.com/in/masifahamedu"
+        },
+        {
+          "id": "ACoAAFU5GUUB_43pJ7PJrGnBtXB2rRxHBHdvDc8",
+          "firstName": "Manjula",
+          "lastName": "Ramachandran",
+          "position": "3D Artist",
+          "publicIdentifier": "manjula-ramachandran-805a0933a",
+          "linkedinUrl": "https://www.linkedin.com/in/manjula-ramachandran-805a0933a"
+        },
+        {
+          "id": "ACoAACqW8hUBwgqn6FiWt97_NVL65AAMRxzQjLk",
+          "firstName": "Gokulanathan",
+          "lastName": "S",
+          "position": "SAP S/4 Hana Public Cloud / SAP S/4 HANA - PP,QM,PS & PM | SAP - B1 & B1 Hana Functional Consultant at Indus Novateur Softech",
+          "publicIdentifier": "gokulanathan-s-38536817b",
+          "linkedinUrl": "https://www.linkedin.com/in/gokulanathan-s-38536817b"
+        },
+        {
+          "id": "ACoAACnzCyQBi5mG98YM68X9NJiz_pQAPCiYq2k",
+          "firstName": "MuthuKumar",
+          "lastName": "G",
+          "position": ".NET FULL-STACK DEVELOPER",
+          "publicIdentifier": "muthukumar-g-204848177",
+          "linkedinUrl": "https://www.linkedin.com/in/muthukumar-g-204848177"
+        }
+      ],
+      "openProfile": false,
+      "_meta": {
+        "pagination": {
+          "totalElements": 1,
+          "totalPages": 1,
+          "pageNumber": 1,
+          "previousElements": 0,
+          "pageSize": 25
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "totalResults": 1,
+    "source": "harvestapi/linkedin-profile-search",
+    "savedAt": "2025-10-09T12:52:37.782Z"
+  }
+}

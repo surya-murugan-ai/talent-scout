@@ -1,0 +1,655 @@
+{
+  "timestamp": "2025-10-10T04:18:47.753Z",
+  "searchQuery": "mahesh konchada Product Manager Aimplifytech",
+  "rawData": [
+    {
+      "id": "ACoAACRzm0IBeu2Uff2O0Kni2niph6nOIjL_fts",
+      "publicIdentifier": "mahesh-konchada-996985150",
+      "linkedinUrl": "https://www.linkedin.com/in/mahesh-konchada-996985150",
+      "firstName": "Mahesh",
+      "lastName": "Konchada",
+      "headline": "Building AI Agents ,  Product Manager - AI solutions (Aimplify)",
+      "about": "Hello! I'm Mahesh Konchada, a firm believer in the power of curiosity and lifelong learning. My journey has been shaped by a hunger for knowledge, with every encounter and experience contributing to my personal and professional growth.\nCurrently, I'm working in Aimplify  as Product Manager - AI solutions, where I continue to apply my curiosity-driven mindset to pursue meaningful opportunities for growth and exploration.\nAs a Product Manager – AI Solutions at Aimplify Technologies, I work at the intersection of product innovation and artificial intelligence—building next-gen AI agents that solve real business problems.\n\nAt Aimplify, we're not just riding the AI wave—we're helping shape it. I collaborate with cross-functional teams across engineering, design, and data science to bring AI-powered products to life. From idea to deployment, I drive the roadmap, prioritize features, and ensure every release delivers measurable impact.\n\nMy focus? Building intelligent agents and tools that automate decision-making, streamline complex workflows, and unlock insights across industries like healthcare, finance, and manufacturing. Whether it's managing sprints, speaking with clients, or analyzing product metrics—I bring structure to ambiguity and turn vision into value.\n\nLet’s connect if you're building with AI, thinking about agent-based systems, or reimagining how software can think and act for users.",
+      "openToWork": false,
+      "hiring": false,
+      "photo": null,
+      "premium": true,
+      "influencer": false,
+      "location": {
+        "linkedinText": "Andhra Pradesh, India",
+        "countryCode": "IN",
+        "parsed": {
+          "text": "Andhra Pradesh, India",
+          "countryCode": "IN",
+          "regionCode": null,
+          "country": "India",
+          "countryFull": "India",
+          "state": "Andhra Pradesh"
+        }
+      },
+      "verified": true,
+      "registeredAt": "2017-09-29T05:31:29.488Z",
+      "topSkills": null,
+      "connectionsCount": 1624,
+      "followerCount": 1621,
+      "currentPosition": [
+        {
+          "companyId": "100532730",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/100532730/",
+          "companyName": "Aimplify",
+          "dateRange": {
+            "start": {
+              "month": 6,
+              "year": 2025,
+              "day": null
+            },
+            "end": null
+          }
+        }
+      ],
+      "profileTopEducation": [
+        {
+          "schoolId": "20997",
+          "companyId": "410859",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/410859/",
+          "schoolName": "Xavier Institute of Management"
+        }
+      ],
+      "experience": [
+        {
+          "position": "Product Manager - AI Solutions ",
+          "location": "Bengaluru, Karnataka, India",
+          "employmentType": "Full-time",
+          "workplaceType": "On-site",
+          "companyName": "Aimplify",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/aimplifytech/",
+          "companyId": "100532730",
+          "companyUniversalName": "aimplifytech",
+          "duration": "5 mos",
+          "description": "Leading the end-to-end lifecycle of AI-driven products—from discovery to deployment and iteration.\nBuilding and managing AI agents designed to automate decision-making, optimize operations, and      deliver predictive insights.\nCollaborating with engineering, design, and data science teams to launch high-quality features at startup speed.\nInterfacing with enterprise clients to translate feedback into product enhancements and ensure solution fit.\nDriving agile ceremonies including backlog grooming, sprint planning, retrospectives, and stakeholder updates.\nMonitoring product KPIs and usage analytics to inform roadmap prioritization and continuous improvement.\nStaying ahead of GenAI trends and competitive movements to ensure Aimplify stays at the bleeding edge of innovation.",
+          "skills": [
+            "Product Management",
+            "Project Delivery",
+            "AI Agents"
+          ],
+          "startDate": {
+            "month": "Jun",
+            "year": 2025,
+            "text": "Jun 2025"
+          },
+          "endDate": {
+            "text": "Present"
+          }
+        },
+        {
+          "position": "Strategic Account Partner",
+          "location": "Bengaluru, Karnataka, India",
+          "employmentType": "Full-time",
+          "workplaceType": null,
+          "companyName": "Orangescrum",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/13228837/",
+          "companyId": "13228837",
+          "duration": "4 mos",
+          "description": null,
+          "skills": [
+            "Business Strategy",
+            "Sales",
+            "Business Development",
+            "IT Strategy"
+          ],
+          "startDate": {
+            "month": "Feb",
+            "year": 2025,
+            "text": "Feb 2025"
+          },
+          "endDate": {
+            "month": "May",
+            "year": 2025,
+            "text": "May 2025"
+          }
+        },
+        {
+          "position": "Assistant Management Trainee",
+          "location": "Andhra Pradesh, India",
+          "employmentType": "Full-time",
+          "workplaceType": null,
+          "companyName": "Asian Paints",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/7185/",
+          "companyId": "7185",
+          "duration": "7 mos",
+          "description": null,
+          "skills": [
+            "Leadership",
+            "Business Development",
+            "Sales"
+          ],
+          "startDate": {
+            "month": "May",
+            "year": 2024,
+            "text": "May 2024"
+          },
+          "endDate": {
+            "month": "Nov",
+            "year": 2024,
+            "text": "Nov 2024"
+          }
+        },
+        {
+          "position": "Core Member ",
+          "location": null,
+          "employmentType": null,
+          "workplaceType": null,
+          "companyName": "X-SEED, The Entrepreneurship Cell of XIMB",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/13215714/",
+          "companyId": "13215714",
+          "duration": "1 yr 1 mo",
+          "description": null,
+          "skills": null,
+          "startDate": {
+            "month": "Mar",
+            "year": 2023,
+            "text": "Mar 2023"
+          },
+          "endDate": {
+            "month": "Mar",
+            "year": 2024,
+            "text": "Mar 2024"
+          }
+        },
+        {
+          "position": "Marketing Intern",
+          "location": "Mumbai, Maharashtra, India",
+          "employmentType": "Internship",
+          "workplaceType": "On-site",
+          "companyName": "Kotak Mahindra Bank",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/5632/",
+          "companyId": "5632",
+          "duration": "3 mos",
+          "description": null,
+          "skills": null,
+          "startDate": {
+            "month": "Apr",
+            "year": 2023,
+            "text": "Apr 2023"
+          },
+          "endDate": {
+            "month": "Jun",
+            "year": 2023,
+            "text": "Jun 2023"
+          }
+        },
+        {
+          "position": "Marketing Intern",
+          "location": "Bhubaneshwar, Odisha, India",
+          "employmentType": "Internship",
+          "workplaceType": "Hybrid",
+          "companyName": "Archon Motors",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/76991513/",
+          "companyId": "76991513",
+          "duration": "2 mos",
+          "description": "•\tConducted Marketing research to collect and analyze data to get insights about customer perception\n•\tIdeated customer engagement programs, loyalty initiatives and after sales support strategies",
+          "skills": [
+            "Market Research"
+          ],
+          "startDate": {
+            "month": "Mar",
+            "year": 2023,
+            "text": "Mar 2023"
+          },
+          "endDate": {
+            "month": "Apr",
+            "year": 2023,
+            "text": "Apr 2023"
+          }
+        },
+        {
+          "position": "Sales And Marketing Intern",
+          "location": "Gurugram, Haryana, India",
+          "employmentType": "Internship",
+          "workplaceType": "Remote",
+          "companyName": "ACV Tourism",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/68986987/",
+          "companyId": "68986987",
+          "duration": "2 mos",
+          "description": "•\tDeveloped a brief 1-year Marketing Plan including the cost associated and Manpower required\n•\tEvaluated and optimized marketing channels, including social media to maximize reach",
+          "skills": null,
+          "startDate": {
+            "month": "Feb",
+            "year": 2023,
+            "text": "Feb 2023"
+          },
+          "endDate": {
+            "month": "Mar",
+            "year": 2023,
+            "text": "Mar 2023"
+          }
+        },
+        {
+          "position": "Management Trainee",
+          "location": null,
+          "employmentType": "Full-time",
+          "workplaceType": null,
+          "companyName": "Semiconsoul Technologies",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/13273482/",
+          "companyId": "13273482",
+          "duration": "1 yr 6 mos",
+          "description": "• Pre-Sales and Solution Design: Collaborated with development teams to design comprehensive IoT solutions across Healthcare, Smart Factories, and Urban Infrastructure technologies\n• Technical Pitch Presentations: Developed and delivered compelling presentations showcasing IoT gateway middleware, device handling platforms, and transformative digital technologies\n• Solution Proposals and Documentation: Created detailed technical documentation addressing complex technological requirements in Indoor Tracking, Asset Monitoring, and Industrial IoT\n• Stakeholder Engagement: Served as a critical bridge between technical teams and business users, translating intricate technological capabilities into clear business benefits\n• Developed strategic solution proposals for diverse domains including Defence Electronics, Smart Cities, and IoT Gateway technologies, demonstrating expertise in innovative technological solutions",
+          "skills": null,
+          "startDate": {
+            "month": "Feb",
+            "year": 2020,
+            "text": "Feb 2020"
+          },
+          "endDate": {
+            "month": "Jul",
+            "year": 2021,
+            "text": "Jul 2021"
+          }
+        },
+        {
+          "position": "Public Relations Intern",
+          "location": "India",
+          "employmentType": "Internship",
+          "workplaceType": null,
+          "companyName": "FRIENDEN MGT. SERVICES PVT. LTD.",
+          "companyLinkedinUrl": "https://www.linkedin.com/search/results/all/?keywords=FRIENDEN+MGT%2E+SERVICES+PVT%2E+LTD%2E",
+          "duration": "2 mos",
+          "description": "During this internship, I used to handle public Relations, usually its a startup that used to pitch to MSME's regarding the benefits of Investing and various kinds of Investments along with this they use to advertise for some Mutual Funds of certain Institutions. My part is to talk to those MSMEs and arrange a few meetings and I used to pitch them the topics which were provided by my Institution.",
+          "skills": null,
+          "startDate": {
+            "month": "Mar",
+            "year": 2019,
+            "text": "Mar 2019"
+          },
+          "endDate": {
+            "month": "Apr",
+            "year": 2019,
+            "text": "Apr 2019"
+          }
+        }
+      ],
+      "education": [
+        {
+          "schoolName": "Xavier Institute of Management(XIM Bhubaneswar)",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/410859/",
+          "degree": "Master of Business Administration - MBA",
+          "fieldOfStudy": "Marketing and Systems ",
+          "skills": [],
+          "startDate": {
+            "month": "Jun",
+            "year": 2022,
+            "text": "Jun 2022"
+          },
+          "endDate": {
+            "month": "Jun",
+            "year": 2024,
+            "text": "Jun 2024"
+          },
+          "period": "Jun 2022 - Jun 2024"
+        },
+        {
+          "schoolName": "Sri Venkateswara University",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/15095134/",
+          "degree": "Bachelor of Technology",
+          "fieldOfStudy": "Computer Science",
+          "skills": [],
+          "startDate": {
+            "year": 2015,
+            "text": "2015"
+          },
+          "endDate": {
+            "year": 2019,
+            "text": "2019"
+          },
+          "period": "2015 - 2019"
+        }
+      ],
+      "certifications": [
+        {
+          "title": "Agentic AI Fundamentals: Architectures, Frameworks, and Applications",
+          "issuedAt": "Issued Apr 2025",
+          "link": "https://www.linkedin.com/learning/certificates/09e60b2c578949076a7d700d5186a2892f5a8ecdd3386df26afa8ca01a64afca",
+          "issuedBy": "LinkedIn",
+          "issuedByLink": "https://www.linkedin.com/company/1337/"
+        },
+        {
+          "title": "Automate your work",
+          "issuedAt": "Issued Jan 2025",
+          "link": "https://verify.skilljar.com/c/t32qwpmcyk8n",
+          "issuedBy": "Zapier",
+          "issuedByLink": "https://www.linkedin.com/company/2418251/"
+        },
+        {
+          "title": "WhatsApp API Expert",
+          "issuedAt": "Issued Jan 2025",
+          "link": "https://mycourse.app/6jPEuvdPdqkehkXg7",
+          "issuedBy": "Wati",
+          "issuedByLink": "https://www.linkedin.com/company/71004972/"
+        },
+        {
+          "title": "Strategic Planning Foundations",
+          "issuedAt": "Issued Nov 2020",
+          "link": "https://www.linkedin.com/learning/certificates/0ac61fc42375624bc2c1beab32e2c9bc73aeee3ac3d966cd7de3b77ccc02f816?trk=backfilled_certificate",
+          "issuedBy": "LinkedIn",
+          "issuedByLink": "https://www.linkedin.com/company/1337/"
+        },
+        {
+          "title": "Finance Essentials for Small Business",
+          "issuedAt": "Issued Oct 2020",
+          "link": null,
+          "issuedBy": "LinkedIn",
+          "issuedByLink": "https://www.linkedin.com/company/1337/"
+        },
+        {
+          "title": "Finance Foundation",
+          "issuedAt": "Issued Oct 2020",
+          "link": null,
+          "issuedBy": "LinkedIn",
+          "issuedByLink": "https://www.linkedin.com/company/1337/"
+        },
+        {
+          "title": "Linkedin Certified Talent Management",
+          "issuedAt": "Issued Oct 2020",
+          "link": null,
+          "issuedBy": "LinkedIn",
+          "issuedByLink": "https://www.linkedin.com/company/1337/"
+        },
+        {
+          "title": "STARTUP INDIA LEARNING PROGRAM ",
+          "issuedAt": "Issued May 2020",
+          "link": null,
+          "issuedBy": "    INVEST INDIA -NATIONAL INVESTMENT PROMOTION AGENCY",
+          "issuedByLink": null
+        },
+        {
+          "title": "Google digital marketing",
+          "issuedAt": "Issued Apr 2020",
+          "link": null,
+          "issuedBy": "Google",
+          "issuedByLink": "https://www.linkedin.com/company/1441/"
+        },
+        {
+          "title": "MICROSOFT EXCEL -ADVANCED FORMULAS AND FUNCTIONS",
+          "issuedAt": "Issued Apr 2020",
+          "link": null,
+          "issuedBy": "Udemy",
+          "issuedByLink": "https://www.linkedin.com/company/822535/"
+        },
+        {
+          "title": "EXCEL FOR BEGINNERS",
+          "issuedAt": "Issued Jan 2020",
+          "link": null,
+          "issuedBy": "Udemy",
+          "issuedByLink": "https://www.linkedin.com/company/822535/"
+        },
+        {
+          "title": " INTERNSHALA STUDENT PARTNER",
+          "issuedAt": "Issued Apr 2018",
+          "link": null,
+          "issuedBy": "Internshala",
+          "issuedByLink": "https://www.linkedin.com/company/1706756/"
+        }
+      ],
+      "projects": [],
+      "volunteering": [],
+      "receivedRecommendations": [],
+      "skills": [
+        {
+          "name": "Product Management",
+          "positions": [
+            "Product Manager - AI Solutions at Aimplify"
+          ]
+        },
+        {
+          "name": "Project Delivery",
+          "positions": [
+            "Product Manager - AI Solutions at Aimplify"
+          ]
+        },
+        {
+          "name": "Sales",
+          "positions": [
+            "2 experiences across Orangescrum and 1 other company"
+          ]
+        },
+        {
+          "name": "Business Development",
+          "positions": [
+            "2 experiences across Orangescrum and 1 other company"
+          ]
+        },
+        {
+          "name": "IT Strategy",
+          "positions": [
+            "Strategic Account Partner at Orangescrum"
+          ]
+        },
+        {
+          "name": "Market Research",
+          "positions": [
+            "Marketing Intern at Archon Motors "
+          ]
+        },
+        {
+          "name": "Management"
+        },
+        {
+          "name": "Leadership",
+          "positions": [
+            "Assistant Management Trainee at Asian Paints"
+          ]
+        },
+        {
+          "name": "Project Management"
+        },
+        {
+          "name": "Public Speaking"
+        },
+        {
+          "name": "marketing"
+        },
+        {
+          "name": "Microsoft Excel"
+        },
+        {
+          "name": "Public Relations"
+        },
+        {
+          "name": "Social Services"
+        },
+        {
+          "name": "Volunteering"
+        },
+        {
+          "name": "Teaching"
+        },
+        {
+          "name": "Business Strategy",
+          "positions": [
+            "Strategic Account Partner at Orangescrum"
+          ]
+        },
+        {
+          "name": "Strategic Planning"
+        },
+        {
+          "name": "AI Agents",
+          "positions": [
+            "Product Manager - AI Solutions at Aimplify",
+            "Agentic AI Fundamentals: Architectures, Frameworks, and Applications"
+          ]
+        },
+        {
+          "name": "Artificial Intelligence for Business",
+          "positions": [
+            "Agentic AI Fundamentals: Architectures, Frameworks, and Applications"
+          ]
+        }
+      ],
+      "publications": [],
+      "courses": [],
+      "patents": [],
+      "honorsAndAwards": [],
+      "languages": [],
+      "causes": [],
+      "featured": {
+        "images": [],
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:6689751422499733505?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A6689751422499733505%29",
+        "title": "Recipe For Disaster -EIA 2020",
+        "subtitle": "concernedcitizens.online"
+      },
+      "composeOptionType": "PREMIUM_INMAIL",
+      "moreProfiles": [
+        {
+          "id": "ACoAADNEhP8BHqHYsSeNWnT9U-NGpTMJjX7v_zA",
+          "firstName": "Basudev",
+          "lastName": "Ghadai",
+          "publicIdentifier": "basudev-ghadai-67b07b200",
+          "linkedinUrl": "https://www.linkedin.com/in/basudev-ghadai-67b07b200"
+        },
+        {
+          "id": "ACoAAABdqX0BfpQpNKMF-KdYbyw0gXWnpYqLx7g",
+          "firstName": "Fernando",
+          "lastName": "Kaelin",
+          "position": "Manager at Banco Santander Peru",
+          "publicIdentifier": "fernando-kaelin-2790802",
+          "linkedinUrl": "https://www.linkedin.com/in/fernando-kaelin-2790802"
+        },
+        {
+          "id": "ACoAAA7ea5sBj_cr_KWbeCaXFY8FQoZvHx5HIvI",
+          "firstName": "Renzo",
+          "lastName": "Baronio",
+          "position": "Líder de Banca Afluente @ Interbank | Ex-McKinsey | MBA London Business School",
+          "publicIdentifier": "renzobaronio",
+          "linkedinUrl": "https://www.linkedin.com/in/renzobaronio"
+        },
+        {
+          "id": "ACoAABSAa7cB7zfJdaUoFETwoYJ49jyyON3AeA8",
+          "firstName": "Ipshita",
+          "lastName": "Chakraborty",
+          "publicIdentifier": "ipshita-chakraborty-27323797",
+          "linkedinUrl": "https://www.linkedin.com/in/ipshita-chakraborty-27323797"
+        },
+        {
+          "id": "ACoAAFzpTHwBKmI_foi6paU8aGm0RhNTJUFiFlE",
+          "firstName": "Rodrigo",
+          "lastName": "Olivares",
+          "position": "--",
+          "publicIdentifier": "rodrigo-olivares-590053376",
+          "linkedinUrl": "https://www.linkedin.com/in/rodrigo-olivares-590053376"
+        },
+        {
+          "id": "ACoAACMX2NoBpAW4rqah5ypAhx1pcclRzbUbbsE",
+          "firstName": "Surbhi",
+          "lastName": "Nimje",
+          "publicIdentifier": "surbhi-nimje",
+          "linkedinUrl": "https://www.linkedin.com/in/surbhi-nimje"
+        },
+        {
+          "id": "ACoAADa-nmkBY4zVgywHG2R63LcjI_WDn6uxJ2s",
+          "firstName": "Fernando",
+          "lastName": "Ochoa Oliden",
+          "position": "Assistant Manager | Data Scientist | Analytics | Business Intelligence",
+          "publicIdentifier": "fernando-ochoa-oliden",
+          "linkedinUrl": "https://www.linkedin.com/in/fernando-ochoa-oliden"
+        },
+        {
+          "id": "ACoAAB8Q3JsBrw66gVD_VLoSpcqvtxrgv6lJErk",
+          "firstName": "RADHA",
+          "lastName": "B.",
+          "publicIdentifier": "radha-bagari",
+          "linkedinUrl": "https://www.linkedin.com/in/radha-bagari"
+        },
+        {
+          "id": "ACoAABSmREUBTUxAE8P2-jyA11ifhECsvPqYYhE",
+          "firstName": "Shubham",
+          "lastName": "Jain",
+          "publicIdentifier": "shubhamjain-1396",
+          "linkedinUrl": "https://www.linkedin.com/in/shubhamjain-1396"
+        },
+        {
+          "id": "ACoAACCMyGIBwLDbw_3WkPEO4K3dZKh03XZpJ-I",
+          "firstName": "Favio Braulio",
+          "lastName": "Mesta Cerna",
+          "position": "Portfolio Manager at Credicorp Capital",
+          "publicIdentifier": "favio-braulio-mesta-cerna-602a78132",
+          "linkedinUrl": "https://www.linkedin.com/in/favio-braulio-mesta-cerna-602a78132"
+        },
+        {
+          "id": "ACoAABf_xzcBtmHkywlq1m8xZFOXVLPlT7iEkjI",
+          "firstName": "Umang",
+          "lastName": "Gupta",
+          "publicIdentifier": "umang-gupta94",
+          "linkedinUrl": "https://www.linkedin.com/in/umang-gupta94"
+        },
+        {
+          "id": "ACoAAABdEpgBgvaTQkbCbkK74zVoAqnmiHCBWwY",
+          "firstName": "Katherine",
+          "lastName": "Reyes Warthon",
+          "position": "Country Manager at Coval Servicios Financieros",
+          "publicIdentifier": "katherine-reyes-warthon-a480612",
+          "linkedinUrl": "https://www.linkedin.com/in/katherine-reyes-warthon-a480612"
+        },
+        {
+          "id": "ACoAAAAjPWsBjGwsviqKzFBJkD-dAVQaHmTpI_0",
+          "firstName": "Loy  ",
+          "lastName": "Halder",
+          "publicIdentifier": "loy-halder-60b934",
+          "linkedinUrl": "https://www.linkedin.com/in/loy-halder-60b934"
+        },
+        {
+          "id": "ACoAACl-jlABM0RQEuHw9mzOASrVMUpw4lJUZV8",
+          "firstName": "Rachita",
+          "lastName": "Swain",
+          "publicIdentifier": "rachita-swain-328186175",
+          "linkedinUrl": "https://www.linkedin.com/in/rachita-swain-328186175"
+        },
+        {
+          "id": "ACoAABWT0v8BqwB5MEH91kgRMj7Y83BcJtgUjgo",
+          "firstName": "Vinay",
+          "lastName": "Naik",
+          "publicIdentifier": "vinay-naik-iimj",
+          "linkedinUrl": "https://www.linkedin.com/in/vinay-naik-iimj"
+        },
+        {
+          "id": "ACoAAAN8Xa0BrBGjgWPo1yjBDEoMmKnuC8Vq-PU",
+          "firstName": "Ramon",
+          "lastName": "Barua",
+          "position": "Genreal Manager at IFH - Peru",
+          "publicIdentifier": "ramon-barua-97970317",
+          "linkedinUrl": "https://www.linkedin.com/in/ramon-barua-97970317"
+        },
+        {
+          "id": "ACoAACGvghoBCGJAu44lYeTLBuncytj5UvmXJDc",
+          "firstName": "Pranay",
+          "lastName": "Sharma",
+          "publicIdentifier": "pranay-sharma1",
+          "linkedinUrl": "https://www.linkedin.com/in/pranay-sharma1"
+        },
+        {
+          "id": "ACoAAA3MkH0BQJKFe1yLexksEWBgHMY97gkqyI8",
+          "firstName": "Melissa",
+          "lastName": "Reyes Siña",
+          "position": "Comercial | E-commerce | Marketplace",
+          "publicIdentifier": "melissa-reyes-siña",
+          "linkedinUrl": "https://www.linkedin.com/in/melissa-reyes-siña"
+        }
+      ],
+      "openProfile": true,
+      "_meta": {
+        "pagination": {
+          "totalElements": 1,
+          "totalPages": 1,
+          "pageNumber": 1,
+          "previousElements": 0,
+          "pageSize": 25
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "totalResults": 1,
+    "source": "harvestapi/linkedin-profile-search",
+    "savedAt": "2025-10-10T04:18:47.753Z"
+  }
+}

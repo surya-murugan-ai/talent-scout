@@ -1,0 +1,100 @@
+{
+  "filename": "b63ca69a-d007-45ae-b2cb-266e0083cb82.pdf",
+  "timestamp": "2025-10-13T09:50:55.187Z",
+  "processingTime": 5192,
+  "confidence": 83,
+  "extractedData": {
+    "name": "JISHNU RAJ U",
+    "email": "jishnuraj0610@gmail.com",
+    "phone": "+91 7907751406",
+    "title": "JUNIOR SOFTWARE DEVELOPER",
+    "location": "Kannur, Kerala",
+    "summary": null,
+    "experience": [
+      {
+        "jobTitle": "JUNIOR SOFTWARE DEVELOPER",
+        "company": "Glinjos Innovations Software Solutions LLP",
+        "duration": "11/2022 - Present",
+        "startDate": "2022-11",
+        "endDate": "Present",
+        "techUsed": [],
+        "description": "I m working as a Software Developer and very much dedicated to create and innovate trending as well as unique mobile and web applications.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor Of Computer Applications",
+        "field": null,
+        "university": "Kannur University",
+        "year": null,
+        "percentage": null,
+        "gpa": null,
+        "location": null
+      }
+    ],
+    "skills": [
+      "Laravel",
+      "CodeIgniter",
+      "Python",
+      "Django",
+      "MySQL",
+      "PHP",
+      "Android",
+      "Flutter"
+    ],
+    "projects": [
+      {
+        "name": "Offar",
+        "description": "Offar was an Online Shopping site and was developed using PDO. Offar was too helpful to compare offers among various shops at Kannur.",
+        "techUsed": [
+          "PDO"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Auditorium",
+        "description": "Auditorium was a management project developed using the language Codeigniter. And it was manages whole thinks related to an auditorium such as Booking, Scheduling, Billing, Cancellations etc.",
+        "techUsed": [
+          "Codeigniter"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "GDiary",
+        "description": "Gdiary was a project developed in Laravel and it was used to manage whole thinks of a firm such as Company creations, Hiring Staffs, Salary management, GST billing, Transaction management, Estimations etc.",
+        "techUsed": [
+          "Laravel"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Chitty",
+        "description": "The project is a mobile application developed with Android Java. It mainly developed for people in a particular locality. It has three different phases like admin, agents and users and it provides reports like ledger, draw details and payments etc.",
+        "techUsed": [
+          "Android Java"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "OnReach",
+        "description": "The project is a mobile application developed with Flutter dart. The project is for Staffs in a school or collage and its main aim is to record each students examination marks in a class.",
+        "techUsed": [
+          "Flutter dart"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "certifications": []
+  }
+}

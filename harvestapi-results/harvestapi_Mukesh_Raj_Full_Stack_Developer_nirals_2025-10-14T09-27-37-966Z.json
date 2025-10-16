@@ -1,0 +1,436 @@
+{
+  "timestamp": "2025-10-14T09:27:37.966Z",
+  "searchQuery": "Mukesh Raj Full Stack Developer nirals",
+  "rawData": [
+    {
+      "id": "ACoAADaWehsBf8PL4Mkc9WdZo--5TbJyFszNuX8",
+      "publicIdentifier": "rmukesh6",
+      "linkedinUrl": "https://www.linkedin.com/in/rmukesh6",
+      "firstName": "Mukesh",
+      "lastName": "Raj",
+      "headline": "Full Stack Developer",
+      "about": "Seeking a beginner role to enhance and explore my technical knowledge gained at SRNM College in the last three years. I hold a B.Sc degree from SRNM college With Cgpa 7.6. Experience in Front End Developer With 3 month in ParticleBlack",
+      "openToWork": false,
+      "hiring": false,
+      "photo": "https://media.licdn.com/dms/image/v2/D5603AQEQXVun4dOc0g/profile-displayphoto-shrink_800_800/B56ZhcEULmHkAo-/0/1753891296112?e=1763596800&v=beta&t=4fL4DLXatVkW6-qSUD6JKbhqM4Bg2gOy1ZMXAd0Pkyw",
+      "premium": false,
+      "influencer": false,
+      "location": {
+        "linkedinText": "Kovilpatti, Tamil Nadu, India",
+        "countryCode": "IN",
+        "parsed": {
+          "text": "Kovilpatti, India",
+          "countryCode": "IN",
+          "regionCode": null,
+          "country": "India",
+          "countryFull": "India",
+          "state": "Tamil Nadu",
+          "city": "Kovilpatti"
+        }
+      },
+      "verified": false,
+      "registeredAt": "2021-07-07T05:02:08.351Z",
+      "topSkills": null,
+      "connectionsCount": 102,
+      "followerCount": 100,
+      "currentPosition": [
+        {
+          "companyId": "16153648",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/16153648/",
+          "companyName": "Nirals",
+          "dateRange": {
+            "start": {
+              "month": 2,
+              "year": 2023,
+              "day": null
+            },
+            "end": null
+          }
+        }
+      ],
+      "profileTopEducation": [
+        {
+          "schoolId": "13540",
+          "companyId": "5481452",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/5481452/",
+          "schoolName": "Madurai Kamaraj University"
+        }
+      ],
+      "experience": [
+        {
+          "position": "Full Stack Developer",
+          "location": "Kovilpatti, Tamil Nadu, India",
+          "employmentType": "Full-time",
+          "workplaceType": "On-site",
+          "companyName": "Nirals",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/nirals/",
+          "companyId": "16153648",
+          "companyUniversalName": "nirals",
+          "duration": "2 yrs 9 mos",
+          "description": null,
+          "skills": [
+            "Node.js",
+            "Electron.js",
+            "Tailwind CSS",
+            "Express.js",
+            "JavaScript",
+            "Embedded JavaScript (EJS)",
+            "Front-End Development",
+            "PHP",
+            "Web Application Development",
+            "Full-Stack Development",
+            "React.js"
+          ],
+          "startDate": {
+            "month": "Feb",
+            "year": 2023,
+            "text": "Feb 2023"
+          },
+          "endDate": {
+            "text": "Present"
+          }
+        },
+        {
+          "position": "Frontend Developer",
+          "location": "Chennai, Tamil Nadu, India",
+          "employmentType": "Full-time",
+          "workplaceType": null,
+          "companyName": "Particleblack",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/81954169/",
+          "companyId": "81954169",
+          "duration": "4 mos",
+          "description": null,
+          "skills": [
+            "SQL",
+            "JavaScript",
+            "Front-End Development",
+            "HTML5",
+            "Cascading Style Sheets (CSS)",
+            "Web Application Development",
+            "Full-Stack Development"
+          ],
+          "startDate": {
+            "month": "Aug",
+            "year": 2022,
+            "text": "Aug 2022"
+          },
+          "endDate": {
+            "month": "Nov",
+            "year": 2022,
+            "text": "Nov 2022"
+          }
+        }
+      ],
+      "education": [
+        {
+          "schoolName": "Madurai Kamaraj University",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/5481452/",
+          "degree": "Bachelor of Science",
+          "fieldOfStudy": "Computer Science",
+          "skills": [
+            "Cascading Style Sheets (CSS)",
+            "Web Application Development",
+            "Full-Stack Development",
+            "SQL",
+            "Front-End Development",
+            "HTML5",
+            "JavaScript"
+          ],
+          "insights": "Grade: 7.6 CGPA",
+          "startDate": {
+            "year": 2019,
+            "text": "2019"
+          },
+          "endDate": {
+            "year": 2022,
+            "text": "2022"
+          },
+          "period": "2019 - 2022"
+        }
+      ],
+      "certifications": [],
+      "projects": [],
+      "volunteering": [],
+      "receivedRecommendations": [],
+      "skills": [
+        {
+          "name": "Full-Stack Development",
+          "positions": [
+            "2 experiences across Nirals and 1 other company",
+            "Madurai Kamaraj University"
+          ]
+        },
+        {
+          "name": "Web Application Development",
+          "positions": [
+            "2 experiences across Nirals and 1 other company",
+            "Madurai Kamaraj University"
+          ]
+        },
+        {
+          "name": "Front-End Development",
+          "positions": [
+            "2 experiences across Nirals and 1 other company",
+            "Madurai Kamaraj University"
+          ]
+        },
+        {
+          "name": "HTML"
+        },
+        {
+          "name": "PHP",
+          "positions": [
+            "Full Stack Developer at Nirals"
+          ]
+        },
+        {
+          "name": "Node.js",
+          "positions": [
+            "Full Stack Developer at Nirals"
+          ]
+        },
+        {
+          "name": "Tailwind CSS",
+          "positions": [
+            "Full Stack Developer at Nirals"
+          ]
+        },
+        {
+          "name": "Express.js",
+          "positions": [
+            "Full Stack Developer at Nirals"
+          ]
+        },
+        {
+          "name": "Electron.js",
+          "positions": [
+            "Full Stack Developer at Nirals"
+          ]
+        },
+        {
+          "name": "Embedded JavaScript (EJS)",
+          "positions": [
+            "Full Stack Developer at Nirals"
+          ]
+        },
+        {
+          "name": "SQL",
+          "positions": [
+            "Frontend Developer at Particleblack",
+            "Madurai Kamaraj University"
+          ]
+        },
+        {
+          "name": "React.js",
+          "positions": [
+            "Full Stack Developer at Nirals"
+          ]
+        },
+        {
+          "name": "JavaScript",
+          "positions": [
+            "2 experiences across Nirals and 1 other company",
+            "Madurai Kamaraj University"
+          ]
+        },
+        {
+          "name": "Cascading Style Sheets (CSS)",
+          "positions": [
+            "Frontend Developer at Particleblack",
+            "Madurai Kamaraj University"
+          ]
+        },
+        {
+          "name": "HTML5",
+          "positions": [
+            "Frontend Developer at Particleblack",
+            "Madurai Kamaraj University"
+          ]
+        }
+      ],
+      "publications": [],
+      "courses": [],
+      "patents": [],
+      "honorsAndAwards": [],
+      "languages": [],
+      "causes": [],
+      "featured": null,
+      "composeOptionType": "PREMIUM_INMAIL",
+      "moreProfiles": [
+        {
+          "id": "ACoAAF-npNgBGj8mKJx_5PDjkBfh9r3TUp0pmH0",
+          "firstName": "michael ",
+          "lastName": "dickerson",
+          "position": "--",
+          "publicIdentifier": "michael-dickerson-6a0550389",
+          "linkedinUrl": "https://www.linkedin.com/in/michael-dickerson-6a0550389"
+        },
+        {
+          "id": "ACoAAF_NJ5QBXFxAyScIYTu3K5puQS8LK1KTd3I",
+          "firstName": "Alexander",
+          "lastName": "Whitehurst",
+          "position": "--",
+          "publicIdentifier": "alexander-whitehurst-24433738a",
+          "linkedinUrl": "https://www.linkedin.com/in/alexander-whitehurst-24433738a"
+        },
+        {
+          "id": "ACoAADbtkJwB5g6CSCa5HvRGkUBh1tEAqTHYhqM",
+          "firstName": "Lakshmanan",
+          "lastName": "R",
+          "publicIdentifier": "lakshmanan-r-a50755218",
+          "linkedinUrl": "https://www.linkedin.com/in/lakshmanan-r-a50755218"
+        },
+        {
+          "id": "ACoAAB8kDHQBPclNVdcrS-_Pr1sxyzTrs1kGmuE",
+          "firstName": "Prasath",
+          "lastName": "M",
+          "publicIdentifier": "prasathm-ai",
+          "linkedinUrl": "https://www.linkedin.com/in/prasathm-ai"
+        },
+        {
+          "id": "ACoAAF_YbwUBRDCZYqQz57ItRmQCaW8PQVvd4Ic",
+          "firstName": "Thomas",
+          "lastName": "Cates",
+          "position": "--",
+          "publicIdentifier": "thomas-cates-b7163238a",
+          "linkedinUrl": "https://www.linkedin.com/in/thomas-cates-b7163238a"
+        },
+        {
+          "id": "ACoAACa6uNEBf-qLjpdbvvd-PedB3CV6_-QlVpo",
+          "firstName": "Krishna",
+          "lastName": "M",
+          "publicIdentifier": "krishna-m-015735161",
+          "linkedinUrl": "https://www.linkedin.com/in/krishna-m-015735161"
+        },
+        {
+          "id": "ACoAAALGRGABa5H58dd3aO6BSWj8UfqstUVF2lQ",
+          "firstName": "Gopi",
+          "lastName": "M",
+          "publicIdentifier": "gopi-m-65470913",
+          "linkedinUrl": "https://www.linkedin.com/in/gopi-m-65470913"
+        },
+        {
+          "id": "ACoAABjoGrYBqk7iwSUFOpqoPGCeYshpkiyxSUA",
+          "firstName": "Mohammed",
+          "lastName": "I.",
+          "publicIdentifier": "ilyashax0r",
+          "linkedinUrl": "https://www.linkedin.com/in/ilyashax0r"
+        },
+        {
+          "id": "ACoAAF_QN5gBMGIUAZ1OnC5NJq51J2MF8bXXY-s",
+          "firstName": "Markd",
+          "lastName": "Mond",
+          "position": "--",
+          "publicIdentifier": "markd-mond-42041338a",
+          "linkedinUrl": "https://www.linkedin.com/in/markd-mond-42041338a"
+        },
+        {
+          "id": "ACoAAB_BjYYBjQ5Ijglor3i_Hc8Hdct-ZtuhCUc",
+          "firstName": "vinodhini",
+          "lastName": "Jaisankar",
+          "publicIdentifier": "vinodhini-jaisankar-99a51412a",
+          "linkedinUrl": "https://www.linkedin.com/in/vinodhini-jaisankar-99a51412a"
+        },
+        {
+          "id": "ACoAAChN18cByx1lstNG48wqehillUgEC5Zkkxw",
+          "firstName": "Mahathi",
+          "lastName": "Srinivasan",
+          "publicIdentifier": "mahathi-srinivasan",
+          "linkedinUrl": "https://www.linkedin.com/in/mahathi-srinivasan"
+        },
+        {
+          "id": "ACoAAF5ogQgBVTB_s741pdyhEdBVFT0kLnE0aJM",
+          "firstName": "Richard",
+          "lastName": "Ayers",
+          "position": "--",
+          "publicIdentifier": "richard-ayers-a88544382",
+          "linkedinUrl": "https://www.linkedin.com/in/richard-ayers-a88544382"
+        },
+        {
+          "id": "ACoAAF_NZX8Bt3_ScGCR-P0zNu3rwQ9w3Chvh40",
+          "firstName": "Boris",
+          "lastName": "Morton",
+          "position": "--",
+          "publicIdentifier": "boris-morton-45334438a",
+          "linkedinUrl": "https://www.linkedin.com/in/boris-morton-45334438a"
+        },
+        {
+          "id": "ACoAAF39fDIBVdPfhZojlYDZ1FlvxDod03P5xM4",
+          "firstName": "darren",
+          "lastName": "casling",
+          "position": "Web Designer at Wells Fargo",
+          "publicIdentifier": "darren-casling-12a122380",
+          "linkedinUrl": "https://www.linkedin.com/in/darren-casling-12a122380"
+        },
+        {
+          "id": "ACoAAFfN4N0BnaJAwMOmU1NY57MA7mMlypOr1WQ",
+          "firstName": "Hariharan",
+          "lastName": "S",
+          "publicIdentifier": "hariharan-s-425412351",
+          "linkedinUrl": "https://www.linkedin.com/in/hariharan-s-425412351"
+        },
+        {
+          "id": "ACoAAEo9_mQB15M733qIEtZhBja26asHlcFfdMU",
+          "firstName": "Chitra",
+          "lastName": "Satyanarayana",
+          "publicIdentifier": "chitra-satyanarayana-ab01832a9",
+          "linkedinUrl": "https://www.linkedin.com/in/chitra-satyanarayana-ab01832a9"
+        },
+        {
+          "id": "ACoAAF_SNDsBd44vOphoY04Up5Wq1v84zwFHXC4",
+          "firstName": "Paul",
+          "lastName": "Richer",
+          "position": "--",
+          "publicIdentifier": "paul-richer-84b47638a",
+          "linkedinUrl": "https://www.linkedin.com/in/paul-richer-84b47638a"
+        },
+        {
+          "id": "ACoAAF-7uCIBqLKzbby_0Hd9kC0XIg_bWtJM4YA",
+          "firstName": "Paula",
+          "lastName": "Collier",
+          "position": "Graphic Web Designer at Wells Fargo",
+          "publicIdentifier": "paula-collier-b42a85389",
+          "linkedinUrl": "https://www.linkedin.com/in/paula-collier-b42a85389"
+        },
+        {
+          "id": "ACoAAFU2abIBbT3-CX_ZjuYMRHIk4ogl8WNn_vk",
+          "firstName": "sankari",
+          "lastName": "nagaraj",
+          "publicIdentifier": "sankari-nagaraj-98294333a",
+          "linkedinUrl": "https://www.linkedin.com/in/sankari-nagaraj-98294333a"
+        },
+        {
+          "id": "ACoAAF_SnxsBuswxDBWV9ve3x6LMFp4Ipc9_dAI",
+          "firstName": "Raul",
+          "lastName": "Rodriguez",
+          "position": "--",
+          "publicIdentifier": "raul-rodriguez-64b48a38a",
+          "linkedinUrl": "https://www.linkedin.com/in/raul-rodriguez-64b48a38a"
+        },
+        {
+          "id": "ACoAAF_YFQMBcmarQGHvMcbOUXfIdqP-NjPYamI",
+          "firstName": "William",
+          "lastName": "Novoa",
+          "position": "--",
+          "publicIdentifier": "william-novoa-76b62138a",
+          "linkedinUrl": "https://www.linkedin.com/in/william-novoa-76b62138a"
+        }
+      ],
+      "openProfile": false,
+      "_meta": {
+        "pagination": {
+          "totalElements": 1,
+          "totalPages": 1,
+          "pageNumber": 1,
+          "previousElements": 0,
+          "pageSize": 25
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "totalResults": 1,
+    "source": "harvestapi/linkedin-profile-search",
+    "savedAt": "2025-10-14T09:27:37.966Z"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "filename": "cc444fc2-d6b2-42aa-93be-fe3de7025093.pdf",
+  "timestamp": "2025-10-11T05:39:41.791Z",
+  "processingTime": 4840,
+  "confidence": 92,
+  "extractedData": {
+    "name": "Divya Salomon",
+    "email": "divyasbhaskar11@gmail.com",
+    "phone": "9008809443",
+    "title": "Software Engineer",
+    "location": "Bangalore",
+    "summary": "Results-driven .NET Developer with over 4.5 years of hands-on experience in developing and maintaining scalable applications using the .NET framework. Adept at building robust backend solutions complemented by 1 year of practical experience in React.js for modern, responsive front-end development. Proven ability to translate business requirements into efficient technical solutions.",
+    "experience": [
+      {
+        "jobTitle": "Software Engineer",
+        "company": "Diligent Corporation",
+        "duration": "July 2023 - Present",
+        "startDate": "2023-07",
+        "endDate": "Present",
+        "techUsed": [],
+        "description": "Project - POLICY MANAGER - IT CONSOLIDATES DOCUMENT MANAGEMENT ACTIVITIES TO SIMPLIFY AND ENSURE ADHERENCE",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Associate Software Engineer",
+        "company": "Apexon",
+        "duration": "March 2021 - July 2023",
+        "startDate": "2021-03",
+        "endDate": "2023-07",
+        "techUsed": [],
+        "description": "Project - EPOST GLOBAL - EPOST GLOBAL'S INTERNATIONAL PARCEL AND MAIL SHIPPING ALLOW BUSINESSES TO STREAMLINE GLOBAL DISTRIBUTION WHILE INCREASING CUSTOMER SATISFACTION",
+        "achievements": [
+          "Integrated MS Word Editor (WOPI) with Policy Manager for seamless in-browser editing, boosting document handling efficiency by 50–80%.",
+          "Developed public access for Policy Portal, ensuring secure access to only public documents, improving compliance by 30%.",
+          "Enhanced system security by resolving 15+ critical bugs and vulnerabilities, reducing risk incidents by 40%."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Engineering",
+        "field": "Information Science and Engineering",
+        "university": "Sri Siddhartha Institute of Technology",
+        "year": "2020",
+        "percentage": null,
+        "gpa": "6.9",
+        "location": null
+      }
+    ],
+    "skills": [
+      "C#",
+      ".NET",
+      ".NET Core",
+      "ASP.NET",
+      "MVC",
+      "Entity Framework",
+      "SQL",
+      "React.js",
+      "HTML",
+      "CSS",
+      "AWS",
+      "AWS CDK",
+      "CI/CD",
+      "Unit Testing",
+      "SOLID principles",
+      "code reviews",
+      "Agile (Scrum)",
+      "Figma",
+      "Visual Studio",
+      "Git"
+    ],
+    "projects": [],
+    "certifications": []
+  }
+}

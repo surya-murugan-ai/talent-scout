@@ -1,0 +1,501 @@
+{
+  "timestamp": "2025-10-13T07:06:54.886Z",
+  "searchQuery": "Surya Murugan Full Stack Developer AimplifyTech",
+  "rawData": [
+    {
+      "id": "ACoAADbFvlIBgwsNAgs9u8Lc8KMxJql2btTtsQs",
+      "publicIdentifier": "surya-murugan-ragaiyan",
+      "linkedinUrl": "https://www.linkedin.com/in/surya-murugan-ragaiyan",
+      "firstName": "Surya",
+      "lastName": "Murugan",
+      "headline": "Python Backend Developer || Machine Learning || Deep Learning || Agentic AI || Flask || Django || DRF ||  SQL -- Open for Opportunity.",
+      "about": "Passionate Software & AI Developer with expertise in Python, Django, SQL, and machine learning. I specialize in building AI-driven applications, finance tools, and automation solutions that optimize efficiency and decision-making.\n\nI’ve developed projects like:\n\nEvent Job Portal – A Django-based platform with real-time communication and social features for recruiters and employees.\nMental Health Companion – An AI-powered tool using machine learning and web scraping to assess mental health and recommend nearby therapists.\nCurrently exploring deep learning, AI agents, and finance applications, with a strong focus on AI-driven automation and trading solutions. Open to collaborations and opportunities in AI, software development, and fintech innovation.\n\nLet’s connect and build something impactful! 🚀",
+      "openToWork": false,
+      "hiring": false,
+      "photo": "https://media.licdn.com/dms/image/v2/D4D03AQFtW1Tu737xkQ/profile-displayphoto-crop_800_800/B4DZnAWfbzGkAI-/0/1759868746734?e=1762992000&v=beta&t=t_Hv0RxFzCy4QNr66d7xwiQvlv4iqrZoTLM9oPXBsqA",
+      "premium": false,
+      "influencer": false,
+      "location": {
+        "linkedinText": "Mumbai, Maharashtra, India",
+        "countryCode": "IN",
+        "parsed": {
+          "text": "Mumbai, India",
+          "countryCode": "IN",
+          "regionCode": null,
+          "country": "India",
+          "countryFull": "India",
+          "state": "Maharashtra",
+          "city": "Mumbai"
+        }
+      },
+      "verified": true,
+      "registeredAt": "2021-07-16T07:43:36.604Z",
+      "topSkills": "Python (Programming Language) • SQL • Django • Git • Artificial Intelligence (AI)",
+      "connectionsCount": 741,
+      "followerCount": 738,
+      "currentPosition": [
+        {
+          "companyId": "100532730",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/100532730/",
+          "companyName": "Aimplify",
+          "dateRange": {
+            "start": {
+              "month": 5,
+              "year": 2025,
+              "day": null
+            },
+            "end": null
+          }
+        }
+      ],
+      "profileTopEducation": [
+        {
+          "schoolId": "215663",
+          "companyId": "15117850",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/15117850/",
+          "schoolName": "Saraswati Education Societys Saraswati College of Engineering Kharghar Navi Mumbai"
+        }
+      ],
+      "experience": [
+        {
+          "position": "Full Stack Developer",
+          "location": "Bengaluru, Karnataka, India",
+          "employmentType": "Full-time",
+          "workplaceType": "On-site",
+          "companyName": "Aimplify",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/aimplifytech/",
+          "companyId": "100532730",
+          "companyUniversalName": "aimplifytech",
+          "duration": "6 mos",
+          "description": null,
+          "skills": [
+            "n8n",
+            "AI Agents",
+            "Python (Programming Language)",
+            "JavaScript",
+            "Databases"
+          ],
+          "startDate": {
+            "month": "May",
+            "year": 2025,
+            "text": "May 2025"
+          },
+          "endDate": {
+            "text": "Present"
+          }
+        },
+        {
+          "position": "Software Developer",
+          "location": "Worli, Maharashtra, India",
+          "employmentType": "Full-time",
+          "workplaceType": "On-site",
+          "companyName": "Sapat International",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/27510417/",
+          "companyId": "27510417",
+          "duration": "1 yr 2 mos",
+          "description": null,
+          "skills": [
+            "MySQL",
+            "Git",
+            "Flask",
+            "SQL",
+            "GitHub",
+            "Python (Programming Language)",
+            "Django",
+            "Object-Relational Mapping (ORM)",
+            "Linux"
+          ],
+          "startDate": {
+            "month": "Apr",
+            "year": 2024,
+            "text": "Apr 2024"
+          },
+          "endDate": {
+            "month": "May",
+            "year": 2025,
+            "text": "May 2025"
+          }
+        }
+      ],
+      "education": [
+        {
+          "schoolName": "Saraswati Education Societys Saraswati College of Engineering Kharghar Navi Mumbai",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/15117850/",
+          "degree": "Bachelor's degree",
+          "fieldOfStudy": "Computer Engineering",
+          "skills": [
+            "Django",
+            "SQL",
+            "Git"
+          ],
+          "description": "On the way to Achieve great things, in my way",
+          "insights": "Grade: 7.48",
+          "startDate": {
+            "month": "Jun",
+            "year": 2018,
+            "text": "Jun 2018"
+          },
+          "endDate": {
+            "month": "May",
+            "year": 2023,
+            "text": "May 2023"
+          },
+          "period": "Jun 2018 - May 2023"
+        },
+        {
+          "schoolName": "University of Mumbai",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/15093732/",
+          "degree": "Bachelor's degree",
+          "fieldOfStudy": "Computer Engineering",
+          "skills": [],
+          "startDate": {
+            "month": "Jun",
+            "year": 2018,
+            "text": "Jun 2018"
+          },
+          "endDate": {
+            "month": "May",
+            "year": 2023,
+            "text": "May 2023"
+          },
+          "period": "Jun 2018 - May 2023"
+        }
+      ],
+      "certifications": [
+        {
+          "title": "Retrieval Augmented Generation (RAG)",
+          "issuedAt": "Issued Oct 2025",
+          "link": "https://www.coursera.org/account/accomplishments/verify/T8XCTMLCHFSK",
+          "issuedBy": "DeepLearning.AI",
+          "issuedByLink": null
+        },
+        {
+          "title": "SEBI :- Investor Certification Examination",
+          "issuedAt": "Issued Mar 2025 · Expires Mar 2027",
+          "link": "https://drive.google.com/file/d/18ODCPajppXzU4WsCHOMjsM_YdutdBgAG/view?usp=sharing",
+          "issuedBy": "National Institute of Securities Markets (NISM)",
+          "issuedByLink": "https://www.linkedin.com/company/15096409/"
+        },
+        {
+          "title": "Supervised Machine Learning: Regression and Classification ",
+          "issuedAt": "Issued Jan 2025",
+          "link": "https://www.coursera.org/account/accomplishments/verify/TBUP55RF98NV",
+          "issuedBy": "DeepLearning.AI",
+          "issuedByLink": null
+        }
+      ],
+      "projects": [],
+      "volunteering": [],
+      "receivedRecommendations": [],
+      "skills": [
+        {
+          "name": "n8n",
+          "positions": [
+            "Full Stack Developer at Aimplify"
+          ]
+        },
+        {
+          "name": "AI Agents",
+          "positions": [
+            "Full Stack Developer at Aimplify"
+          ]
+        },
+        {
+          "name": "JavaScript",
+          "positions": [
+            "Full Stack Developer at Aimplify"
+          ]
+        },
+        {
+          "name": "Databases",
+          "positions": [
+            "Full Stack Developer at Aimplify"
+          ]
+        },
+        {
+          "name": "Artificial Intelligence (AI)"
+        },
+        {
+          "name": "Finance",
+          "positions": [
+            "SEBI :- Investor Certification Examination"
+          ]
+        },
+        {
+          "name": "Financial Education",
+          "positions": [
+            "SEBI :- Investor Certification Examination"
+          ]
+        },
+        {
+          "name": "Investments",
+          "positions": [
+            "SEBI :- Investor Certification Examination"
+          ]
+        },
+        {
+          "name": "Linux",
+          "positions": [
+            "Software Developer at Sapat International"
+          ]
+        },
+        {
+          "name": "Object-Relational Mapping (ORM)",
+          "positions": [
+            "Software Developer at Sapat International"
+          ]
+        },
+        {
+          "name": "Nginx"
+        },
+        {
+          "name": "Bootstrap (Framework)"
+        },
+        {
+          "name": "Django",
+          "positions": [
+            "Software Developer at Sapat International",
+            "Saraswati Education Societys Saraswati College of Engineering Kharghar Navi Mumbai"
+          ]
+        },
+        {
+          "name": "Teamwork"
+        },
+        {
+          "name": "Web Scraping"
+        },
+        {
+          "name": "SQL",
+          "positions": [
+            "Software Developer at Sapat International",
+            "Saraswati Education Societys Saraswati College of Engineering Kharghar Navi Mumbai"
+          ]
+        },
+        {
+          "name": "Python (Programming Language)",
+          "positions": [
+            "2 experiences across Aimplify and 1 other company"
+          ],
+          "assessments": "Passed LinkedIn Skill Assessment"
+        },
+        {
+          "name": "English"
+        },
+        {
+          "name": "HTML"
+        },
+        {
+          "name": "Git",
+          "positions": [
+            "Software Developer at Sapat International",
+            "Saraswati Education Societys Saraswati College of Engineering Kharghar Navi Mumbai"
+          ]
+        },
+        {
+          "name": "Flask",
+          "positions": [
+            "Software Developer at Sapat International"
+          ]
+        },
+        {
+          "name": "MySQL",
+          "positions": [
+            "Software Developer at Sapat International"
+          ]
+        },
+        {
+          "name": "GitHub",
+          "positions": [
+            "Software Developer at Sapat International"
+          ]
+        },
+        {
+          "name": "Amazon S3"
+        }
+      ],
+      "publications": [],
+      "courses": [],
+      "patents": [],
+      "honorsAndAwards": [],
+      "languages": [],
+      "causes": [],
+      "featured": null,
+      "composeOptionType": "UPSELL",
+      "moreProfiles": [
+        {
+          "id": "ACoAAF9gFtoBrZF3P1B8jxPRqvFvFQYqkjOr00M",
+          "firstName": "Donald  ",
+          "lastName": "Mullins",
+          "position": "--",
+          "publicIdentifier": "donald-mullins-962a6a387",
+          "linkedinUrl": "https://www.linkedin.com/in/donald-mullins-962a6a387"
+        },
+        {
+          "id": "ACoAAF7FN1wBNPB3dWMuZOD5Y9nKJZ0mxz204aA",
+          "firstName": "Ryan",
+          "lastName": "Mcgoldrick",
+          "position": "--",
+          "publicIdentifier": "ryan-mcgoldrick-110595384",
+          "linkedinUrl": "https://www.linkedin.com/in/ryan-mcgoldrick-110595384"
+        },
+        {
+          "id": "ACoAAF_OXucBjoS2uq-egtX72W2yhT3NywAav4o",
+          "firstName": "Tansholpan",
+          "lastName": " Kerimova",
+          "position": "--",
+          "publicIdentifier": "tansholpan-kerimova-39b37538a",
+          "linkedinUrl": "https://www.linkedin.com/in/tansholpan-kerimova-39b37538a"
+        },
+        {
+          "id": "ACoAAF8W12QBZ4ifH9zDB7Q9gyweXJ3fNlq-myY",
+          "firstName": "Johnson",
+          "lastName": "Martines",
+          "position": "--",
+          "publicIdentifier": "johnson-martines-970334386",
+          "linkedinUrl": "https://www.linkedin.com/in/johnson-martines-970334386"
+        },
+        {
+          "id": "ACoAAENlxREBX6qNv_PnYrA0tTE99WWX2l4vMIY",
+          "firstName": "Nazif",
+          "lastName": "Shaikh",
+          "publicIdentifier": "nazif-shaikh-241825276",
+          "linkedinUrl": "https://www.linkedin.com/in/nazif-shaikh-241825276"
+        },
+        {
+          "id": "ACoAACijIwoBQFv5EXJQG13iDBcCkMpLpHntnSI",
+          "firstName": "Shruti",
+          "lastName": "Anpat",
+          "publicIdentifier": "shruti-anpat-7223b0170",
+          "linkedinUrl": "https://www.linkedin.com/in/shruti-anpat-7223b0170"
+        },
+        {
+          "id": "ACoAAD1JU4cBNCye5uXuj2h1LI22DxGHHmZAkPI",
+          "firstName": "Sreejith",
+          "lastName": "Sreenivasan",
+          "publicIdentifier": "sreejithas",
+          "linkedinUrl": "https://www.linkedin.com/in/sreejithas"
+        },
+        {
+          "id": "ACoAAF_Cu-EBM5ywgrTu5o-kJdstehK9PZv6Klk",
+          "firstName": "Corey ",
+          "lastName": "Guerrero",
+          "position": "--",
+          "publicIdentifier": "corey-guerrero-b9506738a",
+          "linkedinUrl": "https://www.linkedin.com/in/corey-guerrero-b9506738a"
+        },
+        {
+          "id": "ACoAAF8ZIuoBTNFD5YPRQalVjjitD0YxNhDzPMI",
+          "firstName": "Kevin",
+          "lastName": "Johnson ",
+          "position": "--",
+          "publicIdentifier": "kevin-johnson-a0a3a7386",
+          "linkedinUrl": "https://www.linkedin.com/in/kevin-johnson-a0a3a7386"
+        },
+        {
+          "id": "ACoAAF8JMu0BtSIpbK_F9N4WJg690AurVy0MYqM",
+          "firstName": "John",
+          "lastName": "Jose",
+          "position": "--",
+          "publicIdentifier": "john-jose-491b83385",
+          "linkedinUrl": "https://www.linkedin.com/in/john-jose-491b83385"
+        },
+        {
+          "id": "ACoAAF5wa14B3_QLhVGEBg9neOQ0Gfp9fZ44wbg",
+          "firstName": "Russel",
+          "lastName": "Waldo",
+          "position": "--",
+          "publicIdentifier": "russel-waldo-112755382",
+          "linkedinUrl": "https://www.linkedin.com/in/russel-waldo-112755382"
+        },
+        {
+          "id": "ACoAACigttgB3YJ2XDwlDe9dw45-glnc_6K9kxc",
+          "firstName": "Puja",
+          "lastName": "Nalawade",
+          "publicIdentifier": "puja-nalawade",
+          "linkedinUrl": "https://www.linkedin.com/in/puja-nalawade"
+        },
+        {
+          "id": "ACoAACz7T7YBVptNaXdJpWzgmGPA6plGMqXSBe4",
+          "firstName": "Shubham",
+          "lastName": "Sharma",
+          "publicIdentifier": "shubham2596",
+          "linkedinUrl": "https://www.linkedin.com/in/shubham2596"
+        },
+        {
+          "id": "ACoAADhPEw0BhwxVqkOYfk8vBBrf8i69J_lm5p8",
+          "firstName": "Bennett",
+          "lastName": "Standler",
+          "publicIdentifier": "bennettstandler",
+          "linkedinUrl": "https://www.linkedin.com/in/bennettstandler"
+        },
+        {
+          "id": "ACoAAF9WUrQBCIBJIxB3XHk3mf8NhtuyyiSCrEA",
+          "firstName": "Ricardo",
+          "lastName": "Robinson",
+          "position": "--",
+          "publicIdentifier": "ricardo-robinson-498800387",
+          "linkedinUrl": "https://www.linkedin.com/in/ricardo-robinson-498800387"
+        },
+        {
+          "id": "ACoAACDjkOMBZKG9E7ErBGq8-9G569zqZ5cdClI",
+          "firstName": "Sanjana",
+          "lastName": "Sanjay Parab",
+          "publicIdentifier": "sanjanasanjayparab10",
+          "linkedinUrl": "https://www.linkedin.com/in/sanjanasanjayparab10"
+        },
+        {
+          "id": "ACoAAF96GiIBLURl2shcB8eM8popeKqTm0fWc6c",
+          "firstName": "Nathaniel ",
+          "lastName": "Livingston",
+          "position": "--",
+          "publicIdentifier": "nathaniel-livingston-42a551388",
+          "linkedinUrl": "https://www.linkedin.com/in/nathaniel-livingston-42a551388"
+        },
+        {
+          "id": "ACoAAF6eGVQB3-QqGhFpEsutFbicXkTiq2koEzg",
+          "firstName": "Arnav",
+          "lastName": "Puthanveettil",
+          "publicIdentifier": "arnav-puthanveettil-644759383",
+          "linkedinUrl": "https://www.linkedin.com/in/arnav-puthanveettil-644759383"
+        },
+        {
+          "id": "ACoAADv-B1IBdFrVhQsQARTfsgDKA1IaS2P1PVA",
+          "firstName": "Ashish",
+          "lastName": "pandey",
+          "publicIdentifier": "ashish-pandey-5560ab241",
+          "linkedinUrl": "https://www.linkedin.com/in/ashish-pandey-5560ab241"
+        },
+        {
+          "id": "ACoAAEc7cRkBwdTe4UesTp-mkDeZ4uizJBmjFXE",
+          "firstName": "Viral",
+          "lastName": "Gohil",
+          "publicIdentifier": "viral-gohil-021290294",
+          "linkedinUrl": "https://www.linkedin.com/in/viral-gohil-021290294"
+        },
+        {
+          "id": "ACoAAF9xndoBQI5C_L4S-2JxNF6iuSxelC3xkvE",
+          "firstName": "Kevin",
+          "lastName": "Jessus",
+          "position": "--",
+          "publicIdentifier": "kevin-jessus-64a323388",
+          "linkedinUrl": "https://www.linkedin.com/in/kevin-jessus-64a323388"
+        }
+      ],
+      "openProfile": false,
+      "_meta": {
+        "pagination": {
+          "totalElements": 1,
+          "totalPages": 1,
+          "pageNumber": 1,
+          "previousElements": 0,
+          "pageSize": 25
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "totalResults": 1,
+    "source": "harvestapi/linkedin-profile-search",
+    "savedAt": "2025-10-13T07:06:54.886Z"
+  }
+}

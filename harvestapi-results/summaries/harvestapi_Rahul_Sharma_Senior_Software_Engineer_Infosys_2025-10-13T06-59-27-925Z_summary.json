@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-10-13T06:59:27.925Z",
+  "searchQuery": "Rahul Sharma Senior Software Engineer Infosys",
+  "totalResults": 1,
+  "profiles": [
+    {
+      "index": 1,
+      "name": "Rahul Sharma",
+      "headline": "Senior Software Engineer at Infosys",
+      "location": "Bengaluru, Karnataka, India",
+      "currentCompany": "Infosys",
+      "currentPosition": "N/A",
+      "linkedinUrl": "https://www.linkedin.com/in/rahul-sharma-08000233b",
+      "connectionsCount": 1,
+      "skillsCount": 0,
+      "experienceCount": 1,
+      "educationCount": 0
+    }
+  ],
+  "originalFile": "harvestapi_Rahul_Sharma_Senior_Software_Engineer_Infosys_2025-10-13T06-59-27-925Z.json"
+}

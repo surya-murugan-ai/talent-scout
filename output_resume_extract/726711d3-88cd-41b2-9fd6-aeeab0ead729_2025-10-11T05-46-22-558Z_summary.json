@@ -1,0 +1,191 @@
+{
+  "filename": "726711d3-88cd-41b2-9fd6-aeeab0ead729.pdf",
+  "timestamp": "2025-10-11T05:46:22.558Z",
+  "processingTime": 12350,
+  "confidence": 88,
+  "extractedData": {
+    "name": "Ankit Mathur",
+    "email": "kit.km72@gmail.com",
+    "phone": "+91 98698 40688",
+    "title": null,
+    "location": null,
+    "summary": "Dynamic Data Professional with 6.5 years of experience turning data into business impact across multiple domains. Skilled in SQL, Python/Pandas, Statistics, Product Analytics, and Machine Learning. Adept at cross-functional collaboration with Product, Engineering, and Business teams, with a track record of driving impact and earning multiple recognition awards.",
+    "experience": [
+      {
+        "jobTitle": "Senior Data Analyst/Data Scientist",
+        "company": "Google",
+        "duration": "August 2023 to Present",
+        "startDate": "2023-08",
+        "endDate": "Present",
+        "techUsed": [
+          "Python",
+          "Google Analytics",
+          "SQL",
+          "Agentic AI"
+        ],
+        "description": "Devised and designed a real-time bug tracking dashboard, reducing bug resolution time by 10% and enabling swift decision-making. Leveraged Google Analytics to monitor user interactions and activities for a Google Play Store app, analyzing key metrics like DAU, average session duration, CTR, and retention, and delivering actionable insights to enhance user experience and app performance. Built an internal tool (POC) using Python, Text Embeddings and cosine similarity to compare and cluster similar SQL scripts across projects, helping identify redundant logic by 25%, later enhanced with Agentic AI. Led data analysis and dashboard development for Gen-AI products, also supporting fine-tuning, RLHF and prompt engineering; ensured 100% compliance with safety standards and increase in +ve user feedback. Conducted inferential and exploratory data analysis to measure engagement and retention across products. Implemented a data-driven user behavior analysis project, identifying and mitigating risks posed by fraudulent accounts, resulting in a 12% decrease in security breaches, enhancing security and user experience. Developed and deployed ML and clustering model for Google Ads teams, driving audience segmentation, anomaly detection, and campaign performance optimization. Mentored junior analysts and led small teams on cross-functional projects driving stakeholder alignment and execution. Collaborated with leadership teams and stakeholders to define and track high impacting KPIs.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Business Analyst - Central Data Science/Analytics",
+        "company": "Byju's",
+        "duration": "October 2021 to August 2023",
+        "startDate": "2021-10",
+        "endDate": "2023-08",
+        "techUsed": [],
+        "description": "Developed and deployed an 85% accurate machine learning model to identify key drivers for customer conversion from free to paid, resulting in a cost-efficient tele-sales approach and increased revenue. Applied clustering techniques to segment users based on learning behavior (fast learners, revisitors, struggler), improving targeting of personalized messages/nudges. Optimized student funnel, tracking activities from landing on the site to class participation and full-time conversion, leading to a 3% increase in attendance. Designed, executed, and analyzed A/B tests for a 'Poll Question' feature, resulting in a 12% increase in participation and a 9% improvement in quiz scores, indicating a boost in student engagement and learning. Other key impact projects/dashboards: MLP (Customer Acquisition), Topic Analysis (Performance), Interactivity and Poll (Feature Adoption), XCEL (Active/Inactive Users), etc. Collaborated with product managers to define KPIs and build scalable performance measurement frameworks. Promoted data literacy by cross training teams on dashboard usage and metric interpretation.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Data Scientist - Contract",
+        "company": "ZS Associates",
+        "duration": "April 2021 to September 2021",
+        "startDate": "2021-04",
+        "endDate": "2021-09",
+        "techUsed": [
+          "SQL"
+        ],
+        "description": "Built and fine-tuned a deep learning image classification model to detect early-stage cancerous cells from images. Designed a clustering-based ML solution to segment US healthcare providers based on behavior, improving sales & targeting strategies. Created datasets using SQL joins and aggregations, and performed initial exploratory data analysis (EDA) to support multiple machine learning projects. Designed and created an advanced dashboard, optimizing the tracking process for essential metrics like enrollments, plan types, and market share within the US Medicare sector.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Product Engineer",
+        "company": "IDeaS(SAS Subsidiary)",
+        "duration": "June 2018 to August 2019",
+        "startDate": "2018-06",
+        "endDate": "2019-08",
+        "techUsed": [
+          "SQL"
+        ],
+        "description": "Used SQL to audit and validate hotel pricing data across multiple sources. Daily task involving SQL queries and dashboards tracking for daily revenue metrics, room occupancy, and seasonal trends. Identified process gaps by conducting detailed analysis of booking, check-in, and room service workflows, leading to a 10% improvement in operational efficiency.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Analyst",
+        "company": "Searce Logistics Analytics LLP",
+        "duration": "August 2017 to June 2018",
+        "startDate": "2017-08",
+        "endDate": "2018-06",
+        "techUsed": [
+          "SQL",
+          "Pandas"
+        ],
+        "description": "Collaborated with diverse vendors to collect, process, analyze shipment data, optimizing logistics processes. Used SQL/Pandas to analyze historical inventory and sales data, identify seasonal demand patterns, and generate insights.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Post Graduate Program in Data Science & Engineering",
+        "field": null,
+        "university": "Great Lakes Institute of Management",
+        "year": "2021",
+        "percentage": null,
+        "gpa": null,
+        "location": null
+      },
+      {
+        "degree": "Bachelors of Engineering",
+        "field": null,
+        "university": "University of Mumbai",
+        "year": "2016",
+        "percentage": null,
+        "gpa": null,
+        "location": null
+      }
+    ],
+    "skills": [
+      "SQL",
+      "Python",
+      "Pandas",
+      "NumPy",
+      "Scikit-learn",
+      "Keras",
+      "Tensorflow",
+      "Jupyter",
+      "Colab",
+      "FastAPI",
+      "Git/GitHub",
+      "Postman",
+      "OpenAI",
+      "Notion",
+      "AWS Basics",
+      "Exploratory Data Analysis",
+      "Statistics",
+      "Causal Inference",
+      "A/B Testing",
+      "Customer/Product Analytics",
+      "Hypothesis Testing",
+      "Descriptive",
+      "Inferential",
+      "Predictive Analysis",
+      "ML(Regression, Classification, Supervised/Unsupervised)",
+      "Ensemble Methods/XGBoost",
+      "Forecasting",
+      "Segmentation",
+      "Text Similarity",
+      "NLP",
+      "Deep Learning",
+      "SGD",
+      "Adam",
+      "Gen AI Basics",
+      "Tableau",
+      "Power BI",
+      "Google Looker",
+      "Google Analytics",
+      "Seaborn",
+      "Matplotlib",
+      "Excel",
+      "Stakeholder Management",
+      "KPI Development",
+      "Agile",
+      "Problem-Solving",
+      "Presentation",
+      "Storytelling"
+    ],
+    "projects": [
+      {
+        "name": "Impulse Buyer Classification",
+        "description": "Built a classification system to identify whether a customer is an impulsive buyer using behavioral data. Achieved high accuracy, recall, and F1 scores through robust feature engineering, model tuning, and evaluation techniques.",
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Predicting Monthly Savings Amount",
+        "description": "Built a regression model to estimate a user's monthly savings based on income, spending habits, subscription count etc. Helped personalize financial advice in budgeting tools.",
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Oracle Certified SQL Database Associate",
+        "issuer": null,
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "Power BI Certified",
+        "issuer": null,
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "Certificate in Artificial Intelligence",
+        "issuer": "Great Lakes",
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      }
+    ]
+  }
+}

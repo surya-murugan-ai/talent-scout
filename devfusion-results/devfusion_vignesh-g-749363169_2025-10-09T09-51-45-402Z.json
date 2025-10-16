@@ -1,0 +1,341 @@
+{
+  "timestamp": "2025-10-09T09:51:45.402Z",
+  "linkedinUrl": "https://www.linkedin.com/in/vignesh-g-749363169",
+  "rawData": {
+    "linkedinUrl": "https://www.linkedin.com/in/vignesh-g-749363169",
+    "firstName": "Vignesh",
+    "lastName": "G",
+    "fullName": "Vignesh G",
+    "headline": "Senior Developer at Nirals Info - Tech",
+    "connections": 2,
+    "followers": 3,
+    "email": null,
+    "mobileNumber": null,
+    "jobTitle": "Senior Software Engineer",
+    "companyName": "Nirals",
+    "companyIndustry": "Information Technology And Services",
+    "companyWebsite": "nirals.in",
+    "companyLinkedin": "linkedin.com/company/nirals",
+    "companyFoundedIn": 2014,
+    "companySize": "11-50",
+    "currentJobDuration": "4 yrs 1 mo",
+    "currentJobDurationInYrs": 4.08,
+    "topSkillsByEndorsements": null,
+    "addressCountryOnly": "India",
+    "addressWithCountry": "Virudhunagar, Tamil Nadu, India",
+    "addressWithoutCountry": "Virudhunagar, Tamil Nadu",
+    "profilePic": "https://media.licdn.com/dms/image/v2/D5603AQHpEnbpMEtRBg/profile-displayphoto-scale_100_100/B56ZfQDsMBGQAk-/0/1751542319727?e=1762992000&v=beta&t=CfUtntFs2_s50QrvO2eoi_CAsF8sLWKtJ2vNsAg_T1c",
+    "profilePicHighQuality": "https://media.licdn.com/dms/image/v2/D5603AQHpEnbpMEtRBg/profile-displayphoto-crop_800_800/B56ZfQDsMBGQAQ-/0/1751542319647?e=1762992000&v=beta&t=3poovPXWdqufwuXEO0nyuxk8VtYcj_kidQkT2rasX_c",
+    "about": null,
+    "publicIdentifier": "vignesh-g-749363169",
+    "openConnection": null,
+    "urn": "ACoAACgY8mkBtGMFWmfSKMpiU1MKp3MMVc6fjZc",
+    "experiences": [
+      {
+        "companyId": "16153648",
+        "companyUrn": "urn:li:fsd_company:16153648",
+        "companyLink1": "https://www.linkedin.com/company/16153648/",
+        "logo": "https://media.licdn.com/dms/image/v2/C560BAQGbyyWtMpDzQw/company-logo_200_200/company-logo_200_200/0/1631349999982?e=1762992000&v=beta&t=0LRWrvMkJtS5hCMbsDUNUbkwfmwgqmOE7TaHET0GUUA",
+        "title": "Senior Software Engineer",
+        "subtitle": "Nirals · Full-time",
+        "caption": "Oct 2021 - Present · 4 yrs 1 mo",
+        "metadata": "Kovilpatti, Tamil Nadu, India · On-site",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "updates": [],
+    "skills": [
+      {
+        "title": "React.js",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Senior Software Engineer at Nirals"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Node.js",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Senior Software Engineer at Nirals"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "PHP",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Senior Software Engineer at Nirals"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Python (Programming Language)",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Senior Software Engineer at Nirals"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vector Databases",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Senior Software Engineer at Nirals"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Playwriting",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Senior Software Engineer at Nirals"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "TypeScript",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Senior Software Engineer at Nirals"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "SQL",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Software Development",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Web Applications",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Senior Software Engineer at Nirals"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "jQuery",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "PostgreSQL",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Tailwind CSS",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Senior Software Engineer at Nirals"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Bootstrap (Framework)",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "JavaScript",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Senior Software Engineer at Nirals"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "HTML",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Senior Software Engineer at Nirals"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Cascading Style Sheets (CSS)",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "profilePicAllDimensions": [
+      {
+        "width": 100,
+        "expiresAt": 1762992000000,
+        "height": 100,
+        "url": "https://media.licdn.com/dms/image/v2/D5603AQHpEnbpMEtRBg/profile-displayphoto-scale_100_100/B56ZfQDsMBGQAk-/0/1751542319727?e=1762992000&v=beta&t=CfUtntFs2_s50QrvO2eoi_CAsF8sLWKtJ2vNsAg_T1c"
+      },
+      {
+        "width": 200,
+        "expiresAt": 1762992000000,
+        "height": 200,
+        "url": "https://media.licdn.com/dms/image/v2/D5603AQHpEnbpMEtRBg/profile-displayphoto-scale_200_200/B56ZfQDsMBGQAg-/0/1751542319727?e=1762992000&v=beta&t=pXhmVEKDgkEPtVZNej5OE8SOsIrvNA2tN6OLilWUtR0"
+      },
+      {
+        "width": 400,
+        "expiresAt": 1762992000000,
+        "height": 400,
+        "url": "https://media.licdn.com/dms/image/v2/D5603AQHpEnbpMEtRBg/profile-displayphoto-scale_400_400/B56ZfQDsMBGQAo-/0/1751542319727?e=1762992000&v=beta&t=8WQl51ULxQ4A7INI2DbrTFNMefCJS4Zl6yKYOlXAuLw"
+      },
+      {
+        "width": 800,
+        "expiresAt": 1762992000000,
+        "height": 800,
+        "url": "https://media.licdn.com/dms/image/v2/D5603AQHpEnbpMEtRBg/profile-displayphoto-crop_800_800/B56ZfQDsMBGQAQ-/0/1751542319647?e=1762992000&v=beta&t=3poovPXWdqufwuXEO0nyuxk8VtYcj_kidQkT2rasX_c"
+      }
+    ],
+    "educations": [
+      {
+        "companyId": "15125134",
+        "companyUrn": "urn:li:fsd_company:15125134",
+        "companyLink1": "https://www.linkedin.com/company/15125134/",
+        "logo": "undefinedundefined",
+        "title": "Sri Vidya College of Engineering and Technology",
+        "subtitle": "BE - Bachelor of Engineering, Computer Engineering",
+        "caption": "2015 - 2019",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "licenseAndCertificates": [],
+    "honorsAndAwards": [],
+    "languages": [],
+    "volunteerAndAwards": [],
+    "verifications": [],
+    "promos": [],
+    "highlights": [],
+    "projects": [],
+    "publications": [],
+    "patents": [],
+    "courses": [],
+    "testScores": [],
+    "organizations": [],
+    "volunteerCauses": [],
+    "interests": [
+      {
+        "section_name": "Companies",
+        "section_components": [
+          {
+            "titleV2": "Unilever",
+            "caption": "20,308,610 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1248/",
+            "subComponents": []
+          },
+          {
+            "titleV2": "LinkedIn",
+            "caption": "32,108,230 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1337/",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Schools",
+        "section_components": [
+          {
+            "titleV2": "Sri Vidya College of Engineering and Technology",
+            "caption": "1,258 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/school/15125134/",
+            "subComponents": []
+          }
+        ]
+      }
+    ],
+    "recommendations": []
+  },
+  "metadata": {
+    "source": "dev_fusion/Linkedin-Profile-Scraper",
+    "savedAt": "2025-10-09T09:51:45.402Z"
+  }
+}

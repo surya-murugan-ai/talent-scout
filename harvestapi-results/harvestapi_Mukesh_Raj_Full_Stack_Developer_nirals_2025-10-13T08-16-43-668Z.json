@@ -1,0 +1,436 @@
+{
+  "timestamp": "2025-10-13T08:16:43.668Z",
+  "searchQuery": "Mukesh Raj Full Stack Developer nirals",
+  "rawData": [
+    {
+      "id": "ACoAADaWehsBf8PL4Mkc9WdZo--5TbJyFszNuX8",
+      "publicIdentifier": "rmukesh6",
+      "linkedinUrl": "https://www.linkedin.com/in/rmukesh6",
+      "firstName": "Mukesh",
+      "lastName": "Raj",
+      "headline": "Full Stack Developer",
+      "about": "Seeking a beginner role to enhance and explore my technical knowledge gained at SRNM College in the last three years. I hold a B.Sc degree from SRNM college With Cgpa 7.6. Experience in Front End Developer With 3 month in ParticleBlack",
+      "openToWork": false,
+      "hiring": false,
+      "photo": "https://media.licdn.com/dms/image/v2/D5603AQEQXVun4dOc0g/profile-displayphoto-shrink_800_800/B56ZhcEULmHkAo-/0/1753891296112?e=1762992000&v=beta&t=ORbhhUEO7KeUn2WhWZe_WU0aSReDeruWgYgNuTmiRnc",
+      "premium": false,
+      "influencer": false,
+      "location": {
+        "linkedinText": "Kovilpatti, Tamil Nadu, India",
+        "countryCode": "IN",
+        "parsed": {
+          "text": "Kovilpatti, India",
+          "countryCode": "IN",
+          "regionCode": null,
+          "country": "India",
+          "countryFull": "India",
+          "state": "Tamil Nadu",
+          "city": "Kovilpatti"
+        }
+      },
+      "verified": false,
+      "registeredAt": "2021-07-07T05:02:08.351Z",
+      "topSkills": null,
+      "connectionsCount": 102,
+      "followerCount": 100,
+      "currentPosition": [
+        {
+          "companyId": "16153648",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/16153648/",
+          "companyName": "Nirals",
+          "dateRange": {
+            "start": {
+              "month": 2,
+              "year": 2023,
+              "day": null
+            },
+            "end": null
+          }
+        }
+      ],
+      "profileTopEducation": [
+        {
+          "schoolId": "13540",
+          "companyId": "5481452",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/5481452/",
+          "schoolName": "Madurai Kamaraj University"
+        }
+      ],
+      "experience": [
+        {
+          "position": "Full Stack Developer",
+          "location": "Kovilpatti, Tamil Nadu, India",
+          "employmentType": "Full-time",
+          "workplaceType": "On-site",
+          "companyName": "Nirals",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/nirals/",
+          "companyId": "16153648",
+          "companyUniversalName": "nirals",
+          "duration": "2 yrs 9 mos",
+          "description": null,
+          "skills": [
+            "Node.js",
+            "Electron.js",
+            "Tailwind CSS",
+            "Express.js",
+            "JavaScript",
+            "Embedded JavaScript (EJS)",
+            "Front-End Development",
+            "PHP",
+            "Web Application Development",
+            "Full-Stack Development",
+            "React.js"
+          ],
+          "startDate": {
+            "month": "Feb",
+            "year": 2023,
+            "text": "Feb 2023"
+          },
+          "endDate": {
+            "text": "Present"
+          }
+        },
+        {
+          "position": "Frontend Developer",
+          "location": "Chennai, Tamil Nadu, India",
+          "employmentType": "Full-time",
+          "workplaceType": null,
+          "companyName": "Particleblack",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/81954169/",
+          "companyId": "81954169",
+          "duration": "4 mos",
+          "description": null,
+          "skills": [
+            "SQL",
+            "JavaScript",
+            "Front-End Development",
+            "HTML5",
+            "Cascading Style Sheets (CSS)",
+            "Web Application Development",
+            "Full-Stack Development"
+          ],
+          "startDate": {
+            "month": "Aug",
+            "year": 2022,
+            "text": "Aug 2022"
+          },
+          "endDate": {
+            "month": "Nov",
+            "year": 2022,
+            "text": "Nov 2022"
+          }
+        }
+      ],
+      "education": [
+        {
+          "schoolName": "Madurai Kamaraj University",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/5481452/",
+          "degree": "Bachelor of Science",
+          "fieldOfStudy": "Computer Science",
+          "skills": [
+            "Cascading Style Sheets (CSS)",
+            "Web Application Development",
+            "Full-Stack Development",
+            "SQL",
+            "Front-End Development",
+            "HTML5",
+            "JavaScript"
+          ],
+          "insights": "Grade: 7.6 CGPA",
+          "startDate": {
+            "year": 2019,
+            "text": "2019"
+          },
+          "endDate": {
+            "year": 2022,
+            "text": "2022"
+          },
+          "period": "2019 - 2022"
+        }
+      ],
+      "certifications": [],
+      "projects": [],
+      "volunteering": [],
+      "receivedRecommendations": [],
+      "skills": [
+        {
+          "name": "Full-Stack Development",
+          "positions": [
+            "2 experiences across Nirals and 1 other company",
+            "Madurai Kamaraj University"
+          ]
+        },
+        {
+          "name": "Web Application Development",
+          "positions": [
+            "2 experiences across Nirals and 1 other company",
+            "Madurai Kamaraj University"
+          ]
+        },
+        {
+          "name": "Front-End Development",
+          "positions": [
+            "2 experiences across Nirals and 1 other company",
+            "Madurai Kamaraj University"
+          ]
+        },
+        {
+          "name": "HTML"
+        },
+        {
+          "name": "PHP",
+          "positions": [
+            "Full Stack Developer at Nirals"
+          ]
+        },
+        {
+          "name": "Node.js",
+          "positions": [
+            "Full Stack Developer at Nirals"
+          ]
+        },
+        {
+          "name": "Tailwind CSS",
+          "positions": [
+            "Full Stack Developer at Nirals"
+          ]
+        },
+        {
+          "name": "Express.js",
+          "positions": [
+            "Full Stack Developer at Nirals"
+          ]
+        },
+        {
+          "name": "Electron.js",
+          "positions": [
+            "Full Stack Developer at Nirals"
+          ]
+        },
+        {
+          "name": "Embedded JavaScript (EJS)",
+          "positions": [
+            "Full Stack Developer at Nirals"
+          ]
+        },
+        {
+          "name": "SQL",
+          "positions": [
+            "Frontend Developer at Particleblack",
+            "Madurai Kamaraj University"
+          ]
+        },
+        {
+          "name": "React.js",
+          "positions": [
+            "Full Stack Developer at Nirals"
+          ]
+        },
+        {
+          "name": "JavaScript",
+          "positions": [
+            "2 experiences across Nirals and 1 other company",
+            "Madurai Kamaraj University"
+          ]
+        },
+        {
+          "name": "Cascading Style Sheets (CSS)",
+          "positions": [
+            "Frontend Developer at Particleblack",
+            "Madurai Kamaraj University"
+          ]
+        },
+        {
+          "name": "HTML5",
+          "positions": [
+            "Frontend Developer at Particleblack",
+            "Madurai Kamaraj University"
+          ]
+        }
+      ],
+      "publications": [],
+      "courses": [],
+      "patents": [],
+      "honorsAndAwards": [],
+      "languages": [],
+      "causes": [],
+      "featured": null,
+      "composeOptionType": "UPSELL",
+      "moreProfiles": [
+        {
+          "id": "ACoAAF8dS7MB06yMImVqRiA6By9qsdY2bkPomdM",
+          "firstName": "Arianna",
+          "lastName": "Aba",
+          "position": "Web Developer at Wells Fargo",
+          "publicIdentifier": "arianna-aba-7034b9386",
+          "linkedinUrl": "https://www.linkedin.com/in/arianna-aba-7034b9386"
+        },
+        {
+          "id": "ACoAADuQG7UBJRYobjbDx8sFfQyVk6V4YdzWR6g",
+          "firstName": "Harini",
+          "lastName": "Selvam",
+          "publicIdentifier": "harini-selvam-7597b623a",
+          "linkedinUrl": "https://www.linkedin.com/in/harini-selvam-7597b623a"
+        },
+        {
+          "id": "ACoAADbtkJwB5g6CSCa5HvRGkUBh1tEAqTHYhqM",
+          "firstName": "Lakshmanan",
+          "lastName": "R",
+          "publicIdentifier": "lakshmanan-r-a50755218",
+          "linkedinUrl": "https://www.linkedin.com/in/lakshmanan-r-a50755218"
+        },
+        {
+          "id": "ACoAAADofJ0BPVT4r5yIBicNE2xhD3vrXwS4wKo",
+          "firstName": "Michael",
+          "lastName": "Shaw",
+          "position": "Web Developer at Wells Fargo",
+          "publicIdentifier": "michael-shaw-3391295",
+          "linkedinUrl": "https://www.linkedin.com/in/michael-shaw-3391295"
+        },
+        {
+          "id": "ACoAAF_PeK4B7az48HaLh_DVhu2XP_3kiNtu7xs",
+          "firstName": "hello",
+          "lastName": "hello",
+          "position": "Web Developer at Wells Fargo",
+          "publicIdentifier": "hello-hello-0923ab38a",
+          "linkedinUrl": "https://www.linkedin.com/in/hello-hello-0923ab38a"
+        },
+        {
+          "id": "ACoAAB8kDHQBPclNVdcrS-_Pr1sxyzTrs1kGmuE",
+          "firstName": "Prasath",
+          "lastName": "M",
+          "publicIdentifier": "prasathm-ai",
+          "linkedinUrl": "https://www.linkedin.com/in/prasathm-ai"
+        },
+        {
+          "id": "ACoAAAxZkfkBhw4VLr8L78B3aZJtNJDAniSB5oU",
+          "firstName": "Gary",
+          "lastName": "Stares",
+          "position": "eLearning Web Developer at Wells Fargo",
+          "publicIdentifier": "gary-stares-58948159",
+          "linkedinUrl": "https://www.linkedin.com/in/gary-stares-58948159"
+        },
+        {
+          "id": "ACoAAALGRGABa5H58dd3aO6BSWj8UfqstUVF2lQ",
+          "firstName": "Gopi",
+          "lastName": "M",
+          "publicIdentifier": "gopi-m-65470913",
+          "linkedinUrl": "https://www.linkedin.com/in/gopi-m-65470913"
+        },
+        {
+          "id": "ACoAABjoGrYBqk7iwSUFOpqoPGCeYshpkiyxSUA",
+          "firstName": "Mohammed",
+          "lastName": "I.",
+          "publicIdentifier": "ilyashax0r",
+          "linkedinUrl": "https://www.linkedin.com/in/ilyashax0r"
+        },
+        {
+          "id": "ACoAAB_BjYYBjQ5Ijglor3i_Hc8Hdct-ZtuhCUc",
+          "firstName": "vinodhini",
+          "lastName": "Jaisankar",
+          "publicIdentifier": "vinodhini-jaisankar-99a51412a",
+          "linkedinUrl": "https://www.linkedin.com/in/vinodhini-jaisankar-99a51412a"
+        },
+        {
+          "id": "ACoAAANFi5gB_qJear8l6b0ZiMuONfYxDFjVUro",
+          "firstName": "Srinivasa Ragavan",
+          "lastName": "V",
+          "publicIdentifier": "sragavan",
+          "linkedinUrl": "https://www.linkedin.com/in/sragavan"
+        },
+        {
+          "id": "ACoAADg1HCQBnb5EdVuaaU3-T9TEPwM9tGoUdwQ",
+          "firstName": "Evan",
+          "lastName": "Rinne",
+          "position": "Web Developer at Wells Fargo",
+          "publicIdentifier": "evan-rinne-398988223",
+          "linkedinUrl": "https://www.linkedin.com/in/evan-rinne-398988223"
+        },
+        {
+          "id": "ACoAAAEfl_sBvTQIXbrWkqQ7l4twMZPgvDiCYv4",
+          "firstName": "Srilakshmi",
+          "lastName": "Kalidindi",
+          "position": "Web Developer at Wells Fargo Financial Services",
+          "publicIdentifier": "srilakshmi-kalidindi-30b38b6",
+          "linkedinUrl": "https://www.linkedin.com/in/srilakshmi-kalidindi-30b38b6"
+        },
+        {
+          "id": "ACoAAF4Le3sBYhIi-Omc_ZqoZGaa6tEzFPUx14w",
+          "firstName": "Mariano   ",
+          "lastName": "Barreto",
+          "position": "--",
+          "publicIdentifier": "mariano-barreto-b634a4380",
+          "linkedinUrl": "https://www.linkedin.com/in/mariano-barreto-b634a4380"
+        },
+        {
+          "id": "ACoAAFfN4N0BnaJAwMOmU1NY57MA7mMlypOr1WQ",
+          "firstName": "Hariharan",
+          "lastName": "S",
+          "publicIdentifier": "hariharan-s-425412351",
+          "linkedinUrl": "https://www.linkedin.com/in/hariharan-s-425412351"
+        },
+        {
+          "id": "ACoAAAriwbcBzxHk4g7KQFfwNrZNbDGxci1T_IE",
+          "firstName": "Lynne",
+          "lastName": "Hoel",
+          "position": "Web Developer at Wells Fargo",
+          "publicIdentifier": "lynne-hoel-3b31b651",
+          "linkedinUrl": "https://www.linkedin.com/in/lynne-hoel-3b31b651"
+        },
+        {
+          "id": "ACoAAEo9_mQB15M733qIEtZhBja26asHlcFfdMU",
+          "firstName": "Chitra",
+          "lastName": "Satyanarayana",
+          "publicIdentifier": "chitra-satyanarayana-ab01832a9",
+          "linkedinUrl": "https://www.linkedin.com/in/chitra-satyanarayana-ab01832a9"
+        },
+        {
+          "id": "ACoAAD5Fs2kBHzXUhZU363fB9b8cuvWNEJM7IZM",
+          "firstName": "Stony",
+          "lastName": "Bowman",
+          "position": "Web Developer at Wells Fargo",
+          "publicIdentifier": "namwobs",
+          "linkedinUrl": "https://www.linkedin.com/in/namwobs"
+        },
+        {
+          "id": "ACoAAFU2abIBbT3-CX_ZjuYMRHIk4ogl8WNn_vk",
+          "firstName": "sankari",
+          "lastName": "nagaraj",
+          "publicIdentifier": "sankari-nagaraj-98294333a",
+          "linkedinUrl": "https://www.linkedin.com/in/sankari-nagaraj-98294333a"
+        },
+        {
+          "id": "ACoAAF3tiiUBd2SKwN2K4-YvJtaGCzeB2z3zZyU",
+          "firstName": "Sam",
+          "lastName": "Maroun",
+          "position": "Web Developer at Wells Fargo",
+          "publicIdentifier": "sam-maroun-4318b937b",
+          "linkedinUrl": "https://www.linkedin.com/in/sam-maroun-4318b937b"
+        },
+        {
+          "id": "ACoAAF_CefkByvQDmGLgoTX-Q3ZfgB0Rn9vzn9Q",
+          "firstName": "Daniel",
+          "lastName": "Corliss",
+          "position": "Web Developer at Wells Fargo",
+          "publicIdentifier": "daniel-corliss-27505a38a",
+          "linkedinUrl": "https://www.linkedin.com/in/daniel-corliss-27505a38a"
+        }
+      ],
+      "openProfile": false,
+      "_meta": {
+        "pagination": {
+          "totalElements": 1,
+          "totalPages": 1,
+          "pageNumber": 1,
+          "previousElements": 0,
+          "pageSize": 25
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "totalResults": 1,
+    "source": "harvestapi/linkedin-profile-search",
+    "savedAt": "2025-10-13T08:16:43.669Z"
+  }
+}

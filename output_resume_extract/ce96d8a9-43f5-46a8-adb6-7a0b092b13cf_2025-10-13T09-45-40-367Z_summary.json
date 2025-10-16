@@ -1,0 +1,86 @@
+{
+  "filename": "ce96d8a9-43f5-46a8-adb6-7a0b092b13cf.pdf",
+  "timestamp": "2025-10-13T09:45:40.367Z",
+  "processingTime": 5845,
+  "confidence": 82,
+  "extractedData": {
+    "name": "RAMKUMAR B",
+    "email": "ramki028@gmail.com",
+    "phone": "8072205100",
+    "title": null,
+    "location": "Virudhunagar, India",
+    "summary": "Dynamic software developer with over 5 Years 8 Months of proven expertise in web application development. Eagerly pursuing opportunities to leverage my skills for the benefit of your esteemed company while continuously improving my skills in a collaborative and fast-paced environment.",
+    "experience": [
+      {
+        "jobTitle": "Software Engineer",
+        "company": "iOPEX Technologies",
+        "duration": "10/2024 - Current",
+        "startDate": "2024-10",
+        "endDate": "Present",
+        "techUsed": [],
+        "description": "Developed a project management tool to help non-technical stakeholders track quality and process initiatives across departments. Built a centralized system for automating food coupon generation, QR-based verification at counters, and integration with attendance to prevent misuse. Revamped a candidate management portal with AI-driven automation, migrating from PHP to React Redux.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Senior Software Engineer",
+        "company": "Nirals Information Technologies",
+        "duration": "03/2021 - 10/2024",
+        "startDate": "2021-03",
+        "endDate": "2024-10",
+        "techUsed": [],
+        "description": "Led the enhancement of an ERP system used by 250+ institutions to digitalize academic and admin processes. Developed an e-learning platform to ensure education continuity during the COVID-19 pandemic. Developed a job portal aimed at simplifying recruitment for both candidates and employers.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Software Engineer",
+        "company": "Concent Solutions Private Limited",
+        "duration": "02/2019 - 05/2020",
+        "startDate": "2019-02",
+        "endDate": "2020-05",
+        "techUsed": [],
+        "description": "Contributed to a full-scale healthcare platform that streamlined digital medical services and mobile health tracking.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Trainee Software Engineer",
+        "company": "Concent Solutions Private Limited",
+        "duration": "02/2019 - 06/2019",
+        "startDate": "2019-02",
+        "endDate": "2019-06",
+        "techUsed": [],
+        "description": "Participated in a structured training program and contributed to real-time projects under supervision.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Engineering",
+        "field": "Computer Science",
+        "university": "Sri Vidya College of Engineering & Technology",
+        "year": "2019",
+        "percentage": null,
+        "gpa": "7.2",
+        "location": "Virudhunagar"
+      }
+    ],
+    "skills": [
+      "PHP",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "CodeIgniter",
+      "Laravel",
+      "jQuery",
+      "Bootstrap 4 & 5",
+      "React Native",
+      "Tailwind CSS",
+      "MySQL",
+      "SQLite",
+      "Git",
+      "Linux",
+      "Server Handling"
+    ],
+    "projects": [],
+    "certifications": []
+  }
+}

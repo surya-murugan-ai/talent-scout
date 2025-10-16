@@ -1,0 +1,141 @@
+{
+  "filename": "e183250d-87c9-430a-b834-5c8d947c3971.pdf",
+  "timestamp": "2025-10-15T09:45:41.287Z",
+  "processingTime": 55549,
+  "confidence": 97,
+  "extractedData": {
+    "name": "Sourav Suman",
+    "email": "sourav_suman@outlook.com",
+    "phone": "8059944096",
+    "title": "Gen AI Developer",
+    "location": "Bengaluru, India",
+    "summary": "A Lead Developer with 5 years of experience, now specializing in building practical applications with Generative AI. Based in Bangalore, India, my work involves architecting complex, agent-based systems for real-time voice and data processing using frameworks like LangChain, LangGraph, and AutoGen. I also specialize in fine-tuning Large Language Models (LLMs) and building scalable, privacy-aware solutions by implementing advanced RAG pipelines and Knowledge Graphs.",
+    "experience": [
+      {
+        "jobTitle": "Lead Developer",
+        "company": "Rapid Innovation",
+        "duration": "08/2022 - Present",
+        "startDate": "2022-08",
+        "endDate": "Present",
+        "techUsed": [
+          "Generative AI",
+          "RAG pipelines",
+          "LLMs",
+          "Blockchain"
+        ],
+        "description": "Led end-to-end development of Generative AI solutions, including intelligent agents, RAG pipelines, and fine-tuned LLMs for real-world applications. Designed multi-step AI workflows and integrated GenAI capabilities into products using tool use, MCP's. Worked on project estimation, system architecture, and development of blockchain applications, including smart contracts and Subgraph integrations on EVM chains.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Software Developer",
+        "company": "Persistent Systems",
+        "duration": "07/2021 - 08/2022",
+        "startDate": "2021-07",
+        "endDate": "2022-08",
+        "techUsed": [
+          "Blockchain",
+          "Smart Contracts"
+        ],
+        "description": "Developed smart contracts for various blockchain platforms to meet project requirements. Integrated smart contracts with existing systems to enhance functionality and efficiency. Conducted unit testing and implemented best practices to ensure code quality. Collaborated with cross-functional teams to ensure successful project delivery.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "BE",
+        "field": "Computer Science and Engineering",
+        "university": "SSGMCE",
+        "year": null,
+        "percentage": null,
+        "gpa": null,
+        "location": "Maharashtra, India"
+      }
+    ],
+    "skills": [
+      "Python",
+      "JS",
+      "Solidity",
+      "Model Finetuning",
+      "Agents",
+      "Workflow",
+      "Voice Agents",
+      "RAG",
+      "Knowledge Graph",
+      "Transformer Architecture",
+      "Blockchain",
+      "Langchain",
+      "Langgraph",
+      "AutoGen",
+      "LiveKit",
+      "Node.js",
+      "Fast API",
+      "Subgraph"
+    ],
+    "projects": [
+      {
+        "name": "PMMIC: Vision-Language Model for Industrial Compliance",
+        "description": "Trained specialized vision models (like Qwen and Gemini) to automatically find safety and compliance problems in photos of petroleum tanks. Used efficient fine-tuning methods (SFT with LoRA) and reinforcement learning (GRPO) to build a highly accurate, low-cost model. The final AI is skilled at spotting both common and rare edge-case issues, making inspections faster and more reliable.",
+        "techUsed": [
+          "Qwen2VL",
+          "Gemini 1.5 Flash",
+          "LoRA",
+          "SFT",
+          "GRPO",
+          "LLAMA Factory"
+        ],
+        "duration": "07/2025",
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Outbound SIP Call Agent: High-Volume Conversational AI",
+        "description": "Built a powerful AI agent that makes hundreds of human-like phone calls at once, perfect for automating large-scale customer outreach or lead qualification. Kept conversations feeling natural and real-time by engineering a low-latency (~800ms) system using LiveKit for fast audio processing. Designed a flexible system where different AI services (speech-to-text, language models) can be easily swapped, and used a RAG pipeline to give the AI a knowledge base for smarter responses.",
+        "techUsed": [
+          "Python",
+          "LiveKit",
+          "Twilio (SIP)",
+          "RAG",
+          "AI Workflows",
+          "LLMs",
+          "STT/TTS"
+        ],
+        "duration": "01/2025",
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Hatchala: Automated Tax Filing with AI & Privacy-Preserving Workflows",
+        "description": "Built an AI-driven system to classify tax forms, extract key data, and auto-file with minimal human input. Ensured privacy by masking sensitive data before LLM use and deploying secure, agent-based workflows. Combined OCR + LLMs for accurate extraction and used RPA for seamless end-to-end filing.",
+        "techUsed": [
+          "Python",
+          "OpenAI",
+          "Gemini",
+          "Qwen",
+          "LangGraph",
+          "Tesseract",
+          "Custom AI Agents",
+          "RPA"
+        ],
+        "duration": "04/2024",
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "MyHoudini: AI Voice Companion for Elderly Support",
+        "description": "Developed a friendly, voice-controlled AI assistant to help elderly individuals manage daily tasks like reminders and scheduling, while also providing companionship. Designed a cost-effective system using LiveKit for clear audio and a smart pipeline for the AI's speech processing, making the technology affordable and accessible. The assistant works hands-free, allowing users to simply talk to it to store memories, set appointments, or just have a conversation, making it easy and natural to use.",
+        "techUsed": [
+          "LiveKit",
+          "Python",
+          "Large Language Models (LLMs)",
+          "AI Agents",
+          "Speech-to-Text (STT)",
+          "Text-to-Speech (TTS)"
+        ],
+        "duration": "08/2024",
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "certifications": []
+  }
+}

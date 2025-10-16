@@ -1,0 +1,172 @@
+{
+  "filename": "2eda84b5-3de1-48ce-b8e1-5ccaa03de1f7.pdf",
+  "timestamp": "2025-10-13T11:43:04.179Z",
+  "processingTime": 9308,
+  "confidence": 93,
+  "rawText": "\n\nRANJAN VISHWAKARMA Address- Indra Nagar, \nE-mail: sharmaranjan7079@gmail.com HAL 3\nrd\n Stage, \nMobile No.: 7488493253 Bangalore- 562119 \n \n \n                                                                                                                                                                                    \nHighly skilled Laravel Developer with 1.5+ years of professional experience. Demonstrated expertise \nin developing robust and scalable web applications using the Laravel framework. \n \n• Working for Xcrino Business Solutions, New Delhi as Laravel developer from February 2022 till date. \nResponsibilities are: \n• Develop new project to tight deadlines using Laravel Framework, Core PHP. \n• API integration. \n• Creating new websites from scratch with the help of wireframe. \n• Creating and customization free and paid both themes for web application. \n• Creating mobile friendly websites. And troubleshoot, test and maintain the website in \ndifferent platforms. \n• Write clean, well-designed code, anyone can easily understand. \n• Experience with REST APIs with a basic understanding of object-oriented programming \n(OOPs) design patterns \n• Experience using common third-party APIs \nProjects: \n• Dating Application (Hunttr). \n• Hospital Management System.  \n• Service Based Management System. \n• Human Resource Management System. \n• Healthy Concept. \n• Academy Management System. \n \nTechnology used: HTML, CSS, BOOTSTRAP, JQUARY, PHP LARAVEL, MYQSL, \n                               Rest API, AJAX. \nPaid Internship: \n29 September 2021- 31 March 2022 of experience in PHP Technology with “OMNINOS \nTECHNOLOGIES INTERNATIONAL PVT LTD.” And I am worked as a \nWeb Developer Role. \n \n \n \n• I have done training on “ELECTRICAL AUTOMATION” from “ITDP” Bhopal \n• I have done 2 weeks training on “MATLAB” from “SOFCON” Bhopal \n    Objective :- \n   Work Experience :- \n\nEducational Profile :- \n \n \nClass Institution/University Percentage Passing Year \nB. TECH \nSagar Institute of Research & Technology, \nBhopal ( RGPV ) \n7.27 CGPA 2021 \n12\nth \nS.N. Sinha College, Aurangabad, (BSEB) 51.4% 2016 \n10\nth \nSita High School, Harihar Ganj, (JAC) 63.2% 2014 \n \n \nTechnical Skill :- \n \n \nProgramming Languages : PHP (Hypertext Preprocessor) \nTools/ CMS/ Frameworks : Laravel, HTML, CSS, JavaScript, Ajax, jQuery, \n  \nTheme Customization, Bootstrap. \nDatabase : MySQL \nOperating Systems : Windows, Linux \nApplications : VS Code, XAMPP, Wampserver64, Postman. \n \n \nPersonal Skill and Strengths :- \n• Ability to make program in PHP Language \n• High Priority to the TASK. \n• Time Management Regarding Project. \n• Team Player \n \n \n \n \n \nDate of Birth 15\nth \nMarch1999 \nLanguage Proficiency Hindi & English \nMarital Status Unmarried \nHobbies Learning New Technology, Traveling \n \nI hereby declare that all the information provided in my resume is true to the best of my \nknowledge. \n \nPlace : Bangalore Ranjan Vishwakarma ",
+  "extractedData": {
+    "name": "Ranjan Vishwakarma",
+    "email": "sharmaranjan7079@gmail.com",
+    "phone": "7488493253",
+    "linkedinUrl": null,
+    "githubUrl": null,
+    "portfolioUrl": null,
+    "location": "Bangalore",
+    "title": "Laravel Developer",
+    "summary": "Highly skilled Laravel Developer with 1.5+ years of professional experience. Demonstrated expertise in developing robust and scalable web applications using the Laravel framework.",
+    "experience": [
+      {
+        "jobTitle": "Laravel Developer",
+        "company": "Xcrino Business Solutions",
+        "duration": "February 2022 - Present",
+        "startDate": "2022-02",
+        "endDate": "Present",
+        "techUsed": [
+          "Laravel",
+          "Core PHP",
+          "REST APIs",
+          "HTML",
+          "CSS",
+          "BOOTSTRAP",
+          "JQUARY",
+          "PHP LARAVEL",
+          "MYQSL",
+          "Rest API",
+          "AJAX"
+        ],
+        "description": "Develop new project to tight deadlines using Laravel Framework, Core PHP. API integration. Creating new websites from scratch with the help of wireframe. Creating and customization free and paid both themes for web application. Creating mobile friendly websites. And troubleshoot, test and maintain the website in different platforms. Write clean, well-designed code, anyone can easily understand. Experience with REST APIs with a basic understanding of object-oriented programming (OOPs) design patterns. Experience using common third-party APIs.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Web Developer",
+        "company": "OMNINOS TECHNOLOGIES INTERNATIONAL PVT LTD.",
+        "duration": "29 September 2021 - 31 March 2022",
+        "startDate": "2021-09",
+        "endDate": "2022-03",
+        "techUsed": [
+          "PHP"
+        ],
+        "description": "Paid Internship in PHP Technology.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "B. TECH",
+        "field": null,
+        "university": "Sagar Institute of Research & Technology, Bhopal (RGPV)",
+        "year": "2021",
+        "percentage": null,
+        "gpa": "7.27",
+        "location": "Bhopal"
+      },
+      {
+        "degree": "12th",
+        "field": null,
+        "university": "S.N. Sinha College, Aurangabad, (BSEB)",
+        "year": "2016",
+        "percentage": "51.4%",
+        "gpa": null,
+        "location": "Aurangabad"
+      },
+      {
+        "degree": "10th",
+        "field": null,
+        "university": "Sita High School, Harihar Ganj, (JAC)",
+        "year": "2014",
+        "percentage": "63.2%",
+        "gpa": null,
+        "location": "Harihar Ganj"
+      }
+    ],
+    "projects": [
+      {
+        "name": "Dating Application (Hunttr)",
+        "description": null,
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Hospital Management System",
+        "description": null,
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Service Based Management System",
+        "description": null,
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Human Resource Management System",
+        "description": null,
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Healthy Concept",
+        "description": null,
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Academy Management System",
+        "description": null,
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "achievements": [],
+    "certifications": [],
+    "skills": [
+      "PHP",
+      "Laravel",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Ajax",
+      "jQuery",
+      "Theme Customization",
+      "Bootstrap",
+      "MySQL",
+      "Windows",
+      "Linux",
+      "VS Code",
+      "XAMPP",
+      "Wampserver64",
+      "Postman"
+    ],
+    "interests": [
+      "Learning New Technology",
+      "Traveling"
+    ],
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "salary": null,
+    "availability": null,
+    "remotePreference": null,
+    "visaStatus": null,
+    "originalData": {
+      "filename": "2eda84b5-3de1-48ce-b8e1-5ccaa03de1f7.pdf",
+      "rawText": "RANJAN VISHWAKARMA Address- Indra Nagar, E-mail: sharmaranjan7079@gmail.com HAL 3 rd Stage, Mobile No.: 7488493253 Bangalore- 562119 Highly skilled Laravel Developer with 1.5+ years of professional experience. Demonstrated expertise in developing robust and scalable web applications using the Laravel framework. • Working for Xcrino Business Solutions, New Delhi as Laravel developer from February 2022 till date. Responsibilities are: • Develop new project to tight deadlines using Laravel Framework, Core PHP. • API integration. • Creating new websites from scratch with the help of wireframe. • Creating and customization free and paid both themes for web application. • Creating mobile friendly websites. And troubleshoot, test and maintain the website in different platforms. • Write clean, well-designed code, anyone can easily understand. • Experience with REST APIs with a basic understanding of object-oriented programming (OOPs) design patterns • Experience using common third-party APIs Projects: • Dating Application (Hunttr). • Hospital Management System. • Service Based Management System. • Human Resource Management System. • Healthy Concept. • Academy Management System. Technology used: HTML, CSS, BOOTSTRAP, JQUARY, PHP LARAVEL, MYQSL, Rest API, AJAX. Paid Internship: 29 September 2021- 31 March 2022 of experience in PHP Technology with “OMNINOS TECHNOLOGIES INTERNATIONAL PVT LTD.” And I am worked as a Web Developer Role. • I have done training on “ELECTRICAL AUTOMATION” from “ITDP” Bhopal • I have done 2 weeks training on “MATLAB” from “SOFCON” Bhopal Objective :- Work Experience :- Educational Profile :- Class Institution/University Percentage Passing Year B. TECH Sagar Institute of Research & Technology, Bhopal ( RGPV ) 7.27 CGPA 2021 12 th S.N. Sinha College, Aurangabad, (BSEB) 51.4% 2016 10 th Sita High School, Harihar Ganj, (JAC) 63.2% 2014 Technical Skill :- Programming Languages : PHP (Hypertext Preprocessor) Tools/ CMS/ Frameworks : Laravel, HTML, CSS, Java"
+    },
+    "source": "resume",
+    "confidence": 93,
+    "processingTime": 0
+  }
+}

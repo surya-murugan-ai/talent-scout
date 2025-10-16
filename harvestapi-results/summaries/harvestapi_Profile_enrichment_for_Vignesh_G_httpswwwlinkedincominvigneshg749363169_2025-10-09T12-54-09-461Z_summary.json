@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-10-09T12:54:09.461Z",
+  "searchQuery": "Profile enrichment for: Vignesh G - https://www.linkedin.com/in/vignesh-g-749363169",
+  "totalResults": 1,
+  "profiles": [
+    {
+      "index": 1,
+      "name": "Vignesh G",
+      "headline": "Senior Developer at Nirals Info - Tech",
+      "location": "Virudhunagar, Tamil Nadu, India",
+      "currentCompany": "Nirals",
+      "currentPosition": "N/A",
+      "linkedinUrl": "https://www.linkedin.com/in/vignesh-g-749363169",
+      "connectionsCount": 2,
+      "skillsCount": 17,
+      "experienceCount": 1,
+      "educationCount": 1
+    }
+  ],
+  "originalFile": "harvestapi_Profile_enrichment_for_Vignesh_G_httpswwwlinkedincominvigneshg749363169_2025-10-09T12-54-09-461Z.json"
+}

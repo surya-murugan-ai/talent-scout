@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-10-15T04:42:41.768Z",
+  "searchQuery": "Mukesh Raj Full Stack Developer nirals",
+  "totalResults": 1,
+  "profiles": [
+    {
+      "index": 1,
+      "name": "Mukesh Raj",
+      "headline": "Full Stack Developer",
+      "location": "Kovilpatti, Tamil Nadu, India",
+      "currentCompany": "Nirals",
+      "currentPosition": "N/A",
+      "linkedinUrl": "https://www.linkedin.com/in/rmukesh6",
+      "connectionsCount": 102,
+      "skillsCount": 15,
+      "experienceCount": 2,
+      "educationCount": 1
+    }
+  ],
+  "originalFile": "harvestapi_Mukesh_Raj_Full_Stack_Developer_nirals_2025-10-15T04-42-41-768Z.json"
+}

@@ -1,0 +1,216 @@
+{
+  "filename": "e21980dc-649b-49e7-89cc-e798e78b4462.Pdf",
+  "timestamp": "2025-10-10T18:43:52.787Z",
+  "processingTime": 17649,
+  "confidence": 93,
+  "extractedData": {
+    "name": "Santhanapriyalakshmi",
+    "email": "spriyalakshmimca@gmail.com",
+    "phone": "+91-9578956695",
+    "title": ".NET Team Lead | Solution Architect",
+    "location": "Tiruppur, Tamil Nadu",
+    "summary": "Experienced .NET Team Lead with 7+ years of expertise in building scalable enterprise applications using .NET Core, C#, Web API, and micro services architecture. Proven track record of leading cross-functional teams, owning end-to-end delivery, and driving quality software solutions in banking, logistics, and financial services domains. Adept in solution design, clean code practices, DevOps integration, and agile methodologies.",
+    "experience": [
+      {
+        "jobTitle": "Senior Software Developer",
+        "company": "Infinite Computer Solutions",
+        "duration": "Oct 2023 - Present",
+        "startDate": "2023-10",
+        "endDate": "Present",
+        "techUsed": [
+          ".NET Core",
+          "Jenkins",
+          "Octopus"
+        ],
+        "description": "Leading a team of developers for a financial web application. Architected and developed scalable RESTful APIs using .NET Core. Mentored junior developers and led code reviews, improving code quality by 30%. Integrated CI/CD pipelines with Jenkins and Octopus for seamless deployments.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Software Developer",
+        "company": "Mobile Programming LLC",
+        "duration": "Aug 2022 - Oct 2023",
+        "startDate": "2022-08",
+        "endDate": "2023-10",
+        "techUsed": [
+          "REST APIs"
+        ],
+        "description": "Designed and developed REST APIs for high-performance fintech applications. Contributed to database design and implemented optimized stored procedures. Drove agile practices by participating in sprint planning and demos.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Software Developer",
+        "company": "Sonata Software",
+        "duration": "Mar 2022 - Aug 2022",
+        "startDate": "2022-03",
+        "endDate": "2022-08",
+        "techUsed": [
+          ".NET Core"
+        ],
+        "description": "Built and maintained modules in a healthcare web platform using .NET Core. Evaluated and implemented new technologies to improve performance.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Software Developer",
+        "company": "Imcrinox Technologies",
+        "duration": "Jan 2020 - Mar 2022",
+        "startDate": "2020-01",
+        "endDate": "2022-03",
+        "techUsed": [
+          "RESTful services",
+          "MySQL",
+          "SQL Server",
+          "MongoDB"
+        ],
+        "description": "Developed RESTful services for mobile and web-based applications. Worked across MySQL, SQL Server, and MongoDB for various projects.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Junior Programmer",
+        "company": "Ideatec Software India Pvt. Ltd.",
+        "duration": "Nov 2017 - Oct 2019",
+        "startDate": "2017-11",
+        "endDate": "2019-10",
+        "techUsed": [
+          "VB.NET",
+          "Crystal Reports"
+        ],
+        "description": "Developed logistics software using VB.NET, Crystal Reports. Performed unit testing and improved test coverage for critical modules.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Master of Computer Applications",
+        "field": null,
+        "university": "Dr. Mahalingam College of Engineering and Technology",
+        "year": "2016",
+        "percentage": null,
+        "gpa": "8.1/10",
+        "location": "Pollachi"
+      },
+      {
+        "degree": "B.Sc in Computer Science",
+        "field": null,
+        "university": "Chikkanna Govt Arts and Science College",
+        "year": "2013",
+        "percentage": null,
+        "gpa": "7.1/10",
+        "location": "Tirupur"
+      }
+    ],
+    "skills": [
+      ".NET Core",
+      "C#",
+      "ASP.NET MVC",
+      "Blazor",
+      "VB.NET",
+      "ADO.NET",
+      "Entity Framework Core",
+      "Dapper",
+      "Microservices",
+      "REST APIs",
+      "Multithreading",
+      "Async/Await",
+      "MVC",
+      "MS SQL Server",
+      "MySQL",
+      "MongoDB",
+      "Crystal Reports",
+      "DevExpress",
+      "Jenkins",
+      "Octopus",
+      "GitHub",
+      "Bitbucket",
+      "AWS",
+      "Azure",
+      "Jira",
+      "Agile/Scrum",
+      "Team Leadership",
+      "Agile Delivery",
+      "Cross-functional Collaboration",
+      "Mentorship"
+    ],
+    "projects": [
+      {
+        "name": "Elan Credit Card Platform",
+        "description": "Built APIs to integrate with third-party services (Monevo, TransUnion). Enhanced transaction reliability and customer onboarding speed.",
+        "techUsed": [
+          ".NET Core",
+          "Web API",
+          "Dapper",
+          "MSSQL"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Nita Mukesh Ambani Cultural Center",
+        "description": "Developed modules for event scheduling and user management.",
+        "techUsed": [
+          ".NET Core",
+          "EF Core",
+          "Async/Await",
+          "MSSQL"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Melior Discovery Project Tracking and Analytics",
+        "description": "Implemented project allocation, monitoring dashboards, and user roles.",
+        "techUsed": [
+          ".NET Core",
+          "EF Core",
+          "Dapper",
+          "Web API",
+          "MSSQL"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "BranchX Loan Platform",
+        "description": "Created modules for loan management and Razorpay integration.",
+        "techUsed": [
+          ".NET Core",
+          "ADO.NET",
+          "Web API",
+          "MySQL"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Creditly Unified Banking Platform",
+        "description": "Developed APIs for various banking operations (loans, credit cards).",
+        "techUsed": [
+          ".NET Core MVC",
+          "Web API",
+          "ADO.NET",
+          "MySQL"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Mehala Sales Corporation (Logistics ERP)",
+        "description": "Developed invoice/report generation and WMS/TMS modules.",
+        "techUsed": [
+          "VB.NET",
+          "Crystal Reports",
+          "Web Services",
+          "MS SQL"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "certifications": []
+  }
+}

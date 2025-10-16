@@ -1,0 +1,117 @@
+{
+  "filename": "b952a2b7-ef81-48cf-9073-ef84b6066cd6.pdf",
+  "timestamp": "2025-10-10T18:32:54.129Z",
+  "processingTime": 8605,
+  "confidence": 93,
+  "rawText": "\n\nZenabHabib\nBengaluru,India|+917033298885|LinkedIn|zenhabib3@gmail.com\nSUMMARY\nSoftwareEngineerwith2yearsofexperiencein.NETfullstackdevelopment,focusingonC#,.NETCore,\nMVC,SQL,andJavaScript.SkilledinbuildingandmaintainingwebapplicationsinAgileenvironments\nwithTest-DrivenDevelopment.Experiencedinsoftwaredevelopment,databasedesignandcodereviews.\nStrongproblem-solvingskillsandatrackrecordofcontributingtocollaborative,high-impactprojects.\nPROFESSIONALEXPERIENCE\nDeloitteUSI07/2023-04/2025\nRole:.NETFullStackDeveloper\nResponsibilites:\nDedicated2200+hourstotheStateofKentuckyproject,withafocusonbuildingandmaintaining\nfull-stackapplicationsusingC#,.NETframeworks,JavaScript,SQLServer,AzureDevOps,and\nAngular,includingdevelopmentofaHealthInsuranceportalfortheStateofKentucky.\nContributed342hoursonintegratingtheProgramofAll-InclusiveCarefortheElderlyintothe\nWaiverapplication,witha90%FTPR(firsttimepassrate),resultinginimprovedcareoutcomes\nanda13%decreaseinservicecosts.\nResolvedover60bugfixesin2024,and28fixesin2025sofar,bringingatotalof118+fixes\nduringmytenureinthisrole,comprisingofUIenhancements,codefixesandstoredprocedure\nchanges.\n\nSpearheadedimprovementstotheProviderManagementModulebycontributing640hourstoa\nkeyChangeRequest,optimizingproviderlookup/searchfunctionality,providingeaseofaccessto\nusersandaddressing30+bugsover4months.\nTeamSize:12\nEDUCATION\nKalingaInstituteofIndustrialTechnology–Bhubaneswar,Inda2019-2023\nBachelorofTechnology,ComputerScienceandCommunicationEngineering\nCERTIFICATIONS\nMicrosoftCertifiedAzure(AZ-900)-2024\nOracleCloudInfrastructure(OCI)CertifiedArchitectAssociate-2023\nTECHNICALSKILLS\nLanguages:C#,JavaScript,SQL,PL/SQL,Python,WPF\nFrameworks&Libraries:.NETCore,ASP.NET,MVC,EntityFramework,jQuery,Angular,\nNode.js\nCloud&DevOps:CI/CD,AzureDevOps,TFS\nTesting&QA:TDD,UnitTesting,PeerCodeReviews\nDatabases:MicrosoftSQLServer2016,MySQL\nOther:VisualStudio,VSCode,Git,Postman,MicrosoftOffice,WebAPI,Powershell,Copilot,\nCursor",
+  "extractedData": {
+    "name": "Zenab Habib",
+    "email": "zenhabib3@gmail.com",
+    "phone": "+917033298885",
+    "linkedinUrl": null,
+    "githubUrl": null,
+    "portfolioUrl": null,
+    "location": "Bengaluru, India",
+    "title": "Software Engineer",
+    "summary": "Software Engineer with 2 years of experience in .NET full stack development, focusing on C#, .NET Core, MVC, SQL, and JavaScript. Skilled in building and maintaining web applications in Agile environments with Test-Driven Development. Experienced in software development, database design and code reviews. Strong problem-solving skills and a track record of contributing to collaborative, high-impact projects.",
+    "experience": [
+      {
+        "jobTitle": ".NET Full Stack Developer",
+        "company": "Deloitte USI",
+        "duration": "07/2023 - 04/2025",
+        "startDate": "2023-07",
+        "endDate": "2025-04",
+        "techUsed": [
+          "C#",
+          ".NET frameworks",
+          "JavaScript",
+          "SQL Server",
+          "Azure DevOps",
+          "Angular"
+        ],
+        "description": "Dedicated 2200+ hours to the State of Kentucky project, with a focus on building and maintaining full-stack applications using C#, .NET frameworks, JavaScript, SQL Server, Azure DevOps, and Angular, including development of a Health Insurance portal for the State of Kentucky.",
+        "achievements": [
+          "Contributed 342 hours on integrating the Program of All-Inclusive Care for the Elderly into the Waiver application, with a 90% FTPR (first time pass rate), resulting in improved care outcomes and a 13% decrease in service costs.",
+          "Resolved over 60 bug fixes in 2024, and 28 fixes in 2025 so far, bringing a total of 118+ fixes during my tenure in this role, comprising of UI enhancements, code fixes and stored procedure changes.",
+          "Spearheaded improvements to the Provider Management Module by contributing 640 hours to a key Change Request, optimizing provider lookup/search functionality, providing ease of access to users and addressing 30+ bugs over 4 months."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Technology",
+        "field": "Computer Science and Communication Engineering",
+        "university": "Kalinga Institute of Industrial Technology",
+        "year": "2023",
+        "percentage": null,
+        "gpa": null,
+        "location": "Bhubaneswar, India"
+      }
+    ],
+    "projects": [],
+    "achievements": [],
+    "certifications": [
+      {
+        "name": "Microsoft Certified Azure (AZ-900)",
+        "issuer": null,
+        "date": "2024",
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "Oracle Cloud Infrastructure (OCI) Certified Architect Associate",
+        "issuer": null,
+        "date": "2023",
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      }
+    ],
+    "skills": [
+      "C#",
+      "JavaScript",
+      "SQL",
+      "PL/SQL",
+      "Python",
+      "WPF",
+      ".NET Core",
+      "ASP.NET",
+      "MVC",
+      "Entity Framework",
+      "jQuery",
+      "Angular",
+      "Node.js",
+      "CI/CD",
+      "Azure DevOps",
+      "TFS",
+      "TDD",
+      "Unit Testing",
+      "Peer Code Reviews",
+      "Microsoft SQL Server 2016",
+      "MySQL",
+      "Visual Studio",
+      "VSCode",
+      "Git",
+      "Postman",
+      "Microsoft Office",
+      "WebAPI",
+      "Powershell",
+      "Copilot",
+      "Cursor"
+    ],
+    "interests": [],
+    "languages": [],
+    "salary": null,
+    "availability": null,
+    "remotePreference": null,
+    "visaStatus": null,
+    "originalData": {
+      "filename": "b952a2b7-ef81-48cf-9073-ef84b6066cd6.pdf",
+      "rawText": "ZenabHabib Bengaluru,India|+917033298885|LinkedIn|zenhabib3@gmail.com SUMMARY SoftwareEngineerwith2yearsofexperiencein.NETfullstackdevelopment,focusingonC#,.NETCore, MVC,SQL,andJavaScript.SkilledinbuildingandmaintainingwebapplicationsinAgileenvironments withTest-DrivenDevelopment.Experiencedinsoftwaredevelopment,databasedesignandcodereviews. Strongproblem-solvingskillsandatrackrecordofcontributingtocollaborative,high-impactprojects. PROFESSIONALEXPERIENCE DeloitteUSI07/2023-04/2025 Role:.NETFullStackDeveloper Responsibilites: Dedicated2200+hourstotheStateofKentuckyproject,withafocusonbuildingandmaintaining full-stackapplicationsusingC#,.NETframeworks,JavaScript,SQLServer,AzureDevOps,and Angular,includingdevelopmentofaHealthInsuranceportalfortheStateofKentucky. Contributed342hoursonintegratingtheProgramofAll-InclusiveCarefortheElderlyintothe Waiverapplication,witha90%FTPR(firsttimepassrate),resultinginimprovedcareoutcomes anda13%decreaseinservicecosts. Resolvedover60bugfixesin2024,and28fixesin2025sofar,bringingatotalof118+fixes duringmytenureinthisrole,comprisingofUIenhancements,codefixesandstoredprocedure changes.  SpearheadedimprovementstotheProviderManagementModulebycontributing640hourstoa keyChangeRequest,optimizingproviderlookup/searchfunctionality,providingeaseofaccessto usersandaddressing30+bugsover4months. TeamSize:12 EDUCATION KalingaInstituteofIndustrialTechnology–Bhubaneswar,Inda2019-2023 BachelorofTechnology,ComputerScienceandCommunicationEngineering CERTIFICATIONS MicrosoftCertifiedAzure(AZ-900)-2024 OracleCloudInfrastructure(OCI)CertifiedArchitectAssociate-2023 TECHNICALSKILLS Languages:C#,JavaScript,SQL,PL/SQL,Python,WPF Frameworks&Libraries:.NETCore,ASP.NET,MVC,EntityFramework,jQuery,Angular, Node.js Cloud&DevOps:CI/CD,AzureDevOps,TFS Testing&QA:TDD,UnitTesting,PeerCodeReviews Databases:MicrosoftSQLServer2016,MySQL Other:VisualStudio,VSCode,Git,Postman,MicrosoftOffice,WebAPI,Powershell,Copilot, Cursor"
+    },
+    "source": "resume",
+    "confidence": 93,
+    "processingTime": 0
+  }
+}

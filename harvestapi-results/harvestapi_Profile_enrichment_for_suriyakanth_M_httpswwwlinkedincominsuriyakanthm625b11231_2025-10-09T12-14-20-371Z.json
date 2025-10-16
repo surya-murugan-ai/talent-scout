@@ -1,0 +1,464 @@
+{
+  "timestamp": "2025-10-09T12:14:20.371Z",
+  "searchQuery": "Profile enrichment for: suriyakanth M - https://www.linkedin.com/in/suriyakanth-m-625b11231",
+  "rawData": [
+    {
+      "id": "ACoAADoB7z0BL9IF01OMdLxR6_y1SaJZZcRS_uA",
+      "publicIdentifier": "suriyakanth-m-625b11231",
+      "linkedinUrl": "https://www.linkedin.com/in/suriyakanth-m-625b11231",
+      "firstName": "SURIYAKANTH",
+      "lastName": "M",
+      "headline": "React Developer at Nirals InfoTech | MCA Graduate with AI & ML Specialization | Building AI-Integrated Applications",
+      "about": "React Developer at Nirals InfoTech with experience in building modern web applications and integrating AI-driven features. MCA graduate with specialization in AI & ML, with award-winning projects in face recognition and emotion detection. Passionate about creating smarter, user-focused applications by blending web technologies with machine learning.",
+      "openToWork": false,
+      "hiring": false,
+      "photo": "https://media.licdn.com/dms/image/v2/D5603AQE_QyuKU6VzSg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1732200391670?e=1762992000&v=beta&t=Rf_AnHc1FrJpWA6Bu7BCiUhBoa_NVnWDVi6eAOpKN3U",
+      "premium": false,
+      "influencer": false,
+      "location": {
+        "linkedinText": "Sattur, Tamil Nadu, India",
+        "countryCode": "IN",
+        "parsed": {
+          "text": "Sattur, India",
+          "countryCode": "IN",
+          "regionCode": null,
+          "country": "India",
+          "countryFull": "India",
+          "state": "Tamil Nadu",
+          "city": "Sattur"
+        }
+      },
+      "verified": false,
+      "registeredAt": "2022-02-17T16:33:18.987Z",
+      "topSkills": null,
+      "connectionsCount": 18,
+      "followerCount": 19,
+      "currentPosition": [
+        {
+          "companyId": "16153648",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/16153648/",
+          "companyName": "Nirals",
+          "dateRange": {
+            "start": {
+              "month": 8,
+              "year": 2025,
+              "day": null
+            },
+            "end": null
+          }
+        }
+      ],
+      "profileTopEducation": [
+        {
+          "schoolId": "203655",
+          "companyId": "15106441",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/15106441/",
+          "schoolName": "AYYA NADAR JANAKI AMMAL COLLEGE"
+        }
+      ],
+      "experience": [
+        {
+          "position": "React Developer",
+          "location": "Kovilpatti, Tamil Nadu, India",
+          "employmentType": "Full-time",
+          "workplaceType": "On-site",
+          "companyName": "Nirals",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/nirals/",
+          "companyId": "16153648",
+          "companyUniversalName": "nirals",
+          "duration": "3 mos",
+          "description": null,
+          "skills": [
+            "React.js",
+            "Front-End Development",
+            "Flutter",
+            "Node.js",
+            "MongoDB",
+            "PHP"
+          ],
+          "startDate": {
+            "month": "Aug",
+            "year": 2025,
+            "text": "Aug 2025"
+          },
+          "endDate": {
+            "text": "Present"
+          }
+        },
+        {
+          "position": "UX Designer",
+          "location": "Madurai, Tamil Nadu, India",
+          "employmentType": "Internship",
+          "workplaceType": "Hybrid",
+          "companyName": "Meganar Technologies",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/80332809/",
+          "companyId": "80332809",
+          "duration": "6 mos",
+          "description": "Worked in the projects like Media Jungle and LearnHub as UI UX Designer, I Wireframed and Designed the UI screens for these softwares using the Figma.",
+          "skills": [
+            "Figma (Software)",
+            "User Interface Design",
+            "Wireframing",
+            "User Experience (UX)"
+          ],
+          "startDate": {
+            "month": "Dec",
+            "year": 2024,
+            "text": "Dec 2024"
+          },
+          "endDate": {
+            "month": "May",
+            "year": 2025,
+            "text": "May 2025"
+          }
+        }
+      ],
+      "education": [
+        {
+          "schoolName": "AYYA NADAR JANAKI AMMAL COLLEGE",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/15106441/",
+          "degree": "Master of Computer Applications - MCA",
+          "fieldOfStudy": "Computer Science",
+          "skills": [
+            "Artificial Intelligence (AI)",
+            "HTML",
+            "English",
+            "MySQL",
+            "PHP",
+            "Problem Solving",
+            "React.js",
+            "Software Development"
+          ],
+          "insights": "Grade: First Class (D)",
+          "startDate": {
+            "month": "Jun",
+            "year": 2023,
+            "text": "Jun 2023"
+          },
+          "endDate": {
+            "month": "May",
+            "year": 2025,
+            "text": "May 2025"
+          },
+          "period": "Jun 2023 - May 2025"
+        },
+        {
+          "schoolName": "Sri Kaliswari College",
+          "schoolLinkedinUrl": "https://www.linkedin.com/search/results/all/?keywords=Sri+Kaliswari+College",
+          "degree": "Bachelor",
+          "fieldOfStudy": "Information Technology",
+          "skills": [],
+          "startDate": null,
+          "endDate": {
+            "text": ""
+          }
+        }
+      ],
+      "certifications": [],
+      "projects": [],
+      "volunteering": [],
+      "receivedRecommendations": [],
+      "skills": [
+        {
+          "name": "Figma (Software)",
+          "positions": [
+            "UX Designer at Meganar Technologies"
+          ]
+        },
+        {
+          "name": "User Interface Design",
+          "positions": [
+            "UX Designer at Meganar Technologies"
+          ]
+        },
+        {
+          "name": "Wireframing",
+          "positions": [
+            "UX Designer at Meganar Technologies"
+          ]
+        },
+        {
+          "name": "User Experience (UX)",
+          "positions": [
+            "UX Designer at Meganar Technologies"
+          ]
+        },
+        {
+          "name": "Front-End Development",
+          "positions": [
+            "React Developer at Nirals"
+          ]
+        },
+        {
+          "name": "Flutter",
+          "positions": [
+            "React Developer at Nirals"
+          ]
+        },
+        {
+          "name": "Node.js",
+          "positions": [
+            "React Developer at Nirals"
+          ]
+        },
+        {
+          "name": "MongoDB",
+          "positions": [
+            "React Developer at Nirals"
+          ]
+        },
+        {
+          "name": "Research and Development (R&D)"
+        },
+        {
+          "name": "Software Development",
+          "positions": [
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        },
+        {
+          "name": "BSC"
+        },
+        {
+          "name": "Problem Solving",
+          "positions": [
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        },
+        {
+          "name": "React.js",
+          "positions": [
+            "React Developer at Nirals",
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        },
+        {
+          "name": "PHP",
+          "positions": [
+            "React Developer at Nirals",
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        },
+        {
+          "name": "Artificial Intelligence (AI)",
+          "positions": [
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        },
+        {
+          "name": "English",
+          "positions": [
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        },
+        {
+          "name": "Programming"
+        },
+        {
+          "name": "Microsoft Office"
+        },
+        {
+          "name": "HTML",
+          "positions": [
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        },
+        {
+          "name": "Java"
+        },
+        {
+          "name": "C++"
+        },
+        {
+          "name": "MySQL",
+          "positions": [
+            "AYYA NADAR JANAKI AMMAL COLLEGE"
+          ]
+        }
+      ],
+      "publications": [],
+      "courses": [],
+      "patents": [],
+      "honorsAndAwards": [],
+      "languages": [],
+      "causes": [],
+      "featured": null,
+      "composeOptionType": "UPSELL",
+      "moreProfiles": [
+        {
+          "id": "ACoAAESXtxYBEtngRGMYY8oGsiuUiRiAH6N6HcE",
+          "firstName": "NANTHAKUMAR",
+          "lastName": "R",
+          "publicIdentifier": "nanthakumar-r-55a494281",
+          "linkedinUrl": "https://www.linkedin.com/in/nanthakumar-r-55a494281"
+        },
+        {
+          "id": "ACoAADYFOmoBgJ4muZqxtdl2jPiWwjvMoX-3Cj4",
+          "firstName": "Shaina",
+          "lastName": "Eghbali",
+          "position": "Student at the University of Miami",
+          "publicIdentifier": "shaina-eghbali-34a632213",
+          "linkedinUrl": "https://www.linkedin.com/in/shaina-eghbali-34a632213"
+        },
+        {
+          "id": "ACoAAE5E0rQBqlQKwkyix7R8AAqzIMPwKLPg7GQ",
+          "firstName": "JESURAJA",
+          "lastName": "L",
+          "publicIdentifier": "jesuraja-l-098923307",
+          "linkedinUrl": "https://www.linkedin.com/in/jesuraja-l-098923307"
+        },
+        {
+          "id": "ACoAAESNVYUBHXSOaXWgG3mMPrIimmrpiu7PGCk",
+          "firstName": "Thareef",
+          "lastName": "Ahamed",
+          "publicIdentifier": "thareef-ahamed-8b1206281",
+          "linkedinUrl": "https://www.linkedin.com/in/thareef-ahamed-8b1206281"
+        },
+        {
+          "id": "ACoAAD2X7EsBdjXMYOUj9UfF3HccwFRA1g2Old4",
+          "firstName": "Lalith",
+          "lastName": "Kumar",
+          "publicIdentifier": "lalith-kumar-r161202",
+          "linkedinUrl": "https://www.linkedin.com/in/lalith-kumar-r161202"
+        },
+        {
+          "id": "ACoAABFvTYgBKSbiSzjKiiGFCVxmymV5uMbwcD0",
+          "firstName": "SENTHUR",
+          "lastName": "Murugan",
+          "publicIdentifier": "senthur-murugan-a88b6281",
+          "linkedinUrl": "https://www.linkedin.com/in/senthur-murugan-a88b6281"
+        },
+        {
+          "id": "ACoAACj1gSABSjvjpInG_1yg4vefGoEQFjcmYWU",
+          "firstName": "Christian",
+          "lastName": "Pacheco",
+          "position": "Advanced Planning",
+          "publicIdentifier": "christian-pacheco-568174172",
+          "linkedinUrl": "https://www.linkedin.com/in/christian-pacheco-568174172"
+        },
+        {
+          "id": "ACoAABUh4QUB4u140XUFWgSOK3mlmox79hRc6SI",
+          "firstName": "Gail",
+          "lastName": "Berman",
+          "position": "Seasoned in health and nutrition",
+          "publicIdentifier": "gail-berman-80589a9a",
+          "linkedinUrl": "https://www.linkedin.com/in/gail-berman-80589a9a"
+        },
+        {
+          "id": "ACoAAEK-ol8B677RJfr-kLTc_W3XKGwLG2VILp4",
+          "firstName": "Barath",
+          "lastName": "Vikraman",
+          "publicIdentifier": "barath-vikraman",
+          "linkedinUrl": "https://www.linkedin.com/in/barath-vikraman"
+        },
+        {
+          "id": "ACoAAB8nzU0BPNAONFzgd1KgHEK708WmVglJlqo",
+          "firstName": "Spencer",
+          "lastName": "Fields",
+          "position": "MERN stack developer  | Python, C# , HTML5, CSS, TypeScript",
+          "publicIdentifier": "spencer-fields-811075127",
+          "linkedinUrl": "https://www.linkedin.com/in/spencer-fields-811075127"
+        },
+        {
+          "id": "ACoAAB6Rm9kBCpTkwqaCaHljv9kY1b8HB0EQlZE",
+          "firstName": "Karla",
+          "lastName": "Andrade-Ortega",
+          "position": "Purchasing Procurement/Office Admin.",
+          "publicIdentifier": "karla-andrade-ortega-561909123",
+          "linkedinUrl": "https://www.linkedin.com/in/karla-andrade-ortega-561909123"
+        },
+        {
+          "id": "ACoAADG0fawBm8vZgLdAZOtDYCPY9gM7qrYVCjM",
+          "firstName": "Allyson",
+          "lastName": "Mckeever ",
+          "position": "Manager| Office Administrator| Salesperson. \nYou may not always be the smartest person in the room, but you can always work the hardest. ",
+          "publicIdentifier": "allyson-mckeever-1243381b3",
+          "linkedinUrl": "https://www.linkedin.com/in/allyson-mckeever-1243381b3"
+        },
+        {
+          "id": "ACoAAFR6MEoBenJ_3HYmwKUgQtiqvH0H0yVnl0Q",
+          "firstName": "Sureshkumar",
+          "lastName": "R",
+          "publicIdentifier": "r-sureshkumar",
+          "linkedinUrl": "https://www.linkedin.com/in/r-sureshkumar"
+        },
+        {
+          "id": "ACoAADVg9c4BbX_HIlZ2GWLHqaUg3vwYh0sGj3Q",
+          "firstName": "Nader",
+          "lastName": "Mansour",
+          "position": "culver city tyota",
+          "publicIdentifier": "nader-mansour-326b0020b",
+          "linkedinUrl": "https://www.linkedin.com/in/nader-mansour-326b0020b"
+        },
+        {
+          "id": "ACoAAB5n0XgBvcb5kqMzvRhbMVVMBy2iIiTZ-rM",
+          "firstName": "Daniel",
+          "lastName": "Ginsberg",
+          "position": "Licensed Real Estate Salesperson",
+          "publicIdentifier": "dannyg310",
+          "linkedinUrl": "https://www.linkedin.com/in/dannyg310"
+        },
+        {
+          "id": "ACoAAEKdprgBSCkQkRK-VKhsCR7Zhy1MX8Sey1g",
+          "firstName": "Katie",
+          "lastName": "Jaworski",
+          "position": "Designer at Studio Jake Arnold",
+          "publicIdentifier": "katie-jaworski-62035b272",
+          "linkedinUrl": "https://www.linkedin.com/in/katie-jaworski-62035b272"
+        },
+        {
+          "id": "ACoAAF7GjacBnPARwMoXagM_x8R1Omn5VQ3DBLY",
+          "firstName": "Carlos",
+          "lastName": "Colaco",
+          "position": "--",
+          "publicIdentifier": "carlos-colaco-973617384",
+          "linkedinUrl": "https://www.linkedin.com/in/carlos-colaco-973617384"
+        },
+        {
+          "id": "ACoAAESbSVsBLKs8WBGpGqS4LKznLJK26g4IUV4",
+          "firstName": "MATHAVA",
+          "lastName": "J",
+          "publicIdentifier": "mathava-j-aa3587281",
+          "linkedinUrl": "https://www.linkedin.com/in/mathava-j-aa3587281"
+        },
+        {
+          "id": "ACoAACbtNTQB-5dXAGBS0rijBsMSVWZi2DG64KI",
+          "firstName": "Seaver",
+          "lastName": "I.",
+          "position": "Salesperson @ Inland Empire Industrial Supply INC. | Sales, Sales Operations",
+          "publicIdentifier": "seaver-i-89886b162",
+          "linkedinUrl": "https://www.linkedin.com/in/seaver-i-89886b162"
+        },
+        {
+          "id": "ACoAAEPTEVcB5DoJkRjVj27WrW76tcermx6NltE",
+          "firstName": "POTHYESWARAN",
+          "lastName": "S",
+          "publicIdentifier": "pothyeswaran",
+          "linkedinUrl": "https://www.linkedin.com/in/pothyeswaran"
+        },
+        {
+          "id": "ACoAAEHm6ZMBugQ4tJlzP1G6z4ABXCvwHXXE2cs",
+          "firstName": "Anwar Mydheen",
+          "lastName": "K",
+          "publicIdentifier": "anwar-mydheen-k-b8334426a",
+          "linkedinUrl": "https://www.linkedin.com/in/anwar-mydheen-k-b8334426a"
+        }
+      ],
+      "openProfile": false,
+      "_meta": {
+        "pagination": {
+          "totalElements": 1,
+          "totalPages": 1,
+          "pageNumber": 1,
+          "previousElements": 0,
+          "pageSize": 25
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "totalResults": 1,
+    "source": "harvestapi/linkedin-profile-search",
+    "savedAt": "2025-10-09T12:14:20.371Z"
+  }
+}

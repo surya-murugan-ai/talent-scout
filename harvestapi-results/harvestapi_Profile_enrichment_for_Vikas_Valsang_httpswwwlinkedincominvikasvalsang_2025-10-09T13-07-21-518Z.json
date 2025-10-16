@@ -1,0 +1,719 @@
+{
+  "timestamp": "2025-10-09T13:07:21.518Z",
+  "searchQuery": "Profile enrichment for: Vikas Valsang - https://www.linkedin.com/in/vikasvalsang",
+  "rawData": [
+    {
+      "id": "ACoAAAAHH1MBn6XAHvF1Ll6iO6f0xn8yOOKiZ58",
+      "publicIdentifier": "vikasvalsang",
+      "linkedinUrl": "https://www.linkedin.com/in/vikasvalsang",
+      "firstName": "Vikas",
+      "lastName": "Valsang",
+      "headline": "Managing Director | Driving Growth & Innovation | Digital Transformation | AI • Data • Cloud • Applications",
+      "about": "With over 30 years of experience in the Telecom OEM, Financial Services, Manufacturing domain, Vikas is a seasoned leader who has managed customer relationships, delivered complex, high-performance projects, and developed innovative solutions for enterprises in the BigData, CRM, Telecom and Fintech areas.\n\nSkilled in mapping client requirements, scope management, activity sequencing, resource allocation, risk management, effort & cost estimation and negotiations aligned to pre-set guidelines. He has developed customer centric initiatives across India, US, Europe and Africa besides engaging in newer business models (Revenue Sharing, Fixed Price) and was responsible for project deliveries, Innovation, talent development, Operational, Process excellence and owned up overall P&L.\n\nHe is a certified Six Sigma Black Belt who has streamlined processes, improved quality, and reduced costs across multiple projects and programs.\n\nSpecialties: \n- Large Deals and Proposals\n- Driving newer Commercial Models\n- Large Program Ownership and Project Delivery\n- Product Management\n- Operations Management\n- Process Definitions and Six Sigma Black Belt\n- Technology Innovations\n- Talent Recruitment and Team Development\n- Customer Relationship",
+      "openToWork": false,
+      "hiring": false,
+      "photo": "https://media.licdn.com/dms/image/v2/C4E03AQEpHoktbFKIBQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1564685637361?e=1762992000&v=beta&t=MkDFO1Byd-xhWQW95K487Uh4_HmtMJUzOSnkMuQA3B0",
+      "premium": false,
+      "influencer": false,
+      "location": {
+        "linkedinText": "Bengaluru, Karnataka, India",
+        "countryCode": "IN",
+        "parsed": {
+          "text": "Bengaluru, India",
+          "countryCode": "IN",
+          "regionCode": null,
+          "country": "India",
+          "countryFull": "India",
+          "state": "Karnataka",
+          "city": "Bengaluru"
+        }
+      },
+      "verified": true,
+      "registeredAt": "2004-04-13T01:21:11.000Z",
+      "topSkills": null,
+      "connectionsCount": 1890,
+      "followerCount": 1919,
+      "currentPosition": [
+        {
+          "companyId": "107106910",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/107106910/",
+          "companyName": "Tenjumps",
+          "dateRange": {
+            "start": {
+              "month": 6,
+              "year": 2025,
+              "day": null
+            },
+            "end": null
+          }
+        }
+      ],
+      "profileTopEducation": [
+        {
+          "schoolId": "20003",
+          "companyId": "15105506",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/15105506/",
+          "schoolName": "Motilal Nehru National Institute Of Technology"
+        }
+      ],
+      "experience": [
+        {
+          "position": "Managing Director",
+          "location": "Greater Bengaluru Area",
+          "employmentType": "Full-time",
+          "workplaceType": "On-site",
+          "companyName": "Tenjumps",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/tenjumps/",
+          "companyId": "107106910",
+          "companyUniversalName": "tenjumps",
+          "duration": "5 mos",
+          "description": "Passionate about solving complex business problems through AI-driven solutions and future-ready engineering. My role is to bridge strategy and execution, aligning business goals with emerging technologies. The focus will be on growing India business as a strategic Innovation hub by delivering cutting-edge solutions across across AI, Data and Cloud.",
+          "skills": [
+            "Director level",
+            "Enterprise Software",
+            "Business Strategy",
+            "Creativity and Innovation",
+            "Operational Excellence",
+            "Leadership",
+            "Product Design"
+          ],
+          "startDate": {
+            "month": "Jun",
+            "year": 2025,
+            "text": "Jun 2025"
+          },
+          "endDate": {
+            "text": "Present"
+          }
+        },
+        {
+          "position": "Senior Vice President",
+          "location": "Bengaluru, Karnataka, India",
+          "employmentType": "Full-time",
+          "workplaceType": null,
+          "companyName": "Saggezza",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/618323/",
+          "companyId": "618323",
+          "duration": "1 yr 3 mos",
+          "description": null,
+          "skills": null,
+          "startDate": {
+            "month": "Apr",
+            "year": 2022,
+            "text": "Apr 2022"
+          },
+          "endDate": {
+            "month": "Jun",
+            "year": 2023,
+            "text": "Jun 2023"
+          }
+        },
+        {
+          "position": "Vice President and Head of Solutions",
+          "location": "Greater Bengaluru Area",
+          "employmentType": null,
+          "workplaceType": null,
+          "companyName": "Saggezza",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/618323/",
+          "companyId": "618323",
+          "duration": "7 yrs 3 mos",
+          "description": null,
+          "skills": null,
+          "startDate": {
+            "month": "Jan",
+            "year": 2015,
+            "text": "Jan 2015"
+          },
+          "endDate": {
+            "month": "Mar",
+            "year": 2022,
+            "text": "Mar 2022"
+          }
+        },
+        {
+          "position": "Vice President, Telecom Strategic BU",
+          "location": "Bangalore",
+          "employmentType": null,
+          "workplaceType": null,
+          "companyName": "Saggezza",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/618323/",
+          "companyId": "618323",
+          "duration": "3 yrs 8 mos",
+          "description": null,
+          "skills": null,
+          "startDate": {
+            "month": "May",
+            "year": 2011,
+            "text": "May 2011"
+          },
+          "endDate": {
+            "month": "Dec",
+            "year": 2014,
+            "text": "Dec 2014"
+          }
+        },
+        {
+          "position": "General Manager, Telecom Engineering",
+          "location": null,
+          "employmentType": null,
+          "workplaceType": null,
+          "companyName": "Wipro Technologies",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/1318/",
+          "companyId": "1318",
+          "duration": "2 yrs 1 mo",
+          "description": null,
+          "skills": null,
+          "startDate": {
+            "month": "Apr",
+            "year": 2009,
+            "text": "Apr 2009"
+          },
+          "endDate": {
+            "month": "Apr",
+            "year": 2011,
+            "text": "Apr 2011"
+          }
+        },
+        {
+          "position": "Solution Delivery Head, Telecom Engineering Solutions",
+          "location": null,
+          "employmentType": null,
+          "workplaceType": null,
+          "companyName": "Wipro Technologies",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/1318/",
+          "companyId": "1318",
+          "duration": "3 yrs",
+          "description": null,
+          "skills": null,
+          "startDate": {
+            "month": "Apr",
+            "year": 2006,
+            "text": "Apr 2006"
+          },
+          "endDate": {
+            "month": "Mar",
+            "year": 2009,
+            "text": "Mar 2009"
+          }
+        },
+        {
+          "position": "Technical Manager",
+          "location": null,
+          "employmentType": null,
+          "workplaceType": null,
+          "companyName": "Wipro Technologies",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/1318/",
+          "companyId": "1318",
+          "duration": "5 yrs 3 mos",
+          "description": null,
+          "skills": null,
+          "startDate": {
+            "year": 2001,
+            "text": "2001"
+          },
+          "endDate": {
+            "month": "Mar",
+            "year": 2006,
+            "text": "Mar 2006"
+          }
+        },
+        {
+          "position": "Project Leader",
+          "location": null,
+          "employmentType": null,
+          "workplaceType": null,
+          "companyName": "Wipro Technologies",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/1318/",
+          "companyId": "1318",
+          "duration": "3 yrs",
+          "description": null,
+          "skills": null,
+          "startDate": {
+            "year": 1998,
+            "text": "1998"
+          },
+          "endDate": {
+            "year": 2001,
+            "text": "2001"
+          }
+        },
+        {
+          "position": "Module Lead",
+          "location": null,
+          "employmentType": null,
+          "workplaceType": null,
+          "companyName": "Wipro Technologies",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/1318/",
+          "companyId": "1318",
+          "duration": "1 yr",
+          "description": null,
+          "skills": null,
+          "startDate": {
+            "year": 1996,
+            "text": "1996"
+          },
+          "endDate": {
+            "year": 1997,
+            "text": "1997"
+          }
+        },
+        {
+          "position": "Project Engineer",
+          "location": null,
+          "employmentType": null,
+          "workplaceType": null,
+          "companyName": "Wipro Technologies",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/1318/",
+          "companyId": "1318",
+          "duration": "2 yrs 6 mos",
+          "description": null,
+          "skills": null,
+          "startDate": {
+            "month": "Aug",
+            "year": 1992,
+            "text": "Aug 1992"
+          },
+          "endDate": {
+            "year": 1995,
+            "text": "1995"
+          }
+        }
+      ],
+      "education": [
+        {
+          "schoolName": "Motilal Nehru National Institute Of Technology",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/15105506/",
+          "degree": "BE",
+          "fieldOfStudy": "Computer Science",
+          "skills": [],
+          "insights": "Activities and societies: Computer Society of India",
+          "startDate": {
+            "year": 1988,
+            "text": "1988"
+          },
+          "endDate": {
+            "year": 1992,
+            "text": "1992"
+          },
+          "period": "1988 - 1992"
+        },
+        {
+          "schoolName": "Bangur Nagar Junior Science Arts and Commerce",
+          "schoolLinkedinUrl": "https://www.linkedin.com/search/results/all/?keywords=Bangur+Nagar+Junior+Science+Arts+and+Commerce",
+          "degree": "High School",
+          "fieldOfStudy": "Science",
+          "skills": [],
+          "startDate": {
+            "year": 1986,
+            "text": "1986"
+          },
+          "endDate": {
+            "year": 1988,
+            "text": "1988"
+          },
+          "period": "1986 - 1988"
+        }
+      ],
+      "certifications": [
+        {
+          "title": "Six Sigma - Black Belt",
+          "issuedAt": "Issued Apr 2003",
+          "issuedBy": "Wipro",
+          "issuedByLink": null
+        }
+      ],
+      "projects": [
+        {
+          "title": "Network Address Translation - Protocol Translation",
+          "duration": "Mar 2002 - Mar 2003",
+          "startDate": {
+            "month": "Mar",
+            "year": 2002,
+            "text": "Mar 2002"
+          },
+          "endDate": {
+            "month": "Mar",
+            "year": 2003,
+            "text": "Mar 2003"
+          },
+          "associatedWith": "Associated with Wipro Technologies",
+          "associatedWithLink": null
+        }
+      ],
+      "volunteering": [],
+      "receivedRecommendations": [
+        {
+          "givenBy": "Devansh Gupta",
+          "givenAt": "November 19, 2024, Devansh reported directly to Vikas",
+          "givenByLink": "https://www.linkedin.com/in/devansh-gupta",
+          "description": "Vikas is a senior from my college whom I knew for long but also had the privilege to work under him for 4 years. He is a great boss who gives you all the creative freedom and support wherever needed. He is the guy who will watch your back, he is very protective of his team and will go the extra mile to get things done for them. He has high standards of work but at the same time won't hesitate in helping on nuances. He is extremely open for new ideas and believes in meritocracy. He is practical, result oriented with great work ethics and extremely high standards of integrity. He has the ability to connect the dots and foresee things which very few people can do. He is a great leader, coach, mentor, supporter and a critic at the same time. He has a great sense of humor and people find him approachable. He is open to discuss any topic and has deep knowledge on variety of subjects. An Amazing person who makes everyone comfortable around him. It was a great pleasure to work under Vikas and get coached on tenets of leadership from him"
+        },
+        {
+          "givenBy": "Suresh Venkat",
+          "givenAt": "November 18, 2008, Vikas was Suresh’s client",
+          "givenByLink": "https://www.linkedin.com/in/suresh-venkat-pm",
+          "description": "I have worked with Vikas for few years and found Vikas to be very diligent, trust worthy and someone I can count on for action.  He understands the customer needs and the business pressures and does well to balance them both.  I whole heartedly support my recommendation for Vikas.\r\n\r\nThanks\r\n-Suresh"
+        }
+      ],
+      "skills": [
+        {
+          "name": "Director level",
+          "positions": [
+            "Managing Director at Tenjumps"
+          ]
+        },
+        {
+          "name": "Enterprise Software",
+          "positions": [
+            "Managing Director at Tenjumps"
+          ]
+        },
+        {
+          "name": "Business Strategy",
+          "positions": [
+            "Managing Director at Tenjumps"
+          ]
+        },
+        {
+          "name": "Creativity and Innovation",
+          "positions": [
+            "Managing Director at Tenjumps"
+          ]
+        },
+        {
+          "name": "Operational Excellence",
+          "positions": [
+            "Managing Director at Tenjumps"
+          ]
+        },
+        {
+          "name": "Leadership",
+          "positions": [
+            "Managing Director at Tenjumps"
+          ]
+        },
+        {
+          "name": "Product Design",
+          "positions": [
+            "Managing Director at Tenjumps"
+          ]
+        },
+        {
+          "name": "Product Management",
+          "endorsements": "72 endorsements"
+        },
+        {
+          "name": "Operations Management",
+          "endorsements": "17 endorsements"
+        },
+        {
+          "name": "Cross-functional Team Leadership",
+          "endorsements": "54 endorsements"
+        },
+        {
+          "name": "Six Sigma",
+          "endorsements": "35 endorsements"
+        },
+        {
+          "name": "Telecommunications",
+          "endorsements": "80 endorsements"
+        },
+        {
+          "name": "Process Improvement",
+          "endorsements": "12 endorsements"
+        },
+        {
+          "name": "SEI CMM",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "Black Belt",
+          "endorsements": "8 endorsements"
+        },
+        {
+          "name": "Customer Centric Solutions",
+          "endorsements": "2 endorsements"
+        },
+        {
+          "name": "CRM",
+          "endorsements": "47 endorsements"
+        }
+      ],
+      "publications": [],
+      "courses": [
+        {
+          "title": "Analysis of Algorithms",
+          "associatedWith": "Associated with Motilal Nehru National Institute Of Technology",
+          "associatedWithLink": "https://www.linkedin.com/company/15105506/"
+        },
+        {
+          "title": "Aritificial Intelligence",
+          "associatedWith": "Associated with Motilal Nehru National Institute Of Technology",
+          "associatedWithLink": "https://www.linkedin.com/company/15105506/"
+        },
+        {
+          "title": "Automata Theory",
+          "associatedWith": "Associated with Motilal Nehru National Institute Of Technology",
+          "associatedWithLink": "https://www.linkedin.com/company/15105506/"
+        },
+        {
+          "title": "Computer Architecture",
+          "associatedWith": "Associated with Motilal Nehru National Institute Of Technology",
+          "associatedWithLink": "https://www.linkedin.com/company/15105506/"
+        },
+        {
+          "title": "Computer Networks",
+          "associatedWith": "Associated with Motilal Nehru National Institute Of Technology",
+          "associatedWithLink": "https://www.linkedin.com/company/15105506/"
+        },
+        {
+          "title": "Computer Organization",
+          "associatedWith": "Associated with Motilal Nehru National Institute Of Technology",
+          "associatedWithLink": "https://www.linkedin.com/company/15105506/"
+        },
+        {
+          "title": "Data Structures",
+          "associatedWith": "Associated with Motilal Nehru National Institute Of Technology",
+          "associatedWithLink": "https://www.linkedin.com/company/15105506/"
+        },
+        {
+          "title": "Database Management System",
+          "associatedWith": "Associated with Motilal Nehru National Institute Of Technology",
+          "associatedWithLink": "https://www.linkedin.com/company/15105506/"
+        },
+        {
+          "title": "Microprocessor",
+          "associatedWith": "Associated with Motilal Nehru National Institute Of Technology",
+          "associatedWithLink": "https://www.linkedin.com/company/15105506/"
+        },
+        {
+          "title": "Operating Systems",
+          "associatedWith": "Associated with Motilal Nehru National Institute Of Technology",
+          "associatedWithLink": "https://www.linkedin.com/company/15105506/"
+        },
+        {
+          "title": "Operation Research",
+          "associatedWith": "Associated with Motilal Nehru National Institute Of Technology",
+          "associatedWithLink": "https://www.linkedin.com/company/15105506/"
+        }
+      ],
+      "patents": [],
+      "honorsAndAwards": [
+        {
+          "title": "WiproWay Evangelist",
+          "issuedBy": "Wipro Technologies",
+          "issuedAt": "Feb 2010",
+          "description": "For Effective Implementation of Customer Centricity Initiatives",
+          "associatedWith": "Associated with Wipro Technologies",
+          "associatedWithLink": null
+        }
+      ],
+      "languages": [
+        {
+          "name": "English",
+          "proficiency": "Native or bilingual proficiency"
+        },
+        {
+          "name": "Hindi",
+          "proficiency": "Full professional proficiency"
+        },
+        {
+          "name": "Kannada",
+          "proficiency": "Native or bilingual proficiency"
+        },
+        {
+          "name": "Marathi",
+          "proficiency": "Elementary proficiency"
+        }
+      ],
+      "causes": [
+        "Children",
+        "Education",
+        "Environment",
+        "Science and Technology"
+      ],
+      "featured": {
+        "images": [],
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7219415954722582529?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7219415954722582529%29",
+        "title": "Software Defined Manufacturing - A digital transformation in the Manufacturing Lifecycle",
+        "subtitle": "Vikas Valsang on LinkedIn • 2 min read"
+      },
+      "composeOptionType": "UPSELL",
+      "moreProfiles": [
+        {
+          "id": "ACoAAEpKl-0BgKhxYpwMWgMYZjVL_lGNSikVgTk",
+          "firstName": "Shreya",
+          "lastName": "Patil",
+          "position": "Attended Motilal Nehru National Institute Of Technology",
+          "publicIdentifier": "shreyapatil92",
+          "linkedinUrl": "https://www.linkedin.com/in/shreyapatil92"
+        },
+        {
+          "id": "ACoAAAPw-5IBt7aknhLWyJpbI36Y2KZR7Kdpd3E",
+          "firstName": "JayaKrishna",
+          "lastName": "Dasari",
+          "publicIdentifier": "jaydasari",
+          "linkedinUrl": "https://www.linkedin.com/in/jaydasari"
+        },
+        {
+          "id": "ACoAAAAgf3oBKVM3raZ6SNoTQKYWeWW0vC_k4mU",
+          "firstName": "Piyush",
+          "lastName": "Jain",
+          "publicIdentifier": "piyushjain24",
+          "linkedinUrl": "https://www.linkedin.com/in/piyushjain24"
+        },
+        {
+          "id": "ACoAAADxU98BheAACKUm9PTZ_ic_5fl3NcJij0o",
+          "firstName": "Rajaram",
+          "lastName": "Kamat",
+          "publicIdentifier": "rrkamat2019",
+          "linkedinUrl": "https://www.linkedin.com/in/rrkamat2019"
+        },
+        {
+          "id": "ACoAAAIi_1wBe3bj-l4VuAB3Xk6wrCEft3ynEng",
+          "firstName": "Ravishankar",
+          "lastName": "Gollapinny",
+          "publicIdentifier": "ravishankargollapinny",
+          "linkedinUrl": "https://www.linkedin.com/in/ravishankargollapinny"
+        },
+        {
+          "id": "ACoAAEfidLABgU-Pymvthfw5FMxigYyeIkwYa2U",
+          "firstName": "Sneha",
+          "lastName": "Prajapati",
+          "position": "Talent acquistion",
+          "publicIdentifier": "sneha-prajapati-214a8a297",
+          "linkedinUrl": "https://www.linkedin.com/in/sneha-prajapati-214a8a297"
+        },
+        {
+          "id": "ACoAAEXbPwMBvg9l-TQpmRWJEh_8ORb1UFF8sW0",
+          "firstName": "Aditya",
+          "lastName": "Arya",
+          "position": "MNNIT Allahabad' 27 l ECE l",
+          "publicIdentifier": "aditya-arya-8035ba288",
+          "linkedinUrl": "https://www.linkedin.com/in/aditya-arya-8035ba288"
+        },
+        {
+          "id": "ACoAAAAkxuABHVrjn1sjbfgqPktIKFede9hxBw4",
+          "firstName": "Suhas",
+          "lastName": "Rao",
+          "publicIdentifier": "suhas-rao-968982",
+          "linkedinUrl": "https://www.linkedin.com/in/suhas-rao-968982"
+        },
+        {
+          "id": "ACoAAAk8WsIBl8GAKlmSdmX9qznA0J25oHZOcvc",
+          "firstName": "Mahalakshmi",
+          "lastName": "Chikkanna",
+          "publicIdentifier": "mahalakshmi-chikkanna-402a8643",
+          "linkedinUrl": "https://www.linkedin.com/in/mahalakshmi-chikkanna-402a8643"
+        },
+        {
+          "id": "ACoAAFO7xvIBPbgFz1A9ChyueiVEnI7LmkPH_og",
+          "firstName": "Prateek",
+          "lastName": "Singh",
+          "position": "Sophomore | MNNIT | CSE'28",
+          "publicIdentifier": "prateek-singh-842577332",
+          "linkedinUrl": "https://www.linkedin.com/in/prateek-singh-842577332"
+        },
+        {
+          "id": "ACoAAAICFecB6P8pYVd-L72LtzxnHLgVK7E_UVA",
+          "firstName": "Indira",
+          "lastName": "Sheshadri",
+          "publicIdentifier": "indira-sheshadri",
+          "linkedinUrl": "https://www.linkedin.com/in/indira-sheshadri"
+        },
+        {
+          "id": "ACoAAFKr5R0BYTWpDnhBD1jIG2zXP_37Nuty6vs",
+          "firstName": "SHIKHA",
+          "lastName": "PATEL",
+          "position": "Sophomore @ MNNIT \nECE",
+          "publicIdentifier": "shikha-patel-391604328",
+          "linkedinUrl": "https://www.linkedin.com/in/shikha-patel-391604328"
+        },
+        {
+          "id": "ACoAAEokSiwBP4mXxuNi2JEfoczZROtyfiQXoXM",
+          "firstName": "Govind",
+          "lastName": "Saini",
+          "position": "Pre-final Year Student at Motilal Nehru National Institute Of Technology",
+          "publicIdentifier": "govind-saini-0906b12a8",
+          "linkedinUrl": "https://www.linkedin.com/in/govind-saini-0906b12a8"
+        },
+        {
+          "id": "ACoAAFb4oaoBGNrByhXY9a-16iNvaB_r0EhMj00",
+          "firstName": "Anuj",
+          "lastName": "Pandey",
+          "position": "B.Tech ECE, MNNIT'28 || C , Python ,C++|| C++ & DSA || ML Enthusiast || Frontend Web Developer || Passionate About Coding & Development || ReactJS",
+          "publicIdentifier": "anuj-pandey-9227b2348",
+          "linkedinUrl": "https://www.linkedin.com/in/anuj-pandey-9227b2348"
+        },
+        {
+          "id": "ACoAAEhPV24BN4hPvbYnOW6UOPrTNChA41Ht4rY",
+          "firstName": "Rashi",
+          "lastName": "Khadse",
+          "position": "Undergrad at MNNIT Allahabad ",
+          "publicIdentifier": "rashi-khadse-ec",
+          "linkedinUrl": "https://www.linkedin.com/in/rashi-khadse-ec"
+        },
+        {
+          "id": "ACoAAACxVagBKYPHBsDG9jpReF3DOaLEwStbS5k",
+          "firstName": "Gareth",
+          "lastName": "T.",
+          "publicIdentifier": "gtannen",
+          "linkedinUrl": "https://www.linkedin.com/in/gtannen"
+        },
+        {
+          "id": "ACoAAE00kNkBsNsmg_dkGayT1qjn6dJ613zeDqs",
+          "firstName": "Abhishek",
+          "lastName": "Kumar",
+          "position": "Upsc Educator and Mentor | motivator | coach | Youtuber",
+          "publicIdentifier": "abhishek-kumar-561959301",
+          "linkedinUrl": "https://www.linkedin.com/in/abhishek-kumar-561959301"
+        },
+        {
+          "id": "ACoAAACgCycBbTq1Uo_7107nHCZyeftzQXTU1P8",
+          "firstName": "Zain",
+          "lastName": "Peerzade",
+          "publicIdentifier": "zainpeerzade",
+          "linkedinUrl": "https://www.linkedin.com/in/zainpeerzade"
+        },
+        {
+          "id": "ACoAAFvjiv8BcyAIEvNcOrjLgB1SW0wqzcxRfeM",
+          "firstName": "David",
+          "lastName": "Henley",
+          "position": "--",
+          "publicIdentifier": "david-henley-193360370",
+          "linkedinUrl": "https://www.linkedin.com/in/david-henley-193360370"
+        },
+        {
+          "id": "ACoAAADaJX0BzXAv5L-Ri_gexRJ5meBwswvLpzI",
+          "firstName": "Anantha Saravanan",
+          "lastName": "Dhanaraj",
+          "publicIdentifier": "ananthas",
+          "linkedinUrl": "https://www.linkedin.com/in/ananthas"
+        },
+        {
+          "id": "ACoAAEfPa4ABVi0ipNVPFtp_-_QKZUMaJ457xHs",
+          "firstName": "Diptanil",
+          "lastName": "Sarkar",
+          "position": "An ECE student at MNNIT Allahabad, passionately trying to shape a career in core Hardware Electronics—where DIGITAL logic meets ANALOG precision.",
+          "publicIdentifier": "diptanil-sarkar-280588297",
+          "linkedinUrl": "https://www.linkedin.com/in/diptanil-sarkar-280588297"
+        }
+      ],
+      "openProfile": false,
+      "_meta": {
+        "pagination": {
+          "totalElements": 1,
+          "totalPages": 1,
+          "pageNumber": 1,
+          "previousElements": 0,
+          "pageSize": 25
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "totalResults": 1,
+    "source": "harvestapi/linkedin-profile-search",
+    "savedAt": "2025-10-09T13:07:21.518Z"
+  }
+}

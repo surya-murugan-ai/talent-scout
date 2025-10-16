@@ -1,0 +1,136 @@
+{
+  "filename": "ed9da596-2012-4891-b561-4d796e032c43.pdf",
+  "timestamp": "2025-10-15T09:47:46.317Z",
+  "processingTime": 10060,
+  "confidence": 92,
+  "rawText": "\n\n \nMAGESHWARAN R \n \n \nmageshwaran951@gmail.com                 +918870627408                   Website | GitHub | LinkedIn | Medium\n \n \nSeasoned AI Engineer with a distinguished seven-year tenure in designing and \nimplementing advanced Natural Language Processing and Document Intelligence \nsystems. \n \nHIGHLIGHTS \n● NLP Lead for AstraZeneca’s ‘Lead with AI & Insights’ award-winning project \n● Design and Development of Million-scale Document Intelligence Solutions to create \nFAIR data in Pharmaceutical and Healthcare domains leveraging Semantic Search, \nSemantic QA, NER, Ontologies, Document Layout Understanding \n● Multilingual/Cross-lingual NLP solutions for Semantic Search and Content \nGeneration in Pharmaceutical and Travel domains \n● Document Intelligence Solutions leveraging OCR, Visual Transformers, and CNNs \nto capture and digitize Tables, Flowcharts, and Plots \n● Experienced with MLOps Workflows in Kubernetes Native platforms, Sagemaker \n \nSKILLS \nNLP            :  Semantic Search, Retrieval Augmented Generation, \n      Agentic AI, LLMs, Generative AI, Named Entity Recognition \nComputer Vision   : Object Detection, Image Segmentation, Image Processing, OCR, \n  Data Cleaning and Augmentation \nSoftware Dev         : Python, Databases (Vector, Graph, NoSQL, SQL), Big Data Tools, \n     Docker, Kubernetes, Airflow \nEXPERIENCE \nSENIOR CONSULTANT – AI ENGINEERING                       DEC 2021 – PRESENT \nAstraZeneca                                                  Chennai, India \n● Leading the design, development, and delivery of Document Intelligence solutions \nto accelerate Clinical Study Design, Regulatory Submissions, Health Authority \nInteractions, and Patient Safety processes \n● Led the development and delivery of million-scale RAG pipeline for Clinical Study \ndocuments with Azure OpenAI, Qdrant and custom frameworks for LLM Response \nVerification, Guardrails to accelerate clinical study design, patient recruitment as \npart of Study Patients Initiative saving 12K FTE hours with a projection of 2.5M \nUSD savings in 5 years \n● Led the development and delivery of Information Extraction and Metadata Tagging \nsolutions using custom NER models, LLMs and Controlled Vocabularies for the \nFAIRification of 2M+ Regulatory and Clinical Study documents saving 28K FTE \nhours \n● Developed a PoC on multi-agent workflow to automate study feasibility analysis by \ngenerating RWE queries from free-text eligibility criteria - helping the study \nfeasibility analysis with a real-time feedback loop (process that usually takes many \nhours of manual efforts) \n\n● Consulting a project on a multi-agent clinical development chat assistant that’s \nconnected to various knowledge bases (semantic search) and data products \n(text2sql) powered by AWS Bedrock and OpenSearch \n● Delivered Document Understanding solutions to extract study design flowchart \nimages and schedule of assessments tables using PubLayNet and Table \nTransformers \nAI  ENGINEER (Founding Team)                             FEB 2021 – NOV 2021 \nYOU. Group HK                                                  Remote, India \n● Developed Multilingual NLP pipelines for Sentiment Classification of Tourism \nReviews, Cross-lingual Semantic Similarity, and Semantic Search for Tourism \nProducts Analytics \n● Implemented end-to-end multilingual search application for the tourism industry \nusing Elasticsearch \n● Architected ETL and Data QA solutions using AWS services like S3, GLUE, \nRedshift, Lambda, SNS, and MongoDB for Data Warehousing of Tourism Products \nand Reviews data collected from different sources. \n \nAI ENGINEER (Early member in AI Group)                 AUG 2019 – FEB 2021 \nConcord Nextstep India Pvt Ltd         Chennai, India \n● Research and Development of Information Extraction Systems for Electronic Health \nRecords \n● Research and Implementation of Named Entity Recognition models ranging from \nhand-engineered feature-based CRF to State-Of-The-Art Deep Learning models \n(BERT, CNN-BiLSTM-CRF with Word, Subword representations, and \nCharacter-level embeddings) \n● Research work on Document Layout Understanding using LayoutLM and \nPubLayNet and leveraging it for downstream task of entity-extraction \n● Understanding of Design and Development of end-to-end data-driven business \nproducts (Data streaming, Orchestration, Micro-services, Model deployments, and \nscaling with Kubernetes, and Azure cloud services) \n \nPROJECT ENGINEER                FEB 2018 – AUG 2019 \nWIPRO Technologies - Automotive domain              Bengaluru, India \nDeep Learning Engineer: Computer Vision & AI team, Visteon \n● Responsible for Research and Implementation of State-of-the-Art techniques in \nDCNN which includes Importance sampling, Algorithm Optimization \n● Responsible for Hyper-parameter tuning of Deep Convolutional Neural Networks for \nLane Detection and Traffic Sign Recognition \n● Worked on end-to-end Computer Vision pipeline: Data pre-processing (Data \nAugmentation, Data cleaning), Data post-processing (Data Summarization, Error \nAnalysis) and Fine-tuning \nMachine Learning Engineer: Ford Motor Company \n● Worked on End-to-End development and deployment of Machine Learning and \nText-Analytics based Defect Classifier \n● Customized an Open-Source Python Static Code Analyser \"Pylint\" and Integrated it \nwith, Pycharm and Squish (Automation tool) \nEDUCATION \nB.Tech in Electrical and Electronics Engineering, R.M.K College of Engineering and \nTechnology: WIPRO Campus recruit SEP-2016, Graduated 2017 ",
+  "extractedData": {
+    "name": "MAGESHWARAN R",
+    "email": "mageshwaran951@gmail.com",
+    "phone": "+918870627408",
+    "linkedinUrl": "http://linkedin.com/in/magesh-technovator",
+    "githubUrl": "http://github.com/magesh-technovator",
+    "portfolioUrl": "https://mageshwaran.com/",
+    "location": "Chennai, India",
+    "title": "Senior Consultant – AI Engineering",
+    "summary": "Seasoned AI Engineer with a distinguished seven-year tenure in designing and implementing advanced Natural Language Processing and Document Intelligence systems.",
+    "experience": [
+      {
+        "jobTitle": "Senior Consultant – AI Engineering",
+        "company": "AstraZeneca",
+        "duration": "Dec 2021 - Present",
+        "startDate": "2021-12",
+        "endDate": "Present",
+        "techUsed": [
+          "Azure OpenAI",
+          "Qdrant",
+          "LLM",
+          "NER",
+          "AWS Bedrock",
+          "OpenSearch"
+        ],
+        "description": "Leading the design, development, and delivery of Document Intelligence solutions to accelerate Clinical Study Design, Regulatory Submissions, Health Authority Interactions, and Patient Safety processes.",
+        "achievements": [
+          "Led the development and delivery of million-scale RAG pipeline for Clinical Study documents saving 12K FTE hours with a projection of 2.5M USD savings in 5 years",
+          "Led the development and delivery of Information Extraction and Metadata Tagging solutions saving 28K FTE hours"
+        ]
+      },
+      {
+        "jobTitle": "AI Engineer (Founding Team)",
+        "company": "YOU. Group HK",
+        "duration": "Feb 2021 - Nov 2021",
+        "startDate": "2021-02",
+        "endDate": "2021-11",
+        "techUsed": [
+          "Elasticsearch",
+          "AWS S3",
+          "AWS GLUE",
+          "AWS Redshift",
+          "AWS Lambda",
+          "AWS SNS",
+          "MongoDB"
+        ],
+        "description": "Developed Multilingual NLP pipelines for Sentiment Classification of Tourism Reviews, Cross-lingual Semantic Similarity, and Semantic Search for Tourism Products Analytics.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "AI Engineer (Early member in AI Group)",
+        "company": "Concord Nextstep India Pvt Ltd",
+        "duration": "Aug 2019 - Feb 2021",
+        "startDate": "2019-08",
+        "endDate": "2021-02",
+        "techUsed": [
+          "BERT",
+          "CNN-BiLSTM-CRF",
+          "LayoutLM",
+          "PubLayNet",
+          "Kubernetes",
+          "Azure"
+        ],
+        "description": "Research and Development of Information Extraction Systems for Electronic Health Records.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Project Engineer",
+        "company": "WIPRO Technologies - Automotive domain",
+        "duration": "Feb 2018 - Aug 2019",
+        "startDate": "2018-02",
+        "endDate": "2019-08",
+        "techUsed": [
+          "DCNN",
+          "Pylint",
+          "Pycharm",
+          "Squish"
+        ],
+        "description": "Responsible for Research and Implementation of State-of-the-Art techniques in DCNN which includes Importance sampling, Algorithm Optimization.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Tech",
+        "field": "Electrical and Electronics Engineering",
+        "university": "R.M.K College of Engineering and Technology",
+        "year": "2017",
+        "percentage": null,
+        "gpa": null,
+        "location": null
+      }
+    ],
+    "projects": [],
+    "achievements": [],
+    "certifications": [],
+    "skills": [
+      "Semantic Search",
+      "Retrieval Augmented Generation",
+      "Agentic AI",
+      "LLMs",
+      "Generative AI",
+      "Named Entity Recognition",
+      "Object Detection",
+      "Image Segmentation",
+      "Image Processing",
+      "OCR",
+      "Data Cleaning and Augmentation",
+      "Python",
+      "Databases",
+      "Big Data Tools",
+      "Docker",
+      "Kubernetes",
+      "Airflow"
+    ],
+    "interests": [],
+    "languages": [],
+    "salary": null,
+    "availability": null,
+    "remotePreference": null,
+    "visaStatus": null,
+    "originalData": {
+      "filename": "ed9da596-2012-4891-b561-4d796e032c43.pdf",
+      "rawText": "MAGESHWARAN R mageshwaran951@gmail.com +918870627408 Website | GitHub | LinkedIn | Medium Seasoned AI Engineer with a distinguished seven-year tenure in designing and implementing advanced Natural Language Processing and Document Intelligence systems. HIGHLIGHTS ● NLP Lead for AstraZeneca’s ‘Lead with AI & Insights’ award-winning project ● Design and Development of Million-scale Document Intelligence Solutions to create FAIR data in Pharmaceutical and Healthcare domains leveraging Semantic Search, Semantic QA, NER, Ontologies, Document Layout Understanding ● Multilingual/Cross-lingual NLP solutions for Semantic Search and Content Generation in Pharmaceutical and Travel domains ● Document Intelligence Solutions leveraging OCR, Visual Transformers, and CNNs to capture and digitize Tables, Flowcharts, and Plots ● Experienced with MLOps Workflows in Kubernetes Native platforms, Sagemaker SKILLS NLP : Semantic Search, Retrieval Augmented Generation, Agentic AI, LLMs, Generative AI, Named Entity Recognition Computer Vision : Object Detection, Image Segmentation, Image Processing, OCR, Data Cleaning and Augmentation Software Dev : Python, Databases (Vector, Graph, NoSQL, SQL), Big Data Tools, Docker, Kubernetes, Airflow EXPERIENCE SENIOR CONSULTANT – AI ENGINEERING DEC 2021 – PRESENT AstraZeneca Chennai, India ● Leading the design, development, and delivery of Document Intelligence solutions to accelerate Clinical Study Design, Regulatory Submissions, Health Authority Interactions, and Patient Safety processes ● Led the development and delivery of million-scale RAG pipeline for Clinical Study documents with Azure OpenAI, Qdrant and custom frameworks for LLM Response Verification, Guardrails to accelerate clinical study design, patient recruitment as part of Study Patients Initiative saving 12K FTE hours with a projection of 2.5M USD savings in 5 years ● Led the development and delivery of Information Extraction and Metadata Tagging solutions using custom NER models, LLMs a"
+    },
+    "source": "resume",
+    "confidence": 92,
+    "processingTime": 0
+  }
+}

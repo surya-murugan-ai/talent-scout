@@ -1,0 +1,125 @@
+{
+  "filename": "60b22ea1-c90d-4895-a68b-6cf9d2a1a754.pdf",
+  "timestamp": "2025-10-13T12:04:03.689Z",
+  "processingTime": 8621,
+  "confidence": 93,
+  "rawText": "\n\nBABU S R\nAddress: 1st Stage, Kumaraswamy Layout Bengaluru, Karnataka 560078, India\nMobile Number: 6360328864\nEmail: babusrofficial@gmail.com\nSummary:\nMotivated Laravel developer with Eight Months of experience in designing, developing,\nand maintaining web applications. Proficient in PHP, MySQL, JavaScript, HTML, and\nCSS. Ability to work in a team environment and meet tight deadlines.\nProfessional Experience:\nLaravel Developer\nCompany Name: Web Digital Mantra It Services Limited\nLocation: #23, 3rd floor, nandita manison, 1st Cross, 1st Stage, Kumaraswamy Layout, Bengaluru,\nKarnataka 560078\nDuration: Oct 1st 2022 to Present (8 Months)\nDesigned and developed web applications using Laravel PHP framework, HTML, CSS, and\nJavaScript.\nWorked on the development of the front-end and back-end of web applications.\nCreated responsive designs that are optimized for desktop and mobile devices.\nDeveloped and maintained APIs for mobile and web applications.\nWorked with Git and version control to manage source code changes.\nUtilized MySQL to manage databases and performed data migrations.\nCollaborated with team members to develop efficient solutions for complex issues.\nConducted code reviews and provided feedback to ensure the quality of code.\nSkills:\nLaravel PHP framework\nMySQL\nHTML\n\nCSS\nJavaScript\nGit\nAPI Development\nAjax\nEducation:\nBachelor's Degree in Science (PCM)\nUniversity Name: University College of Science Tumkur\nLocation: Tumkur\nGraduation Year: 2018\nProjects:\nDeveloped an e-commerce website using Laravel, allowing customers to browse and purchase\nproducts securely. Implemented features like user registration, product search, shopping cart,\nand payment integration.\nCreated a matrimony platform using Laravel, enabling users to create profiles, search for\npotential partners, and communicate securely. Implemented advanced search filters, matching\nalgorithms, and privacy settings.\nBuilt a tours and travels website similar to MakeMyTrip using Laravel, providing users with the\nability to search and book flights, hotels, and holiday packages. Implemented dynamic pricing,\nbooking management, and integrated third-party APIs.\nDeveloped an informative dynamic website using Laravel, allowing users to browse and search\nfor articles, news, and resources. Implemented a content management system (CMS) for easy\ncontent updates.\nCreated a temple poojas project using Laravel, where each pooja has different packages based\non package prices. Implemented features such as package selection, payment integration, and\nbooking management.\nDate: ______________\nSignature: ____________________",
+  "extractedData": {
+    "name": "BABU S R",
+    "email": "babusrofficial@gmail.com",
+    "phone": "6360328864",
+    "linkedinUrl": null,
+    "githubUrl": null,
+    "portfolioUrl": null,
+    "location": "Bengaluru, Karnataka, India",
+    "title": "Laravel Developer",
+    "summary": "Motivated Laravel developer with Eight Months of experience in designing, developing, and maintaining web applications. Proficient in PHP, MySQL, JavaScript, HTML, and CSS. Ability to work in a team environment and meet tight deadlines.",
+    "experience": [
+      {
+        "jobTitle": "Laravel Developer",
+        "company": "Web Digital Mantra It Services Limited",
+        "duration": "Oct 1st 2022 to Present",
+        "startDate": "2022-10",
+        "endDate": "Present",
+        "techUsed": [
+          "Laravel PHP framework",
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "Git",
+          "MySQL"
+        ],
+        "description": "Designed and developed web applications using Laravel PHP framework, HTML, CSS, and JavaScript. Worked on the development of the front-end and back-end of web applications. Created responsive designs that are optimized for desktop and mobile devices. Developed and maintained APIs for mobile and web applications. Worked with Git and version control to manage source code changes. Utilized MySQL to manage databases and performed data migrations. Collaborated with team members to develop efficient solutions for complex issues. Conducted code reviews and provided feedback to ensure the quality of code.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's Degree",
+        "field": "Science (PCM)",
+        "university": "University College of Science Tumkur",
+        "year": "2018",
+        "percentage": null,
+        "gpa": null,
+        "location": "Tumkur"
+      }
+    ],
+    "projects": [
+      {
+        "name": "E-commerce website",
+        "description": "Developed an e-commerce website using Laravel, allowing customers to browse and purchase products securely. Implemented features like user registration, product search, shopping cart, and payment integration.",
+        "techUsed": [
+          "Laravel"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Matrimony platform",
+        "description": "Created a matrimony platform using Laravel, enabling users to create profiles, search for potential partners, and communicate securely. Implemented advanced search filters, matching algorithms, and privacy settings.",
+        "techUsed": [
+          "Laravel"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Tours and travels website",
+        "description": "Built a tours and travels website similar to MakeMyTrip using Laravel, providing users with the ability to search and book flights, hotels, and holiday packages. Implemented dynamic pricing, booking management, and integrated third-party APIs.",
+        "techUsed": [
+          "Laravel"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Informative dynamic website",
+        "description": "Developed an informative dynamic website using Laravel, allowing users to browse and search for articles, news, and resources. Implemented a content management system (CMS) for easy content updates.",
+        "techUsed": [
+          "Laravel"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Temple poojas project",
+        "description": "Created a temple poojas project using Laravel, where each pooja has different packages based on package prices. Implemented features such as package selection, payment integration, and booking management.",
+        "techUsed": [
+          "Laravel"
+        ],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "achievements": [],
+    "certifications": [],
+    "skills": [
+      "Laravel PHP framework",
+      "MySQL",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Git",
+      "API Development",
+      "Ajax"
+    ],
+    "interests": [],
+    "languages": [],
+    "salary": null,
+    "availability": null,
+    "remotePreference": null,
+    "visaStatus": null,
+    "originalData": {
+      "filename": "60b22ea1-c90d-4895-a68b-6cf9d2a1a754.pdf",
+      "rawText": "BABU S R Address: 1st Stage, Kumaraswamy Layout Bengaluru, Karnataka 560078, India Mobile Number: 6360328864 Email: babusrofficial@gmail.com Summary: Motivated Laravel developer with Eight Months of experience in designing, developing, and maintaining web applications. Proficient in PHP, MySQL, JavaScript, HTML, and CSS. Ability to work in a team environment and meet tight deadlines. Professional Experience: Laravel Developer Company Name: Web Digital Mantra It Services Limited Location: #23, 3rd floor, nandita manison, 1st Cross, 1st Stage, Kumaraswamy Layout, Bengaluru, Karnataka 560078 Duration: Oct 1st 2022 to Present (8 Months) Designed and developed web applications using Laravel PHP framework, HTML, CSS, and JavaScript. Worked on the development of the front-end and back-end of web applications. Created responsive designs that are optimized for desktop and mobile devices. Developed and maintained APIs for mobile and web applications. Worked with Git and version control to manage source code changes. Utilized MySQL to manage databases and performed data migrations. Collaborated with team members to develop efficient solutions for complex issues. Conducted code reviews and provided feedback to ensure the quality of code. Skills: Laravel PHP framework MySQL HTML CSS JavaScript Git API Development Ajax Education: Bachelor's Degree in Science (PCM) University Name: University College of Science Tumkur Location: Tumkur Graduation Year: 2018 Projects: Developed an e-commerce website using Laravel, allowing customers to browse and purchase products securely. Implemented features like user registration, product search, shopping cart, and payment integration. Created a matrimony platform using Laravel, enabling users to create profiles, search for potential partners, and communicate securely. Implemented advanced search filters, matching algorithms, and privacy settings. Built a tours and travels website similar to MakeMyTrip using Laravel, providing users with the abi"
+    },
+    "source": "resume",
+    "confidence": 93,
+    "processingTime": 0
+  }
+}

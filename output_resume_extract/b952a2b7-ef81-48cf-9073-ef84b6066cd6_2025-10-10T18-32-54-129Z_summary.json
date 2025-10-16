@@ -1,0 +1,99 @@
+{
+  "filename": "b952a2b7-ef81-48cf-9073-ef84b6066cd6.pdf",
+  "timestamp": "2025-10-10T18:32:54.129Z",
+  "processingTime": 8605,
+  "confidence": 93,
+  "extractedData": {
+    "name": "Zenab Habib",
+    "email": "zenhabib3@gmail.com",
+    "phone": "+917033298885",
+    "title": "Software Engineer",
+    "location": "Bengaluru, India",
+    "summary": "Software Engineer with 2 years of experience in .NET full stack development, focusing on C#, .NET Core, MVC, SQL, and JavaScript. Skilled in building and maintaining web applications in Agile environments with Test-Driven Development. Experienced in software development, database design and code reviews. Strong problem-solving skills and a track record of contributing to collaborative, high-impact projects.",
+    "experience": [
+      {
+        "jobTitle": ".NET Full Stack Developer",
+        "company": "Deloitte USI",
+        "duration": "07/2023 - 04/2025",
+        "startDate": "2023-07",
+        "endDate": "2025-04",
+        "techUsed": [
+          "C#",
+          ".NET frameworks",
+          "JavaScript",
+          "SQL Server",
+          "Azure DevOps",
+          "Angular"
+        ],
+        "description": "Dedicated 2200+ hours to the State of Kentucky project, with a focus on building and maintaining full-stack applications using C#, .NET frameworks, JavaScript, SQL Server, Azure DevOps, and Angular, including development of a Health Insurance portal for the State of Kentucky.",
+        "achievements": [
+          "Contributed 342 hours on integrating the Program of All-Inclusive Care for the Elderly into the Waiver application, with a 90% FTPR (first time pass rate), resulting in improved care outcomes and a 13% decrease in service costs.",
+          "Resolved over 60 bug fixes in 2024, and 28 fixes in 2025 so far, bringing a total of 118+ fixes during my tenure in this role, comprising of UI enhancements, code fixes and stored procedure changes.",
+          "Spearheaded improvements to the Provider Management Module by contributing 640 hours to a key Change Request, optimizing provider lookup/search functionality, providing ease of access to users and addressing 30+ bugs over 4 months."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Technology",
+        "field": "Computer Science and Communication Engineering",
+        "university": "Kalinga Institute of Industrial Technology",
+        "year": "2023",
+        "percentage": null,
+        "gpa": null,
+        "location": "Bhubaneswar, India"
+      }
+    ],
+    "skills": [
+      "C#",
+      "JavaScript",
+      "SQL",
+      "PL/SQL",
+      "Python",
+      "WPF",
+      ".NET Core",
+      "ASP.NET",
+      "MVC",
+      "Entity Framework",
+      "jQuery",
+      "Angular",
+      "Node.js",
+      "CI/CD",
+      "Azure DevOps",
+      "TFS",
+      "TDD",
+      "Unit Testing",
+      "Peer Code Reviews",
+      "Microsoft SQL Server 2016",
+      "MySQL",
+      "Visual Studio",
+      "VSCode",
+      "Git",
+      "Postman",
+      "Microsoft Office",
+      "WebAPI",
+      "Powershell",
+      "Copilot",
+      "Cursor"
+    ],
+    "projects": [],
+    "certifications": [
+      {
+        "name": "Microsoft Certified Azure (AZ-900)",
+        "issuer": null,
+        "date": "2024",
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "Oracle Cloud Infrastructure (OCI) Certified Architect Associate",
+        "issuer": null,
+        "date": "2023",
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-10-11T08:13:42.171Z",
+  "searchQuery": "Profile enrichment for: Mukesh Raj - https://www.linkedin.com/in/rmukesh6",
+  "totalResults": 1,
+  "profiles": [
+    {
+      "index": 1,
+      "name": "Mukesh Raj",
+      "headline": "Full Stack Developer",
+      "location": "Kovilpatti, Tamil Nadu, India",
+      "currentCompany": "Nirals",
+      "currentPosition": "N/A",
+      "linkedinUrl": "https://www.linkedin.com/in/rmukesh6",
+      "connectionsCount": 102,
+      "skillsCount": 15,
+      "experienceCount": 2,
+      "educationCount": 1
+    }
+  ],
+  "originalFile": "harvestapi_Profile_enrichment_for_Mukesh_Raj_httpswwwlinkedincominrmukesh6_2025-10-11T08-13-42-171Z.json"
+}

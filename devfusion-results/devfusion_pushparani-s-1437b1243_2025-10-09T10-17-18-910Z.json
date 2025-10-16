@@ -1,0 +1,497 @@
+{
+  "timestamp": "2025-10-09T10:17:18.910Z",
+  "linkedinUrl": "linkedin.com/in/pushparani-s-1437b1243",
+  "rawData": {
+    "linkedinUrl": "linkedin.com/in/pushparani-s-1437b1243",
+    "firstName": "Pushparani",
+    "lastName": "S",
+    "fullName": "Pushparani S",
+    "headline": "Backend developer",
+    "connections": 117,
+    "followers": 134,
+    "email": "pushparani@cloudrevelinnovation.com",
+    "mobileNumber": null,
+    "jobTitle": "Back End Developer",
+    "companyName": "Cloudrevel Innovations Pvt. Ltd.",
+    "companyIndustry": "Information Technology And Services",
+    "companyWebsite": "cloudrevelinnovation.com",
+    "companyLinkedin": "linkedin.com/company/cloudrevel-innovatons",
+    "companyFoundedIn": null,
+    "companySize": "201-500",
+    "currentJobDuration": "6 mos",
+    "currentJobDurationInYrs": 0.5,
+    "topSkillsByEndorsements": null,
+    "addressCountryOnly": "India",
+    "addressWithCountry": "Chennai, Tamil Nadu, India",
+    "addressWithoutCountry": "Chennai, Tamil Nadu",
+    "profilePic": "https://media.licdn.com/dms/image/v2/D5603AQEr8V47CZZ6yQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1729603248780?e=1762992000&v=beta&t=DjXo_f6_9oKon0pAstpwp4zeT5i5g_FtutzmmNlN8Kk",
+    "profilePicHighQuality": "https://media.licdn.com/dms/image/v2/D5603AQEr8V47CZZ6yQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729603248783?e=1762992000&v=beta&t=sdOakx9WOKUXFsjiSenb0fxF3CctIZLLJvs3KrZGD_0",
+    "about": "🚀 Passionate Software Developer | Laravel | Node JS | API\n\nDedicated to continuous learning & innovation, I have 2.4 years of experience in building scalable and efficient solutions using  Php Core, Laravel, and Web API,  MVC, SQL, HTML, CSS, Bootstrap, JavaScript and jQuery, with expertise in Git & GitHub for version control.\n\n💡 Striving for excellence, one line of code at a time!",
+    "publicIdentifier": "pushparani-s-1437b1243",
+    "openConnection": null,
+    "urn": "ACoAADxzxoMBo3iJk4AqTlH5ulZ31yq4A634pYg",
+    "experiences": [
+      {
+        "companyId": "89860049",
+        "companyUrn": "urn:li:fsd_company:89860049",
+        "companyLink1": "https://www.linkedin.com/company/89860049/",
+        "logo": "https://media.licdn.com/dms/image/v2/C560BAQGzp3m--4VBMA/company-logo_200_200/company-logo_200_200/0/1669807662307?e=1762992000&v=beta&t=b0AXwomq3zyEUB6LGY5cRXVAPTYwvtuNQkOtsNxTZqM",
+        "title": "Back End Developer",
+        "subtitle": "Cloudrevel Innovations Pvt. Ltd. · Full-time",
+        "caption": "May 2025 - Present · 6 mos",
+        "metadata": "Chennai, Tamil Nadu, India",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "companyId": "13436588",
+        "companyUrn": "urn:li:fsd_company:13436588",
+        "companyLink1": "https://www.linkedin.com/company/13436588/",
+        "logo": "https://media.licdn.com/dms/image/v2/C560BAQGgkPIadi2AgQ/company-logo_200_200/company-logo_200_200/0/1630666019847/ninos_it_solution_logo?e=1762992000&v=beta&t=l133LRNnn1oO9qFwZMl8_UJ7pUx9Lwgbx0eo94H3bDc",
+        "title": "Back End Developer",
+        "subtitle": "NINOS IT SOLUTION PVT. LTD · Full-time",
+        "caption": "Oct 2023 - Feb 2025 · 1 yr 5 mos",
+        "metadata": "Chennai, Tamil Nadu, India",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "companyId": "1238240",
+        "companyUrn": "urn:li:fsd_company:1238240",
+        "companyLink1": "https://www.linkedin.com/company/1238240/",
+        "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQFE1ZXBPhl_Sg/company-logo_200_200/company-logo_200_200/0/1630655943517/xmediasolutions_logo?e=1762992000&v=beta&t=PlWTCqtLXOj4fGhagJh4dJjscskalfgV4wl2kPtXnIY",
+        "title": "Web Developer",
+        "subtitle": "XMEDIA SOLUTIONS",
+        "caption": "Sep 2022 - Oct 2023 · 1 yr 2 mos",
+        "metadata": "Chennai, Tamil Nadu, India",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "updates": [],
+    "skills": [
+      {
+        "title": "Backend development",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Back End Developer at NINOS IT SOLUTION PVT. LTD"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Skill Development",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Web Developer at XMEDIA SOLUTIONS"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Programming Languages",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Web Developer at XMEDIA SOLUTIONS"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Programming",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Web Developer at XMEDIA SOLUTIONS"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Software Development",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Web Developer at XMEDIA SOLUTIONS"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "jQuery",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Web Developer at XMEDIA SOLUTIONS"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Git",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Web Developer at XMEDIA SOLUTIONS"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Relational Databases",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Web Developer at XMEDIA SOLUTIONS"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Web Applications",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Web Developer at XMEDIA SOLUTIONS"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Web Application Development",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Web Developer at XMEDIA SOLUTIONS"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Communication",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Manonmaniam Sundaranar University"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Schemas",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Web Developer at XMEDIA SOLUTIONS"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Back-End Web Development",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Web Developer at XMEDIA SOLUTIONS"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Amazon S3",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Web Developer at XMEDIA SOLUTIONS"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "AJAX",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Web Developer at XMEDIA SOLUTIONS"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "HTML5",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Web Developer at XMEDIA SOLUTIONS"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Laravel",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Web Developer at XMEDIA SOLUTIONS"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "SQL",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "REST APIs",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Web Developer at XMEDIA SOLUTIONS"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Cascading Style Sheets (CSS)",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Web Developer at XMEDIA SOLUTIONS"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "profilePicAllDimensions": [
+      {
+        "width": 100,
+        "expiresAt": 1762992000000,
+        "height": 100,
+        "url": "https://media.licdn.com/dms/image/v2/D5603AQEr8V47CZZ6yQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1729603248780?e=1762992000&v=beta&t=DjXo_f6_9oKon0pAstpwp4zeT5i5g_FtutzmmNlN8Kk"
+      },
+      {
+        "width": 200,
+        "expiresAt": 1762992000000,
+        "height": 200,
+        "url": "https://media.licdn.com/dms/image/v2/D5603AQEr8V47CZZ6yQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1729603248780?e=1762992000&v=beta&t=z6Enmn63DerQNPT8TGX_3rP_4OqkmGW9j4A57xrhiKk"
+      },
+      {
+        "width": 400,
+        "expiresAt": 1762992000000,
+        "height": 400,
+        "url": "https://media.licdn.com/dms/image/v2/D5603AQEr8V47CZZ6yQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1729603248780?e=1762992000&v=beta&t=3mXxERsH4X8MkL50P9nlnRM5No87y5mNT3ouxn7UTKM"
+      },
+      {
+        "width": 592,
+        "expiresAt": 1762992000000,
+        "height": 592,
+        "url": "https://media.licdn.com/dms/image/v2/D5603AQEr8V47CZZ6yQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729603248783?e=1762992000&v=beta&t=sdOakx9WOKUXFsjiSenb0fxF3CctIZLLJvs3KrZGD_0"
+      }
+    ],
+    "educations": [
+      {
+        "companyId": "15092874",
+        "companyUrn": "urn:li:fsd_company:15092874",
+        "companyLink1": "https://www.linkedin.com/company/15092874/",
+        "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFig7q5UUhSog/company-logo_200_200/company-logo_200_200/0/1631351544286?e=1762992000&v=beta&t=Ju4XB_AuBocPqg9L4vSfgltNGF8Wa0pDwCPcbYQ_0kQ",
+        "title": "Manonmaniam Sundaranar University",
+        "subtitle": "M. Sc , Mathematics",
+        "caption": "Jul 2020 - Jul 2022",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "companyId": "15092874",
+        "companyUrn": "urn:li:fsd_company:15092874",
+        "companyLink1": "https://www.linkedin.com/company/15092874/",
+        "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFig7q5UUhSog/company-logo_200_200/company-logo_200_200/0/1631351544286?e=1762992000&v=beta&t=Ju4XB_AuBocPqg9L4vSfgltNGF8Wa0pDwCPcbYQ_0kQ",
+        "title": "Manonmaniam Sundaranar University",
+        "subtitle": "Bachelor of science, Mathematics",
+        "caption": "Jul 2017 - Jun 2020",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "licenseAndCertificates": [],
+    "honorsAndAwards": [],
+    "languages": [],
+    "volunteerAndAwards": [],
+    "verifications": [],
+    "promos": [],
+    "highlights": [],
+    "projects": [],
+    "publications": [],
+    "patents": [],
+    "courses": [
+      {
+        "title": "java",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "testScores": [],
+    "organizations": [],
+    "volunteerCauses": [],
+    "interests": [
+      {
+        "section_name": "Companies",
+        "section_components": [
+          {
+            "titleV2": "Oracle",
+            "caption": "10,761,345 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1028/",
+            "subComponents": []
+          },
+          {
+            "titleV2": "Wipro",
+            "caption": "11,219,153 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1318/",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Newsletters",
+        "section_components": [
+          {
+            "titleV2": "The Cube Times",
+            "caption": "Published biweekly",
+            "subtitle": "Our newsletter offers in-depth reports on emerging hiring trends and practical tips on finding Top Talent.",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/newsletters/7252984631442997248",
+            "subComponents": [
+              {
+                "insightComponent": {
+                  "text": "HuntingCube Recruitment Solutions",
+                  "actionTarget": "https://www.linkedin.com/company/13322042/"
+                }
+              }
+            ]
+          },
+          {
+            "titleV2": "Servion Newsletter",
+            "caption": "Published monthly",
+            "subtitle": "Stay on top of the latest contact center and CX updates. Subscribe now!",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/newsletters/7084439881464098816",
+            "subComponents": [
+              {
+                "insightComponent": {
+                  "text": "Servion Global Solutions",
+                  "actionTarget": "https://www.linkedin.com/company/14010/"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section_name": "Schools",
+        "section_components": [
+          {
+            "titleV2": "Manonmaniam Sundaranar University",
+            "caption": "76,571 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/school/15092874/",
+            "subComponents": []
+          }
+        ]
+      }
+    ],
+    "recommendations": []
+  },
+  "metadata": {
+    "source": "dev_fusion/Linkedin-Profile-Scraper",
+    "savedAt": "2025-10-09T10:17:18.910Z"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "filename": "a7e946c7-4158-4c5f-9318-1cf4c2f81386.pdf",
+  "timestamp": "2025-10-13T09:59:34.078Z",
+  "processingTime": 14141,
+  "confidence": 82,
+  "rawText": "\n\nRAMKUMAR B\nVirudhunagar, India 626004\nramki028@gmail.com / 8072205100\nWWW: https://www.linkedin.com/in/ramkumar-b-560961177/\nSUMMARY\nDynamic software developer with over 5 Years 8 Months of proven expertise in web application\ndevelopment. Eagerly pursuing opportunities to leverage my skills for the benefit of your esteemed\ncompany while continuously improving my skills in a collaborative and fast-paced environment.\nSKILLS\nProgramming Languages : PHP, JavaScript, TypeScript\nFrameworks & Libraries : React, CodeIgniter, Laravel, jQuery, Bootstrap 4 & 5, React Native,\nTailwind CSS\nDatabases : MySQL, SQLite\nMiscellaneous : Git, Linux, Server Handling\nEXPERIENCE\n10/2024 - CurrentSoftware Engineer / iOPEX Technologies - Chennai\nIQMS – Internal Quality Management System\nDeveloped a project management tool to help non-technical stakeholders track quality and process\ninitiatives across departments. Key features: task assignment, milestone tracking, user access,\nand status dashboards.\nFood Coupon Management System\nBuilt a centralized system for automating food coupon generation, QR-based verification at\ncounters, and integration with attendance to prevent misuse.\nCDR – Candidate Data Repository\nRevamped a candidate management portal with AI-driven automation, migrating from PHP to\nReact Redux. Improved the seven-stage form with intelligent autofill, optimizing registration,\ndocument handling, and interview scheduling for an efficient HR workflow.\nOther Projects\nContributed to various internal applications at iOPEX Technologies, focusing on process\nautomation, data management, and user experience enhancements.\n03/2021 - 10/2024Senior Software Engineer / Nirals Information Technologies - Kovilpatti\nEduniv – Comprehensive School and College Management System\nLed the enhancement of an ERP system used by 250+ institutions to digitalize academic and\nadmin processes. Key features included:\nOnline admission, fee management, and automated payroll.\nGPS transport tracking and RFID-based attendance logging.\nMobile apps for staff and students (Android/iOS) for easy access.\nNew modules for ID card generation, homework tracking, hostel management, and more.\nOptimized Linux-based server operations and integrated with third-party systems.\nMentored junior developers and improved team collaboration.\nServed 1M+ users, boosting institutional efficiency.\nVahupu – Comprehensive Virtual Learning Platform\nDeveloped an e-learning platform to ensure education continuity during the COVID-19 pandemic.\nKey features included:\nVirtual classroom management, online classes, live events, and scheduling tools.\nRB\n\nModules for subject, staff, and course management, plus an examination system.\nSupport for digital content (blogs, podcasts, worksheets) and skill development.\nCustom solutions for NEET, JEE, and competitive exam prep.\nRole-based access, responsive UI, and web/mobile integration.\nEnabled seamless learning experiences during lockdowns, helping schools and institutions\nmaintain continuity.\neezo – Human Resource Management & Job Portal\nDeveloped a job portal aimed at simplifying recruitment for both candidates and employers. Key\nfeatures included:\nAI-driven job matching for better candidate-job alignment.\nEasy job application process for users and recruiters.\nPersonalized profiles for job seekers with skills and preferences.\nReal-time notifications for job updates and interview schedules.\nEmployer dashboard to manage job postings and view applications.\nThe platform helped speed up the hiring process and improved recruitment efficiency.\n02/2019 - 05/2020Software Engineer / Concent Solutions Private Limited - Hyderabad\nHealpha – Healthcare Platform Product\nContributed to a full-scale healthcare platform that streamlined digital medical services and mobile\nhealth tracking. Key responsibilities and achievements include:\nDeveloped RESTful APIs for mobile application integration, enabling secure communication\nwith patient and doctor interfaces.\nBuilt core modules including a BP checker and child health monitoring system to support\naccurate and user-friendly health data tracking.\nDesigned responsive mobile interfaces for doctors and patients, improving user experience\nand streamlining appointment scheduling.\nHelped deploy services for large-scale initiatives, including school health programs across\nTelangana and Tamil Nadu, and for Haj Yatra travelers.\nImproved medical record accessibility, reducing manual intervention and supporting more\nefficient healthcare delivery.\n02/2019 - 06/2019Trainee Software Engineer / Concent Solutions Private Limited - Hyderabad\nTraining Phase – Web and Mobile Development\nParticipated in a structured training program and contributed to real-time projects under\nsupervision. Key highlights include:\nAssisted in developing web applications using PHP, HTML, CSS, and JavaScript.\nWorked closely with senior developers to understand industry best practices, debugging\ntechniques, and project workflows.\nContributed to the initial stages of mobile application development using React Native,\ngaining experience in cross-platform UI design and component structure.\nEDUCATION\n04/2019Bachelor of Engineering: Computer Science\nSri Vidya College of Engineering & Technology - Virudhunagar\nGPA: 7.2\nLANGUAGES\nTamil: First Language\nEnglish:\nProfessional Proficiency (C1 Level)",
+  "extractedData": {
+    "name": "RAMKUMAR B",
+    "email": "ramki028@gmail.com",
+    "phone": "8072205100",
+    "linkedinUrl": "https://www.linkedin.com/in/ramkumar-b-560961177/",
+    "githubUrl": null,
+    "portfolioUrl": null,
+    "location": "Virudhunagar, India",
+    "title": null,
+    "summary": "Dynamic software developer with over 5 Years 8 Months of proven expertise in web application development. Eagerly pursuing opportunities to leverage my skills for the benefit of your esteemed company while continuously improving my skills in a collaborative and fast-paced environment.",
+    "experience": [
+      {
+        "jobTitle": "Software Engineer",
+        "company": "iOPEX Technologies",
+        "duration": "10/2024 - Current",
+        "startDate": "2024-10",
+        "endDate": "Present",
+        "techUsed": [],
+        "description": "Developed a project management tool to help non-technical stakeholders track quality and process initiatives across departments. Built a centralized system for automating food coupon generation, QR-based verification at counters, and integration with attendance to prevent misuse. Revamped a candidate management portal with AI-driven automation, migrating from PHP to React Redux.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Senior Software Engineer",
+        "company": "Nirals Information Technologies",
+        "duration": "03/2021 - 10/2024",
+        "startDate": "2021-03",
+        "endDate": "2024-10",
+        "techUsed": [],
+        "description": "Led the enhancement of an ERP system used by 250+ institutions to digitalize academic and admin processes. Developed an e-learning platform to ensure education continuity during the COVID-19 pandemic. Developed a job portal aimed at simplifying recruitment for both candidates and employers.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Software Engineer",
+        "company": "Concent Solutions Private Limited",
+        "duration": "02/2019 - 05/2020",
+        "startDate": "2019-02",
+        "endDate": "2020-05",
+        "techUsed": [],
+        "description": "Contributed to a full-scale healthcare platform that streamlined digital medical services and mobile health tracking.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Trainee Software Engineer",
+        "company": "Concent Solutions Private Limited",
+        "duration": "02/2019 - 06/2019",
+        "startDate": "2019-02",
+        "endDate": "2019-06",
+        "techUsed": [],
+        "description": "Participated in a structured training program and contributed to real-time projects under supervision.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Engineering",
+        "field": "Computer Science",
+        "university": "Sri Vidya College of Engineering & Technology",
+        "year": "2019",
+        "percentage": null,
+        "gpa": "7.2",
+        "location": "Virudhunagar"
+      }
+    ],
+    "projects": [],
+    "achievements": [],
+    "certifications": [],
+    "skills": [
+      "PHP",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "CodeIgniter",
+      "Laravel",
+      "jQuery",
+      "Bootstrap 4 & 5",
+      "React Native",
+      "Tailwind CSS",
+      "MySQL",
+      "SQLite",
+      "Git",
+      "Linux",
+      "Server Handling"
+    ],
+    "interests": [],
+    "languages": [
+      "Tamil",
+      "English"
+    ],
+    "salary": null,
+    "availability": null,
+    "remotePreference": null,
+    "visaStatus": null,
+    "originalData": {
+      "filename": "a7e946c7-4158-4c5f-9318-1cf4c2f81386.pdf",
+      "rawText": "RAMKUMAR B Virudhunagar, India 626004 ramki028@gmail.com / 8072205100 WWW: https://www.linkedin.com/in/ramkumar-b-560961177/ SUMMARY Dynamic software developer with over 5 Years 8 Months of proven expertise in web application development. Eagerly pursuing opportunities to leverage my skills for the benefit of your esteemed company while continuously improving my skills in a collaborative and fast-paced environment. SKILLS Programming Languages : PHP, JavaScript, TypeScript Frameworks & Libraries : React, CodeIgniter, Laravel, jQuery, Bootstrap 4 & 5, React Native, Tailwind CSS Databases : MySQL, SQLite Miscellaneous : Git, Linux, Server Handling EXPERIENCE 10/2024 - CurrentSoftware Engineer / iOPEX Technologies - Chennai IQMS – Internal Quality Management System Developed a project management tool to help non-technical stakeholders track quality and process initiatives across departments. Key features: task assignment, milestone tracking, user access, and status dashboards. Food Coupon Management System Built a centralized system for automating food coupon generation, QR-based verification at counters, and integration with attendance to prevent misuse. CDR – Candidate Data Repository Revamped a candidate management portal with AI-driven automation, migrating from PHP to React Redux. Improved the seven-stage form with intelligent autofill, optimizing registration, document handling, and interview scheduling for an efficient HR workflow. Other Projects Contributed to various internal applications at iOPEX Technologies, focusing on process automation, data management, and user experience enhancements. 03/2021 - 10/2024Senior Software Engineer / Nirals Information Technologies - Kovilpatti Eduniv – Comprehensive School and College Management System Led the enhancement of an ERP system used by 250+ institutions to digitalize academic and admin processes. Key features included: Online admission, fee management, and automated payroll. GPS transport tracking and RFID-based "
+    },
+    "source": "resume",
+    "confidence": 82,
+    "processingTime": 0
+  }
+}

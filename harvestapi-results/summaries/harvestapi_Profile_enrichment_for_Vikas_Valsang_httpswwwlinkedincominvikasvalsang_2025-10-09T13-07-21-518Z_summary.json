@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-10-09T13:07:21.518Z",
+  "searchQuery": "Profile enrichment for: Vikas Valsang - https://www.linkedin.com/in/vikasvalsang",
+  "totalResults": 1,
+  "profiles": [
+    {
+      "index": 1,
+      "name": "Vikas Valsang",
+      "headline": "Managing Director | Driving Growth & Innovation | Digital Transformation | AI • Data • Cloud • Applications",
+      "location": "Bengaluru, Karnataka, India",
+      "currentCompany": "Tenjumps",
+      "currentPosition": "N/A",
+      "linkedinUrl": "https://www.linkedin.com/in/vikasvalsang",
+      "connectionsCount": 1890,
+      "skillsCount": 17,
+      "experienceCount": 10,
+      "educationCount": 2
+    }
+  ],
+  "originalFile": "harvestapi_Profile_enrichment_for_Vikas_Valsang_httpswwwlinkedincominvikasvalsang_2025-10-09T13-07-21-518Z.json"
+}

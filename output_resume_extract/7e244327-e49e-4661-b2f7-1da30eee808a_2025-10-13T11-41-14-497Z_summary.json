@@ -1,0 +1,153 @@
+{
+  "filename": "7e244327-e49e-4661-b2f7-1da30eee808a.pdf",
+  "timestamp": "2025-10-13T11:41:14.498Z",
+  "processingTime": 10007,
+  "confidence": 95,
+  "extractedData": {
+    "name": "Onkar Vanarase",
+    "email": "onkarvanarase@gmail.com",
+    "phone": "9657633659",
+    "title": "Senior Software Engineer",
+    "location": "Pune, IN",
+    "summary": "Bringing solid foundation in software development with knack for problem-solving and effective team collaboration. Known for being adaptable and quick to learn, with proven ability to communicate complex technical concepts to non-technical stakeholders. Adept at leveraging analytical thinking and creativity to deliver innovative solutions. Ready to contribute to dynamic projects and grow within forward-thinking organisation.",
+    "experience": [
+      {
+        "jobTitle": "Senior Software Engineer",
+        "company": "Altera Digital Health",
+        "duration": "May 2022 - Present",
+        "startDate": "2022-05",
+        "endDate": "Present",
+        "techUsed": [
+          "C#.NET",
+          ".Net Framework",
+          "WPF",
+          "Web Services",
+          "Web APIs",
+          ".Net Core",
+          "Angular UI"
+        ],
+        "description": "Working on designing, R&D, adding new functionalities along with solving problems occurred at client side (live project). Mentored junior software engineers, providing guidance on coding standards, best practices, and professional development. Refined and upgraded existing software to continuously improve performance. Employed user-focused approach to identify impracticalities hindering user experience. Applied expert problem-solving skills to tackle complex software challenges, maintaining high standards of quality and innovation. Led a team of software developers in designing, implementing, and maintaining complex software solutions, enhancing product functionality and user experience.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Software Engineer",
+        "company": "Allscripts LLP",
+        "duration": "Jan 2020 - May 2022",
+        "startDate": "2020-01",
+        "endDate": "2022-05",
+        "techUsed": [
+          "C#.NET",
+          ".Net Framework",
+          "WPF",
+          "Web Services",
+          "Web APIs",
+          ".Net Core",
+          "Angular UI"
+        ],
+        "description": "Working on designing, R&D, adding new functionalities along with solving problems occurred at client side (live project). Mentored junior software engineers, providing guidance on coding standards, best practices, and professional development. Refined and upgraded existing software to continuously improve performance. Employed user-focused approach to identify impracticalities hindering user experience. Applied expert problem-solving skills to tackle complex software challenges, maintaining high standards of quality and innovation.",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Programmer",
+        "company": "Acty System India Pvt. Ltd.",
+        "duration": "Aug 2017 - Sep 2019",
+        "startDate": "2017-08",
+        "endDate": "2019-09",
+        "techUsed": [
+          "C#.NET",
+          ".Net Framework",
+          "MVC",
+          "Web Application",
+          "Web Services",
+          "SQL Server 2008",
+          "SQL Server 2012",
+          "SQL Server 2014"
+        ],
+        "description": "Played various roles like designing, adding new functionalities, R&D, Bug fixing etc. Customised software solutions to meet specific client needs, enhancing functionality and user satisfaction. Optimised existing codebases to improve scalability and performance, addressing system bottlenecks promptly. Participated in code reviews to maintain high standards of code quality and facilitate knowledge sharing among team members.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Engineering",
+        "field": null,
+        "university": "Tatyasaheb Kore Institute of Engineering and Technology",
+        "year": "2017",
+        "percentage": null,
+        "gpa": null,
+        "location": null
+      }
+    ],
+    "skills": [
+      "C#",
+      ".Net Core",
+      "REST API",
+      "Angular",
+      "SQL Server",
+      "Agile Development",
+      "Git"
+    ],
+    "projects": [
+      {
+        "name": "CSRC-DCA",
+        "description": "Project that is used for billing of MFP’s using JAVA, PYTHON, C#.NET, MVC, Web Services (WCF, REST) in Acty System India Pvt Ltd, Pune.",
+        "techUsed": [
+          "JAVA",
+          "PYTHON",
+          "C#.NET",
+          "MVC",
+          "Web Services (WCF, REST)"
+        ],
+        "duration": "Aug 2017 - Sep 2019",
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Sunrise Financial Manager",
+        "description": "Sunrise Financial Manager (SFM) used for healthcare purposes in Allscripts Healthcare Suit for Patient registration, billing and claiming process using C#.Net, WPF in Allscripts LLP, Pune.",
+        "techUsed": [
+          "C#.Net",
+          "WPF"
+        ],
+        "duration": "Jan 2020 - Aug 2020",
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Platform of Health",
+        "description": "Fast Healthcare Interoperability Resources (FHIR) consists of global WebApis published to access specific information of Patients in fast manner in order to provide assistance globally. Developed using ASP.Net Core, C# in Allscripts LLP, Pune And Altera Digital Health, Pune.",
+        "techUsed": [
+          "ASP.Net Core",
+          "C#"
+        ],
+        "duration": "Aug 2020 - Present",
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Innovation Agent",
+        "description": "Innovation Agent consists of open ended WebApis published to access specific information of Patients in fast manner in order to provide assistance globally. Developed using ASP.Net Core, C# in Altera Digital Health, Pune.",
+        "techUsed": [
+          "ASP.Net Core",
+          "C#"
+        ],
+        "duration": "Feb 2022 - Jun 2023",
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Superbill (Charge Capture)",
+        "description": "Superbill provides facility for providers and healthcare organizations to generate a bill for patient including procedures performed on visit based on decided enumerations and rights. Developed using C#, ASP.Net Core WebAPIs and Angular for front-end development.",
+        "techUsed": [
+          "C#",
+          "ASP.Net Core WebAPIs",
+          "Angular"
+        ],
+        "duration": "Jun 2023 - Present",
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "certifications": []
+  }
+}

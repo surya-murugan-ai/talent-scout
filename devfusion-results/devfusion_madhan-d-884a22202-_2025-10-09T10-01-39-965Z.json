@@ -1,0 +1,484 @@
+{
+  "timestamp": "2025-10-09T10:01:39.965Z",
+  "linkedinUrl": "https://www.linkedin.com/in/madhan-d-884a22202/",
+  "rawData": {
+    "linkedinUrl": "https://www.linkedin.com/in/madhan-d-884a22202/",
+    "firstName": "MADHAN",
+    "lastName": "D",
+    "fullName": "MADHAN D",
+    "headline": "🚀 Full Stack Developer | 2+ years MERN stack expertise | Crafting responsive UIs with React.js, HTML5, CSS | Skilled in Node.js, Express.js, MongoDB | Driving innovation & efficiency! Building AI-Integrated Web Apps",
+    "connections": 943,
+    "followers": 945,
+    "email": null,
+    "mobileNumber": null,
+    "jobTitle": "Jr Full Stack Developer",
+    "companyName": "Lmes Academy",
+    "companyIndustry": "Education Management",
+    "companyWebsite": "lmes.in",
+    "companyLinkedin": "linkedin.com/company/lmes-academy",
+    "companyFoundedIn": 2016,
+    "companySize": "201-500",
+    "currentJobDuration": "1 yr 1 mo",
+    "currentJobDurationInYrs": 1.08,
+    "topSkillsByEndorsements": null,
+    "addressCountryOnly": "India",
+    "addressWithCountry": "Vellore, Tamil Nadu, India",
+    "addressWithoutCountry": "Vellore, Tamil Nadu",
+    "profilePic": "https://media.licdn.com/dms/image/v2/C5603AQEDgWb2bAL7tg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1660484719512?e=1762992000&v=beta&t=Qk-42PMtrpsoqrOwozGafQ0NCVbXCUgC47qo6M4_UtE",
+    "profilePicHighQuality": "https://media.licdn.com/dms/image/v2/C5603AQEDgWb2bAL7tg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1660484719512?e=1762992000&v=beta&t=bDd2NAVow6ygT9gRdLUm4_EKhqRHb_ktBdc1SPXoqrw",
+    "about": null,
+    "publicIdentifier": "madhan-d-884a22202",
+    "openConnection": null,
+    "urn": "ACoAADPDzGQB2AExt5pifhiQ2rvbNuCiRuh_vSE",
+    "experiences": [
+      {
+        "companyId": "17971369",
+        "companyUrn": "urn:li:fsd_company:17971369",
+        "companyLink1": "https://www.linkedin.com/company/17971369/",
+        "logo": "https://media.licdn.com/dms/image/v2/C560BAQEY0vQqzTlv4A/company-logo_200_200/company-logo_200_200/0/1630666723402/lmes_academy_logo?e=1762992000&v=beta&t=-f3uWII-28qYyC15oQFkyKJEW8YR08q3lgxYo6nIG1E",
+        "title": "Jr Full Stack Developer",
+        "subtitle": "LMES Academy · Full-time",
+        "caption": "Oct 2024 - Present · 1 yr 1 mo",
+        "metadata": "Chennai, Tamil Nadu, India · Hybrid",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "companyId": "7036838",
+        "companyUrn": "urn:li:fsd_company:7036838",
+        "companyLink1": "https://www.linkedin.com/company/7036838/",
+        "logo": "https://media.licdn.com/dms/image/v2/C560BAQEJSoWRxn6whA/company-logo_200_200/company-logo_200_200/0/1631358835387?e=1762992000&v=beta&t=iQdE_wkfeZ9EyJDMdL1d043f_SIiEKOJi_9j76XiTp0",
+        "title": "Full Stack Developer",
+        "subtitle": "Wonder Worth Solutions · Full-time",
+        "caption": "Aug 2023 - Oct 2024 · 1 yr 3 mos",
+        "metadata": "Vellore, Tamil Nadu, India · On-site",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "companyId": "13613571",
+        "companyUrn": "urn:li:fsd_company:13613571",
+        "companyLink1": "https://www.linkedin.com/company/13613571/",
+        "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQFlFmtXLLEmEg/company-logo_200_200/company-logo_200_200/0/1631339055038?e=1762992000&v=beta&t=WPUGqA82BNWfhloTGrwJi9BuY1sJRYOFUMuycKx9A_g",
+        "title": "Software Developer",
+        "subtitle": "Perfect Digital Media Resources (P) Ltd · Full-time",
+        "caption": "Mar 2021 - Apr 2022 · 1 yr 2 mos",
+        "metadata": "Chennai, Tamil Nadu, India · On-site",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "companyLink1": "https://www.linkedin.com/search/results/all/?keywords=Vezetos+Technologies",
+        "title": "Process Associate",
+        "subtitle": "Vezetos Technologies · Full-time",
+        "caption": "Mar 2020 - Mar 2021 · 1 yr 1 mo",
+        "metadata": "Ranipet, Tamil Nadu, India",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "updates": [],
+    "skills": [
+      {
+        "title": "Nuxt.js",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Jr Full Stack Developer at LMES Academy"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vue.js",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Jr Full Stack Developer at LMES Academy"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "TypeScript",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Jr Full Stack Developer at LMES Academy"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "NestJS",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Jr Full Stack Developer at LMES Academy"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "PostgreSQL",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Jr Full Stack Developer at LMES Academy"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "MERN Stack",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "2 experiences across Wonder Worth Solutions and 1 other company"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Redux.js",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "2 experiences across Wonder Worth Solutions and 1 other company"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "React.js",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Full Stack Developer at Wonder Worth Solutions"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "HTML5",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Software Developer at Perfect Digital Media Resources (P) Ltd"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Bootstrap (Framework)",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Software Developer at Perfect Digital Media Resources (P) Ltd"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "CSS Flexbox",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Software Developer at Perfect Digital Media Resources (P) Ltd"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Node.js",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Software Developer at Perfect Digital Media Resources (P) Ltd"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Full-Stack Development",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Software Developer at Perfect Digital Media Resources (P) Ltd"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Backend",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Software Developer at Perfect Digital Media Resources (P) Ltd"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "AJAX",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "User Interface Design",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Application Development",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Web Development",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Web Design",
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      },
+      {
+        "title": "Front-End Development",
+        "subComponents": [
+          {
+            "description": [
+              {
+                "type": "insightComponent",
+                "text": "Software Developer at Perfect Digital Media Resources (P) Ltd"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "profilePicAllDimensions": [
+      {
+        "width": 100,
+        "expiresAt": 1762992000000,
+        "height": 100,
+        "url": "https://media.licdn.com/dms/image/v2/C5603AQEDgWb2bAL7tg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1660484719512?e=1762992000&v=beta&t=Qk-42PMtrpsoqrOwozGafQ0NCVbXCUgC47qo6M4_UtE"
+      },
+      {
+        "width": 200,
+        "expiresAt": 1762992000000,
+        "height": 200,
+        "url": "https://media.licdn.com/dms/image/v2/C5603AQEDgWb2bAL7tg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1660484719512?e=1762992000&v=beta&t=OGTJtCayJyABXmQsUkY26gFU-mobyYn9nRErSyw4dfA"
+      },
+      {
+        "width": 400,
+        "expiresAt": 1762992000000,
+        "height": 400,
+        "url": "https://media.licdn.com/dms/image/v2/C5603AQEDgWb2bAL7tg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1660484719512?e=1762992000&v=beta&t=TS0V7rd7cI-CQ8bVoj58FMd17YjuURFiI5wEhay_Q-Q"
+      },
+      {
+        "width": 592,
+        "expiresAt": 1762992000000,
+        "height": 592,
+        "url": "https://media.licdn.com/dms/image/v2/C5603AQEDgWb2bAL7tg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1660484719512?e=1762992000&v=beta&t=bDd2NAVow6ygT9gRdLUm4_EKhqRHb_ktBdc1SPXoqrw"
+      }
+    ],
+    "educations": [
+      {
+        "companyId": "13411125",
+        "companyUrn": "urn:li:fsd_company:13411125",
+        "companyLink1": "https://www.linkedin.com/company/13411125/",
+        "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQHYLXwJ-jOXLw/company-logo_200_200/company-logo_200_200/0/1631356511246?e=1762992000&v=beta&t=ZkIvA93UOeWOUuK9Dv0BKBl4c95WOQ759dueXkJQLbI",
+        "title": "Thiruvalluvar University, Vellore",
+        "subtitle": "Bachelor's degree, Computer Applications",
+        "caption": "2017 - 2020",
+        "breakdown": false,
+        "subComponents": [
+          {
+            "description": []
+          }
+        ]
+      }
+    ],
+    "licenseAndCertificates": [],
+    "honorsAndAwards": [],
+    "languages": [],
+    "volunteerAndAwards": [],
+    "verifications": [],
+    "promos": [],
+    "highlights": [],
+    "projects": [],
+    "publications": [],
+    "patents": [],
+    "courses": [],
+    "testScores": [],
+    "organizations": [],
+    "volunteerCauses": [],
+    "interests": [
+      {
+        "section_name": "Companies",
+        "section_components": [
+          {
+            "titleV2": "Atos",
+            "caption": "2,447,002 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1259/",
+            "subComponents": []
+          },
+          {
+            "titleV2": "Tata Consultancy Services",
+            "caption": "17,950,800 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/company/1353/",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Groups",
+        "section_components": [
+          {
+            "titleV2": "JavaScript",
+            "caption": "1,503,488 members",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/groups/121615",
+            "subComponents": []
+          }
+        ]
+      },
+      {
+        "section_name": "Newsletters",
+        "section_components": [
+          {
+            "titleV2": "People Of Prodapt",
+            "caption": "Published monthly",
+            "subtitle": "A series showcasing the personal triumph, passion, and inspiring stories of Prodaptians.",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/newsletters/7064851648984088577",
+            "subComponents": [
+              {
+                "insightComponent": {
+                  "text": "Prodapt",
+                  "actionTarget": "https://www.linkedin.com/company/30898/"
+                }
+              }
+            ]
+          },
+          {
+            "titleV2": "Appinventiv Weekly",
+            "caption": "Published weekly",
+            "subtitle": "In each edition, we'll be sharing our updates on vacancies, life at Appinventiv, amazing work-culture, technology etc",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/newsletters/6922144045876031489",
+            "subComponents": [
+              {
+                "insightComponent": {
+                  "text": "Appinventiv",
+                  "actionTarget": "https://www.linkedin.com/company/9322687/"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section_name": "Schools",
+        "section_components": [
+          {
+            "titleV2": "NxtWave",
+            "caption": "451,551 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/school/71321041/",
+            "subComponents": []
+          },
+          {
+            "titleV2": "Thiruvalluvar University, Vellore",
+            "caption": "58,967 followers",
+            "size": "LARGE",
+            "textActionTarget": "https://www.linkedin.com/school/13411125/",
+            "subComponents": []
+          }
+        ]
+      }
+    ],
+    "recommendations": []
+  },
+  "metadata": {
+    "source": "dev_fusion/Linkedin-Profile-Scraper",
+    "savedAt": "2025-10-09T10:01:39.965Z"
+  }
+}

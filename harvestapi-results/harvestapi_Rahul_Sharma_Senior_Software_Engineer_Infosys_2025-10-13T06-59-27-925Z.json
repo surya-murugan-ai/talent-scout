@@ -1,0 +1,222 @@
+{
+  "timestamp": "2025-10-13T06:59:27.925Z",
+  "searchQuery": "Rahul Sharma Senior Software Engineer Infosys",
+  "rawData": [
+    {
+      "id": "ACoAAFVAfeABv9ENtQXEwpW_gaKmVnzw-h4Nw5U",
+      "publicIdentifier": "rahul-sharma-08000233b",
+      "linkedinUrl": "https://www.linkedin.com/in/rahul-sharma-08000233b",
+      "firstName": "Rahul",
+      "lastName": "Sharma",
+      "headline": "Senior Software Engineer at Infosys",
+      "about": null,
+      "openToWork": false,
+      "hiring": false,
+      "photo": null,
+      "premium": false,
+      "influencer": false,
+      "location": {
+        "linkedinText": "Bengaluru, Karnataka, India",
+        "countryCode": "IN",
+        "parsed": {
+          "text": "Bengaluru, India",
+          "countryCode": "IN",
+          "regionCode": null,
+          "country": "India",
+          "countryFull": "India",
+          "state": "Karnataka",
+          "city": "Bengaluru"
+        }
+      },
+      "verified": false,
+      "registeredAt": "2024-11-29T10:05:07.490Z",
+      "topSkills": null,
+      "connectionsCount": 1,
+      "followerCount": 1,
+      "currentPosition": [
+        {
+          "companyId": "1283",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/1283/",
+          "companyName": "Infosys",
+          "dateRange": {
+            "start": null,
+            "end": null
+          }
+        }
+      ],
+      "profileTopEducation": [],
+      "experience": [
+        {
+          "position": "Senior Software Engineer",
+          "location": null,
+          "employmentType": "Full-time",
+          "workplaceType": null,
+          "companyName": "Infosys",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/infosys/",
+          "companyId": "1283",
+          "companyUniversalName": "infosys",
+          "duration": null,
+          "description": null,
+          "skills": null
+        }
+      ],
+      "education": [],
+      "certifications": [],
+      "projects": [],
+      "volunteering": [],
+      "receivedRecommendations": [],
+      "skills": [],
+      "publications": [],
+      "courses": [],
+      "patents": [],
+      "honorsAndAwards": [],
+      "languages": [],
+      "causes": [],
+      "featured": null,
+      "composeOptionType": "UPSELL",
+      "moreProfiles": [
+        {
+          "id": "ACoAADDmd1kBMHjXeRqu27V9ZRkzrXQtyEKFvzc",
+          "firstName": "nishant",
+          "lastName": "santiago",
+          "publicIdentifier": "nishant-santiago-5099061aa",
+          "linkedinUrl": "https://www.linkedin.com/in/nishant-santiago-5099061aa"
+        },
+        {
+          "id": "ACoAADanWnwBWdj2bCpJ9BzpbrD6Z7gAaoOGenU",
+          "firstName": "Pranali",
+          "lastName": "Garde",
+          "publicIdentifier": "pranali-garde-0500b7217",
+          "linkedinUrl": "https://www.linkedin.com/in/pranali-garde-0500b7217"
+        },
+        {
+          "id": "ACoAABKminMB7-Cq1tOCg4i7c6wZdxwZdRVKiMM",
+          "firstName": "Tatiana",
+          "lastName": "Oliveira",
+          "position": "Senior HR Specialist / Customer Service",
+          "publicIdentifier": "tatiana-oliveira-andrade-carvalho",
+          "linkedinUrl": "https://www.linkedin.com/in/tatiana-oliveira-andrade-carvalho"
+        },
+        {
+          "id": "ACoAAAxNKZcBZNk1o2ox5TZ1uGuSRPsJxUkkDj4",
+          "firstName": "Carolina",
+          "lastName": "Cubas",
+          "position": "LatAm Human Resources Manager | Driving Compensation Strategies | Talent Acquisition",
+          "publicIdentifier": "carolina-cubas-a9b14a59",
+          "linkedinUrl": "https://www.linkedin.com/in/carolina-cubas-a9b14a59"
+        },
+        {
+          "id": "ACoAAF3KWykByA6XXx_6TOV47UMSkx-sUNPBpE4",
+          "firstName": "Seamus",
+          "lastName": "Ali",
+          "position": "Human Resources Specialist at Astronomer",
+          "publicIdentifier": "seamus-ali-ba1b8637a",
+          "linkedinUrl": "https://www.linkedin.com/in/seamus-ali-ba1b8637a"
+        },
+        {
+          "id": "ACoAACxtrIAB72kOFn-x_FfF3dOqxZaA-l3IjxA",
+          "firstName": "Gabriela",
+          "lastName": "Cunha",
+          "position": "Talent Acquisition Associate | Tech Recruiter",
+          "publicIdentifier": "gabrielasco",
+          "linkedinUrl": "https://www.linkedin.com/in/gabrielasco"
+        },
+        {
+          "id": "ACoAACLhPGABIZLC2kFb2DwXnK_cu56LzmKjjN0",
+          "firstName": "Neel",
+          "lastName": "Chavda",
+          "publicIdentifier": "neelchavda",
+          "linkedinUrl": "https://www.linkedin.com/in/neelchavda"
+        },
+        {
+          "id": "ACoAADG1ZScBPtD7I6uXHv9PxRp_-zpAexVpCZs",
+          "firstName": "ADARSH",
+          "lastName": "KOSREKAR",
+          "publicIdentifier": "adarsh-kosrekar-4873661b3",
+          "linkedinUrl": "https://www.linkedin.com/in/adarsh-kosrekar-4873661b3"
+        },
+        {
+          "id": "ACoAAAghdisBVn63byxD_gJl21EN1CQlShcR3A8",
+          "firstName": "Victor Hugo",
+          "lastName": "Soares",
+          "position": "Head of Human Resources @ Chef bob",
+          "publicIdentifier": "victorhugosoares",
+          "linkedinUrl": "https://www.linkedin.com/in/victorhugosoares"
+        },
+        {
+          "id": "ACoAAAvPYS0BBXwThRckKVyQ2KziOY37mubL0A0",
+          "firstName": "Sergio",
+          "lastName": "Machado",
+          "position": "Candidate Sourcer & Talent Acquisition | Especialista em T&D, Gestão de Talentos e Estratégia Organizacional | Consultor Jurídico",
+          "publicIdentifier": "sergiomachadobessa",
+          "linkedinUrl": "https://www.linkedin.com/in/sergiomachadobessa"
+        },
+        {
+          "id": "ACoAAB6bgywBzk_htQPtDFA5ekKgsCL-d6D-NwU",
+          "firstName": "Daniele",
+          "lastName": "Torres",
+          "position": "Business Partner |  Talent Acquisition  | Recruitment and Selection Specialist | Headhunter | Tech Recruiter | Human Resources",
+          "publicIdentifier": "danieletorresnascimento",
+          "linkedinUrl": "https://www.linkedin.com/in/danieletorresnascimento"
+        },
+        {
+          "id": "ACoAAAm2KmQBKnD8OHOmwLV9zNUyXU4ry7bkzVU",
+          "firstName": "Aman",
+          "lastName": "Gambhir",
+          "publicIdentifier": "amangambhir",
+          "linkedinUrl": "https://www.linkedin.com/in/amangambhir"
+        },
+        {
+          "id": "ACoAAARihYMBYQzCxcG0kea55ID10nxa0pcqjsE",
+          "firstName": "Miroslava",
+          "lastName": "Simeonova",
+          "publicIdentifier": "miroslava-simeonova",
+          "linkedinUrl": "https://www.linkedin.com/in/miroslava-simeonova"
+        },
+        {
+          "id": "ACoAAEvSEWoBM0l3EuJuZVvFOZ4vxP5mBZ1lkJc",
+          "firstName": "Akanksha",
+          "lastName": "Buchke",
+          "publicIdentifier": "akanksha-buchke",
+          "linkedinUrl": "https://www.linkedin.com/in/akanksha-buchke"
+        },
+        {
+          "id": "ACoAADO-locBSfDBB_6XbzpuhkvQIzv-RR2tHZQ",
+          "firstName": "Khushi",
+          "lastName": "Agrawal",
+          "publicIdentifier": "khushi-agrawal-zerotwo",
+          "linkedinUrl": "https://www.linkedin.com/in/khushi-agrawal-zerotwo"
+        },
+        {
+          "id": "ACoAACLbWHEBFwTgooONXmiehMjgHljGloxqhls",
+          "firstName": "Vikas",
+          "lastName": "pandey",
+          "publicIdentifier": "vikas-pandey-181a22143",
+          "linkedinUrl": "https://www.linkedin.com/in/vikas-pandey-181a22143"
+        },
+        {
+          "id": "ACoAADGQT94BGt_knMoABq1z-Pl6BeALetEyJF0",
+          "firstName": "Varsha",
+          "lastName": "Molawade",
+          "publicIdentifier": "varsha-molawade-b925931b2",
+          "linkedinUrl": "https://www.linkedin.com/in/varsha-molawade-b925931b2"
+        }
+      ],
+      "openProfile": false,
+      "_meta": {
+        "pagination": {
+          "totalElements": 1,
+          "totalPages": 1,
+          "pageNumber": 1,
+          "previousElements": 0,
+          "pageSize": 25
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "totalResults": 1,
+    "source": "harvestapi/linkedin-profile-search",
+    "savedAt": "2025-10-13T06:59:27.925Z"
+  }
+}

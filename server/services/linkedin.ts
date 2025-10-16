@@ -121,6 +121,7 @@ interface ApifyLinkedInSearchResult {
 
 export class LinkedInService {
   private apifyClient: ApifyClient;
+  private lastSearchResults: Map<string, any> = new Map(); // Cache search results to avoid duplicate API calls
 
   constructor() {
     const apifyToken = process.env.APIFY_API_TOKEN;
@@ -473,7 +474,15 @@ export class LinkedInService {
           linkedinUrl: firstResult.linkedinUrl
         });
         
-        return typeof firstResult.linkedinUrl === 'string' ? firstResult.linkedinUrl : null;
+        const linkedinUrl = typeof firstResult.linkedinUrl === 'string' ? firstResult.linkedinUrl : null;
+        
+        // ✅ CACHE the profile data to avoid duplicate API call during enrichment
+        if (linkedinUrl) {
+          this.lastSearchResults.set(linkedinUrl, firstResult);
+          console.log(`✅ Cached profile data for ${linkedinUrl} (avoiding duplicate API call)`);
+        }
+        
+        return linkedinUrl;
       }
 
       console.log('No LinkedIn profiles found with Apify search');
@@ -481,6 +490,76 @@ export class LinkedInService {
 
     } catch (error) {
       console.error('Apify LinkedIn search failed:', error);
+      return null;
+    }
+  }
+
+  /**
+   * Search LinkedIn profiles and return both URL and profile data
+   * This avoids duplicate API calls
+   */
+  async searchProfilesWithData(
+    name: string, 
+    company?: string, 
+    title?: string, 
+    location?: string, 
+    candidates?: any[]
+  ): Promise<{ 
+    url: string; 
+    profile: LinkedInProfile;
+    validation?: {
+      isValid: boolean;
+      confidence: number;
+      warnings: string[];
+      errors: string[];
+    }
+  } | null> {
+    try {
+      // Use Apify search only - no URL generation fallback
+      const linkedinUrl = await this.searchProfilesWithApify(name, title, company, location, 20, candidates);
+      
+      if (!linkedinUrl) {
+        console.log('No LinkedIn profiles found with Apify search');
+        return null;
+      }
+
+      // Check if we have cached profile data from the search
+      if (this.lastSearchResults.has(linkedinUrl)) {
+        console.log(`✅ Using cached profile data from search (no additional API call needed)`);
+        const cachedData = this.lastSearchResults.get(linkedinUrl);
+        this.lastSearchResults.delete(linkedinUrl); // Clean up cache
+        
+        const profile = this.transformHarvestApiData(cachedData);
+        profile.profileUrl = linkedinUrl;
+        
+        // ✅ NEW: Validate profile data quality
+        const validation = this.validateProfileData(profile, name, company, title);
+        
+        // Log validation results
+        if (!validation.isValid) {
+          console.warn(`⚠️ Profile validation failed (${validation.confidence}% confidence):`, {
+            errors: validation.errors,
+            warnings: validation.warnings
+          });
+        } else if (validation.warnings.length > 0) {
+          console.warn(`⚠️ Profile validation warnings (${validation.confidence}% confidence):`, validation.warnings);
+        } else {
+          console.log(`✅ Profile validation passed (${validation.confidence}% confidence)`);
+        }
+        
+        return { 
+          url: linkedinUrl, 
+          profile,
+          validation  // Include validation results
+        };
+      }
+
+      // Fallback: if no cache, return null (shouldn't happen with current implementation)
+      console.warn('⚠️ No cached data found, returning null');
+      return null;
+      
+    } catch (error) {
+      console.error('LinkedIn profile search failed:', error);
       return null;
     }
   }
@@ -647,6 +726,90 @@ export class LinkedInService {
   }
 
   /**
+   * Validate LinkedIn profile data quality against input parameters
+   * Returns validation result with warnings/errors
+   */
+  private validateProfileData(
+    profile: LinkedInProfile,
+    inputName: string,
+    inputCompany?: string,
+    inputTitle?: string
+  ): { 
+    isValid: boolean; 
+    confidence: number;
+    warnings: string[];
+    errors: string[];
+  } {
+    const warnings: string[] = [];
+    const errors: string[] = [];
+    let totalScore = 0;
+    let checks = 0;
+
+    // 1. Validate Name (CRITICAL)
+    if (profile.name) {
+      const nameScore = this.calculateNameMatchScoreForApify({ name: profile.name } as any, inputName);
+      totalScore += nameScore;
+      checks++;
+
+      if (nameScore < 0.3) {
+        errors.push(`Name mismatch: Expected "${inputName}", found "${profile.name}" (${Math.round(nameScore * 100)}% match)`);
+      } else if (nameScore < 0.6) {
+        warnings.push(`Partial name match: Expected "${inputName}", found "${profile.name}" (${Math.round(nameScore * 100)}% match)`);
+      }
+    } else {
+      errors.push('Profile name is missing');
+      checks++;
+    }
+
+    // 2. Validate Company (if provided)
+    if (inputCompany && profile.currentCompany) {
+      const companyScore = this.calculateCompanyMatchScore(profile.currentCompany, inputCompany);
+      totalScore += companyScore;
+      checks++;
+
+      if (companyScore < 0.3) {
+        warnings.push(`Company mismatch: Expected "${inputCompany}", found "${profile.currentCompany}" (${Math.round(companyScore * 100)}% match)`);
+      } else if (companyScore < 0.6) {
+        warnings.push(`Partial company match: Expected "${inputCompany}", found "${profile.currentCompany}" (${Math.round(companyScore * 100)}% match)`);
+      }
+    }
+
+    // 3. Validate Title (if provided)
+    if (inputTitle && profile.headline) {
+      const titleScore = this.calculateTitleMatchScore(profile.headline, inputTitle);
+      totalScore += titleScore;
+      checks++;
+
+      if (titleScore < 0.3) {
+        warnings.push(`Title mismatch: Expected "${inputTitle}", found "${profile.headline}" (${Math.round(titleScore * 100)}% match)`);
+      }
+    }
+
+    // 4. Check for essential profile data
+    if (!profile.experience || profile.experience.length === 0) {
+      warnings.push('No work experience found in profile');
+    }
+
+    if (!profile.skills || profile.skills.length === 0) {
+      warnings.push('No skills found in profile');
+    }
+
+    // Calculate overall confidence
+    const confidence = checks > 0 ? (totalScore / checks) : 0;
+
+    // Determine if profile is valid
+    // Profile is invalid if name match is too low (< 30%) or has critical errors
+    const isValid = errors.length === 0 && confidence >= 0.3;
+
+    return {
+      isValid,
+      confidence: Math.round(confidence * 100),
+      warnings,
+      errors
+    };
+  }
+
+  /**
    * Calculate snippet relevance score (DEPRECATED)
    */
   private calculateSnippetRelevance(
@@ -719,62 +882,31 @@ export class LinkedInService {
 
       console.log(`Enriching LinkedIn profile for: ${name} (${profileUrl})`);
       
-      // If we have a LinkedIn URL, try to use dev_fusion actor for direct profile scraping
-      if (profileUrl && profileUrl.includes('linkedin.com/in/')) {
-        console.log('LinkedIn URL detected, using dev_fusion actor for direct profile scraping');
-        
-        const devFusionData = await this.getProfileWithDevFusion(profileUrl);
-        if (devFusionData) {
-          // Save the dev_fusion results
-          this.saveDevFusionResults(devFusionData, profileUrl);
-          
-          // Transform dev_fusion data to our format
-          const enrichedProfile = this.transformDevFusionData(devFusionData);
-          enrichedProfile.profileUrl = profileUrl;
-          
-          // Update database with the fetched LinkedIn data
-          try {
-            if (candidates && candidates.length > 0) {
-              // Find the candidate that matches this LinkedIn URL
-              const matchingCandidate = candidates.find(c => 
-                c.linkedinUrl === profileUrl || 
-                c.linkedinUrl === profileUrl.replace(/\/$/, '') ||
-                profileUrl.includes(c.name?.split(' ')[0] || '')
-              );
-              
-              if (matchingCandidate) {
-                // Update candidate record - TODO: Update to use consolidated candidates table
-                // await ResumeDataService.updateCandidateWithLinkedInData(
-                //   matchingCandidate.id,
-                //   devFusionData,
-                //   'dev_fusion'
-                // );
-
-                // Update resume data if available - TODO: Update to use consolidated candidates table
-                // if (matchingCandidate.resumeDataId) {
-                //   await ResumeDataService.updateResumeDataWithLinkedIn(
-                //     matchingCandidate.resumeDataId,
-                //     devFusionData,
-                //     'dev_fusion'
-                //   );
-                // }
-              }
-            }
-          } catch (dbError) {
-            console.warn('Failed to update database with LinkedIn data:', dbError);
-          }
-          
-          console.log('Successfully enriched profile using dev_fusion actor');
-          return enrichedProfile;
-        } else {
-          console.log('Dev_fusion actor failed, falling back to harvestapi search');
-        }
-      }
+      // DISABLED: dev_fusion actor doesn't return education/certifications data
+      // Always use harvestapi actor for complete profile data including education and certifications
+      // if (profileUrl && profileUrl.includes('linkedin.com/in/')) {
+      //   console.log('LinkedIn URL detected, using dev_fusion actor for direct profile scraping');
+      //   const devFusionData = await this.getProfileWithDevFusion(profileUrl);
+      //   if (devFusionData) {
+      //     ...
+      //   }
+      // }
       
-      // Fallback to harvestapi search if no LinkedIn URL or dev_fusion failed
-      console.log('Using harvestapi actor for profile search/enrichment');
+      // Use harvestapi actor for complete profile data (includes education, certifications, etc.)
+      console.log('Using harvestapi actor for complete profile data (education, certifications, etc.)');
       
       try {
+        // ✅ CHECK CACHE FIRST - avoid duplicate API call if we already have the data
+        if (foundLinkedInUrl && this.lastSearchResults.has(foundLinkedInUrl)) {
+          console.log(`✅ Using cached profile data for ${foundLinkedInUrl} (skipping duplicate API call)`);
+          const cachedData = this.lastSearchResults.get(foundLinkedInUrl);
+          this.lastSearchResults.delete(foundLinkedInUrl); // Clean up cache after use
+          
+          const enrichedProfile = this.transformHarvestApiData(cachedData);
+          enrichedProfile.profileUrl = foundLinkedInUrl;
+          return enrichedProfile;
+        }
+        
         // Search again with the same parameters to get full profile data
         const searchInput: ApifyLinkedInSearchInput = {
           searchQuery: name,             // Use searchQuery for fuzzy search

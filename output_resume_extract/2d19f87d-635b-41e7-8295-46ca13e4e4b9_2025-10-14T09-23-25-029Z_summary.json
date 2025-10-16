@@ -1,0 +1,121 @@
+{
+  "filename": "2d19f87d-635b-41e7-8295-46ca13e4e4b9.pdf",
+  "timestamp": "2025-10-14T09:23:25.029Z",
+  "processingTime": 9936,
+  "confidence": 98,
+  "extractedData": {
+    "name": "Pushparani S",
+    "email": "pushparanis0905@gmail.com",
+    "phone": "8489235259",
+    "title": "Web Developer",
+    "location": null,
+    "summary": "A motivated individual with in-depth knowledge of languages and development tools, seeking a position in a growth-oriented company where I can use my skills to the advantage of the company while having the scope to develop my own skills.",
+    "experience": [
+      {
+        "jobTitle": "Web Developer",
+        "company": "X-MEDIA SOLUTIONS",
+        "duration": "September 2022 - Present",
+        "startDate": "2022-09",
+        "endDate": "Present",
+        "techUsed": [
+          "HTML5",
+          "Laravel",
+          "CSS3",
+          "CodeIgniter",
+          "JavaScript",
+          "MySQL",
+          "JQuery JS",
+          "REST APIs",
+          "PHP",
+          "Moodle LMS"
+        ],
+        "description": "Design and implement database schemas for web applications. Integrate payment processing into web applications. Design and develop REST APIs. Integrate third-party APIs into web applications. Conducted Functional, Regression, Integration and System testing to identify the software defects.",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Sc",
+        "field": "Mathematics",
+        "university": "Manonmaniam Sundarnar University",
+        "year": "2020",
+        "percentage": null,
+        "gpa": null,
+        "location": null
+      },
+      {
+        "degree": "M.Sc",
+        "field": "Mathematics",
+        "university": "Manonmaniam Sundarnar University",
+        "year": "2022",
+        "percentage": null,
+        "gpa": null,
+        "location": null
+      }
+    ],
+    "skills": [
+      "HTML5",
+      "Laravel",
+      "CSS3",
+      "CodeIgniter",
+      "JavaScript",
+      "MySQL",
+      "JQuery JS",
+      "REST APIs",
+      "PHP",
+      "Moodle LMS"
+    ],
+    "projects": [
+      {
+        "name": "L&T Workmen Mobilization",
+        "description": "Internal Communication and Worker hiring management App",
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "CDMS Online University",
+        "description": "E-Learning Platform",
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Avtarlabs",
+        "description": "E-learning Platform",
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "VRBIZTEC",
+        "description": "Engineering Drawings - Viewing Application",
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Canli",
+        "description": "E-commerce Website",
+        "techUsed": [],
+        "duration": null,
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Java (Core Java)",
+        "issuer": "Fita Academy, Chennai",
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      }
+    ]
+  }
+}

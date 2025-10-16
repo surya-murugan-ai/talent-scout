@@ -1,0 +1,254 @@
+{
+  "timestamp": "2025-10-13T06:36:52.873Z",
+  "searchQuery": "Rahul Sharma Senior Software Engineer Infosys",
+  "rawData": [
+    {
+      "id": "ACoAAFVAfeABv9ENtQXEwpW_gaKmVnzw-h4Nw5U",
+      "publicIdentifier": "rahul-sharma-08000233b",
+      "linkedinUrl": "https://www.linkedin.com/in/rahul-sharma-08000233b",
+      "firstName": "Rahul",
+      "lastName": "Sharma",
+      "headline": "Senior Software Engineer at Infosys",
+      "about": null,
+      "openToWork": false,
+      "hiring": false,
+      "photo": null,
+      "premium": false,
+      "influencer": false,
+      "location": {
+        "linkedinText": "Bengaluru, Karnataka, India",
+        "countryCode": "IN",
+        "parsed": {
+          "text": "Bengaluru, India",
+          "countryCode": "IN",
+          "regionCode": null,
+          "country": "India",
+          "countryFull": "India",
+          "state": "Karnataka",
+          "city": "Bengaluru"
+        }
+      },
+      "verified": false,
+      "registeredAt": "2024-11-29T10:05:07.490Z",
+      "topSkills": null,
+      "connectionsCount": 1,
+      "followerCount": 1,
+      "currentPosition": [
+        {
+          "companyId": "1283",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/1283/",
+          "companyName": "Infosys",
+          "dateRange": {
+            "start": null,
+            "end": null
+          }
+        }
+      ],
+      "profileTopEducation": [],
+      "experience": [
+        {
+          "position": "Senior Software Engineer",
+          "location": null,
+          "employmentType": "Full-time",
+          "workplaceType": null,
+          "companyName": "Infosys",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/infosys/",
+          "companyId": "1283",
+          "companyUniversalName": "infosys",
+          "duration": null,
+          "description": null,
+          "skills": null
+        }
+      ],
+      "education": [],
+      "certifications": [],
+      "projects": [],
+      "volunteering": [],
+      "receivedRecommendations": [],
+      "skills": [],
+      "publications": [],
+      "courses": [],
+      "patents": [],
+      "honorsAndAwards": [],
+      "languages": [],
+      "causes": [],
+      "featured": null,
+      "composeOptionType": "UPSELL",
+      "moreProfiles": [
+        {
+          "id": "ACoAADDmd1kBMHjXeRqu27V9ZRkzrXQtyEKFvzc",
+          "firstName": "nishant",
+          "lastName": "santiago",
+          "publicIdentifier": "nishant-santiago-5099061aa",
+          "linkedinUrl": "https://www.linkedin.com/in/nishant-santiago-5099061aa"
+        },
+        {
+          "id": "ACoAADanWnwBWdj2bCpJ9BzpbrD6Z7gAaoOGenU",
+          "firstName": "Pranali",
+          "lastName": "Garde",
+          "publicIdentifier": "pranali-garde-0500b7217",
+          "linkedinUrl": "https://www.linkedin.com/in/pranali-garde-0500b7217"
+        },
+        {
+          "id": "ACoAAF6EFH8BrbdALblzzocsUF5CYPAF-J3HhHo",
+          "firstName": "Jahnavi",
+          "lastName": "Potnuru",
+          "position": "electronics and communication engineering student",
+          "publicIdentifier": "jahnavi-potnuru-8a7076383",
+          "linkedinUrl": "https://www.linkedin.com/in/jahnavi-potnuru-8a7076383"
+        },
+        {
+          "id": "ACoAAF8nlxEBFdkpsHYmavldS_hAIKKdXn16A1I",
+          "firstName": "Mahalakshmi",
+          "lastName": "Vutukuri",
+          "position": "Technology Lead at Infosys",
+          "publicIdentifier": "mahalakshmi-vutukuri-015784386",
+          "linkedinUrl": "https://www.linkedin.com/in/mahalakshmi-vutukuri-015784386"
+        },
+        {
+          "id": "ACoAACLhPGABIZLC2kFb2DwXnK_cu56LzmKjjN0",
+          "firstName": "Neel",
+          "lastName": "Chavda",
+          "publicIdentifier": "neelchavda",
+          "linkedinUrl": "https://www.linkedin.com/in/neelchavda"
+        },
+        {
+          "id": "ACoAADG1ZScBPtD7I6uXHv9PxRp_-zpAexVpCZs",
+          "firstName": "ADARSH",
+          "lastName": "KOSREKAR",
+          "publicIdentifier": "adarsh-kosrekar-4873661b3",
+          "linkedinUrl": "https://www.linkedin.com/in/adarsh-kosrekar-4873661b3"
+        },
+        {
+          "id": "ACoAAF1OIoMB2yHTsmt4JPP-0Q_IlP9I2_8lCg8",
+          "firstName": "Caden",
+          "lastName": "Houston",
+          "position": "Human Resources Positions at Globo",
+          "publicIdentifier": "caden-houston-9432bb378",
+          "linkedinUrl": "https://www.linkedin.com/in/caden-houston-9432bb378"
+        },
+        {
+          "id": "ACoAAF7QfHEBbwFUop3TZY_flWjlh_tHlYIN6s0",
+          "firstName": "Sanjida Haque",
+          "lastName": "Sudha",
+          "position": "It Project Development Manager at Infosys",
+          "publicIdentifier": "sanjida-haque-sudha-615890384",
+          "linkedinUrl": "https://www.linkedin.com/in/sanjida-haque-sudha-615890384"
+        },
+        {
+          "id": "ACoAAAm2KmQBKnD8OHOmwLV9zNUyXU4ry7bkzVU",
+          "firstName": "Aman",
+          "lastName": "Gambhir",
+          "publicIdentifier": "amangambhir",
+          "linkedinUrl": "https://www.linkedin.com/in/amangambhir"
+        },
+        {
+          "id": "ACoAAF7xELABUQ05pzJJo_Mg5FaJoyHRBSNtkcA",
+          "firstName": "ASWATHY",
+          "lastName": "A",
+          "position": "--",
+          "publicIdentifier": "aswathy-a-128540385",
+          "linkedinUrl": "https://www.linkedin.com/in/aswathy-a-128540385"
+        },
+        {
+          "id": "ACoAAF8vbaEB3jHug0vRLbCVGL2PCHHS4mFPVaE",
+          "firstName": "Ahmad",
+          "lastName": "Alnabelsi",
+          "position": "Ahmad في Infosys",
+          "publicIdentifier": "ahmad-alnabelsi-341991386",
+          "linkedinUrl": "https://www.linkedin.com/in/ahmad-alnabelsi-341991386"
+        },
+        {
+          "id": "ACoAAARihYMBYQzCxcG0kea55ID10nxa0pcqjsE",
+          "firstName": "Miroslava",
+          "lastName": "Simeonova",
+          "publicIdentifier": "miroslava-simeonova",
+          "linkedinUrl": "https://www.linkedin.com/in/miroslava-simeonova"
+        },
+        {
+          "id": "ACoAAF8WSK8BatpelvX_kTMGh-jhlSCh2qbnjfs",
+          "firstName": "Ritika",
+          "lastName": "Desai",
+          "position": "Human Resources Analyst at Infosys",
+          "publicIdentifier": "ritika-desai-7a7317386",
+          "linkedinUrl": "https://www.linkedin.com/in/ritika-desai-7a7317386"
+        },
+        {
+          "id": "ACoAAF58dN4BIA1ENLtdu_guBrpaWkdTWO727D0",
+          "firstName": "Disha",
+          "lastName": "Rajput",
+          "position": "Student Internship at Infosys",
+          "publicIdentifier": "disha-rajput-73aa75382",
+          "linkedinUrl": "https://www.linkedin.com/in/disha-rajput-73aa75382"
+        },
+        {
+          "id": "ACoAAEvSEWoBM0l3EuJuZVvFOZ4vxP5mBZ1lkJc",
+          "firstName": "Akanksha",
+          "lastName": "Buchke",
+          "publicIdentifier": "akanksha-buchke",
+          "linkedinUrl": "https://www.linkedin.com/in/akanksha-buchke"
+        },
+        {
+          "id": "ACoAAF65Ey4B0PfIB_S-mTqr8J-cZOkz9TdfK-M",
+          "firstName": "Carolyn",
+          "lastName": "Boyd",
+          "position": "AI Engineer at Infosys",
+          "publicIdentifier": "carolyn-boyd-752270384",
+          "linkedinUrl": "https://www.linkedin.com/in/carolyn-boyd-752270384"
+        },
+        {
+          "id": "ACoAAF7j9KkBnbjAkxaeqhBn-wjBUz-76_sGJz4",
+          "firstName": "Ridhima",
+          "lastName": "Mishra",
+          "position": "HR Business Partner | Talent Management | Employee Engagement Specialist",
+          "publicIdentifier": "ridhima-mishra-ab51a6385",
+          "linkedinUrl": "https://www.linkedin.com/in/ridhima-mishra-ab51a6385"
+        },
+        {
+          "id": "ACoAADO-locBSfDBB_6XbzpuhkvQIzv-RR2tHZQ",
+          "firstName": "Khushi",
+          "lastName": "Agrawal",
+          "publicIdentifier": "khushi-agrawal-zerotwo",
+          "linkedinUrl": "https://www.linkedin.com/in/khushi-agrawal-zerotwo"
+        },
+        {
+          "id": "ACoAAF6aPSEBBN5NO6aV8iBHOe22m1RY8OlPIdM",
+          "firstName": "Vaishnavi",
+          "lastName": "Kancharla",
+          "position": "Data Analyst with 6+ years of experience across Workforce Analytics and Legal Data Analytics domains.",
+          "publicIdentifier": "vaishnavi-kancharla",
+          "linkedinUrl": "https://www.linkedin.com/in/vaishnavi-kancharla"
+        },
+        {
+          "id": "ACoAACLbWHEBFwTgooONXmiehMjgHljGloxqhls",
+          "firstName": "Vikas",
+          "lastName": "pandey",
+          "publicIdentifier": "vikas-pandey-181a22143",
+          "linkedinUrl": "https://www.linkedin.com/in/vikas-pandey-181a22143"
+        },
+        {
+          "id": "ACoAADGQT94BGt_knMoABq1z-Pl6BeALetEyJF0",
+          "firstName": "Varsha",
+          "lastName": "Molawade",
+          "publicIdentifier": "varsha-molawade-b925931b2",
+          "linkedinUrl": "https://www.linkedin.com/in/varsha-molawade-b925931b2"
+        }
+      ],
+      "openProfile": false,
+      "_meta": {
+        "pagination": {
+          "totalElements": 1,
+          "totalPages": 1,
+          "pageNumber": 1,
+          "previousElements": 0,
+          "pageSize": 25
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "totalResults": 1,
+    "source": "harvestapi/linkedin-profile-search",
+    "savedAt": "2025-10-13T06:36:52.873Z"
+  }
+}

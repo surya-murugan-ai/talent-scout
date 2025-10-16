@@ -1,0 +1,115 @@
+{
+  "filename": "5b26bc26-c2c2-4068-8ee4-69ab07e47363.pdf",
+  "timestamp": "2025-10-13T11:41:00.408Z",
+  "processingTime": 5549,
+  "confidence": 98,
+  "extractedData": {
+    "name": "Nithish Kumar",
+    "email": "iamnithish100@gmail.com",
+    "phone": "+91 9025105082",
+    "title": "Software Development Engineer",
+    "location": "Kovilpatti, India",
+    "summary": "Highly motivated and detail-oriented Software Engineer with a strong foundation in React, Node.js, and SQL. Proficient in building scalable and responsive web applications, crafting efficient backend solutions, and designing robust database systems. Adept at collaborating in team environments and leveraging problem-solving skills to deliver innovative and user-centric software solutions. Passionate about learning and staying updated with the latest technologies to drive impactful results.",
+    "experience": [
+      {
+        "jobTitle": "Software Development Engineer",
+        "company": "Nirals Information Technologies Pvt.Lmt",
+        "duration": "April 2024 - present",
+        "startDate": "2024-04",
+        "endDate": "Present",
+        "techUsed": [],
+        "description": "Developing and deploying software applications for various Clients",
+        "achievements": []
+      },
+      {
+        "jobTitle": "Software Engineer Intern",
+        "company": "Cogniot Technologies Pvt.lmt",
+        "duration": "Sep 2022 - Feb 2023",
+        "startDate": "2022-09",
+        "endDate": "2023-02",
+        "techUsed": [],
+        "description": "Developed Web Pages, Built Deep learning Projects",
+        "achievements": []
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.E.",
+        "field": "Computer Science and Engineering",
+        "university": "National Engineering College",
+        "year": "2024",
+        "percentage": null,
+        "gpa": null,
+        "location": "Kovilpatti, India"
+      }
+    ],
+    "skills": [
+      "Java",
+      "Python",
+      "JavaScript",
+      "SQL",
+      "HTML",
+      "CSS",
+      "Tailwind CSS",
+      "Node.js",
+      "React",
+      "Git",
+      "Express.js",
+      "RESTful APIs",
+      "Authentication (JWT/OAuth)"
+    ],
+    "projects": [
+      {
+        "name": "EEEZO",
+        "description": "Developed dynamic and responsive web interfaces using React.js and Tailwind CSS to enhance user experience. Implemented seamless API integration to efficiently fetch and display backend data.",
+        "techUsed": [
+          "React.js",
+          "Node.js",
+          "SQL"
+        ],
+        "duration": "Oct 2024 – Present",
+        "url": null,
+        "achievements": []
+      },
+      {
+        "name": "Evoting",
+        "description": "Developed an end-to-end web application with six user login profiles, each having different levels of authorization. Contributed to developing responsive web pages and backend logic using Node.js and AJAX to fetch and display dynamic data.",
+        "techUsed": [
+          "HTML",
+          "Node.js",
+          "SQL",
+          "Ajax"
+        ],
+        "duration": "May 2024 – Oct 2024",
+        "url": null,
+        "achievements": []
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Scaler Certified Node.Js Professional",
+        "issuer": null,
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "Infosys Springboard - Javascript Certification",
+        "issuer": null,
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      },
+      {
+        "name": "NPTEL - Cloud Computing",
+        "issuer": null,
+        "date": null,
+        "expiryDate": null,
+        "credentialId": null,
+        "url": null
+      }
+    ]
+  }
+}

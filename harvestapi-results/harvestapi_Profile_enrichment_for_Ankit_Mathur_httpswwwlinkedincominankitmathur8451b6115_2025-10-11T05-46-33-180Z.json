@@ -1,0 +1,1268 @@
+{
+  "timestamp": "2025-10-11T05:46:33.180Z",
+  "searchQuery": "Profile enrichment for: Ankit Mathur - https://www.linkedin.com/in/ankit-mathur-8451b6115/",
+  "rawData": [
+    {
+      "id": "ACoAAAxjGaoBrV3_1QFRjj93aWKZ47XNgvbOQ_8",
+      "publicIdentifier": "ankit-mathur-ab672259",
+      "linkedinUrl": "https://www.linkedin.com/in/ankit-mathur-ab672259",
+      "firstName": "Ankit",
+      "lastName": "Mathur",
+      "headline": "Engineering Manager at Google",
+      "about": "Experienced Software Engineer with a demonstrated history of working in the Software industry. Skilled in Java,C++, Spring Boot, Microservices, Big Data, and Distributed Computing. Strong engineering professional with a Bachelor of Engineering (BE) focused in Electronics and Communications Engineering and Computer Science from Delhi Technological University(formerly Delhi College of Engineering).",
+      "openToWork": false,
+      "hiring": false,
+      "photo": "https://media.licdn.com/dms/image/v2/C4D03AQGrhUrDnt326g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1595439503640?e=1762992000&v=beta&t=_lZhSlWlnuSa9CAH7CIwgM8S9R2QtAhBx2peh8pUKlc",
+      "premium": false,
+      "influencer": false,
+      "location": {
+        "linkedinText": "Gurugram, Haryana, India",
+        "countryCode": "IN",
+        "parsed": {
+          "text": "Gurgaon, India",
+          "countryCode": "IN",
+          "regionCode": null,
+          "country": "India",
+          "countryFull": "India",
+          "state": "Haryana",
+          "city": "Gurgaon"
+        }
+      },
+      "verified": false,
+      "registeredAt": "2012-10-04T14:48:05.000Z",
+      "topSkills": null,
+      "connectionsCount": 1313,
+      "followerCount": 1322,
+      "currentPosition": [
+        {
+          "companyId": "1441",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/1441/",
+          "companyName": "Google",
+          "dateRange": {
+            "start": {
+              "month": 3,
+              "year": 2019,
+              "day": null
+            },
+            "end": null
+          }
+        }
+      ],
+      "profileTopEducation": [
+        {
+          "schoolId": "20357",
+          "companyId": "680890",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/680890/",
+          "schoolName": "Delhi College of Engineering"
+        }
+      ],
+      "experience": [
+        {
+          "position": "Software Engineering Manager",
+          "location": "Gurugram, Haryana, India",
+          "employmentType": "Full-time",
+          "workplaceType": null,
+          "companyName": "Google",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/google/",
+          "companyId": "1441",
+          "companyUniversalName": "google",
+          "duration": "6 yrs 8 mos",
+          "description": null,
+          "skills": null,
+          "startDate": {
+            "month": "Mar",
+            "year": 2019,
+            "text": "Mar 2019"
+          },
+          "endDate": {
+            "text": "Present"
+          }
+        },
+        {
+          "position": "Platform Engineer",
+          "location": "Hyderbad",
+          "employmentType": null,
+          "workplaceType": null,
+          "companyName": "Paysafe Group",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/132205/",
+          "companyId": "132205",
+          "duration": "1 yr 4 mos",
+          "description": "As a part of payment processing team, developed web services in Java using SpringBoot to process realtime transaction events from Kafka and store them in ElasticSearch, MapR and Druid and provided Rest APIs on top of them.",
+          "skills": null,
+          "startDate": {
+            "month": "Sep",
+            "year": 2017,
+            "text": "Sep 2017"
+          },
+          "endDate": {
+            "month": "Dec",
+            "year": 2018,
+            "text": "Dec 2018"
+          }
+        },
+        {
+          "position": "Software Developer",
+          "location": "New Delhi Area, India",
+          "employmentType": null,
+          "workplaceType": null,
+          "companyName": "Samsung Electronics",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/1753/",
+          "companyId": "1753",
+          "duration": "1 yr 2 mos",
+          "description": null,
+          "skills": null,
+          "startDate": {
+            "month": "Jul",
+            "year": 2016,
+            "text": "Jul 2016"
+          },
+          "endDate": {
+            "month": "Aug",
+            "year": 2017,
+            "text": "Aug 2017"
+          }
+        },
+        {
+          "position": "Software Developer Internship",
+          "location": "Gurgaon, India",
+          "employmentType": null,
+          "workplaceType": null,
+          "companyName": "VMOCK.COM",
+          "companyLinkedinUrl": "https://www.linkedin.com/search/results/all/?keywords=VMOCK%2ECOM",
+          "duration": "2 mos",
+          "description": "Implemented a docs editor using Goggle Picker API and worked on Skill Extraction algorithm for extracting skills from cover letter based on OpenNLP in java .      \n",
+          "skills": null,
+          "startDate": {
+            "month": "Dec",
+            "year": 2015,
+            "text": "Dec 2015"
+          },
+          "endDate": {
+            "month": "Jan",
+            "year": 2016,
+            "text": "Jan 2016"
+          }
+        }
+      ],
+      "education": [
+        {
+          "schoolName": "Delhi College of Engineering",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/680890/",
+          "degree": "Bachelor of Engineering (BE)",
+          "fieldOfStudy": "Electronics and Communications Engineering,computer science",
+          "skills": [],
+          "insights": "Grade: 7.68 CGPA/69.35%\nActivities and societies: IEEEDTU, CSI DTU, SR-DTU",
+          "startDate": {
+            "year": 2012,
+            "text": "2012"
+          },
+          "endDate": {
+            "year": 2016,
+            "text": "2016"
+          },
+          "period": "2012 - 2016"
+        },
+        {
+          "schoolName": "Gyan mandir public school",
+          "schoolLinkedinUrl": "https://www.linkedin.com/search/results/all/?keywords=Gyan+mandir+public+school",
+          "degree": null,
+          "fieldOfStudy": null,
+          "skills": [],
+          "startDate": null,
+          "endDate": {
+            "text": ""
+          }
+        }
+      ],
+      "certifications": [],
+      "projects": [
+        {
+          "title": "Chain Reaction",
+          "duration": "Apr 2017 - Present",
+          "startDate": {
+            "month": "Apr",
+            "year": 2017,
+            "text": "Apr 2017"
+          },
+          "endDate": {
+            "text": "Present"
+          },
+          "associatedWith": null,
+          "associatedWithLink": null,
+          "description": "- Developed a game in javascript, Jquery, Html,Css and BootStrap\n- Game can be played by 2-8 players at a time.\n- Live Demo : https://ankitmathur3193.github.io/Chain-Reaction/\nSource :\nhttps://github.com/ankitmathur3193/Chain-Reaction\n",
+          "link": "https://github.com/ankitmathur3193/Chain-Reaction"
+        },
+        {
+          "title": "Song-cli (A command Line interface in python  to download Bollywood/Hollywood and punjabi songs from internet)",
+          "duration": "Apr 2017 - Present",
+          "startDate": {
+            "month": "Apr",
+            "year": 2017,
+            "text": "Apr 2017"
+          },
+          "endDate": {
+            "text": "Present"
+          },
+          "associatedWith": null,
+          "associatedWithLink": null,
+          "description": "-Developed a command line interface in Python using docopt to parse google search engine response and download songs from https://mr-jatt.com/  and from https://www.youtube.com/. \n- A command line interface for downloading songs by just typing their name\n-Implemented abstract factory design pattern.\n-Users can download all songs of a movie or top songs of an artist.\n\nSource:\nhttps://github.com/ankitmathur3193/song-cli",
+          "link": "https://github.com/ankitmathur3193/song-cli"
+        },
+        {
+          "title": "Difference Expansion Based Reversible watermarking",
+          "duration": "Apr 2014 - Present",
+          "startDate": {
+            "month": "Apr",
+            "year": 2014,
+            "text": "Apr 2014"
+          },
+          "endDate": {
+            "text": "Present"
+          },
+          "associatedWith": null,
+          "associatedWithLink": null,
+          "description": "Developed a python application to apply difference expansion based reversible watermarking on MySQL  databases for authentication and copyright purposes. \n\nSource:\nhttps://github.com/ankitmathur3193/Reversible-watermarking-on-Mysql-database",
+          "link": "https://github.com/ankitmathur3193/Reversible-watermarking-on-Mysql-database"
+        }
+      ],
+      "volunteering": [],
+      "receivedRecommendations": [],
+      "skills": [
+        {
+          "name": "Algorithms",
+          "endorsements": "3 endorsements"
+        },
+        {
+          "name": "Data Structures",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "Programming",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "Software Development"
+        },
+        {
+          "name": "Big Data"
+        },
+        {
+          "name": "Distributed Systems"
+        },
+        {
+          "name": "Multithreading"
+        },
+        {
+          "name": "Design Patterns"
+        },
+        {
+          "name": "Computer Science"
+        },
+        {
+          "name": "Python",
+          "endorsements": "3 endorsements"
+        },
+        {
+          "name": "Java",
+          "endorsements": "2 endorsements"
+        },
+        {
+          "name": "Microsoft Office",
+          "endorsements": "3 endorsements"
+        },
+        {
+          "name": "CSS",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "Microsoft Excel",
+          "endorsements": "2 endorsements"
+        },
+        {
+          "name": "HTML",
+          "endorsements": "5 endorsements"
+        },
+        {
+          "name": "JavaScript",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "Microsoft Word",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "PowerPoint",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "Windows",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "jQuery"
+        },
+        {
+          "name": "Bootstrap"
+        },
+        {
+          "name": "MySQL",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "Operating Systems",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "Git",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "SQL"
+        },
+        {
+          "name": "Spring Boot"
+        },
+        {
+          "name": "Eclipse",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "Core Java",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "Maven"
+        },
+        {
+          "name": "Public Speaking",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "English",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "DBMS",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "Java Enterprise Edition",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "Databases",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "JSON",
+          "endorsements": "1 endorsement"
+        },
+        {
+          "name": "Web Services"
+        },
+        {
+          "name": "Scalable Web Applications",
+          "endorsements": "1 endorsement"
+        }
+      ],
+      "publications": [],
+      "courses": [
+        {
+          "title": "Algorithms and Data structures",
+          "associatedWith": "Associated with Delhi College of Engineering",
+          "associatedWithLink": "https://www.linkedin.com/company/680890/"
+        },
+        {
+          "title": "Introduction to linux"
+        },
+        {
+          "title": "Machine Learning"
+        },
+        {
+          "title": "Operating Systems"
+        }
+      ],
+      "patents": [],
+      "honorsAndAwards": [],
+      "languages": [
+        {
+          "name": "English"
+        },
+        {
+          "name": "Hindi"
+        }
+      ],
+      "causes": [
+        "Education",
+        "Environment",
+        "Science and Technology"
+      ],
+      "featured": null,
+      "composeOptionType": "UPSELL",
+      "moreProfiles": [
+        {
+          "id": "ACoAABsrqD8BQ8o1YSuHpB_TvHSxKACHjGaPXjA",
+          "firstName": "Arun",
+          "lastName": "Ramamurthi",
+          "publicIdentifier": "arun-ramamurthi-8a77b3108",
+          "linkedinUrl": "https://www.linkedin.com/in/arun-ramamurthi-8a77b3108"
+        },
+        {
+          "id": "ACoAAAF56SoBesYq-mh4jI2hFIsGIvS41z1NWxk",
+          "firstName": "Subhashish",
+          "lastName": "Roy",
+          "publicIdentifier": "subhashish-roy-74a3648",
+          "linkedinUrl": "https://www.linkedin.com/in/subhashish-roy-74a3648"
+        },
+        {
+          "id": "ACoAADOo4NEBYpkCAETFOmGj8VT-tmwgJuqRsxE",
+          "firstName": "Ankit",
+          "lastName": "Kumar",
+          "position": "SWE @Google | ex-Sprinklr | ICPC Regionalist | CSE DTU'24",
+          "publicIdentifier": "onmyzenith",
+          "linkedinUrl": "https://www.linkedin.com/in/onmyzenith"
+        },
+        {
+          "id": "ACoAAAFQPNYBQZ6-YfOIYrUimo3v5MNFXlefcWM",
+          "firstName": "Keshavaprasad",
+          "lastName": "B S",
+          "publicIdentifier": "kbsbng",
+          "linkedinUrl": "https://www.linkedin.com/in/kbsbng"
+        },
+        {
+          "id": "ACoAACgCLlkB7IVIJvgt-vl1yio1l5I6ebAhIRs",
+          "firstName": "Hari",
+          "lastName": "G",
+          "position": "Partner at Volttic Electric Vehicle Charging Solutions",
+          "publicIdentifier": "hari-g-249964168",
+          "linkedinUrl": "https://www.linkedin.com/in/hari-g-249964168"
+        },
+        {
+          "id": "ACoAAAR4IWkB9wjvO-PozXilELSpBFivi3_BvLo",
+          "firstName": "Tarak",
+          "lastName": "Bhatt",
+          "publicIdentifier": "tarakbhatt",
+          "linkedinUrl": "https://www.linkedin.com/in/tarakbhatt"
+        },
+        {
+          "id": "ACoAADezpB0Bv86lOmK7puJAFBwEJDR2s2ojTCk",
+          "firstName": "Siddharth",
+          "lastName": "Arora",
+          "position": "ASIC Digital Design Engineer@Synopsys Inc | DCE(DTU)'25 | LIMCA and INDIAN Achiever Book of Records Holder",
+          "publicIdentifier": "siddharth-arora-111b76220",
+          "linkedinUrl": "https://www.linkedin.com/in/siddharth-arora-111b76220"
+        },
+        {
+          "id": "ACoAABQJxqsBFVOV8FuNlyJdij0dVlia5UGMxM0",
+          "firstName": "Arun",
+          "lastName": "Vashisth",
+          "publicIdentifier": "arun-vashisth-60b70794",
+          "linkedinUrl": "https://www.linkedin.com/in/arun-vashisth-60b70794"
+        },
+        {
+          "id": "ACoAADL7KFkBtnVaxknxbsp1w4hR0nyxhNosb_M",
+          "firstName": "Pratuesh",
+          "lastName": "Anand",
+          "position": "Full Stack Developer || Contributer@GGSOC'23 || MERN Stack || DTU'24 Mathematics And Computing",
+          "publicIdentifier": "pratuesh-anand-2a15411ba",
+          "linkedinUrl": "https://www.linkedin.com/in/pratuesh-anand-2a15411ba"
+        },
+        {
+          "id": "ACoAAAVcy2QB2N8ZllXYGzbo6R21_AeYZJlzWEQ",
+          "firstName": "Richa",
+          "lastName": "Gupta",
+          "publicIdentifier": "richa-gupta-60416826",
+          "linkedinUrl": "https://www.linkedin.com/in/richa-gupta-60416826"
+        },
+        {
+          "id": "ACoAABAnVJkB-ec5Hz0SpdAAN2n7AqVEkeTSZEs",
+          "firstName": "Tejas",
+          "lastName": "Harne",
+          "publicIdentifier": "tejas-harne",
+          "linkedinUrl": "https://www.linkedin.com/in/tejas-harne"
+        },
+        {
+          "id": "ACoAAAOUEYYBh3Y935dp2HHGxiBbozbgIdYneeM",
+          "firstName": "Balaji",
+          "lastName": "Narain",
+          "publicIdentifier": "narainbalaji",
+          "linkedinUrl": "https://www.linkedin.com/in/narainbalaji"
+        },
+        {
+          "id": "ACoAADzXuj0Becqn7LAz00lZ0EFVcn3EN2YlGGQ",
+          "firstName": "Jatin",
+          "lastName": "Sagar",
+          "position": "Software Engineer @ Wiom | Software Developer | Mern Stack | Flutter Developer",
+          "publicIdentifier": "jatin-sagar",
+          "linkedinUrl": "https://www.linkedin.com/in/jatin-sagar"
+        },
+        {
+          "id": "ACoAADOwB0MBkjeAp6BKUpNsrCSqzIzv82orh-4",
+          "firstName": "Abhinav",
+          "lastName": "Gupta",
+          "position": "SDE @BNY Mellon | Former SDE Intern @BNY Mellon'22 | DTU'23 | Codechef 5⭐(Max Rating-2057) | Codeforces (Max Expert-1671) | Leetcode Knight (max-2097)",
+          "publicIdentifier": "abhinav2k02",
+          "linkedinUrl": "https://www.linkedin.com/in/abhinav2k02"
+        },
+        {
+          "id": "ACoAADKaPzIBX1ISKXozPNeq1SlqDCxGrnaNqTA",
+          "firstName": "Sagar",
+          "lastName": "Kataria",
+          "position": "Amazon -  Brands’ Growth and Consumer Behavior| Ex-Fujitsu, Japan",
+          "publicIdentifier": "sagar-kataria-9823991b8",
+          "linkedinUrl": "https://www.linkedin.com/in/sagar-kataria-9823991b8"
+        },
+        {
+          "id": "ACoAADPg0gsBi-1_xxaoV3nwDmyUEpx5TCeA8HE",
+          "firstName": "Aditya",
+          "lastName": "Solanki",
+          "position": "Market Analyst @Futures First | DTU (DCE)",
+          "publicIdentifier": "solankiaditya",
+          "linkedinUrl": "https://www.linkedin.com/in/solankiaditya"
+        },
+        {
+          "id": "ACoAACgu2XYBs6e3mztxMwOfv7bFwG_fbBuHf_M",
+          "firstName": "Naveen ",
+          "lastName": "Bidhan",
+          "position": "Monitoring Specialist-Persistent System, DTU-21",
+          "publicIdentifier": "naveen-bidhan-35a936169",
+          "linkedinUrl": "https://www.linkedin.com/in/naveen-bidhan-35a936169"
+        },
+        {
+          "id": "ACoAACE9OHUB1Y_r0UQt_bLMH5c4B8u4rbY4Zrw",
+          "firstName": "Apoorv ",
+          "lastName": "Parmar ",
+          "publicIdentifier": "apoorvparmar",
+          "linkedinUrl": "https://www.linkedin.com/in/apoorvparmar"
+        },
+        {
+          "id": "ACoAAFvE4z8Bc3rGv7E0zngGk2STb_KNm2zPI_E",
+          "firstName": "Virginia",
+          "lastName": "Baker",
+          "position": "--",
+          "publicIdentifier": "virginia-baker-62775136b",
+          "linkedinUrl": "https://www.linkedin.com/in/virginia-baker-62775136b"
+        },
+        {
+          "id": "ACoAACxmqYIBVYQPu5jt3b90Dwg5TSkkHPdv01Y",
+          "firstName": "Touch",
+          "lastName": "Consultants",
+          "position": "India's Leading Talent Solutions Firm",
+          "publicIdentifier": "touch-consultants-22a583189",
+          "linkedinUrl": "https://www.linkedin.com/in/touch-consultants-22a583189"
+        },
+        {
+          "id": "ACoAAAM5l_QB-DBB7c6yXMNoNQ50jplxiy3hnww",
+          "firstName": "Rishi",
+          "lastName": "Verma",
+          "publicIdentifier": "rishitios",
+          "linkedinUrl": "https://www.linkedin.com/in/rishitios"
+        }
+      ],
+      "openProfile": false,
+      "_meta": {
+        "pagination": {
+          "totalElements": 2,
+          "totalPages": 1,
+          "pageNumber": 1,
+          "previousElements": 0,
+          "pageSize": 25
+        }
+      }
+    },
+    {
+      "id": "ACoAAByvBDUBwxi2OhME-VKKv6_I_bxV52S68mg",
+      "publicIdentifier": "ankit-m-8451b6115",
+      "linkedinUrl": "https://www.linkedin.com/in/ankit-m-8451b6115",
+      "firstName": ".Ankit",
+      "lastName": "M.",
+      "headline": "Data Analyst| SQL | Python | Pandas | Tableau | Machine Learning | Deep Learning | Passionate Data Professional 📊 | Transforming Raw Data into Actionable Insights | Open to Work | Immediate Joiner |",
+      "about": "Data professional with 6 years of experience turning data into business impact across domains. Skilled in SQL, Python/Pandas, Statistics, Product Analytics, and Machine Learning. Adept at cross-functional collaboration with Product, Engineering, and Business teams, with a track record of driving impact and earning multiple recognition awards. Holds a PG Program in Data Science & Engineering. Bachelor of Engineering from the University of Mumbai. Excited to contribute expertise and continue learning in future challenges.",
+      "openToWork": false,
+      "hiring": false,
+      "photo": null,
+      "premium": true,
+      "influencer": false,
+      "location": {
+        "linkedinText": "India",
+        "countryCode": "IN",
+        "parsed": {
+          "text": "India",
+          "countryCode": "IN",
+          "regionCode": null,
+          "country": "India",
+          "countryFull": "India"
+        }
+      },
+      "verified": true,
+      "registeredAt": "2016-02-21T13:44:02.948Z",
+      "topSkills": null,
+      "connectionsCount": 5060,
+      "followerCount": 5043,
+      "currentPosition": [
+        {
+          "companyId": "1441",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/1441/",
+          "companyName": "Google",
+          "dateRange": {
+            "start": {
+              "month": 8,
+              "year": 2023,
+              "day": null
+            },
+            "end": null
+          }
+        }
+      ],
+      "profileTopEducation": [
+        {
+          "schoolId": "20477",
+          "companyId": "363736",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/363736/",
+          "schoolName": "Great Lakes Institute of Management"
+        }
+      ],
+      "experience": [
+        {
+          "position": "Senior Data Analyst",
+          "location": null,
+          "employmentType": "Full-time",
+          "workplaceType": "Hybrid",
+          "companyName": "Google",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/google/",
+          "companyId": "1441",
+          "companyUniversalName": "google",
+          "duration": "2 yrs 3 mos",
+          "description": "Worked on projects related to Generative AI, Machine Learning, automation using Python, SQL scripting, dashboard development, experimention and KPI/metrics creation to drive data-driven decision-making and operational efficiency.",
+          "skills": [
+            "Dashboards",
+            "Google Analytics",
+            "Stakeholder Management",
+            "Data Warehousing",
+            "A/B Testing",
+            "Business Insights",
+            "Artificial Intelligence (AI)",
+            "Large Language Models (LLM)"
+          ],
+          "startDate": {
+            "month": "Aug",
+            "year": 2023,
+            "text": "Aug 2023"
+          },
+          "endDate": {
+            "text": "Present"
+          }
+        },
+        {
+          "position": "Business/Data Analyst",
+          "location": null,
+          "employmentType": "Full-time",
+          "workplaceType": null,
+          "companyName": "BYJU'S",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/2395365/",
+          "companyId": "2395365",
+          "duration": "1 yr 11 mos",
+          "description": "Worked on projects involving machine learning, customer retention and conversion strategies, dashboard development, funnel optimization, SQL scripting, Python programming, data modeling, and statistical analysis to drive data-driven decision-making and operational efficiency.",
+          "skills": [
+            "Dashboards",
+            "Stakeholder Management",
+            "Data Modeling",
+            "Business Analytics"
+          ],
+          "startDate": {
+            "month": "Oct",
+            "year": 2021,
+            "text": "Oct 2021"
+          },
+          "endDate": {
+            "month": "Aug",
+            "year": 2023,
+            "text": "Aug 2023"
+          }
+        },
+        {
+          "position": "Analyst",
+          "location": null,
+          "employmentType": "Full-time",
+          "workplaceType": null,
+          "companyName": "Multiple Companies",
+          "companyLinkedinUrl": "https://www.linkedin.com/company/949154/",
+          "companyId": "949154",
+          "duration": "3 yrs 9 mos",
+          "description": null,
+          "skills": [
+            "Dashboards",
+            "Stakeholder Management",
+            "Business Insights",
+            "English",
+            "Market Research",
+            "Model Development",
+            "Quantitative Research",
+            "Analytics"
+          ],
+          "startDate": {
+            "month": "Aug",
+            "year": 2017,
+            "text": "Aug 2017"
+          },
+          "endDate": {
+            "month": "Apr",
+            "year": 2021,
+            "text": "Apr 2021"
+          }
+        }
+      ],
+      "education": [
+        {
+          "schoolName": "Great Lakes Institute of Management",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/363736/",
+          "degree": "PG Program in Artificial Intelligence and Machine Learning",
+          "fieldOfStudy": null,
+          "skills": [],
+          "startDate": {
+            "month": "Jun",
+            "year": 2023,
+            "text": "Jun 2023"
+          },
+          "endDate": {
+            "month": "Oct",
+            "year": 2023,
+            "text": "Oct 2023"
+          },
+          "period": "Jun 2023 - Oct 2023"
+        },
+        {
+          "schoolName": "Great Lakes Institute of Management",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/363736/",
+          "degree": "PG Program in Data Science",
+          "fieldOfStudy": null,
+          "skills": [],
+          "startDate": {
+            "month": "Feb",
+            "year": 2020,
+            "text": "Feb 2020"
+          },
+          "endDate": {
+            "month": "Jan",
+            "year": 2021,
+            "text": "Jan 2021"
+          },
+          "period": "Feb 2020 - Jan 2021"
+        },
+        {
+          "schoolName": "University of Mumbai",
+          "schoolLinkedinUrl": "https://www.linkedin.com/company/15093732/",
+          "degree": "Bachelor of Engineering - BE",
+          "fieldOfStudy": "Electronics",
+          "skills": [],
+          "startDate": {
+            "year": 2012,
+            "text": "2012"
+          },
+          "endDate": {
+            "year": 2016,
+            "text": "2016"
+          },
+          "period": "2012 - 2016"
+        }
+      ],
+      "certifications": [
+        {
+          "title": "Generative AI",
+          "issuedAt": "Issued Oct 2025",
+          "link": null,
+          "issuedBy": "DeepLearning.AI",
+          "issuedByLink": "https://www.linkedin.com/company/18246783/"
+        },
+        {
+          "title": "Star Performer",
+          "issuedAt": "Issued Oct 2022",
+          "link": null,
+          "issuedBy": "BYJU'S",
+          "issuedByLink": "https://www.linkedin.com/company/2395365/"
+        },
+        {
+          "title": "Oracle Database SQL Certified Associate",
+          "issuedAt": "Issued Jan 2020",
+          "link": "https://www.youracclaim.com/badges/3b6b0bc8-be35-4773-a2d1-e264260b6fd4/public_url",
+          "issuedBy": "Oracle",
+          "issuedByLink": "https://www.linkedin.com/company/1028/"
+        },
+        {
+          "title": "Python",
+          "issuedAt": "Issued Nov 2019",
+          "link": "http://ude.my/UC-M2T5PBVM",
+          "issuedBy": "Udemy",
+          "issuedByLink": "https://www.linkedin.com/company/822535/"
+        },
+        {
+          "title": "SQL for Data Science",
+          "issuedAt": "Issued Jul 2019",
+          "link": "https://coursera.org/share/0120a6aecc59dddf13f6291df8148122",
+          "issuedBy": "University of California, Davis",
+          "issuedByLink": "https://www.linkedin.com/company/2842/"
+        },
+        {
+          "title": "Operations Management",
+          "issuedAt": "Issued May 2018",
+          "link": null,
+          "issuedBy": "SVKM's Narsee Monjee Institute of Management Studies (NMIMS)",
+          "issuedByLink": "https://www.linkedin.com/company/417042/"
+        }
+      ],
+      "projects": [],
+      "volunteering": [],
+      "receivedRecommendations": [],
+      "skills": [
+        {
+          "name": "Visual Analytics"
+        },
+        {
+          "name": "Performance Metrics"
+        },
+        {
+          "name": "Google Analytics",
+          "positions": [
+            "Senior Data Analyst at Google"
+          ]
+        },
+        {
+          "name": "Business Intelligence (BI)"
+        },
+        {
+          "name": "Microsoft Power BI"
+        },
+        {
+          "name": "Visualization"
+        },
+        {
+          "name": "Attention to Detail"
+        },
+        {
+          "name": "Business Insights",
+          "positions": [
+            "2 experiences across Google and 1 other company"
+          ]
+        },
+        {
+          "name": "Analytics",
+          "positions": [
+            "Analyst at Multiple Companies"
+          ]
+        },
+        {
+          "name": "English",
+          "positions": [
+            "Analyst at Multiple Companies"
+          ]
+        },
+        {
+          "name": "Large Language Models (LLM)",
+          "positions": [
+            "Senior Data Analyst at Google"
+          ]
+        },
+        {
+          "name": "Artificial Intelligence (AI)",
+          "positions": [
+            "Senior Data Analyst at Google"
+          ]
+        },
+        {
+          "name": "Marketing Technology"
+        },
+        {
+          "name": "A/B Testing",
+          "positions": [
+            "Senior Data Analyst at Google"
+          ]
+        },
+        {
+          "name": "Testing Tools"
+        },
+        {
+          "name": "Team Leadership"
+        },
+        {
+          "name": "Data Engineering"
+        },
+        {
+          "name": "Quantitative Research",
+          "positions": [
+            "Analyst at Multiple Companies"
+          ]
+        },
+        {
+          "name": "Model Development",
+          "positions": [
+            "Analyst at Multiple Companies"
+          ]
+        },
+        {
+          "name": "Market Research",
+          "positions": [
+            "Analyst at Multiple Companies"
+          ]
+        },
+        {
+          "name": "Quantitative Analytics"
+        },
+        {
+          "name": "Data Management"
+        },
+        {
+          "name": "Data Modeling",
+          "positions": [
+            "Business/Data Analyst at BYJU'S"
+          ]
+        },
+        {
+          "name": "Business Analytics",
+          "positions": [
+            "Business/Data Analyst at BYJU'S"
+          ]
+        },
+        {
+          "name": "Machine Tools"
+        },
+        {
+          "name": "Stakeholder Management",
+          "positions": [
+            "3 experiences across Google and 2 other companies"
+          ]
+        },
+        {
+          "name": "Dashboards",
+          "positions": [
+            "3 experiences across Google and 2 other companies"
+          ]
+        },
+        {
+          "name": "Data Warehousing",
+          "positions": [
+            "Senior Data Analyst at Google"
+          ]
+        },
+        {
+          "name": "Succession Planning"
+        },
+        {
+          "name": "Data Cleaning"
+        },
+        {
+          "name": "Identifying Trends"
+        },
+        {
+          "name": "Data Quality"
+        },
+        {
+          "name": "SQL"
+        },
+        {
+          "name": "Databases"
+        },
+        {
+          "name": "Project Management"
+        },
+        {
+          "name": "Data Analysis"
+        },
+        {
+          "name": "Data Visualization"
+        },
+        {
+          "name": "Analytical Skills"
+        },
+        {
+          "name": "Business Analysis"
+        },
+        {
+          "name": "Business Process Improvement"
+        },
+        {
+          "name": "Business Requirements"
+        },
+        {
+          "name": "Machine Learning",
+          "assessments": "Passed LinkedIn Skill Assessment"
+        },
+        {
+          "name": "Statistics"
+        },
+        {
+          "name": "Microsoft Excel",
+          "assessments": "Passed LinkedIn Skill Assessment"
+        },
+        {
+          "name": "Python (Programming Language)",
+          "assessments": "Passed LinkedIn Skill Assessment"
+        },
+        {
+          "name": "pandas"
+        },
+        {
+          "name": "Communication"
+        },
+        {
+          "name": "Problem Solving"
+        },
+        {
+          "name": "NumPy"
+        },
+        {
+          "name": "SciPy"
+        },
+        {
+          "name": "Exploratory Data Analysis"
+        },
+        {
+          "name": "Data Munging"
+        },
+        {
+          "name": "Data Science"
+        },
+        {
+          "name": "Data Analytics"
+        },
+        {
+          "name": "Tableau"
+        },
+        {
+          "name": "Teamwork"
+        },
+        {
+          "name": "MySQL",
+          "assessments": "Passed LinkedIn Skill Assessment"
+        },
+        {
+          "name": "Natural Language Processing (NLP)"
+        },
+        {
+          "name": "Microsoft Office"
+        },
+        {
+          "name": "Management"
+        },
+        {
+          "name": "Team Building"
+        },
+        {
+          "name": "Microsoft PowerPoint"
+        },
+        {
+          "name": "Microsoft Word"
+        },
+        {
+          "name": "Leadership"
+        },
+        {
+          "name": "Team Management"
+        },
+        {
+          "name": "Deep Learning"
+        },
+        {
+          "name": "Requirements Analysis"
+        },
+        {
+          "name": "Seaborn"
+        },
+        {
+          "name": "Matplotlib"
+        },
+        {
+          "name": "Predictive Modeling"
+        },
+        {
+          "name": "Jupyter"
+        },
+        {
+          "name": "Machine Learning Algorithms"
+        }
+      ],
+      "publications": [],
+      "courses": [],
+      "patents": [],
+      "honorsAndAwards": [],
+      "languages": [],
+      "causes": [],
+      "featured": null,
+      "composeOptionType": "UPSELL",
+      "moreProfiles": [
+        {
+          "id": "ACoAADkinIwB1hgDhMf8uSW08tN7XhbfmwPJ7pg",
+          "firstName": "Puneet",
+          "lastName": "Garg",
+          "position": "MBA | Great Lakes Institute of Management | Finance & Business Analytics | Former Finance Executive at Congruex | B.Com Graduate with Expertise in Accounting and Financial Management",
+          "publicIdentifier": "puneet-gargg",
+          "linkedinUrl": "https://www.linkedin.com/in/puneet-gargg"
+        },
+        {
+          "id": "ACoAAC652IoBtG5dd_GgyJTRlKu2gfSVFxQwIiY",
+          "firstName": "Piyush",
+          "lastName": "Harsh",
+          "publicIdentifier": "piyush-harsh",
+          "linkedinUrl": "https://www.linkedin.com/in/piyush-harsh"
+        },
+        {
+          "id": "ACoAAAGOKXYBenlq4csBHlVAJF5O1eAEiictMF4",
+          "firstName": "Sriram",
+          "lastName": "Venkateswaran",
+          "publicIdentifier": "sriramvenkat87",
+          "linkedinUrl": "https://www.linkedin.com/in/sriramvenkat87"
+        },
+        {
+          "id": "ACoAAD46x2IB7eJhG6g8HOs2sUHjpMKNhzjcwEU",
+          "firstName": "Sanivarapu",
+          "lastName": "Bhavitha",
+          "position": "Data Analyst | Data Science | BI Developer",
+          "publicIdentifier": "sanivarapu-bhavitha-656791251",
+          "linkedinUrl": "https://www.linkedin.com/in/sanivarapu-bhavitha-656791251"
+        },
+        {
+          "id": "ACoAABCNQWkB5tWMYzJaEJcusbXHqzawTbK9bqg",
+          "firstName": "Ankit",
+          "lastName": "Srivastava",
+          "publicIdentifier": "anksriva",
+          "linkedinUrl": "https://www.linkedin.com/in/anksriva"
+        },
+        {
+          "id": "ACoAAEZju-QBeZwsdVXUWiMFkyqOA19r0zCQlWg",
+          "firstName": "Stiphan",
+          "lastName": "Amin",
+          "position": "ISSMS.CDS. CMAS. ICBIO.ICUDO.ICESO.ICSS. CHRM.CFO.CPM.CBAS.CBDM.COO.CEO.CPDO.CGM.CRS.CTO.IID.IIA.CIO.CBMO.",
+          "publicIdentifier": "stiphan-amin-1185b328b",
+          "linkedinUrl": "https://www.linkedin.com/in/stiphan-amin-1185b328b"
+        },
+        {
+          "id": "ACoAADxYXz8BjyrtVPYtMNTNvFeCOdhM4GaPNPI",
+          "firstName": "Shraddha",
+          "lastName": "Gupta",
+          "position": "PGDM'27|| GLIM|| Business Analytics",
+          "publicIdentifier": "shraddha-gupta-993085243",
+          "linkedinUrl": "https://www.linkedin.com/in/shraddha-gupta-993085243"
+        },
+        {
+          "id": "ACoAAC0U0yYBS6xtbe7T06nq229BD_RdOX9Mhpw",
+          "firstName": "Tanya",
+          "lastName": "Moghe",
+          "publicIdentifier": "tanya-moghe",
+          "linkedinUrl": "https://www.linkedin.com/in/tanya-moghe"
+        },
+        {
+          "id": "ACoAADCQtwcBpzveCpKvdZCfWPFDHBCbnCllg1k",
+          "firstName": "Keshav",
+          "lastName": "Chandrasekar ",
+          "publicIdentifier": "keshav-chandrasekar-287a561a8",
+          "linkedinUrl": "https://www.linkedin.com/in/keshav-chandrasekar-287a561a8"
+        },
+        {
+          "id": "ACoAADtvYbUBK-xD8J3ZqlQzJicNXPhG_DrXwvA",
+          "firstName": "Gayathri",
+          "lastName": "Ganesan ",
+          "position": "Data Science Enthusiast | SQL, Python, Tableau, Excel, Machine Learning | Transforming Raw Data into Actionable Insights",
+          "publicIdentifier": "gayathriganesan10",
+          "linkedinUrl": "https://www.linkedin.com/in/gayathriganesan10"
+        },
+        {
+          "id": "ACoAAD-S2_AB4d5VVYISzRltqBFPmvZIbFX3Cl4",
+          "firstName": "Arkin",
+          "lastName": "Gupta",
+          "position": " Startup enthusiast l PGDM’27@ GLIM CHENNAI | B.Com (Hons) at Ramanujan College’24 (Delhi University)",
+          "publicIdentifier": "arkin-gupta-128247259",
+          "linkedinUrl": "https://www.linkedin.com/in/arkin-gupta-128247259"
+        },
+        {
+          "id": "ACoAAA8gaOgBy2TKkbBj1TdNgCYUmlCw-AAUuSE",
+          "firstName": "Apurva",
+          "lastName": "Khandelwal",
+          "publicIdentifier": "k-apurva",
+          "linkedinUrl": "https://www.linkedin.com/in/k-apurva"
+        },
+        {
+          "id": "ACoAABMkR4oBkZ047gtZ3sA84dxesWjrceY4gVU",
+          "firstName": "Suman ",
+          "lastName": "Dutta ",
+          "publicIdentifier": "suman-dutta-7766738b",
+          "linkedinUrl": "https://www.linkedin.com/in/suman-dutta-7766738b"
+        },
+        {
+          "id": "ACoAADv08RUBCGYsitrjXXsaDlOV1g8l8BEPFPc",
+          "firstName": "Shaily",
+          "lastName": "Kesharwani",
+          "position": "Aspiring Financial Analyst",
+          "publicIdentifier": "shailykesharwani",
+          "linkedinUrl": "https://www.linkedin.com/in/shailykesharwani"
+        },
+        {
+          "id": "ACoAABgd3NcBkcGJ8QQ7r8PpD81e2yaXlWakay0",
+          "firstName": "Nezam",
+          "lastName": "Siddiqui",
+          "publicIdentifier": "nezam-siddiqui-55b605b3",
+          "linkedinUrl": "https://www.linkedin.com/in/nezam-siddiqui-55b605b3"
+        },
+        {
+          "id": "ACoAAC_5nc8BxS3YYSQqh-24fEcicu1M9gLMRfU",
+          "firstName": "Parth",
+          "lastName": "Agrawal",
+          "publicIdentifier": "parth-agrawal-4149dadi",
+          "linkedinUrl": "https://www.linkedin.com/in/parth-agrawal-4149dadi"
+        },
+        {
+          "id": "ACoAAF0x1OgBLq6ttxdJfmzs8Kq8kSVnkIU74q4",
+          "firstName": "Angel",
+          "lastName": "Martin",
+          "position": "--",
+          "publicIdentifier": "angel-martin-434766377",
+          "linkedinUrl": "https://www.linkedin.com/in/angel-martin-434766377"
+        },
+        {
+          "id": "ACoAAEHZa8gBUBaj33wS9YeFb3IWnIZeOVRklZI",
+          "firstName": "Rohan",
+          "lastName": "Battepati",
+          "position": "Student at NxtWave’s CCBP 4.0 Academy",
+          "publicIdentifier": "rohan-battepati",
+          "linkedinUrl": "https://www.linkedin.com/in/rohan-battepati"
+        },
+        {
+          "id": "ACoAACxHmlABOhxmQEK8ZeZE2eb92YV2dawT2SE",
+          "firstName": "Madhumitha",
+          "lastName": "KA",
+          "publicIdentifier": "madhumitha-ka-294961188",
+          "linkedinUrl": "https://www.linkedin.com/in/madhumitha-ka-294961188"
+        },
+        {
+          "id": "ACoAADpphmIBGOsP9vlRx1JlnNo4nbmm_CIC4Ck",
+          "firstName": "Jeevana",
+          "lastName": "Senthilkumar",
+          "position": "Machine Learning Data Analyst @ Amazon | Master's in Data Science",
+          "publicIdentifier": "jeevanasenthilkumar",
+          "linkedinUrl": "https://www.linkedin.com/in/jeevanasenthilkumar"
+        },
+        {
+          "id": "ACoAAD70froBCvz948DdZ7PBg7ZztOSOEOANJ_Y",
+          "firstName": "Piyush",
+          "lastName": "Jaiswal",
+          "position": "Support Specialist (Support) ",
+          "publicIdentifier": "piyush-jaiswal-bb6880255",
+          "linkedinUrl": "https://www.linkedin.com/in/piyush-jaiswal-bb6880255"
+        }
+      ],
+      "openProfile": false,
+      "_meta": {
+        "pagination": {
+          "totalElements": 2,
+          "totalPages": 1,
+          "pageNumber": 1,
+          "previousElements": 0,
+          "pageSize": 25
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "totalResults": 2,
+    "source": "harvestapi/linkedin-profile-search",
+    "savedAt": "2025-10-11T05:46:33.180Z"
+  }
+}

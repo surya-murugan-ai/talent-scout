@@ -143,7 +143,18 @@ export async function enrichLinkedInProfile(linkedinUrl: string | undefined, nam
         role: exp.title,
         duration: exp.duration
       })) || [],
-      recentActivity: profile.posts?.map(post => post.text).slice(0, 3) || []
+      recentActivity: profile.posts?.map(post => post.text).slice(0, 3) || [],
+      
+      // Additional LinkedIn profile fields
+      headline: profile.headline,
+      location: profile.location,
+      summary: profile.summary,
+      education: profile.education || [],
+      connections: profile.connections,
+      certifications: profile.certifications || [],
+      profilePicture: profile.profilePicture,
+      industry: profile.industry,
+      languages: profile.languages || []
     };
 
   } catch (error) {
@@ -161,7 +172,18 @@ export async function enrichLinkedInProfile(linkedinUrl: string | undefined, nam
       lastActive: "Recently active",
       profileUrl: linkedinUrl,
       jobHistory: [],
-      recentActivity: []
+      recentActivity: [],
+      
+      // Additional fields (empty for fallback)
+      headline: title,
+      location: location,
+      summary: undefined,
+      education: [],
+      connections: undefined,
+      certifications: [],
+      profilePicture: undefined,
+      industry: undefined,
+      languages: []
     };
   }
 }

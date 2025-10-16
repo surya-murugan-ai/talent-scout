@@ -854,21 +854,38 @@ export async function registerRoutes(app: Express): Promise<Server> {
         }
       }
 
-      // Step 2: Search LinkedIn using Apify (with fuzzy search)
+      // Step 2: Search LinkedIn and get profile data (ONE API call)
       const { LinkedInService } = await import('./services/linkedin');
       const linkedInService = new LinkedInService();
       let linkedinUrl = null;
+      let linkedinProfile = null;
+      let profileValidation = null;
       
       try {
         console.log(`🔍 Searching LinkedIn with fuzzy search for: ${name}`);
-        linkedinUrl = await linkedInService.searchProfiles(
+        const result = await linkedInService.searchProfilesWithData(
           name,
           company,
-          title,
-          location
+          title
+          // Note: location parameter removed - causes 0 results from Apify
         );
-        if (linkedinUrl) {
-          console.log(`✅ Found LinkedIn URL: ${linkedinUrl}`);
+        
+        if (result) {
+          linkedinUrl = result.url;
+          linkedinProfile = result.profile;
+          profileValidation = result.validation;
+          
+          // Log validation results
+          if (profileValidation && !profileValidation.isValid) {
+            console.warn(`⚠️ LinkedIn profile found but validation failed:`, {
+              url: linkedinUrl,
+              confidence: profileValidation.confidence,
+              errors: profileValidation.errors,
+              warnings: profileValidation.warnings
+            });
+          }
+          
+          console.log(`✅ Found LinkedIn profile with data (single API call): ${linkedinUrl}`);
         } else {
           console.log(`⚠️ No LinkedIn profile found via Apify`);
         }
@@ -876,22 +893,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         console.error('❌ LinkedIn search error:', error);
       }
 
-      // Step 3: Enrich profile if LinkedIn URL found
-      let linkedinProfile = null;
-      if (linkedinUrl) {
-        try {
-          linkedinProfile = await enrichLinkedInProfile(
-            linkedinUrl,
-            name,
-            company
-          );
-          console.log(`✅ LinkedIn profile enriched successfully`);
-        } catch (error) {
-          console.warn('LinkedIn enrichment failed:', error);
-        }
-      }
-
-      // Step 4: Get scoring weights
+      // Step 3: Get scoring weights
       let weights: { openToWork: number; skillMatch: number; jobStability: number; engagement: number; companyDifference: number } = {
         openToWork: 40,
         skillMatch: 30,
@@ -1036,7 +1038,24 @@ export async function registerRoutes(app: Express): Promise<Server> {
             openToWork: linkedinProfile.openToWork,
             lastActive: linkedinProfile.lastActive,
             jobHistory: linkedinProfile.jobHistory,
-            recentActivity: linkedinProfile.recentActivity
+            recentActivity: linkedinProfile.recentActivity,
+            // Additional profile fields
+            name: linkedinProfile.name,
+            headline: linkedinProfile.headline,
+            location: linkedinProfile.location,
+            summary: linkedinProfile.summary,
+            education: linkedinProfile.education,
+            certifications: linkedinProfile.certifications,
+            connections: linkedinProfile.connections,
+            profilePicture: linkedinProfile.profilePicture,
+            industry: linkedinProfile.industry,
+            languages: linkedinProfile.languages
+          } : null,
+          dataQuality: profileValidation ? {
+            isValid: profileValidation.isValid,
+            confidence: profileValidation.confidence,
+            warnings: profileValidation.warnings,
+            errors: profileValidation.errors
           } : null,
           scoring: {
             skillMatch: analysis.skillMatch,
@@ -1077,6 +1096,716 @@ export async function registerRoutes(app: Express): Promise<Server> {
         message: error instanceof Error ? error.message : "Unknown error",
         code: "QUICK_CHECK_ERROR"
       });
+    }
+  });
+
+  // Bulk Quick Check: Upload CSV/XLSX with multiple candidates
+  app.post('/api/bulk-quick-check', upload.single('file'), async (req, res) => {
+    try {
+      const file = (req as any).file;
+      const { com_id, saveToDatabase = true, page = 1, limit = 10 } = req.body;
+      
+      // Validate file upload
+      if (!file) {
+        return res.status(400).json({ 
+          error: "No file uploaded",
+          code: "MISSING_FILE"
+        });
+      }
+
+      console.log(`📁 Bulk Quick Check: Processing ${file.originalname}`);
+      
+      // Parse CSV/XLSX file
+      const candidates = await FileProcessor.processFile(file.buffer, file.originalname);
+      
+      if (!candidates || candidates.length === 0) {
+        return res.status(400).json({ 
+          error: "No valid candidates found in file",
+          code: "EMPTY_FILE"
+        });
+      }
+
+      console.log(`✅ Found ${candidates.length} candidates in file`);
+
+      // Pagination
+      const pageNum = parseInt(page as string) || 1;
+      const limitNum = parseInt(limit as string) || 10;
+      const startIndex = (pageNum - 1) * limitNum;
+      const endIndex = startIndex + limitNum;
+      const paginatedCandidates = candidates.slice(startIndex, endIndex);
+
+      console.log(`📄 Processing page ${pageNum}: ${paginatedCandidates.length} candidates (${startIndex + 1}-${Math.min(endIndex, candidates.length)} of ${candidates.length})`);
+
+      // Process each candidate
+      const results = [];
+      const { LinkedInService } = await import('./services/linkedin');
+      const linkedInService = new LinkedInService();
+
+      for (let i = 0; i < paginatedCandidates.length; i++) {
+        const candidate = paginatedCandidates[i];
+        const startTime = Date.now();
+        
+        console.log(`\n🔍 [${i + 1}/${paginatedCandidates.length}] Processing: ${candidate.name}`);
+
+        try {
+          // Step 1: Check if candidate already exists by email
+          let existingCandidate = null;
+          if (candidate.email && saveToDatabase) {
+            try {
+              existingCandidate = await storage.getCandidateByEmail(candidate.email);
+              if (existingCandidate) {
+                console.log(`✅ Found existing candidate: ${existingCandidate.id}`);
+                
+                // Return existing candidate data
+                results.push({
+                  success: true,
+                  candidateInfo: {
+                    name: candidate.name,
+                    email: candidate.email,
+                    providedCompany: candidate.company,
+                    providedTitle: candidate.title
+                  },
+                  existingCandidate: {
+                    id: existingCandidate.id,
+                    name: existingCandidate.name,
+                    email: existingCandidate.email,
+                    company: existingCandidate.company,
+                    title: existingCandidate.title,
+                    score: existingCandidate.score,
+                    priority: existingCandidate.priority,
+                    hireabilityScore: existingCandidate.hireabilityScore,
+                    potentialToJoin: existingCandidate.potentialToJoin,
+                    linkedinUrl: existingCandidate.linkedinUrl,
+                    openToWork: existingCandidate.openToWork
+                  },
+                  isExistingCandidate: true,
+                  processingTime: Date.now() - startTime
+                });
+                continue; // Skip to next candidate
+              }
+            } catch (error) {
+              console.log('Could not check for existing candidate');
+            }
+          }
+
+          // Step 2: Search LinkedIn and get profile data (ONE API call)
+          let linkedinUrl = null;
+          let linkedinProfile = null;
+          try {
+            const result = await linkedInService.searchProfilesWithData(
+              candidate.name,
+              candidate.company,
+              candidate.title
+              // Note: location parameter removed - causes 0 results from Apify
+            );
+            
+            if (result) {
+              linkedinUrl = result.url;
+              linkedinProfile = result.profile;
+              console.log(`✅ Found LinkedIn profile with data (single API call): ${linkedinUrl}`);
+            } else {
+              console.log(`⚠️ No LinkedIn profile found`);
+            }
+          } catch (error) {
+            console.error('❌ LinkedIn search error:', error);
+          }
+
+          // Step 3: Get scoring weights
+          let weights = {
+            openToWork: 40,
+            skillMatch: 30,
+            jobStability: 15,
+            engagement: 15,
+            companyDifference: 15
+          };
+
+          if (com_id) {
+            try {
+              const config = await storage.getScoringConfig(com_id);
+              if (config) {
+                weights = {
+                  openToWork: config.openToWork,
+                  skillMatch: config.skillMatch,
+                  jobStability: config.jobStability,
+                  engagement: config.platformEngagement,
+                  companyDifference: 15
+                };
+              }
+            } catch (error) {
+              console.log('Using default weights');
+            }
+          }
+
+          // Step 5: AI Analysis
+          const candidateData = {
+            name: candidate.name,
+            email: candidate.email,
+            title: candidate.title,
+            company: candidate.company,
+            location: candidate.location,
+            skills: linkedinProfile?.skills?.join(', ') || '',
+            linkedinProfile: linkedinProfile,
+            resumeCompany: candidate.company,
+            linkedinCompany: linkedinProfile?.company
+          };
+
+          const analysis = await analyzeCandidate(candidateData, "", weights);
+          console.log(`✅ AI analysis: Score ${analysis.overallScore}`);
+
+          // Step 6: Calculate hireability
+          const hasCompanyDifference = candidate.company && linkedinProfile?.company && 
+            candidate.company !== linkedinProfile.company;
+          
+          let hireabilityScore = 0;
+          hireabilityScore += analysis.overallScore * 4;
+          if (hasCompanyDifference) hireabilityScore += 20;
+          if (linkedinProfile?.openToWork) hireabilityScore += 20;
+          if (linkedinProfile?.lastActive && linkedinProfile.lastActive.includes('week')) hireabilityScore += 10;
+          if (linkedinProfile?.skills && linkedinProfile.skills.length >= 5) hireabilityScore += 10;
+          hireabilityScore = Math.min(hireabilityScore, 100);
+
+          const companyDifference = hasCompanyDifference ? "Different" : "Same";
+          const companyDifferenceScore = hasCompanyDifference ? weights.companyDifference : 0;
+
+          // Step 7: Save to database
+          let savedCandidate = null;
+          if (saveToDatabase) {
+            try {
+              savedCandidate = await storage.createCandidate({
+                name: candidate.name,
+                email: candidate.email || null,
+                title: candidate.title || null,
+                company: candidate.company || null,
+                currentEmployer: linkedinProfile?.company || null,
+                linkedinUrl: linkedinUrl || null,
+                location: candidate.location || null,
+                skills: linkedinProfile?.skills || [],
+                score: analysis.overallScore,
+                priority: analysis.priority,
+                openToWork: linkedinProfile?.openToWork || false,
+                lastActive: linkedinProfile?.lastActive || 'Unknown',
+                notes: `Bulk quick check: ${analysis.insights.join('; ')}`,
+                companyDifference: companyDifference,
+                companyDifferenceScore: companyDifferenceScore,
+                hireabilityScore: hireabilityScore,
+                potentialToJoin: hireabilityScore >= 70 ? 'High' : hireabilityScore >= 50 ? 'Medium' : 'Low',
+                enrichedData: linkedinProfile,
+                source: 'bulk-quick-check',
+                comId: com_id || null
+              });
+              console.log(`✅ Saved candidate: ${savedCandidate.id}`);
+            } catch (dbError) {
+              console.error('Failed to save to database:', dbError);
+            }
+          }
+
+          const processingTime = Date.now() - startTime;
+
+          // Add to results
+          results.push({
+            success: true,
+            candidateId: savedCandidate?.id || null,
+            candidateInfo: {
+              name: candidate.name,
+              email: candidate.email,
+              providedCompany: candidate.company,
+              providedTitle: candidate.title,
+              location: candidate.location
+            },
+            linkedinProfile: linkedinProfile ? {
+              profileUrl: linkedinUrl,
+              name: linkedinProfile.name,
+              currentCompany: linkedinProfile.company,
+              currentTitle: linkedinProfile.title,
+              headline: linkedinProfile.headline,
+              location: linkedinProfile.location,
+              summary: linkedinProfile.summary,
+              connections: linkedinProfile.connections,
+              skills: linkedinProfile.skills,
+              education: linkedinProfile.education,
+              certifications: linkedinProfile.certifications,
+              openToWork: linkedinProfile.openToWork,
+              lastActive: linkedinProfile.lastActive,
+              jobHistory: linkedinProfile.jobHistory,
+              recentActivity: linkedinProfile.recentActivity,
+              profilePicture: linkedinProfile.profilePicture,
+              industry: linkedinProfile.industry,
+              languages: linkedinProfile.languages
+            } : null,
+            scoring: {
+              skillMatch: analysis.skillMatch,
+              openToWork: analysis.openToWork,
+              jobStability: analysis.jobStability,
+              engagement: analysis.engagement,
+              companyConsistency: analysis.companyConsistency,
+              overallScore: analysis.overallScore,
+              priority: analysis.priority
+            },
+            hireability: {
+              score: hireabilityScore,
+              potentialToJoin: hireabilityScore >= 70 ? 'High' : hireabilityScore >= 50 ? 'Medium' : 'Low',
+              factors: {
+                openToWork: linkedinProfile?.openToWork || false,
+                companyMatch: !hasCompanyDifference,
+                recentActivity: linkedinProfile?.lastActive?.includes('week') || false,
+                skillsAvailable: (linkedinProfile?.skills?.length || 0) > 0
+              }
+            },
+            insights: analysis.insights,
+            companyDifference: hasCompanyDifference ? 
+              `Different (Provided: ${candidate.company}, LinkedIn: ${linkedinProfile?.company})` : 
+              'Same',
+            savedToDatabase: saveToDatabase && savedCandidate !== null,
+            isExistingCandidate: false,
+            processingTime
+          });
+
+        } catch (error) {
+          console.error(`❌ Failed to process ${candidate.name}:`, error);
+          results.push({
+            success: false,
+            candidateInfo: {
+              name: candidate.name,
+              email: candidate.email,
+              providedCompany: candidate.company,
+              providedTitle: candidate.title
+            },
+            error: error instanceof Error ? error.message : 'Unknown error',
+            processingTime: Date.now() - startTime
+          });
+        }
+      }
+
+      // Calculate pagination metadata
+      const totalPages = Math.ceil(candidates.length / limitNum);
+      const hasNextPage = pageNum < totalPages;
+      const hasPrevPage = pageNum > 1;
+
+      // Log activity
+      try {
+        await storage.createActivity({
+          type: "bulk_quick_check",
+          message: "Bulk quick check completed",
+          details: `Processed ${results.length} candidates from ${file.originalname} (Page ${pageNum}/${totalPages})`
+        });
+      } catch (error) {
+        console.error('Failed to log activity:', error);
+      }
+
+      res.json({
+        success: true,
+        data: {
+          results: results,
+          pagination: {
+            currentPage: pageNum,
+            totalPages: totalPages,
+            totalCandidates: candidates.length,
+            candidatesPerPage: limitNum,
+            processedInThisPage: results.length,
+            hasNextPage: hasNextPage,
+            hasPrevPage: hasPrevPage,
+            nextPage: hasNextPage ? pageNum + 1 : null,
+            prevPage: hasPrevPage ? pageNum - 1 : null
+          },
+          summary: {
+            totalCandidates: candidates.length,
+            processedInThisPage: results.length,
+            successful: results.filter(r => r.success).length,
+            failed: results.filter(r => !r.success).length,
+            existingCandidates: results.filter(r => r.isExistingCandidate).length,
+            newCandidates: results.filter(r => r.success && !r.isExistingCandidate).length,
+            savedToDatabase: saveToDatabase
+          }
+        },
+        message: `Processed ${results.length} candidates from page ${pageNum} of ${totalPages}`
+      });
+
+    } catch (error) {
+      console.error('Bulk quick check failed:', error);
+      res.status(500).json({ 
+        error: "Bulk quick check failed",
+        message: error instanceof Error ? error.message : "Unknown error",
+        code: "BULK_QUICK_CHECK_ERROR"
+      });
+    }
+  });
+
+  // Real-time bulk quick check with Server-Sent Events (SSE)
+  app.post('/api/bulk-quick-check/stream', upload.single('file'), async (req, res) => {
+    try {
+      const file = (req as any).file;
+      const { com_id, saveToDatabase = true, page = 1, limit = 10 } = req.body;
+      
+      // Validate file upload
+      if (!file) {
+        return res.status(400).json({ 
+          error: "No file uploaded",
+          code: "MISSING_FILE"
+        });
+      }
+
+      console.log(`📁 Bulk Quick Check (Streaming): Processing ${file.originalname}`);
+      
+      // Parse CSV/XLSX file
+      const candidates = await FileProcessor.processFile(file.buffer, file.originalname);
+      
+      if (!candidates || candidates.length === 0) {
+        return res.status(400).json({ 
+          error: "No valid candidates found in file",
+          code: "EMPTY_FILE"
+        });
+      }
+
+      console.log(`✅ Found ${candidates.length} candidates in file`);
+
+      // Pagination
+      const pageNum = parseInt(page as string) || 1;
+      const limitNum = parseInt(limit as string) || 10;
+      const startIndex = (pageNum - 1) * limitNum;
+      const endIndex = startIndex + limitNum;
+      const paginatedCandidates = candidates.slice(startIndex, endIndex);
+
+      console.log(`📄 Processing page ${pageNum}: ${paginatedCandidates.length} candidates (${startIndex + 1}-${Math.min(endIndex, candidates.length)} of ${candidates.length})`);
+
+      // Set up SSE headers
+      res.setHeader('Content-Type', 'text/event-stream');
+      res.setHeader('Cache-Control', 'no-cache');
+      res.setHeader('Connection', 'keep-alive');
+      res.setHeader('X-Accel-Buffering', 'no'); // Disable nginx buffering
+
+      // Send initial metadata
+      res.write(`data: ${JSON.stringify({
+        type: 'start',
+        totalCandidates: paginatedCandidates.length,
+        page: pageNum,
+        totalPages: Math.ceil(candidates.length / limitNum)
+      })}\n\n`);
+
+      // Process each candidate and stream results
+      const { LinkedInService } = await import('./services/linkedin');
+      const linkedInService = new LinkedInService();
+      
+      let successCount = 0;
+      let failureCount = 0;
+      let existingCount = 0;
+
+      for (let i = 0; i < paginatedCandidates.length; i++) {
+        const candidate = paginatedCandidates[i];
+        const startTime = Date.now();
+        
+        console.log(`\n🔍 [${i + 1}/${paginatedCandidates.length}] Processing: ${candidate.name}`);
+
+        try {
+          // Step 1: Check if candidate already exists by email
+          let existingCandidate = null;
+          if (candidate.email && saveToDatabase) {
+            try {
+              existingCandidate = await storage.getCandidateByEmail(candidate.email);
+              if (existingCandidate) {
+                console.log(`✅ Found existing candidate: ${existingCandidate.id}`);
+                existingCount++;
+                
+                // Stream existing candidate data immediately
+                res.write(`data: ${JSON.stringify({
+                  type: 'candidate',
+                  index: i + 1,
+                  total: paginatedCandidates.length,
+                  success: true,
+                  candidateInfo: {
+                    name: candidate.name,
+                    email: candidate.email,
+                    providedCompany: candidate.company,
+                    providedTitle: candidate.title
+                  },
+                  existingCandidate: {
+                    id: existingCandidate.id,
+                    name: existingCandidate.name,
+                    email: existingCandidate.email,
+                    company: existingCandidate.company,
+                    title: existingCandidate.title,
+                    score: existingCandidate.score,
+                    priority: existingCandidate.priority,
+                    hireabilityScore: existingCandidate.hireabilityScore,
+                    potentialToJoin: existingCandidate.potentialToJoin,
+                    linkedinUrl: existingCandidate.linkedinUrl,
+                    openToWork: existingCandidate.openToWork
+                  },
+                  isExistingCandidate: true,
+                  processingTime: Date.now() - startTime
+                })}\n\n`);
+                continue; // Skip to next candidate
+              }
+            } catch (error) {
+              console.log('Could not check for existing candidate');
+            }
+          }
+
+          // Step 2: Search LinkedIn and get profile data (ONE API call)
+          let linkedinUrl = null;
+          let linkedinProfile = null;
+          let profileValidation = null;
+          try {
+            const result = await linkedInService.searchProfilesWithData(
+              candidate.name,
+              candidate.company,
+              candidate.title
+              // Note: location parameter removed - causes 0 results from Apify
+            );
+            
+            if (result) {
+              linkedinUrl = result.url;
+              linkedinProfile = result.profile;
+              profileValidation = result.validation;
+              console.log(`✅ Found LinkedIn profile with data (single API call): ${linkedinUrl}`);
+              
+              // Log validation results
+              if (profileValidation && !profileValidation.isValid) {
+                console.warn(`⚠️ Profile validation failed (${profileValidation.confidence}% confidence)`, {
+                  errors: profileValidation.errors,
+                  warnings: profileValidation.warnings
+                });
+              }
+            } else {
+              console.log(`⚠️ No LinkedIn profile found`);
+            }
+          } catch (error) {
+            console.error('❌ LinkedIn search error:', error);
+          }
+
+          // Step 4: Get scoring weights
+          let weights = {
+            openToWork: 40,
+            skillMatch: 30,
+            jobStability: 15,
+            engagement: 15,
+            companyDifference: 15
+          };
+
+          if (com_id) {
+            try {
+              const config = await storage.getScoringConfig(com_id);
+              if (config) {
+                weights = {
+                  openToWork: config.openToWork,
+                  skillMatch: config.skillMatch,
+                  jobStability: config.jobStability,
+                  engagement: config.platformEngagement,
+                  companyDifference: 15
+                };
+              }
+            } catch (error) {
+              console.log('Using default weights');
+            }
+          }
+
+          // Step 5: AI Analysis
+          const candidateData = {
+            name: candidate.name,
+            email: candidate.email,
+            title: candidate.title,
+            company: candidate.company,
+            location: candidate.location,
+            skills: linkedinProfile?.skills?.join(', ') || '',
+            linkedinProfile: linkedinProfile,
+            resumeCompany: candidate.company,
+            linkedinCompany: linkedinProfile?.company
+          };
+
+          const analysis = await analyzeCandidate(candidateData, "", weights);
+          console.log(`✅ AI analysis: Score ${analysis.overallScore}`);
+
+          // Step 6: Calculate hireability
+          const hasCompanyDifference = candidate.company && linkedinProfile?.company && 
+            candidate.company !== linkedinProfile.company;
+          
+          let hireabilityScore = 0;
+          hireabilityScore += analysis.overallScore * 4;
+          if (hasCompanyDifference) hireabilityScore += 20;
+          if (linkedinProfile?.openToWork) hireabilityScore += 20;
+          if (linkedinProfile?.lastActive && linkedinProfile.lastActive.includes('week')) hireabilityScore += 10;
+          if (linkedinProfile?.skills && linkedinProfile.skills.length >= 5) hireabilityScore += 10;
+          hireabilityScore = Math.min(hireabilityScore, 100);
+
+          const companyDifference = hasCompanyDifference ? "Different" : "Same";
+          const companyDifferenceScore = hasCompanyDifference ? weights.companyDifference : 0;
+
+          // Step 7: Save to database
+          let savedCandidate = null;
+          if (saveToDatabase) {
+            try {
+              savedCandidate = await storage.createCandidate({
+                name: candidate.name,
+                email: candidate.email || null,
+                title: candidate.title || null,
+                company: candidate.company || null,
+                currentEmployer: linkedinProfile?.company || null,
+                linkedinUrl: linkedinUrl || null,
+                location: candidate.location || null,
+                skills: linkedinProfile?.skills || [],
+                score: analysis.overallScore,
+                priority: analysis.priority,
+                openToWork: linkedinProfile?.openToWork || false,
+                lastActive: linkedinProfile?.lastActive || 'Unknown',
+                notes: `Bulk quick check: ${analysis.insights.join('; ')}`,
+                companyDifference: companyDifference,
+                companyDifferenceScore: companyDifferenceScore,
+                hireabilityScore: hireabilityScore,
+                potentialToJoin: hireabilityScore >= 70 ? 'High' : hireabilityScore >= 50 ? 'Medium' : 'Low',
+                enrichedData: linkedinProfile,
+                source: 'bulk-quick-check-stream',
+                comId: com_id || null
+              });
+              console.log(`✅ Saved candidate: ${savedCandidate.id}`);
+            } catch (dbError) {
+              console.error('Failed to save to database:', dbError);
+            }
+          }
+
+          const processingTime = Date.now() - startTime;
+          successCount++;
+
+          // Stream successful result immediately
+          res.write(`data: ${JSON.stringify({
+            type: 'candidate',
+            index: i + 1,
+            total: paginatedCandidates.length,
+            success: true,
+            candidateId: savedCandidate?.id || null,
+            candidateInfo: {
+              name: candidate.name,
+              email: candidate.email,
+              providedCompany: candidate.company,
+              providedTitle: candidate.title,
+              location: candidate.location
+            },
+            linkedinProfile: linkedinProfile ? {
+              profileUrl: linkedinUrl,
+              name: linkedinProfile.name,
+              currentCompany: linkedinProfile.company,
+              currentTitle: linkedinProfile.title,
+              headline: linkedinProfile.headline,
+              location: linkedinProfile.location,
+              summary: linkedinProfile.summary,
+              connections: linkedinProfile.connections,
+              skills: linkedinProfile.skills,
+              education: linkedinProfile.education,
+              certifications: linkedinProfile.certifications,
+              openToWork: linkedinProfile.openToWork,
+              lastActive: linkedinProfile.lastActive,
+              jobHistory: linkedinProfile.jobHistory,
+              recentActivity: linkedinProfile.recentActivity,
+              profilePicture: linkedinProfile.profilePicture,
+              industry: linkedinProfile.industry,
+              languages: linkedinProfile.languages
+            } : null,
+            dataQuality: profileValidation ? {
+              isValid: profileValidation.isValid,
+              confidence: profileValidation.confidence,
+              warnings: profileValidation.warnings,
+              errors: profileValidation.errors
+            } : null,
+            scoring: {
+              skillMatch: analysis.skillMatch,
+              openToWork: analysis.openToWork,
+              jobStability: analysis.jobStability,
+              engagement: analysis.engagement,
+              companyConsistency: analysis.companyConsistency,
+              overallScore: analysis.overallScore,
+              priority: analysis.priority
+            },
+            hireability: {
+              score: hireabilityScore,
+              potentialToJoin: hireabilityScore >= 70 ? 'High' : hireabilityScore >= 50 ? 'Medium' : 'Low',
+              factors: {
+                openToWork: linkedinProfile?.openToWork || false,
+                companyMatch: !hasCompanyDifference,
+                recentActivity: linkedinProfile?.lastActive?.includes('week') || false,
+                skillsAvailable: (linkedinProfile?.skills?.length || 0) > 0
+              }
+            },
+            insights: analysis.insights,
+            companyDifference: hasCompanyDifference ? 
+              `Different (Provided: ${candidate.company}, LinkedIn: ${linkedinProfile?.company})` : 
+              'Same',
+            savedToDatabase: saveToDatabase && savedCandidate !== null,
+            isExistingCandidate: false,
+            processingTime
+          })}\n\n`);
+
+        } catch (error) {
+          // ✅ CRITICAL: Even if one fails, continue to next candidate
+          console.error(`❌ Failed to process ${candidate.name}:`, error);
+          failureCount++;
+          
+          // Stream failure immediately
+          res.write(`data: ${JSON.stringify({
+            type: 'candidate',
+            index: i + 1,
+            total: paginatedCandidates.length,
+            success: false,
+            candidateInfo: {
+              name: candidate.name,
+              email: candidate.email,
+              providedCompany: candidate.company,
+              providedTitle: candidate.title
+            },
+            error: error instanceof Error ? error.message : 'Unknown error',
+            errorType: error instanceof Error ? error.constructor.name : 'UnknownError',
+            processingTime: Date.now() - startTime
+          })}\n\n`);
+          
+          // ✅ Continue to next candidate - don't break the loop
+        }
+      }
+
+      // Send completion summary
+      res.write(`data: ${JSON.stringify({
+        type: 'complete',
+        summary: {
+          totalProcessed: paginatedCandidates.length,
+          successful: successCount,
+          failed: failureCount,
+          existing: existingCount,
+          new: successCount - existingCount
+        },
+        pagination: {
+          currentPage: pageNum,
+          totalPages: Math.ceil(candidates.length / limitNum),
+          totalCandidates: candidates.length
+        }
+      })}\n\n`);
+
+      // Log activity
+      try {
+        await storage.createActivity({
+          type: "bulk_quick_check_stream",
+          message: "Bulk quick check (streaming) completed",
+          details: `Processed ${paginatedCandidates.length} candidates: ${successCount} successful, ${failureCount} failed, ${existingCount} existing`
+        });
+      } catch (error) {
+        console.error('Failed to log activity:', error);
+      }
+
+      res.end();
+
+    } catch (error) {
+      console.error('Bulk quick check streaming failed:', error);
+      
+      // If headers not sent yet, send error as JSON
+      if (!res.headersSent) {
+        res.status(500).json({ 
+          error: "Bulk quick check streaming failed",
+          message: error instanceof Error ? error.message : "Unknown error",
+          code: "BULK_QUICK_CHECK_STREAM_ERROR"
+        });
+      } else {
+        // If streaming already started, send error event
+        res.write(`data: ${JSON.stringify({
+          type: 'error',
+          error: error instanceof Error ? error.message : "Unknown error"
+        })}\n\n`);
+        res.end();
+      }
     }
   });
 

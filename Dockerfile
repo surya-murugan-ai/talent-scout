@@ -49,16 +49,20 @@ COPY --from=builder /app/components.json ./components.json
 RUN mkdir -p ./test/data && \
     echo "dummy" > ./test/data/05-versions-space.pdf
 
+# Copy and setup entrypoint script
+COPY docker-entrypoint.sh ./
+RUN chmod +x docker-entrypoint.sh
+
 # Expose port
 EXPOSE 5001
 
 # Set environment to production
 ENV NODE_ENV=production
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
+# Health check (increased start-period to allow for migrations)
+HEALTHCHECK --interval=30s --timeout=3s --start-period=60s --retries=3 \
   CMD node -e "require('http').get('http://localhost:5001/health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"
 
-# Run the application with tsx (TypeScript execution)
-CMD ["npx", "tsx", "server/index.ts"]
+# Run entrypoint script (migrations + app startup)
+CMD ["./docker-entrypoint.sh"]
 

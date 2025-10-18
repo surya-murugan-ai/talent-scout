@@ -1,9 +1,5 @@
-import { drizzle } from 'drizzle-orm/neon-http';
-import { neon } from '@neondatabase/serverless';
+import { db } from './db.js';
 import { sql } from 'drizzle-orm';
-
-const neonSql = neon(process.env.DATABASE_URL!);
-const db = drizzle(neonSql);
 
 export interface DatabaseHealth {
   status: 'healthy' | 'unhealthy';

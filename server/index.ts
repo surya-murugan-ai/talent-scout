@@ -59,14 +59,17 @@ app.get('/health', (req, res) => {
   // Initialize WebSocket server
   websocketService.initialize(server);
 
-  // importantly only setup vite in development and after
-  // setting up all the other routes so the catch-all route
-  // doesn't interfere with the other routes
-  if (app.get("env") === "development") {
-    await setupVite(app, server);
-  } else {
-    serveStatic(app);
-  }
+  // UI disabled - API-only mode
+  // The frontend is disabled to serve only API endpoints
+  // Uncomment the code below to re-enable the UI:
+  
+  // if (app.get("env") === "development") {
+  //   await setupVite(app, server);
+  // } else {
+  //   serveStatic(app);
+  // }
+  
+  log('Running in API-only mode (UI disabled)');
 
   // Setup error handling middleware last (after static serving)
   setupErrorHandling(app);

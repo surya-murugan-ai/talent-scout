@@ -1,0 +1,154 @@
+name: Deploy to Digital Ocean
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract repository name (lowercase)
+        id: repo
+        run: echo "name=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: |
+            ghcr.io/${{ steps.repo.outputs.name }}/talentscout:latest
+            ghcr.io/${{ steps.repo.outputs.name }}/talentscout:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Deploy to Digital Ocean
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.DO_HOST }}
+          username: ${{ secrets.DO_USER }}
+          key: ${{ secrets.DO_SSH_KEY }}
+          script: |
+            # Login to GitHub Container Registry
+            echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+            
+            # Create Docker network if it doesn't exist
+            docker network create talentscout-network 2>/dev/null || true
+            
+            # Create volume for database if it doesn't exist
+            docker volume create talentscout-db-data 2>/dev/null || true
+            
+            # 1. Start PostgreSQL container (if not running)
+            if ! docker ps -a | grep -q talentscout-db; then
+              echo "Creating PostgreSQL container..."
+              docker run -d \
+                --name talentscout-db \
+                --network talentscout-network \
+                -e POSTGRES_DB=talentscout \
+                -e POSTGRES_USER=talentscout \
+                -e POSTGRES_PASSWORD="${{ secrets.POSTGRES_PASSWORD }}" \
+                -v talentscout-db-data:/var/lib/postgresql/data \
+                -p 5433:5432 \
+                --restart unless-stopped \
+                --health-cmd="pg_isready -U talentscout -d talentscout" \
+                --health-interval=10s \
+                --health-timeout=5s \
+                --health-retries=5 \
+                postgres:15-alpine
+              
+              echo "Waiting for PostgreSQL to be healthy..."
+              sleep 15
+            else
+              echo "PostgreSQL container already exists"
+              docker start talentscout-db 2>/dev/null || true
+            fi
+            
+            # Pull latest application image
+            docker pull ghcr.io/${{ steps.repo.outputs.name }}/talentscout:latest
+            
+            # 2. Stop and remove old application container
+            docker stop talentscout 2>/dev/null || true
+            docker rm talentscout 2>/dev/null || true
+            
+            # 3. Run new application container
+            docker run -d \
+              --name talentscout \
+              --network talentscout-network \
+              -p 5001:5001 \
+              -e NODE_ENV=production \
+              -e DATABASE_URL="postgresql://talentscout:${{ secrets.POSTGRES_PASSWORD }}@talentscout-db:5432/talentscout" \
+              -e OPENAI_API_KEY="${{ secrets.OPENAI_API_KEY }}" \
+              -e APIFY_API_TOKEN="${{ secrets.APIFY_API_TOKEN }}" \
+              -e PORT=5001 \
+              --restart unless-stopped \
+              --health-cmd="node -e \"require('http').get('http://localhost:5001/health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})\"" \
+              --health-interval=30s \
+              --health-timeout=10s \
+              --health-retries=3 \
+              ghcr.io/${{ steps.repo.outputs.name }}/talentscout:latest
+            
+            # Wait for container to start
+            sleep 10
+            
+            # Check both containers
+            echo "=== Container Status ==="
+            docker ps -f name=talentscout
+            
+            # Check health
+            echo "=== Health Checks ==="
+            docker inspect --format='{{.State.Health.Status}}' talentscout-db || echo "DB health check not ready"
+            docker inspect --format='{{.State.Health.Status}}' talentscout || echo "App health check not ready"
+            
+            # Cleanup old images
+            docker image prune -af --filter "until=24h"
+
+      - name: Verify deployment
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.DO_HOST }}
+          username: ${{ secrets.DO_USER }}
+          key: ${{ secrets.DO_SSH_KEY }}
+          script: |
+            # Check if container is running
+            if docker ps | grep -q talentscout; then
+              echo "✅ Container is running"
+              
+              # Test health endpoint
+              sleep 5
+              curl -f http://localhost:5001/health || echo "⚠️ Health check failed"
+              
+              # Show logs (last 20 lines)
+              echo "📋 Recent logs:"
+              docker logs --tail 20 talentscout
+            else
+              echo "❌ Container is not running!"
+              echo "📋 Container logs:"
+              docker logs talentscout 2>&1 || echo "No logs available"
+              exit 1
+            fi
+
+      - name: Deployment notification
+        if: always()
+        run: |
+          if [ "${{ job.status }}" == "success" ]; then
+            echo "✅ Deployment successful!"
+          else
+            echo "❌ Deployment failed!"
+          fi
+

@@ -2188,10 +2188,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
           // Add completed candidate to WebSocket session
           websocketService.addCompletedCandidate(sessionId, {
             candidateId: result.candidateId,
-            name: result.name || originalname.replace(/\.(pdf|docx|doc)$/i, ''),
-            email: result.email,
-            score: result.score,
-            priority: result.priority
+            name: originalname.replace(/\.(pdf|docx|doc)$/i, ''),
+            isUpdate: result.isUpdate || false,
+            matchedBy: result.matchedBy,
+            wasEnriched: result.wasEnriched || false
           });
 
           console.log(`✅ Completed file ${i + 1}/${files.length}: ${originalname} -> Candidate: ${result.candidateId}`);
@@ -2288,12 +2288,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       res.json({
         success: true,
-        message: "Resume uploaded and processing started",
+        message: result.message || "Resume uploaded and processing started",
         data: {
           jobId: processingJob.id,
           candidateId: result.candidateId,
           comId: com_id,
-          status: "processing"
+          status: "processing",
+          isUpdate: result.isUpdate || false,
+          matchedBy: result.matchedBy,
+          wasEnriched: result.wasEnriched || false,
+          changes: result.changes
         }
       });
 

@@ -6,6 +6,7 @@ import { linkedInService } from './linkedin.js';
 import { analyzeCandidate } from './openai.js';
 import { IndividualScoringService } from './individualScoringService.js';
 import { storage } from '../storage.js';
+import { DuplicateDetectionService } from './duplicateDetectionService.js';
 
 interface EeezoResumeRequest {
   comId: string;
@@ -17,6 +18,10 @@ interface EeezoProcessingResult {
   candidateId: string;
   success: boolean;
   message: string;
+  isUpdate?: boolean;
+  matchedBy?: string;
+  wasEnriched?: boolean;
+  changes?: any;
 }
 
 export class EeezoService {
@@ -139,29 +144,57 @@ export class EeezoService {
         resumeStatus: 'active'
       };
       
-      // Insert candidate into database
-      const [savedCandidate] = await db.insert(candidates)
-        .values(candidateData)
-        .returning();
+      // Check for duplicates and process (with LinkedIn re-enrichment)
+      console.log('=== CHECKING FOR DUPLICATES ===');
+      const processResult = await DuplicateDetectionService.checkAndProcessCandidate(
+        candidateData,
+        request.comId
+      );
+      
+      const savedCandidate = processResult.candidate;
       
       // Log activity
+      const activityMessage = processResult.isUpdate 
+        ? `Eeezo resume updated for ${extractedData.name} (matched by ${processResult.matchedBy})`
+        : `Eeezo resume processed for ${extractedData.name}`;
+      
+      const activityDetails = processResult.isUpdate
+        ? `File: ${filename}, Updated existing candidate, Matched by: ${processResult.matchedBy}, LinkedIn refreshed: ${processResult.wasEnriched}, Company: ${request.comId}`
+        : `File: ${filename}, Confidence: ${confidence}%, New candidate created, LinkedIn enriched: ${processResult.wasEnriched}, Company: ${request.comId}`;
+      
       await db.insert(activities).values({
-        type: 'eezo_upload',
-        message: `Eeezo resume processed for ${extractedData.name}`,
-        details: `Company: ${request.comId}, File: ${filename}, Confidence: ${confidence}%`
+        type: processResult.isUpdate ? 'eezo_update' : 'eezo_upload',
+        message: activityMessage,
+        details: activityDetails
       });
       
-      // Start LinkedIn enrichment in background
-      this.enrichCandidateInBackground(savedCandidate.id, extractedData);
+      // Start additional LinkedIn enrichment in background only if not already enriched
+      if (!processResult.wasEnriched && savedCandidate.linkedinUrl) {
+        this.enrichCandidateInBackground(savedCandidate.id, extractedData);
+      }
       
       console.log('=== EEEZO RESUME SAVED SUCCESSFULLY ===');
       console.log('Candidate ID:', savedCandidate.id);
       console.log('Company ID:', request.comId);
+      console.log('Is Update:', processResult.isUpdate);
+      console.log('Was Enriched from LinkedIn:', processResult.wasEnriched);
+      if (processResult.matchedBy) {
+        console.log('Matched By:', processResult.matchedBy);
+      }
+      if (processResult.changes) {
+        console.log('Changes Detected:', JSON.stringify(processResult.changes, null, 2));
+      }
       
       return {
         candidateId: savedCandidate.id,
         success: true,
-        message: 'Resume processed successfully'
+        message: processResult.isUpdate 
+          ? `Resume updated successfully (matched by ${processResult.matchedBy})`
+          : 'Resume processed successfully',
+        isUpdate: processResult.isUpdate,
+        matchedBy: processResult.matchedBy,
+        wasEnriched: processResult.wasEnriched,
+        changes: processResult.changes
       };
       
     } catch (error) {

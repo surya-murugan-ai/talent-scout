@@ -64,6 +64,8 @@ apify_result_test
 !tsconfig.json
 !tsconfig.server.json
 !drizzle.config.ts
+!vite.config.ts
+!components.json
 
 # Deployment files
 deploy*.sh

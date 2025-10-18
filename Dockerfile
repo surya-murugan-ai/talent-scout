@@ -51,6 +51,6 @@ ENV NODE_ENV=production
 HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
   CMD node -e "require('http').get('http://localhost:5001/health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"
 
-# Run the application
-CMD ["npm", "start"]
+# Run the application with tsx (TypeScript execution)
+CMD ["npx", "tsx", "server/index.ts"]
 

@@ -12,8 +12,8 @@ RUN npm ci
 # Copy source code
 COPY . .
 
-# Build the application
-RUN npm run build
+# Build only the server (skip client/UI build)
+RUN npx tsc --project tsconfig.server.json
 
 # Production stage
 FROM node:20-alpine

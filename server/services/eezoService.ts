@@ -5,6 +5,7 @@ import { ResumeParser } from './resumeParser.js';
 import { linkedInService } from './linkedin.js';
 import { analyzeCandidate } from './openai.js';
 import { IndividualScoringService } from './individualScoringService.js';
+import { TotalScoringService } from './totalScoringService.js';
 import { storage } from '../storage.js';
 
 interface EeezoResumeRequest {
@@ -230,7 +231,7 @@ export class EeezoService {
           const linkedinSkills = Array.isArray(linkedInProfile.skills) 
             ? linkedInProfile.skills.map(s => typeof s === 'string' ? s : s.title || s.name || s)
             : [];
-          updateData.skills = [...new Set([...existingSkills, ...linkedinSkills])];
+          updateData.skills = Array.from(new Set([...existingSkills, ...linkedinSkills]));
         }
         // Don't overwrite experience, education, certifications - keep resume data
         // Only add LinkedIn-specific fields
@@ -285,11 +286,13 @@ export class EeezoService {
               skills: Array.isArray(candidate.skills) ? candidate.skills : []
             });
             
-            // Calculate overall priority based on individual scores
+            // Use standardized priority calculation
+            const priority = TotalScoringService.calculatePriorityFromIndividualScores(
+              individualScores.openToWorkScore,
+              individualScores.jobStabilityScore,
+              individualScores.platformEngagementScore
+            );
             const avgScore = (individualScores.openToWorkScore + individualScores.jobStabilityScore + individualScores.platformEngagementScore) / 3;
-            let priority = 'Low';
-            if (avgScore >= 7) priority = 'High';
-            else if (avgScore >= 5) priority = 'Medium';
             
             // Update with individual scores
             await db.update(candidates)
@@ -341,11 +344,13 @@ export class EeezoService {
               skills: Array.isArray(candidate.skills) ? candidate.skills : []
             });
             
-            // Calculate overall priority based on available scores
-            const avgScore = (individualScores.openToWorkScore + individualScores.jobStabilityScore) / 2; // No platform engagement without LinkedIn
-            let priority = 'Low';
-            if (avgScore >= 7) priority = 'High';
-            else if (avgScore >= 5) priority = 'Medium';
+            // Use standardized priority calculation (platform engagement is 0 without LinkedIn)
+            const priority = TotalScoringService.calculatePriorityFromIndividualScores(
+              individualScores.openToWorkScore,
+              individualScores.jobStabilityScore,
+              0 // No platform engagement without LinkedIn
+            );
+            const avgScore = (individualScores.openToWorkScore + individualScores.jobStabilityScore) / 2;
             
             await db.update(candidates)
               .set({ 

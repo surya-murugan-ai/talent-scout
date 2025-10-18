@@ -1,0 +1,5 @@
+[33m37b259c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/finding-linkedin-url[m[33m, [m[1;31morigin/feature/finding-linkedin-url[m[33m)[m removed duplication logic for priority function
+[33mc5a5658[m created endpoint for score update also create a endpoint to get score configuration and update
+[33mfbf85b4[m added bulk candidate get endpoint
+[33m8a59bd1[m added websocket and bulk upload
+[33mb898443[m updated pagination and resume status endpoint

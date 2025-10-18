@@ -45,6 +45,10 @@ COPY --from=builder /app/postcss.config.js ./postcss.config.js
 COPY --from=builder /app/tailwind.config.ts ./tailwind.config.ts
 COPY --from=builder /app/components.json ./components.json
 
+# Create dummy test directory for pdf-parse package bug
+RUN mkdir -p ./test/data && \
+    echo "dummy" > ./test/data/05-versions-space.pdf
+
 # Expose port
 EXPOSE 5001
 

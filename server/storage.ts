@@ -19,12 +19,15 @@ import {
   scoringConfigs
 } from "@shared/schema";
 import { randomUUID } from "crypto";
-import { drizzle } from 'drizzle-orm/neon-http';
-import { neon } from '@neondatabase/serverless';
+import { drizzle } from 'drizzle-orm/node-postgres';
+import pkg from 'pg';
+const { Pool } = pkg;
 import { eq, desc, and, sql, gte, lte, like, inArray } from 'drizzle-orm';
 
-const neonSql = neon(process.env.DATABASE_URL!);
-const db = drizzle(neonSql);
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL!,
+});
+const db = drizzle(pool);
 
 export interface IStorage {
   // Users
@@ -121,8 +124,8 @@ export class PostgresStorage implements IStorage {
           }
         });
       }
-    } catch (error) {
-      console.warn("Database initialization failed (quota exceeded), but API will continue to work:", error.message);
+    } catch (error: any) {
+      console.warn("Database initialization failed, but API will continue to work:", error.message);
       // Don't throw the error, just log it and continue
     }
   }

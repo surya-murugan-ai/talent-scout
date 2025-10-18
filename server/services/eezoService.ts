@@ -33,7 +33,6 @@ export class EeezoService {
     try {
       console.log('=== EEEZO RESUME PROCESSING ===');
       console.log('Company ID:', request.comId);
-      console.log('Resume URL:', request.resumeUrl);
       console.log('File:', request.file?.originalname);
       
       let extractedData;
@@ -254,14 +253,14 @@ export class EeezoService {
           updateData.currentEmployer = linkedInProfile.company || linkedInProfile.currentCompany;
         }
         if (linkedInProfile.location) updateData.location = linkedInProfile.location;
-        if (linkedInProfile.summary || linkedInProfile.about) {
-          updateData.summary = linkedInProfile.summary || linkedInProfile.about;
+        if (linkedInProfile.summary) {
+          updateData.summary = linkedInProfile.summary;
         }
         // Merge skills instead of replacing (resume skills + LinkedIn skills)
         if (linkedInProfile.skills) {
           const existingSkills = updateData.skills || [];
           const linkedinSkills = Array.isArray(linkedInProfile.skills) 
-            ? linkedInProfile.skills.map(s => typeof s === 'string' ? s : s.title || s.name || s)
+            ? linkedInProfile.skills.map((s: any) => typeof s === 'string' ? s : s.title || s.name || String(s))
             : [];
           updateData.skills = [...new Set([...existingSkills, ...linkedinSkills])];
         }
@@ -274,7 +273,7 @@ export class EeezoService {
         
         // Add LinkedIn-specific fields
         if (linkedInProfile.headline) updateData.linkedinHeadline = linkedInProfile.headline;
-        if (linkedInProfile.about) updateData.linkedinSummary = linkedInProfile.about;
+        if (linkedInProfile.summary) updateData.linkedinSummary = linkedInProfile.summary;
         if (linkedInProfile.lastActive) {
           try {
             const lastActiveDate = new Date(linkedInProfile.lastActive);
@@ -447,7 +446,7 @@ export class EeezoService {
       if (options.status) {
         query = query.where(and(
           eq(candidates.comId, comId),
-          eq(candidates.eezoStatus, options.status)
+          eq(candidates.eeezoStatus, options.status)
         ));
       }
       
@@ -493,8 +492,8 @@ export class EeezoService {
       
       // Count by status
       allCandidates.forEach(candidate => {
-        if (candidate.eezoStatus) {
-          switch (candidate.eezoStatus) {
+        if (candidate.eeezoStatus) {
+          switch (candidate.eeezoStatus) {
             case 'uploaded':
               status.uploaded++;
               break;
@@ -541,7 +540,7 @@ export class EeezoService {
     try {
       const [updatedCandidate] = await db.update(candidates)
         .set({
-          eeezoStatus: updateData.eezoStatus,
+          eeezoStatus: updateData.eeezoStatus,
           notes: updateData.notes
         })
         .where(eq(candidates.id, candidateId))
@@ -551,7 +550,7 @@ export class EeezoService {
       await db.insert(activities).values({
         type: 'eezo_status_update',
         message: `Eeezo status updated for candidate ${candidateId}`,
-        details: `Status: ${updateData.eezoStatus}, Notes: ${updateData.notes || 'None'}`
+        details: `Status: ${updateData.eeezoStatus}, Notes: ${updateData.notes || 'None'}`
       });
       
       return updatedCandidate;

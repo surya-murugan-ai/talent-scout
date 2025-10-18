@@ -24,15 +24,13 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install only production dependencies
-RUN npm ci --only=production
+RUN npm ci --omit=dev
 
 # Copy built files from builder stage
 COPY --from=builder /app/dist-server ./dist-server
 COPY --from=builder /app/shared ./shared
-
-# Copy necessary files
-COPY drizzle ./drizzle
-COPY drizzle.config.ts ./
+COPY --from=builder /app/drizzle ./drizzle
+COPY --from=builder /app/drizzle.config.ts ./drizzle.config.ts
 
 # Expose port
 EXPOSE 5001

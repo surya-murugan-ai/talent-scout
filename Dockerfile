@@ -7,15 +7,17 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install all dependencies (including dev dependencies for building)
-RUN npm ci
+# Set npm timeout and retry settings for slow networks
+RUN npm config set fetch-timeout 600000 && \
+    npm config set fetch-retries 5 && \
+    npm config set fetch-retry-mintimeout 20000 && \
+    npm config set fetch-retry-maxtimeout 120000 && \
+    npm ci
 
 # Copy source code
 COPY . .
 
-# Build only the server (skip client/UI build)
-RUN npx tsc --project tsconfig.server.json
-
-# Production stage
+# Production stage - Run TypeScript directly with tsx (no compilation needed)
 FROM node:20-alpine
 
 WORKDIR /app
@@ -23,14 +25,21 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install only production dependencies
-RUN npm ci --omit=dev
+# Install ALL dependencies (including tsx for running TypeScript)
+# Set npm timeout and retry settings for slow networks
+RUN npm config set fetch-timeout 600000 && \
+    npm config set fetch-retries 5 && \
+    npm config set fetch-retry-mintimeout 20000 && \
+    npm config set fetch-retry-maxtimeout 120000 && \
+    npm ci
 
-# Copy built files from builder stage
-COPY --from=builder /app/dist-server ./dist-server
+# Copy source files from builder
+COPY --from=builder /app/server ./server
 COPY --from=builder /app/shared ./shared
 COPY --from=builder /app/drizzle ./drizzle
 COPY --from=builder /app/drizzle.config.ts ./drizzle.config.ts
+COPY --from=builder /app/tsconfig.json ./tsconfig.json
+COPY --from=builder /app/tsconfig.server.json ./tsconfig.server.json
 
 # Expose port
 EXPOSE 5001

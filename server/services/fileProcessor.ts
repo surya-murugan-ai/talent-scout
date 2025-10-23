@@ -375,14 +375,14 @@ export class FileProcessor {
         
         // Create a ProcessedCandidate with comprehensive data stored in originalData
         const candidate: ProcessedCandidate = {
-          name: comprehensive.name,
-          email: comprehensive.email,
-          title: comprehensive.title,
+          name: comprehensive.name || "",
+          email: comprehensive.email || undefined,
+          title: comprehensive.title || undefined,
           company: comprehensive.experience?.[0]?.company || undefined,
           skills: comprehensive.skills,
-          linkedinUrl: comprehensive.linkedinUrl,
-          location: comprehensive.location,
-          phone: comprehensive.phone,
+          linkedinUrl: comprehensive.linkedinUrl || undefined,
+          location: comprehensive.location || undefined,
+          phone: comprehensive.phone || undefined,
           experience: comprehensive.experience?.[0]?.duration || undefined,
           // Store comprehensive data in originalData
           originalData: {

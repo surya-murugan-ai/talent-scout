@@ -1,6 +1,8 @@
 import 'dotenv/config';
 import express, { type Request, Response, NextFunction } from "express";
+import { createServer } from "http";
 import { registerRoutes } from "./routes";
+import { registerTestRoutes } from "./test-routes";
 import { setupVite, serveStatic, log } from "./vite";
 import { setupSecurityMiddleware, setupErrorHandling } from "./middleware/security";
 import { websocketService } from "./services/websocketService";
@@ -54,7 +56,20 @@ app.get('/health', (req, res) => {
 });
 
 (async () => {
+  // Add a direct route for testing
+  app.post("/api/direct/test", (req, res) => {
+    res.json({
+      success: true,
+      message: "Direct route is working!",
+      timestamp: new Date().toISOString()
+    });
+  });
+  
+  // Register main routes
   const server = await registerRoutes(app);
+  
+  // Register test routes
+  registerTestRoutes(app);
 
   // Initialize WebSocket server
   websocketService.initialize(server);

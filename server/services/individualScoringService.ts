@@ -144,7 +144,7 @@ export class IndividualScoringService {
     const finalScore = Math.min(10, score);
     
     // If no explicit indicators, return a neutral score
-    if (keywordMatches === 0 && candidateData.openToWork !== true) {
+    if (keywordMatches === 0 && candidateData.openToWork === false) {
       return 5; // Neutral - no clear indication either way
     }
 

@@ -12,6 +12,7 @@ interface EeezoResumeRequest {
   comId: string;
   file: Express.Multer.File;
   processingJobId: string;
+  candidateId?: string;
 }
 
 interface EeezoProcessingResult {
@@ -19,6 +20,7 @@ interface EeezoProcessingResult {
   success: boolean;
   message: string;
   isUpdate?: boolean;
+  updateType?: string;
   matchedBy?: string;
   wasEnriched?: boolean;
   changes?: any;
@@ -143,11 +145,15 @@ export class EeezoService {
         resumeStatus: 'active'
       };
       
+      // Validate and sanitize all date fields before database insertion
+      const sanitizedCandidateData = EeezoService.sanitizeCandidateDates(candidateData);
+      
       // Check for duplicates and process (with LinkedIn re-enrichment)
       console.log('=== CHECKING FOR DUPLICATES ===');
       const processResult = await DuplicateDetectionService.checkAndProcessCandidate(
-        candidateData,
-        request.comId
+        sanitizedCandidateData,
+        request.comId,
+        request.candidateId
       );
       
       const savedCandidate = processResult.candidate;
@@ -191,6 +197,7 @@ export class EeezoService {
           ? `Resume updated successfully (matched by ${processResult.matchedBy})`
           : 'Resume processed successfully',
         isUpdate: processResult.isUpdate,
+        updateType: processResult.updateType,
         matchedBy: processResult.matchedBy,
         wasEnriched: processResult.wasEnriched,
         changes: processResult.changes
@@ -262,7 +269,7 @@ export class EeezoService {
           const linkedinSkills = Array.isArray(linkedInProfile.skills) 
             ? linkedInProfile.skills.map((s: any) => typeof s === 'string' ? s : s.title || s.name || String(s))
             : [];
-          updateData.skills = [...new Set([...existingSkills, ...linkedinSkills])];
+          updateData.skills = Array.from(new Set([...existingSkills, ...linkedinSkills]));
         }
         // Don't overwrite experience, education, certifications - keep resume data
         // Only add LinkedIn-specific fields
@@ -439,16 +446,18 @@ export class EeezoService {
     offset?: number;
   } = {}) {
     try {
-      let query = db.select().from(candidates)
-        .where(eq(candidates.comId, comId))
-        .orderBy(candidates.createdAt);
+      let query = db.select().from(candidates);
       
       if (options.status) {
         query = query.where(and(
           eq(candidates.comId, comId),
           eq(candidates.eeezoStatus, options.status)
         ));
+      } else {
+        query = query.where(eq(candidates.comId, comId));
       }
+      
+      query = query.orderBy(candidates.createdAt);
       
       if (options.limit) {
         query = query.limit(options.limit);
@@ -600,5 +609,61 @@ export class EeezoService {
       console.warn('Error calculating years of experience:', error);
       return null;
     }
+  }
+
+  /**
+   * Sanitize candidate data to ensure all date fields are valid
+   */
+  private static sanitizeCandidateDates(candidateData: any): any {
+    if (!candidateData || typeof candidateData !== 'object') return candidateData;
+    
+    const sanitized = { ...candidateData };
+    
+    // List of date fields that need validation
+    const dateFields = [
+      'createdAt', 'eeezoUploadDate', 'enrichmentDate', 'linkedinLastActive',
+      'processingDate', 'selectionDate'
+    ];
+    
+    dateFields.forEach(field => {
+      if (sanitized[field] !== undefined && sanitized[field] !== null) {
+        try {
+          const date = new Date(sanitized[field]);
+          if (isNaN(date.getTime())) {
+            console.warn(`⚠️ Invalid date for field ${field}:`, sanitized[field]);
+            delete sanitized[field];
+          } else {
+            sanitized[field] = date;
+          }
+        } catch (error) {
+          console.warn(`⚠️ Error processing date field ${field}:`, error);
+          delete sanitized[field];
+        }
+      }
+    });
+    
+    // Sanitize nested objects
+    if (sanitized.originalData && typeof sanitized.originalData === 'object') {
+      sanitized.originalData = this.sanitizeCandidateDates(sanitized.originalData);
+    }
+    
+    if (sanitized.extractedData && typeof sanitized.extractedData === 'object') {
+      sanitized.extractedData = this.sanitizeCandidateDates(sanitized.extractedData);
+    }
+    
+    if (sanitized.enrichedData && typeof sanitized.enrichedData === 'object') {
+      sanitized.enrichedData = this.sanitizeCandidateDates(sanitized.enrichedData);
+    }
+    
+    // Sanitize arrays that might contain date objects
+    Object.keys(sanitized).forEach(key => {
+      if (Array.isArray(sanitized[key])) {
+        sanitized[key] = sanitized[key].map(item => 
+          typeof item === 'object' && item !== null ? this.sanitizeCandidateDates(item) : item
+        );
+      }
+    });
+    
+    return sanitized;
   }
 }

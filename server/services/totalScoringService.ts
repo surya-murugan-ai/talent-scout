@@ -132,8 +132,9 @@ export class TotalScoringService {
         score: totalScore,
         priority: priority,
         hireabilityScore: totalScore, // Use total score as hireability score
-        potentialToJoin: priority
-      }, comId);
+        potentialToJoin: priority,
+        comId: comId
+      });
       
       if (!updatedCandidate) {
         throw new Error('Failed to update candidate');
@@ -202,8 +203,9 @@ export class TotalScoringService {
             score: totalScore,
             priority: priority,
             hireabilityScore: totalScore,
-            potentialToJoin: priority
-          }, comId);
+            potentialToJoin: priority,
+            comId: comId
+          });
           
           updatedCount++;
           

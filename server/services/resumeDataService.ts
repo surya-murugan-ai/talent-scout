@@ -60,8 +60,7 @@ export class ResumeDataService {
         
         await db.update(candidates)
           .set({
-            ...candidateData,
-            updatedAt: new Date(),
+            ...candidateData
           })
           .where(eq(candidates.id, candidateId));
           
@@ -69,7 +68,17 @@ export class ResumeDataService {
       } else {
         // Create new candidate
         const [newCandidate] = await db.insert(candidates)
-          .values(candidateData)
+          .values({
+            ...candidateData,
+            name: candidateData.name || "Unknown",
+            email: candidateData.email || undefined,
+            phone: candidateData.phone || undefined,
+            title: candidateData.title || undefined,
+            company: candidateData.company || undefined,
+            linkedinUrl: candidateData.linkedinUrl || undefined,
+            githubUrl: candidateData.githubUrl || undefined,
+            portfolioUrl: candidateData.portfolioUrl || undefined
+          })
           .returning({ id: candidates.id });
           
         candidateId = newCandidate.id;
@@ -103,9 +112,10 @@ export class ResumeDataService {
         source: 'resume',
       };
 
-      const [savedResumeData] = await db.insert(resumeData)
-        .values(resumeDataRecord)
-        .returning();
+      // Resume data is now stored directly in candidates table
+      // const [savedResumeData] = await db.insert(resumeData)
+      //   .values(resumeDataRecord)
+      //   .returning();
 
       // Log activity
       await db.insert(activities).values({
@@ -115,12 +125,11 @@ export class ResumeDataService {
       });
 
       console.log('=== RESUME DATA SAVED SUCCESSFULLY ===');
-      console.log('Resume Data ID:', savedResumeData.id);
       console.log('Candidate ID:', candidateId);
       
       return {
         candidateId,
-        resumeDataId: savedResumeData.id,
+        resumeDataId: candidateId,
         success: true
       };
 
@@ -135,14 +144,11 @@ export class ResumeDataService {
    */
   static async getAllResumeData() {
     try {
+      // Resume data is now stored directly in candidates table
       const result = await db
-        .select({
-          resumeData: resumeData,
-          candidate: candidates,
-        })
-        .from(resumeData)
-        .leftJoin(candidates, eq(resumeData.candidateId, candidates.id))
-        .orderBy(resumeData.createdAt);
+        .select()
+        .from(candidates)
+        .orderBy(candidates.createdAt);
 
       return result;
     } catch (error) {

@@ -20,6 +20,10 @@ export interface ResumeProgress {
     email?: string;
     score?: number;
     priority?: string;
+    isUpdate?: boolean;
+    updateType?: string;
+    matchedBy?: string;
+    wasEnriched?: boolean;
   }>;
   errors: Array<{
     fileName: string;
@@ -146,6 +150,10 @@ class WebSocketService {
     email?: string;
     score?: number;
     priority?: string;
+    isUpdate?: boolean;
+    updateType?: string;
+    matchedBy?: string;
+    wasEnriched?: boolean;
   }) {
     const session = this.sessions.get(sessionId);
     if (!session) {

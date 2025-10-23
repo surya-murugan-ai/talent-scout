@@ -164,7 +164,7 @@ export class PostgresStorage implements IStorage {
     let whereCondition = eq(candidates.id, id);
     
     if (comId) {
-      whereCondition = and(eq(candidates.id, id), eq(candidates.comId, comId));
+      whereCondition = and(eq(candidates.id, id), eq(candidates.comId, comId))!;
     }
     
     const result = await db.select().from(candidates).where(whereCondition).limit(1);
@@ -205,12 +205,13 @@ export class PostgresStorage implements IStorage {
     return result.length > 0;
   }
 
-  async getCandidatesByPriority(priority: string): Promise<Candidate[]> {
+  async getCandidatesByPriority(priority: string, comId: string): Promise<Candidate[]> {
     const result = await db.select()
       .from(candidates)
       .where(and(
         eq(candidates.priority, priority),
-        eq(candidates.resumeStatus, 'active')
+        eq(candidates.resumeStatus, 'active'),
+        eq(candidates.comId, comId)
       ))
       .orderBy(desc(candidates.score));
     return result;
@@ -234,10 +235,11 @@ export class PostgresStorage implements IStorage {
     return result;
   }
 
-  async getCandidatesByExperience(minYears: number, maxYears?: number): Promise<Candidate[]> {
+  async getCandidatesByExperience(minYears: number, comId: string, maxYears?: number): Promise<Candidate[]> {
     let conditions = [
       gte(candidates.yearsOfExperience, minYears),
-      eq(candidates.resumeStatus, 'active')
+      eq(candidates.resumeStatus, 'active'),
+      eq(candidates.comId, comId)
     ];
     
     if (maxYears) {
@@ -601,7 +603,7 @@ export class PostgresStorage implements IStorage {
       let whereCondition = eq(candidates.id, candidateId);
       
       if (comId) {
-        whereCondition = and(eq(candidates.id, candidateId), eq(candidates.comId, comId));
+        whereCondition = and(eq(candidates.id, candidateId), eq(candidates.comId, comId))!;
       }
       
       const [updatedCandidate] = await db.update(candidates)

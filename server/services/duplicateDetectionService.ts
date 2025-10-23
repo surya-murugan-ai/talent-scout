@@ -23,6 +23,7 @@ interface DuplicateCheckResult {
 interface ProcessCandidateResult {
   candidateId: string;
   isUpdate: boolean;
+  updateType?: string;
   matchedBy?: string;
   changes?: any;
   wasEnriched: boolean;
@@ -37,13 +38,20 @@ export class DuplicateDetectionService {
    */
   static async checkAndProcessCandidate(
     candidateData: CandidateData,
-    comId: string
+    comId: string,
+    candidateId?: string
   ): Promise<ProcessCandidateResult> {
     console.log('=== DUPLICATE DETECTION SERVICE ===');
     console.log('Checking for duplicates...');
     console.log('Email:', candidateData.email);
     console.log('LinkedIn:', candidateData.linkedinUrl);
     console.log('Company ID:', comId);
+    console.log('Candidate ID:', candidateId);
+    
+    // If candidate_id provided, update specific candidate
+    if (candidateId) {
+      return await this.updateSpecificCandidate(candidateData, comId, candidateId);
+    }
     
     // Check for duplicate
     const duplicateCheck = await this.findDuplicate(
@@ -58,7 +66,10 @@ export class DuplicateDetectionService {
       
       // Re-fetch latest LinkedIn data
       const linkedinUrl = candidateData.linkedinUrl || duplicateCheck.existingCandidate.linkedinUrl;
-      let latestLinkedInData = null;
+      if (!linkedinUrl) {
+        console.log('No LinkedIn URL available for re-enrichment');
+      }
+      let latestLinkedInData: any = null;
       let wasEnriched = false;
       
       if (linkedinUrl && typeof linkedinUrl === 'string') {
@@ -67,6 +78,19 @@ export class DuplicateDetectionService {
           latestLinkedInData = await this.enrichFromLinkedIn(linkedinUrl);
           wasEnriched = true;
           console.log('✓ LinkedIn data refreshed successfully');
+          
+          // Debug: Check for invalid dates in LinkedIn data
+          if (latestLinkedInData) {
+            console.log('🔍 LinkedIn data keys:', Object.keys(latestLinkedInData));
+            Object.keys(latestLinkedInData).forEach(key => {
+              const value = latestLinkedInData[key];
+              if (value instanceof Date) {
+                console.log(`📅 LinkedIn Date field ${key}:`, value.toISOString());
+              } else if (typeof value === 'string' && (value.includes('T') || value.includes('Z'))) {
+                console.log(`📅 LinkedIn String date field ${key}:`, value);
+              }
+            });
+          }
         } catch (error) {
           console.warn('⚠️  LinkedIn enrichment failed:', error instanceof Error ? error.message : 'Unknown error');
           console.log('Continuing with resume data only...');
@@ -78,15 +102,18 @@ export class DuplicateDetectionService {
         duplicateCheck.existingCandidate,
         candidateData,
         latestLinkedInData,
-        duplicateCheck.matchedBy
+        duplicateCheck.matchedBy || 'unknown'
       );
+      
+      // Sanitize date values to prevent invalid timestamp errors
+      const sanitizedData = this.sanitizeDates({
+        ...mergedData,
+        updatedAt: new Date(),
+      });
       
       // Update existing candidate
       const [updatedCandidate] = await db.update(candidates)
-        .set({
-          ...mergedData,
-          updatedAt: new Date(),
-        })
+        .set(sanitizedData)
         .where(eq(candidates.id, duplicateCheck.existingCandidate.id))
         .returning();
       
@@ -95,7 +122,8 @@ export class DuplicateDetectionService {
       return {
         candidateId: updatedCandidate.id,
         isUpdate: true,
-        matchedBy: duplicateCheck.matchedBy,
+        updateType: 'duplicate_detected',
+        matchedBy: duplicateCheck.matchedBy || 'unknown',
         changes: duplicateCheck.changes,
         wasEnriched,
         candidate: updatedCandidate,
@@ -127,9 +155,23 @@ export class DuplicateDetectionService {
         createdAt: new Date(),
       };
       
+      // Sanitize date values to prevent invalid timestamp errors
+      const sanitizedFinalData = this.sanitizeDates(finalData);
+      
+      // Debug: Log any remaining date fields that might be invalid
+      console.log('🔍 Final data keys:', Object.keys(sanitizedFinalData));
+      Object.keys(sanitizedFinalData).forEach(key => {
+        const value = sanitizedFinalData[key];
+        if (value instanceof Date) {
+          console.log(`📅 Date field ${key}:`, value.toISOString());
+        } else if (typeof value === 'string' && (value.includes('T') || value.includes('Z'))) {
+          console.log(`📅 String date field ${key}:`, value);
+        }
+      });
+      
       // Create new candidate
       const [newCandidate] = await db.insert(candidates)
-        .values(finalData)
+        .values(sanitizedFinalData)
         .returning();
       
       console.log('✓ New candidate created with ID:', newCandidate.id);
@@ -137,10 +179,94 @@ export class DuplicateDetectionService {
       return {
         candidateId: newCandidate.id,
         isUpdate: false,
+        updateType: 'new_candidate',
         wasEnriched,
         candidate: newCandidate,
       };
     }
+  }
+  
+  /**
+   * Update specific candidate with new resume data
+   */
+  private static async updateSpecificCandidate(
+    candidateData: CandidateData,
+    comId: string,
+    candidateId: string
+  ): Promise<ProcessCandidateResult> {
+    
+    console.log(`=== UPDATING SPECIFIC CANDIDATE: ${candidateId} ===`);
+    
+    // Get existing candidate
+    const [existingCandidate] = await db.select()
+      .from(candidates)
+      .where(and(
+        eq(candidates.id, candidateId),
+        eq(candidates.comId, comId)
+      ))
+      .limit(1);
+    
+    if (!existingCandidate) {
+      throw new Error(`Candidate ${candidateId} not found in company ${comId}`);
+    }
+    
+    // Always re-scrape LinkedIn for latest data
+    let latestLinkedInData = null;
+    let wasEnriched = false;
+    
+    const linkedinUrl = candidateData.linkedinUrl || existingCandidate.linkedinUrl;
+    if (linkedinUrl) {
+      console.log('Re-scraping LinkedIn for latest data...');
+      try {
+        latestLinkedInData = await this.enrichFromLinkedIn(linkedinUrl);
+        wasEnriched = true;
+        console.log('✓ LinkedIn data refreshed successfully');
+      } catch (error) {
+        console.warn('⚠️ LinkedIn enrichment failed:', error instanceof Error ? error.message : 'Unknown error');
+        console.log('Continuing with resume data only...');
+      }
+    }
+    
+    // Merge data with priority: Latest LinkedIn > New Resume > Existing DB
+    const mergedData = {
+      ...existingCandidate,           // Existing DB (lowest priority)
+      ...candidateData,              // New Resume (medium priority)
+      ...latestLinkedInData,         // Latest LinkedIn (highest priority)
+      comId,                         // Ensure company isolation
+      updatedAt: new Date()          // Update timestamp
+    };
+    
+    // Sanitize date values to prevent invalid timestamp errors
+    const sanitizedData = this.sanitizeDates(mergedData);
+    
+    // Debug: Log any remaining date fields that might be invalid
+    console.log('🔍 Sanitized data keys:', Object.keys(sanitizedData));
+    Object.keys(sanitizedData).forEach(key => {
+      const value = sanitizedData[key];
+      if (value instanceof Date) {
+        console.log(`📅 Date field ${key}:`, value.toISOString());
+      } else if (typeof value === 'string' && (value.includes('T') || value.includes('Z'))) {
+        console.log(`📅 String date field ${key}:`, value);
+      }
+    });
+    
+    // Update candidate
+    const [updatedCandidate] = await db.update(candidates)
+      .set(sanitizedData)
+      .where(eq(candidates.id, candidateId))
+      .returning();
+    
+    console.log('✓ Candidate updated successfully');
+    
+    return {
+      candidateId: updatedCandidate.id,
+      isUpdate: true,
+      updateType: 'specific_candidate',
+      matchedBy: 'candidate_id',
+      wasEnriched,
+      changes: this.calculateChanges(existingCandidate, updatedCandidate),
+      candidate: updatedCandidate
+    };
   }
   
   /**
@@ -370,7 +496,10 @@ export class DuplicateDetectionService {
         linkedinHeadline: profile.headline,
         linkedinSummary: profile.summary,
         linkedinConnections: profile.connections,
-        linkedinLastActive: profile.lastActive ? new Date(profile.lastActive) : null,
+        linkedinLastActive: profile.lastActive && profile.lastActive !== "Recently active" ? (() => {
+          const date = new Date(profile.lastActive);
+          return isNaN(date.getTime()) ? null : date;
+        })() : null,
         linkedinNotes: profile.recentActivity?.join('\n'),
         
         // Update basic fields with LinkedIn data
@@ -485,6 +614,109 @@ export class DuplicateDetectionService {
       .limit(1);
     
     return result.length > 0 ? result[0] : null;
+  }
+  
+  /**
+   * Sanitize date values to prevent invalid timestamp errors
+   */
+  private static sanitizeDates(data: any): any {
+    if (!data || typeof data !== 'object') return data;
+    
+    const sanitized = { ...data };
+    
+    // List of date fields that need sanitization
+    const dateFields = [
+      'createdAt', 'updatedAt', 'linkedinLastActive', 'enrichmentDate',
+      'processingDate', 'selectionDate', 'joiningOutcome', 'eeezoUploadDate'
+    ];
+    
+    dateFields.forEach(field => {
+      if (sanitized[field] !== undefined && sanitized[field] !== null) {
+        try {
+          const date = new Date(sanitized[field]);
+          if (isNaN(date.getTime())) {
+            // Invalid date, remove it
+            console.warn(`⚠️ Invalid date for field ${field}:`, sanitized[field]);
+            delete sanitized[field];
+          } else {
+            sanitized[field] = date;
+          }
+        } catch (error) {
+          console.warn(`⚠️ Error processing date field ${field}:`, error);
+          delete sanitized[field];
+        }
+      }
+    });
+    
+    // Sanitize nested objects (like enrichedData)
+    if (sanitized.enrichedData && typeof sanitized.enrichedData === 'object') {
+      try {
+        sanitized.enrichedData = this.sanitizeDates(sanitized.enrichedData);
+      } catch (error) {
+        console.warn('⚠️ Error sanitizing enrichedData:', error);
+        // Keep the original enrichedData if sanitization fails
+      }
+    }
+    
+    // Sanitize arrays that might contain date objects
+    Object.keys(sanitized).forEach(key => {
+      if (Array.isArray(sanitized[key])) {
+        try {
+          sanitized[key] = sanitized[key].map(item => 
+            typeof item === 'object' && item !== null ? this.sanitizeDates(item) : item
+          );
+        } catch (error) {
+          console.warn(`⚠️ Error sanitizing array field ${key}:`, error);
+          // Keep the original array if sanitization fails
+        }
+      }
+    });
+    
+    // Remove any fields that might contain invalid dates by checking all string values
+    Object.keys(sanitized).forEach(key => {
+      const value = sanitized[key];
+      if (typeof value === 'string' && (value.includes('T') || value.includes('Z'))) {
+        try {
+          // This looks like a date string, validate it
+          const date = new Date(value);
+          if (isNaN(date.getTime())) {
+            // Invalid date string, remove it
+            console.warn(`⚠️ Invalid date string for field ${key}:`, value);
+            delete sanitized[key];
+          }
+        } catch (error) {
+          console.warn(`⚠️ Error validating date string for field ${key}:`, error);
+          delete sanitized[key];
+        }
+      }
+    });
+    
+    return sanitized;
+  }
+
+  /**
+   * Calculate what changed between old and new data
+   */
+  private static calculateChanges(oldData: any, newData: any): any {
+    const changes: any = {};
+    
+    // Track key field changes
+    const fieldsToTrack = [
+      'name', 'email', 'phone', 'title', 'company', 
+      'linkedinUrl', 'currentCompany', 'currentTitle',
+      'linkedinHeadline', 'linkedinConnections'
+    ];
+    
+    fieldsToTrack.forEach(field => {
+      if (oldData[field] !== newData[field]) {
+        changes[field] = {
+          old: oldData[field],
+          new: newData[field]
+        };
+      }
+    });
+    
+    return changes;
   }
 }
 

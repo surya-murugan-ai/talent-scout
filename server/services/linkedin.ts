@@ -138,7 +138,7 @@ export class LinkedInService {
   /**
    * Use dev_fusion/Linkedin-Profile-Scraper actor to get profile details from LinkedIn URL
    */
-  private async getProfileWithDevFusion(linkedinUrl: string): Promise<any> {
+  async getProfileWithDevFusion(linkedinUrl: string): Promise<any> {
     try {
       console.log(`Using dev_fusion/Linkedin-Profile-Scraper for URL: ${linkedinUrl}`);
       
@@ -411,10 +411,10 @@ export class LinkedInService {
         startPage: 1
       };
       
-      // Add location only if provided
-      if (location) {
-        searchInput.locations = [location];
-      }
+      // Note: location parameter removed - causes 0 results from Apify
+      // if (location) {
+      //   searchInput.locations = [location];
+      // }
       
       // Add title only if provided
       if (title) {
@@ -516,7 +516,8 @@ export class LinkedInService {
   } | null> {
     try {
       // Use Apify search only - no URL generation fallback
-      const linkedinUrl = await this.searchProfilesWithApify(name, title, company, location, 20, candidates);
+      // Note: location parameter removed - causes 0 results from Apify
+      const linkedinUrl = await this.searchProfilesWithApify(name, title, company, undefined, 20, candidates);
       
       if (!linkedinUrl) {
         console.log('No LinkedIn profiles found with Apify search');
@@ -571,7 +572,8 @@ export class LinkedInService {
   async searchProfiles(name: string, company?: string, title?: string, location?: string, candidates?: any[]): Promise<string | null> {
     try {
       // Use Apify search only - no URL generation fallback
-      const apifyResult = await this.searchProfilesWithApify(name, title, company, location, 20, candidates);
+      // Note: location parameter removed - causes 0 results from Apify
+      const apifyResult = await this.searchProfilesWithApify(name, title, company, undefined, 20, candidates);
       
       if (apifyResult) {
         return apifyResult;
@@ -603,7 +605,8 @@ export class LinkedInService {
       console.log(`Searching LinkedIn profiles for: ${name} ${title ? `(${title})` : ''} ${company ? `at ${company}` : ''}`);
       
       // Use Apify search
-      const apifyResult = await this.searchProfilesWithApify(name, title, company, location, maxResults, candidates);
+      // Note: location parameter removed - causes 0 results from Apify
+      const apifyResult = await this.searchProfilesWithApify(name, title, company, undefined, maxResults, candidates);
       
       if (apifyResult) {
         return apifyResult;
@@ -882,18 +885,27 @@ export class LinkedInService {
 
       console.log(`Enriching LinkedIn profile for: ${name} (${profileUrl})`);
       
-      // DISABLED: dev_fusion actor doesn't return education/certifications data
-      // Always use harvestapi actor for complete profile data including education and certifications
-      // if (profileUrl && profileUrl.includes('linkedin.com/in/')) {
-      //   console.log('LinkedIn URL detected, using dev_fusion actor for direct profile scraping');
-      //   const devFusionData = await this.getProfileWithDevFusion(profileUrl);
-      //   if (devFusionData) {
-      //     ...
-      //   }
-      // }
+      // CORRECT LOGIC: Use DevFusion for direct profile scraping when LinkedIn URL exists
+      if (profileUrl && profileUrl.includes('linkedin.com/in/')) {
+        console.log('LinkedIn URL detected, using dev_fusion actor for direct profile scraping');
+        try {
+          const devFusionData = await this.getProfileWithDevFusion(profileUrl);
+          if (devFusionData) {
+            console.log('✅ DevFusion actor returned profile data');
+            const enrichedProfile = this.transformDevFusionData(devFusionData);
+            enrichedProfile.profileUrl = profileUrl;
+            return enrichedProfile;
+          } else {
+            console.log('⚠️ DevFusion actor returned no data, falling back to harvestapi');
+          }
+        } catch (devFusionError) {
+          console.error('❌ DevFusion actor failed:', devFusionError);
+          console.log('⚠️ DevFusion failed, falling back to harvestapi');
+        }
+      }
       
-      // Use harvestapi actor for complete profile data (includes education, certifications, etc.)
-      console.log('Using harvestapi actor for complete profile data (education, certifications, etc.)');
+      // Use harvestapi actor for LinkedIn profile search and scraping
+      console.log('Using harvestapi actor for LinkedIn profile search and scraping');
       
       try {
         // ✅ CHECK CACHE FIRST - avoid duplicate API call if we already have the data
@@ -915,10 +927,10 @@ export class LinkedInService {
           startPage: 1
         };
         
-        // Add location only if provided
-        if (location) {
-          searchInput.locations = [location];
-        }
+        // Note: location parameter removed - causes 0 results from Apify
+        // if (location) {
+        //   searchInput.locations = [location];
+        // }
         
         // Add title only if provided
         if (title) {
@@ -1052,17 +1064,23 @@ export class LinkedInService {
     console.log('🔍 Raw dev_fusion data structure:');
     console.log('Keys:', Object.keys(data));
     
+    // Handle edge cases: null, undefined, or invalid data
+    if (!data || typeof data !== 'object') {
+      console.warn('⚠️ Invalid dev_fusion data received');
+      return this.createBasicProfile('', '', '', '');
+    }
+    
     // Handle the nested structure from dev_fusion actor
     let profileData = data;
-    if (data.rawData) {
+    if (data.rawData && typeof data.rawData === 'object') {
       profileData = data.rawData;
       console.log('📁 Found rawData, using nested structure');
     }
     
     console.log('Profile data keys:', Object.keys(profileData));
-    console.log('🔍 Experiences array:', JSON.stringify(profileData.experiences, null, 2));
+    console.log('🔍 Full profile data structure:', JSON.stringify(profileData, null, 2));
     
-    // Extract experience data from the dev_fusion format
+    // Extract experience data from the Apify format
     const experiences: Array<{
       title: string;
       company: string;
@@ -1071,33 +1089,37 @@ export class LinkedInService {
     }> = [];
     
     if (profileData.experiences && Array.isArray(profileData.experiences)) {
-      profileData.experiences.forEach((exp: any) => {
-        // Extract company from subtitle (e.g., "Aimplify · Full-time" -> "Aimplify")
-        let companyName = 'Unknown';
-        if (exp.subtitle) {
-          // Split by "·" and take the first part (company name)
-          companyName = exp.subtitle.split('·')[0].trim();
-          console.log(`🔍 Extracted company from subtitle: "${exp.subtitle}" -> "${companyName}"`);
-        } else if (exp.company) {
-          companyName = exp.company;
-          console.log(`🔍 Using exp.company: "${companyName}"`);
-        } else if (exp.companyName) {
-          companyName = exp.companyName;
-          console.log(`🔍 Using exp.companyName: "${companyName}"`);
-        } else {
-          console.log(`⚠️ No company data found for experience: ${exp.title}`);
+      profileData.experiences.forEach((exp: any, index: number) => {
+        try {
+          if (!exp || typeof exp !== 'object') {
+            console.warn(`⚠️ Invalid experience object at index ${index}`);
+            return;
+          }
+          
+          // Extract company from subtitle (e.g., "Aimplify · Full-time" -> "Aimplify")
+          let companyName = 'Unknown';
+          if (exp.subtitle && typeof exp.subtitle === 'string') {
+            companyName = exp.subtitle.split('·')[0].trim();
+            console.log(`🔍 Extracted company from subtitle: "${exp.subtitle}" -> "${companyName}"`);
+          } else if (exp.company && typeof exp.company === 'string') {
+            companyName = exp.company;
+          } else if (exp.companyName && typeof exp.companyName === 'string') {
+            companyName = exp.companyName;
+          }
+          
+          experiences.push({
+            title: exp.title || exp.position || exp.jobTitle || 'Unknown',
+            company: companyName,
+            duration: exp.duration || exp.timePeriod || exp.currentJobDuration || 'Unknown',
+            description: exp.description || ''
+          });
+        } catch (expError) {
+          console.error(`❌ Error processing experience at index ${index}:`, expError);
         }
-        
-        experiences.push({
-          title: exp.title || exp.position || exp.jobTitle || 'Unknown',
-          company: companyName,
-          duration: exp.duration || exp.timePeriod || exp.currentJobDuration || 'Unknown',
-          description: exp.description || ''
-        });
       });
     }
 
-    // Extract education data
+    // Extract education data from Apify format
     const education: Array<{
       school: string;
       degree: string;
@@ -1105,34 +1127,59 @@ export class LinkedInService {
       years: string;
     }> = [];
     
-    if (data.education && Array.isArray(data.education)) {
-      data.education.forEach((edu: any) => {
-        education.push({
-          school: edu.school || edu.institution || 'Unknown',
-          degree: edu.degree || 'Unknown',
-          field: edu.field || edu.major || 'Unknown',
-          years: edu.years || edu.timePeriod || 'Unknown'
-        });
+    if (profileData.educations && Array.isArray(profileData.educations)) {
+      profileData.educations.forEach((edu: any) => {
+        try {
+          if (edu && typeof edu === 'object') {
+            education.push({
+              school: edu.title || edu.school || edu.institution || 'Unknown',
+              degree: edu.subtitle || edu.degree || 'Unknown',
+              field: edu.field || edu.major || 'Unknown',
+              years: edu.caption || edu.years || edu.timePeriod || 'Unknown'
+            });
+          }
+        } catch (eduError) {
+          console.error('❌ Error processing education:', eduError);
+        }
       });
     }
 
-    // Extract skills
-    const skills = data.skills || data.skill || [];
+    // Extract skills from Apify format
+    const skills: string[] = [];
+    if (profileData.skills && Array.isArray(profileData.skills)) {
+      profileData.skills.forEach((skill: any) => {
+        try {
+          if (skill && typeof skill === 'object' && skill.title) {
+            skills.push(skill.title);
+          } else if (typeof skill === 'string') {
+            skills.push(skill);
+          }
+        } catch (skillError) {
+          console.error('❌ Error processing skill:', skillError);
+        }
+      });
+    }
     
-    // Extract certifications
+    // Extract certifications from Apify format
     const certifications: Array<{
       name: string;
       issuer: string;
       date: string;
     }> = [];
     
-    if (data.certifications && Array.isArray(data.certifications)) {
-      data.certifications.forEach((cert: any) => {
-        certifications.push({
-          name: cert.name || cert.title || 'Unknown',
-          issuer: cert.issuer || cert.organization || 'Unknown',
-          date: cert.date || cert.issuedDate || 'Unknown'
-        });
+    if (profileData.licenseAndCertificates && Array.isArray(profileData.licenseAndCertificates)) {
+      profileData.licenseAndCertificates.forEach((cert: any) => {
+        try {
+          if (cert && typeof cert === 'object') {
+            certifications.push({
+              name: cert.title || cert.name || 'Unknown',
+              issuer: cert.issuer || cert.organization || 'Unknown',
+              date: cert.date || cert.issuedDate || 'Unknown'
+            });
+          }
+        } catch (certError) {
+          console.error('❌ Error processing certification:', certError);
+        }
       });
     }
 
@@ -1238,33 +1285,42 @@ export class LinkedInService {
       companyLink1: profileData.experiences?.[0]?.companyLink1
     });
 
+    // Handle edge cases for all fields
+    const safeSkills = Array.isArray(skills) ? skills.filter(skill => skill && typeof skill === 'string') : [];
+    const safeExperiences = experiences.filter(exp => exp && exp.title && exp.company);
+    const safeEducation = education.filter(edu => edu && edu.school && edu.degree);
+    const safeCertifications = certifications.filter(cert => cert && cert.name);
+    const safeLanguages = Array.isArray(profileData.languages) ? profileData.languages.filter((lang: any) => lang && typeof lang === 'string') : [];
+    const safeRecentActivity = Array.isArray(profileData.recentActivity) ? profileData.recentActivity : [];
+    const safePosts = Array.isArray(profileData.posts) ? profileData.posts : Array.isArray(profileData.updates) ? profileData.updates : [];
+
     return {
-      name: profileData.name || profileData.fullName || 'Unknown',
-      title: currentPosition,
-      company: currentCompany,
-      skills: Array.isArray(skills) ? skills : [skills].filter(Boolean),
-      openToWork: profileData.openToWork || false,
+      name: profileData.fullName || profileData.name || 'Unknown',
+      title: currentPosition || profileData.headline || 'Unknown',
+      company: currentCompany || profileData.companyName || 'Unknown',
+      skills: safeSkills,
+      openToWork: Boolean(profileData.openToWork),
       lastActive: profileData.lastActive || profileData.lastSeen || 'Unknown',
-      profileUrl: profileData.profileUrl || profileData.linkedinUrl || profileData.url,
-      jobHistory: experiences.map(exp => ({
-        role: exp.title,
-        company: exp.company,
-        duration: exp.duration
+      profileUrl: profileData.linkedinUrl || profileData.profileUrl || '',
+      jobHistory: safeExperiences.map(exp => ({
+        role: exp.title || 'Unknown',
+        company: exp.company || 'Unknown',
+        duration: exp.duration || 'Unknown'
       })),
-      recentActivity: profileData.recentActivity || [],
-      headline: profileData.headline || profileData.title,
-      location: profileData.location || profileData.geographicArea || profileData.addressWithCountry,
-      summary: profileData.summary || profileData.about || profileData.description,
-      experience: experiences,
-      education: education,
-      connections: profileData.connections || profileData.connectionsCount || 0,
-      profilePicture: profileData.profilePicture || profileData.profileImage || profileData.profilePic,
-      currentCompany: currentCompany,
-      currentPosition: currentPosition,
-      industry: profileData.industry || profileData.companyIndustry,
-      languages: profileData.languages || [],
-      certifications: certifications,
-      posts: profileData.posts || profileData.updates || []
+      recentActivity: safeRecentActivity,
+      headline: profileData.headline || profileData.title || '',
+      location: profileData.addressWithCountry || profileData.location || '',
+      summary: profileData.about || profileData.summary || '',
+      experience: safeExperiences,
+      education: safeEducation,
+      connections: Number(profileData.connections || 0),
+      profilePicture: profileData.profilePic || profileData.profilePicture || '',
+      currentCompany: currentCompany || profileData.companyName || 'Unknown',
+      currentPosition: currentPosition || profileData.headline || 'Unknown',
+      industry: profileData.companyIndustry || profileData.industry || '',
+      languages: safeLanguages,
+      certifications: safeCertifications,
+      posts: safePosts
     };
   }
 

@@ -16,7 +16,11 @@ import { OptimizedResumeProcessor } from "./services/optimizedResumeProcessor";
 import { PerformanceMonitor } from "./services/performanceMonitor";
 import { EeezoService } from "./services/eezoService";
 import { websocketService } from "./services/websocketService";
-import { sql } from "drizzle-orm";
+import { IndividualScoringService } from "./services/individualScoringService";
+import { TotalScoringService } from "./services/totalScoringService";
+import { sql, eq, and } from "drizzle-orm";
+import { db } from "./db";
+import { candidates } from "@shared/schema";
 
 // Configure multer for file uploads
 const upload = multer({
@@ -32,6 +36,40 @@ const upload = multer({
     }
   },
 });
+
+// Helper function to calculate candidate scores
+async function calculateCandidateScores(candidate: any, weights: any) {
+  try {
+    // Calculate individual scores
+    const individualScores = await IndividualScoringService.calculateIndividualScores(candidate);
+    
+    // Calculate total weighted score
+    const totalScore = TotalScoringService.calculateTotalScore(individualScores, weights);
+    
+    // Calculate priority based on total score
+    const priority = TotalScoringService.calculatePriority(totalScore);
+    
+    return {
+      ...individualScores,
+      score: totalScore,
+      priority: priority,
+      hireabilityScore: totalScore, // Use total score as hireability score
+      hireabilityFactors: []
+    };
+  } catch (error) {
+    console.error('Error calculating candidate scores:', error);
+    return {
+      openToWorkScore: 0,
+      skillMatchScore: 0,
+      jobStabilityScore: 0,
+      platformEngagementScore: 0,
+      score: 0,
+      priority: "Low",
+      hireabilityScore: 0,
+      hireabilityFactors: []
+    };
+  }
+}
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Dashboard stats
@@ -361,6 +399,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ error: "No file uploaded" });
       }
 
+      const { com_id } = req.body;
+      
+      if (!com_id) {
+        return res.status(400).json({ 
+          error: "Company ID (com_id) is required",
+          code: "MISSING_COM_ID"
+        });
+      }
+
       const { originalname, buffer, size } = req.file;
       
       // Create processing job
@@ -396,7 +443,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Process the single resume with performance monitoring
       const result = await PerformanceMonitor.getInstance().timeOperation(
         'single_resume_processing',
-        () => optimizedProcessor.processSingleResume(buffer, originalname, {
+        () => optimizedProcessor.processSingleResume(buffer, originalname, com_id, {
           batchSize: 1,
           enableCaching: true,
           parallelProcessing: false,
@@ -624,12 +671,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/export/csv", async (req, res) => {
     try {
       const priority = req.query.priority as string;
+      const com_id = req.query.com_id as string;
       let candidates;
       
       if (priority) {
-        candidates = await storage.getCandidatesByPriority(priority);
+        candidates = await storage.getCandidatesByPriority(priority, com_id || "");
       } else {
-        candidates = await storage.getCandidates(1000, 0); // Export up to 1000
+        candidates = await storage.getCandidates(com_id || "", 1000, 0); // Export up to 1000
       }
 
       // Convert to CSV format
@@ -697,7 +745,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Get resume data (now consolidated in candidates table)
   app.get("/api/resume-data", async (req, res) => {
     try {
-      const candidates = await storage.getCandidates(100, 0);
+      const candidates = await storage.getCandidates("default", 100, 0);
       res.json(candidates);
     } catch (error) {
       res.status(500).json({ 
@@ -848,7 +896,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       let existingCandidate = null;
       if (email && saveToDatabase) {
         try {
-          existingCandidate = await storage.getCandidateByEmail(email);
+          existingCandidate = await storage.getCandidateByEmail(email, com_id as string);
         } catch (error) {
           console.log('Could not check for existing candidate');
         }
@@ -907,10 +955,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
           const config = await storage.getScoringConfig(com_id);
           if (config) {
             weights = {
-              openToWork: config.openToWork,
-              skillMatch: config.skillMatch,
-              jobStability: config.jobStability,
-              engagement: config.platformEngagement,
+              openToWork: config.openToWork ?? 0,
+              skillMatch: config.skillMatch ?? 0,
+              jobStability: config.jobStability ?? 0,
+              engagement: config.platformEngagement ?? 0,
               companyDifference: 15
             };
           }
@@ -1152,7 +1200,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           let existingCandidate = null;
           if (candidate.email && saveToDatabase) {
             try {
-              existingCandidate = await storage.getCandidateByEmail(candidate.email);
+              existingCandidate = await storage.getCandidateByEmail(candidate.email, com_id as string);
               if (existingCandidate) {
                 console.log(`✅ Found existing candidate: ${existingCandidate.id}`);
                 
@@ -1224,10 +1272,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
               const config = await storage.getScoringConfig(com_id);
               if (config) {
                 weights = {
-                  openToWork: config.openToWork,
-                  skillMatch: config.skillMatch,
-                  jobStability: config.jobStability,
-                  engagement: config.platformEngagement,
+                  openToWork: config.openToWork ?? 0,
+                  skillMatch: config.skillMatch ?? 0,
+                  jobStability: config.jobStability ?? 0,
+                  engagement: config.platformEngagement ?? 0,
                   companyDifference: 15
                 };
               }
@@ -1500,7 +1548,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           let existingCandidate = null;
           if (candidate.email && saveToDatabase) {
             try {
-              existingCandidate = await storage.getCandidateByEmail(candidate.email);
+              existingCandidate = await storage.getCandidateByEmail(candidate.email, com_id as string);
               if (existingCandidate) {
                 console.log(`✅ Found existing candidate: ${existingCandidate.id}`);
                 existingCount++;
@@ -1586,10 +1634,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
               const config = await storage.getScoringConfig(com_id);
               if (config) {
                 weights = {
-                  openToWork: config.openToWork,
-                  skillMatch: config.skillMatch,
-                  jobStability: config.jobStability,
-                  engagement: config.platformEngagement,
+                  openToWork: config.openToWork ?? 0,
+                  skillMatch: config.skillMatch ?? 0,
+                  jobStability: config.jobStability ?? 0,
+                  engagement: config.platformEngagement ?? 0,
                   companyDifference: 15
                 };
               }
@@ -1895,7 +1943,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Async function to process uploaded files
-  async function processFileAsync(jobId: string, buffer: Buffer, filename: string) {
+  async function processFileAsync(jobId: string, buffer: Buffer, filename: string, com_id?: string) {
     try {
       // Update job status
       await storage.updateProcessingJob(jobId, {
@@ -1928,12 +1976,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
           // Check if candidate already exists (by email or name + company)
           let existingCandidate = null;
           if (candidateData.email) {
-            existingCandidate = await storage.getCandidateByEmail(candidateData.email);
+            existingCandidate = await storage.getCandidateByEmail(candidateData.email, com_id || "");
           }
           
           if (!existingCandidate && candidateData.name && candidateData.company) {
             // Try to find by name and company
-            const candidates = await storage.getCandidates(1000, 0);
+            const candidates = await storage.getCandidates(com_id || "", 1000, 0);
             existingCandidate = candidates.find(c => 
               c.name?.toLowerCase() === candidateData.name?.toLowerCase() && 
               c.company?.toLowerCase() === candidateData.company?.toLowerCase()
@@ -2145,7 +2193,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   }
 
   // Async function to process bulk resumes with WebSocket updates
-  async function processBulkResumesAsync(sessionId: string, comId: string, files: any[]) {
+  async function processBulkResumesAsync(sessionId: string, comId: string, files: any[], candidateIds: string[] = []) {
     try {
       console.log(`🔄 Processing ${files.length} resumes for session ${sessionId}`);
       
@@ -2179,10 +2227,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
           });
 
           // Process the resume using EeezoService
+          const candidateId = candidateIds[i]; // Match file with candidate_id
           const result = await EeezoService.processEeezoResume({
             comId: comId,
             file: file,
-            processingJobId: processingJob.id
+            processingJobId: processingJob.id,
+            candidateId: candidateId
           });
 
           // Add completed candidate to WebSocket session
@@ -2190,6 +2240,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             candidateId: result.candidateId,
             name: originalname.replace(/\.(pdf|docx|doc)$/i, ''),
             isUpdate: result.isUpdate || false,
+            updateType: result.updateType || 'new_candidate',
             matchedBy: result.matchedBy,
             wasEnriched: result.wasEnriched || false
           });
@@ -2226,7 +2277,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Eeezo: Upload resume file with company ID
   app.post("/api/eezo/upload-resume", upload.single('file'), async (req: RequestWithFile, res) => {
     try {
-      const { com_id } = req.body;
+      const { com_id, candidate_id } = req.body;
       
       // Validate required fields
       if (!com_id) {
@@ -2234,6 +2285,24 @@ export async function registerRoutes(app: Express): Promise<Server> {
           error: "Company ID (com_id) is required",
           code: "MISSING_COM_ID"
         });
+      }
+      
+      // Validate candidate_id if provided
+      if (candidate_id) {
+        const existingCandidate = await db.select()
+          .from(candidates)
+          .where(and(
+            eq(candidates.id, candidate_id),
+            eq(candidates.comId, com_id)
+          ))
+          .limit(1);
+        
+        if (existingCandidate.length === 0) {
+          return res.status(404).json({ 
+            error: "Candidate not found or doesn't belong to this company",
+            code: "CANDIDATE_NOT_FOUND"
+          });
+        }
       }
       
       if (!req.file) {
@@ -2283,7 +2352,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const result = await EeezoService.processEeezoResume({
         comId: com_id,
         file: req.file,
-        processingJobId: processingJob.id
+        processingJobId: processingJob.id,
+        candidateId: candidate_id
       });
 
       res.json({
@@ -2295,6 +2365,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           comId: com_id,
           status: "processing",
           isUpdate: result.isUpdate || false,
+          updateType: result.updateType || 'new_candidate',
           matchedBy: result.matchedBy,
           wasEnriched: result.wasEnriched || false,
           changes: result.changes
@@ -2454,7 +2525,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Bulk resume upload with real-time WebSocket updates
   app.post("/api/eezo/upload-bulk-resumes", upload.array('files', 20), async (req: any, res) => {
     try {
-      const { com_id } = req.body;
+      const { com_id, candidate_ids } = req.body;
       
       // Validate required fields
       if (!com_id) {
@@ -2462,6 +2533,29 @@ export async function registerRoutes(app: Express): Promise<Server> {
           error: "Company ID (com_id) is required",
           code: "MISSING_COM_ID"
         });
+      }
+      
+      // Validate candidate_ids if provided
+      if (candidate_ids) {
+        const candidateIdsArray = Array.isArray(candidate_ids) ? candidate_ids : [candidate_ids];
+        
+        // Validate each candidate_id
+        for (const candidateId of candidateIdsArray) {
+          const existingCandidate = await db.select()
+            .from(candidates)
+            .where(and(
+              eq(candidates.id, candidateId),
+              eq(candidates.comId, com_id)
+            ))
+            .limit(1);
+          
+          if (existingCandidate.length === 0) {
+            return res.status(404).json({ 
+              error: `Candidate ${candidateId} not found or doesn't belong to this company`,
+              code: "CANDIDATE_NOT_FOUND"
+            });
+          }
+        }
       }
       
       if (!req.files || req.files.length === 0) {
@@ -2487,7 +2581,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
 
       // Process files asynchronously with WebSocket updates
-      processBulkResumesAsync(sessionId, com_id, req.files);
+      const candidateIdsArray = candidate_ids ? (Array.isArray(candidate_ids) ? candidate_ids : [candidate_ids]) : [];
+      processBulkResumesAsync(sessionId, com_id, req.files, candidateIdsArray);
 
       res.json({
         success: true,
@@ -2507,6 +2602,302 @@ export async function registerRoutes(app: Express): Promise<Server> {
         error: "Failed to start bulk upload",
         message: error instanceof Error ? error.message : "Unknown error",
         code: "BULK_UPLOAD_ERROR"
+      });
+    }
+  });
+
+  // Real-time streaming bulk upload endpoint
+  app.post("/api/eezo/upload-bulk-resumes-stream", upload.array('files', 20), async (req: any, res) => {
+    try {
+      console.log('🚀 Real-time streaming endpoint called');
+      
+      const { com_id } = req.body;
+      
+      // Validate required fields
+      if (!com_id) {
+        return res.status(400).json({ 
+          error: "Company ID (com_id) is required",
+          code: "MISSING_COM_ID"
+        });
+      }
+      
+      if (!req.files || req.files.length === 0) {
+        return res.status(400).json({ 
+          error: "At least one resume file is required",
+          code: "MISSING_FILES"
+        });
+      }
+
+      // Set headers for streaming response
+      res.writeHead(200, {
+        'Content-Type': 'application/json',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Content-Type'
+      });
+
+      const files = req.files;
+      const processedCandidates: any[] = [];
+      let processedCount = 0;
+
+      console.log(`🚀 Starting real-time processing of ${files.length} files for company ${com_id}`);
+
+      // Process each file and send real-time updates
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        
+        try {
+          console.log(`📄 Processing file ${i + 1}/${files.length}: ${file.originalname}`);
+          
+          // Process the file
+          const candidates = await FileProcessor.processFile(file.buffer, file.originalname);
+          
+          if (candidates && candidates.length > 0) {
+            // Get current scoring weights
+            const project = await storage.getProject("default-project");
+            const weights: { openToWork: number; skillMatch: number; jobStability: number; engagement: number; companyDifference: number } = (project?.scoringWeights as { openToWork: number; skillMatch: number; jobStability: number; engagement: number; companyDifference: number }) || {
+              openToWork: 30,
+              skillMatch: 25,
+              jobStability: 15,
+              engagement: 15,
+              companyDifference: 15
+            };
+
+            // Process each candidate from this file
+            for (const candidateData of candidates) {
+              try {
+                // Check if candidate already exists
+                let existingCandidate = null;
+                if (candidateData.email) {
+                  existingCandidate = await storage.getCandidateByEmail(candidateData.email, com_id);
+                }
+                
+                if (!existingCandidate && candidateData.name && candidateData.company) {
+                  const candidates = await storage.getCandidates(com_id, 1000, 0);
+                  existingCandidate = candidates.find(c => 
+                    c.name?.toLowerCase() === candidateData.name?.toLowerCase() && 
+                    c.company?.toLowerCase() === candidateData.company?.toLowerCase()
+                  );
+                }
+
+                let resumeCandidate;
+                if (existingCandidate) {
+                  // Update existing candidate - filter out problematic fields
+                  const { linkedinLastActive, selectionDate, processingDate, ...safeCandidateData } = candidateData;
+                  const candidateToUpdate = {
+                    ...safeCandidateData,
+                    comId: com_id,
+                    source: "eezo",
+                    dataSource: "resume",
+                    filename: file.originalname,
+                    rawText: candidateData.rawText || null,
+                    originalData: candidateData.originalData || null,
+                    extractedData: candidateData.extractedData || null,
+                    enrichedData: candidateData.enrichedData || null,
+                    confidence: candidateData.confidence || 0,
+                    processingTime: candidateData.processingTime || 0
+                  };
+                  resumeCandidate = await storage.updateCandidate(existingCandidate.id, candidateToUpdate);
+                } else {
+                  // Create new candidate - filter out problematic fields
+                  const { linkedinLastActive, selectionDate, processingDate, ...safeCandidateData } = candidateData;
+                  const candidateToCreate = {
+                    ...safeCandidateData,
+                    comId: com_id,
+                    source: "eezo",
+                    dataSource: "resume",
+                    filename: file.originalname,
+                    rawText: candidateData.rawText || null,
+                    originalData: candidateData.originalData || null,
+                    extractedData: candidateData.extractedData || null,
+                    enrichedData: candidateData.enrichedData || null,
+                    confidence: candidateData.confidence || 0,
+                    processingTime: candidateData.processingTime || 0
+                  };
+                  resumeCandidate = await storage.createCandidate(candidateToCreate);
+                }
+
+                if (resumeCandidate) {
+                  // Step 1: LinkedIn Enrichment with proper logic
+                  let linkedinProfile = null;
+                  let linkedinUrl = null;
+                  
+                  try {
+                    console.log(`🔍 Starting LinkedIn enrichment for: ${resumeCandidate.name}`);
+                    const { LinkedInService } = await import('./services/linkedin');
+                    const linkedInService = new LinkedInService();
+                    
+                    // Check if candidate already has LinkedIn URL
+                    if (resumeCandidate.linkedinUrl && resumeCandidate.linkedinUrl.includes('linkedin.com/in/')) {
+                      console.log(`✅ Candidate has LinkedIn URL: ${resumeCandidate.linkedinUrl}`);
+                      linkedinUrl = resumeCandidate.linkedinUrl;
+                      
+                      // Use DevFusion actor for direct profile scraping
+                      linkedinProfile = await linkedInService.enrichProfile(
+                        linkedinUrl,
+                        resumeCandidate.name,
+                        resumeCandidate.company || undefined,
+                        resumeCandidate.title || undefined,
+                        resumeCandidate.location || undefined
+                      );
+                      
+                      if (linkedinProfile) {
+                        console.log(`✅ LinkedIn profile enriched with DevFusion data`);
+                      } else {
+                        console.log(`⚠️ DevFusion enrichment failed, trying harvestapi fallback`);
+                        // Fallback to harvestapi if DevFusion fails
+                        linkedinUrl = await linkedInService.searchProfiles(
+                          resumeCandidate.name,
+                          resumeCandidate.company || undefined,
+                          resumeCandidate.title || undefined
+                          // Note: location parameter removed - causes 0 results from Apify
+                        );
+                        
+                        if (linkedinUrl) {
+                          linkedinProfile = await linkedInService.enrichProfile(
+                            linkedinUrl,
+                            resumeCandidate.name,
+                            resumeCandidate.company || undefined,
+                            resumeCandidate.title || undefined,
+                            resumeCandidate.location || undefined
+                          );
+                        }
+                      }
+                    } else {
+                      console.log(`🔍 No LinkedIn URL found, searching with harvestapi actor`);
+                      
+                      // Use harvestapi actor to search for LinkedIn profile
+                      linkedinUrl = await linkedInService.searchProfiles(
+                        resumeCandidate.name,
+                        resumeCandidate.company || undefined,
+                        resumeCandidate.title || undefined
+                        // Note: location parameter removed - causes 0 results from Apify
+                      );
+                      
+                      if (linkedinUrl) {
+                        console.log(`✅ Found LinkedIn profile via harvestapi: ${linkedinUrl}`);
+                        
+                        // Get detailed profile data using harvestapi
+                        linkedinProfile = await linkedInService.enrichProfile(
+                          linkedinUrl,
+                          resumeCandidate.name,
+                          resumeCandidate.company || undefined,
+                          resumeCandidate.title || undefined,
+                          resumeCandidate.location || undefined
+                        );
+                        
+                        if (linkedinProfile) {
+                          console.log(`✅ LinkedIn profile enriched with harvestapi data`);
+                        }
+                      } else {
+                        console.log(`⚠️ No LinkedIn profile found for: ${resumeCandidate.name}`);
+                      }
+                    }
+                  } catch (linkedinError) {
+                    console.error(`❌ LinkedIn enrichment failed for ${resumeCandidate.name}:`, linkedinError);
+                    // Continue processing even if LinkedIn enrichment fails
+                  }
+
+                  // Step 2: Update candidate with LinkedIn data
+                  const enrichedCandidateData: any = {};
+                  
+                  if (linkedinProfile) {
+                    enrichedCandidateData.linkedinUrl = linkedinUrl;
+                    enrichedCandidateData.linkedinHeadline = linkedinProfile.headline;
+                    enrichedCandidateData.linkedinSummary = linkedinProfile.summary;
+                    enrichedCandidateData.linkedinConnections = linkedinProfile.connections;
+                    
+                    // Safe date handling for linkedinLastActive
+                    if (linkedinProfile.lastActive) {
+                      try {
+                        const date = new Date(linkedinProfile.lastActive);
+                        if (!isNaN(date.getTime())) {
+                          enrichedCandidateData.linkedinLastActive = date;
+                        } else {
+                          console.warn(`⚠️ Invalid date format for lastActive: ${linkedinProfile.lastActive}`);
+                          enrichedCandidateData.linkedinLastActive = null;
+                        }
+                      } catch (dateError) {
+                        console.warn(`⚠️ Error parsing lastActive date: ${linkedinProfile.lastActive}`, dateError);
+                        enrichedCandidateData.linkedinLastActive = null;
+                      }
+                    } else {
+                      enrichedCandidateData.linkedinLastActive = null;
+                    }
+                    
+                    enrichedCandidateData.linkedinNotes = linkedinProfile.recentActivity?.join(', ');
+                    enrichedCandidateData.openToWork = linkedinProfile.openToWork;
+                    enrichedCandidateData.currentEmployer = linkedinProfile.company;
+                    enrichedCandidateData.title = linkedinProfile.title || resumeCandidate.title;
+                    enrichedCandidateData.enrichedData = linkedinProfile;
+                  }
+
+                  // Update candidate with LinkedIn data only if we have data to update
+                  if (Object.keys(enrichedCandidateData).length > 0) {
+                    await storage.updateCandidate(resumeCandidate.id, enrichedCandidateData);
+                  }
+
+                  // Step 3: Calculate scores with enriched data
+                  const enrichedCandidate = await storage.getCandidate(resumeCandidate.id);
+                  const scores = await calculateCandidateScores(enrichedCandidate, weights);
+                  await storage.updateCandidate(resumeCandidate.id, scores);
+
+                  // Get the final updated candidate with scores
+                  const updatedCandidate = await storage.getCandidate(resumeCandidate.id);
+                  
+                  // Add to processed candidates
+                  processedCandidates.push(updatedCandidate);
+                  processedCount++;
+
+                  // Send real-time update with only the newly processed candidate
+                  const response = {
+                    success: true,
+                    data: {
+                      comId: com_id,
+                      processedCount: processedCount,
+                      totalFiles: files.length,
+                      currentFile: i + 1,
+                      currentCandidate: updatedCandidate,
+                      allCandidates: processedCandidates
+                    }
+                  };
+
+                  res.write(JSON.stringify(response) + '\n');
+                  console.log(`✅ Processed candidate ${processedCount}: ${resumeCandidate.name}`);
+                }
+              } catch (candidateError) {
+                console.error(`❌ Error processing candidate from file ${file.originalname}:`, candidateError);
+              }
+            }
+          }
+        } catch (fileError) {
+          console.error(`❌ Error processing file ${file.originalname}:`, fileError);
+        }
+      }
+
+      // Send final completion message
+      const finalResponse = {
+        success: true,
+        data: {
+          comId: com_id,
+          processedCount: processedCount,
+          totalFiles: files.length,
+          status: "completed",
+          candidates: processedCandidates
+        }
+      };
+
+      res.write(JSON.stringify(finalResponse) + '\n');
+      res.end();
+
+      console.log(`🎉 Real-time processing completed: ${processedCount} candidates processed from ${files.length} files`);
+
+    } catch (error) {
+      console.error('Real-time streaming endpoint error:', error);
+      res.status(500).json({
+        error: "Real-time streaming error",
+        message: error instanceof Error ? error.message : "Unknown error"
       });
     }
   });

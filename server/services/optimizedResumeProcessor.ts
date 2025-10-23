@@ -29,6 +29,7 @@ export class OptimizedResumeProcessor {
   async processSingleResume(
     buffer: Buffer, 
     filename: string, 
+    comId: string,
     options: ProcessingOptions = {}
   ): Promise<{ success: boolean; candidates: ProcessedCandidate[]; processingTime: number }> {
     const startTime = Date.now();
@@ -59,6 +60,7 @@ export class OptimizedResumeProcessor {
       const processedCandidates = await this.processCandidatesOptimized(
         candidates, 
         weights, 
+        comId,
         options
       );
 
@@ -88,6 +90,7 @@ export class OptimizedResumeProcessor {
   private async processCandidatesOptimized(
     candidates: ProcessedCandidate[],
     weights: any,
+    comId: string,
     options: ProcessingOptions
   ): Promise<ProcessedCandidate[]> {
     const batchSize = options.batchSize || 5;
@@ -105,7 +108,7 @@ export class OptimizedResumeProcessor {
       if (options.parallelProcessing) {
         // Process batch in parallel
         const batchPromises = batch.map(candidate => 
-          this.processSingleCandidate(candidate, weights, options)
+          this.processSingleCandidate(candidate, weights, comId, options)
         );
         
         const batchResults = await Promise.allSettled(batchPromises);
@@ -117,7 +120,7 @@ export class OptimizedResumeProcessor {
       } else {
         // Process batch sequentially (for rate limiting)
         for (const candidate of batch) {
-          const processed = await this.processSingleCandidate(candidate, weights, options);
+          const processed = await this.processSingleCandidate(candidate, weights, comId, options);
           if (processed) {
             processedCandidates.push(processed);
           }
@@ -139,6 +142,7 @@ export class OptimizedResumeProcessor {
   private async processSingleCandidate(
     candidateData: ProcessedCandidate,
     weights: any,
+    comId: string,
     options: ProcessingOptions
   ): Promise<ProcessedCandidate | null> {
     try {
@@ -152,11 +156,11 @@ export class OptimizedResumeProcessor {
       // Check if candidate already exists
       let existingCandidate = null;
       if (candidateData.email) {
-        existingCandidate = await storage.getCandidateByEmail(candidateData.email);
+        existingCandidate = await storage.getCandidateByEmail(candidateData.email, comId);
       }
       
       if (!existingCandidate && candidateData.name && candidateData.company) {
-        const candidates = await storage.getCandidates(1000, 0);
+        const candidates = await storage.getCandidates(comId, 1000, 0);
         existingCandidate = candidates.find(c => 
           c.name?.toLowerCase() === candidateData.name?.toLowerCase() && 
           c.company?.toLowerCase() === candidateData.company?.toLowerCase()

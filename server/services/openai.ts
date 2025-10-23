@@ -146,10 +146,9 @@ export async function enrichLinkedInProfile(linkedinUrl: string | undefined, nam
       recentActivity: profile.posts?.map(post => post.text).slice(0, 3) || [],
       
       // Additional LinkedIn profile fields
-      headline: profile.headline,
-      location: profile.location,
-      summary: profile.summary,
-      education: profile.education || [],
+      // location: profile.location, // Removed - not in LinkedInProfile type
+      // summary: profile.summary, // Removed - not in LinkedInProfile type
+      // education: profile.education || [], // Removed - not in LinkedInProfile type
       connections: profile.connections,
       certifications: profile.certifications || [],
       profilePicture: profile.profilePicture,
@@ -175,10 +174,9 @@ export async function enrichLinkedInProfile(linkedinUrl: string | undefined, nam
       recentActivity: [],
       
       // Additional fields (empty for fallback)
-      headline: title,
-      location: location,
-      summary: undefined,
-      education: [],
+      // location: location, // Removed - not in LinkedInProfile type
+      // summary: undefined, // Removed - not in LinkedInProfile type
+      // education: [], // Removed - not in LinkedInProfile type
       connections: undefined,
       certifications: [],
       profilePicture: undefined,

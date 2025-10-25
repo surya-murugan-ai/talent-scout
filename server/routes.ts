@@ -468,13 +468,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
           details: `${result.candidates.length} candidates processed in ${result.processingTime}ms`
         });
 
+        // Get the processed candidate with full details
+        const candidate = result.candidates[0];
+        const fullCandidate = await storage.getCandidate(candidate.id);
+
         res.json({
-          message: "Single resume processed successfully",
-          jobId: processingJob.id,
-          filename: originalname,
-          candidatesProcessed: result.candidates.length,
-          processingTime: result.processingTime,
-          estimatedTimeSaved: "2-3x faster than batch processing"
+          success: true,
+          data: {
+            comId: com_id,
+            foundCandidates: result.candidates.length,
+            candidates: [fullCandidate]
+          }
         });
       } else {
         // Update job with failure
@@ -1315,44 +1319,39 @@ export async function registerRoutes(app: Express): Promise<Server> {
           const companyDifference = hasCompanyDifference ? "Different" : "Same";
           const companyDifferenceScore = hasCompanyDifference ? weights.companyDifference : 0;
 
-          // Step 7: Save to database
-          let savedCandidate = null;
-          if (saveToDatabase) {
-            try {
-              savedCandidate = await storage.createCandidate({
-                name: candidate.name,
-                email: candidate.email || null,
-                title: candidate.title || null,
-                company: candidate.company || null,
-                currentEmployer: linkedinProfile?.company || null,
-                linkedinUrl: linkedinUrl || null,
-                location: candidate.location || null,
-                skills: linkedinProfile?.skills || [],
-                score: analysis.overallScore,
-                priority: analysis.priority,
-                openToWork: linkedinProfile?.openToWork || false,
-                lastActive: linkedinProfile?.lastActive || 'Unknown',
-                notes: `Bulk quick check: ${analysis.insights.join('; ')}`,
-                companyDifference: companyDifference,
-                companyDifferenceScore: companyDifferenceScore,
-                hireabilityScore: hireabilityScore,
-                potentialToJoin: hireabilityScore >= 70 ? 'High' : hireabilityScore >= 50 ? 'Medium' : 'Low',
-                enrichedData: linkedinProfile,
-                source: 'bulk-quick-check',
-                comId: com_id || null
-              });
-              console.log(`✅ Saved candidate: ${savedCandidate.id}`);
-            } catch (dbError) {
-              console.error('Failed to save to database:', dbError);
-            }
-          }
+                // Step 7: Update existing candidate in database with fresh data
+                if (saveToDatabase && existingCandidate) {
+                  try {
+                    await storage.updateCandidate(existingCandidate.id, {
+                      currentEmployer: linkedinProfile?.company || existingCandidate.currentEmployer,
+                      linkedinUrl: linkedinUrl || existingCandidate.linkedinUrl,
+                      skills: linkedinProfile?.skills || existingCandidate.skills,
+                      score: analysis.overallScore,
+                      priority: analysis.priority,
+                      openToWork: linkedinProfile?.openToWork || existingCandidate.openToWork,
+                      lastActive: linkedinProfile?.lastActive || existingCandidate.lastActive,
+                      notes: `Bulk quick check (updated): ${analysis.insights.join('; ')}`,
+                      companyDifference: companyDifference,
+                      companyDifferenceScore: companyDifferenceScore,
+                      hireabilityScore: hireabilityScore,
+                      potentialToJoin: hireabilityScore >= 70 ? 'High' : hireabilityScore >= 50 ? 'Medium' : 'Low',
+                      enrichedData: linkedinProfile || existingCandidate.enrichedData
+                    });
+                    console.log(`✅ Updated existing candidate: ${existingCandidate.id}`);
+                  } catch (dbError) {
+                    console.error('Failed to update existing candidate:', dbError);
+                  }
+                }
 
           const processingTime = Date.now() - startTime;
 
-          // Add to results
-          results.push({
+          // Stream complete result with same structure as new candidates
+          res.write(`data: ${JSON.stringify({
+            type: 'candidate',
+            index: i + 1,
+            total: paginatedCandidates.length,
             success: true,
-            candidateId: savedCandidate?.id || null,
+            candidateId: existingCandidate?.id || null,
             candidateInfo: {
               name: candidate.name,
               email: candidate.email,
@@ -1403,11 +1402,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
             companyDifference: hasCompanyDifference ? 
               `Different (Provided: ${candidate.company}, LinkedIn: ${linkedinProfile?.company})` : 
               'Same',
-            savedToDatabase: saveToDatabase && savedCandidate !== null,
-            isExistingCandidate: false,
+            savedToDatabase: saveToDatabase,
+            isExistingCandidate: true,
             processingTime
-          });
-
+          })}\n\n`);
+          
+          continue; // Skip to next candidate
         } catch (error) {
           console.error(`❌ Failed to process ${candidate.name}:`, error);
           results.push({
@@ -1553,34 +1553,193 @@ export async function registerRoutes(app: Express): Promise<Server> {
                 console.log(`✅ Found existing candidate: ${existingCandidate.id}`);
                 existingCount++;
                 
-                // Stream existing candidate data immediately
+                // For existing candidates, still perform LinkedIn search and analysis
+                // to return the same complete response structure
+                
+                // Step 2: Search LinkedIn and get profile data (ONE API call)
+                let linkedinUrl = null;
+                let linkedinProfile = null;
+                let profileValidation = null;
+                try {
+                  const result = await linkedInService.searchProfilesWithData(
+                    candidate.name,
+                    candidate.company,
+                    candidate.title
+                    // Note: location parameter removed - causes 0 results from Apify
+                  );
+                  
+                  if (result) {
+                    linkedinUrl = result.url;
+                    linkedinProfile = result.profile;
+                    profileValidation = result.validation;
+                    console.log(`✅ Found LinkedIn profile for existing candidate: ${linkedinUrl}`);
+                    
+                    // Log validation results
+                    if (profileValidation && !profileValidation.isValid) {
+                      console.warn(`⚠️ Profile validation failed (${profileValidation.confidence}% confidence)`, {
+                        errors: profileValidation.errors,
+                        warnings: profileValidation.warnings
+                      });
+                    }
+                  } else {
+                    console.log(`⚠️ No LinkedIn profile found for existing candidate`);
+                  }
+                } catch (error) {
+                  console.error('❌ LinkedIn search error for existing candidate:', error);
+                }
+
+                // Step 3: Get scoring weights
+                let weights = {
+                  openToWork: 40,
+                  skillMatch: 30,
+                  jobStability: 15,
+                  engagement: 15,
+                  companyDifference: 15
+                };
+
+                if (com_id) {
+                  try {
+                    const config = await storage.getScoringConfig(com_id);
+                    if (config) {
+                      weights = {
+                        openToWork: config.openToWork ?? 0,
+                        skillMatch: config.skillMatch ?? 0,
+                        jobStability: config.jobStability ?? 0,
+                        engagement: config.platformEngagement ?? 0,
+                        companyDifference: 15
+                      };
+                    }
+                  } catch (error) {
+                    console.log('Using default weights for existing candidate');
+                  }
+                }
+
+                // Step 4: AI Analysis
+                const candidateData = {
+                  name: candidate.name,
+                  email: candidate.email,
+                  title: candidate.title,
+                  company: candidate.company,
+                  location: candidate.location,
+                  skills: linkedinProfile?.skills?.join(', ') || '',
+                  linkedinProfile: linkedinProfile,
+                  resumeCompany: candidate.company,
+                  linkedinCompany: linkedinProfile?.company
+                };
+
+                const analysis = await analyzeCandidate(candidateData, "", weights);
+                console.log(`✅ AI analysis for existing candidate: Score ${analysis.overallScore}`);
+
+                // Step 5: Calculate hireability
+                const hasCompanyDifference = candidate.company && linkedinProfile?.company && 
+                  candidate.company !== linkedinProfile.company;
+                
+                let hireabilityScore = 0;
+                hireabilityScore += analysis.overallScore * 4;
+                if (hasCompanyDifference) hireabilityScore += 20;
+                if (linkedinProfile?.openToWork) hireabilityScore += 20;
+                if (linkedinProfile?.lastActive && linkedinProfile.lastActive.includes('week')) hireabilityScore += 10;
+                if (linkedinProfile?.skills && linkedinProfile.skills.length >= 5) hireabilityScore += 10;
+                hireabilityScore = Math.min(hireabilityScore, 100);
+
+                const companyDifference = hasCompanyDifference ? "Different" : "Same";
+                const companyDifferenceScore = hasCompanyDifference ? weights.companyDifference : 0;
+
+                // Step 6: Update existing candidate in database with fresh data
+                if (saveToDatabase) {
+                  try {
+                    await storage.updateCandidate(existingCandidate.id, {
+                      currentEmployer: linkedinProfile?.company || existingCandidate.currentEmployer,
+                      linkedinUrl: linkedinUrl || existingCandidate.linkedinUrl,
+                      skills: linkedinProfile?.skills || existingCandidate.skills,
+                      score: analysis.overallScore,
+                      priority: analysis.priority,
+                      openToWork: linkedinProfile?.openToWork || existingCandidate.openToWork,
+                      lastActive: linkedinProfile?.lastActive || existingCandidate.lastActive,
+                      notes: `Bulk quick check (updated): ${analysis.insights.join('; ')}`,
+                      companyDifference: companyDifference,
+                      companyDifferenceScore: companyDifferenceScore,
+                      hireabilityScore: hireabilityScore,
+                      potentialToJoin: hireabilityScore >= 70 ? 'High' : hireabilityScore >= 50 ? 'Medium' : 'Low',
+                      enrichedData: linkedinProfile || existingCandidate.enrichedData
+                    });
+                    console.log(`✅ Updated existing candidate: ${existingCandidate.id}`);
+                  } catch (dbError) {
+                    console.error('Failed to update existing candidate:', dbError);
+                  }
+                }
+
+                const processingTime = Date.now() - startTime;
+                successCount++;
+
+                // Stream complete result with same structure as new candidates
                 res.write(`data: ${JSON.stringify({
                   type: 'candidate',
                   index: i + 1,
                   total: paginatedCandidates.length,
                   success: true,
+                  candidateId: existingCandidate?.id || null,
                   candidateInfo: {
                     name: candidate.name,
                     email: candidate.email,
                     providedCompany: candidate.company,
-                    providedTitle: candidate.title
+                    providedTitle: candidate.title,
+                    location: candidate.location
                   },
-                  existingCandidate: {
-                    id: existingCandidate.id,
-                    name: existingCandidate.name,
-                    email: existingCandidate.email,
-                    company: existingCandidate.company,
-                    title: existingCandidate.title,
-                    score: existingCandidate.score,
-                    priority: existingCandidate.priority,
-                    hireabilityScore: existingCandidate.hireabilityScore,
-                    potentialToJoin: existingCandidate.potentialToJoin,
-                    linkedinUrl: existingCandidate.linkedinUrl,
-                    openToWork: existingCandidate.openToWork
+                  linkedinProfile: linkedinProfile ? {
+                    profileUrl: linkedinUrl,
+                    name: linkedinProfile.name,
+                    currentCompany: linkedinProfile.company,
+                    currentTitle: linkedinProfile.title,
+                    headline: linkedinProfile.headline,
+                    location: linkedinProfile.location,
+                    summary: linkedinProfile.summary,
+                    connections: linkedinProfile.connections,
+                    skills: linkedinProfile.skills,
+                    education: linkedinProfile.education,
+                    certifications: linkedinProfile.certifications,
+                    openToWork: linkedinProfile.openToWork,
+                    lastActive: linkedinProfile.lastActive,
+                    jobHistory: linkedinProfile.jobHistory,
+                    recentActivity: linkedinProfile.recentActivity,
+                    profilePicture: linkedinProfile.profilePicture,
+                    industry: linkedinProfile.industry,
+                    languages: linkedinProfile.languages
+                  } : null,
+                  dataQuality: profileValidation ? {
+                    isValid: profileValidation.isValid,
+                    confidence: profileValidation.confidence,
+                    warnings: profileValidation.warnings,
+                    errors: profileValidation.errors
+                  } : null,
+                  scoring: {
+                    skillMatch: analysis.skillMatch,
+                    openToWork: analysis.openToWork,
+                    jobStability: analysis.jobStability,
+                    engagement: analysis.engagement,
+                    companyConsistency: analysis.companyConsistency,
+                    overallScore: analysis.overallScore,
+                    priority: analysis.priority
                   },
+                  hireability: {
+                    score: hireabilityScore,
+                    potentialToJoin: hireabilityScore >= 70 ? 'High' : hireabilityScore >= 50 ? 'Medium' : 'Low',
+                    factors: {
+                      openToWork: linkedinProfile?.openToWork || false,
+                      companyMatch: !hasCompanyDifference,
+                      recentActivity: linkedinProfile?.lastActive?.includes('week') || false,
+                      skillsAvailable: (linkedinProfile?.skills?.length || 0) > 0
+                    }
+                  },
+                  insights: analysis.insights,
+                  companyDifference: hasCompanyDifference ? 
+                    `Different (Provided: ${candidate.company}, LinkedIn: ${linkedinProfile?.company})` : 
+                    'Same',
+                  savedToDatabase: saveToDatabase,
                   isExistingCandidate: true,
-                  processingTime: Date.now() - startTime
+                  processingTime
                 })}\n\n`);
+                
                 continue; // Skip to next candidate
               }
             } catch (error) {

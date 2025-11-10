@@ -1,5 +1,5 @@
 // Re-export types from shared schema
-export type { Candidate, InsertCandidate, User, Activity, Project, ProcessingJob } from "@shared/schema";
+export type { Candidate, InsertCandidate, User, Activity, Project, ProcessingJob, ScoringWeights } from "@shared/schema";
 
 // Additional frontend-specific types
 export interface LinkedInProfile {

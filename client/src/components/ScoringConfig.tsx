@@ -16,7 +16,7 @@ export default function ScoringConfig() {
     openToWork: 40,
     skillMatch: 30,
     jobStability: 15,
-    engagement: 15,
+    platformEngagement: 15,
   });
 
   const { data: currentWeights } = useQuery<ScoringWeights>({
@@ -52,7 +52,7 @@ export default function ScoringConfig() {
   }, [currentWeights]);
 
   const handleWeightChange = (key: keyof ScoringWeights, value: number[]) => {
-    setWeights(prev => ({
+    setWeights((prev: ScoringWeights) => ({
       ...prev,
       [key]: value[0],
     }));
@@ -60,7 +60,7 @@ export default function ScoringConfig() {
 
   const handleUpdate = () => {
     // Validate that weights sum to 100
-    const total = weights.openToWork + weights.skillMatch + weights.jobStability + weights.engagement;
+    const total = weights.openToWork + weights.skillMatch + weights.jobStability + weights.platformEngagement;
     if (Math.abs(total - 100) > 0.1) {
       toast({
         title: "Invalid weights",
@@ -78,35 +78,40 @@ export default function ScoringConfig() {
       openToWork: 40,
       skillMatch: 30,
       jobStability: 15,
-      engagement: 15,
+      platformEngagement: 15,
     });
   };
 
-  const totalWeight = weights.openToWork + weights.skillMatch + weights.jobStability + weights.engagement;
+  const totalWeight = weights.openToWork + weights.skillMatch + weights.jobStability + weights.platformEngagement;
 
-  const sliderConfigs = [
+  const sliderConfigs: Array<{
+    key: keyof ScoringWeights;
+    label: string;
+    value: number;
+    description: string;
+  }> = [
     {
-      key: "openToWork" as const,
+      key: "openToWork",
       label: "Open to Work Signal",
       value: weights.openToWork,
       description: "LinkedIn profile indicators",
     },
     {
-      key: "skillMatch" as const,
+      key: "skillMatch",
       label: "Skill Match Score",
       value: weights.skillMatch,
       description: "Job description alignment",
     },
     {
-      key: "jobStability" as const,
+      key: "jobStability",
       label: "Job Stability",
       value: weights.jobStability,
       description: "Employment history analysis",
     },
     {
-      key: "engagement" as const,
+      key: "platformEngagement",
       label: "Platform Engagement",
-      value: weights.engagement,
+      value: weights.platformEngagement,
       description: "Professional activity level",
     },
   ];

@@ -1,0 +1,3126 @@
+{
+  "success": true,
+  "data": {
+    "comId": 223,
+    "requestedIds": [
+      "6497d263-675c-416d-b4c5-7ce3c130d50b",
+      "ffe2ca39-e3e6-48bf-8f5d-7ee2d0ce19e4",
+      "cf1b4b55-d371-4b9c-9f61-127a038e2470",
+      "649bce5d-f667-48f3-a795-385e9abaf2c5",
+      "cc7d4548-688b-46a8-9aa4-6dc1402559d5",
+      "b2cb518b-e6a2-4bf5-b2f8-c7755640a204"
+    ],
+    "foundCandidates": 6,
+    "candidates": [
+      {
+        "id": "cc7d4548-688b-46a8-9aa4-6dc1402559d5",
+        "comId": "223",
+        "eeezoResumeUrl": null,
+        "eeezoUploadDate": "2025-09-19T05:24:43.690Z",
+        "eeezoStatus": "uploaded",
+        "name": "Pushparani S",
+        "email": "pushparanis0905@gmail.com",
+        "phone": "8489235259",
+        "title": "Web Developer",
+        "company": "X-MEDIA SOLUTIONS",
+        "currentEmployer": null,
+        "linkedinUrl": "https://linkedin.com/in/pushparani-s-1437b1243",
+        "githubUrl": "https://github.com/Pushparani",
+        "portfolioUrl": null,
+        "location": null,
+        "summary": "A motivated individual with in-depth knowledge of languages and development tools, seeking a position in a growth-oriented company where I can use my skills to the advantage of the company while having the scope to develop my own skills.",
+        "filename": "206ff18d-13e6-415d-a64a-594e5e1c48d9.pdf",
+        "rawText": "Mobile : 8489235259 E-Mail : pushparanis0905@gmail.com Github : github.com/Pushparani S LinkedIn : linkedin.com/in/pushparani-s-1437b1243 Pushparani S Web Developer SUMMARY A motivated individual with in-depth knowledge of languages and development tools, seeking a position in a growth-oriented company where I can use my skills to the advantage of the company while having the scope to develop my own skills. TECHNICAL SKILLS ◆ HTML5 ◆ Laravel ◆ CSS3 ◆ CodeIgniter ◆ JavaScript ◆ MySQL ◆ JQuery JS ◆ REST APIs ◆ PHP ◆ Moodle LMS WORK EXPERIENCE COMPANY: X-MEDIA SOLUTIONS ROLE: WEB DEVELOPER EXPERIENCE : 1 YEAR (September 2022 - PRESENT) PROJECTS: ◆ L&T Workmen Mobilization (web & mobile) - Internal Communication and Worker hiring management App ◆ CDMS Online University (web) - E-Learning Platform ◆ Avtarlabs (web) - E-learning Platform ◆ VRBIZTEC (web) - Engineering Drawings - Viewing Application ◆ Canli (website) - E-commerce Website ROLES & RESPONSIBILITIES : ◆ Design and implement database schemas for web applications. This includes creating tables, columns, and relationships, and ensuring that the schema meets the needs of the application. ◆ Integrate payment processing into web applications. This includes working with payment processors, configuring the integration, and testing the integration. ◆ Design and develop REST APIs that meet the needs of clients and users. This includes defining the API's endpoints, parameters, and responses. ◆ Integrate third-party APIs into web applications. This includes understanding the third-party API's Conducted Functional, Regression, Integration and System testing to identify the software defects. EDUCATIONAL QUALIFICATIONS BACHELOR DEGREE : B.Sc(Mathematics) - Manonmaniam Sundarnar University(2017-2020). MASTER DEGREE : M.Sc(Mathematics) - Manonmaniam Sundarnar University (2020-2022). COURSES Java (Core Java) : Fita Academy, Chennai.",
+        "experience": [
+          {
+            "company": "X-MEDIA SOLUTIONS",
+            "endDate": "Present",
+            "duration": "September 2022 - Present",
+            "jobTitle": "Web Developer",
+            "techUsed": [
+              "HTML5",
+              "Laravel",
+              "CSS3",
+              "CodeIgniter",
+              "JavaScript",
+              "MySQL",
+              "JQuery JS",
+              "REST APIs",
+              "PHP",
+              "Moodle LMS"
+            ],
+            "startDate": "2022-09",
+            "description": "Design and implement database schemas for web applications. Integrate payment processing into web applications. Design and develop REST APIs. Integrate third-party APIs into web applications.",
+            "achievements": []
+          }
+        ],
+        "education": [
+          {
+            "gpa": null,
+            "year": "2020",
+            "field": "Mathematics",
+            "degree": "B.Sc",
+            "location": null,
+            "percentage": null,
+            "university": "Manonmaniam Sundarnar University"
+          },
+          {
+            "gpa": null,
+            "year": "2022",
+            "field": "Mathematics",
+            "degree": "M.Sc",
+            "location": null,
+            "percentage": null,
+            "university": "Manonmaniam Sundarnar University"
+          }
+        ],
+        "projects": [
+          {
+            "url": null,
+            "name": "L&T Workmen Mobilization",
+            "duration": null,
+            "techUsed": [],
+            "description": "Internal Communication and Worker hiring management App",
+            "achievements": []
+          },
+          {
+            "url": null,
+            "name": "CDMS Online University",
+            "duration": null,
+            "techUsed": [],
+            "description": "E-Learning Platform",
+            "achievements": []
+          },
+          {
+            "url": null,
+            "name": "Avtarlabs",
+            "duration": null,
+            "techUsed": [],
+            "description": "E-learning Platform",
+            "achievements": []
+          },
+          {
+            "url": null,
+            "name": "VRBIZTEC",
+            "duration": null,
+            "techUsed": [],
+            "description": "Engineering Drawings - Viewing Application",
+            "achievements": []
+          },
+          {
+            "url": null,
+            "name": "Canli",
+            "duration": null,
+            "techUsed": [],
+            "description": "E-commerce Website",
+            "achievements": []
+          }
+        ],
+        "achievements": [],
+        "interests": [],
+        "skills": [
+          "HTML5",
+          "Laravel",
+          "CSS3",
+          "CodeIgniter",
+          "JavaScript",
+          "MySQL",
+          "JQuery JS",
+          "REST APIs",
+          "PHP",
+          "Moodle LMS"
+        ],
+        "certifications": [
+          {
+            "url": null,
+            "date": null,
+            "name": "Java (Core Java)",
+            "issuer": "Fita Academy, Chennai",
+            "expiryDate": null,
+            "credentialId": null
+          }
+        ],
+        "languages": [],
+        "linkedinLastActive": null,
+        "linkedinHeadline": null,
+        "linkedinSummary": null,
+        "linkedinConnections": null,
+        "linkedinNotes": null,
+        "firstName": "Pushparani",
+        "lastName": "S",
+        "middleName": null,
+        "currentTitle": "Web Developer",
+        "currentCompany": "X-MEDIA SOLUTIONS",
+        "yearsOfExperience": 3,
+        "workHistory": [
+          {
+            "company": "X-MEDIA SOLUTIONS",
+            "endDate": "Present",
+            "duration": "September 2022 - Present",
+            "jobTitle": "Web Developer",
+            "techUsed": [
+              "HTML5",
+              "Laravel",
+              "CSS3",
+              "CodeIgniter",
+              "JavaScript",
+              "MySQL",
+              "JQuery JS",
+              "REST APIs",
+              "PHP",
+              "Moodle LMS"
+            ],
+            "startDate": "2022-09",
+            "description": "Design and implement database schemas for web applications. Integrate payment processing into web applications. Design and develop REST APIs. Integrate third-party APIs into web applications.",
+            "achievements": []
+          }
+        ],
+        "salary": null,
+        "availability": null,
+        "remotePreference": null,
+        "visaStatus": null,
+        "alternateEmail": null,
+        "website": null,
+        "github": null,
+        "portfolio": null,
+        "score": 0,
+        "priority": "Low",
+        "openToWork": false,
+        "lastActive": null,
+        "openToWorkScore": 0,
+        "skillMatchScore": 0,
+        "jobStabilityScore": 0,
+        "platformEngagementScore": 0,
+        "resumeStatus": "active",
+        "companyDifference": null,
+        "companyDifferenceScore": 0,
+        "hireabilityScore": 0,
+        "hireabilityFactors": [],
+        "potentialToJoin": "Unknown",
+        "atsId": null,
+        "selectionStatus": null,
+        "selectionDate": null,
+        "joiningOutcome": null,
+        "atsNotes": null,
+        "source": "eezo",
+        "dataSource": "resume",
+        "enrichmentStatus": "failed",
+        "enrichmentDate": "2025-09-19T05:24:45.583Z",
+        "enrichmentSource": null,
+        "sourceFile": null,
+        "processingDate": null,
+        "dataQuality": null,
+        "originalData": {
+          "name": "Pushparani S",
+          "email": "pushparanis0905@gmail.com",
+          "phone": "8489235259",
+          "title": "Web Developer",
+          "salary": null,
+          "skills": [
+            "HTML5",
+            "Laravel",
+            "CSS3",
+            "CodeIgniter",
+            "JavaScript",
+            "MySQL",
+            "JQuery JS",
+            "REST APIs",
+            "PHP",
+            "Moodle LMS"
+          ],
+          "source": "resume",
+          "summary": "A motivated individual with in-depth knowledge of languages and development tools, seeking a position in a growth-oriented company where I can use my skills to the advantage of the company while having the scope to develop my own skills.",
+          "location": null,
+          "projects": [
+            {
+              "url": null,
+              "name": "L&T Workmen Mobilization",
+              "duration": null,
+              "techUsed": [],
+              "description": "Internal Communication and Worker hiring management App",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "CDMS Online University",
+              "duration": null,
+              "techUsed": [],
+              "description": "E-Learning Platform",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "Avtarlabs",
+              "duration": null,
+              "techUsed": [],
+              "description": "E-learning Platform",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "VRBIZTEC",
+              "duration": null,
+              "techUsed": [],
+              "description": "Engineering Drawings - Viewing Application",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "Canli",
+              "duration": null,
+              "techUsed": [],
+              "description": "E-commerce Website",
+              "achievements": []
+            }
+          ],
+          "education": [
+            {
+              "gpa": null,
+              "year": "2020",
+              "field": "Mathematics",
+              "degree": "B.Sc",
+              "location": null,
+              "percentage": null,
+              "university": "Manonmaniam Sundarnar University"
+            },
+            {
+              "gpa": null,
+              "year": "2022",
+              "field": "Mathematics",
+              "degree": "M.Sc",
+              "location": null,
+              "percentage": null,
+              "university": "Manonmaniam Sundarnar University"
+            }
+          ],
+          "githubUrl": "https://github.com/Pushparani",
+          "interests": [],
+          "languages": [],
+          "confidence": 98,
+          "experience": [
+            {
+              "company": "X-MEDIA SOLUTIONS",
+              "endDate": "Present",
+              "duration": "September 2022 - Present",
+              "jobTitle": "Web Developer",
+              "techUsed": [
+                "HTML5",
+                "Laravel",
+                "CSS3",
+                "CodeIgniter",
+                "JavaScript",
+                "MySQL",
+                "JQuery JS",
+                "REST APIs",
+                "PHP",
+                "Moodle LMS"
+              ],
+              "startDate": "2022-09",
+              "description": "Design and implement database schemas for web applications. Integrate payment processing into web applications. Design and develop REST APIs. Integrate third-party APIs into web applications.",
+              "achievements": []
+            }
+          ],
+          "visaStatus": null,
+          "linkedinUrl": "https://linkedin.com/in/pushparani-s-1437b1243",
+          "achievements": [],
+          "availability": null,
+          "originalData": {
+            "rawText": "Mobile : 8489235259 E-Mail : pushparanis0905@gmail.com Github : github.com/Pushparani S LinkedIn : linkedin.com/in/pushparani-s-1437b1243 Pushparani S Web Developer SUMMARY A motivated individual with in-depth knowledge of languages and development tools, seeking a position in a growth-oriented company where I can use my skills to the advantage of the company while having the scope to develop my own skills. TECHNICAL SKILLS ◆ HTML5 ◆ Laravel ◆ CSS3 ◆ CodeIgniter ◆ JavaScript ◆ MySQL ◆ JQuery JS ◆ REST APIs ◆ PHP ◆ Moodle LMS WORK EXPERIENCE COMPANY: X-MEDIA SOLUTIONS ROLE: WEB DEVELOPER EXPERIENCE : 1 YEAR (September 2022 - PRESENT) PROJECTS: ◆ L&T Workmen Mobilization (web & mobile) - Internal Communication and Worker hiring management App ◆ CDMS Online University (web) - E-Learning Platform ◆ Avtarlabs (web) - E-learning Platform ◆ VRBIZTEC (web) - Engineering Drawings - Viewing Application ◆ Canli (website) - E-commerce Website ROLES & RESPONSIBILITIES : ◆ Design and implement database schemas for web applications. This includes creating tables, columns, and relationships, and ensuring that the schema meets the needs of the application. ◆ Integrate payment processing into web applications. This includes working with payment processors, configuring the integration, and testing the integration. ◆ Design and develop REST APIs that meet the needs of clients and users. This includes defining the API's endpoints, parameters, and responses. ◆ Integrate third-party APIs into web applications. This includes understanding the third-party API's Conducted Functional, Regression, Integration and System testing to identify the software defects. EDUCATIONAL QUALIFICATIONS BACHELOR DEGREE : B.Sc(Mathematics) - Manonmaniam Sundarnar University(2017-2020). MASTER DEGREE : M.Sc(Mathematics) - Manonmaniam Sundarnar University (2020-2022). COURSES Java (Core Java) : Fita Academy, Chennai.",
+            "filename": "206ff18d-13e6-415d-a64a-594e5e1c48d9.pdf"
+          },
+          "portfolioUrl": null,
+          "certifications": [
+            {
+              "url": null,
+              "date": null,
+              "name": "Java (Core Java)",
+              "issuer": "Fita Academy, Chennai",
+              "expiryDate": null,
+              "credentialId": null
+            }
+          ],
+          "processingTime": 0,
+          "remotePreference": null
+        },
+        "enrichedData": null,
+        "extractedData": {
+          "name": "Pushparani S",
+          "email": "pushparanis0905@gmail.com",
+          "phone": "8489235259",
+          "title": "Web Developer",
+          "salary": null,
+          "skills": [
+            "HTML5",
+            "Laravel",
+            "CSS3",
+            "CodeIgniter",
+            "JavaScript",
+            "MySQL",
+            "JQuery JS",
+            "REST APIs",
+            "PHP",
+            "Moodle LMS"
+          ],
+          "source": "resume",
+          "summary": "A motivated individual with in-depth knowledge of languages and development tools, seeking a position in a growth-oriented company where I can use my skills to the advantage of the company while having the scope to develop my own skills.",
+          "location": null,
+          "projects": [
+            {
+              "url": null,
+              "name": "L&T Workmen Mobilization",
+              "duration": null,
+              "techUsed": [],
+              "description": "Internal Communication and Worker hiring management App",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "CDMS Online University",
+              "duration": null,
+              "techUsed": [],
+              "description": "E-Learning Platform",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "Avtarlabs",
+              "duration": null,
+              "techUsed": [],
+              "description": "E-learning Platform",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "VRBIZTEC",
+              "duration": null,
+              "techUsed": [],
+              "description": "Engineering Drawings - Viewing Application",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "Canli",
+              "duration": null,
+              "techUsed": [],
+              "description": "E-commerce Website",
+              "achievements": []
+            }
+          ],
+          "education": [
+            {
+              "gpa": null,
+              "year": "2020",
+              "field": "Mathematics",
+              "degree": "B.Sc",
+              "location": null,
+              "percentage": null,
+              "university": "Manonmaniam Sundarnar University"
+            },
+            {
+              "gpa": null,
+              "year": "2022",
+              "field": "Mathematics",
+              "degree": "M.Sc",
+              "location": null,
+              "percentage": null,
+              "university": "Manonmaniam Sundarnar University"
+            }
+          ],
+          "githubUrl": "https://github.com/Pushparani",
+          "interests": [],
+          "languages": [],
+          "confidence": 98,
+          "experience": [
+            {
+              "company": "X-MEDIA SOLUTIONS",
+              "endDate": "Present",
+              "duration": "September 2022 - Present",
+              "jobTitle": "Web Developer",
+              "techUsed": [
+                "HTML5",
+                "Laravel",
+                "CSS3",
+                "CodeIgniter",
+                "JavaScript",
+                "MySQL",
+                "JQuery JS",
+                "REST APIs",
+                "PHP",
+                "Moodle LMS"
+              ],
+              "startDate": "2022-09",
+              "description": "Design and implement database schemas for web applications. Integrate payment processing into web applications. Design and develop REST APIs. Integrate third-party APIs into web applications.",
+              "achievements": []
+            }
+          ],
+          "visaStatus": null,
+          "linkedinUrl": "https://linkedin.com/in/pushparani-s-1437b1243",
+          "achievements": [],
+          "availability": null,
+          "originalData": {
+            "rawText": "Mobile : 8489235259 E-Mail : pushparanis0905@gmail.com Github : github.com/Pushparani S LinkedIn : linkedin.com/in/pushparani-s-1437b1243 Pushparani S Web Developer SUMMARY A motivated individual with in-depth knowledge of languages and development tools, seeking a position in a growth-oriented company where I can use my skills to the advantage of the company while having the scope to develop my own skills. TECHNICAL SKILLS ◆ HTML5 ◆ Laravel ◆ CSS3 ◆ CodeIgniter ◆ JavaScript ◆ MySQL ◆ JQuery JS ◆ REST APIs ◆ PHP ◆ Moodle LMS WORK EXPERIENCE COMPANY: X-MEDIA SOLUTIONS ROLE: WEB DEVELOPER EXPERIENCE : 1 YEAR (September 2022 - PRESENT) PROJECTS: ◆ L&T Workmen Mobilization (web & mobile) - Internal Communication and Worker hiring management App ◆ CDMS Online University (web) - E-Learning Platform ◆ Avtarlabs (web) - E-learning Platform ◆ VRBIZTEC (web) - Engineering Drawings - Viewing Application ◆ Canli (website) - E-commerce Website ROLES & RESPONSIBILITIES : ◆ Design and implement database schemas for web applications. This includes creating tables, columns, and relationships, and ensuring that the schema meets the needs of the application. ◆ Integrate payment processing into web applications. This includes working with payment processors, configuring the integration, and testing the integration. ◆ Design and develop REST APIs that meet the needs of clients and users. This includes defining the API's endpoints, parameters, and responses. ◆ Integrate third-party APIs into web applications. This includes understanding the third-party API's Conducted Functional, Regression, Integration and System testing to identify the software defects. EDUCATIONAL QUALIFICATIONS BACHELOR DEGREE : B.Sc(Mathematics) - Manonmaniam Sundarnar University(2017-2020). MASTER DEGREE : M.Sc(Mathematics) - Manonmaniam Sundarnar University (2020-2022). COURSES Java (Core Java) : Fita Academy, Chennai.",
+            "filename": "206ff18d-13e6-415d-a64a-594e5e1c48d9.pdf"
+          },
+          "portfolioUrl": null,
+          "certifications": [
+            {
+              "url": null,
+              "date": null,
+              "name": "Java (Core Java)",
+              "issuer": "Fita Academy, Chennai",
+              "expiryDate": null,
+              "credentialId": null
+            }
+          ],
+          "processingTime": 0,
+          "remotePreference": null
+        },
+        "confidence": 98,
+        "processingTime": 6421,
+        "notes": null,
+        "createdAt": "2025-09-19T05:24:43.690Z"
+      },
+      {
+        "id": "6497d263-675c-416d-b4c5-7ce3c130d50b",
+        "comId": "223",
+        "eeezoResumeUrl": null,
+        "eeezoUploadDate": "2025-09-19T05:02:45.432Z",
+        "eeezoStatus": "uploaded",
+        "name": "RAMKUMAR B",
+        "email": "ramki028@gmail.com",
+        "phone": "8072205100",
+        "title": null,
+        "company": "iOPEX Technologies",
+        "currentEmployer": null,
+        "linkedinUrl": "https://www.linkedin.com/in/ramkumar-b-560961177/",
+        "githubUrl": null,
+        "portfolioUrl": null,
+        "location": "Virudhunagar, India",
+        "summary": "Dynamic software developer with over 5 Years 8 Months of proven expertise in web application development. Eagerly pursuing opportunities to leverage my skills for the benefit of your esteemed company while continuously improving my skills in a collaborative and fast-paced environment.",
+        "filename": "a4b00696-301d-4e3a-a559-88cc0d35f476.pdf",
+        "rawText": "RAMKUMAR B Virudhunagar, India 626004 ramki028@gmail.com / 8072205100 WWW: https://www.linkedin.com/in/ramkumar-b-560961177/ SUMMARY Dynamic software developer with over 5 Years 8 Months of proven expertise in web application development. Eagerly pursuing opportunities to leverage my skills for the benefit of your esteemed company while continuously improving my skills in a collaborative and fast-paced environment. SKILLS Programming Languages : PHP, JavaScript, TypeScript Frameworks & Libraries : React, CodeIgniter, Laravel, jQuery, Bootstrap 4 & 5, React Native, Tailwind CSS Databases : MySQL, SQLite Miscellaneous : Git, Linux, Server Handling EXPERIENCE 10/2024 - CurrentSoftware Engineer / iOPEX Technologies - Chennai IQMS – Internal Quality Management System Developed a project management tool to help non-technical stakeholders track quality and process initiatives across departments. Key features: task assignment, milestone tracking, user access, and status dashboards. Food Coupon Management System Built a centralized system for automating food coupon generation, QR-based verification at counters, and integration with attendance to prevent misuse. CDR – Candidate Data Repository Revamped a candidate management portal with AI-driven automation, migrating from PHP to React Redux. Improved the seven-stage form with intelligent autofill, optimizing registration, document handling, and interview scheduling for an efficient HR workflow. Other Projects Contributed to various internal applications at iOPEX Technologies, focusing on process automation, data management, and user experience enhancements. 03/2021 - 10/2024Senior Software Engineer / Nirals Information Technologies - Kovilpatti Eduniv – Comprehensive School and College Management System Led the enhancement of an ERP system used by 250+ institutions to digitalize academic and admin processes. Key features included: Online admission, fee management, and automated payroll. GPS transport tracking and RFID-based ",
+        "experience": [
+          {
+            "company": "iOPEX Technologies",
+            "endDate": "Present",
+            "duration": "10/2024 - Current",
+            "jobTitle": "Software Engineer",
+            "techUsed": [
+              "React",
+              "Redux",
+              "PHP"
+            ],
+            "startDate": "2024-10",
+            "description": "Developed a project management tool to help non-technical stakeholders track quality and process initiatives across departments. Built a centralized system for automating food coupon generation, QR-based verification at counters, and integration with attendance to prevent misuse. Revamped a candidate management portal with AI-driven automation, migrating from PHP to React Redux.",
+            "achievements": []
+          },
+          {
+            "company": "Nirals Information Technologies",
+            "endDate": "2024-10",
+            "duration": "03/2021 - 10/2024",
+            "jobTitle": "Senior Software Engineer",
+            "techUsed": [
+              "Linux",
+              "React Native"
+            ],
+            "startDate": "2021-03",
+            "description": "Led the enhancement of an ERP system used by 250+ institutions to digitalize academic and admin processes. Developed an e-learning platform to ensure education continuity during the COVID-19 pandemic. Developed a job portal aimed at simplifying recruitment for both candidates and employers.",
+            "achievements": []
+          },
+          {
+            "company": "Concent Solutions Private Limited",
+            "endDate": "2020-05",
+            "duration": "02/2019 - 05/2020",
+            "jobTitle": "Software Engineer",
+            "techUsed": [
+              "PHP",
+              "JavaScript",
+              "React Native"
+            ],
+            "startDate": "2019-02",
+            "description": "Contributed to a full-scale healthcare platform that streamlined digital medical services and mobile health tracking. Developed RESTful APIs for mobile application integration, enabling secure communication with patient and doctor interfaces.",
+            "achievements": []
+          },
+          {
+            "company": "Concent Solutions Private Limited",
+            "endDate": "2019-06",
+            "duration": "02/2019 - 06/2019",
+            "jobTitle": "Trainee Software Engineer",
+            "techUsed": [
+              "PHP",
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "React Native"
+            ],
+            "startDate": "2019-02",
+            "description": "Participated in a structured training program and contributed to real-time projects under supervision.",
+            "achievements": []
+          }
+        ],
+        "education": [
+          {
+            "gpa": "7.2",
+            "year": "2019",
+            "field": "Computer Science",
+            "degree": "Bachelor of Engineering",
+            "location": "Virudhunagar",
+            "percentage": null,
+            "university": "Sri Vidya College of Engineering & Technology"
+          }
+        ],
+        "projects": [],
+        "achievements": [],
+        "interests": [],
+        "skills": [
+          "PHP",
+          "JavaScript",
+          "TypeScript",
+          "React",
+          "CodeIgniter",
+          "Laravel",
+          "jQuery",
+          "Bootstrap 4 & 5",
+          "React Native",
+          "Tailwind CSS",
+          "MySQL",
+          "SQLite",
+          "Git",
+          "Linux",
+          "Server Handling"
+        ],
+        "certifications": [],
+        "languages": [
+          "Tamil",
+          "English"
+        ],
+        "linkedinLastActive": null,
+        "linkedinHeadline": null,
+        "linkedinSummary": null,
+        "linkedinConnections": null,
+        "linkedinNotes": null,
+        "firstName": "RAMKUMAR",
+        "lastName": "B",
+        "middleName": null,
+        "currentTitle": "Software Engineer",
+        "currentCompany": "iOPEX Technologies",
+        "yearsOfExperience": 6.1,
+        "workHistory": [
+          {
+            "company": "iOPEX Technologies",
+            "endDate": "Present",
+            "duration": "10/2024 - Current",
+            "jobTitle": "Software Engineer",
+            "techUsed": [
+              "React",
+              "Redux",
+              "PHP"
+            ],
+            "startDate": "2024-10",
+            "description": "Developed a project management tool to help non-technical stakeholders track quality and process initiatives across departments. Built a centralized system for automating food coupon generation, QR-based verification at counters, and integration with attendance to prevent misuse. Revamped a candidate management portal with AI-driven automation, migrating from PHP to React Redux.",
+            "achievements": []
+          },
+          {
+            "company": "Nirals Information Technologies",
+            "endDate": "2024-10",
+            "duration": "03/2021 - 10/2024",
+            "jobTitle": "Senior Software Engineer",
+            "techUsed": [
+              "Linux",
+              "React Native"
+            ],
+            "startDate": "2021-03",
+            "description": "Led the enhancement of an ERP system used by 250+ institutions to digitalize academic and admin processes. Developed an e-learning platform to ensure education continuity during the COVID-19 pandemic. Developed a job portal aimed at simplifying recruitment for both candidates and employers.",
+            "achievements": []
+          },
+          {
+            "company": "Concent Solutions Private Limited",
+            "endDate": "2020-05",
+            "duration": "02/2019 - 05/2020",
+            "jobTitle": "Software Engineer",
+            "techUsed": [
+              "PHP",
+              "JavaScript",
+              "React Native"
+            ],
+            "startDate": "2019-02",
+            "description": "Contributed to a full-scale healthcare platform that streamlined digital medical services and mobile health tracking. Developed RESTful APIs for mobile application integration, enabling secure communication with patient and doctor interfaces.",
+            "achievements": []
+          },
+          {
+            "company": "Concent Solutions Private Limited",
+            "endDate": "2019-06",
+            "duration": "02/2019 - 06/2019",
+            "jobTitle": "Trainee Software Engineer",
+            "techUsed": [
+              "PHP",
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "React Native"
+            ],
+            "startDate": "2019-02",
+            "description": "Participated in a structured training program and contributed to real-time projects under supervision.",
+            "achievements": []
+          }
+        ],
+        "salary": null,
+        "availability": null,
+        "remotePreference": null,
+        "visaStatus": null,
+        "alternateEmail": null,
+        "website": null,
+        "github": null,
+        "portfolio": null,
+        "score": 0,
+        "priority": "Low",
+        "openToWork": false,
+        "lastActive": null,
+        "openToWorkScore": 0,
+        "skillMatchScore": 0,
+        "jobStabilityScore": 0,
+        "platformEngagementScore": 0,
+        "resumeStatus": "active",
+        "companyDifference": null,
+        "companyDifferenceScore": 0,
+        "hireabilityScore": 0,
+        "hireabilityFactors": [],
+        "potentialToJoin": "Unknown",
+        "atsId": null,
+        "selectionStatus": null,
+        "selectionDate": null,
+        "joiningOutcome": null,
+        "atsNotes": null,
+        "source": "eezo",
+        "dataSource": "resume",
+        "enrichmentStatus": "failed",
+        "enrichmentDate": "2025-09-19T05:02:47.234Z",
+        "enrichmentSource": null,
+        "sourceFile": null,
+        "processingDate": null,
+        "dataQuality": null,
+        "originalData": {
+          "name": "RAMKUMAR B",
+          "email": "ramki028@gmail.com",
+          "phone": "8072205100",
+          "title": null,
+          "salary": null,
+          "skills": [
+            "PHP",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "CodeIgniter",
+            "Laravel",
+            "jQuery",
+            "Bootstrap 4 & 5",
+            "React Native",
+            "Tailwind CSS",
+            "MySQL",
+            "SQLite",
+            "Git",
+            "Linux",
+            "Server Handling"
+          ],
+          "source": "resume",
+          "summary": "Dynamic software developer with over 5 Years 8 Months of proven expertise in web application development. Eagerly pursuing opportunities to leverage my skills for the benefit of your esteemed company while continuously improving my skills in a collaborative and fast-paced environment.",
+          "location": "Virudhunagar, India",
+          "projects": [],
+          "education": [
+            {
+              "gpa": "7.2",
+              "year": "2019",
+              "field": "Computer Science",
+              "degree": "Bachelor of Engineering",
+              "location": "Virudhunagar",
+              "percentage": null,
+              "university": "Sri Vidya College of Engineering & Technology"
+            }
+          ],
+          "githubUrl": null,
+          "interests": [],
+          "languages": [
+            "Tamil",
+            "English"
+          ],
+          "confidence": 82,
+          "experience": [
+            {
+              "company": "iOPEX Technologies",
+              "endDate": "Present",
+              "duration": "10/2024 - Current",
+              "jobTitle": "Software Engineer",
+              "techUsed": [
+                "React",
+                "Redux",
+                "PHP"
+              ],
+              "startDate": "2024-10",
+              "description": "Developed a project management tool to help non-technical stakeholders track quality and process initiatives across departments. Built a centralized system for automating food coupon generation, QR-based verification at counters, and integration with attendance to prevent misuse. Revamped a candidate management portal with AI-driven automation, migrating from PHP to React Redux.",
+              "achievements": []
+            },
+            {
+              "company": "Nirals Information Technologies",
+              "endDate": "2024-10",
+              "duration": "03/2021 - 10/2024",
+              "jobTitle": "Senior Software Engineer",
+              "techUsed": [
+                "Linux",
+                "React Native"
+              ],
+              "startDate": "2021-03",
+              "description": "Led the enhancement of an ERP system used by 250+ institutions to digitalize academic and admin processes. Developed an e-learning platform to ensure education continuity during the COVID-19 pandemic. Developed a job portal aimed at simplifying recruitment for both candidates and employers.",
+              "achievements": []
+            },
+            {
+              "company": "Concent Solutions Private Limited",
+              "endDate": "2020-05",
+              "duration": "02/2019 - 05/2020",
+              "jobTitle": "Software Engineer",
+              "techUsed": [
+                "PHP",
+                "JavaScript",
+                "React Native"
+              ],
+              "startDate": "2019-02",
+              "description": "Contributed to a full-scale healthcare platform that streamlined digital medical services and mobile health tracking. Developed RESTful APIs for mobile application integration, enabling secure communication with patient and doctor interfaces.",
+              "achievements": []
+            },
+            {
+              "company": "Concent Solutions Private Limited",
+              "endDate": "2019-06",
+              "duration": "02/2019 - 06/2019",
+              "jobTitle": "Trainee Software Engineer",
+              "techUsed": [
+                "PHP",
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "React Native"
+              ],
+              "startDate": "2019-02",
+              "description": "Participated in a structured training program and contributed to real-time projects under supervision.",
+              "achievements": []
+            }
+          ],
+          "visaStatus": null,
+          "linkedinUrl": "https://www.linkedin.com/in/ramkumar-b-560961177/",
+          "achievements": [],
+          "availability": null,
+          "originalData": {
+            "rawText": "RAMKUMAR B Virudhunagar, India 626004 ramki028@gmail.com / 8072205100 WWW: https://www.linkedin.com/in/ramkumar-b-560961177/ SUMMARY Dynamic software developer with over 5 Years 8 Months of proven expertise in web application development. Eagerly pursuing opportunities to leverage my skills for the benefit of your esteemed company while continuously improving my skills in a collaborative and fast-paced environment. SKILLS Programming Languages : PHP, JavaScript, TypeScript Frameworks & Libraries : React, CodeIgniter, Laravel, jQuery, Bootstrap 4 & 5, React Native, Tailwind CSS Databases : MySQL, SQLite Miscellaneous : Git, Linux, Server Handling EXPERIENCE 10/2024 - CurrentSoftware Engineer / iOPEX Technologies - Chennai IQMS – Internal Quality Management System Developed a project management tool to help non-technical stakeholders track quality and process initiatives across departments. Key features: task assignment, milestone tracking, user access, and status dashboards. Food Coupon Management System Built a centralized system for automating food coupon generation, QR-based verification at counters, and integration with attendance to prevent misuse. CDR – Candidate Data Repository Revamped a candidate management portal with AI-driven automation, migrating from PHP to React Redux. Improved the seven-stage form with intelligent autofill, optimizing registration, document handling, and interview scheduling for an efficient HR workflow. Other Projects Contributed to various internal applications at iOPEX Technologies, focusing on process automation, data management, and user experience enhancements. 03/2021 - 10/2024Senior Software Engineer / Nirals Information Technologies - Kovilpatti Eduniv – Comprehensive School and College Management System Led the enhancement of an ERP system used by 250+ institutions to digitalize academic and admin processes. Key features included: Online admission, fee management, and automated payroll. GPS transport tracking and RFID-based ",
+            "filename": "a4b00696-301d-4e3a-a559-88cc0d35f476.pdf"
+          },
+          "portfolioUrl": null,
+          "certifications": [],
+          "processingTime": 0,
+          "remotePreference": null
+        },
+        "enrichedData": null,
+        "extractedData": {
+          "name": "RAMKUMAR B",
+          "email": "ramki028@gmail.com",
+          "phone": "8072205100",
+          "title": null,
+          "salary": null,
+          "skills": [
+            "PHP",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "CodeIgniter",
+            "Laravel",
+            "jQuery",
+            "Bootstrap 4 & 5",
+            "React Native",
+            "Tailwind CSS",
+            "MySQL",
+            "SQLite",
+            "Git",
+            "Linux",
+            "Server Handling"
+          ],
+          "source": "resume",
+          "summary": "Dynamic software developer with over 5 Years 8 Months of proven expertise in web application development. Eagerly pursuing opportunities to leverage my skills for the benefit of your esteemed company while continuously improving my skills in a collaborative and fast-paced environment.",
+          "location": "Virudhunagar, India",
+          "projects": [],
+          "education": [
+            {
+              "gpa": "7.2",
+              "year": "2019",
+              "field": "Computer Science",
+              "degree": "Bachelor of Engineering",
+              "location": "Virudhunagar",
+              "percentage": null,
+              "university": "Sri Vidya College of Engineering & Technology"
+            }
+          ],
+          "githubUrl": null,
+          "interests": [],
+          "languages": [
+            "Tamil",
+            "English"
+          ],
+          "confidence": 82,
+          "experience": [
+            {
+              "company": "iOPEX Technologies",
+              "endDate": "Present",
+              "duration": "10/2024 - Current",
+              "jobTitle": "Software Engineer",
+              "techUsed": [
+                "React",
+                "Redux",
+                "PHP"
+              ],
+              "startDate": "2024-10",
+              "description": "Developed a project management tool to help non-technical stakeholders track quality and process initiatives across departments. Built a centralized system for automating food coupon generation, QR-based verification at counters, and integration with attendance to prevent misuse. Revamped a candidate management portal with AI-driven automation, migrating from PHP to React Redux.",
+              "achievements": []
+            },
+            {
+              "company": "Nirals Information Technologies",
+              "endDate": "2024-10",
+              "duration": "03/2021 - 10/2024",
+              "jobTitle": "Senior Software Engineer",
+              "techUsed": [
+                "Linux",
+                "React Native"
+              ],
+              "startDate": "2021-03",
+              "description": "Led the enhancement of an ERP system used by 250+ institutions to digitalize academic and admin processes. Developed an e-learning platform to ensure education continuity during the COVID-19 pandemic. Developed a job portal aimed at simplifying recruitment for both candidates and employers.",
+              "achievements": []
+            },
+            {
+              "company": "Concent Solutions Private Limited",
+              "endDate": "2020-05",
+              "duration": "02/2019 - 05/2020",
+              "jobTitle": "Software Engineer",
+              "techUsed": [
+                "PHP",
+                "JavaScript",
+                "React Native"
+              ],
+              "startDate": "2019-02",
+              "description": "Contributed to a full-scale healthcare platform that streamlined digital medical services and mobile health tracking. Developed RESTful APIs for mobile application integration, enabling secure communication with patient and doctor interfaces.",
+              "achievements": []
+            },
+            {
+              "company": "Concent Solutions Private Limited",
+              "endDate": "2019-06",
+              "duration": "02/2019 - 06/2019",
+              "jobTitle": "Trainee Software Engineer",
+              "techUsed": [
+                "PHP",
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "React Native"
+              ],
+              "startDate": "2019-02",
+              "description": "Participated in a structured training program and contributed to real-time projects under supervision.",
+              "achievements": []
+            }
+          ],
+          "visaStatus": null,
+          "linkedinUrl": "https://www.linkedin.com/in/ramkumar-b-560961177/",
+          "achievements": [],
+          "availability": null,
+          "originalData": {
+            "rawText": "RAMKUMAR B Virudhunagar, India 626004 ramki028@gmail.com / 8072205100 WWW: https://www.linkedin.com/in/ramkumar-b-560961177/ SUMMARY Dynamic software developer with over 5 Years 8 Months of proven expertise in web application development. Eagerly pursuing opportunities to leverage my skills for the benefit of your esteemed company while continuously improving my skills in a collaborative and fast-paced environment. SKILLS Programming Languages : PHP, JavaScript, TypeScript Frameworks & Libraries : React, CodeIgniter, Laravel, jQuery, Bootstrap 4 & 5, React Native, Tailwind CSS Databases : MySQL, SQLite Miscellaneous : Git, Linux, Server Handling EXPERIENCE 10/2024 - CurrentSoftware Engineer / iOPEX Technologies - Chennai IQMS – Internal Quality Management System Developed a project management tool to help non-technical stakeholders track quality and process initiatives across departments. Key features: task assignment, milestone tracking, user access, and status dashboards. Food Coupon Management System Built a centralized system for automating food coupon generation, QR-based verification at counters, and integration with attendance to prevent misuse. CDR – Candidate Data Repository Revamped a candidate management portal with AI-driven automation, migrating from PHP to React Redux. Improved the seven-stage form with intelligent autofill, optimizing registration, document handling, and interview scheduling for an efficient HR workflow. Other Projects Contributed to various internal applications at iOPEX Technologies, focusing on process automation, data management, and user experience enhancements. 03/2021 - 10/2024Senior Software Engineer / Nirals Information Technologies - Kovilpatti Eduniv – Comprehensive School and College Management System Led the enhancement of an ERP system used by 250+ institutions to digitalize academic and admin processes. Key features included: Online admission, fee management, and automated payroll. GPS transport tracking and RFID-based ",
+            "filename": "a4b00696-301d-4e3a-a559-88cc0d35f476.pdf"
+          },
+          "portfolioUrl": null,
+          "certifications": [],
+          "processingTime": 0,
+          "remotePreference": null
+        },
+        "confidence": 82,
+        "processingTime": 11809,
+        "notes": null,
+        "createdAt": "2025-09-19T05:02:45.432Z"
+      },
+      {
+        "id": "cf1b4b55-d371-4b9c-9f61-127a038e2470",
+        "comId": "223",
+        "eeezoResumeUrl": null,
+        "eeezoUploadDate": "2025-09-10T13:39:49.566Z",
+        "eeezoStatus": "completed",
+        "name": "Vasudevarajan S",
+        "email": "vasudhan13@gmail.com",
+        "phone": "+91-9543828694",
+        "title": "Professional",
+        "company": "The Petal Automations",
+        "currentEmployer": "The Petal Automations",
+        "linkedinUrl": null,
+        "githubUrl": null,
+        "portfolioUrl": null,
+        "location": "Madurai, India",
+        "summary": "With 2+ years of multidisciplinary experience in Product, Design and Development, I want to utilize my technical and logical abilities to the fullest extent in order to benefit the organization, while also fostering my own innovative and technical skills Driven by value principles and customer satisfaction, I take a client first approach while not compromising on a smoother execution for the team and quality of the deliverables. Possess a resilient attitude and cool temperament. Flexible team player. Passionate about giving the best design solution, following wire frames & coding practices and giving assurance for best user accessibility and updated designs used.",
+        "filename": "4f807942-54d4-4ff6-aca0-f4e547d93343.pdf",
+        "rawText": "Vasudevarajan S Madurai, India vasudhan13@gmail.com +91-9543828694 PROFILE With 2+ years of multidisciplinary experience in Product, Design and Development, I want to utilize my technical and logical abilities to the fullest extent in order to benefit the organization, while also fostering my own innovative and technical skills Driven by value principles and customer satisfaction, I take a client first approach while not compromising on a smoother execution for the team and quality of the deliverables. Possess a resilient attitude and cool temperament. Flexible team player. Passionate about giving the best design solution, following wire frames & coding practices and giving assurance for best user accessibility and updated designs used. Technical SKILLS : PHP (Basics), Word press. XAMPP Server. FileZilla. Visual Studio, Visual Studio Code, GIT. Operating Systems: Microsoft windows platforms. WORK HISTORY The Petal Automations Madurai, TN, India Dec 2022 – Still ROLE: Frontend UI developer  Designed and coded core architecture and systems implementation and integration  Convert PSD Design to HTML & Images should be optimized  Experience with various IDEs such as Visual Studio Code, Visual Studio, and notepad++.  Monitored monthly scans to review compliance concerns and submitted status reports  Ensured established internal control procedures meet compliance  Responsible for checking cross browser compatibility and hence worked on different browsers like Safari, Internet Explorer, Mozilla Firefox and Google Chrome  Can work under pressure to meet deadlines.  Flexible team player.  Passionate about giving the best design solution, following wireframes & coding practices and giving assurance for best user accessibility and updated designs used.  Implement best practices and refactor code in our team developer base site. Working with the support teams, infrastructure teams and application teams for gathering the statuses to generate monthly reports.",
+        "experience": [
+          {
+            "company": "The Petal Automations",
+            "endDate": "Present",
+            "duration": "Dec 2022 – Still",
+            "jobTitle": "Frontend UI developer",
+            "techUsed": [
+              "Visual Studio Code",
+              "Visual Studio",
+              "HTML5",
+              "CSS3",
+              "Bootstrap5",
+              "JavaScript",
+              "React Js"
+            ],
+            "startDate": "2022-12",
+            "description": "Designed and coded core architecture and systems implementation and integration. Convert PSD Design to HTML & Images should be optimized. Experience with various IDEs such as Visual Studio Code, Visual Studio, and notepad++. Monitored monthly scans to review compliance concerns and submitted status reports. Ensured established internal control procedures meet compliance. Responsible for checking cross browser compatibility and hence worked on different browsers like Safari, Internet Explorer, Mozilla Firefox and Google Chrome. Can work under pressure to meet deadlines. Flexible team player. Passionate about giving the best design solution, following wireframes & coding practices and giving assurance for best user accessibility and updated designs used. Implement best practices and refactor code in our team developer base site. Working with the support teams, infrastructure teams and application teams for gathering the statuses to generate monthly reports.",
+            "achievements": []
+          },
+          {
+            "company": "WIX",
+            "endDate": "2022-11",
+            "duration": "Nov 2022",
+            "jobTitle": "UI developer",
+            "techUsed": [
+              "HTML5",
+              "CSS3",
+              "Bootstrap",
+              "JavaScript"
+            ],
+            "startDate": "2022-11",
+            "description": "Focuses on, design and builds rich CMS websites and online applications for business. I am working as a Team leader in UI Designing. Engage prospects with product demos and convert them into Customers. Implementing project plans within deadline. Understanding client needs, requirement, and expectation and device solution accordingly. Coordinating client’s needs / enhancements, customization, CMS based issue of clients to provide solutions in adherence to delivery schedules. Coordinating development and reviewing service level targets and ensuring timely Closure of priority assignment. Help and manage my team to achieve target. Ensure smoother communication of project progress with Stakeholders.",
+            "achievements": []
+          }
+        ],
+        "education": [
+          {
+            "gpa": null,
+            "year": "2016",
+            "field": "Information Technology",
+            "degree": "Bachelor of Engineering",
+            "location": null,
+            "percentage": "60%",
+            "university": null
+          },
+          {
+            "gpa": null,
+            "year": "2012",
+            "field": null,
+            "degree": "HSC",
+            "location": "Madurai, TN, India",
+            "percentage": "53%",
+            "university": "Vivekananda Higher Secondary School"
+          }
+        ],
+        "projects": [
+          {
+            "url": null,
+            "name": "PHS – Paramount Hospitality Service",
+            "duration": null,
+            "techUsed": [
+              "Bootstrap",
+              "HTML5",
+              "CSS3"
+            ],
+            "description": "Involved in developing the components using Bootstrap, HTML 5, and CSS3. Took responsibility with functionality testing and solving browser compatibility issues. Writing code to implement the requirements following the coding standards. Helping team members with their task execution and reviewing their code. Enhanced application by Angular Components based Development in future Angular Framework transitions.",
+            "achievements": []
+          },
+          {
+            "url": null,
+            "name": "Navogo",
+            "duration": null,
+            "techUsed": [
+              "HTML5",
+              "CSS3",
+              "Bootstrap"
+            ],
+            "description": "Implemented to HTML5 elements, CSS3, Bootstrap. Creating design and developing HTML5 mockups for design layout. Creating New Web UI Components. Analyze & Debugging the Issues. Guide and Maintain developer team and best Practices. Solving Browser compatibility issues in all major browsers.",
+            "achievements": []
+          },
+          {
+            "url": null,
+            "name": "The Petal Automations – Website",
+            "duration": null,
+            "techUsed": [
+              "HTML",
+              "CSS",
+              "Bootstrap",
+              "JavaScript",
+              "Jquery"
+            ],
+            "description": "Development of web pages using HTML, CSS, Bootstrap, JavaScript, Jquery. Lead the Complete website. Single handedly worked on the maintenance of those all modules and succeeded in bringing in 100 % customer requirements and satisfaction. Creating design and developing HTML5 mockups for responsive design layout. Uses of media queries to conditionally include CSS rules appropriate for the device screen width and height.",
+            "achievements": []
+          },
+          {
+            "url": null,
+            "name": "The Petal Netalla - Website",
+            "duration": null,
+            "techUsed": [
+              "HTML",
+              "CSS",
+              "Bootstrap",
+              "JavaScript",
+              "Jquery"
+            ],
+            "description": "Development of web pages using HTML, CSS, Bootstrap, JavaScript, Jquery. Lead the Complete website. Single handedly worked on the maintenance of those all modules and succeeded in bringing in 100 % customer requirements and satisfaction. Creating design and developing HTML5 mockups for responsive design layout. Uses of media queries to conditionally include CSS rules appropriate for the device screen width and height.",
+            "achievements": []
+          },
+          {
+            "url": null,
+            "name": "E-Commerce- Website Development",
+            "duration": null,
+            "techUsed": [
+              "HTML",
+              "CSS",
+              "Bootstrap",
+              "JavaScript",
+              "React Js"
+            ],
+            "description": "Development of web pages using HTML, CSS, Bootstrap, JavaScript, React Js. Integrate front-end application with the application business layer. Creating design and developing HTML5 mockups for design layout. Analyze & Debugging the Issues. Guide and Maintain developer team and best Practices.",
+            "achievements": []
+          }
+        ],
+        "achievements": [],
+        "interests": [],
+        "skills": [],
+        "certifications": [],
+        "languages": [],
+        "linkedinLastActive": null,
+        "linkedinHeadline": null,
+        "linkedinSummary": null,
+        "linkedinConnections": null,
+        "linkedinNotes": null,
+        "firstName": "Vasudevarajan",
+        "lastName": "S",
+        "middleName": null,
+        "currentTitle": "Frontend UI developer",
+        "currentCompany": "The Petal Automations",
+        "yearsOfExperience": 2.8,
+        "workHistory": [
+          {
+            "company": "The Petal Automations",
+            "endDate": "Present",
+            "duration": "Dec 2022 – Still",
+            "jobTitle": "Frontend UI developer",
+            "techUsed": [
+              "Visual Studio Code",
+              "Visual Studio",
+              "HTML5",
+              "CSS3",
+              "Bootstrap5",
+              "JavaScript",
+              "React Js"
+            ],
+            "startDate": "2022-12",
+            "description": "Designed and coded core architecture and systems implementation and integration. Convert PSD Design to HTML & Images should be optimized. Experience with various IDEs such as Visual Studio Code, Visual Studio, and notepad++. Monitored monthly scans to review compliance concerns and submitted status reports. Ensured established internal control procedures meet compliance. Responsible for checking cross browser compatibility and hence worked on different browsers like Safari, Internet Explorer, Mozilla Firefox and Google Chrome. Can work under pressure to meet deadlines. Flexible team player. Passionate about giving the best design solution, following wireframes & coding practices and giving assurance for best user accessibility and updated designs used. Implement best practices and refactor code in our team developer base site. Working with the support teams, infrastructure teams and application teams for gathering the statuses to generate monthly reports.",
+            "achievements": []
+          },
+          {
+            "company": "WIX",
+            "endDate": "2022-11",
+            "duration": "Nov 2022",
+            "jobTitle": "UI developer",
+            "techUsed": [
+              "HTML5",
+              "CSS3",
+              "Bootstrap",
+              "JavaScript"
+            ],
+            "startDate": "2022-11",
+            "description": "Focuses on, design and builds rich CMS websites and online applications for business. I am working as a Team leader in UI Designing. Engage prospects with product demos and convert them into Customers. Implementing project plans within deadline. Understanding client needs, requirement, and expectation and device solution accordingly. Coordinating client’s needs / enhancements, customization, CMS based issue of clients to provide solutions in adherence to delivery schedules. Coordinating development and reviewing service level targets and ensuring timely Closure of priority assignment. Help and manage my team to achieve target. Ensure smoother communication of project progress with Stakeholders.",
+            "achievements": []
+          }
+        ],
+        "salary": null,
+        "availability": null,
+        "remotePreference": null,
+        "visaStatus": null,
+        "alternateEmail": null,
+        "website": null,
+        "github": null,
+        "portfolio": null,
+        "score": 0,
+        "priority": "Low",
+        "openToWork": false,
+        "lastActive": "Recently active",
+        "openToWorkScore": 5,
+        "skillMatchScore": 0,
+        "jobStabilityScore": 6.9,
+        "platformEngagementScore": 1,
+        "resumeStatus": "active",
+        "companyDifference": null,
+        "companyDifferenceScore": 0,
+        "hireabilityScore": 4.3,
+        "hireabilityFactors": [],
+        "potentialToJoin": "Low",
+        "atsId": null,
+        "selectionStatus": null,
+        "selectionDate": null,
+        "joiningOutcome": null,
+        "atsNotes": null,
+        "source": "eezo",
+        "dataSource": "resume",
+        "enrichmentStatus": "completed",
+        "enrichmentDate": "2025-09-10T13:39:59.867Z",
+        "enrichmentSource": "harvestapi",
+        "sourceFile": null,
+        "processingDate": null,
+        "dataQuality": null,
+        "originalData": {
+          "name": "Vasudevarajan S",
+          "email": "vasudhan13@gmail.com",
+          "phone": "+91-9543828694",
+          "title": null,
+          "salary": null,
+          "skills": [
+            "PHP (Basics)",
+            "WordPress",
+            "XAMPP Server",
+            "FileZilla",
+            "Visual Studio",
+            "Visual Studio Code",
+            "GIT",
+            "Microsoft Windows platforms"
+          ],
+          "source": "resume",
+          "summary": "With 2+ years of multidisciplinary experience in Product, Design and Development, I want to utilize my technical and logical abilities to the fullest extent in order to benefit the organization, while also fostering my own innovative and technical skills Driven by value principles and customer satisfaction, I take a client first approach while not compromising on a smoother execution for the team and quality of the deliverables. Possess a resilient attitude and cool temperament. Flexible team player. Passionate about giving the best design solution, following wire frames & coding practices and giving assurance for best user accessibility and updated designs used.",
+          "location": "Madurai, India",
+          "projects": [
+            {
+              "url": null,
+              "name": "PHS – Paramount Hospitality Service",
+              "duration": null,
+              "techUsed": [
+                "Bootstrap",
+                "HTML5",
+                "CSS3"
+              ],
+              "description": "Involved in developing the components using Bootstrap, HTML 5, and CSS3. Took responsibility with functionality testing and solving browser compatibility issues. Writing code to implement the requirements following the coding standards. Helping team members with their task execution and reviewing their code. Enhanced application by Angular Components based Development in future Angular Framework transitions.",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "Navogo",
+              "duration": null,
+              "techUsed": [
+                "HTML5",
+                "CSS3",
+                "Bootstrap"
+              ],
+              "description": "Implemented to HTML5 elements, CSS3, Bootstrap. Creating design and developing HTML5 mockups for design layout. Creating New Web UI Components. Analyze & Debugging the Issues. Guide and Maintain developer team and best Practices. Solving Browser compatibility issues in all major browsers.",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "The Petal Automations – Website",
+              "duration": null,
+              "techUsed": [
+                "HTML",
+                "CSS",
+                "Bootstrap",
+                "JavaScript",
+                "Jquery"
+              ],
+              "description": "Development of web pages using HTML, CSS, Bootstrap, JavaScript, Jquery. Lead the Complete website. Single handedly worked on the maintenance of those all modules and succeeded in bringing in 100 % customer requirements and satisfaction. Creating design and developing HTML5 mockups for responsive design layout. Uses of media queries to conditionally include CSS rules appropriate for the device screen width and height.",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "The Petal Netalla - Website",
+              "duration": null,
+              "techUsed": [
+                "HTML",
+                "CSS",
+                "Bootstrap",
+                "JavaScript",
+                "Jquery"
+              ],
+              "description": "Development of web pages using HTML, CSS, Bootstrap, JavaScript, Jquery. Lead the Complete website. Single handedly worked on the maintenance of those all modules and succeeded in bringing in 100 % customer requirements and satisfaction. Creating design and developing HTML5 mockups for responsive design layout. Uses of media queries to conditionally include CSS rules appropriate for the device screen width and height.",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "E-Commerce- Website Development",
+              "duration": null,
+              "techUsed": [
+                "HTML",
+                "CSS",
+                "Bootstrap",
+                "JavaScript",
+                "React Js"
+              ],
+              "description": "Development of web pages using HTML, CSS, Bootstrap, JavaScript, React Js. Integrate front-end application with the application business layer. Creating design and developing HTML5 mockups for design layout. Analyze & Debugging the Issues. Guide and Maintain developer team and best Practices.",
+              "achievements": []
+            }
+          ],
+          "education": [
+            {
+              "gpa": null,
+              "year": "2016",
+              "field": "Information Technology",
+              "degree": "Bachelor of Engineering",
+              "location": null,
+              "percentage": "60%",
+              "university": null
+            },
+            {
+              "gpa": null,
+              "year": "2012",
+              "field": null,
+              "degree": "HSC",
+              "location": "Madurai, TN, India",
+              "percentage": "53%",
+              "university": "Vivekananda Higher Secondary School"
+            }
+          ],
+          "githubUrl": null,
+          "interests": [],
+          "languages": [],
+          "confidence": 83,
+          "experience": [
+            {
+              "company": "The Petal Automations",
+              "endDate": "Present",
+              "duration": "Dec 2022 – Still",
+              "jobTitle": "Frontend UI developer",
+              "techUsed": [
+                "Visual Studio Code",
+                "Visual Studio",
+                "HTML5",
+                "CSS3",
+                "Bootstrap5",
+                "JavaScript",
+                "React Js"
+              ],
+              "startDate": "2022-12",
+              "description": "Designed and coded core architecture and systems implementation and integration. Convert PSD Design to HTML & Images should be optimized. Experience with various IDEs such as Visual Studio Code, Visual Studio, and notepad++. Monitored monthly scans to review compliance concerns and submitted status reports. Ensured established internal control procedures meet compliance. Responsible for checking cross browser compatibility and hence worked on different browsers like Safari, Internet Explorer, Mozilla Firefox and Google Chrome. Can work under pressure to meet deadlines. Flexible team player. Passionate about giving the best design solution, following wireframes & coding practices and giving assurance for best user accessibility and updated designs used. Implement best practices and refactor code in our team developer base site. Working with the support teams, infrastructure teams and application teams for gathering the statuses to generate monthly reports.",
+              "achievements": []
+            },
+            {
+              "company": "WIX",
+              "endDate": "2022-11",
+              "duration": "Nov 2022",
+              "jobTitle": "UI developer",
+              "techUsed": [
+                "HTML5",
+                "CSS3",
+                "Bootstrap",
+                "JavaScript"
+              ],
+              "startDate": "2022-11",
+              "description": "Focuses on, design and builds rich CMS websites and online applications for business. I am working as a Team leader in UI Designing. Engage prospects with product demos and convert them into Customers. Implementing project plans within deadline. Understanding client needs, requirement, and expectation and device solution accordingly. Coordinating client’s needs / enhancements, customization, CMS based issue of clients to provide solutions in adherence to delivery schedules. Coordinating development and reviewing service level targets and ensuring timely Closure of priority assignment. Help and manage my team to achieve target. Ensure smoother communication of project progress with Stakeholders.",
+              "achievements": []
+            }
+          ],
+          "visaStatus": null,
+          "linkedinUrl": null,
+          "achievements": [],
+          "availability": null,
+          "originalData": {
+            "rawText": "Vasudevarajan S Madurai, India vasudhan13@gmail.com +91-9543828694 PROFILE With 2+ years of multidisciplinary experience in Product, Design and Development, I want to utilize my technical and logical abilities to the fullest extent in order to benefit the organization, while also fostering my own innovative and technical skills Driven by value principles and customer satisfaction, I take a client first approach while not compromising on a smoother execution for the team and quality of the deliverables. Possess a resilient attitude and cool temperament. Flexible team player. Passionate about giving the best design solution, following wire frames & coding practices and giving assurance for best user accessibility and updated designs used. Technical SKILLS : PHP (Basics), Word press. XAMPP Server. FileZilla. Visual Studio, Visual Studio Code, GIT. Operating Systems: Microsoft windows platforms. WORK HISTORY The Petal Automations Madurai, TN, India Dec 2022 – Still ROLE: Frontend UI developer  Designed and coded core architecture and systems implementation and integration  Convert PSD Design to HTML & Images should be optimized  Experience with various IDEs such as Visual Studio Code, Visual Studio, and notepad++.  Monitored monthly scans to review compliance concerns and submitted status reports  Ensured established internal control procedures meet compliance  Responsible for checking cross browser compatibility and hence worked on different browsers like Safari, Internet Explorer, Mozilla Firefox and Google Chrome  Can work under pressure to meet deadlines.  Flexible team player.  Passionate about giving the best design solution, following wireframes & coding practices and giving assurance for best user accessibility and updated designs used.  Implement best practices and refactor code in our team developer base site. Working with the support teams, infrastructure teams and application teams for gathering the statuses to generate monthly reports.",
+            "filename": "4f807942-54d4-4ff6-aca0-f4e547d93343.pdf"
+          },
+          "portfolioUrl": null,
+          "certifications": [],
+          "processingTime": 0,
+          "remotePreference": null
+        },
+        "enrichedData": {
+          "name": "Vasudevarajan S",
+          "posts": [],
+          "title": "Professional",
+          "skills": [],
+          "company": "The Petal Automations",
+          "headline": null,
+          "location": "Madurai, India",
+          "education": [],
+          "experience": [],
+          "jobHistory": [],
+          "lastActive": "Recently active",
+          "openToWork": false,
+          "certifications": [],
+          "currentCompany": "The Petal Automations",
+          "recentActivity": [],
+          "currentPosition": null
+        },
+        "extractedData": {
+          "name": "Vasudevarajan S",
+          "email": "vasudhan13@gmail.com",
+          "phone": "+91-9543828694",
+          "title": null,
+          "salary": null,
+          "skills": [
+            "PHP (Basics)",
+            "WordPress",
+            "XAMPP Server",
+            "FileZilla",
+            "Visual Studio",
+            "Visual Studio Code",
+            "GIT",
+            "Microsoft Windows platforms"
+          ],
+          "source": "resume",
+          "summary": "With 2+ years of multidisciplinary experience in Product, Design and Development, I want to utilize my technical and logical abilities to the fullest extent in order to benefit the organization, while also fostering my own innovative and technical skills Driven by value principles and customer satisfaction, I take a client first approach while not compromising on a smoother execution for the team and quality of the deliverables. Possess a resilient attitude and cool temperament. Flexible team player. Passionate about giving the best design solution, following wire frames & coding practices and giving assurance for best user accessibility and updated designs used.",
+          "location": "Madurai, India",
+          "projects": [
+            {
+              "url": null,
+              "name": "PHS – Paramount Hospitality Service",
+              "duration": null,
+              "techUsed": [
+                "Bootstrap",
+                "HTML5",
+                "CSS3"
+              ],
+              "description": "Involved in developing the components using Bootstrap, HTML 5, and CSS3. Took responsibility with functionality testing and solving browser compatibility issues. Writing code to implement the requirements following the coding standards. Helping team members with their task execution and reviewing their code. Enhanced application by Angular Components based Development in future Angular Framework transitions.",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "Navogo",
+              "duration": null,
+              "techUsed": [
+                "HTML5",
+                "CSS3",
+                "Bootstrap"
+              ],
+              "description": "Implemented to HTML5 elements, CSS3, Bootstrap. Creating design and developing HTML5 mockups for design layout. Creating New Web UI Components. Analyze & Debugging the Issues. Guide and Maintain developer team and best Practices. Solving Browser compatibility issues in all major browsers.",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "The Petal Automations – Website",
+              "duration": null,
+              "techUsed": [
+                "HTML",
+                "CSS",
+                "Bootstrap",
+                "JavaScript",
+                "Jquery"
+              ],
+              "description": "Development of web pages using HTML, CSS, Bootstrap, JavaScript, Jquery. Lead the Complete website. Single handedly worked on the maintenance of those all modules and succeeded in bringing in 100 % customer requirements and satisfaction. Creating design and developing HTML5 mockups for responsive design layout. Uses of media queries to conditionally include CSS rules appropriate for the device screen width and height.",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "The Petal Netalla - Website",
+              "duration": null,
+              "techUsed": [
+                "HTML",
+                "CSS",
+                "Bootstrap",
+                "JavaScript",
+                "Jquery"
+              ],
+              "description": "Development of web pages using HTML, CSS, Bootstrap, JavaScript, Jquery. Lead the Complete website. Single handedly worked on the maintenance of those all modules and succeeded in bringing in 100 % customer requirements and satisfaction. Creating design and developing HTML5 mockups for responsive design layout. Uses of media queries to conditionally include CSS rules appropriate for the device screen width and height.",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "E-Commerce- Website Development",
+              "duration": null,
+              "techUsed": [
+                "HTML",
+                "CSS",
+                "Bootstrap",
+                "JavaScript",
+                "React Js"
+              ],
+              "description": "Development of web pages using HTML, CSS, Bootstrap, JavaScript, React Js. Integrate front-end application with the application business layer. Creating design and developing HTML5 mockups for design layout. Analyze & Debugging the Issues. Guide and Maintain developer team and best Practices.",
+              "achievements": []
+            }
+          ],
+          "education": [
+            {
+              "gpa": null,
+              "year": "2016",
+              "field": "Information Technology",
+              "degree": "Bachelor of Engineering",
+              "location": null,
+              "percentage": "60%",
+              "university": null
+            },
+            {
+              "gpa": null,
+              "year": "2012",
+              "field": null,
+              "degree": "HSC",
+              "location": "Madurai, TN, India",
+              "percentage": "53%",
+              "university": "Vivekananda Higher Secondary School"
+            }
+          ],
+          "githubUrl": null,
+          "interests": [],
+          "languages": [],
+          "confidence": 83,
+          "experience": [
+            {
+              "company": "The Petal Automations",
+              "endDate": "Present",
+              "duration": "Dec 2022 – Still",
+              "jobTitle": "Frontend UI developer",
+              "techUsed": [
+                "Visual Studio Code",
+                "Visual Studio",
+                "HTML5",
+                "CSS3",
+                "Bootstrap5",
+                "JavaScript",
+                "React Js"
+              ],
+              "startDate": "2022-12",
+              "description": "Designed and coded core architecture and systems implementation and integration. Convert PSD Design to HTML & Images should be optimized. Experience with various IDEs such as Visual Studio Code, Visual Studio, and notepad++. Monitored monthly scans to review compliance concerns and submitted status reports. Ensured established internal control procedures meet compliance. Responsible for checking cross browser compatibility and hence worked on different browsers like Safari, Internet Explorer, Mozilla Firefox and Google Chrome. Can work under pressure to meet deadlines. Flexible team player. Passionate about giving the best design solution, following wireframes & coding practices and giving assurance for best user accessibility and updated designs used. Implement best practices and refactor code in our team developer base site. Working with the support teams, infrastructure teams and application teams for gathering the statuses to generate monthly reports.",
+              "achievements": []
+            },
+            {
+              "company": "WIX",
+              "endDate": "2022-11",
+              "duration": "Nov 2022",
+              "jobTitle": "UI developer",
+              "techUsed": [
+                "HTML5",
+                "CSS3",
+                "Bootstrap",
+                "JavaScript"
+              ],
+              "startDate": "2022-11",
+              "description": "Focuses on, design and builds rich CMS websites and online applications for business. I am working as a Team leader in UI Designing. Engage prospects with product demos and convert them into Customers. Implementing project plans within deadline. Understanding client needs, requirement, and expectation and device solution accordingly. Coordinating client’s needs / enhancements, customization, CMS based issue of clients to provide solutions in adherence to delivery schedules. Coordinating development and reviewing service level targets and ensuring timely Closure of priority assignment. Help and manage my team to achieve target. Ensure smoother communication of project progress with Stakeholders.",
+              "achievements": []
+            }
+          ],
+          "visaStatus": null,
+          "linkedinUrl": null,
+          "achievements": [],
+          "availability": null,
+          "originalData": {
+            "rawText": "Vasudevarajan S Madurai, India vasudhan13@gmail.com +91-9543828694 PROFILE With 2+ years of multidisciplinary experience in Product, Design and Development, I want to utilize my technical and logical abilities to the fullest extent in order to benefit the organization, while also fostering my own innovative and technical skills Driven by value principles and customer satisfaction, I take a client first approach while not compromising on a smoother execution for the team and quality of the deliverables. Possess a resilient attitude and cool temperament. Flexible team player. Passionate about giving the best design solution, following wire frames & coding practices and giving assurance for best user accessibility and updated designs used. Technical SKILLS : PHP (Basics), Word press. XAMPP Server. FileZilla. Visual Studio, Visual Studio Code, GIT. Operating Systems: Microsoft windows platforms. WORK HISTORY The Petal Automations Madurai, TN, India Dec 2022 – Still ROLE: Frontend UI developer  Designed and coded core architecture and systems implementation and integration  Convert PSD Design to HTML & Images should be optimized  Experience with various IDEs such as Visual Studio Code, Visual Studio, and notepad++.  Monitored monthly scans to review compliance concerns and submitted status reports  Ensured established internal control procedures meet compliance  Responsible for checking cross browser compatibility and hence worked on different browsers like Safari, Internet Explorer, Mozilla Firefox and Google Chrome  Can work under pressure to meet deadlines.  Flexible team player.  Passionate about giving the best design solution, following wireframes & coding practices and giving assurance for best user accessibility and updated designs used.  Implement best practices and refactor code in our team developer base site. Working with the support teams, infrastructure teams and application teams for gathering the statuses to generate monthly reports.",
+            "filename": "4f807942-54d4-4ff6-aca0-f4e547d93343.pdf"
+          },
+          "portfolioUrl": null,
+          "certifications": [],
+          "processingTime": 0,
+          "remotePreference": null
+        },
+        "confidence": 83,
+        "processingTime": 47272,
+        "notes": null,
+        "createdAt": "2025-09-10T13:39:49.566Z"
+      },
+      {
+        "id": "b2cb518b-e6a2-4bf5-b2f8-c7755640a204",
+        "comId": "223",
+        "eeezoResumeUrl": null,
+        "eeezoUploadDate": "2025-09-10T13:35:15.475Z",
+        "eeezoStatus": "completed",
+        "name": "BABU S R",
+        "email": "babusrofficial@gmail.com",
+        "phone": "6360328864",
+        "title": "Laravel Developer",
+        "company": "Web Digital Mantra It Services Limited",
+        "currentEmployer": "Web Digital Mantra It Services Limited",
+        "linkedinUrl": null,
+        "githubUrl": null,
+        "portfolioUrl": null,
+        "location": "Bengaluru, Karnataka, India",
+        "summary": "Motivated Laravel developer with Eight Months of experience in designing, developing, and maintaining web applications. Proficient in PHP, MySQL, JavaScript, HTML, and CSS. Ability to work in a team environment and meet tight deadlines.",
+        "filename": "272cf512-e41b-4d71-8f73-2c1de76b120c.pdf",
+        "rawText": "BABU S R Address: 1st Stage, Kumaraswamy Layout Bengaluru, Karnataka 560078, India Mobile Number: 6360328864 Email: babusrofficial@gmail.com Summary: Motivated Laravel developer with Eight Months of experience in designing, developing, and maintaining web applications. Proficient in PHP, MySQL, JavaScript, HTML, and CSS. Ability to work in a team environment and meet tight deadlines. Professional Experience: Laravel Developer Company Name: Web Digital Mantra It Services Limited Location: #23, 3rd floor, nandita manison, 1st Cross, 1st Stage, Kumaraswamy Layout, Bengaluru, Karnataka 560078 Duration: Oct 1st 2022 to Present (8 Months) Designed and developed web applications using Laravel PHP framework, HTML, CSS, and JavaScript. Worked on the development of the front-end and back-end of web applications. Created responsive designs that are optimized for desktop and mobile devices. Developed and maintained APIs for mobile and web applications. Worked with Git and version control to manage source code changes. Utilized MySQL to manage databases and performed data migrations. Collaborated with team members to develop efficient solutions for complex issues. Conducted code reviews and provided feedback to ensure the quality of code. Skills: Laravel PHP framework MySQL HTML CSS JavaScript Git API Development Ajax Education: Bachelor's Degree in Science (PCM) University Name: University College of Science Tumkur Location: Tumkur Graduation Year: 2018 Projects: Developed an e-commerce website using Laravel, allowing customers to browse and purchase products securely. Implemented features like user registration, product search, shopping cart, and payment integration. Created a matrimony platform using Laravel, enabling users to create profiles, search for potential partners, and communicate securely. Implemented advanced search filters, matching algorithms, and privacy settings. Built a tours and travels website similar to MakeMyTrip using Laravel, providing users with the abi",
+        "experience": [
+          {
+            "company": "Web Digital Mantra It Services Limited",
+            "endDate": "Present",
+            "duration": "Oct 1st 2022 - Present",
+            "jobTitle": "Laravel Developer",
+            "techUsed": [
+              "Laravel PHP framework",
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "Git",
+              "MySQL"
+            ],
+            "startDate": "2022-10",
+            "description": "Designed and developed web applications using Laravel PHP framework, HTML, CSS, and JavaScript. Worked on the development of the front-end and back-end of web applications. Created responsive designs that are optimized for desktop and mobile devices. Developed and maintained APIs for mobile and web applications. Worked with Git and version control to manage source code changes. Utilized MySQL to manage databases and performed data migrations. Collaborated with team members to develop efficient solutions for complex issues. Conducted code reviews and provided feedback to ensure the quality of code.",
+            "achievements": []
+          }
+        ],
+        "education": [
+          {
+            "gpa": null,
+            "year": "2018",
+            "field": "Science (PCM)",
+            "degree": "Bachelor's Degree in Science (PCM)",
+            "location": "Tumkur",
+            "percentage": null,
+            "university": "University College of Science Tumkur"
+          }
+        ],
+        "projects": [
+          {
+            "url": null,
+            "name": "E-commerce website",
+            "duration": null,
+            "techUsed": [
+              "Laravel"
+            ],
+            "description": "Developed an e-commerce website using Laravel, allowing customers to browse and purchase products securely. Implemented features like user registration, product search, shopping cart, and payment integration.",
+            "achievements": []
+          },
+          {
+            "url": null,
+            "name": "Matrimony platform",
+            "duration": null,
+            "techUsed": [
+              "Laravel"
+            ],
+            "description": "Created a matrimony platform using Laravel, enabling users to create profiles, search for potential partners, and communicate securely. Implemented advanced search filters, matching algorithms, and privacy settings.",
+            "achievements": []
+          },
+          {
+            "url": null,
+            "name": "Tours and travels website",
+            "duration": null,
+            "techUsed": [
+              "Laravel"
+            ],
+            "description": "Built a tours and travels website similar to MakeMyTrip using Laravel, providing users with the ability to search and book flights, hotels, and holiday packages. Implemented dynamic pricing, booking management, and integrated third-party APIs.",
+            "achievements": []
+          },
+          {
+            "url": null,
+            "name": "Informative dynamic website",
+            "duration": null,
+            "techUsed": [
+              "Laravel"
+            ],
+            "description": "Developed an informative dynamic website using Laravel, allowing users to browse and search for articles, news, and resources. Implemented a content management system (CMS) for easy content updates.",
+            "achievements": []
+          },
+          {
+            "url": null,
+            "name": "Temple poojas project",
+            "duration": null,
+            "techUsed": [
+              "Laravel"
+            ],
+            "description": "Created a temple poojas project using Laravel, where each pooja has different packages based on package prices. Implemented features such as package selection, payment integration, and booking management.",
+            "achievements": []
+          }
+        ],
+        "achievements": [],
+        "interests": [],
+        "skills": [],
+        "certifications": [],
+        "languages": [],
+        "linkedinLastActive": null,
+        "linkedinHeadline": "Laravel Developer",
+        "linkedinSummary": null,
+        "linkedinConnections": null,
+        "linkedinNotes": null,
+        "firstName": "BABU",
+        "lastName": "S R",
+        "middleName": null,
+        "currentTitle": "Laravel Developer",
+        "currentCompany": "Web Digital Mantra It Services Limited",
+        "yearsOfExperience": 2.9,
+        "workHistory": [
+          {
+            "company": "Web Digital Mantra It Services Limited",
+            "endDate": "Present",
+            "duration": "Oct 1st 2022 - Present",
+            "jobTitle": "Laravel Developer",
+            "techUsed": [
+              "Laravel PHP framework",
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "Git",
+              "MySQL"
+            ],
+            "startDate": "2022-10",
+            "description": "Designed and developed web applications using Laravel PHP framework, HTML, CSS, and JavaScript. Worked on the development of the front-end and back-end of web applications. Created responsive designs that are optimized for desktop and mobile devices. Developed and maintained APIs for mobile and web applications. Worked with Git and version control to manage source code changes. Utilized MySQL to manage databases and performed data migrations. Collaborated with team members to develop efficient solutions for complex issues. Conducted code reviews and provided feedback to ensure the quality of code.",
+            "achievements": []
+          }
+        ],
+        "salary": null,
+        "availability": null,
+        "remotePreference": null,
+        "visaStatus": null,
+        "alternateEmail": null,
+        "website": null,
+        "github": null,
+        "portfolio": null,
+        "score": 0,
+        "priority": "Medium",
+        "openToWork": false,
+        "lastActive": "Recently active",
+        "openToWorkScore": 5,
+        "skillMatchScore": 0,
+        "jobStabilityScore": 9.6,
+        "platformEngagementScore": 1,
+        "resumeStatus": "active",
+        "companyDifference": null,
+        "companyDifferenceScore": 0,
+        "hireabilityScore": 5.2,
+        "hireabilityFactors": [],
+        "potentialToJoin": "Medium",
+        "atsId": null,
+        "selectionStatus": null,
+        "selectionDate": null,
+        "joiningOutcome": null,
+        "atsNotes": null,
+        "source": "eezo",
+        "dataSource": "resume",
+        "enrichmentStatus": "completed",
+        "enrichmentDate": "2025-09-10T13:35:23.455Z",
+        "enrichmentSource": "harvestapi",
+        "sourceFile": null,
+        "processingDate": null,
+        "dataQuality": null,
+        "originalData": {
+          "name": "BABU S R",
+          "email": "babusrofficial@gmail.com",
+          "phone": "6360328864",
+          "title": "Laravel Developer",
+          "salary": null,
+          "skills": [
+            "Laravel PHP framework",
+            "MySQL",
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Git",
+            "API Development",
+            "Ajax"
+          ],
+          "source": "resume",
+          "summary": "Motivated Laravel developer with Eight Months of experience in designing, developing, and maintaining web applications. Proficient in PHP, MySQL, JavaScript, HTML, and CSS. Ability to work in a team environment and meet tight deadlines.",
+          "location": "Bengaluru, Karnataka, India",
+          "projects": [
+            {
+              "url": null,
+              "name": "E-commerce website",
+              "duration": null,
+              "techUsed": [
+                "Laravel"
+              ],
+              "description": "Developed an e-commerce website using Laravel, allowing customers to browse and purchase products securely. Implemented features like user registration, product search, shopping cart, and payment integration.",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "Matrimony platform",
+              "duration": null,
+              "techUsed": [
+                "Laravel"
+              ],
+              "description": "Created a matrimony platform using Laravel, enabling users to create profiles, search for potential partners, and communicate securely. Implemented advanced search filters, matching algorithms, and privacy settings.",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "Tours and travels website",
+              "duration": null,
+              "techUsed": [
+                "Laravel"
+              ],
+              "description": "Built a tours and travels website similar to MakeMyTrip using Laravel, providing users with the ability to search and book flights, hotels, and holiday packages. Implemented dynamic pricing, booking management, and integrated third-party APIs.",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "Informative dynamic website",
+              "duration": null,
+              "techUsed": [
+                "Laravel"
+              ],
+              "description": "Developed an informative dynamic website using Laravel, allowing users to browse and search for articles, news, and resources. Implemented a content management system (CMS) for easy content updates.",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "Temple poojas project",
+              "duration": null,
+              "techUsed": [
+                "Laravel"
+              ],
+              "description": "Created a temple poojas project using Laravel, where each pooja has different packages based on package prices. Implemented features such as package selection, payment integration, and booking management.",
+              "achievements": []
+            }
+          ],
+          "education": [
+            {
+              "gpa": null,
+              "year": "2018",
+              "field": "Science (PCM)",
+              "degree": "Bachelor's Degree in Science (PCM)",
+              "location": "Tumkur",
+              "percentage": null,
+              "university": "University College of Science Tumkur"
+            }
+          ],
+          "githubUrl": null,
+          "interests": [],
+          "languages": [],
+          "confidence": 93,
+          "experience": [
+            {
+              "company": "Web Digital Mantra It Services Limited",
+              "endDate": "Present",
+              "duration": "Oct 1st 2022 - Present",
+              "jobTitle": "Laravel Developer",
+              "techUsed": [
+                "Laravel PHP framework",
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Git",
+                "MySQL"
+              ],
+              "startDate": "2022-10",
+              "description": "Designed and developed web applications using Laravel PHP framework, HTML, CSS, and JavaScript. Worked on the development of the front-end and back-end of web applications. Created responsive designs that are optimized for desktop and mobile devices. Developed and maintained APIs for mobile and web applications. Worked with Git and version control to manage source code changes. Utilized MySQL to manage databases and performed data migrations. Collaborated with team members to develop efficient solutions for complex issues. Conducted code reviews and provided feedback to ensure the quality of code.",
+              "achievements": []
+            }
+          ],
+          "visaStatus": null,
+          "linkedinUrl": null,
+          "achievements": [],
+          "availability": null,
+          "originalData": {
+            "rawText": "BABU S R Address: 1st Stage, Kumaraswamy Layout Bengaluru, Karnataka 560078, India Mobile Number: 6360328864 Email: babusrofficial@gmail.com Summary: Motivated Laravel developer with Eight Months of experience in designing, developing, and maintaining web applications. Proficient in PHP, MySQL, JavaScript, HTML, and CSS. Ability to work in a team environment and meet tight deadlines. Professional Experience: Laravel Developer Company Name: Web Digital Mantra It Services Limited Location: #23, 3rd floor, nandita manison, 1st Cross, 1st Stage, Kumaraswamy Layout, Bengaluru, Karnataka 560078 Duration: Oct 1st 2022 to Present (8 Months) Designed and developed web applications using Laravel PHP framework, HTML, CSS, and JavaScript. Worked on the development of the front-end and back-end of web applications. Created responsive designs that are optimized for desktop and mobile devices. Developed and maintained APIs for mobile and web applications. Worked with Git and version control to manage source code changes. Utilized MySQL to manage databases and performed data migrations. Collaborated with team members to develop efficient solutions for complex issues. Conducted code reviews and provided feedback to ensure the quality of code. Skills: Laravel PHP framework MySQL HTML CSS JavaScript Git API Development Ajax Education: Bachelor's Degree in Science (PCM) University Name: University College of Science Tumkur Location: Tumkur Graduation Year: 2018 Projects: Developed an e-commerce website using Laravel, allowing customers to browse and purchase products securely. Implemented features like user registration, product search, shopping cart, and payment integration. Created a matrimony platform using Laravel, enabling users to create profiles, search for potential partners, and communicate securely. Implemented advanced search filters, matching algorithms, and privacy settings. Built a tours and travels website similar to MakeMyTrip using Laravel, providing users with the abi",
+            "filename": "272cf512-e41b-4d71-8f73-2c1de76b120c.pdf"
+          },
+          "portfolioUrl": null,
+          "certifications": [],
+          "processingTime": 0,
+          "remotePreference": null
+        },
+        "enrichedData": {
+          "name": "BABU S R",
+          "posts": [],
+          "title": "Laravel Developer",
+          "skills": [],
+          "company": "Web Digital Mantra It Services Limited",
+          "headline": "Laravel Developer",
+          "location": "Bengaluru, Karnataka, India",
+          "education": [],
+          "experience": [],
+          "jobHistory": [],
+          "lastActive": "Recently active",
+          "openToWork": false,
+          "certifications": [],
+          "currentCompany": "Web Digital Mantra It Services Limited",
+          "recentActivity": [],
+          "currentPosition": "Laravel Developer"
+        },
+        "extractedData": {
+          "name": "BABU S R",
+          "email": "babusrofficial@gmail.com",
+          "phone": "6360328864",
+          "title": "Laravel Developer",
+          "salary": null,
+          "skills": [
+            "Laravel PHP framework",
+            "MySQL",
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Git",
+            "API Development",
+            "Ajax"
+          ],
+          "source": "resume",
+          "summary": "Motivated Laravel developer with Eight Months of experience in designing, developing, and maintaining web applications. Proficient in PHP, MySQL, JavaScript, HTML, and CSS. Ability to work in a team environment and meet tight deadlines.",
+          "location": "Bengaluru, Karnataka, India",
+          "projects": [
+            {
+              "url": null,
+              "name": "E-commerce website",
+              "duration": null,
+              "techUsed": [
+                "Laravel"
+              ],
+              "description": "Developed an e-commerce website using Laravel, allowing customers to browse and purchase products securely. Implemented features like user registration, product search, shopping cart, and payment integration.",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "Matrimony platform",
+              "duration": null,
+              "techUsed": [
+                "Laravel"
+              ],
+              "description": "Created a matrimony platform using Laravel, enabling users to create profiles, search for potential partners, and communicate securely. Implemented advanced search filters, matching algorithms, and privacy settings.",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "Tours and travels website",
+              "duration": null,
+              "techUsed": [
+                "Laravel"
+              ],
+              "description": "Built a tours and travels website similar to MakeMyTrip using Laravel, providing users with the ability to search and book flights, hotels, and holiday packages. Implemented dynamic pricing, booking management, and integrated third-party APIs.",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "Informative dynamic website",
+              "duration": null,
+              "techUsed": [
+                "Laravel"
+              ],
+              "description": "Developed an informative dynamic website using Laravel, allowing users to browse and search for articles, news, and resources. Implemented a content management system (CMS) for easy content updates.",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "Temple poojas project",
+              "duration": null,
+              "techUsed": [
+                "Laravel"
+              ],
+              "description": "Created a temple poojas project using Laravel, where each pooja has different packages based on package prices. Implemented features such as package selection, payment integration, and booking management.",
+              "achievements": []
+            }
+          ],
+          "education": [
+            {
+              "gpa": null,
+              "year": "2018",
+              "field": "Science (PCM)",
+              "degree": "Bachelor's Degree in Science (PCM)",
+              "location": "Tumkur",
+              "percentage": null,
+              "university": "University College of Science Tumkur"
+            }
+          ],
+          "githubUrl": null,
+          "interests": [],
+          "languages": [],
+          "confidence": 93,
+          "experience": [
+            {
+              "company": "Web Digital Mantra It Services Limited",
+              "endDate": "Present",
+              "duration": "Oct 1st 2022 - Present",
+              "jobTitle": "Laravel Developer",
+              "techUsed": [
+                "Laravel PHP framework",
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Git",
+                "MySQL"
+              ],
+              "startDate": "2022-10",
+              "description": "Designed and developed web applications using Laravel PHP framework, HTML, CSS, and JavaScript. Worked on the development of the front-end and back-end of web applications. Created responsive designs that are optimized for desktop and mobile devices. Developed and maintained APIs for mobile and web applications. Worked with Git and version control to manage source code changes. Utilized MySQL to manage databases and performed data migrations. Collaborated with team members to develop efficient solutions for complex issues. Conducted code reviews and provided feedback to ensure the quality of code.",
+              "achievements": []
+            }
+          ],
+          "visaStatus": null,
+          "linkedinUrl": null,
+          "achievements": [],
+          "availability": null,
+          "originalData": {
+            "rawText": "BABU S R Address: 1st Stage, Kumaraswamy Layout Bengaluru, Karnataka 560078, India Mobile Number: 6360328864 Email: babusrofficial@gmail.com Summary: Motivated Laravel developer with Eight Months of experience in designing, developing, and maintaining web applications. Proficient in PHP, MySQL, JavaScript, HTML, and CSS. Ability to work in a team environment and meet tight deadlines. Professional Experience: Laravel Developer Company Name: Web Digital Mantra It Services Limited Location: #23, 3rd floor, nandita manison, 1st Cross, 1st Stage, Kumaraswamy Layout, Bengaluru, Karnataka 560078 Duration: Oct 1st 2022 to Present (8 Months) Designed and developed web applications using Laravel PHP framework, HTML, CSS, and JavaScript. Worked on the development of the front-end and back-end of web applications. Created responsive designs that are optimized for desktop and mobile devices. Developed and maintained APIs for mobile and web applications. Worked with Git and version control to manage source code changes. Utilized MySQL to manage databases and performed data migrations. Collaborated with team members to develop efficient solutions for complex issues. Conducted code reviews and provided feedback to ensure the quality of code. Skills: Laravel PHP framework MySQL HTML CSS JavaScript Git API Development Ajax Education: Bachelor's Degree in Science (PCM) University Name: University College of Science Tumkur Location: Tumkur Graduation Year: 2018 Projects: Developed an e-commerce website using Laravel, allowing customers to browse and purchase products securely. Implemented features like user registration, product search, shopping cart, and payment integration. Created a matrimony platform using Laravel, enabling users to create profiles, search for potential partners, and communicate securely. Implemented advanced search filters, matching algorithms, and privacy settings. Built a tours and travels website similar to MakeMyTrip using Laravel, providing users with the abi",
+            "filename": "272cf512-e41b-4d71-8f73-2c1de76b120c.pdf"
+          },
+          "portfolioUrl": null,
+          "certifications": [],
+          "processingTime": 0,
+          "remotePreference": null
+        },
+        "confidence": 93,
+        "processingTime": 8589,
+        "notes": null,
+        "createdAt": "2025-09-10T13:35:15.475Z"
+      },
+      {
+        "id": "649bce5d-f667-48f3-a795-385e9abaf2c5",
+        "comId": "223",
+        "eeezoResumeUrl": null,
+        "eeezoUploadDate": "2025-09-10T09:06:23.787Z",
+        "eeezoStatus": "completed",
+        "name": "Pushparani S",
+        "email": "pushparanis0905@gmail.com",
+        "phone": "8489235259",
+        "title": "Backend developer",
+        "company": "X-Media Solutions",
+        "currentEmployer": "Unknown",
+        "linkedinUrl": "linkedin.com/in/pushparani-s-1437b1243",
+        "githubUrl": "github.com/Pushparani",
+        "portfolioUrl": null,
+        "location": "Chennai, Tamil Nadu, India",
+        "summary": "A motivated individual with in-depth knowledge of languages and development tools, seeking a position in a growth-oriented company where I can use my skills to the advantage of the company while having the scope to develop my own skills.",
+        "filename": "65bcdf2b-bdb7-4658-8c25-b1a609cc6348.pdf",
+        "rawText": "Mobile : 8489235259 E-Mail : pushparanis0905@gmail.com Github : github.com/Pushparani S LinkedIn : linkedin.com/in/pushparani-s-1437b1243 Pushparani S Web Developer SUMMARY A motivated individual with in-depth knowledge of languages and development tools, seeking a position in a growth-oriented company where I can use my skills to the advantage of the company while having the scope to develop my own skills. TECHNICAL SKILLS ◆ HTML5 ◆ Laravel ◆ CSS3 ◆ CodeIgniter ◆ JavaScript ◆ MySQL ◆ JQuery JS ◆ REST APIs ◆ PHP ◆ Moodle LMS WORK EXPERIENCE COMPANY: X-MEDIA SOLUTIONS ROLE: WEB DEVELOPER EXPERIENCE : 1 YEAR (September 2022 - PRESENT) PROJECTS: ◆ L&T Workmen Mobilization (web & mobile) - Internal Communication and Worker hiring management App ◆ CDMS Online University (web) - E-Learning Platform ◆ Avtarlabs (web) - E-learning Platform ◆ VRBIZTEC (web) - Engineering Drawings - Viewing Application ◆ Canli (website) - E-commerce Website ROLES & RESPONSIBILITIES : ◆ Design and implement database schemas for web applications. This includes creating tables, columns, and relationships, and ensuring that the schema meets the needs of the application. ◆ Integrate payment processing into web applications. This includes working with payment processors, configuring the integration, and testing the integration. ◆ Design and develop REST APIs that meet the needs of clients and users. This includes defining the API's endpoints, parameters, and responses. ◆ Integrate third-party APIs into web applications. This includes understanding the third-party API's Conducted Functional, Regression, Integration and System testing to identify the software defects. EDUCATIONAL QUALIFICATIONS BACHELOR DEGREE : B.Sc(Mathematics) - Manonmaniam Sundarnar University(2017-2020). MASTER DEGREE : M.Sc(Mathematics) - Manonmaniam Sundarnar University (2020-2022). COURSES Java (Core Java) : Fita Academy, Chennai.",
+        "experience": [
+          {
+            "company": "X-Media Solutions",
+            "endDate": "Present",
+            "duration": "September 2022 - Present",
+            "jobTitle": "Web Developer",
+            "techUsed": [
+              "HTML5",
+              "Laravel",
+              "CSS3",
+              "CodeIgniter",
+              "JavaScript",
+              "MySQL",
+              "JQuery JS",
+              "REST APIs",
+              "PHP",
+              "Moodle LMS"
+            ],
+            "startDate": "2022-09",
+            "description": "Design and implement database schemas for web applications. Integrate payment processing into web applications. Design and develop REST APIs. Integrate third-party APIs into web applications.",
+            "achievements": []
+          }
+        ],
+        "education": [
+          {
+            "gpa": null,
+            "year": "2020",
+            "field": "Mathematics",
+            "degree": "B.Sc",
+            "location": null,
+            "percentage": null,
+            "university": "Manonmaniam Sundarnar University"
+          },
+          {
+            "gpa": null,
+            "year": "2022",
+            "field": "Mathematics",
+            "degree": "M.Sc",
+            "location": null,
+            "percentage": null,
+            "university": "Manonmaniam Sundarnar University"
+          }
+        ],
+        "projects": [
+          {
+            "url": null,
+            "name": "L&T Workmen Mobilization",
+            "duration": null,
+            "techUsed": [],
+            "description": "Internal Communication and Worker hiring management App",
+            "achievements": []
+          },
+          {
+            "url": null,
+            "name": "CDMS Online University",
+            "duration": null,
+            "techUsed": [],
+            "description": "E-Learning Platform",
+            "achievements": []
+          },
+          {
+            "url": null,
+            "name": "Avtarlabs",
+            "duration": null,
+            "techUsed": [],
+            "description": "E-learning Platform",
+            "achievements": []
+          },
+          {
+            "url": null,
+            "name": "VRBIZTEC",
+            "duration": null,
+            "techUsed": [],
+            "description": "Engineering Drawings - Viewing Application",
+            "achievements": []
+          },
+          {
+            "url": null,
+            "name": "Canli",
+            "duration": null,
+            "techUsed": [],
+            "description": "E-commerce Website",
+            "achievements": []
+          }
+        ],
+        "achievements": [],
+        "interests": [],
+        "skills": [],
+        "certifications": [
+          {
+            "url": null,
+            "date": null,
+            "name": "Java (Core Java)",
+            "issuer": "Fita Academy, Chennai",
+            "expiryDate": null,
+            "credentialId": null
+          }
+        ],
+        "languages": [],
+        "linkedinLastActive": null,
+        "linkedinHeadline": "Backend developer",
+        "linkedinSummary": null,
+        "linkedinConnections": 117,
+        "linkedinNotes": null,
+        "firstName": "Pushparani",
+        "lastName": "S",
+        "middleName": null,
+        "currentTitle": "Web Developer",
+        "currentCompany": "X-Media Solutions",
+        "yearsOfExperience": 3,
+        "workHistory": [
+          {
+            "company": "X-Media Solutions",
+            "endDate": "Present",
+            "duration": "September 2022 - Present",
+            "jobTitle": "Web Developer",
+            "techUsed": [
+              "HTML5",
+              "Laravel",
+              "CSS3",
+              "CodeIgniter",
+              "JavaScript",
+              "MySQL",
+              "JQuery JS",
+              "REST APIs",
+              "PHP",
+              "Moodle LMS"
+            ],
+            "startDate": "2022-09",
+            "description": "Design and implement database schemas for web applications. Integrate payment processing into web applications. Design and develop REST APIs. Integrate third-party APIs into web applications.",
+            "achievements": []
+          }
+        ],
+        "salary": null,
+        "availability": null,
+        "remotePreference": null,
+        "visaStatus": null,
+        "alternateEmail": null,
+        "website": null,
+        "github": null,
+        "portfolio": null,
+        "score": 0,
+        "priority": "Medium",
+        "openToWork": false,
+        "lastActive": "Unknown",
+        "openToWorkScore": 5,
+        "skillMatchScore": 0,
+        "jobStabilityScore": 9.6,
+        "platformEngagementScore": 2.2,
+        "resumeStatus": "active",
+        "companyDifference": null,
+        "companyDifferenceScore": 0,
+        "hireabilityScore": 5.6,
+        "hireabilityFactors": [],
+        "potentialToJoin": "Medium",
+        "atsId": null,
+        "selectionStatus": null,
+        "selectionDate": null,
+        "joiningOutcome": null,
+        "atsNotes": null,
+        "source": "eezo",
+        "dataSource": "resume",
+        "enrichmentStatus": "completed",
+        "enrichmentDate": "2025-09-10T09:06:36.291Z",
+        "enrichmentSource": "harvestapi",
+        "sourceFile": null,
+        "processingDate": null,
+        "dataQuality": null,
+        "originalData": {
+          "name": "Pushparani S",
+          "email": "pushparanis0905@gmail.com",
+          "phone": "8489235259",
+          "title": "Web Developer",
+          "salary": null,
+          "skills": [
+            "HTML5",
+            "Laravel",
+            "CSS3",
+            "CodeIgniter",
+            "JavaScript",
+            "MySQL",
+            "JQuery JS",
+            "REST APIs",
+            "PHP",
+            "Moodle LMS"
+          ],
+          "source": "resume",
+          "summary": "A motivated individual with in-depth knowledge of languages and development tools, seeking a position in a growth-oriented company where I can use my skills to the advantage of the company while having the scope to develop my own skills.",
+          "location": null,
+          "projects": [
+            {
+              "url": null,
+              "name": "L&T Workmen Mobilization",
+              "duration": null,
+              "techUsed": [],
+              "description": "Internal Communication and Worker hiring management App",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "CDMS Online University",
+              "duration": null,
+              "techUsed": [],
+              "description": "E-Learning Platform",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "Avtarlabs",
+              "duration": null,
+              "techUsed": [],
+              "description": "E-learning Platform",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "VRBIZTEC",
+              "duration": null,
+              "techUsed": [],
+              "description": "Engineering Drawings - Viewing Application",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "Canli",
+              "duration": null,
+              "techUsed": [],
+              "description": "E-commerce Website",
+              "achievements": []
+            }
+          ],
+          "education": [
+            {
+              "gpa": null,
+              "year": "2020",
+              "field": "Mathematics",
+              "degree": "B.Sc",
+              "location": null,
+              "percentage": null,
+              "university": "Manonmaniam Sundarnar University"
+            },
+            {
+              "gpa": null,
+              "year": "2022",
+              "field": "Mathematics",
+              "degree": "M.Sc",
+              "location": null,
+              "percentage": null,
+              "university": "Manonmaniam Sundarnar University"
+            }
+          ],
+          "githubUrl": "github.com/Pushparani",
+          "interests": [],
+          "languages": [],
+          "confidence": 98,
+          "experience": [
+            {
+              "company": "X-Media Solutions",
+              "endDate": "Present",
+              "duration": "September 2022 - Present",
+              "jobTitle": "Web Developer",
+              "techUsed": [
+                "HTML5",
+                "Laravel",
+                "CSS3",
+                "CodeIgniter",
+                "JavaScript",
+                "MySQL",
+                "JQuery JS",
+                "REST APIs",
+                "PHP",
+                "Moodle LMS"
+              ],
+              "startDate": "2022-09",
+              "description": "Design and implement database schemas for web applications. Integrate payment processing into web applications. Design and develop REST APIs. Integrate third-party APIs into web applications.",
+              "achievements": []
+            }
+          ],
+          "visaStatus": null,
+          "linkedinUrl": "linkedin.com/in/pushparani-s-1437b1243",
+          "achievements": [],
+          "availability": null,
+          "originalData": {
+            "rawText": "Mobile : 8489235259 E-Mail : pushparanis0905@gmail.com Github : github.com/Pushparani S LinkedIn : linkedin.com/in/pushparani-s-1437b1243 Pushparani S Web Developer SUMMARY A motivated individual with in-depth knowledge of languages and development tools, seeking a position in a growth-oriented company where I can use my skills to the advantage of the company while having the scope to develop my own skills. TECHNICAL SKILLS ◆ HTML5 ◆ Laravel ◆ CSS3 ◆ CodeIgniter ◆ JavaScript ◆ MySQL ◆ JQuery JS ◆ REST APIs ◆ PHP ◆ Moodle LMS WORK EXPERIENCE COMPANY: X-MEDIA SOLUTIONS ROLE: WEB DEVELOPER EXPERIENCE : 1 YEAR (September 2022 - PRESENT) PROJECTS: ◆ L&T Workmen Mobilization (web & mobile) - Internal Communication and Worker hiring management App ◆ CDMS Online University (web) - E-Learning Platform ◆ Avtarlabs (web) - E-learning Platform ◆ VRBIZTEC (web) - Engineering Drawings - Viewing Application ◆ Canli (website) - E-commerce Website ROLES & RESPONSIBILITIES : ◆ Design and implement database schemas for web applications. This includes creating tables, columns, and relationships, and ensuring that the schema meets the needs of the application. ◆ Integrate payment processing into web applications. This includes working with payment processors, configuring the integration, and testing the integration. ◆ Design and develop REST APIs that meet the needs of clients and users. This includes defining the API's endpoints, parameters, and responses. ◆ Integrate third-party APIs into web applications. This includes understanding the third-party API's Conducted Functional, Regression, Integration and System testing to identify the software defects. EDUCATIONAL QUALIFICATIONS BACHELOR DEGREE : B.Sc(Mathematics) - Manonmaniam Sundarnar University(2017-2020). MASTER DEGREE : M.Sc(Mathematics) - Manonmaniam Sundarnar University (2020-2022). COURSES Java (Core Java) : Fita Academy, Chennai.",
+            "filename": "65bcdf2b-bdb7-4658-8c25-b1a609cc6348.pdf"
+          },
+          "portfolioUrl": null,
+          "certifications": [
+            {
+              "url": null,
+              "date": null,
+              "name": "Java (Core Java)",
+              "issuer": "Fita Academy, Chennai",
+              "expiryDate": null,
+              "credentialId": null
+            }
+          ],
+          "processingTime": 0,
+          "remotePreference": null
+        },
+        "enrichedData": {
+          "name": "Pushparani S",
+          "posts": [],
+          "title": "Backend developer",
+          "skills": [],
+          "company": "Unknown",
+          "headline": "Backend developer",
+          "industry": null,
+          "location": "Chennai, Tamil Nadu, India",
+          "education": [],
+          "languages": [],
+          "experience": [],
+          "jobHistory": [],
+          "lastActive": "Unknown",
+          "openToWork": false,
+          "profileUrl": "linkedin.com/in/pushparani-s-1437b1243",
+          "connections": 117,
+          "certifications": [],
+          "currentCompany": "Unknown",
+          "profilePicture": "https://media.licdn.com/dms/image/v2/D5603AQEr8V47CZZ6yQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1729603248780?e=1760572800&v=beta&t=SaIQgXCgg615Dno6JVlVGCYION-O5xCkGsulqG8hY38",
+          "recentActivity": [],
+          "currentPosition": "Backend developer"
+        },
+        "extractedData": {
+          "name": "Pushparani S",
+          "email": "pushparanis0905@gmail.com",
+          "phone": "8489235259",
+          "title": "Web Developer",
+          "salary": null,
+          "skills": [
+            "HTML5",
+            "Laravel",
+            "CSS3",
+            "CodeIgniter",
+            "JavaScript",
+            "MySQL",
+            "JQuery JS",
+            "REST APIs",
+            "PHP",
+            "Moodle LMS"
+          ],
+          "source": "resume",
+          "summary": "A motivated individual with in-depth knowledge of languages and development tools, seeking a position in a growth-oriented company where I can use my skills to the advantage of the company while having the scope to develop my own skills.",
+          "location": null,
+          "projects": [
+            {
+              "url": null,
+              "name": "L&T Workmen Mobilization",
+              "duration": null,
+              "techUsed": [],
+              "description": "Internal Communication and Worker hiring management App",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "CDMS Online University",
+              "duration": null,
+              "techUsed": [],
+              "description": "E-Learning Platform",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "Avtarlabs",
+              "duration": null,
+              "techUsed": [],
+              "description": "E-learning Platform",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "VRBIZTEC",
+              "duration": null,
+              "techUsed": [],
+              "description": "Engineering Drawings - Viewing Application",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "Canli",
+              "duration": null,
+              "techUsed": [],
+              "description": "E-commerce Website",
+              "achievements": []
+            }
+          ],
+          "education": [
+            {
+              "gpa": null,
+              "year": "2020",
+              "field": "Mathematics",
+              "degree": "B.Sc",
+              "location": null,
+              "percentage": null,
+              "university": "Manonmaniam Sundarnar University"
+            },
+            {
+              "gpa": null,
+              "year": "2022",
+              "field": "Mathematics",
+              "degree": "M.Sc",
+              "location": null,
+              "percentage": null,
+              "university": "Manonmaniam Sundarnar University"
+            }
+          ],
+          "githubUrl": "github.com/Pushparani",
+          "interests": [],
+          "languages": [],
+          "confidence": 98,
+          "experience": [
+            {
+              "company": "X-Media Solutions",
+              "endDate": "Present",
+              "duration": "September 2022 - Present",
+              "jobTitle": "Web Developer",
+              "techUsed": [
+                "HTML5",
+                "Laravel",
+                "CSS3",
+                "CodeIgniter",
+                "JavaScript",
+                "MySQL",
+                "JQuery JS",
+                "REST APIs",
+                "PHP",
+                "Moodle LMS"
+              ],
+              "startDate": "2022-09",
+              "description": "Design and implement database schemas for web applications. Integrate payment processing into web applications. Design and develop REST APIs. Integrate third-party APIs into web applications.",
+              "achievements": []
+            }
+          ],
+          "visaStatus": null,
+          "linkedinUrl": "linkedin.com/in/pushparani-s-1437b1243",
+          "achievements": [],
+          "availability": null,
+          "originalData": {
+            "rawText": "Mobile : 8489235259 E-Mail : pushparanis0905@gmail.com Github : github.com/Pushparani S LinkedIn : linkedin.com/in/pushparani-s-1437b1243 Pushparani S Web Developer SUMMARY A motivated individual with in-depth knowledge of languages and development tools, seeking a position in a growth-oriented company where I can use my skills to the advantage of the company while having the scope to develop my own skills. TECHNICAL SKILLS ◆ HTML5 ◆ Laravel ◆ CSS3 ◆ CodeIgniter ◆ JavaScript ◆ MySQL ◆ JQuery JS ◆ REST APIs ◆ PHP ◆ Moodle LMS WORK EXPERIENCE COMPANY: X-MEDIA SOLUTIONS ROLE: WEB DEVELOPER EXPERIENCE : 1 YEAR (September 2022 - PRESENT) PROJECTS: ◆ L&T Workmen Mobilization (web & mobile) - Internal Communication and Worker hiring management App ◆ CDMS Online University (web) - E-Learning Platform ◆ Avtarlabs (web) - E-learning Platform ◆ VRBIZTEC (web) - Engineering Drawings - Viewing Application ◆ Canli (website) - E-commerce Website ROLES & RESPONSIBILITIES : ◆ Design and implement database schemas for web applications. This includes creating tables, columns, and relationships, and ensuring that the schema meets the needs of the application. ◆ Integrate payment processing into web applications. This includes working with payment processors, configuring the integration, and testing the integration. ◆ Design and develop REST APIs that meet the needs of clients and users. This includes defining the API's endpoints, parameters, and responses. ◆ Integrate third-party APIs into web applications. This includes understanding the third-party API's Conducted Functional, Regression, Integration and System testing to identify the software defects. EDUCATIONAL QUALIFICATIONS BACHELOR DEGREE : B.Sc(Mathematics) - Manonmaniam Sundarnar University(2017-2020). MASTER DEGREE : M.Sc(Mathematics) - Manonmaniam Sundarnar University (2020-2022). COURSES Java (Core Java) : Fita Academy, Chennai.",
+            "filename": "65bcdf2b-bdb7-4658-8c25-b1a609cc6348.pdf"
+          },
+          "portfolioUrl": null,
+          "certifications": [
+            {
+              "url": null,
+              "date": null,
+              "name": "Java (Core Java)",
+              "issuer": "Fita Academy, Chennai",
+              "expiryDate": null,
+              "credentialId": null
+            }
+          ],
+          "processingTime": 0,
+          "remotePreference": null
+        },
+        "confidence": 98,
+        "processingTime": 5626,
+        "notes": null,
+        "createdAt": "2025-09-10T09:06:23.787Z"
+      },
+      {
+        "id": "ffe2ca39-e3e6-48bf-8f5d-7ee2d0ce19e4",
+        "comId": "223",
+        "eeezoResumeUrl": null,
+        "eeezoUploadDate": "2025-09-10T08:41:08.328Z",
+        "eeezoStatus": "completed",
+        "name": "Suresh kumar",
+        "email": "sureshayyan444@gmail.com",
+        "phone": "8760105087",
+        "title": "Full-stack Developer",
+        "company": "Cloudb software solution pvt ltd",
+        "currentEmployer": "Cloudb software solution private limited",
+        "linkedinUrl": "https://www.linkedin.com/in/suresh-kumar-a14358163/",
+        "githubUrl": null,
+        "portfolioUrl": null,
+        "location": "Virudhunagar, Tamil Nadu, India",
+        "summary": "Hai... I am Suresh From virudhungar,Tamilnadu. Completed B.Sc IT 2018 Passed out V.H.N.S.N College.\nNow i am working Full stack developer cloudb software solution pvt ltd",
+        "filename": "a88aae44-483b-4c95-9b05-d6c0cac0c3aa.pdf",
+        "rawText": "SURESH KUMAR EDUCATION B.Sc IT V.H.N.S.N College July 2015 - May 2018 Virudhunagar, Tamilnadu XII K.V.S Hr. Sec. School June 2014 - May 2015 Virudhunagar, Tamilnadu SKILLS ● HTML ● CSS ● Javascript ● Bootstrap ● PHP MVC Framework ● React , Redux ● React Native ● Asp.net Telerik ● Mysql , Sql server, MongoDB , DynamoDB ● AWS , Azure CERTIFICATIONS Completed Certificate course in “Web Development Using PYTHON” Won first prize in web development competition Won second prize in web development competition sureshayyan444@gmail.com 8760105087, 6383470896 Virudhunagar, Tamilnadu LinkedIn SOFTWARE DEVELOPER WORK EXPERIENCE SEPTEMBER 2023 - CURRENT PHP Developer & MERN STACK DEVELOPER R Cloudb software solution pvt ltd | Virudhunagar, Tamilnadu ● HEALTH FUND SYSTEM I developed a system using ASP.NET, Telerik, SQL Server, and AWS to manage personal records, dependent information, job history, comments, address history, and job classes. The system includes features like document uploads, company details, agreements, schedules, and processing screens.AWS for cloud infrastructure and SQL Server for database management. ● CREATIVE DESIGN PACK An eCommerce website developed using React, Redux, and Serverless AWS services like S3 Bucket, DynamoDB, Cognito, Secrets Manager, and CloudFront. The admin allows create users, products, categories, and custom pricing for users. The user side includes login, shopping cart, product browsing, user profile, previous orders, and the ability to reorder. ● BCC ERP Project I developed a system using React, Node.js, MongoDB, and Redux, which includes features such as web login/registration, master pages for city, designation, state, and degree, and client creation for schools with employee mapping across multiple clients. Key modules include a monthly calendar, leave requests, permissions, to-do tasks, payroll, payslips, master and monthly trackers, and employee management ● Magoprinpro & Vindini vysage I developed a system using React, Redux, Mong",
+        "experience": [
+          {
+            "company": "Cloudb software solution pvt ltd",
+            "endDate": "Present",
+            "duration": "September 2023 - Current",
+            "jobTitle": "PHP Developer & MERN STACK DEVELOPER",
+            "techUsed": [
+              "ASP.NET",
+              "Telerik",
+              "SQL Server",
+              "AWS",
+              "React",
+              "Redux",
+              "Serverless AWS",
+              "S3 Bucket",
+              "DynamoDB",
+              "Cognito",
+              "Secrets Manager",
+              "CloudFront",
+              "Node.js",
+              "MongoDB",
+              "Firebase"
+            ],
+            "startDate": "2023-09",
+            "description": "Developed various systems including a Health Fund System, Creative Design Pack, BCC ERP Project, Magoprinpro & Vindini vysage, and BEEBOOK (Accounting Software).",
+            "achievements": []
+          },
+          {
+            "company": "VVV & Sons edible oils ltd (IDHAYAM Oil)",
+            "endDate": "2023-08",
+            "duration": "February 2023 - August 2023",
+            "jobTitle": "PHP Developer & Hardware maintenance",
+            "techUsed": [
+              "PHP",
+              "MySQL",
+              "MVC framework"
+            ],
+            "startDate": "2023-02",
+            "description": "Worked on the EARMS ERP Software, providing updates and improvements on admin side and managed hardware tasks.",
+            "achievements": []
+          }
+        ],
+        "education": [
+          {
+            "gpa": null,
+            "year": "2018",
+            "field": null,
+            "degree": "B.Sc IT",
+            "location": "Virudhunagar, Tamilnadu",
+            "percentage": null,
+            "university": "V.H.N.S.N College"
+          },
+          {
+            "gpa": null,
+            "year": "2015",
+            "field": null,
+            "degree": "XII",
+            "location": "Virudhunagar, Tamilnadu",
+            "percentage": null,
+            "university": "K.V.S Hr. Sec. School"
+          }
+        ],
+        "projects": [],
+        "achievements": [
+          {
+            "year": null,
+            "title": "First prize in web development competition",
+            "description": null,
+            "organization": null
+          },
+          {
+            "year": null,
+            "title": "Second prize in web development competition",
+            "description": null,
+            "organization": null
+          }
+        ],
+        "interests": [],
+        "skills": [
+          "Laravel",
+          "PHP Frameworks",
+          "AJAX",
+          "Model-View-Controller (MVC)",
+          "C++",
+          "C (Programming Language)",
+          "Java",
+          "MySQL",
+          "PhpMyAdmin",
+          "PHP",
+          "jQuery",
+          "JavaScript",
+          "Cascading Style Sheets (CSS)",
+          "HTML",
+          "Construction"
+        ],
+        "certifications": [
+          {
+            "url": null,
+            "date": null,
+            "name": "Certificate course in Web Development Using PYTHON",
+            "issuer": null,
+            "expiryDate": null,
+            "credentialId": null
+          }
+        ],
+        "languages": [],
+        "linkedinLastActive": null,
+        "linkedinHeadline": "MERN FULL STACK DEVELOPER - Immediate joiner",
+        "linkedinSummary": null,
+        "linkedinConnections": 840,
+        "linkedinNotes": null,
+        "firstName": "Suresh",
+        "lastName": "Kumar",
+        "middleName": null,
+        "currentTitle": "PHP Developer & MERN STACK DEVELOPER",
+        "currentCompany": "Cloudb software solution pvt ltd",
+        "yearsOfExperience": 2.5,
+        "workHistory": [
+          {
+            "company": "Cloudb software solution pvt ltd",
+            "endDate": "Present",
+            "duration": "September 2023 - Current",
+            "jobTitle": "PHP Developer & MERN STACK DEVELOPER",
+            "techUsed": [
+              "ASP.NET",
+              "Telerik",
+              "SQL Server",
+              "AWS",
+              "React",
+              "Redux",
+              "Serverless AWS",
+              "S3 Bucket",
+              "DynamoDB",
+              "Cognito",
+              "Secrets Manager",
+              "CloudFront",
+              "Node.js",
+              "MongoDB",
+              "Firebase"
+            ],
+            "startDate": "2023-09",
+            "description": "Developed various systems including a Health Fund System, Creative Design Pack, BCC ERP Project, Magoprinpro & Vindini vysage, and BEEBOOK (Accounting Software).",
+            "achievements": []
+          },
+          {
+            "company": "VVV & Sons edible oils ltd (IDHAYAM Oil)",
+            "endDate": "2023-08",
+            "duration": "February 2023 - August 2023",
+            "jobTitle": "PHP Developer & Hardware maintenance",
+            "techUsed": [
+              "PHP",
+              "MySQL",
+              "MVC framework"
+            ],
+            "startDate": "2023-02",
+            "description": "Worked on the EARMS ERP Software, providing updates and improvements on admin side and managed hardware tasks.",
+            "achievements": []
+          }
+        ],
+        "salary": null,
+        "availability": null,
+        "remotePreference": null,
+        "visaStatus": null,
+        "alternateEmail": null,
+        "website": null,
+        "github": null,
+        "portfolio": null,
+        "score": 0,
+        "priority": "Low",
+        "openToWork": false,
+        "lastActive": "Unknown",
+        "openToWorkScore": 5,
+        "skillMatchScore": 0,
+        "jobStabilityScore": 6.9,
+        "platformEngagementScore": 2.93,
+        "resumeStatus": "active",
+        "companyDifference": null,
+        "companyDifferenceScore": 0,
+        "hireabilityScore": 4.943333,
+        "hireabilityFactors": [],
+        "potentialToJoin": "Low",
+        "atsId": null,
+        "selectionStatus": null,
+        "selectionDate": null,
+        "joiningOutcome": null,
+        "atsNotes": null,
+        "source": "eezo",
+        "dataSource": "resume",
+        "enrichmentStatus": "completed",
+        "enrichmentDate": "2025-09-10T08:41:18.472Z",
+        "enrichmentSource": "harvestapi",
+        "sourceFile": null,
+        "processingDate": null,
+        "dataQuality": null,
+        "originalData": {
+          "name": "Suresh Kumar",
+          "email": "sureshayyan444@gmail.com",
+          "phone": "8760105087",
+          "title": "Software Developer",
+          "salary": null,
+          "skills": [
+            "HTML",
+            "CSS",
+            "Javascript",
+            "Bootstrap",
+            "PHP MVC Framework",
+            "React",
+            "Redux",
+            "React Native",
+            "Asp.net Telerik",
+            "Mysql",
+            "Sql server",
+            "MongoDB",
+            "DynamoDB",
+            "AWS",
+            "Azure"
+          ],
+          "source": "resume",
+          "summary": null,
+          "location": "Virudhunagar, Tamilnadu",
+          "projects": [],
+          "education": [
+            {
+              "gpa": null,
+              "year": "2018",
+              "field": null,
+              "degree": "B.Sc IT",
+              "location": "Virudhunagar, Tamilnadu",
+              "percentage": null,
+              "university": "V.H.N.S.N College"
+            },
+            {
+              "gpa": null,
+              "year": "2015",
+              "field": null,
+              "degree": "XII",
+              "location": "Virudhunagar, Tamilnadu",
+              "percentage": null,
+              "university": "K.V.S Hr. Sec. School"
+            }
+          ],
+          "githubUrl": null,
+          "interests": [],
+          "languages": [],
+          "confidence": 87,
+          "experience": [
+            {
+              "company": "Cloudb software solution pvt ltd",
+              "endDate": "Present",
+              "duration": "September 2023 - Current",
+              "jobTitle": "PHP Developer & MERN STACK DEVELOPER",
+              "techUsed": [
+                "ASP.NET",
+                "Telerik",
+                "SQL Server",
+                "AWS",
+                "React",
+                "Redux",
+                "Serverless AWS",
+                "S3 Bucket",
+                "DynamoDB",
+                "Cognito",
+                "Secrets Manager",
+                "CloudFront",
+                "Node.js",
+                "MongoDB",
+                "Firebase"
+              ],
+              "startDate": "2023-09",
+              "description": "Developed various systems including a Health Fund System, Creative Design Pack, BCC ERP Project, Magoprinpro & Vindini vysage, and BEEBOOK (Accounting Software).",
+              "achievements": []
+            },
+            {
+              "company": "VVV & Sons edible oils ltd (IDHAYAM Oil)",
+              "endDate": "2023-08",
+              "duration": "February 2023 - August 2023",
+              "jobTitle": "PHP Developer & Hardware maintenance",
+              "techUsed": [
+                "PHP",
+                "MySQL",
+                "MVC framework"
+              ],
+              "startDate": "2023-02",
+              "description": "Worked on the EARMS ERP Software, providing updates and improvements on admin side and managed hardware tasks.",
+              "achievements": []
+            }
+          ],
+          "visaStatus": null,
+          "linkedinUrl": "https://www.linkedin.com/in/suresh-kumar-a14358163/",
+          "achievements": [
+            {
+              "year": null,
+              "title": "First prize in web development competition",
+              "description": null,
+              "organization": null
+            },
+            {
+              "year": null,
+              "title": "Second prize in web development competition",
+              "description": null,
+              "organization": null
+            }
+          ],
+          "availability": null,
+          "originalData": {
+            "rawText": "SURESH KUMAR EDUCATION B.Sc IT V.H.N.S.N College July 2015 - May 2018 Virudhunagar, Tamilnadu XII K.V.S Hr. Sec. School June 2014 - May 2015 Virudhunagar, Tamilnadu SKILLS ● HTML ● CSS ● Javascript ● Bootstrap ● PHP MVC Framework ● React , Redux ● React Native ● Asp.net Telerik ● Mysql , Sql server, MongoDB , DynamoDB ● AWS , Azure CERTIFICATIONS Completed Certificate course in “Web Development Using PYTHON” Won first prize in web development competition Won second prize in web development competition sureshayyan444@gmail.com 8760105087, 6383470896 Virudhunagar, Tamilnadu LinkedIn SOFTWARE DEVELOPER WORK EXPERIENCE SEPTEMBER 2023 - CURRENT PHP Developer & MERN STACK DEVELOPER R Cloudb software solution pvt ltd | Virudhunagar, Tamilnadu ● HEALTH FUND SYSTEM I developed a system using ASP.NET, Telerik, SQL Server, and AWS to manage personal records, dependent information, job history, comments, address history, and job classes. The system includes features like document uploads, company details, agreements, schedules, and processing screens.AWS for cloud infrastructure and SQL Server for database management. ● CREATIVE DESIGN PACK An eCommerce website developed using React, Redux, and Serverless AWS services like S3 Bucket, DynamoDB, Cognito, Secrets Manager, and CloudFront. The admin allows create users, products, categories, and custom pricing for users. The user side includes login, shopping cart, product browsing, user profile, previous orders, and the ability to reorder. ● BCC ERP Project I developed a system using React, Node.js, MongoDB, and Redux, which includes features such as web login/registration, master pages for city, designation, state, and degree, and client creation for schools with employee mapping across multiple clients. Key modules include a monthly calendar, leave requests, permissions, to-do tasks, payroll, payslips, master and monthly trackers, and employee management ● Magoprinpro & Vindini vysage I developed a system using React, Redux, Mong",
+            "filename": "a88aae44-483b-4c95-9b05-d6c0cac0c3aa.pdf"
+          },
+          "portfolioUrl": null,
+          "certifications": [
+            {
+              "url": null,
+              "date": null,
+              "name": "Certificate course in Web Development Using PYTHON",
+              "issuer": null,
+              "expiryDate": null,
+              "credentialId": null
+            }
+          ],
+          "processingTime": 0,
+          "remotePreference": null
+        },
+        "enrichedData": {
+          "name": "Suresh kumar",
+          "posts": [],
+          "title": "Full-stack Developer",
+          "skills": [
+            {
+              "title": "Laravel",
+              "subComponents": [
+                {
+                  "description": [
+                    {
+                      "text": "Full-stack Developer at Cloudb software solution private limited",
+                      "type": "insightComponent"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "PHP Frameworks",
+              "subComponents": [
+                {
+                  "description": [
+                    {
+                      "text": "Full-stack Developer at Cloudb software solution private limited",
+                      "type": "insightComponent"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "AJAX",
+              "subComponents": [
+                {
+                  "description": [
+                    {
+                      "text": "Full-stack Developer at Cloudb software solution private limited",
+                      "type": "insightComponent"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Model-View-Controller (MVC)",
+              "subComponents": [
+                {
+                  "description": [
+                    {
+                      "text": "Full-stack Developer at Cloudb software solution private limited",
+                      "type": "insightComponent"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "C++",
+              "subComponents": [
+                {
+                  "description": []
+                }
+              ]
+            },
+            {
+              "title": "C (Programming Language)",
+              "subComponents": [
+                {
+                  "description": []
+                }
+              ]
+            },
+            {
+              "title": "Java",
+              "subComponents": [
+                {
+                  "description": []
+                }
+              ]
+            },
+            {
+              "title": "MySQL",
+              "subComponents": [
+                {
+                  "description": [
+                    {
+                      "text": "Full-stack Developer at Cloudb software solution private limited",
+                      "type": "insightComponent"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "PhpMyAdmin",
+              "subComponents": [
+                {
+                  "description": [
+                    {
+                      "text": "Full-stack Developer at Cloudb software solution private limited",
+                      "type": "insightComponent"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "PHP",
+              "subComponents": [
+                {
+                  "description": [
+                    {
+                      "text": "Full-stack Developer at Cloudb software solution private limited",
+                      "type": "insightComponent"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "jQuery",
+              "subComponents": [
+                {
+                  "description": [
+                    {
+                      "text": "Full-stack Developer at Cloudb software solution private limited",
+                      "type": "insightComponent"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "JavaScript",
+              "subComponents": [
+                {
+                  "description": []
+                }
+              ]
+            },
+            {
+              "title": "Cascading Style Sheets (CSS)",
+              "subComponents": [
+                {
+                  "description": [
+                    {
+                      "text": "Full-stack Developer at Cloudb software solution private limited",
+                      "type": "insightComponent"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "HTML",
+              "subComponents": [
+                {
+                  "description": []
+                }
+              ]
+            },
+            {
+              "title": "Construction",
+              "subComponents": [
+                {
+                  "description": [
+                    {
+                      "text": "Civil Supervisor at L&T Infrastructure Engineering Limited",
+                      "type": "insightComponent"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "company": "Cloudb software solution private limited",
+          "summary": "Hai... I am Suresh From virudhungar,Tamilnadu. Completed B.Sc IT 2018 Passed out V.H.N.S.N College.\nNow i am working Full stack developer cloudb software solution pvt ltd",
+          "headline": "MERN FULL STACK DEVELOPER - Immediate joiner",
+          "industry": "Computer Software",
+          "location": "Virudhunagar, Tamil Nadu, India",
+          "education": [],
+          "languages": [],
+          "experience": [
+            {
+              "title": "Full-stack Developer",
+              "company": "Cloudb software solution private limited",
+              "duration": "Unknown",
+              "description": ""
+            },
+            {
+              "title": "PHP Developer",
+              "company": "VVV & SONS EDIBLE OILS LIMITED",
+              "duration": "Unknown",
+              "description": ""
+            },
+            {
+              "title": "Civil Supervisor",
+              "company": "L&T Infrastructure Engineering Limited",
+              "duration": "Unknown",
+              "description": ""
+            }
+          ],
+          "jobHistory": [
+            {
+              "role": "Full-stack Developer",
+              "company": "Cloudb software solution private limited",
+              "duration": "Unknown"
+            },
+            {
+              "role": "PHP Developer",
+              "company": "VVV & SONS EDIBLE OILS LIMITED",
+              "duration": "Unknown"
+            },
+            {
+              "role": "Civil Supervisor",
+              "company": "L&T Infrastructure Engineering Limited",
+              "duration": "Unknown"
+            }
+          ],
+          "lastActive": "Unknown",
+          "openToWork": false,
+          "profileUrl": "https://www.linkedin.com/in/suresh-kumar-a14358163/",
+          "connections": 840,
+          "certifications": [],
+          "currentCompany": "Cloudb software solution private limited",
+          "profilePicture": "https://media.licdn.com/dms/image/v2/C5603AQEkivklR6S75Q/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1659375388110?e=1760572800&v=beta&t=ROmDTytrtV6qkk2tMrb9cBE_Ykgv5Y8mATgP9DhCVjE",
+          "recentActivity": [],
+          "currentPosition": "Full-stack Developer"
+        },
+        "extractedData": {
+          "name": "Suresh Kumar",
+          "email": "sureshayyan444@gmail.com",
+          "phone": "8760105087",
+          "title": "Software Developer",
+          "salary": null,
+          "skills": [
+            "HTML",
+            "CSS",
+            "Javascript",
+            "Bootstrap",
+            "PHP MVC Framework",
+            "React",
+            "Redux",
+            "React Native",
+            "Asp.net Telerik",
+            "Mysql",
+            "Sql server",
+            "MongoDB",
+            "DynamoDB",
+            "AWS",
+            "Azure"
+          ],
+          "source": "resume",
+          "summary": null,
+          "location": "Virudhunagar, Tamilnadu",
+          "projects": [],
+          "education": [
+            {
+              "gpa": null,
+              "year": "2018",
+              "field": null,
+              "degree": "B.Sc IT",
+              "location": "Virudhunagar, Tamilnadu",
+              "percentage": null,
+              "university": "V.H.N.S.N College"
+            },
+            {
+              "gpa": null,
+              "year": "2015",
+              "field": null,
+              "degree": "XII",
+              "location": "Virudhunagar, Tamilnadu",
+              "percentage": null,
+              "university": "K.V.S Hr. Sec. School"
+            }
+          ],
+          "githubUrl": null,
+          "interests": [],
+          "languages": [],
+          "confidence": 87,
+          "experience": [
+            {
+              "company": "Cloudb software solution pvt ltd",
+              "endDate": "Present",
+              "duration": "September 2023 - Current",
+              "jobTitle": "PHP Developer & MERN STACK DEVELOPER",
+              "techUsed": [
+                "ASP.NET",
+                "Telerik",
+                "SQL Server",
+                "AWS",
+                "React",
+                "Redux",
+                "Serverless AWS",
+                "S3 Bucket",
+                "DynamoDB",
+                "Cognito",
+                "Secrets Manager",
+                "CloudFront",
+                "Node.js",
+                "MongoDB",
+                "Firebase"
+              ],
+              "startDate": "2023-09",
+              "description": "Developed various systems including a Health Fund System, Creative Design Pack, BCC ERP Project, Magoprinpro & Vindini vysage, and BEEBOOK (Accounting Software).",
+              "achievements": []
+            },
+            {
+              "company": "VVV & Sons edible oils ltd (IDHAYAM Oil)",
+              "endDate": "2023-08",
+              "duration": "February 2023 - August 2023",
+              "jobTitle": "PHP Developer & Hardware maintenance",
+              "techUsed": [
+                "PHP",
+                "MySQL",
+                "MVC framework"
+              ],
+              "startDate": "2023-02",
+              "description": "Worked on the EARMS ERP Software, providing updates and improvements on admin side and managed hardware tasks.",
+              "achievements": []
+            }
+          ],
+          "visaStatus": null,
+          "linkedinUrl": "https://www.linkedin.com/in/suresh-kumar-a14358163/",
+          "achievements": [
+            {
+              "year": null,
+              "title": "First prize in web development competition",
+              "description": null,
+              "organization": null
+            },
+            {
+              "year": null,
+              "title": "Second prize in web development competition",
+              "description": null,
+              "organization": null
+            }
+          ],
+          "availability": null,
+          "originalData": {
+            "rawText": "SURESH KUMAR EDUCATION B.Sc IT V.H.N.S.N College July 2015 - May 2018 Virudhunagar, Tamilnadu XII K.V.S Hr. Sec. School June 2014 - May 2015 Virudhunagar, Tamilnadu SKILLS ● HTML ● CSS ● Javascript ● Bootstrap ● PHP MVC Framework ● React , Redux ● React Native ● Asp.net Telerik ● Mysql , Sql server, MongoDB , DynamoDB ● AWS , Azure CERTIFICATIONS Completed Certificate course in “Web Development Using PYTHON” Won first prize in web development competition Won second prize in web development competition sureshayyan444@gmail.com 8760105087, 6383470896 Virudhunagar, Tamilnadu LinkedIn SOFTWARE DEVELOPER WORK EXPERIENCE SEPTEMBER 2023 - CURRENT PHP Developer & MERN STACK DEVELOPER R Cloudb software solution pvt ltd | Virudhunagar, Tamilnadu ● HEALTH FUND SYSTEM I developed a system using ASP.NET, Telerik, SQL Server, and AWS to manage personal records, dependent information, job history, comments, address history, and job classes. The system includes features like document uploads, company details, agreements, schedules, and processing screens.AWS for cloud infrastructure and SQL Server for database management. ● CREATIVE DESIGN PACK An eCommerce website developed using React, Redux, and Serverless AWS services like S3 Bucket, DynamoDB, Cognito, Secrets Manager, and CloudFront. The admin allows create users, products, categories, and custom pricing for users. The user side includes login, shopping cart, product browsing, user profile, previous orders, and the ability to reorder. ● BCC ERP Project I developed a system using React, Node.js, MongoDB, and Redux, which includes features such as web login/registration, master pages for city, designation, state, and degree, and client creation for schools with employee mapping across multiple clients. Key modules include a monthly calendar, leave requests, permissions, to-do tasks, payroll, payslips, master and monthly trackers, and employee management ● Magoprinpro & Vindini vysage I developed a system using React, Redux, Mong",
+            "filename": "a88aae44-483b-4c95-9b05-d6c0cac0c3aa.pdf"
+          },
+          "portfolioUrl": null,
+          "certifications": [
+            {
+              "url": null,
+              "date": null,
+              "name": "Certificate course in Web Development Using PYTHON",
+              "issuer": null,
+              "expiryDate": null,
+              "credentialId": null
+            }
+          ],
+          "processingTime": 0,
+          "remotePreference": null
+        },
+        "confidence": 87,
+        "processingTime": 6401,
+        "notes": null,
+        "createdAt": "2025-09-10T08:41:08.328Z"
+      }
+    ]
+  }
+}

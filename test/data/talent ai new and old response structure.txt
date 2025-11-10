@@ -1,0 +1,547 @@
+new response:
+
+{
+        "id": "5f8dee3b-cfe4-44fa-ba44-72d225b66d38",
+        "comId": "251",
+        "eeezoResumeUrl": null,
+        "eeezoUploadDate": null,
+        "eeezoStatus": "uploaded",
+        "name": "Suresh Kumar",
+        "email": "sureshayyan444@gmail.com",
+        "phone": "8760105087",
+        "title": "Full-stack Developer",
+        "company": "Cloudb software solution pvt ltd",
+        "currentEmployer": "Cloudb software solution private limited",
+        "linkedinUrl": "https://www.linkedin.com/in/suresh-kumar-a14358163/",
+        "githubUrl": null,
+        "portfolioUrl": null,
+        "location": "Virudhunagar, Tamilnadu",
+        "summary": null,
+        "filename": "40c41d22-e752-4e29-978b-7a8adfab3a60.pdf",
+        "rawText": null,
+        "experience": "September 2023 - Current",
+        "education": [],
+        "projects": [],
+        "achievements": [],
+        "interests": [],
+        "skills": [
+          "HTML",
+          "CSS",
+          "Javascript",
+          "Bootstrap",
+          "PHP MVC Framework",
+          "React",
+          "Redux",
+          "React Native",
+          "Asp.net Telerik",
+          "Mysql",
+          "Sql server",
+          "MongoDB",
+          "DynamoDB",
+          "AWS",
+          "Azure"
+        ],
+        "certifications": [],
+        "languages": [],
+        "linkedinLastActive": null,
+        "linkedinHeadline": "MERN FULL STACK DEVELOPER - Immediate joiner",
+        "linkedinSummary": "Hai... I am Suresh From virudhungar,Tamilnadu. Completed B.Sc IT 2018 Passed out V.H.N.S.N College.\nNow i am working Full stack developer cloudb software solution pvt ltd",
+        "linkedinConnections": 898,
+        "linkedinNotes": "",
+        "firstName": null,
+        "lastName": null,
+        "middleName": null,
+        "currentTitle": null,
+        "currentCompany": null,
+        "yearsOfExperience": null,
+        "workHistory": [],
+        "salary": null,
+        "availability": null,
+        "remotePreference": null,
+        "visaStatus": null,
+        "alternateEmail": null,
+        "website": null,
+        "github": null,
+        "portfolio": null,
+        "score": 0,
+        "priority": "Low",
+        "openToWork": false,
+        "lastActive": null,
+        "openToWorkScore": 0,
+        "skillMatchScore": 0,
+        "jobStabilityScore": 0,
+        "platformEngagementScore": 0,
+        "resumeStatus": "active",
+        "companyDifference": null,
+        "companyDifferenceScore": 0,
+        "hireabilityScore": 0,
+        "hireabilityFactors": [],
+        "potentialToJoin": "Unknown",
+        "atsId": null,
+        "selectionStatus": null,
+        "selectionDate": null,
+        "joiningOutcome": null,
+        "atsNotes": null,
+        "source": "eezo",
+        "dataSource": "resume",
+        "enrichmentStatus": "pending",
+        "enrichmentDate": null,
+        "enrichmentSource": null,
+        "sourceFile": null,
+        "processingDate": null,
+        "dataQuality": null,
+        "originalData": {
+          "name": "Suresh Kumar",
+          "email": "sureshayyan444@gmail.com",
+          "phone": "8760105087",
+          "title": "Software Developer",
+          "salary": null,
+          "skills": [
+            "HTML",
+            "CSS",
+            "Javascript",
+            "Bootstrap",
+            "PHP MVC Framework",
+            "React",
+            "Redux",
+            "React Native",
+            "Asp.net Telerik",
+            "Mysql",
+            "Sql server",
+            "MongoDB",
+            "DynamoDB",
+            "AWS",
+            "Azure"
+          ],
+          "source": "resume",
+          "rawText": "\n\n \nSURESH \nKUMAR \n \nEDUCATION \nB.Sc IT \nV.H.N.S.N College \n \n       July 2015 - May 2018 \n       Virudhunagar, Tamilnadu \nXII \nK.V.S Hr. Sec. School  \n \n       June 2014 - May 2015 \n       Virudhunagar, Tamilnadu \n \nSKILLS \n● HTML \n● CSS \n● Javascript \n● Bootstrap \n● PHP MVC Framework \n● React , Redux \n● React Native \n● Asp.net Telerik \n● Mysql , Sql server, \nMongoDB , DynamoDB \n● AWS , Azure \n \nCERTIFICATIONS \nCompleted Certificate course in \n“Web Development Using \nPYTHON” \n \nWon first prize in web \ndevelopment competition \n \nWon second prize in web \ndevelopment competition \n \nsureshayyan444@gmail.com                    8760105087, 6383470896 \n \nVirudhunagar, Tamilnadu                         LinkedIn\n \n \nSOFTWARE DEVELOPER\n \nWORK EXPERIENCE \nSEPTEMBER 2023 - CURRENT \nPHP Developer & MERN STACK DEVELOPER R \nCloudb software solution pvt ltd  |  Virudhunagar, Tamilnadu \n● HEALTH FUND SYSTEM \nI developed a system using ASP.NET, Telerik, SQL Server, and AWS to \nmanage personal records, ",
+          "summary": null,
+          "location": "Virudhunagar, Tamilnadu",
+          "projects": [],
+          "education": [
+            {
+              "gpa": null,
+              "year": "2018",
+              "field": null,
+              "degree": "B.Sc IT",
+              "location": "Virudhunagar, Tamilnadu",
+              "percentage": null,
+              "university": "V.H.N.S.N College"
+            },
+            {
+              "gpa": null,
+              "year": "2015",
+              "field": null,
+              "degree": "XII",
+              "location": "Virudhunagar, Tamilnadu",
+              "percentage": null,
+              "university": "K.V.S Hr. Sec. School"
+            }
+          ],
+          "githubUrl": null,
+          "interests": [],
+          "languages": [],
+          "confidence": 87,
+          "experience": [
+            {
+              "company": "Cloudb software solution pvt ltd",
+              "endDate": "Present",
+              "duration": "September 2023 - Current",
+              "jobTitle": "PHP Developer & MERN STACK DEVELOPER",
+              "techUsed": [
+                "ASP.NET",
+                "Telerik",
+                "SQL Server",
+                "AWS",
+                "React",
+                "Redux",
+                "Serverless AWS",
+                "S3 Bucket",
+                "DynamoDB",
+                "Cognito",
+                "Secrets Manager",
+                "CloudFront",
+                "Node.js",
+                "MongoDB",
+                "Firebase"
+              ],
+              "startDate": "2023-09",
+              "description": "Developed various systems and eCommerce websites using a range of technologies including ASP.NET, Telerik, SQL Server, AWS, React, Redux, Node.js, and MongoDB.",
+              "achievements": []
+            },
+            {
+              "company": "VVV & Sons edible oils ltd (IDHAYAM Oil)",
+              "endDate": "2023-08",
+              "duration": "February 2023 - August 2023",
+              "jobTitle": "PHP Developer & Hardware maintenance",
+              "techUsed": [
+                "PHP",
+                "MySQL",
+                "MVC framework"
+              ],
+              "startDate": "2023-02",
+              "description": "Worked on the EARMS ERP Software, providing updates and improvements on the admin side, and managed hardware tasks including server maintenance and CCTV systems.",
+              "achievements": []
+            }
+          ],
+          "visaStatus": null,
+          "linkedinUrl": "https://www.linkedin.com/in/suresh-kumar-a14358163/",
+          "achievements": [
+            {
+              "year": null,
+              "title": "First prize in web development competition",
+              "description": null,
+              "organization": null
+            },
+            {
+              "year": null,
+              "title": "Second prize in web development competition",
+              "description": null,
+              "organization": null
+            }
+          ],
+          "availability": null,
+          "originalData": {
+            "rawText": "SURESH KUMAR EDUCATION B.Sc IT V.H.N.S.N College July 2015 - May 2018 Virudhunagar, Tamilnadu XII K.V.S Hr. Sec. School June 2014 - May 2015 Virudhunagar, Tamilnadu SKILLS ● HTML ● CSS ● Javascript ● Bootstrap ● PHP MVC Framework ● React , Redux ● React Native ● Asp.net Telerik ● Mysql , Sql server, MongoDB , DynamoDB ● AWS , Azure CERTIFICATIONS Completed Certificate course in “Web Development Using PYTHON” Won first prize in web development competition Won second prize in web development competition sureshayyan444@gmail.com 8760105087, 6383470896 Virudhunagar, Tamilnadu LinkedIn SOFTWARE DEVELOPER WORK EXPERIENCE SEPTEMBER 2023 - CURRENT PHP Developer & MERN STACK DEVELOPER R Cloudb software solution pvt ltd | Virudhunagar, Tamilnadu ● HEALTH FUND SYSTEM I developed a system using ASP.NET, Telerik, SQL Server, and AWS to manage personal records, dependent information, job history, comments, address history, and job classes. The system includes features like document uploads, company details, agreements, schedules, and processing screens.AWS for cloud infrastructure and SQL Server for database management. ● CREATIVE DESIGN PACK An eCommerce website developed using React, Redux, and Serverless AWS services like S3 Bucket, DynamoDB, Cognito, Secrets Manager, and CloudFront. The admin allows create users, products, categories, and custom pricing for users. The user side includes login, shopping cart, product browsing, user profile, previous orders, and the ability to reorder. ● BCC ERP Project I developed a system using React, Node.js, MongoDB, and Redux, which includes features such as web login/registration, master pages for city, designation, state, and degree, and client creation for schools with employee mapping across multiple clients. Key modules include a monthly calendar, leave requests, permissions, to-do tasks, payroll, payslips, master and monthly trackers, and employee management ● Magoprinpro & Vindini vysage I developed a system using React, Redux, Mong",
+            "filename": "40c41d22-e752-4e29-978b-7a8adfab3a60.pdf"
+          },
+          "portfolioUrl": null,
+          "certifications": [
+            {
+              "url": null,
+              "date": null,
+              "name": "Certificate course in Web Development Using PYTHON",
+              "issuer": null,
+              "expiryDate": null,
+              "credentialId": null
+            }
+          ],
+          "processingTime": 0,
+          "remotePreference": null
+        },
+        "enrichedData": {
+          "name": "Suresh kumar",
+          "posts": [],
+          "title": "Full-stack Developer",
+          "skills": [
+            "Laravel",
+            "PHP Frameworks"
+          ],
+          "company": "Cloudb software solution private limited",
+          "summary": "Hai... I am Suresh From virudhungar,Tamilnadu. Completed B.Sc IT 2018 Passed out V.H.N.S.N College.\nNow i am working Full stack developer cloudb software solution pvt ltd",
+          "headline": "MERN FULL STACK DEVELOPER - Immediate joiner",
+          "industry": "Computer Software",
+          "location": "Virudhunagar, Tamil Nadu, India",
+          "education": [
+            {
+              "field": "Unknown",
+              "years": "Jun 2015 - May 2018",
+              "degree": "Bachelor of Science - BS, Information Technology",
+              "school": "VHNSN College"
+            },
+            {
+              "field": "Unknown",
+              "years": "2015 - 2018",
+              "degree": "Bachelor of Science, Information Technology",
+              "school": "VHNSN College"
+            }
+          ],
+          "languages": [],
+          "experience": [
+            {
+              "title": "Full-stack Developer",
+              "company": "Cloudb software solution private limited",
+              "duration": "Unknown",
+              "description": ""
+            },
+            {
+              "title": "PHP Developer",
+              "company": "VVV & SONS EDIBLE OILS LIMITED",
+              "duration": "Unknown",
+              "description": ""
+            },
+            {
+              "title": "Civil Supervisor",
+              "company": "L&T Infrastructure Engineering Limited",
+              "duration": "Unknown",
+              "description": ""
+            }
+          ],
+          "jobHistory": [
+            {
+              "role": "Full-stack Developer",
+              "company": "Cloudb software solution private limited",
+              "duration": "Unknown"
+            },
+            {
+              "role": "PHP Developer",
+              "company": "VVV & SONS EDIBLE OILS LIMITED",
+              "duration": "Unknown"
+            },
+            {
+              "role": "Civil Supervisor",
+              "company": "L&T Infrastructure Engineering Limited",
+              "duration": "Unknown"
+            }
+          ],
+          "lastActive": "Unknown",
+          "openToWork": false,
+          "profileUrl": "https://www.linkedin.com/in/suresh-kumar-a14358163/",
+          "connections": 898,
+          "certifications": [],
+          "currentCompany": "Cloudb software solution private limited",
+          "profilePicture": "https://media.licdn.com/dms/image/v2/C5603AQEkivklR6S75Q/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1659375388110?e=1764201600&v=beta&t=njTJolwpHqoi53b7nnh1ahK0e_kdZS61XXYDdXDg6lg",
+          "recentActivity": [],
+          "currentPosition": "Full-stack Developer"
+        },
+        "extractedData": null,
+        "confidence": 87,
+        "processingTime": 8082,
+        "notes": null,
+        "createdAt": "2025-11-10T04:59:26.039Z",
+        "rawFitmentScore": 0.69,
+        "rawOpenToWorkScore": 0,
+        "rawJobStabilityScore": 0,
+        "rawPlatformEngagementScore": 0
+      }
+
+
+
+
+
+
+
+
+old response:
+
+{
+  "success": true,
+  "data": {
+    "comId": 250,
+    "requestedIds": [
+      "64628fae-b2f3-4229-8d6a-5d4c91fca195"
+    ],
+    "foundCandidates": 1,
+    "candidates": [
+      {
+        "id": "64628fae-b2f3-4229-8d6a-5d4c91fca195",
+        "comId": "250",
+        "eeezoResumeUrl": null,
+        "eeezoUploadDate": null,
+        "eeezoStatus": "uploaded",
+        "name": "SURIYAKANTH M",
+        "email": "suriyakanth7717@gmail.com",
+        "phone": "9952419581",
+        "title": null,
+        "company": "Meganar Technologies",
+        "currentEmployer": null,
+        "linkedinUrl": "http://www.linkedin.com/in/suriyakanth-m-625b11231",
+        "githubUrl": null,
+        "portfolioUrl": null,
+        "location": null,
+        "summary": null,
+        "filename": "2c56131c-1457-4e60-b0d9-d4fb42cf9432.pdf",
+        "rawText": null,
+        "experience": "December 2024 - April 2025",
+        "education": [],
+        "projects": [],
+        "achievements": [],
+        "interests": [],
+        "skills": [
+          "Web Designing",
+          "UI/UX Research and Design",
+          "React JS",
+          "Problem Solving and Analysis",
+          "Graphic Design",
+          "Machine Learning",
+          "Python",
+          "Node JS",
+          "PHP",
+          "MS Office"
+        ],
+        "certifications": [],
+        "languages": [],
+        "linkedinLastActive": null,
+        "linkedinHeadline": null,
+        "linkedinSummary": null,
+        "linkedinConnections": null,
+        "linkedinNotes": null,
+        "firstName": null,
+        "lastName": null,
+        "middleName": null,
+        "currentTitle": null,
+        "currentCompany": null,
+        "yearsOfExperience": null,
+        "workHistory": [],
+        "salary": null,
+        "availability": null,
+        "remotePreference": null,
+        "visaStatus": null,
+        "alternateEmail": null,
+        "website": null,
+        "github": null,
+        "portfolio": null,
+        "score": 0,
+        "priority": "Low",
+        "openToWork": false,
+        "lastActive": null,
+        "openToWorkScore": 0,
+        "skillMatchScore": 0,
+        "jobStabilityScore": 0,
+        "platformEngagementScore": 0,
+        "resumeStatus": "active",
+        "companyDifference": null,
+        "companyDifferenceScore": 0,
+        "hireabilityScore": 0,
+        "hireabilityFactors": [],
+        "potentialToJoin": "Unknown",
+        "atsId": null,
+        "selectionStatus": null,
+        "selectionDate": null,
+        "joiningOutcome": null,
+        "atsNotes": null,
+        "source": "eezo",
+        "dataSource": "resume",
+        "enrichmentStatus": "pending",
+        "enrichmentDate": null,
+        "enrichmentSource": null,
+        "sourceFile": null,
+        "processingDate": null,
+        "dataQuality": null,
+        "originalData": {
+          "name": "SURIYAKANTH M",
+          "email": "suriyakanth7717@gmail.com",
+          "phone": "9952419581",
+          "title": null,
+          "salary": null,
+          "skills": [
+            "Web Designing",
+            "UI/UX Research and Design",
+            "React JS",
+            "Problem Solving and Analysis",
+            "Graphic Design",
+            "Machine Learning",
+            "Python",
+            "Node JS",
+            "PHP",
+            "MS Office"
+          ],
+          "source": "resume",
+          "rawText": "\n\nSURIYAKANTH M\n9952419581\nsuriyakanth7717@gmail.com\nPROJECTS \nINTERN\nPUBLICATIONS\nONLINE EXAMINATION PORTAL  \n             Using  PHP,  MySQL,  JavaScript,  I  developed  a  secure  online\nexamination  portal  with  automatic  exam  submission  using  the\nPage Visibility API to prevent tab switching and malpractice.    \nFACE VERIFIED ATTENDANCE SYSTEM USING DJANGO \n       Attendance  system  with  barcode  scanning  and  facial\nrecognition for proper student verification. Added Background tasks\nfor automated monitoring. \n             I finished my internship at Meganar Technologies, Madurai\nas a UI/UX designer from December 2024 to April 2025. I worked on\na  project  called  Media  Jungle,  an  OTT  platform.  I  created\nwireframes, user flows, and prototypes, and worked closely with the\nteam to design the app and understand what users need to make\nit easy to use.\nFOSTERING EMOTIONAL INTELLIGENCE IN EDUCATIONAL\nENVIRONMENT \nJan 2024 \n     Developed a face detection and emotion analysi",
+          "summary": "Passionate and punctual individual with an MCA degree, skilled in Web Development, data analysis, UI/UX design and research, and machine learning. Strong at understanding users, designing easy-to-use interfaces, and analyzing data to find useful insights. Looking for an entry-level role to apply my skills and contribute to meaningful projects.",
+          "location": null,
+          "projects": [
+            {
+              "url": null,
+              "name": "ONLINE EXAMINATION PORTAL",
+              "duration": null,
+              "techUsed": [
+                "PHP",
+                "MySQL",
+                "JavaScript"
+              ],
+              "description": "Developed a secure online examination portal with automatic exam submission using the Page Visibility API to prevent tab switching and malpractice.",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "FACE VERIFIED ATTENDANCE SYSTEM USING DJANGO",
+              "duration": null,
+              "techUsed": [
+                "Django"
+              ],
+              "description": "Attendance system with barcode scanning and facial recognition for proper student verification. Added Background tasks for automated monitoring.",
+              "achievements": []
+            },
+            {
+              "url": null,
+              "name": "FOSTERING EMOTIONAL INTELLIGENCE IN EDUCATIONAL ENVIRONMENT",
+              "duration": "Jan 2024",
+              "techUsed": [
+                "Python",
+                "CNN",
+                "Haar cascade"
+              ],
+              "description": "Developed a face detection and emotion analysis application using Python, CNN, and Haar cascade to identify emotional states (happy, sad, disgusted, neutral, surprised, angry).",
+              "achievements": [
+                "Received Best Paper Award at the conference for innovative research applications"
+              ]
+            },
+            {
+              "url": null,
+              "name": "EMOTION GUIDED ATTENDANCE SYSTEM",
+              "duration": "April 2024",
+              "techUsed": [],
+              "description": "Extended the face detection and emotion analysis application to identify students and record their attendance based on their facial emotional state.",
+              "achievements": []
+            }
+          ],
+          "education": [
+            {
+              "gpa": "7.7",
+              "year": "2023",
+              "field": null,
+              "degree": "B.Sc IT",
+              "location": null,
+              "percentage": null,
+              "university": "Sri Kaliswari College"
+            },
+            {
+              "gpa": "8.0",
+              "year": "2025",
+              "field": null,
+              "degree": "MCA",
+              "location": null,
+              "percentage": null,
+              "university": "Ayya Nadar Janaki Ammal College"
+            },
+            {
+              "gpa": null,
+              "year": "2024",
+              "field": null,
+              "degree": "Diploma in AI and ML",
+              "location": null,
+              "percentage": null,
+              "university": "Ayya Nadar Janaki Ammal College"
+            }
+          ],
+          "githubUrl": null,
+          "interests": [],
+          "languages": [],
+          "confidence": 85,
+          "experience": [
+            {
+              "company": "Meganar Technologies",
+              "endDate": "2025-04",
+              "duration": "December 2024 - April 2025",
+              "jobTitle": "UI/UX Designer",
+              "techUsed": [],
+              "startDate": "2024-12",
+              "description": "Worked on a project called Media Jungle, an OTT platform. Created wireframes, user flows, and prototypes, and worked closely with the team to design the app and understand what users need to make it easy to use.",
+              "achievements": []
+            }
+          ],
+          "visaStatus": null,
+          "linkedinUrl": "http://www.linkedin.com/in/suriyakanth-m-625b11231",
+          "achievements": [],
+          "availability": null,
+          "originalData": {
+            "rawText": "SURIYAKANTH M 9952419581 suriyakanth7717@gmail.com PROJECTS INTERN PUBLICATIONS ONLINE EXAMINATION PORTAL Using PHP, MySQL, JavaScript, I developed a secure online examination portal with automatic exam submission using the Page Visibility API to prevent tab switching and malpractice. FACE VERIFIED ATTENDANCE SYSTEM USING DJANGO Attendance system with barcode scanning and facial recognition for proper student verification. Added Background tasks for automated monitoring. I finished my internship at Meganar Technologies, Madurai as a UI/UX designer from December 2024 to April 2025. I worked on a project called Media Jungle, an OTT platform. I created wireframes, user flows, and prototypes, and worked closely with the team to design the app and understand what users need to make it easy to use. FOSTERING EMOTIONAL INTELLIGENCE IN EDUCATIONAL ENVIRONMENT Jan 2024 Developed a face detection and emotion analysis application using Python, CNN, and Haar cascade to identify emotional states (happy, sad, disgusted, neutral, surprised, angry). And received Best Paper Award at the conference for innovative research applications EMOTION GUIDED ATTENDACE SYSTEM April 2024 I extended the face detection and emotion analysis application to identify students and record their attendance based on their facial emotional state. OBJECTIVE Passionate and punctual individual with an MCA degree, skilled in Web Development, data analysis, UI/UX design and research, and machine learning. Strong at understanding users, designing easy- to-use interfaces, and analyzing data to find useful insights. Looking for an entry-level role to apply my skills and contribute to meaningful projects. B.Sc IT Sri Kaliswari College 2020 - 2023 7.7 CGPA 8.0 CGPA Ayya Nadar Janaki Ammal College MCA 2023 - 2025 Ayya Nadar Janaki Ammal College Diploma in AI and ML 2023 - 2024 EDUCATION EXPERTISE Web Designing UI/UX Research and Design React JS Problem Solving and Analysis Graphic Design Machine Learning Python Node",
+            "filename": "2c56131c-1457-4e60-b0d9-d4fb42cf9432.pdf"
+          },
+          "portfolioUrl": null,
+          "certifications": [],
+          "processingTime": 0,
+          "remotePreference": null
+        },
+        "enrichedData": null,
+        "extractedData": null,
+        "confidence": 85,
+        "processingTime": 5962,
+        "notes": null,
+        "createdAt": "2025-11-03T05:55:44.591Z"
+      }
+    ]
+  }
+}
+

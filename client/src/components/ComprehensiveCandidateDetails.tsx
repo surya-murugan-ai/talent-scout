@@ -5,6 +5,7 @@ import { Button } from './ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 import { ExternalLink, Mail, Phone, MapPin, Calendar, Award, GraduationCap, Code, Trophy, Heart, Globe, User, Briefcase } from 'lucide-react';
+import type { Candidate } from "@shared/schema";
 
 interface Experience {
   jobTitle: string;
@@ -74,23 +75,13 @@ interface ComprehensiveCandidateData {
   processingTime: number;
 }
 
+type CandidateWithResumeData = Candidate & {
+  extractedData?: unknown;
+  enrichedData?: unknown;
+};
+
 interface ComprehensiveCandidateDetailsProps {
-  candidate: {
-    id: string;
-    name: string;
-    email?: string;
-    phone?: string;
-    linkedinUrl?: string;
-    location?: string;
-    title?: string;
-    company?: string;
-    currentEmployer?: string;
-    skills?: string[];
-    originalData?: any;
-    confidence?: number;
-    processingTime?: number;
-    source?: string;
-  };
+  candidate: CandidateWithResumeData;
   onEnrichLinkedIn?: (candidateId: string) => void;
   isEnriching?: boolean;
 }
@@ -101,6 +92,9 @@ export function ComprehensiveCandidateDetails({
   isEnriching = false 
 }: ComprehensiveCandidateDetailsProps) {
   const [activeTab, setActiveTab] = useState('overview');
+  const candidateSkills = Array.isArray(candidate.skills)
+    ? candidate.skills.filter((skill): skill is string => typeof skill === 'string')
+    : [];
 
   // Utility function to safely render values and prevent object rendering errors
   const safeRender = (value: any): string => {
@@ -212,11 +206,11 @@ export function ComprehensiveCandidateDetails({
                 {candidate.title && <p><strong>Title:</strong> {safeRender(candidate.title)}</p>}
                 {candidate.company && <p><strong>Company:</strong> {safeRender(candidate.company)}</p>}
                 {candidate.currentEmployer && <p><strong>Current Employer:</strong> {safeRender(candidate.currentEmployer)}</p>}
-                {candidate.skills && candidate.skills.length > 0 && (
+                {candidateSkills.length > 0 && (
                   <div>
                     <strong>Skills:</strong>
                     <div className="flex flex-wrap gap-1 mt-1">
-                      {candidate.skills.map((skill, index) => (
+                      {candidateSkills.map((skill, index) => (
                         <Badge key={index} variant="secondary">{safeRender(skill)}</Badge>
                       ))}
                     </div>

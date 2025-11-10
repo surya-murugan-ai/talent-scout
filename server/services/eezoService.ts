@@ -446,28 +446,25 @@ export class EeezoService {
     offset?: number;
   } = {}) {
     try {
-      let query = db.select().from(candidates);
+      const baseCondition = options.status
+        ? and(eq(candidates.comId, comId), eq(candidates.eeezoStatus, options.status))
+        : eq(candidates.comId, comId);
+
+      const orderedQuery = db
+        .select()
+        .from(candidates)
+        .where(baseCondition)
+        .orderBy(candidates.createdAt);
+
+      const limitedQuery = typeof options.limit === 'number'
+        ? orderedQuery.limit(options.limit)
+        : orderedQuery;
+
+      const finalQuery = typeof options.offset === 'number'
+        ? limitedQuery.offset(options.offset)
+        : limitedQuery;
       
-      if (options.status) {
-        query = query.where(and(
-          eq(candidates.comId, comId),
-          eq(candidates.eeezoStatus, options.status)
-        ));
-      } else {
-        query = query.where(eq(candidates.comId, comId));
-      }
-      
-      query = query.orderBy(candidates.createdAt);
-      
-      if (options.limit) {
-        query = query.limit(options.limit);
-      }
-      
-      if (options.offset) {
-        query = query.offset(options.offset);
-      }
-      
-      return await query;
+      return await finalQuery;
       
     } catch (error) {
       console.error('Error fetching candidates by company ID:', error);

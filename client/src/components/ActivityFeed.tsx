@@ -28,10 +28,12 @@ export default function ActivityFeed() {
     }
   };
 
-  const formatTimeAgo = (dateString?: string) => {
-    if (!dateString) return "Unknown time";
-    
-    const date = new Date(dateString);
+  const formatTimeAgo = (input?: string | Date | null) => {
+    if (!input) return "Unknown time";
+
+    const date = typeof input === "string" ? new Date(input) : input;
+    if (Number.isNaN(date.getTime())) return "Unknown time";
+
     const now = new Date();
     const diffInMinutes = Math.floor((now.getTime() - date.getTime()) / (1000 * 60));
     

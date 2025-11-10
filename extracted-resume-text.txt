@@ -1,0 +1,109 @@
+
+
+PRAVIN PATIL
+COMPUTER ENGINEER | FULL STACK DEVELOPER
+SUMMARY
+PROJECTS
+WORK EXPERIENCE
+Frontend Developer with strong full-stack expertise, skilled in HTML, CSS, JavaScript, XML, and React for
+building responsive, user-centric interfaces. As a MERN Stack Developer, I specialize in creating dynamic and
+scalable web applications using MongoDB, Express.js, React, and Node.js. I bring a deep understanding of both
+client-side and server-side development, including API design, database management, and real-time web features.
+Passionate about integrating AI-driven technologies into modern web solutions.Experienced in working with AI
+APIs (e.g., chat, recommendation engines, NLP) and building intelligent user experiences that adapt and learn.
+Eager to contribute to teams building the next generation of AI-enabled platforms.
+Currently expanding expertise in Generative AI, focusing on Retrieval-Augmented Generation (RAG), LLM-
+based applications, and Agentic AI architectures using frameworks like LangChain and Hugging Face.
+TrioNxt Software Private Ltd
+Software developer
+Primary focus is on utilizing Angular framework.
+Contribute to developing and maintaining robust.
+Design and implement efficient back-end architectures, manage databases, and ensure seamless integration with
+front-end components.
+Contributed to parallel design sessions, creating design artifacts based on project specifications, and ensured that
+all components of the web application were platform and browser compatible.
+Web application were platform and browser compatible
+Saraswati College of Engineering, Kharghar (University of Mumbai ) Graduated in 2023 
+EDUCATION
+Bachelor of Engineering in Computer Engineering
+Airoli,Navi Mumbai | 9527141062 | pravinbpatilpp7@gmail.com 
+Portfolio
+Dec 2023 - Feb 2025
+Techeology Nerds Portfolio Platform
+ Tech Stack: React, Node.js, MongoDB, Express, Tailwind CSS, Redis
+Developed a comprehensive full-stack portfolio platform showcasing professional services and projects
+Built responsive frontend using React 18, Vite, and Tailwind CSS with modern UI/UX design
+Implemented backend API using Node.js, Express.js, and MongoDB with Redis caching for performance optimization
+Created admin dashboard with authentication, contact management, and review system
+Integrated real-time features including job posting updates and dynamic content management
+Deployed frontend on Vercel and backend on Railway with CI/CD pipeline
+Implemented SEO optimization, structured data, and performance monitoring
+ K-Store E-Commerce Platform
+Tech Stack: React, Node.js, MongoDB, Express, Tailwind CSS
+Developed a modern e-commerce platform with responsive design and seamless shopping experience
+Implemented product catalog with search and filtering capabilities
+Built secure shopping cart and checkout process with payment integration
+Created user authentication system and admin dashboard for product management
+Integrated real-time inventory tracking and customer reviews system
+Ubirt Travel Platform
+ Tech Stack: React, Node.js, MongoDB, Express, AI Integration
+Built a comprehensive travel companion ecosystem with AI-powered matching
+Implemented real-time messaging, trip planning, and payment integration
+Created user matching algorithms and social features for travelers
+Developed responsive design for mobile and desktop platforms
+
+Tech Stack: React, Node.js, MongoDB, AI APIs, Community Features
+Built a comprehensive AI community platform with expert videos and tools
+Implemented social features for AI enthusiasts and professionals
+Created content management system for blogs and educational resources
+Integrated AI tools and community interaction features
+AI Community Platform
+Tech Stack: Python, Flask, React, MongoDB, Machine Learning
+ Developed and maintained a Mental Health Companion web application using the MERN stack
+Implemented a predictive model for mental state analysis using basic machine learning techniques
+Utilized Flask for the backend, React for the frontend, and MongoDB for data storage
+Created user-friendly interface for mental health tracking and support
+Mental Health Companion Project
+TECHNICAL SKILLS
+Frontend Development React.js | HTML | CSS | JavaScript | TypeScript | Tailwind CSS | Framer Motion | Vite
+Backend Development Node.js | Express.js | Python | Flask
+Database & Storage MongoDB | Redis | Database Optimization
+Development Tools Git | GitHub | Vercel | Railway | CI/CD
+API Development RESTful APIs | GraphQL | API Integration
+Performance & Optimization Caching | Database Optimization | Performance Monitoring
+AI & Generative Technologies: Retrieval-Augmented Generation (RAG) | LangChain | LlamaIndex | Vector
+Databases (FAISS) | Large Language Models (LLMs) | Prompt Engineering | Hugging Face | OpenAI API |
+Agentic AI Basics
+ADDITIONAL INFORMATION
+Experienced in building scalable web applications with modern technologies
+Strong understanding of full-stack development and system architecture
+Passionate about AI integration and intelligent user experiences
+Proven track record of delivering high-quality projects on time
+Excellent problem-solving skills and attention to detail
+Strong communication skills and ability to work in team environments
+Committed to continuous learning and staying updated with latest technologies
+CERTIFICATIONS Fundamentals of Agents - HuggingFace
+Languages English, Hindi, Marathi
+LAA - Luxury Audit & Assurance Platform
+ Tech Stack: React, Node.js, MongoDB, Express, Tailwind CSS
+ Developed a comprehensive luxury hospitality audit and assurance platform
+ Built service assessment tools and training academy for hotels and restaurants
+ Implemented user management system and reporting dashboard
+Created responsive design for various hospitality industry needs
+RAG-Based Document Query System
+Tech Stack: Python, LangChain, OpenAI API, FAISS, Flask, React, MongoDB
+Designed and implemented a Retrieval-Augmented Generation (RAG) system for intelligent document querying.
+Utilized LangChain and FAISS vector database to embed and retrieve relevant document chunks for precise context-based
+answers.
+Integrated Groq AI’s LLM API to generate accurate, grounded responses from custom data sources.
+React frontend interface for seamless user interaction.
+Optimized embedding storage and retrieval speed, improving query response accuracy and latency.
+AI Chat PPT – AI-Powered PowerPoint Generator
+Tech Stack: React,  React, TypeScript, Google Gemini API, pptxgenjs, Vercel.
+Built  an  AI-powered  chat  application  that  generates  and  edits  professional  PowerPoint  presentations  using  natural
+language prompts.
+Implemented real-time slide editing with instant preview, template styling, and thumbnail navigation.
+Integrated 9+ professional presentation templates, including Tech, Executive, Creative, and Minimalist styles.
+Developed a responsive interface with chat-based interaction, file upload support, and persistent chat history.
+Added PowerPoint export functionality using pptxgenjs with optimized 16:9 layout and consistent design.
+Deployed on Vercel with environment-based Gemini API integration.

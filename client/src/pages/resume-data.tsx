@@ -35,6 +35,52 @@ import {
   Trash2
 } from 'lucide-react';
 
+interface ResumeExperience {
+  jobTitle?: string;
+  company?: string;
+  duration?: string;
+  startDate?: string;
+  endDate?: string;
+  techUsed?: string[];
+  description?: string;
+  achievements?: string[];
+}
+
+interface ResumeEducation {
+  degree?: string;
+  field?: string;
+  university?: string;
+  year?: string;
+  percentage?: string;
+  gpa?: string;
+  location?: string;
+}
+
+interface ResumeProject {
+  name?: string;
+  description?: string;
+  techUsed?: string[];
+  duration?: string;
+  url?: string;
+  achievements?: string[];
+}
+
+interface ResumeAchievement {
+  title?: string;
+  description?: string;
+  year?: string;
+  organization?: string;
+}
+
+interface ResumeCertification {
+  name?: string;
+  issuer?: string;
+  date?: string;
+  expiryDate?: string;
+  credentialId?: string;
+  url?: string;
+}
+
 interface ResumeData {
   resumeData: {
     id: string;
@@ -48,11 +94,11 @@ interface ResumeData {
     location: string | null;
     title: string | null;
     summary: string | null;
-    experience: any[];
-    education: any[];
-    projects: any[];
-    achievements: any[];
-    certifications: any[];
+    experience: ResumeExperience[];
+    education: ResumeEducation[];
+    projects: ResumeProject[];
+    achievements: ResumeAchievement[];
+    certifications: ResumeCertification[];
     skills: string[];
     interests: string[];
     languages: string[];
@@ -93,7 +139,8 @@ export default function ResumeDataPage() {
       if (!response.ok) {
         throw new Error('Failed to fetch resume data');
       }
-      return response.json() as ResumeData[];
+      const data = await response.json() as unknown;
+      return data as ResumeData[];
     },
   });
 
@@ -411,11 +458,11 @@ export default function ResumeDataPage() {
                             {exp.description && (
                               <p className="text-sm mt-2">{exp.description}</p>
                             )}
-                            {exp.techUsed?.length > 0 && (
+                            {Array.isArray(exp.techUsed) && exp.techUsed.length > 0 && (
                               <div className="mt-2">
                                 <span className="text-sm font-medium">Technologies: </span>
                                 <div className="flex flex-wrap gap-1 mt-1">
-                                  {exp.techUsed.map((tech, techIndex) => (
+                                  {(exp.techUsed as string[]).map((tech, techIndex) => (
                                     <Badge key={techIndex} variant="outline" className="text-xs">
                                       {tech}
                                     </Badge>
@@ -476,11 +523,11 @@ export default function ResumeDataPage() {
                             {project.description && (
                               <p className="text-sm mt-1">{project.description}</p>
                             )}
-                            {project.techUsed?.length > 0 && (
+                            {Array.isArray(project.techUsed) && project.techUsed.length > 0 && (
                               <div className="mt-2">
                                 <span className="text-sm font-medium">Technologies: </span>
                                 <div className="flex flex-wrap gap-1 mt-1">
-                                  {project.techUsed.map((tech, techIndex) => (
+                                  {(project.techUsed as string[]).map((tech, techIndex) => (
                                     <Badge key={techIndex} variant="outline" className="text-xs">
                                       {tech}
                                     </Badge>

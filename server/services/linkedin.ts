@@ -1,7 +1,65 @@
 import { ApifyClient } from 'apify-client';
 import * as fs from 'fs';
 import * as path from 'path';
+import { request } from 'node:https';
 // import { ResumeDataService } from './resumeDataService.js'; // Commented out - using consolidated candidates table
+
+const LINKEDIN_COMPANY_SYNONYM_PAIRS: Array<[string, string]> = [
+  ['private', 'pvt'],
+  ['pvt', 'private'],
+  ['limited', 'ltd'],
+  ['ltd', 'limited'],
+  ['technologies', 'technology'],
+  ['technology', 'technologies'],
+  ['technology', 'tech'],
+  ['tech', 'technology'],
+  ['solutions', 'solution'],
+  ['solution', 'solutions'],
+  ['services', 'service'],
+  ['service', 'services'],
+  ['corporation', 'corp'],
+  ['corp', 'corporation'],
+  ['company', 'co'],
+  ['co', 'company'],
+  ['international', 'intl'],
+  ['intl', 'international'],
+];
+
+const LINKEDIN_COMPANY_FILLER_TOKENS = new Set([
+  'private',
+  'pvt',
+  'limited',
+  'ltd',
+  'inc',
+  'llp',
+  'llc',
+  'co',
+  'company',
+  'corp',
+  'corporation',
+  'plc',
+  'group',
+  'holdings',
+  'the',
+]);
+
+const RESUME_FILTER_LIMIT = 5;
+const MAX_COMPANY_VALIDATIONS = 8;
+const LINKEDIN_BODY_MAX_BYTES = 60000;
+const LINKEDIN_NOT_FOUND_PATTERNS = [
+  'page not found',
+  'page can’t be found',
+  'page can\'t be found',
+  'company or school not found',
+  'try searching for another company',
+  'doesn\'t exist',
+  'doesn’t exist',
+  'we couldn’t find',
+  'we couldn\'t find',
+  'profile is unavailable',
+  'profile not found',
+  'not a valid company'
+];
 
 interface LinkedInProfile {
   name: string;
@@ -122,6 +180,9 @@ interface ApifyLinkedInSearchResult {
 export class LinkedInService {
   private apifyClient: ApifyClient;
   private lastSearchResults: Map<string, any> = new Map(); // Cache search results to avoid duplicate API calls
+  private companyUrlValidationCache: Map<string, boolean> = new Map();
+  private readonly linkedInUserAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+  private readonly linkedInRequestTimeoutMs = 5000;
 
   constructor() {
     const apifyToken = process.env.APIFY_API_TOKEN;
@@ -343,6 +404,457 @@ export class LinkedInService {
     return Array.from(new Set(companyUrls));
   }
 
+  private getCandidateExperiences(candidate: any): any[] {
+    if (!candidate || typeof candidate !== 'object') {
+      return [];
+    }
+
+    const experiences: any[] = [];
+    const sources = [
+      candidate.experience,
+      candidate.extractedData?.experience,
+      candidate.originalData?.experience,
+      candidate.resumeData?.experience,
+      candidate.enrichedData?.experience,
+    ];
+
+    for (const source of sources) {
+      if (Array.isArray(source)) {
+        for (const item of source) {
+          if (item && typeof item === 'object') {
+            experiences.push(item);
+          }
+        }
+      }
+    }
+
+    return experiences;
+  }
+
+  private isCurrentExperience(experience: any, index: number): boolean {
+    if (!experience || typeof experience !== 'object') {
+      return index === 0;
+    }
+
+    if (typeof experience.current === 'boolean') return experience.current;
+    if (typeof experience.isCurrent === 'boolean') return experience.isCurrent;
+    if (typeof experience.currentlyWorking === 'boolean') return experience.currentlyWorking;
+    if (typeof experience.currentlyWorking === 'string') {
+      if (/yes/i.test(experience.currentlyWorking)) return true;
+      if (/no/i.test(experience.currentlyWorking)) return false;
+    }
+
+    const markers = [
+      experience.endDate,
+      experience.end,
+      experience.to,
+      experience.period?.end,
+      experience.duration,
+      experience.status,
+    ];
+
+    for (const marker of markers) {
+      if (typeof marker === 'string' && /present|current|ongoing|today|now/i.test(marker)) {
+        return true;
+      }
+    }
+
+    for (const marker of markers) {
+      if (typeof marker === 'string' && marker.trim().length > 0) {
+        return false;
+      }
+    }
+
+    return index === 0;
+  }
+
+  private async extractLinkedInFiltersFromCandidates(candidates: any[]): Promise<{
+    currentCompanies: string[];
+    pastCompanies: string[];
+    currentJobTitles: string[];
+    pastJobTitles: string[];
+  }> {
+    const currentCompanyUrls = new Set<string>();
+    const pastCompanyUrls = new Set<string>();
+    const currentJobTitles = new Set<string>();
+    const pastJobTitles = new Set<string>();
+
+    const companyStates = new Map<string, { displayName: string; isCurrent: boolean; isPast: boolean }>();
+
+    const addJobTitle = (value: unknown, isCurrent: boolean) => {
+      if (typeof value !== 'string') return;
+      const normalized = value.trim();
+      if (normalized.length < 3) return;
+      const targetSet = isCurrent ? currentJobTitles : pastJobTitles;
+      targetSet.add(normalized);
+    };
+
+    const addCompanyName = (value: unknown, isCurrent: boolean) => {
+      if (typeof value !== 'string') return;
+      const normalized = value.trim();
+      if (normalized.length < 2) return;
+      const key = normalized.toLowerCase();
+      let state = companyStates.get(key);
+      if (!state) {
+        if (companyStates.size >= MAX_COMPANY_VALIDATIONS) {
+          return;
+        }
+        state = { displayName: normalized, isCurrent: false, isPast: false };
+        companyStates.set(key, state);
+      }
+      if (isCurrent) {
+        state.isCurrent = true;
+      } else {
+        state.isPast = true;
+      }
+    };
+
+    candidates.forEach(candidate => {
+      if (!candidate || typeof candidate !== 'object') {
+        return;
+      }
+
+      // Extract work experiences FIRST to prioritize actual job titles over resume header
+      const experiences = this.getCandidateExperiences(candidate);
+      let hasWorkExperience = false;
+      
+      experiences.forEach((experience, index) => {
+        if (!experience || typeof experience !== 'object') return;
+        const isCurrent = this.isCurrentExperience(experience, index);
+        const companyName =
+          experience.company ??
+          experience.companyName ??
+          experience.employer ??
+          experience.organization ??
+          experience.organisation ??
+          null;
+        const jobTitle =
+          experience.jobTitle ??
+          experience.title ??
+          experience.position ??
+          experience.role ??
+          null;
+
+        if (companyName) {
+          addCompanyName(companyName, isCurrent);
+          hasWorkExperience = true;
+        }
+        if (jobTitle) {
+          addJobTitle(jobTitle, isCurrent);
+        }
+      });
+
+      // Only use candidate-level company/title if no work experience was found
+      if (!hasWorkExperience) {
+        addCompanyName(candidate.currentEmployer ?? candidate.currentCompany ?? candidate.company, true);
+        addJobTitle(candidate.currentTitle ?? candidate.title, true);
+      }
+    });
+
+    const companyEntries = Array.from(companyStates.values());
+    for (const entry of companyEntries) {
+      const urls = await this.generateCompanyLinkedInUrls(entry.displayName);
+      if (urls.length === 0) continue;
+
+      if (entry.isCurrent) {
+        urls.forEach(url => currentCompanyUrls.add(url));
+      }
+      if (entry.isPast) {
+        urls.forEach(url => pastCompanyUrls.add(url));
+      }
+    }
+
+    return {
+      currentCompanies: Array.from(currentCompanyUrls).slice(0, RESUME_FILTER_LIMIT),
+      pastCompanies: Array.from(pastCompanyUrls).slice(0, RESUME_FILTER_LIMIT),
+      currentJobTitles: Array.from(currentJobTitles).slice(0, RESUME_FILTER_LIMIT),
+      pastJobTitles: Array.from(pastJobTitles).slice(0, RESUME_FILTER_LIMIT),
+    };
+  }
+
+  /**
+   * Generate LinkedIn company URLs by creating slug variations and validating them
+   */
+  private async generateCompanyLinkedInUrls(company: string): Promise<string[]> {
+    const slugCandidates = this.generateCompanySlugCandidates(company);
+    if (slugCandidates.length === 0) {
+      return [];
+    }
+
+    const urlCandidates = Array.from(new Set(slugCandidates.map(slug => `https://www.linkedin.com/company/${slug}/`))).slice(0, 12);
+    const validUrls: string[] = [];
+    const uncertainUrls: string[] = [];
+
+    for (const url of urlCandidates) {
+      const headResult = await this.fetchLinkedInStatus(url, 'HEAD');
+      let decision = this.evaluateLinkedInStatus(url, headResult.status);
+
+      if (decision === null) {
+        const getResult = await this.fetchLinkedInStatus(url, 'GET', true);
+        decision = this.evaluateLinkedInGetResult(url, getResult.status, getResult.body);
+      }
+
+      if (decision === true) {
+        console.log(`✅ Confirmed valid: ${url} (status: ${headResult.status})`);
+        validUrls.push(url);
+      } else if (decision === null) {
+        // LinkedIn anti-bot protection (999 or similar) - can't determine, so keep as fallback
+        console.log(`⚠️ Uncertain (soft-blocked): ${url} (status: ${headResult.status})`);
+        uncertainUrls.push(url);
+      } else {
+        console.log(`❌ Not found: ${url} (status: ${headResult.status})`);
+      }
+
+      // Stop early if we found some confirmed valid URLs
+      if (validUrls.length >= 3) {
+        break;
+      }
+    }
+
+    // Return ONLY ONE URL - the most likely valid one
+    // Priority: confirmed valid > uncertain fallback
+    let finalUrl: string | null = null;
+    
+    if (validUrls.length > 0) {
+      finalUrl = validUrls[0]; // Use the first confirmed valid URL
+    } else if (uncertainUrls.length > 0) {
+      finalUrl = uncertainUrls[0]; // Fallback to first uncertain URL
+    }
+
+    if (finalUrl) {
+      console.log(`Generated 1 LinkedIn company URL for "${company}": ${finalUrl}`);
+      return [finalUrl];
+    }
+    
+    console.log(`No valid LinkedIn company URL found for "${company}"`);
+    return [];
+  }
+
+  /**
+   * Generate slug variations for a company name
+   */
+  private generateCompanySlugCandidates(company: string): string[] {
+    const normalized = company.toLowerCase().replace(/&/g, ' and ');
+    const cleanedTokens = normalized.replace(/[^a-z0-9\s]/g, ' ').split(/\s+/).filter(Boolean);
+
+    if (cleanedTokens.length === 0) {
+      return [];
+    }
+
+    const basePhrase = cleanedTokens.join(' ');
+    const phraseVariants = this.expandCompanyPhraseVariants(basePhrase);
+    const seenSlugs = new Set<string>();
+    const slugs: string[] = [];
+
+    const addSlug = (slug: string) => {
+      const trimmed = slug.replace(/^-+|-+$/g, '');
+      if (!trimmed || seenSlugs.has(trimmed)) {
+        return;
+      }
+      seenSlugs.add(trimmed);
+      slugs.push(trimmed);
+    };
+
+    for (const phrase of phraseVariants) {
+      const tokens = phrase.split(/\s+/).filter(Boolean);
+      if (tokens.length === 0) {
+        continue;
+      }
+
+      addSlug(tokens.join(''));
+      if (tokens.length > 1) {
+        addSlug(tokens.join('-'));
+      }
+
+      const filteredTokens = tokens.filter(token => !LINKEDIN_COMPANY_FILLER_TOKENS.has(token));
+      if (filteredTokens.length > 0 && filteredTokens.length !== tokens.length) {
+        addSlug(filteredTokens.join(''));
+        if (filteredTokens.length > 1) {
+          addSlug(filteredTokens.join('-'));
+        }
+      }
+    }
+
+    // Ensure some deterministic ordering: prioritize shorter slugs first
+    slugs.sort((a, b) => a.length - b.length || a.localeCompare(b));
+    return slugs.slice(0, 20);
+  }
+
+  /**
+   * Expand company phrase variants using known synonyms
+   */
+  private expandCompanyPhraseVariants(basePhrase: string): string[] {
+    const variants = new Set<string>([basePhrase]);
+    const queue: string[] = [basePhrase];
+
+    while (queue.length > 0 && variants.size < 40) {
+      const current = queue.shift()!;
+
+      for (const [from, to] of LINKEDIN_COMPANY_SYNONYM_PAIRS) {
+        const regex = new RegExp(`\\b${from}\\b`, 'g');
+        const replaced = current.replace(regex, to);
+        if (replaced !== current && !variants.has(replaced)) {
+          variants.add(replaced);
+          queue.push(replaced);
+        }
+      }
+    }
+
+    return Array.from(variants);
+  }
+
+  /**
+   * Check if a LinkedIn company URL exists by performing lightweight HTTP requests
+   */
+  private async checkLinkedInCompanyUrlExists(url: string): Promise<boolean> {
+    if (this.companyUrlValidationCache.has(url)) {
+      return this.companyUrlValidationCache.get(url)!;
+    }
+
+    console.log(`🔍 Checking LinkedIn company URL: ${url}`);
+
+    const headResult = await this.fetchLinkedInStatus(url, 'HEAD');
+    let statusUsed = headResult.status;
+    let decision = this.evaluateLinkedInStatus(url, headResult.status);
+
+    if (decision === null) {
+      const getResult = await this.fetchLinkedInStatus(url, 'GET', true);
+      statusUsed = getResult.status;
+      decision = this.evaluateLinkedInGetResult(url, getResult.status, getResult.body);
+    }
+
+    // ⚠️ LinkedIn anti-bot protection: if we still can't determine (999 or other soft blocks),
+    // we ASSUME the URL is valid since we can't reliably check it
+    // This prevents false negatives when LinkedIn blocks our validation attempts
+    const exists = decision ?? true; // Changed from false to true
+
+    this.companyUrlValidationCache.set(url, exists);
+
+    console.log(`🔎 LinkedIn company URL check result (${statusUsed ?? 'no-response'}): ${url} -> ${exists ? 'exists' : 'not found'}`);
+    return exists;
+  }
+
+  private evaluateLinkedInStatus(url: string, status: number | null): boolean | null {
+    if (status === null) {
+      return null;
+    }
+    if (status >= 200 && status < 400) {
+      return true;
+    }
+    if (status === 404) {
+      return false;
+    }
+    if ([403, 429].includes(status)) {
+      return true;
+    }
+    // For statuses like 999 or other unexpected codes, return null to trigger GET analysis
+    return null;
+  }
+
+  private evaluateLinkedInGetResult(url: string, status: number | null, body?: string): boolean | null {
+    const statusDecision = this.evaluateLinkedInStatus(url, status);
+    if (statusDecision !== null) {
+      return statusDecision;
+    }
+
+    const lowerBody = (body || '').toLowerCase();
+    if (lowerBody) {
+      if (LINKEDIN_NOT_FOUND_PATTERNS.some(pattern => lowerBody.includes(pattern))) {
+        return false;
+      }
+
+      const canonicalSlug = this.extractCanonicalCompanySlug(lowerBody);
+      const originalSlug = this.extractSlugFromCompanyUrl(url);
+
+      if (canonicalSlug) {
+        if (originalSlug && canonicalSlug === originalSlug) {
+          return true;
+        }
+        return false;
+      }
+    }
+
+    return null;
+  }
+
+  private extractSlugFromCompanyUrl(url: string): string {
+    const parts = url.split('/company/');
+    if (parts.length < 2) return '';
+    return parts[1].replace(/\/+$/, '').toLowerCase();
+  }
+
+  private extractCanonicalCompanySlug(body: string): string | null {
+    const canonicalMatch = body.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']https:\/\/www\.linkedin\.com\/company\/([^"']+)/i);
+    if (!canonicalMatch) return null;
+    return canonicalMatch[1].replace(/\/+$/, '').toLowerCase();
+  }
+
+  /**
+   * Perform a lightweight HTTP request to LinkedIn and optionally return the body
+   */
+  private fetchLinkedInStatus(url: string, method: 'HEAD' | 'GET', collectBody = false): Promise<{ status: number | null; body?: string }> {
+    return new Promise(resolve => {
+      try {
+        const req = request(url, {
+          method,
+          headers: {
+            'User-Agent': this.linkedInUserAgent,
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.9',
+            'Connection': 'keep-alive',
+          },
+        }, res => {
+          const status = res.statusCode ?? null;
+          if (!collectBody) {
+            res.resume();
+            resolve({ status });
+            return;
+          }
+
+          let accumulated = '';
+          res.on('data', chunk => {
+            if (accumulated.length >= LINKEDIN_BODY_MAX_BYTES) {
+              return;
+            }
+            accumulated += chunk.toString();
+          });
+          res.on('end', () => {
+            if (accumulated.length > LINKEDIN_BODY_MAX_BYTES) {
+              accumulated = accumulated.slice(0, LINKEDIN_BODY_MAX_BYTES);
+            }
+            resolve({ status, body: accumulated });
+          });
+        });
+
+        req.setTimeout(this.linkedInRequestTimeoutMs, () => {
+          req.destroy();
+          resolve({ status: null });
+        });
+
+        req.on('error', () => resolve({ status: null }));
+        req.end();
+      } catch (error) {
+        console.warn(`Failed to ${method} ${url}:`, error);
+        resolve({ status: null });
+      }
+    });
+  }
+
+  /**
+   * Determine whether the status code indicates a likely existing LinkedIn company page
+   */
+  private isLikelyLinkedInCompanyStatus(statusCode: number): boolean {
+    if (!statusCode) {
+      return false;
+    }
+
+    if (statusCode >= 200 && statusCode < 400) {
+      return true;
+    }
+
+    return [403, 429, 999].includes(statusCode);
+  }
+
   /**
    * Search LinkedIn profiles using Apify actors based on available data
    */
@@ -362,11 +874,14 @@ export class LinkedInService {
         return null;
       }
 
-      // Check if any candidates have LinkedIn URLs - if so, use dev_fusion actor
+      let preferredLinkedInUrl: string | null = null;
+
+      // Check if any candidates have LinkedIn URLs - enrich with dev_fusion but continue with Apify search for logging/validation
       if (candidates && candidates.length > 0) {
         const candidateWithLinkedIn = candidates.find(c => c.linkedinUrl && c.linkedinUrl.includes('linkedin.com/in/'));
         if (candidateWithLinkedIn) {
-          console.log(`Found candidate with LinkedIn URL: ${candidateWithLinkedIn.linkedinUrl}, using dev_fusion actor`);
+          preferredLinkedInUrl = candidateWithLinkedIn.linkedinUrl;
+          console.log(`Found candidate with LinkedIn URL: ${candidateWithLinkedIn.linkedinUrl}, enriching with dev_fusion actor before Apify search`);
           
           const devFusionData = await this.getProfileWithDevFusion(candidateWithLinkedIn.linkedinUrl);
           if (devFusionData) {
@@ -394,10 +909,9 @@ export class LinkedInService {
               console.warn('Failed to update database with LinkedIn data:', dbError);
             }
             
-            // Return the LinkedIn URL for further processing
-            return candidateWithLinkedIn.linkedinUrl;
           } else {
-            console.log('Dev_fusion actor failed, falling back to harvestapi search');
+            console.log('Dev_fusion actor failed, continuing with harvestapi search');
+            preferredLinkedInUrl = null;
           }
         }
       }
@@ -416,30 +930,89 @@ export class LinkedInService {
       //   searchInput.locations = [location];
       // }
       
-      // Add title only if provided
+      const currentCompanySet = new Set<string>();
+      const pastCompanySet = new Set<string>();
+      const currentJobTitleSet = new Set<string>();
+      const pastJobTitleSet = new Set<string>();
+
       if (title) {
-        searchInput.currentJobTitles = [title];
+        currentJobTitleSet.add(title);
       }
 
-      // Extract company LinkedIn URLs from uploaded data
+      const resumeCurrentTitle = candidates?.map(candidate => candidate.currentTitle || candidate.title).find(Boolean);
+      if (resumeCurrentTitle) {
+        currentJobTitleSet.add(resumeCurrentTitle);
+      }
+
       if (candidates && candidates.length > 0) {
         const companyUrls = this.extractCompanyLinkedInUrls(candidates);
         if (companyUrls.length > 0) {
-          searchInput.currentCompanies = companyUrls;
+          companyUrls.forEach(url => currentCompanySet.add(url));
           console.log(`Using ${companyUrls.length} company LinkedIn URLs from uploaded data`);
+        }
+
+        const resumeFilters = await this.extractLinkedInFiltersFromCandidates(candidates);
+
+        if (resumeFilters.currentCompanies.length > 0) {
+          resumeFilters.currentCompanies.forEach(url => currentCompanySet.add(url));
+          console.log(`Added ${resumeFilters.currentCompanies.length} validated current company URLs from resume data`);
+        }
+
+        if (resumeFilters.pastCompanies.length > 0) {
+          resumeFilters.pastCompanies.forEach(url => pastCompanySet.add(url));
+          console.log(`Added ${resumeFilters.pastCompanies.length} validated past company URLs from resume data`);
+        }
+
+        if (resumeFilters.currentJobTitles.length > 0) {
+          resumeFilters.currentJobTitles.forEach(job => currentJobTitleSet.add(job));
+        }
+
+        if (resumeFilters.pastJobTitles.length > 0) {
+          resumeFilters.pastJobTitles.forEach(job => pastJobTitleSet.add(job));
         }
       }
 
       // Add company if provided (convert to LinkedIn company URL for better results)
       if (company) {
-        if (!searchInput.currentCompanies) searchInput.currentCompanies = [];
-        // Convert company name to LinkedIn URL format (lowercase, remove all spaces and special chars)
-        const companySlug = company.toLowerCase().replace(/\s+/g, '').replace(/[^a-z0-9]/g, '');
-        const companyLinkedInUrl = `https://www.linkedin.com/company/${companySlug}/`;
-        searchInput.currentCompanies.push(companyLinkedInUrl);
+        const generatedCompanyUrls = await this.generateCompanyLinkedInUrls(company);
+        if (generatedCompanyUrls.length > 0) {
+          generatedCompanyUrls.forEach(url => currentCompanySet.add(url));
+        }
       }
 
-      console.log('Apify search input:', JSON.stringify(searchInput, null, 2));
+      if (preferredLinkedInUrl && currentCompanySet.size === 0 && company) {
+        const fallbackCompanyUrls = await this.generateCompanyLinkedInUrls(company);
+        fallbackCompanyUrls.forEach(url => currentCompanySet.add(url));
+      }
+
+      if (currentCompanySet.size > 0) {
+        searchInput.currentCompanies = Array.from(currentCompanySet).slice(0, RESUME_FILTER_LIMIT);
+      }
+
+      if (pastCompanySet.size > 0) {
+        searchInput.pastCompanies = Array.from(pastCompanySet).slice(0, RESUME_FILTER_LIMIT);
+      }
+
+      if (currentJobTitleSet.size > 0) {
+        searchInput.currentJobTitles = Array.from(currentJobTitleSet).slice(0, RESUME_FILTER_LIMIT);
+      }
+
+      if (pastJobTitleSet.size > 0) {
+        searchInput.pastJobTitles = Array.from(pastJobTitleSet).slice(0, RESUME_FILTER_LIMIT);
+      }
+
+      if ((searchInput.currentCompanies?.length || searchInput.pastCompanies?.length) && searchInput.recentlyChangedJobs === undefined) {
+        searchInput.recentlyChangedJobs = false;
+      }
+
+      console.log('📎 Apify filters summary:', {
+        currentCompanies: searchInput.currentCompanies,
+        pastCompanies: searchInput.pastCompanies,
+        currentJobTitles: searchInput.currentJobTitles,
+        pastJobTitles: searchInput.pastJobTitles
+      });
+
+      console.log('📤 Apify actor input payload:\n' + JSON.stringify(searchInput, null, 2));
 
       // Run the harvestapi Apify actor using actor ID
       // .call() automatically waits for the actor to finish and returns the run object
@@ -459,7 +1032,7 @@ export class LinkedInService {
       if (!items || items.length === 0) {
         console.log('❌ No LinkedIn profiles found with Apify search');
         console.log('💡 Tip: Try with fewer search criteria or check if the profile exists on LinkedIn');
-        return null;
+        return preferredLinkedInUrl;
       }
 
       console.log(`✅ Found ${items.length} LinkedIn profiles with Apify search`);
@@ -482,11 +1055,11 @@ export class LinkedInService {
           console.log(`✅ Cached profile data for ${linkedinUrl} (avoiding duplicate API call)`);
         }
         
-        return linkedinUrl;
+        return preferredLinkedInUrl || linkedinUrl;
       }
 
       console.log('No LinkedIn profiles found with Apify search');
-      return null;
+      return preferredLinkedInUrl;
 
     } catch (error) {
       console.error('Apify LinkedIn search failed:', error);
@@ -948,10 +1521,11 @@ export class LinkedInService {
         // Add company if provided (convert to LinkedIn company URL for better results)
         if (company) {
           if (!searchInput.currentCompanies) searchInput.currentCompanies = [];
-          // Convert company name to LinkedIn URL format (lowercase, remove all spaces and special chars)
-          const companySlug = company.toLowerCase().replace(/\s+/g, '').replace(/[^a-z0-9]/g, '');
-          const companyLinkedInUrl = `https://www.linkedin.com/company/${companySlug}/`;
-          searchInput.currentCompanies.push(companyLinkedInUrl);
+          const generatedCompanyUrls = await this.generateCompanyLinkedInUrls(company);
+          if (generatedCompanyUrls.length > 0) {
+            searchInput.currentCompanies.push(...generatedCompanyUrls);
+            searchInput.currentCompanies = Array.from(new Set(searchInput.currentCompanies));
+          }
         }
 
         console.log('Enrichment search input:', JSON.stringify(searchInput, null, 2));

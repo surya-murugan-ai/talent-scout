@@ -21,20 +21,20 @@ export class ResumeDataService {
       
       // First, create or update the candidate record
       const candidateData = {
-        name: extractedData.name,
-        email: extractedData.email || null,
-        phone: extractedData.phone || null,
-        title: extractedData.title || null,
-        company: extractedData.experience?.[0]?.company || null,
-        linkedinUrl: extractedData.linkedinUrl || null,
-        githubUrl: extractedData.githubUrl || null,
-        portfolioUrl: extractedData.portfolioUrl || null,
-        location: extractedData.location || null,
-        skills: extractedData.skills || [],
-        source: 'resume',
-        extractedData: extractedData,
-        confidence: confidence,
-        processingTime: processingTime,
+        name: extractedData.name ?? "Unknown",
+        email: extractedData.email ?? null,
+        phone: extractedData.phone ?? null,
+        title: extractedData.title ?? null,
+        company: extractedData.experience?.[0]?.company ?? null,
+        linkedinUrl: extractedData.linkedinUrl ?? null,
+        githubUrl: extractedData.githubUrl ?? null,
+        portfolioUrl: extractedData.portfolioUrl ?? null,
+        location: extractedData.location ?? null,
+        skills: extractedData.skills ?? [],
+        source: 'resume' as const,
+        extractedData,
+        confidence,
+        processingTime,
       };
 
       // Check if candidate already exists by email or name
@@ -85,38 +85,6 @@ export class ResumeDataService {
         console.log('Created new candidate:', candidateId);
       }
 
-      // Save detailed resume data
-      const resumeDataRecord = {
-        candidateId: candidateId,
-        filename: filename,
-        name: extractedData.name,
-        email: extractedData.email || null,
-        phone: extractedData.phone || null,
-        linkedinUrl: extractedData.linkedinUrl || null,
-        githubUrl: extractedData.githubUrl || null,
-        portfolioUrl: extractedData.portfolioUrl || null,
-        location: extractedData.location || null,
-        title: extractedData.title || null,
-        summary: extractedData.summary || null,
-        experience: extractedData.experience || [],
-        education: extractedData.education || [],
-        projects: extractedData.projects || [],
-        achievements: extractedData.achievements || [],
-        certifications: extractedData.certifications || [],
-        skills: extractedData.skills || [],
-        interests: extractedData.interests || [],
-        languages: extractedData.languages || [],
-        rawText: extractedData.originalData?.rawText || null,
-        confidence: confidence,
-        processingTime: processingTime,
-        source: 'resume',
-      };
-
-      // Resume data is now stored directly in candidates table
-      // const [savedResumeData] = await db.insert(resumeData)
-      //   .values(resumeDataRecord)
-      //   .returning();
-
       // Log activity
       await db.insert(activities).values({
         type: 'resume_upload',
@@ -154,72 +122,6 @@ export class ResumeDataService {
     } catch (error) {
       console.error('Error fetching resume data:', error);
       throw new Error(`Failed to fetch resume data: ${error instanceof Error ? error.message : 'Unknown error'}`);
-    }
-  }
-
-  /**
-   * Get resume data by ID
-   */
-  static async getResumeDataById(id: string) {
-    try {
-      const result = await db
-        .select({
-          resumeData: resumeData,
-          candidate: candidates,
-        })
-        .from(resumeData)
-        .leftJoin(candidates, eq(resumeData.candidateId, candidates.id))
-        .where(eq(resumeData.id, id))
-        .limit(1);
-
-      return result[0] || null;
-    } catch (error) {
-      console.error('Error fetching resume data by ID:', error);
-      throw new Error(`Failed to fetch resume data: ${error instanceof Error ? error.message : 'Unknown error'}`);
-    }
-  }
-
-  /**
-   * Get resume data by candidate ID
-   */
-  static async getResumeDataByCandidateId(candidateId: string) {
-    try {
-      const result = await db
-        .select()
-        .from(resumeData)
-        .where(eq(resumeData.candidateId, candidateId))
-        .orderBy(resumeData.createdAt);
-
-      return result;
-    } catch (error) {
-      console.error('Error fetching resume data by candidate ID:', error);
-      throw new Error(`Failed to fetch resume data: ${error instanceof Error ? error.message : 'Unknown error'}`);
-    }
-  }
-
-  /**
-   * Delete resume data by ID
-   */
-  static async deleteResumeData(id: string) {
-    try {
-      const result = await db
-        .delete(resumeData)
-        .where(eq(resumeData.id, id))
-        .returning();
-
-      if (result.length > 0) {
-        // Log activity
-        await db.insert(activities).values({
-          type: 'resume_delete',
-          message: `Resume data deleted`,
-          details: `Resume Data ID: ${id}`
-        });
-      }
-
-      return result[0] || null;
-    } catch (error) {
-      console.error('Error deleting resume data:', error);
-      throw new Error(`Failed to delete resume data: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }
   }
 
@@ -350,26 +252,7 @@ export class ResumeDataService {
         updateData.linkedinUrl = linkedInData.profileUrl || linkedInData.linkedinUrl;
       }
 
-      // Update the resume data
-      const result = await db
-        .update(resumeData)
-        .set(updateData)
-        .where(eq(resumeData.id, resumeDataId))
-        .returning();
-
-      if (result.length > 0) {
-        console.log(`✅ Successfully updated resume data ${resumeDataId} with LinkedIn enrichment`);
-        
-        // Log activity
-        await db.insert(activities).values({
-          type: 'resume_linkedin_update',
-          message: `Resume data updated with LinkedIn enrichment from ${source}`,
-          details: `Resume Data ID: ${resumeDataId}, Source: ${source}`
-        });
-        
-        return result[0];
-      }
-
+      console.warn('updateResumeDataWithLinkedIn is deprecated since resume data is stored in the candidates table.');
       return null;
     } catch (error) {
       console.error('Error updating resume data with LinkedIn enrichment:', error);

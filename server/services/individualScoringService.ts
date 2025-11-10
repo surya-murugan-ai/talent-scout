@@ -157,11 +157,13 @@ export class IndividualScoringService {
    * Uses the detailed JobStabilityService algorithm
    */
   static calculateJobStabilityScore(candidateData: CandidateData): number {
-    if (!candidateData.experience || candidateData.experience.length === 0) {
+    const normalizedExperience = this.getNormalizedExperienceEntries(candidateData);
+
+    if (normalizedExperience.length === 0) {
       return 0; // No experience data
     }
 
-    const stabilityScoring = JobStabilityService.calculateJobStabilityScore(candidateData.experience);
+    const stabilityScoring = JobStabilityService.calculateJobStabilityScore(normalizedExperience);
     return stabilityScoring.scaledScore;
   }
 
@@ -245,7 +247,7 @@ export class IndividualScoringService {
       completenessFactors++;
     }
     
-    if (candidateData.experience && candidateData.experience.length > 0) {
+    if (this.getNormalizedExperienceEntries(candidateData).length > 0) {
       completenessScore += 3;
       completenessFactors++;
     }
@@ -300,5 +302,56 @@ export class IndividualScoringService {
    */
   private static validateScore(score: number): number {
     return Math.max(0, Math.min(10, score));
+  }
+
+  /**
+   * Normalize experience data into an array of experience entries
+   */
+  private static getNormalizedExperienceEntries(candidateData: CandidateData): Array<{
+    title: string;
+    company: string;
+    startDate?: string;
+    endDate?: string | null;
+    description?: string;
+  }> {
+    const rawExperience = (candidateData as any)?.experience;
+
+    if (!rawExperience) {
+      return [];
+    }
+
+    if (Array.isArray(rawExperience)) {
+      return rawExperience
+        .filter((entry: any) => entry)
+        .map((entry: any) => ({
+          title: entry?.title ?? '',
+          company: entry?.company ?? '',
+          startDate: entry?.startDate,
+          endDate: entry?.endDate ?? null,
+          description: entry?.description ?? ''
+        }));
+    }
+
+    if (typeof rawExperience === 'string') {
+      return [{
+        title: rawExperience,
+        company: (candidateData as any)?.company ?? '',
+        startDate: undefined,
+        endDate: undefined,
+        description: rawExperience
+      }];
+    }
+
+    if (typeof rawExperience === 'object') {
+      return [{
+        title: rawExperience?.title ?? '',
+        company: rawExperience?.company ?? '',
+        startDate: rawExperience?.startDate,
+        endDate: rawExperience?.endDate ?? null,
+        description: rawExperience?.description ?? ''
+      }];
+    }
+
+    return [];
   }
 }

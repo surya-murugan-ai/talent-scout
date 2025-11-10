@@ -205,7 +205,30 @@ export default function UploadedCandidatesTable() {
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-slate-200">
-              {paginatedCandidates.map((candidate, index) => (
+              {paginatedCandidates.map((candidate, index) => {
+                const originalData = candidate.originalData && typeof candidate.originalData === 'object'
+                  ? candidate.originalData as Record<string, unknown>
+                  : undefined;
+
+                const getOriginalString = (key: string): string | undefined => {
+                  const value = originalData?.[key];
+                  return typeof value === 'string' ? value : undefined;
+                };
+
+                const selectionStatus = candidate.selectionStatus ?? getOriginalString("Selection Status") ?? null;
+                const joiningOutcome = candidate.joiningOutcome ?? getOriginalString("Joining Outcome") ?? null;
+                const selectionDateSource = (() => {
+                  const raw = candidate.selectionDate;
+                  if (raw instanceof Date) {
+                    return raw.toISOString();
+                  }
+                  if (typeof raw === 'string') {
+                    return raw;
+                  }
+                  return getOriginalString("Selection Date") ?? null;
+                })();
+
+                return (
                 <tr key={candidate.id} className="hover:bg-slate-50" data-testid={`candidate-row-${index}`}>
                   {/* Name */}
                   <td className="px-6 py-4 whitespace-nowrap">
@@ -232,8 +255,8 @@ export default function UploadedCandidatesTable() {
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="text-sm space-y-1">
                       {(() => {
-                        const email = candidate.email || candidate.originalData?.["Contact Details"];
-                        const phone = candidate.originalData?.["Phone"] || candidate.originalData?.["phone"];
+                        const email = candidate.email ?? getOriginalString("Contact Details");
+                        const phone = getOriginalString("Phone") ?? getOriginalString("phone");
                         
                         if (email || phone) {
                           return (
@@ -260,18 +283,22 @@ export default function UploadedCandidatesTable() {
 
                   {/* Selection Status */}
                   <td className="px-6 py-4 whitespace-nowrap">
-                    {getSelectionStatusBadge(candidate.selectionStatus || candidate.originalData?.["Selection Status"])}
+                    {getSelectionStatusBadge(selectionStatus)}
                   </td>
 
                   {/* Selection Date */}
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500">
                     {(() => {
-                      const date = candidate.selectionDate || candidate.originalData?.["Selection Date"];
-                      if (date) {
+                      const dateValue = selectionDateSource;
+                      if (dateValue) {
+                        const parsed = new Date(dateValue);
+                        if (!Number.isNaN(parsed.getTime())) {
+                          return parsed.toLocaleDateString();
+                        }
                         try {
-                          return new Date(date).toLocaleDateString();
+                          return new Date(Number(dateValue)).toLocaleDateString();
                         } catch {
-                          return date; // Return as-is if can't parse
+                          return dateValue; // Return as-is if can't parse
                         }
                       }
                       return <span className="text-slate-400">Not set</span>;
@@ -280,7 +307,7 @@ export default function UploadedCandidatesTable() {
 
                   {/* Joining Outcome */}
                   <td className="px-6 py-4 whitespace-nowrap">
-                    {getJoiningOutcomeBadge(candidate.joiningOutcome || candidate.originalData?.["Joining Outcome"])}
+                    {getJoiningOutcomeBadge(joiningOutcome)}
                   </td>
 
                   {/* Actions */}
@@ -297,7 +324,8 @@ export default function UploadedCandidatesTable() {
                     </Button>
                   </td>
                 </tr>
-              ))}
+              );
+              })}
             </tbody>
           </table>
         </div>

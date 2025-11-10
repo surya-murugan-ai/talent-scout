@@ -4,22 +4,15 @@ import { ComprehensiveCandidateDetails } from './ComprehensiveCandidateDetails';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { apiRequest } from '@/lib/queryClient';
 import { useToast } from '@/hooks/use-toast';
+import type { Candidate } from "@shared/schema";
+
+type CandidateWithDetails = Candidate & {
+  extractedData?: unknown;
+  enrichedData?: unknown;
+};
 
 interface CandidateDetailsModalProps {
-  candidate: {
-    id: string;
-    name: string;
-    email?: string;
-    phone?: string;
-    linkedinUrl?: string;
-    location?: string;
-    title?: string;
-    skills?: string[];
-    originalData?: any;
-    confidence?: number;
-    processingTime?: number;
-    source?: string;
-  } | null;
+  candidate: CandidateWithDetails | null;
   isOpen: boolean;
   onClose: () => void;
 }

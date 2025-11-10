@@ -18,6 +18,7 @@ export default function ProcessingPipeline() {
   });
 
   const activeJob = jobs.find(job => job.status === "processing");
+  const activeProgress = typeof activeJob?.progress === "number" ? activeJob.progress : 0;
 
   const stopJobMutation = useMutation({
     mutationFn: async (jobId: string) => {
@@ -51,14 +52,14 @@ export default function ProcessingPipeline() {
       id: 1,
       name: "Data Ingestion",
       description: "Importing candidate profiles from uploaded files",
-      status: activeJob ? (activeJob.progress >= 25 ? "completed" : "active") : "completed",
+      status: activeJob ? (activeProgress >= 25 ? "completed" : "active") : "completed",
     },
     {
       id: 2,
       name: "LinkedIn Enrichment",
       description: "Fetching profile data using OpenAI + LinkedIn API",
       status: activeJob ? 
-        (activeJob.progress >= 95 ? "completed" : activeJob.progress >= 25 ? "active" : "pending") 
+        (activeProgress >= 95 ? "completed" : activeProgress >= 25 ? "active" : "pending") 
         : "completed",
     },
     {
@@ -66,7 +67,7 @@ export default function ProcessingPipeline() {
       name: "AI Scoring & Categorization",
       description: "Calculating composite scores using OpenAI models",
       status: activeJob ?
-        (activeJob.progress >= 100 ? "completed" : activeJob.progress >= 95 ? "active" : "pending")
+        (activeProgress >= 100 ? "completed" : activeProgress >= 95 ? "active" : "pending")
         : "completed",
     },
     {
@@ -103,7 +104,7 @@ export default function ProcessingPipeline() {
     if (status === "completed") return "Complete";
     if (status === "active") {
       if (stepId === 2 && activeJob) {
-        return `In Progress (${activeJob.progress}%)`;
+        return `In Progress (${activeProgress}%)`;
       }
       return "In Progress";
     }
@@ -164,7 +165,7 @@ export default function ProcessingPipeline() {
                   <div className="w-full bg-slate-200 rounded-full h-2 mt-2">
                     <div
                       className="bg-accent h-2 rounded-full transition-all duration-300"
-                      style={{ width: `${Math.min(activeJob.progress, 100)}%` }}
+                      style={{ width: `${Math.min(activeProgress, 100)}%` }}
                     />
                   </div>
                 )}
@@ -185,7 +186,7 @@ export default function ProcessingPipeline() {
                 </p>
               </div>
               <div className="text-right">
-                <p className="text-lg font-bold text-accent">{activeJob.progress}%</p>
+                <p className="text-lg font-bold text-accent">{activeProgress}%</p>
               </div>
             </div>
           </div>

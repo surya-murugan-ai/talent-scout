@@ -118,6 +118,9 @@ export class ResumeParser {
         throw new Error(`Unsupported file type: ${filename}. Only PDF and DOCX files are supported for resume parsing.`);
       }
 
+      // Persist extraction log for debugging/QA
+      this.appendExtractionLog(filename, rawText, hyperlinks);
+
       // Extract structured data from text and hyperlinks
       const extractedData = await this.extractDataFromText(rawText, filename, hyperlinks);
       const processingTime = Date.now() - startTime;
@@ -209,6 +212,37 @@ export class ResumeParser {
     } catch (error) {
       console.error('Failed to save extracted data:', error);
       // Don't throw error as this is just for debugging
+    }
+  }
+
+  /**
+   * Append resume text extraction details to a persistent log file for debugging
+   */
+  private static appendExtractionLog(
+    filename: string,
+    rawText: string,
+    hyperlinks: Array<{ text: string; url: string }>
+  ): void {
+    try {
+      const logDir = path.join(process.cwd(), 'logs');
+      if (!fs.existsSync(logDir)) {
+        fs.mkdirSync(logDir, { recursive: true });
+      }
+
+      const logPath = path.join(logDir, 'resume-text-extraction.log');
+      const timestamp = new Date().toISOString();
+      const preview = rawText.length > 500 ? `${rawText.slice(0, 500)}…` : rawText;
+      const logEntry = [
+        `\n[${timestamp}] ${filename}`,
+        `Characters Extracted: ${rawText.length}`,
+        `Hyperlinks Found: ${hyperlinks.length}`,
+        `Preview:\n${preview}`
+      ].join('\n');
+
+      fs.appendFileSync(logPath, `${logEntry}\n`);
+      console.log(`📝 Saved resume text snapshot to ${path.relative(process.cwd(), logPath)}`);
+    } catch (error) {
+      console.warn('Failed to append resume extraction log:', error);
     }
   }
 
@@ -594,14 +628,23 @@ CRITICAL: Only extract information that is actually present in the text below. D
     {
       "jobTitle": "Job Title",
       "company": "Company Name",
-      "duration": "Start Date - End Date",
-      "startDate": "YYYY-MM",
-      "endDate": "YYYY-MM or Present",
+      "duration": "Start Date - End Date (raw string as it appears)",
+      "startDate": "YYYY-MM (parsed from duration or dates in text)",
+      "endDate": "YYYY-MM or Present (parsed from duration or dates in text)",
       "techUsed": ["Technology1", "Technology2"],
       "description": "Job description",
       "achievements": ["Achievement 1", "Achievement 2"]
     }
   ],
+  
+CRITICAL DATE EXTRACTION RULES:
+1. Look for dates near company names (e.g., "Company Name    Dec 2023 - Feb 2025")
+2. Look for dates in the work experience section
+3. Parse month abbreviations: Jan=01, Feb=02, Mar=03, Apr=04, May=05, Jun=06, Jul=07, Aug=08, Sep=09, Oct=10, Nov=11, Dec=12
+4. If you find "Dec 2023 - Feb 2025", extract as: duration="Dec 2023 - Feb 2025", startDate="2023-12", endDate="2025-02"
+5. If end date is missing or says "Present", "Current", "Now", use endDate="Present"
+6. ALWAYS try to extract dates even if the format is unusual
+7. If dates are found ANYWHERE in the text near work experience, extract them
   "education": [
     {
       "degree": "Degree Type",

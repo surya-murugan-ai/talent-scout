@@ -162,4 +162,7 @@ pnpm-lock.yaml
 .husky/
 
 # Commitlint
-.commitlintrc.js
+.commitlintrc.jstest-*.csv
+test-*.html
+backup_data/
+Quick check bulk.txt

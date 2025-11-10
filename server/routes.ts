@@ -1247,7 +1247,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
             const result = await linkedInService.searchProfilesWithData(
               candidate.name,
               candidate.company,
-              candidate.title
+              candidate.title,
+              undefined,
+              [candidate].filter((item): item is any => !!item)
               // Note: location parameter removed - causes 0 results from Apify
             );
             
@@ -1564,7 +1566,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
                   const result = await linkedInService.searchProfilesWithData(
                     candidate.name,
                     candidate.company,
-                    candidate.title
+                    candidate.title,
+                    undefined,
+                    [candidate].filter((item): item is any => !!item)
                     // Note: location parameter removed - causes 0 results from Apify
                   );
                   
@@ -1755,7 +1759,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
             const result = await linkedInService.searchProfilesWithData(
               candidate.name,
               candidate.company,
-              candidate.title
+              candidate.title,
+              undefined,
+              [candidate].filter((item): item is any => !!item)
               // Note: location parameter removed - causes 0 results from Apify
             );
             
@@ -2798,6 +2804,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       const files = req.files;
       const processedCandidates: any[] = [];
+      const processedCandidateIds: string[] = [];
       let processedCount = 0;
 
       console.log(`🚀 Starting real-time processing of ${files.length} files for company ${com_id}`);
@@ -2815,12 +2822,21 @@ export async function registerRoutes(app: Express): Promise<Server> {
           if (candidates && candidates.length > 0) {
             // Get current scoring weights
             const project = await storage.getProject("default-project");
-            const weights: { openToWork: number; skillMatch: number; jobStability: number; engagement: number; companyDifference: number } = (project?.scoringWeights as { openToWork: number; skillMatch: number; jobStability: number; engagement: number; companyDifference: number }) || {
-              openToWork: 30,
-              skillMatch: 25,
-              jobStability: 15,
-              engagement: 15,
-              companyDifference: 15
+            const rawWeights = (project?.scoringWeights as {
+              openToWork?: number;
+              skillMatch?: number;
+              jobStability?: number;
+              platformEngagement?: number;
+              engagement?: number;
+              companyDifference?: number;
+            }) || {};
+
+            const weights = {
+              openToWork: rawWeights.openToWork ?? 30,
+              skillMatch: rawWeights.skillMatch ?? 25,
+              jobStability: rawWeights.jobStability ?? 15,
+              platformEngagement: rawWeights.platformEngagement ?? rawWeights.engagement ?? 15,
+              companyDifference: rawWeights.companyDifference ?? 15
             };
 
             // Process each candidate from this file
@@ -2886,11 +2902,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
                     console.log(`🔍 Starting LinkedIn enrichment for: ${resumeCandidate.name}`);
                     const { LinkedInService } = await import('./services/linkedin');
                     const linkedInService = new LinkedInService();
+                    const resumeContext = [candidateData, resumeCandidate].filter(
+                      (item): item is any => !!item
+                    );
                     
-                    // Check if candidate already has LinkedIn URL
-                    if (resumeCandidate.linkedinUrl && resumeCandidate.linkedinUrl.includes('linkedin.com/in/')) {
-                      console.log(`✅ Candidate has LinkedIn URL: ${resumeCandidate.linkedinUrl}`);
-                      linkedinUrl = resumeCandidate.linkedinUrl;
+                    // Check if the NEWLY UPLOADED resume has LinkedIn URL (not from database cache)
+                    const newLinkedInUrl = candidateData?.linkedinUrl || candidateData?.extractedData?.linkedinUrl;
+                    if (newLinkedInUrl && newLinkedInUrl.includes('linkedin.com/in/')) {
+                      console.log(`✅ New resume has LinkedIn URL: ${newLinkedInUrl}`);
+                      linkedinUrl = newLinkedInUrl;
                       
                       // Use DevFusion actor for direct profile scraping
                       linkedinProfile = await linkedInService.enrichProfile(
@@ -2909,7 +2929,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
                         linkedinUrl = await linkedInService.searchProfiles(
                           resumeCandidate.name,
                           resumeCandidate.company || undefined,
-                          resumeCandidate.title || undefined
+                          resumeCandidate.title || undefined,
+                          undefined,
+                          resumeContext
                           // Note: location parameter removed - causes 0 results from Apify
                         );
                         
@@ -2930,7 +2952,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
                       linkedinUrl = await linkedInService.searchProfiles(
                         resumeCandidate.name,
                         resumeCandidate.company || undefined,
-                        resumeCandidate.title || undefined
+                        resumeCandidate.title || undefined,
+                        undefined,
+                        resumeContext
                         // Note: location parameter removed - causes 0 results from Apify
                       );
                       
@@ -3004,21 +3028,24 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
                   // Get the final updated candidate with scores
                   const updatedCandidate = await storage.getCandidate(resumeCandidate.id);
+                  if (!updatedCandidate) {
+                    console.warn(`⚠️ Unable to retrieve candidate ${resumeCandidate.id} after update, skipping response push.`);
+                    continue;
+                  }
                   
                   // Add to processed candidates
                   processedCandidates.push(updatedCandidate);
+                  processedCandidateIds.push(updatedCandidate.id);
                   processedCount++;
 
-                  // Send real-time update with only the newly processed candidate
+                  // Send real-time update with the consolidated candidate list
                   const response = {
                     success: true,
                     data: {
                       comId: com_id,
-                      processedCount: processedCount,
-                      totalFiles: files.length,
-                      currentFile: i + 1,
-                      currentCandidate: updatedCandidate,
-                      allCandidates: processedCandidates
+                      requestedIds: processedCandidateIds,
+                      foundCandidates: processedCandidates.length,
+                      candidates: processedCandidates
                     }
                   };
 
@@ -3035,14 +3062,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
         }
       }
 
-      // Send final completion message
+      // Send final completion message in legacy format
       const finalResponse = {
         success: true,
         data: {
           comId: com_id,
-          processedCount: processedCount,
-          totalFiles: files.length,
-          status: "completed",
+          requestedIds: processedCandidateIds,
+          foundCandidates: processedCandidates.length,
           candidates: processedCandidates
         }
       };

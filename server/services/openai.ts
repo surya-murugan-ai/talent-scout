@@ -30,6 +30,17 @@ export interface LinkedInProfile {
   }>;
   recentActivity: string[];
   profileUrl?: string; // Added profileUrl to the interface
+  connections?: number;
+  certifications?: Array<{
+    name?: string;
+    issuer?: string;
+    date?: string;
+    expiryDate?: string;
+    credentialId?: string;
+  }>;
+  profilePicture?: string;
+  industry?: string;
+  languages?: string[];
 }
 
 export async function analyzeCandidate(
